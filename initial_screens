@@ -784,7 +784,7 @@ seller_geoposition_shop_button_yes
                codename:                      header:               type:      button_name:      widget:             valid/invalid:      default_state:  important:
 s1) [ seller_active_time_protip     ]                           [ paragraph ]        			   
 s2) [ seller_active_time_header     ] "УКАЗАТЬ РАБОЧЕЕ ВРЕМЯ"   [ header    ]        			   
-s3) [ seller_active_time_schedule   ] "ЗАДАТЬ ЧАСЫ РАБОТЫ"      [ button    ]   "ВЫБРАТЬ"  [ "9:00 - 17:00"  ] [green button/gray button] [gray button ] [ yes/no ]
+s3) [ seller_active_time_schedule   ] "ЗАДАТЬ ЧАСЫ РАБОТЫ"      [ button    ]   "ВЫБРАТЬ"  [ "9:00 - 17:00"  ] [green button/gray button] [green button] [ yes/no ]
 s4) [ seller_active_time_auto       ] "АВТОМАТИЧЕСКИ ЧЕРЕЗ GPS" [ button    ]   "ВЫБРАТЬ"  [ "НЕ ОПРЕДЕЛЕНО" ] [green button/gray button] [gray button ] [ yes/no ]
 s5) [ seller_active_time_switcher   ] "РУЧНОЕ УПРАВЛЕНИЕ"       [ button    ]   "ВЫБРАТЬ"  [ "НЕ ОПРЕДЕЛЕНО" ] [green button/gray button] [gray button ] [ yes/no ]
 s6) секция из двух расположенных вряд кнопок:
@@ -805,37 +805,45 @@ s6) секция из двух расположенных вряд кнопок:
 • seller_active_time_switcher:
 При нажатии seller_active_time_schedule происходит открытие seller_active_time_switcher_popup.
 • seller_active_time_button_no:
-При нажатии seller_active_time_button_no, setting_seller_active_popup закрывается без изменений.
+╠ valid / invalid
+║ occasion: нажатие seller_active_time_button_no;
+║ condition: в любой ситуации;
+╨ result: setting_seller_active_popup закрывается без сохранения изменений.
 • seller_active_time_button_yes:
-При нажатии seller_active_time_button_yes, setting_seller_active_popup закрывается с сохранением изменений.
-- occasion: при факторе valid;
-
+╠ valid
+║ occasion: нажатие seller_active_time_button_yes;
+║ condition: фактор valid по seller_active_time_schedule || seller_active_time_auto || seller_active_time_switcher;
+║ result: setting_seller_active_popup закрывается с сохранением изменений;
+╠ invalid
+║ occasion: нажатие seller_active_time_button_yes;
+║ condition: фактор invalid по seller_active_time_schedule && seller_active_time_auto && seller_active_time_switcher;
+╨ result: setting_seller_active_popup не реагирует на нажатие.
 
 ✠ color_states  
 ———————————————————————————
 seller_active_time_schedule
 ———————————————————————————
 • gray button
-- || - не нажата
-- || - опция не выбрана
+- || - не нажата;
+- || - invalid (опция не выбрана);
 • green button:
------- опция выбрана;
+------ valid (активно по умолчанию);
 ———————————————————————————
 seller_active_time_auto
 ——————————————————————————— 
 • gray button
-- || - не нажата
-- || - опция не выбрана
+- || - не нажата;
+- || - invalid (опция не выбрана);
 • green button:
------- опция выбрана;
+------ valid;
 ———————————————————————————
 seller_active_time_switcher
 ——————————————————————————— 
 • gray button
-- || - не нажата
-- || - опция не выбрана
+- || - не нажата;
+- || - invalid (опция не выбрана);
 • green button:
------- опция выбрана;
+------ valid (опция выбрана);
 ———————————————————————————
 seller_active_time_button_no
 ——————————————————————————— 
@@ -845,12 +853,13 @@ seller_active_time_button_no
 seller_active_time_button_yes
 ——————————————————————————— 
 • red button: 
------- ни один из трех вариантов не выбран (seller_active_time_schedule || seller_active_time_auto || seller_active_time_switcher);
+- && - invalid по seller_active_time_schedule;
+- && - invalid по seller_active_time_auto;
+- && - invalid по seller_active_time_switcher;
 • green button:
------- выбран один из трех вариантов (seller_active_time_schedule || seller_active_time_auto || seller_active_time_switcher).
-
-
-seller_active_time_button_yes = valid будет в случае, если одна из опций активирована: либо seller_active_time_schedule, либо seller_active_time_auto, либо seller_active_time_switcher. Если seller_active_time_button_yes = invalid, тогда seller_active_time_button_yes не может применить конфигурацию. Кнопка seller_active_time_button_no = valid всегда. Поскольку seller_active_time_schedule по умолчанию имеет данные, seller_active_time_button_yes = valid. 
+- || - valid по seller_active_time_schedule (активно по умолчанию);
+- || - valid по seller_active_time_auto;
+- || - valid по seller_active_time_switcher;
 
 
 🡆🡆 seller_active_time_schedule
