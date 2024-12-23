@@ -1,9 +1,6 @@
 
 
 
-
-
-
 init_trial_screen 
 ■■■■■■■■■■■■■■■■■
 В режиме trial_mode при первом открытии shop_screen, поверх него открывается форма init_trial_screen_form из 10 основных секций озаглавленный "ВВЕДИТЕ ВАШИ ДАННЫЕ", где юзеру предлагается задать следующий перечень настроек (часть полей обязательны для заполнения):
@@ -1682,7 +1679,7 @@ seller_active_time_schedule_weekends_button_yes
 
 
 🡆🡆🡆 seller_active_time_schedule_holidays_screen
-При тапе на кнопку seller_active_time_schedule_holidays открывается seller_active_time_schedule_holidays_screen с заголовком "НАСТРОЙКА ПРАЗДНИЧНЫХ ДНЕЙ", представленный 5 секциями включая кнопки для настройки года, месяца и дня:
+При тапе на кнопку seller_active_time_schedule_holidays открывается seller_active_time_schedule_holidays_screen представленный 5 секциями включая кнопки для настройки года, месяца и дня:
 
                         codename:                           type:               button_name:         valid/invalid:           default_color:    important:
 s1) [ seller_active_time_schedule_holidays_header      ]  [ header          ]        			   
@@ -1702,216 +1699,250 @@ s4) секция из 2 расположенных вряд кнопок:
 
 ✠ details
 s1) seller_active_time_schedule_holidays_header отображает заголовок: "НАСТРОЙКА ПРАЗДНИЧНЫХ ДНЕЙ"
-s2) seller_active_time_schedule_holidays_year  - обладает функциями кнопки и виджета, призвана для выбора года,
-    seller_active_time_schedule_holidays_month - обладает функциями кнопки и виджета, призвана для выбора месяца, 
+s2) seller_active_time_schedule_holidays_year - обладает функциями кнопки и виджета, призвана для выбора года, отображает выбранный год, при нажатии открывает seller_active_time_schedule_holidays_year_popup;
+    seller_active_time_schedule_holidays_year_plus - в качестве кнопки отвечает за переключение года по возрастанию без перехода к seller_active_time_schedule_holidays_year_popup;
+	seller_active_time_schedule_holidays_year_minus - в качестве кнопки отвечает за переключение года по убыванию без перехода к seller_active_time_schedule_holidays_year_popup;
+    seller_active_time_schedule_holidays_month - обладает функциями кнопки и виджета, призвана для выбора месяца, отображает аббревиатуру наименования выбранного месяца, при нажатии открывает seller_active_time_schedule_holidays_month_popup;
+	seller_active_time_schedule_holidays_month_plus - в качестве кнопки отвечает за переключение месяца по возрастанию без перехода к seller_active_time_schedule_holidays_month_popup;
+	seller_active_time_schedule_holidays_month_minus - в качестве кнопки отвечает за переключение месяца по убыванию без перехода к seller_active_time_schedule_holidays_month_popup;
+	seller_active_time_schedule_holidays_day - является кнопкой отвечающей за выбор праздничного дня, для каждого месяца отображается определенное количество кнопок в соответствии с календарным графиком и учетом высокосного года.
+
+
+
+
 
 ✠ actions
+• seller_active_time_schedule_holidays_month:
+╠ valid
+║ occasion: нажатие seller_active_time_schedule_holidays_month_button;
+║ condition: в любой ситуации;
+╙ result: всплытие seller_active_time_schedule_holidays_month_popup. 
+• seller_active_time_schedule_holidays_year_plus:
+╠ valid
+║ • tap
+║ occasion: нажатие seller_active_time_schedule_holidays_year_plus_button;
+║ condition: если seller_active_time_schedule_holidays_year_value >= 1900 || < текущий год;
+║ result: seller_active_time_schedule_holidays_year_widget отображает увеличение значения на +1. 
+║ • tap & hold 1
+║ occasion: нажатие и удержание от 1 и более секунд seller_active_time_schedule_holidays_year_plus_button;
+║ condition: если seller_active_time_schedule_holidays_year_value >= 1900 || < текущий год;
+║ result: seller_active_time_schedule_holidays_year_widget отображает увеличение значения на +5 в секунду времени. 
+║ • tap & hold 2
+║ occasion: нажатие и удержание от 3 и более секунд seller_active_time_schedule_holidays_year_plus_button;
+║ condition: если seller_active_time_schedule_holidays_year_value >= 1900 || < текущий год;
+║ result: seller_active_time_schedule_holidays_year_widget отображает увеличение значения на +10 в секунду времени.
+╠ invalid
+║ occasion: нажатие seller_active_time_schedule_holidays_year_plus_button;
+║ condition: если seller_active_time_schedule_holidays_year_value >= текущий год || < 1900;
+╙ result: seller_active_time_schedule_holidays_year_widget не реагирует на нажатие.
 • seller_active_time_schedule_holidays_year:
 ╠ valid
 ║ occasion: нажатие seller_active_time_schedule_holidays_year_button;
 ║ condition: в любой ситуации;
-║ result: всплытие seller_active_time_schedule_holidays_year_popup. 
-╠ invalid
-║ occasion: нажатие seller_active_time_schedule_holidays_year_button;
-║ condition: если seller_active_time_schedule_holidays_year_button уже нажата;
-╙ result: дезактивация seller_active_time_schedule_holidays_year.
+╙  result: всплытие seller_active_time_schedule_holidays_year_popup. 
+
+
+
+
+
+
 
 Неактивированные (invalid) кнопки имеют серый цвет, активированные (valid) имеют зеленый/красный цвет. По умолчанию активируется график праздничных дней соответствующий национальному/государственному календарю с соответствующими активированными кнопками. Поскольку кнопки не имеют критической значимости в выборе, поэтому вне зависимости от выбранной конфигурации она всегда будет valid. 
 При тапе на кнопку seller_active_time_schedule_holidays_button_yes настройки seller_active_time_schedule_holidays_screen скрываются возвращаясь к seller_active_time_schedule_popup. 
 
 
-🡆🡆🡆🡆 seller_active_time_schedule_holidays_year_popup
-При тапе на кнопку seller_active_time_schedule_holidays_year_button всплывает seller_active_time_schedule_holidays_year_popup с 12 кнопками:
+🡆🡆🡆🡆 seller_active_time_schedule_holidays_month
+При тапе на кнопку seller_active_time_schedule_holidays_month_button всплывает seller_active_time_schedule_holidays_month_popup с 12 кнопками:
 
-                     codename:                             type:     button_name:       valid/invalid:                   default_color:          important:
-[ seller_active_time_schedule_holidays_year_popup_jan ]  [ button ]   [ "Jan" ]   [ green button/gray button ] [ green button for current month ]  [ no ]
-[ seller_active_time_schedule_holidays_year_popup_feb ]  [ button ]   [ "Feb" ]   [ green button/gray button ] [ green button for current month ]  [ no ]
-[ seller_active_time_schedule_holidays_year_popup_mar ]  [ button ]   [ "Mar" ]   [ green button/gray button ] [ green button for current month ]  [ no ]
-[ seller_active_time_schedule_holidays_year_popup_apr ]  [ button ]   [ "Apr" ]   [ green button/gray button ] [ green button for current month ]  [ no ]
-[ seller_active_time_schedule_holidays_year_popup_may ]  [ button ]   [ "May" ]   [ green button/gray button ] [ green button for current month ]  [ no ]
-[ seller_active_time_schedule_holidays_year_popup_jun ]  [ button ]   [ "Jun" ]   [ green button/gray button ] [ green button for current month ]  [ no ]
-[ seller_active_time_schedule_holidays_year_popup_jul ]  [ button ]   [ "Jul" ]   [ green button/gray button ] [ green button for current month ]  [ no ]
-[ seller_active_time_schedule_holidays_year_popup_aug ]  [ button ]   [ "Aug" ]   [ green button/gray button ] [ green button for current month ]  [ no ]
-[ seller_active_time_schedule_holidays_year_popup_sep ]  [ button ]   [ "Sep" ]   [ green button/gray button ] [ green button for current month ]  [ no ]
-[ seller_active_time_schedule_holidays_year_popup_oct ]  [ button ]   [ "Oct" ]   [ green button/gray button ] [ green button for current month ]  [ no ]
-[ seller_active_time_schedule_holidays_year_popup_nov ]  [ button ]   [ "Nov" ]   [ green button/gray button ] [ green button for current month ]  [ no ]
-[ seller_active_time_schedule_holidays_year_popup_dec ]  [ button ]   [ "Dec" ]   [ green button/gray button ] [ green button for current month ]  [ no ]
+                     codename:                              type:     button_name:       valid/invalid:                   default_color:          important:
+[ seller_active_time_schedule_holidays_month_popup_jan ]  [ button ]   [ "Jan" ]   [ green button/gray button ] [ green button for current month ]  [ no ]
+[ seller_active_time_schedule_holidays_month_popup_feb ]  [ button ]   [ "Feb" ]   [ green button/gray button ] [ green button for current month ]  [ no ]
+[ seller_active_time_schedule_holidays_month_popup_mar ]  [ button ]   [ "Mar" ]   [ green button/gray button ] [ green button for current month ]  [ no ]
+[ seller_active_time_schedule_holidays_month_popup_apr ]  [ button ]   [ "Apr" ]   [ green button/gray button ] [ green button for current month ]  [ no ]
+[ seller_active_time_schedule_holidays_month_popup_may ]  [ button ]   [ "May" ]   [ green button/gray button ] [ green button for current month ]  [ no ]
+[ seller_active_time_schedule_holidays_month_popup_jun ]  [ button ]   [ "Jun" ]   [ green button/gray button ] [ green button for current month ]  [ no ]
+[ seller_active_time_schedule_holidays_month_popup_jul ]  [ button ]   [ "Jul" ]   [ green button/gray button ] [ green button for current month ]  [ no ]
+[ seller_active_time_schedule_holidays_month_popup_aug ]  [ button ]   [ "Aug" ]   [ green button/gray button ] [ green button for current month ]  [ no ]
+[ seller_active_time_schedule_holidays_month_popup_sep ]  [ button ]   [ "Sep" ]   [ green button/gray button ] [ green button for current month ]  [ no ]
+[ seller_active_time_schedule_holidays_month_popup_oct ]  [ button ]   [ "Oct" ]   [ green button/gray button ] [ green button for current month ]  [ no ]
+[ seller_active_time_schedule_holidays_month_popup_nov ]  [ button ]   [ "Nov" ]   [ green button/gray button ] [ green button for current month ]  [ no ]
+[ seller_active_time_schedule_holidays_month_popup_dec ]  [ button ]   [ "Dec" ]   [ green button/gray button ] [ green button for current month ]  [ no ]
 
 ✠ details
-seller_active_time_schedule_holidays_year_popup располагается по центру, занимает порядка 70% в ширину и 60% в высоту экрана, имеет 12 кнопок расположеных в 4 ряда по 3 в ряд.
+seller_active_time_schedule_holidays_month_popup располагается по центру, занимает порядка 70% в ширину и 60% в высоту экрана, имеет 12 кнопок расположеных в 4 ряда по 3 в ряд.
 
 ✠ actions
-• seller_active_time_schedule_holidays_year_popup_jan:
+• seller_active_time_schedule_holidays_month_popup_jan:
 ╠ valid
-║ occasion: нажатие seller_active_time_schedule_holidays_year_popup_jan_button;
-║ condition: если seller_active_time_schedule_holidays_year_popup_jan_button не нажата;
+║ occasion: нажатие seller_active_time_schedule_holidays_month_popup_jan_button;
+║ condition: если seller_active_time_schedule_holidays_month_popup_jan_button не нажата;
 ║ result: 
-║ && - seller_active_time_schedule_holidays_year_popup закрывается;
-║ && - на seller_active_time_schedule_holidays_year (widget) отображается название месяца в соответствии с нажатой кнопкой;
+║ && - seller_active_time_schedule_holidays_month_popup закрывается;
+║ && - на seller_active_time_schedule_holidays_month (widget) отображается название месяца в соответствии с нажатой кнопкой;
 ╠ invalid
-║ occasion: нажатие seller_active_time_schedule_holidays_year_popup_jan_button;
-║ condition: если seller_active_time_schedule_holidays_year_popup_jan_button нажата;
+║ occasion: нажатие seller_active_time_schedule_holidays_month_popup_jan_button;
+║ condition: если seller_active_time_schedule_holidays_month_popup_jan_button нажата;
 ║ result: 
-║ && - seller_active_time_schedule_holidays_year_popup_jan_button не реагирует на нажатие;
-╙ && - seller_active_time_schedule_holidays_year_popup не закрывается.
-• seller_active_time_schedule_holidays_year_popup_feb:
+║ && - seller_active_time_schedule_holidays_month_popup_jan_button не реагирует на нажатие;
+╙ && - seller_active_time_schedule_holidays_month_popup не закрывается.
+• seller_active_time_schedule_holidays_month_popup_feb:
 ╠ valid
-║ occasion: нажатие seller_active_time_schedule_holidays_year_popup_feb_button;
-║ condition: если seller_active_time_schedule_holidays_year_popup_feb_button не нажата;
+║ occasion: нажатие seller_active_time_schedule_holidays_month_popup_feb_button;
+║ condition: если seller_active_time_schedule_holidays_month_popup_feb_button не нажата;
 ║ result: 
-║ && - seller_active_time_schedule_holidays_year_popup закрывается;
-║ && - на seller_active_time_schedule_holidays_year (widget) отображается название месяца в соответствии с нажатой кнопкой;
+║ && - seller_active_time_schedule_holidays_month_popup закрывается;
+║ && - на seller_active_time_schedule_holidays_month (widget) отображается название месяца в соответствии с нажатой кнопкой;
 ╠ invalid
-║ occasion: нажатие seller_active_time_schedule_holidays_year_popup_feb_button;
-║ condition: если seller_active_time_schedule_holidays_year_popup_feb_button нажата;
+║ occasion: нажатие seller_active_time_schedule_holidays_month_popup_feb_button;
+║ condition: если seller_active_time_schedule_holidays_month_popup_feb_button нажата;
 ║ result: 
-║ && - seller_active_time_schedule_holidays_year_popup_feb_button не реагирует на нажатие;
-╙ && - seller_active_time_schedule_holidays_year_popup не закрывается.
-• seller_active_time_schedule_holidays_year_popup_mar:
+║ && - seller_active_time_schedule_holidays_month_popup_feb_button не реагирует на нажатие;
+╙ && - seller_active_time_schedule_holidays_month_popup не закрывается.
+• seller_active_time_schedule_holidays_month_popup_mar:
 ╠ valid
-║ occasion: нажатие seller_active_time_schedule_holidays_year_popup_mar_button;
-║ condition: если seller_active_time_schedule_holidays_year_popup_mar_button не нажата;
+║ occasion: нажатие seller_active_time_schedule_holidays_month_popup_mar_button;
+║ condition: если seller_active_time_schedule_holidays_month_popup_mar_button не нажата;
 ║ result: 
-║ && - seller_active_time_schedule_holidays_year_popup закрывается;
-║ && - на seller_active_time_schedule_holidays_year (widget) отображается название месяца в соответствии с нажатой кнопкой;
+║ && - seller_active_time_schedule_holidays_month_popup закрывается;
+║ && - на seller_active_time_schedule_holidays_month (widget) отображается название месяца в соответствии с нажатой кнопкой;
 ╠ invalid
-║ occasion: нажатие seller_active_time_schedule_holidays_year_popup_mar_button;
-║ condition: если seller_active_time_schedule_holidays_year_popup_mar_button нажата;
+║ occasion: нажатие seller_active_time_schedule_holidays_month_popup_mar_button;
+║ condition: если seller_active_time_schedule_holidays_month_popup_mar_button нажата;
 ║ result: 
-║ && - seller_active_time_schedule_holidays_year_popup_mar_button не реагирует на нажатие;
-╙ && - seller_active_time_schedule_holidays_year_popup не закрывается.
-• seller_active_time_schedule_holidays_year_popup_apr:
+║ && - seller_active_time_schedule_holidays_month_popup_mar_button не реагирует на нажатие;
+╙ && - seller_active_time_schedule_holidays_month_popup не закрывается.
+• seller_active_time_schedule_holidays_month_popup_apr:
 ╠ valid
-║ occasion: нажатие seller_active_time_schedule_holidays_year_popup_apr_button;
-║ condition: если seller_active_time_schedule_holidays_year_popup_apr_button не нажата;
+║ occasion: нажатие seller_active_time_schedule_holidays_month_popup_apr_button;
+║ condition: если seller_active_time_schedule_holidays_month_popup_apr_button не нажата;
 ║ result: 
-║ && - seller_active_time_schedule_holidays_year_popup закрывается;
-║ && - на seller_active_time_schedule_holidays_year (widget) отображается название месяца в соответствии с нажатой кнопкой;
+║ && - seller_active_time_schedule_holidays_month_popup закрывается;
+║ && - на seller_active_time_schedule_holidays_month (widget) отображается название месяца в соответствии с нажатой кнопкой;
 ╠ invalid
-║ occasion: нажатие seller_active_time_schedule_holidays_year_popup_apr_button;
-║ condition: если seller_active_time_schedule_holidays_year_popup_apr_button нажата;
+║ occasion: нажатие seller_active_time_schedule_holidays_month_popup_apr_button;
+║ condition: если seller_active_time_schedule_holidays_month_popup_apr_button нажата;
 ║ result: 
-║ && - seller_active_time_schedule_holidays_year_popup_apr_button не реагирует на нажатие;
-╙ && - seller_active_time_schedule_holidays_year_popup не закрывается.
-• seller_active_time_schedule_holidays_year_popup_may:
+║ && - seller_active_time_schedule_holidays_month_popup_apr_button не реагирует на нажатие;
+╙ && - seller_active_time_schedule_holidays_month_popup не закрывается.
+• seller_active_time_schedule_holidays_month_popup_may:
 ╠ valid
-║ occasion: нажатие seller_active_time_schedule_holidays_year_popup_may_button;
-║ condition: если seller_active_time_schedule_holidays_year_popup_may_button не нажата;
+║ occasion: нажатие seller_active_time_schedule_holidays_month_popup_may_button;
+║ condition: если seller_active_time_schedule_holidays_month_popup_may_button не нажата;
 ║ result: 
-║ && - seller_active_time_schedule_holidays_year_popup закрывается;
-║ && - на seller_active_time_schedule_holidays_year (widget) отображается название месяца в соответствии с нажатой кнопкой;
+║ && - seller_active_time_schedule_holidays_month_popup закрывается;
+║ && - на seller_active_time_schedule_holidays_month (widget) отображается название месяца в соответствии с нажатой кнопкой;
 ╠ invalid
-║ occasion: нажатие seller_active_time_schedule_holidays_year_popup_may_button;
-║ condition: если seller_active_time_schedule_holidays_year_popup_may_button нажата;
+║ occasion: нажатие seller_active_time_schedule_holidays_month_popup_may_button;
+║ condition: если seller_active_time_schedule_holidays_month_popup_may_button нажата;
 ║ result: 
-║ && - seller_active_time_schedule_holidays_year_popup_may_button не реагирует на нажатие;
-╙ && - seller_active_time_schedule_holidays_year_popup не закрывается.
-• seller_active_time_schedule_holidays_year_popup_jun:
+║ && - seller_active_time_schedule_holidays_month_popup_may_button не реагирует на нажатие;
+╙ && - seller_active_time_schedule_holidays_month_popup не закрывается.
+• seller_active_time_schedule_holidays_month_popup_jun:
 ╠ valid
-║ occasion: нажатие seller_active_time_schedule_holidays_year_popup_jun_button;
-║ condition: если seller_active_time_schedule_holidays_year_popup_jun_button не нажата;
+║ occasion: нажатие seller_active_time_schedule_holidays_month_popup_jun_button;
+║ condition: если seller_active_time_schedule_holidays_month_popup_jun_button не нажата;
 ║ result: 
-║ && - seller_active_time_schedule_holidays_year_popup закрывается;
-║ && - на seller_active_time_schedule_holidays_year (widget) отображается название месяца в соответствии с нажатой кнопкой;
+║ && - seller_active_time_schedule_holidays_month_popup закрывается;
+║ && - на seller_active_time_schedule_holidays_month (widget) отображается название месяца в соответствии с нажатой кнопкой;
 ╠ invalid
-║ occasion: нажатие seller_active_time_schedule_holidays_year_popup_jun_button;
-║ condition: если seller_active_time_schedule_holidays_year_popup_jun_button нажата;
+║ occasion: нажатие seller_active_time_schedule_holidays_month_popup_jun_button;
+║ condition: если seller_active_time_schedule_holidays_month_popup_jun_button нажата;
 ║ result: 
-║ && - seller_active_time_schedule_holidays_year_popup_jun_button не реагирует на нажатие;
-╙ && - seller_active_time_schedule_holidays_year_popup не закрывается.
-• seller_active_time_schedule_holidays_year_popup_jul:
+║ && - seller_active_time_schedule_holidays_month_popup_jun_button не реагирует на нажатие;
+╙ && - seller_active_time_schedule_holidays_month_popup не закрывается.
+• seller_active_time_schedule_holidays_month_popup_jul:
 ╠ valid
-║ occasion: нажатие seller_active_time_schedule_holidays_year_popup_jul_button;
-║ condition: если seller_active_time_schedule_holidays_year_popup_jul_button не нажата;
+║ occasion: нажатие seller_active_time_schedule_holidays_month_popup_jul_button;
+║ condition: если seller_active_time_schedule_holidays_month_popup_jul_button не нажата;
 ║ result: 
-║ && - seller_active_time_schedule_holidays_year_popup закрывается;
-║ && - на seller_active_time_schedule_holidays_year (widget) отображается название месяца в соответствии с нажатой кнопкой;
+║ && - seller_active_time_schedule_holidays_month_popup закрывается;
+║ && - на seller_active_time_schedule_holidays_month (widget) отображается название месяца в соответствии с нажатой кнопкой;
 ╠ invalid
-║ occasion: нажатие seller_active_time_schedule_holidays_year_popup_jul_button;
-║ condition: если seller_active_time_schedule_holidays_year_popup_jul_button нажата;
+║ occasion: нажатие seller_active_time_schedule_holidays_month_popup_jul_button;
+║ condition: если seller_active_time_schedule_holidays_month_popup_jul_button нажата;
 ║ result: 
-║ && - seller_active_time_schedule_holidays_year_popup_jul_button не реагирует на нажатие;
-╙ && - seller_active_time_schedule_holidays_year_popup не закрывается.
-• seller_active_time_schedule_holidays_year_popup_aug:
+║ && - seller_active_time_schedule_holidays_month_popup_jul_button не реагирует на нажатие;
+╙ && - seller_active_time_schedule_holidays_month_popup не закрывается.
+• seller_active_time_schedule_holidays_month_popup_aug:
 ╠ valid
-║ occasion: нажатие seller_active_time_schedule_holidays_year_popup_aug_button;
-║ condition: если seller_active_time_schedule_holidays_year_popup_aug_button не нажата;
+║ occasion: нажатие seller_active_time_schedule_holidays_month_popup_aug_button;
+║ condition: если seller_active_time_schedule_holidays_month_popup_aug_button не нажата;
 ║ result: 
-║ && - seller_active_time_schedule_holidays_year_popup закрывается;
-║ && - на seller_active_time_schedule_holidays_year (widget) отображается название месяца в соответствии с нажатой кнопкой;
+║ && - seller_active_time_schedule_holidays_month_popup закрывается;
+║ && - на seller_active_time_schedule_holidays_month (widget) отображается название месяца в соответствии с нажатой кнопкой;
 ╠ invalid
-║ occasion: нажатие seller_active_time_schedule_holidays_year_popup_aug_button;
-║ condition: если seller_active_time_schedule_holidays_year_popup_aug_button нажата;
+║ occasion: нажатие seller_active_time_schedule_holidays_month_popup_aug_button;
+║ condition: если seller_active_time_schedule_holidays_month_popup_aug_button нажата;
 ║ result: 
-║ && - seller_active_time_schedule_holidays_year_popup_aug_button не реагирует на нажатие;
-╙ && - seller_active_time_schedule_holidays_year_popup не закрывается.
-• seller_active_time_schedule_holidays_year_popup_sep:
+║ && - seller_active_time_schedule_holidays_month_popup_aug_button не реагирует на нажатие;
+╙ && - seller_active_time_schedule_holidays_month_popup не закрывается.
+• seller_active_time_schedule_holidays_month_popup_sep:
 ╠ valid
-║ occasion: нажатие seller_active_time_schedule_holidays_year_popup_sep_button;
-║ condition: если seller_active_time_schedule_holidays_year_popup_sep_button не нажата;
+║ occasion: нажатие seller_active_time_schedule_holidays_month_popup_sep_button;
+║ condition: если seller_active_time_schedule_holidays_month_popup_sep_button не нажата;
 ║ result: 
-║ && - seller_active_time_schedule_holidays_year_popup закрывается;
-║ && - на seller_active_time_schedule_holidays_year (widget) отображается название месяца в соответствии с нажатой кнопкой;
+║ && - seller_active_time_schedule_holidays_month_popup закрывается;
+║ && - на seller_active_time_schedule_holidays_month (widget) отображается название месяца в соответствии с нажатой кнопкой;
 ╠ invalid
-║ occasion: нажатие seller_active_time_schedule_holidays_year_popup_sep_button;
-║ condition: если seller_active_time_schedule_holidays_year_popup_sep_button нажата;
+║ occasion: нажатие seller_active_time_schedule_holidays_month_popup_sep_button;
+║ condition: если seller_active_time_schedule_holidays_month_popup_sep_button нажата;
 ║ result: 
-║ && - seller_active_time_schedule_holidays_year_popup_sep_button не реагирует на нажатие;
-╙ && - seller_active_time_schedule_holidays_year_popup не закрывается.
-• seller_active_time_schedule_holidays_year_popup_oct:
+║ && - seller_active_time_schedule_holidays_month_popup_sep_button не реагирует на нажатие;
+╙ && - seller_active_time_schedule_holidays_month_popup не закрывается.
+• seller_active_time_schedule_holidays_month_popup_oct:
 ╠ valid
-║ occasion: нажатие seller_active_time_schedule_holidays_year_popup_oct_button;
-║ condition: если seller_active_time_schedule_holidays_year_popup_oct_button не нажата;
+║ occasion: нажатие seller_active_time_schedule_holidays_month_popup_oct_button;
+║ condition: если seller_active_time_schedule_holidays_month_popup_oct_button не нажата;
 ║ result: 
-║ && - seller_active_time_schedule_holidays_year_popup закрывается;
-║ && - на seller_active_time_schedule_holidays_year (widget) отображается название месяца в соответствии с нажатой кнопкой;
+║ && - seller_active_time_schedule_holidays_month_popup закрывается;
+║ && - на seller_active_time_schedule_holidays_month (widget) отображается название месяца в соответствии с нажатой кнопкой;
 ╠ invalid
-║ occasion: нажатие seller_active_time_schedule_holidays_year_popup_oct_button;
-║ condition: если seller_active_time_schedule_holidays_year_popup_oct_button нажата;
+║ occasion: нажатие seller_active_time_schedule_holidays_month_popup_oct_button;
+║ condition: если seller_active_time_schedule_holidays_month_popup_oct_button нажата;
 ║ result: 
-║ && - seller_active_time_schedule_holidays_year_popup_oct_button не реагирует на нажатие;
-╙ && - seller_active_time_schedule_holidays_year_popup не закрывается.
-• seller_active_time_schedule_holidays_year_popup_nov:
+║ && - seller_active_time_schedule_holidays_month_popup_oct_button не реагирует на нажатие;
+╙ && - seller_active_time_schedule_holidays_month_popup не закрывается.
+• seller_active_time_schedule_holidays_month_popup_nov:
 ╠ valid
-║ occasion: нажатие seller_active_time_schedule_holidays_year_popup_nov_button;
-║ condition: если seller_active_time_schedule_holidays_year_popup_nov_button не нажата;
+║ occasion: нажатие seller_active_time_schedule_holidays_month_popup_nov_button;
+║ condition: если seller_active_time_schedule_holidays_month_popup_nov_button не нажата;
 ║ result: 
-║ && - seller_active_time_schedule_holidays_year_popup закрывается;
-║ && - на seller_active_time_schedule_holidays_year (widget) отображается название месяца в соответствии с нажатой кнопкой;
+║ && - seller_active_time_schedule_holidays_month_popup закрывается;
+║ && - на seller_active_time_schedule_holidays_month (widget) отображается название месяца в соответствии с нажатой кнопкой;
 ╠ invalid
-║ occasion: нажатие seller_active_time_schedule_holidays_year_popup_nov_button;
-║ condition: если seller_active_time_schedule_holidays_year_popup_nov_button нажата;
+║ occasion: нажатие seller_active_time_schedule_holidays_month_popup_nov_button;
+║ condition: если seller_active_time_schedule_holidays_month_popup_nov_button нажата;
 ║ result: 
-║ && - seller_active_time_schedule_holidays_year_popup_nov_button не реагирует на нажатие;
-╙ && - seller_active_time_schedule_holidays_year_popup не закрывается.
-• seller_active_time_schedule_holidays_year_popup_dec:
+║ && - seller_active_time_schedule_holidays_month_popup_nov_button не реагирует на нажатие;
+╙ && - seller_active_time_schedule_holidays_month_popup не закрывается.
+• seller_active_time_schedule_holidays_month_popup_dec:
 ╠ valid
-║ occasion: нажатие seller_active_time_schedule_holidays_year_popup_dec_button;
-║ condition: если seller_active_time_schedule_holidays_year_popup_dec_button не нажата;
+║ occasion: нажатие seller_active_time_schedule_holidays_month_popup_dec_button;
+║ condition: если seller_active_time_schedule_holidays_month_popup_dec_button не нажата;
 ║ result: 
-║ && - seller_active_time_schedule_holidays_year_popup закрывается;
-║ && - на seller_active_time_schedule_holidays_year (widget) отображается название месяца в соответствии с нажатой кнопкой;
+║ && - seller_active_time_schedule_holidays_month_popup закрывается;
+║ && - на seller_active_time_schedule_holidays_month (widget) отображается название месяца в соответствии с нажатой кнопкой;
 ╠ invalid
-║ occasion: нажатие seller_active_time_schedule_holidays_year_popup_dec_button;
-║ condition: если seller_active_time_schedule_holidays_year_popup_dec_button нажата;
+║ occasion: нажатие seller_active_time_schedule_holidays_month_popup_dec_button;
+║ condition: если seller_active_time_schedule_holidays_month_popup_dec_button нажата;
 ║ result: 
-║ && - seller_active_time_schedule_holidays_year_popup_dec_button не реагирует на нажатие;
-╙ && - seller_active_time_schedule_holidays_year_popup не закрывается.
+║ && - seller_active_time_schedule_holidays_month_popup_dec_button не реагирует на нажатие;
+╙ && - seller_active_time_schedule_holidays_month_popup не закрывается.
 
 ✠ color_states  
 —————————————————————————————————————————————————————————————————
-seller_active_time_schedule_holidays_year_popup_jan_button
-seller_active_time_schedule_holidays_year_popup_feb_button
-seller_active_time_schedule_holidays_year_popup_mar_button
-seller_active_time_schedule_holidays_year_popup_apr_button
-seller_active_time_schedule_holidays_year_popup_may_button
-seller_active_time_schedule_holidays_year_popup_jun_button
-seller_active_time_schedule_holidays_year_popup_jul_button
-seller_active_time_schedule_holidays_year_popup_aug_button
-seller_active_time_schedule_holidays_year_popup_sep_button
-seller_active_time_schedule_holidays_year_popup_oct_button
-seller_active_time_schedule_holidays_year_popup_nov_button
-seller_active_time_schedule_holidays_year_popup_dec_button
+seller_active_time_schedule_holidays_month_popup_jan_button
+seller_active_time_schedule_holidays_month_popup_feb_button
+seller_active_time_schedule_holidays_month_popup_mar_button
+seller_active_time_schedule_holidays_month_popup_apr_button
+seller_active_time_schedule_holidays_month_popup_may_button
+seller_active_time_schedule_holidays_month_popup_jun_button
+seller_active_time_schedule_holidays_month_popup_jul_button
+seller_active_time_schedule_holidays_month_popup_aug_button
+seller_active_time_schedule_holidays_month_popup_sep_button
+seller_active_time_schedule_holidays_month_popup_oct_button
+seller_active_time_schedule_holidays_month_popup_nov_button
+seller_active_time_schedule_holidays_month_popup_dec_button
 ————————————————————————————————————————————————————————————————— 
 • green button
 ------ если нажата;
@@ -2039,6 +2070,8 @@ setting_seller_skin_opacity_widget отображает цифровое зна�
 Единственным важным условием настроек setting_seller_skin является условие при котором одна из тем должна быть включена в обязательном порядке. Обои же рассматриваются в качестве дополнительной функции. Изображение из галереи не конкурирует с темами а накладывается поверх выбранной темы.
  
 При нажатии setting_seller_skin_button_yes: выбранная тема или изображение сохраняется в буфере приложения в качестве результирующего для бэкграунда и применяется ко всем экранам интерфейса.
+
+
 
 
 
