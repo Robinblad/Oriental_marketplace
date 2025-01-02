@@ -2511,30 +2511,35 @@ seller_active_time_auto_button_yes
 🡆 setting_seller_img
 При тапе на кнопку setting_seller_img всплывает setting_seller_img_screen предназначенный для настройки аватара, который содержит 5 секций расположенных сверху-вниз в следующем порядке:
 
-                codename:                       type:         button_name:       default_color:            valid/invalid:             important:
-s1) [ setting_seller_img_header     ]        [ header    ]        		      
-s2) [ setting_seller_img_protip     ]        [ paragraph ]  
-s3) [ setting_seller_img_frame      ]        [ editor    ]
---- [ setting_seller_img_frame_edit ]        [ frame     ]                      
---- [ setting_seller_img_frame_zoom ]        [ frame     ]                      [ gray border  ]    [ green border / gray border ]
---- [ setting_seller_img_frame_test ]        [ button    ]    "ТЕСТ"            [ gray button  ]    [ gray button                ]      [ no ]
-s4) секция из двух расположенных столбцом кнопок:
---- [ setting_seller_img_selfie     ]        [ button    ]    "СЕЛФИ"           [ gray button  ]    [ gray  button / gray button ]      [ no ]
---- [ setting_seller_img_gallery    ]        [ button    ]    "ГАЛЕРЕЯ"         [ gray button  ]    [ green button / gray button ]      [ no ]
+                codename:                         type:         button_name:       default_color:            valid/invalid:             important:
+s1) [ setting_seller_img_header       ]        [ header    ]        		      
+s2) [ setting_seller_img_protip       ]        [ paragraph ]  
+s3) [ setting_seller_img_frame        ]        [ editor    ]
+--- [ setting_seller_img_frame_edit   ]        [ frame     ]                      
+--- [ setting_seller_img_frame_zoom   ]        [ frame     ]                      [ gray border  ]    [ green border / gray border ]
+--- [ setting_seller_img_frame_protip ]        [ button    ]    "?"               [ gray button  ]    [ gray button                ]
+--- [ setting_seller_img_frame_test   ]        [ button    ]    "ТЕСТ"            [ gray button  ]    [ gray button                ]      [ no ]
+s4) секция из заголовка и двух расположенных столбцом кнопок:
+--- [ setting_seller_img_add_header   ]        [ header    ]
+--- [ setting_seller_img_add_selfie   ]        [ button    ]    "СЕЛФИ"           [ gray button  ]    [ gray  button / gray button ]      [ no ]
+--- [ setting_seller_img_add_gallery  ]        [ button    ]    "ГАЛЕРЕЯ"         [ gray button  ]    [ green button / gray button ]      [ no ]
 s5) секция из двух расположенных вряд кнопок:
---- [ setting_seller_img_button_no  ]        [ button    ]    "ОТМЕНА"          [ gray button  ]    [ gray  button               ]
---- [ setting_seller_img_button_yes ]        [ button    ]    "ПРИМЕНИТЬ"       [ green button ]    [ green button               ]
+--- [ setting_seller_img_button_no    ]        [ button    ]    "ОТМЕНА"          [ gray button  ]    [ gray  button               ]
+--- [ setting_seller_img_button_yes   ]        [ button    ]    "ПРИМЕНИТЬ"       [ green button ]    [ green button               ]
 
 ✠ details
 s1) Содержание заголовка setting_seller_img_header: "НАСТРОИТЬ АВАТАР".
 s2) Содержание параграфа setting_seller_img_protip: "ВЫ МОЖЕТЕ ДОБАВИТЬ ИЗОБРАЖЕНИЕ ДЛЯ ПЕРСОНАЛИЗАЦИИ ИЗ ГАЛЕРЕИ ТЕЛЕФОНА, ЛИБО СДЕЛАТЬ СЕЛФИ".
-s3) Состоит из 3 составляющих и позволяет редактировать выбранное изображение: 
-    1) setting_seller_img_frame_edit - представляет собой прямоугольную область для отображения выбранного setting_seller_img_image (умолчанию пустой). 
+s3) Секция состоит из 4 составляющих и позволяет редактировать выбранное изображение: 
+    1) setting_seller_img_frame_edit - представляет собой прямоугольную область для отображения выбранного setting_seller_img_image (умолчанию пустой), по ширине занимает порядка 100%. 
 	2) setting_seller_img_frame_zoom - представляет собой круглую рамку по центру setting_seller_img_frame_edit. В setting_seller_img_frame_zoom отображается область изображения setting_seller_img_image которая будет применяться в качестве аватара. 
-	3) setting_seller_img_frame_test - является кнопкой позволяющей провести тест заключающийся в том, что после активации на область setting_seller_img_frame_edit за пределами setting_seller_img_frame_zoom накладывается эффект blur.
-s4) setting_seller_img_selfie - является кнопкой открывающей приложение камеры на устройстве, после того как изображение получено и выбрано, оно передается в setting_seller_img_buffer как setting_seller_img_image и вставляется в setting_seller_img_frame_edit.
-    setting_seller_img_gallery - является кнопкой открывающей приложение галереи на устройстве, после того как изображение выбрано, оно передается в setting_seller_img_buffer как setting_seller_img_image и вставляется в setting_seller_img_frame_edit.
-После того как после нажатия setting_seller_img_selfie или setting_seller_img_gallery, изображение выбрано в качестве setting_seller_img_image в галерее или сделано селфи, оно вставляется в setting_seller_img_frame_edit, где с помощью жестов можно менять для setting_seller_img_image zooming и расположение в X/Y координатах. Результирующая часть setting_seller_img_image в рамках setting_seller_img_frame_zoom будет отображаться в качестве аватара. 
+	3) setting_seller_img_frame_test - является кнопкой расположенной по центру позволяющей провести тест заключающийся в том, что после активации на область setting_seller_img_frame_edit за пределами setting_seller_img_frame_zoom накладывается эффект blur.
+	4) setting_seller_img_frame_protip - является кнопкой расположенная слева от setting_seller_img_frame_test, при нажатии на которую всплывает setting_seller_img_frame_protip_popup со следующим содержанием: 
+	"ЕСЛИ НЕОБХОДИМО, СДЕЛАЙТЕ НАСТРОЙКУ ПЕРЕДВИГАЯ И МАСШТАБИРУЯ ВАШЕ ИЗОБРАЖЕНИЕ. ОБЛАСТЬ ИЗОБРАЖЕНИЯ В КРУГЛОЙ РАМКЕ БУДЕТ ОТОБРАЖАТЬСЯ В КАЧЕСТВЕ ВАШЕГО АВАТАРА (ВАШЕГО ЛИЦА). ВЫ МОЖЕТЕ ПРОТЕСТИРОВАТЬ КАК БУДЕТ ВЫГЛЯДЕТЬ ВАШ ГОТОВЫЙ АВАТАР НАЖАВ КНОПКУ 'ТЕСТ'".
+s4) Содержание заголовка setting_seller_img_add_header: "ДОБАВИТЬ ИЗОБРАЖЕНИЕ ИЗ".
+    setting_seller_img_add_selfie - является кнопкой открывающей приложение камеры на устройстве, после того как изображение получено и выбрано, оно передается в setting_seller_img_buffer как setting_seller_img_image и вставляется в setting_seller_img_frame_edit.
+    setting_seller_img_add_gallery - является кнопкой открывающей приложение галереи на устройстве, после того как изображение выбрано, оно передается в setting_seller_img_buffer как setting_seller_img_image и вставляется в setting_seller_img_frame_edit.
+После того как после нажатия setting_seller_img_add_selfie или setting_seller_img_add_gallery, изображение выбрано в качестве setting_seller_img_image в галерее или сделано селфи, оно вставляется в setting_seller_img_frame_edit, где с помощью жестов можно менять для setting_seller_img_image zooming и расположение в X/Y координатах. Результирующая часть setting_seller_img_image в рамках setting_seller_img_frame_zoom будет отображаться в качестве аватара. 
 
 ✠ actions
 • setting_seller_img_frame_edit:
@@ -2576,14 +2581,19 @@ s4) setting_seller_img_selfie - является кнопкой открываю
 ║ occasion: нажатие setting_seller_img_frame_test_button;
 ║ condition: если setting_seller_img_image не вставлено в setting_seller_img_frame_edit;
 ╙ result: setting_seller_img_frame_test_button не реагирует на нажатие. 
-• setting_seller_img_selfie:
+• setting_seller_img_frame_protip:
+╠ valid / invalid
+║ occasion: нажатие setting_seller_img_frame_protip_button;
+║ condition: в любой ситуации;
+╙ result: всплытие setting_seller_img_frame_protip_popup. 
+• setting_seller_img_add_selfie:
 ╠ valid / invalid 
-║ occasion: нажатие setting_seller_img_selfie_button;
+║ occasion: нажатие setting_seller_img_add_selfie_button;
 ║ condition: в любой ситуации;
 ╙ result: открывается приложение для работы камеры устройства.
-• setting_seller_img_gallery:
+• setting_seller_img_add_gallery:
 ╠ valid / invalid
-║ occasion: нажатие setting_seller_img_gallery_button;
+║ occasion: нажатие setting_seller_img_add_gallery_button;
 ║ condition: в любой ситуации;
 ║ result: открывается приложение галереи от куда можно взять изображение.
 • setting_seller_img_button_no:
@@ -2615,19 +2625,24 @@ setting_seller_img_frame_test
 • gray button
 ------ в любой ситуации.
 ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
-setting_seller_img_selfie
+setting_seller_img_frame_protip
 ————————————————————————————————————————————————————————————————— 
 • gray button
------- если setting_seller_img_selfie_button не нажата;
-• green button
------- если setting_seller_img_selfie_button нажата.
+------ в любой ситуации.
 ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
-setting_seller_img_gallery
+setting_seller_img_add_selfie
 ————————————————————————————————————————————————————————————————— 
 • gray button
------- если setting_seller_img_gallery_button не нажата;
+------ если setting_seller_img_add_selfie_button не нажата;
 • green button
------- если setting_seller_img_gallery_button нажата.
+------ если setting_seller_img_add_selfie_button нажата.
+——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+setting_seller_img_add_gallery
+————————————————————————————————————————————————————————————————— 
+• gray button
+------ если setting_seller_img_add_gallery_button не нажата;
+• green button
+------ если setting_seller_img_add_gallery_button нажата.
 ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 setting_seller_img_button_no
 ————————————————————————————————————————————————————————————————— 
@@ -2639,29 +2654,135 @@ setting_seller_img_button_yes
 • green button
 ------ в любой ситуации.
 ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
-setting_seller_img_edit_header имеет следующее содержание: "ОТРЕДАКТИРОВАТЬ ИЗОБРАЖЕНИЕ".
-setting_seller_img_edit_protip имеет следующее содержание: "ЕСЛИ НЕОБХОДИМО, СДЕЛАЙТЕ НАСТРОЙКУ ПЕРЕДВИГАЯ И МАСШТАБИРУЯ ВАШЕ ИЗОБРАЖЕНИЕ, ЧТОБЫ ОСНОВНАЯ ЕГО ЧАСТЬ ПОМЕЩАЛАСЬ В КРУГЛУЮ РАМКУ".
 
  
 🡆 setting_seller_skin
-При нажатии на кнопку setting_seller_skin всплывает setting_seller_skin_screen предназначенный для настройки фона и обоев интерфейса, с содержанием из 9 секций расположенных сверху-вниз в следующем порядке:
+При нажатии на кнопку setting_seller_skin всплывает setting_seller_skin_screen предназначенный для настройки фона и обоев интерфейса, с содержанием из 5 секций расположенных сверху-вниз в следующем порядке:
 
-                codename:                           type:           button_name:      default_color:            valid/invalid:             important:
-s1) [ setting_seller_skin_header             ]    [ header    ]        		      
-s2) [ setting_seller_skin_protip             ]    [ paragraph ]  
-s3) [ setting_seller_skin_theme_light_button ]    [ button    ]    "СВЕТЛАЯ ТЕМА"    [ gray button  ]    [ green button / gray button ]    [ yes/no ]
-s4) [ setting_seller_skin_theme_gray_button  ]    [ button    ]    "СЕРАЯ ТЕМА"      [ green button ]    [ green button / gray button ]    [ yes/no ]
-s5) [ setting_seller_skin_theme_dark_button  ]    [ button    ]    "ТЁМНАЯ ТЕМА"     [ gray button  ]    [ green button / gray button ]    [ yes/no ]
-s6) [ setting_seller_skin_gallery_button     ]    [ button    ]    "ГАЛЕРЕЯ"         [ gray button  ]    [ green button / gray button ]    [ no     ]
-s7) [ setting_seller_skin_opacity_widget     ]    [ widget    ]                      [ gray widget  ]    [ green widget / gray widget ]    [ no     ]
-s8) [ setting_seller_skin_opacity_slider     ]    [ slider    ]    "ПРОЗРАЧНОСТЬ"    [ gray slider  ]    [ green slider / gray slider ]    [ no     ]
-s9) секция из двух расположенных вряд кнопок:
---- [ setting_seller_skin_button_no          ]    [ button    ]    "ОТМЕНА"          [ gray button  ]    [ gray  button               ]
---- [ setting_seller_skin_button_yes         ]    [ button    ]    "ПРИМЕНИТЬ"       [ green button ]    [ green button               ]
+                codename:                          type:           button_name:     default_color:          valid/invalid:           important:     location:
+s1) [ setting_seller_skin_header             ]   [ header    ]                                                                                      [ center ]
+s2) [ setting_seller_skin_protip             ]   [ paragraph ]                                                                                      [ center ] 
+s3) секция из 4 элементов расположенных сверху-вниз в следующем порядке:
+--- [ setting_seller_skin_theme_header       ]   [ header    ]                                                                                      [ center ]
+--- [ setting_seller_skin_theme_light_button ]   [ button    ]    "СВЕТЛАЯ ТЕМА"   [ gray button  ]  [ green button / gray button ]  [ yes/no ]     [ center ]
+--- [ setting_seller_skin_theme_gray_button  ]   [ button    ]    "СЕРАЯ ТЕМА"     [ green button ]  [ green button / gray button ]  [ yes/no ]     [ center ]
+--- [ setting_seller_skin_theme_dark_button  ]   [ button    ]    "ТЁМНАЯ ТЕМА"    [ gray button  ]  [ green button / gray button ]  [ yes/no ]     [ center ]
+s4) секция из 4 элементов расположенных сверху-вниз в следующем порядке:
+--- [ setting_seller_skin_gallery_header     ]   [ header    ]                                                                                      [ center ]
+--- [ setting_seller_skin_gallery_button     ]   [ button    ]    "ГАЛЕРЕЯ"        [ gray button  ]  [ green button / gray button ]  [ no     ]     [ center ]
+--- [ setting_seller_skin_opacity_widget     ]   [ widget    ]                     [ gray widget  ]  [ green widget / gray widget ]  [ no     ]     [ center ]
+--- [ setting_seller_skin_opacity_slider     ]   [ slider    ]    "ПРОЗРАЧНОСТЬ"   [ gray slider  ]  [ green slider / gray slider ]  [ no     ]     [ center ]
+s5) секция из двух расположенных вряд кнопок:
+--- [ setting_seller_skin_button_no          ]   [ button    ]    "ОТМЕНА"         [ gray button  ]  [ gray  button               ]                 [ left   ]
+--- [ setting_seller_skin_button_yes         ]   [ button    ]    "ПРИМЕНИТЬ"      [ green button ]  [ green button               ]                 [ right  ]
 
 ✠ details
 s1) Содержание заголовка  setting_seller_skin_header: "НАСТРОИТЬ ОБОИ".
 s2) Содержание параграфа setting_seller_skin_protip: "ДОБАВЬТЕ ИЗОБРАЖЕНИЕ ДЛЯ ФОНА, ЧТОБЫ ПРИДАТЬ ВАШЕМУ МАГАЗИНУ БОЛЬШЕ ИНДИВИДУАЛЬНОСТИ И УЗНАВАЕМОСТИ".
+s3) Секция состоит из заголовка и трех кнопок в один столбец расположенных по центру, которые позволяют настраивать тему (цветовое решение для бэкграунда интерфейса): 
+    1) Содержание заголовка setting_seller_skin_theme_header: "ВЫБРАТЬ ТЕМУ".
+    2) setting_seller_skin_theme_light_button - является кнопкой активизирующей светлую тему (бэкграунд имеет светлый тон).
+	3) setting_seller_skin_theme_gray_button - является кнопкой активизирующей серую тему (бэкграунд имеет нейтральный тон).
+	4) setting_seller_skin_theme_dark_button - является кнопкой активизирующей темную тему (бэкграунд имеет темный тон).
+s4) Секция состоит из 4 составляющих расположенных по центру и позволяет использовать изображения в качестве обоев: 
+	1) Содержание заголовка setting_seller_skin_gallery_header: "ВЫБРАТЬ ОБОИ".
+	2) setting_seller_skin_gallery_button - является кнопкой открывающей приложение галереи на устройстве, после того как изображение выбрано, оно передается в setting_seller_skin_buffer как setting_seller_skin_image и применяется для интерфейса setting_seller_skin_screen.
+	3) setting_seller_skin_opacity_slider - предназначен для изменения уровня прозрачности обоев и представляет собой горизонтального вида ползунок в ~70% ширины экрана со шкалой в 100 (невидимых) значений, который в крайнем левом положении означает opacity=1 (видимый), в крайнем правом положении означает opacity=0 (невидимый). По умолчанию opacity=1.
+	4) setting_seller_skin_opacity_widget - отображает цифровое значение opacity над setting_seller_skin_opacity_slider по центру в качестве значений от 0 до 100. Когда opacity=1, setting_seller_skin_opacity_widget отображает значение "0". Когда opacity=0, setting_seller_skin_opacity_widget отображает значение "100".
+
+✠ actions
+• setting_seller_skin_theme_light_button:
+╠ valid 
+║ • theme: light
+║ occasion: нажатие setting_seller_skin_theme_light_button;
+║ condition:
+║ || - активирована setting_seller_skin_theme_gray;
+║ || - активирована setting_seller_skin_theme_dark;
+║ result: активируется тема setting_seller_skin_theme_light.
+╠ invalid
+║ occasion: нажатие setting_seller_skin_theme_light_button;
+║ condition: активирована setting_seller_skin_theme_light;
+╙ result: setting_seller_skin_theme_light_button не реагирует на нажатие.
+• setting_seller_skin_theme_gray_button:
+╠ valid 
+║ occasion: нажатие setting_seller_skin_theme_gray_button;
+║ condition:
+║ || - активирована setting_seller_skin_theme_light;
+║ || - активирована setting_seller_skin_theme_dark;
+║ result: активируется тема setting_seller_skin_theme_gray.
+╠ invalid
+║ occasion: нажатие setting_seller_skin_theme_gray_button;
+║ condition: активирована setting_seller_skin_theme_gray;
+╙ result: setting_seller_skin_theme_gray_button не реагирует на нажатие.
+• setting_seller_skin_theme_dark_button:
+╠ valid 
+║ occasion: нажатие setting_seller_skin_theme_dark_button;
+║ condition:
+║ || - активирована setting_seller_skin_theme_light;
+║ || - активирована setting_seller_skin_theme_gray;
+║ result: активируется тема setting_seller_skin_theme_dark.
+╠ invalid
+║ occasion: нажатие setting_seller_skin_theme_dark_button;
+║ condition: активирована setting_seller_skin_theme_dark;
+╙ result: setting_seller_skin_theme_dark_button не реагирует на нажатие.
+• setting_seller_skin_gallery_button:
+╠ valid / invalid
+║ occasion: нажатие setting_seller_skin_gallery_button;
+║ condition: в любой ситуации;
+║ result: открывается приложение галереи от куда можно взять изображение.
+• setting_seller_skin_opacity_slider:
+╠ valid
+║ occasion: передвижение setting_seller_skin_opacity_slider;
+║ condition: если setting_seller_skin_image находится в setting_seller_skin_buffer;
+║ result: применяется эффект opacity к обоям в пропорции соответствующей значению выводимому в setting_seller_skin_opacity_widget.
+╠ invalid
+║ occasion: передвижение setting_seller_skin_opacity_slider;
+║ condition: если setting_seller_skin_image не находится в setting_seller_skin_buffer;
+╙ result: ни setting_seller_skin_opacity_slider ни setting_seller_skin_opacity_widget не реагируют на нажатие.
+
+• seller_active_time_manual_button_yes:
+╠ valid / invalid
+║ occasion: нажатие seller_active_time_manual_button_yes;
+║ condition: в любой ситуации;
+║ result:
+║ || - дезактивируется seller_active_time_schedule_function, если была активирована;
+║ || - дезактивируется seller_active_time_auto_detection_function, если была активирована;
+║ && - seller_active_time_manual_screen закрывается с сохранением изменений;
+╙ && - совершается переход к setting_seller_active_screen.
+
+
+✠ mutually exclusive rule
+Если в ситуации когда setting_seller_skin_image находится в setting_seller_skin_buffer происходит:
+- || - активация setting_seller_skin_theme_light_button;
+- || - активация setting_seller_skin_theme_gray_button;
+- || - активация setting_seller_skin_theme_dark_button;
+тогда setting_seller_skin_image удаляется из setting_seller_skin_buffer.
+
+
+✠ color_states  
+——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+seller_active_time_manual_detection
+————————————————————————————————————————————————————————————————— 
+• gray button
+------ seller_active_time_manual_detection_function не активирована;
+• green button
+------ seller_active_time_manual_detection_function активирована.
+——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+seller_active_time_auto_button_no
+————————————————————————————————————————————————————————————————— 
+• gray button
+------ в любой ситуации.
+——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+seller_active_time_auto_button_yes
+————————————————————————————————————————————————————————————————— 
+• gray button
+------ seller_active_time_manual_detection_function не активирована;
+• green button
+------ seller_active_time_manual_detection_function активирована.
+——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+
+
+
 setting_seller_skin_theme_light_button располагается 25% от края левой части экрана и позволяет активировать светлую тему. При нажатии бэкграунд становится белого цвета, а setting_seller_skin_theme_light_button становится зеленого цвета (в неактивированном состоянии имеет серый цвет).
 setting_seller_skin_theme_gray_button располагается 25% от края левой части экрана и позволяет активировать серую тему. При нажатии бэкграунд становится светло-серого цвета (допустимо немного голубого), а setting_seller_skin_theme_gray_button становится зеленого цвета (в неактивированном состоянии имеет серый цвет). По умолчанию применяется серая тема (setting_seller_skin_theme_gray).
 setting_seller_skin_theme_dark_button располагается 25% от края левой части экрана и позволяет активировать темную тему. При нажатии бэкграунд становится темно-серого цвета, а setting_seller_skin_theme_dark_button становится зеленого цвета (в неактивированном состоянии имеет серый цвет).
