@@ -3,7 +3,6 @@
 
 
 
-
 init_trial_screen 
 ■■■■■■■■■■■■■■■■■
 В режиме trial_mode при первом открытии shop_screen, поверх него открывается форма init_trial_screen_form из 10 основных секций озаглавленный "ВВЕДИТЕ ВАШИ ДАННЫЕ", где юзеру предлагается задать следующий перечень настроек (часть полей обязательны для заполнения):
@@ -2668,10 +2667,10 @@ s3) секция из 4 элементов расположенных сверх
 --- [ setting_seller_skin_theme_gray_button  ]   [ button    ]    "СЕРАЯ ТЕМА"     [ green button ]  [ green button / gray button ]  [ yes/no ]     [ center ]
 --- [ setting_seller_skin_theme_dark_button  ]   [ button    ]    "ТЁМНАЯ ТЕМА"    [ gray button  ]  [ green button / gray button ]  [ yes/no ]     [ center ]
 s4) секция из 4 элементов расположенных сверху-вниз в следующем порядке:
---- [ setting_seller_skin_gallery_header     ]   [ header    ]                                                                                      [ center ]
---- [ setting_seller_skin_gallery_button     ]   [ button    ]    "ГАЛЕРЕЯ"        [ gray button  ]  [ green button / gray button ]  [ no     ]     [ center ]
---- [ setting_seller_skin_opacity_widget     ]   [ widget    ]                     [ gray widget  ]  [ green widget / gray widget ]  [ no     ]     [ center ]
---- [ setting_seller_skin_opacity_slider     ]   [ slider    ]    "ПРОЗРАЧНОСТЬ"   [ gray slider  ]  [ green slider / gray slider ]  [ no     ]     [ center ]
+--- [ setting_seller_skin_custom_header      ]   [ header    ]                                                                                      [ center ]
+--- [ setting_seller_skin_custom_button      ]   [ button    ]    "ГАЛЕРЕЯ"        [ gray button  ]  [ green button / gray button ]  [ no     ]     [ center ]
+--- [ setting_seller_skin_custom_widget      ]   [ widget    ]                     [ gray widget  ]  [ green widget / gray widget ]  [ no     ]     [ center ]
+--- [ setting_seller_skin_custom_slider      ]   [ slider    ]    "ПРОЗРАЧНОСТЬ"   [ gray slider  ]  [ green slider / gray slider ]  [ no     ]     [ center ]
 s5) секция из двух расположенных вряд кнопок:
 --- [ setting_seller_skin_button_no          ]   [ button    ]    "ОТМЕНА"         [ gray button  ]  [ gray  button               ]                 [ left   ]
 --- [ setting_seller_skin_button_yes         ]   [ button    ]    "ПРИМЕНИТЬ"      [ green button ]  [ green button               ]                 [ right  ]
@@ -2681,14 +2680,17 @@ s1) Содержание заголовка  setting_seller_skin_header: "НАС
 s2) Содержание параграфа setting_seller_skin_protip: "ДОБАВЬТЕ ИЗОБРАЖЕНИЕ ДЛЯ ФОНА, ЧТОБЫ ПРИДАТЬ ВАШЕМУ МАГАЗИНУ БОЛЬШЕ ИНДИВИДУАЛЬНОСТИ И УЗНАВАЕМОСТИ".
 s3) Секция состоит из заголовка и трех кнопок в один столбец расположенных по центру, которые позволяют настраивать тему (цветовое решение для бэкграунда интерфейса): 
     1) Содержание заголовка setting_seller_skin_theme_header: "ВЫБРАТЬ ТЕМУ".
-    2) setting_seller_skin_theme_light_button - является кнопкой активизирующей светлую тему (бэкграунд имеет светлый тон).
-	3) setting_seller_skin_theme_gray_button - является кнопкой активизирующей серую тему (бэкграунд имеет нейтральный тон).
-	4) setting_seller_skin_theme_dark_button - является кнопкой активизирующей темную тему (бэкграунд имеет темный тон).
+    2) setting_seller_skin_theme_light_button - является кнопкой активизирующей светлую тему (бэкграунд имеет светлый тон), после нажатия тема setting_seller_skin_theme_light помещается в setting_seller_theme_buffer.
+	3) setting_seller_skin_theme_gray_button - является кнопкой активизирующей серую тему (бэкграунд имеет нейтральный тон), после нажатия тема setting_seller_skin_theme_gray помещается в setting_seller_theme_buffer.
+	4) setting_seller_skin_theme_dark_button - является кнопкой активизирующей темную тему (бэкграунд имеет темный тон), после нажатия тема setting_seller_skin_theme_dark помещается в setting_seller_theme_buffer.
 s4) Секция состоит из 4 составляющих расположенных по центру и позволяет использовать изображения в качестве обоев: 
-	1) Содержание заголовка setting_seller_skin_gallery_header: "ВЫБРАТЬ ОБОИ".
-	2) setting_seller_skin_gallery_button - является кнопкой открывающей приложение галереи на устройстве, после того как изображение выбрано, оно передается в setting_seller_skin_buffer как setting_seller_skin_image и применяется для интерфейса setting_seller_skin_screen.
-	3) setting_seller_skin_opacity_slider - предназначен для изменения уровня прозрачности обоев и представляет собой горизонтального вида ползунок в ~70% ширины экрана со шкалой в 100 (невидимых) значений, который в крайнем левом положении означает opacity=1 (видимый), в крайнем правом положении означает opacity=0 (невидимый). По умолчанию opacity=1.
-	4) setting_seller_skin_opacity_widget - отображает цифровое значение opacity над setting_seller_skin_opacity_slider по центру в качестве значений от 0 до 100. Когда opacity=1, setting_seller_skin_opacity_widget отображает значение "0". Когда opacity=0, setting_seller_skin_opacity_widget отображает значение "100".
+	1) Содержание заголовка setting_seller_skin_custom_header: "ВЫБРАТЬ ОБОИ".
+	2) setting_seller_skin_custom_button - является кнопкой открывающей приложение галереи (gallery_app) на устройстве, после того как изображение выбрано и активировано посредством gallery_app_button (сущность внешней компоненты введена в текст для описания взаимодействия текущей конфигурации), оно передается в setting_seller_skin_buffer как setting_seller_skin_image и применяется для интерфейса setting_seller_skin_screen.
+	3) setting_seller_skin_custom_slider - предназначен для изменения уровня прозрачности обоев и представляет собой горизонтального вида ползунок в ~70% ширины экрана со шкалой в 100 (невидимых) значений, который в крайнем левом положении означает opacity=1 (видимый), в крайнем правом положении означает opacity=0 (невидимый). По умолчанию opacity=1.
+	4) setting_seller_skin_custom_widget - отображает цифровое значение opacity над setting_seller_skin_custom_slider по центру в качестве значений от 0 до 100. Когда opacity=1, setting_seller_skin_custom_widget отображает значение "0". Когда opacity=0, setting_seller_skin_custom_widget отображает значение "100".
+setting_seller_theme_buffer и setting_seller_theme_store может содержать только одну тему.
+setting_seller_skin_buffer и setting_seller_skin_store может содержать только одну setting_seller_skin_image.
+setting_seller_theme_store никогда не очищается.
 
 ✠ actions
 • setting_seller_skin_theme_light_button:
@@ -2698,7 +2700,11 @@ s4) Секция состоит из 4 составляющих располож
 ║ condition:
 ║ || - активирована setting_seller_skin_theme_gray;
 ║ || - активирована setting_seller_skin_theme_dark;
-║ result: активируется тема setting_seller_skin_theme_light.
+║ result: 
+║ && - setting_seller_skin_buffer очищается;
+║ && - setting_seller_skin_store очищается;
+║ && - setting_seller_skin_theme_light помещается в setting_seller_theme_buffer;
+║ && - активируется тема setting_seller_skin_theme_light;
 ╠ invalid
 ║ occasion: нажатие setting_seller_skin_theme_light_button;
 ║ condition: активирована setting_seller_skin_theme_light;
@@ -2710,6 +2716,10 @@ s4) Секция состоит из 4 составляющих располож
 ║ || - активирована setting_seller_skin_theme_light;
 ║ || - активирована setting_seller_skin_theme_dark;
 ║ result: активируется тема setting_seller_skin_theme_gray.
+║ && - setting_seller_skin_buffer очищается;
+║ && - setting_seller_skin_store очищается;
+║ && - setting_seller_skin_theme_gray помещается в setting_seller_theme_buffer;
+║ && - активируется тема setting_seller_skin_theme_gray.
 ╠ invalid
 ║ occasion: нажатие setting_seller_skin_theme_gray_button;
 ║ condition: активирована setting_seller_skin_theme_gray;
@@ -2721,43 +2731,73 @@ s4) Секция состоит из 4 составляющих располож
 ║ || - активирована setting_seller_skin_theme_light;
 ║ || - активирована setting_seller_skin_theme_gray;
 ║ result: активируется тема setting_seller_skin_theme_dark.
+║ && - setting_seller_skin_buffer очищается;
+║ && - setting_seller_skin_store очищается;
+║ && - setting_seller_skin_theme_dark помещается в setting_seller_theme_buffer;
+║ && - активируется тема setting_seller_skin_theme_dark;
 ╠ invalid
 ║ occasion: нажатие setting_seller_skin_theme_dark_button;
 ║ condition: активирована setting_seller_skin_theme_dark;
 ╙ result: setting_seller_skin_theme_dark_button не реагирует на нажатие.
-• setting_seller_skin_gallery_button:
+• setting_seller_skin_custom_button:
 ╠ valid / invalid
-║ occasion: нажатие setting_seller_skin_gallery_button;
+║ occasion: нажатие setting_seller_skin_custom_button;
 ║ condition: в любой ситуации;
-║ result: открывается приложение галереи от куда можно взять изображение.
-• setting_seller_skin_opacity_slider:
-╠ valid
-║ occasion: передвижение setting_seller_skin_opacity_slider;
-║ condition: если setting_seller_skin_image находится в setting_seller_skin_buffer;
-║ result: применяется эффект opacity к обоям в пропорции соответствующей значению выводимому в setting_seller_skin_opacity_widget.
-╠ invalid
-║ occasion: передвижение setting_seller_skin_opacity_slider;
-║ condition: если setting_seller_skin_image не находится в setting_seller_skin_buffer;
-╙ result: ни setting_seller_skin_opacity_slider ни setting_seller_skin_opacity_widget не реагируют на нажатие.
-
-• seller_active_time_manual_button_yes:
+║ result: открывается gallery_app для выбора setting_seller_skin_image.
+• gallery_app_button (внешняя компонента)
 ╠ valid / invalid
-║ occasion: нажатие seller_active_time_manual_button_yes;
+║ occasion: нажатие gallery_app_button;
+║ condition: в любой ситуации;
+║ result: 
+║ && - setting_seller_theme_buffer очищается;
+║ && - setting_seller_skin_image помещается в setting_seller_skin_buffer;
+║ && - активируются обои на основе setting_seller_skin_image для setting_seller_skin_screen;
+• setting_seller_skin_custom_slider:
+╠ valid
+║ occasion: передвижение setting_seller_skin_custom_slider;
+║ condition: если setting_seller_skin_image находится в setting_seller_skin_buffer;
+║ result: применяется эффект opacity к обоям в пропорции соответствующей значению выводимому в setting_seller_skin_custom_widget.
+╠ invalid
+║ occasion: передвижение setting_seller_skin_custom_slider;
+║ condition: если setting_seller_skin_image не находится в setting_seller_skin_buffer;
+╙ result: ни setting_seller_skin_custom_slider ни setting_seller_skin_custom_widget не реагируют на нажатие.
+• setting_seller_skin_button_no:
+╠ valid / invalid
+║ occasion: нажатие setting_seller_skin_button_no;
 ║ condition: в любой ситуации;
 ║ result:
-║ || - дезактивируется seller_active_time_schedule_function, если была активирована;
-║ || - дезактивируется seller_active_time_auto_detection_function, если была активирована;
-║ && - seller_active_time_manual_screen закрывается с сохранением изменений;
-╙ && - совершается переход к setting_seller_active_screen.
-
+║ && - setting_seller_skin_screen закрывается без сохранения изменений (применяется тема из setting_seller_theme_store);
+╙ && - совершается переход к init_usual_screen.
+• setting_seller_skin_button_yes:
+╠ valid / invalid
+║ occasion: нажатие setting_seller_skin_button_yes;
+║ condition: в любой ситуации;
+║ result:
+║ && - если setting_seller_skin_buffer имеет setting_seller_skin_image, оно сохраняется в setting_seller_skin_store и применяется ко всему интерфейсу;
+║ && - тема из setting_seller_theme_buffer (если есть) передается и сохраняется в setting_seller_theme_store;
+║ && - setting_seller_skin_screen закрывается с сохранением изменений;
+╙ && - совершается переход к init_usual_screen.
 
 ✠ mutually exclusive rule
-Если в ситуации когда setting_seller_skin_image находится в setting_seller_skin_buffer происходит:
-- || - активация setting_seller_skin_theme_light_button;
-- || - активация setting_seller_skin_theme_gray_button;
-- || - активация setting_seller_skin_theme_dark_button;
+• setting_seller_skin_theme & setting_seller_skin_custom
+Если в ситуации когда setting_seller_skin_image находится в setting_seller_skin_buffer, происходит:
+- || - активация setting_seller_skin_theme_light;
+- || - активация setting_seller_skin_theme_gray;
+- || - активация setting_seller_skin_theme_dark;
 тогда setting_seller_skin_image удаляется из setting_seller_skin_buffer.
-
+• setting_seller_skin_theme
+Если в ситуации когда активирована setting_seller_skin_theme_light, делается:
+- || - нажатие setting_seller_skin_theme_gray_button;
+- || - нажатие setting_seller_skin_theme_dark_button;
+тогда: setting_seller_skin_theme_light удаляется из setting_seller_theme_buffer.
+Если в ситуации когда активирована setting_seller_skin_theme_gray, делается:
+- || - нажатие setting_seller_skin_theme_light_button;
+- || - нажатие setting_seller_skin_theme_dark_button;
+тогда: setting_seller_skin_theme_gray удаляется из setting_seller_theme_buffer.
+Если в ситуации когда активирована setting_seller_skin_theme_dark, делается:
+- || - нажатие setting_seller_skin_theme_light_button;
+- || - нажатие setting_seller_skin_theme_gray_button;
+тогда: setting_seller_skin_theme_dark удаляется из setting_seller_theme_buffer.
 
 ✠ color_states  
 ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
@@ -2786,13 +2826,13 @@ seller_active_time_auto_button_yes
 setting_seller_skin_theme_light_button располагается 25% от края левой части экрана и позволяет активировать светлую тему. При нажатии бэкграунд становится белого цвета, а setting_seller_skin_theme_light_button становится зеленого цвета (в неактивированном состоянии имеет серый цвет).
 setting_seller_skin_theme_gray_button располагается 25% от края левой части экрана и позволяет активировать серую тему. При нажатии бэкграунд становится светло-серого цвета (допустимо немного голубого), а setting_seller_skin_theme_gray_button становится зеленого цвета (в неактивированном состоянии имеет серый цвет). По умолчанию применяется серая тема (setting_seller_skin_theme_gray).
 setting_seller_skin_theme_dark_button располагается 25% от края левой части экрана и позволяет активировать темную тему. При нажатии бэкграунд становится темно-серого цвета, а setting_seller_skin_theme_dark_button становится зеленого цвета (в неактивированном состоянии имеет серый цвет).
-setting_seller_skin_gallery_button располагается 25% от края левой части экрана, при нажатии открывает приложение галереи от куда можно взять изображение.
-setting_seller_skin_opacity_slider располагается над кнопками setting_seller_skin_button_no и setting_seller_skin_button_yes. Предназначен для изменения уровня прозрачности обоев и представляет собой горизонтального вида ползунок в 90% ширины экрана со шкалой в 100 значений, который в крайнем левом положении означает opacity=1 (видимый), в крайнем правом положении означает opacity=0 (невидимый). По умолчанию opacity=1 и серого цвета. Если значение opacity < 1, тогда setting_seller_skin_opacity_slider приобретает зеленый цвет.
-setting_seller_skin_opacity_widget отображает цифровое значение opacity над setting_seller_skin_opacity_slider по центру в качестве значений от 0 до 100. По умолчанию когда opacity=1, setting_seller_skin_opacity_slider отображает значение "100" и обладает серым цветом. Если значение opacity < 1, тогда setting_seller_skin_opacity_widget приобретает зеленый цвет.
+setting_seller_skin_custom_button располагается 25% от края левой части экрана, при нажатии открывает приложение галереи от куда можно взять изображение.
+setting_seller_skin_custom_slider располагается над кнопками setting_seller_skin_button_no и setting_seller_skin_button_yes. Предназначен для изменения уровня прозрачности обоев и представляет собой горизонтального вида ползунок в 90% ширины экрана со шкалой в 100 значений, который в крайнем левом положении означает opacity=1 (видимый), в крайнем правом положении означает opacity=0 (невидимый). По умолчанию opacity=1 и серого цвета. Если значение opacity < 1, тогда setting_seller_skin_custom_slider приобретает зеленый цвет.
+setting_seller_skin_custom_widget отображает цифровое значение opacity над setting_seller_skin_custom_slider по центру в качестве значений от 0 до 100. По умолчанию когда opacity=1, setting_seller_skin_custom_slider отображает значение "100" и обладает серым цветом. Если значение opacity < 1, тогда setting_seller_skin_custom_widget приобретает зеленый цвет.
 
 После того как изображение выбрано в галерее: 
 1) данное изображение автоматически применяется только к интерфейсу setting_seller_skin_screen, покрывая бэкграунд (методом tile) всплошную, - если величина картинки не покрывает размер интерфейса (разрешение меньше), оно дублируется по типу паттерна;
-2) setting_seller_skin_gallery_button становится green button.
+2) setting_seller_skin_custom_button становится green button.
 
 Единственным важным условием настроек setting_seller_skin является условие при котором одна из тем должна быть включена в обязательном порядке. Обои же рассматриваются в качестве дополнительной функции. Изображение из галереи не конкурирует с темами а накладывается поверх выбранной темы.
  
