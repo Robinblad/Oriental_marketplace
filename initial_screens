@@ -330,7 +330,7 @@ init_usual_screen
 В режиме usual_mode при первом открытии shop_screen, поверх него открывается init_usual_screen. Подразумевается что юзер уже ввел как минимум setting_user_username и setting_user_phone в init_trial_screen, поэтому все ранее введенные значения вставляются в поля init_usual_screen_form. Большинство опций обязательны для настройки. init_usual_screen состоит из 13 секций представленный следующим перечнем настроек:
 
                codename:                          header:                    type:          text:                valid/invalid/default:          important:
-s1)  [setting_seller_header          ] "НАСТРОЙТЕ ВАШ ПРОФИЛЬ"                [header   ]        		      
+s1)  [setting_seller_header          ] "НАСТРОЙТЕ ВАШ ПРОФИЛЬ"            [header   ]        		      
 s2)  [setting_seller_protip          ]                                    [paragraph] { параграф текста }
 s3)  [setting_user_username          ] "ВАШЕ ИМЯ ИЛИ НАЗВАНИЕ КОМПАНИИ *" [input    ]                     [green border/red border             ]  [ yes ]
 s4)  [setting_user_country           ] "УКАЖИТЕ СТРАНУ *"                 [dropdown ] { название страны } [green button                        ]  [ yes ]
@@ -2854,8 +2854,6 @@ seller_active_time_auto_button_yes
 • green button
 ------ в любой ситуации.
 ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
-
-
 
 
 
