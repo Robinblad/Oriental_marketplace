@@ -4,6 +4,8 @@
 
 
 
+
+
 init_trial_screen 
 ■■■■■■■■■■■■■■■■■
 В режиме trial_mode при первом открытии shop_screen, поверх него открывается форма init_trial_screen_form из 10 основных секций озаглавленный "ВВЕДИТЕ ВАШИ ДАННЫЕ", где юзеру предлагается задать следующий перечень настроек (часть полей обязательны для заполнения):
@@ -332,18 +334,17 @@ init_usual_screen
                codename:                          header:                    type:          text:                valid/invalid/default:          important:
 s1)  [setting_seller_header          ] "НАСТРОЙТЕ ВАШ ПРОФИЛЬ"            [header   ]        		      
 s2)  [setting_seller_protip          ]                                    [paragraph] { параграф текста }
-s3)  [setting_user_username          ] "ВАШЕ ИМЯ ИЛИ НАЗВАНИЕ КОМПАНИИ *" [input    ]                     [green border/red border             ]  [ yes ]
-s4)  [setting_user_country           ] "УКАЖИТЕ СТРАНУ *"                 [dropdown ] { название страны } [green button                        ]  [ yes ]
-s5)  секция из двух расположенных вряд элементов:
-     [setting_user_phone_dropdown    ]                                    [dropdown ]                     [green button                        ]  [ yes ]
-     [setting_user_phone_input       ] "ВВЕДИТЕ ВАШ ТЕЛЕФОННЫЙ НОМЕР *"   [input    ]                     [green border/red border             ]  [ yes ]
-s6)  [setting_user_firstname         ] "ВВЕДИТЕ ВАШЕ НАСТОЯЩЕЕ ИМЯ *"     [input    ]                     [green border/red border             ]  [ yes ]
-s7)  [setting_user_secondname        ] "ВВЕДИТЕ ВАШУ НАСТОЯЩУЮ ФАМИЛИЮ *" [input    ]                     [green border/red border             ]  [ yes ]
-s8)  [setting_user_passport          ] "ВВЕДИТЕ ВАШ НОМЕР ПАСПОРТА *"     [input    ]                     [green border/red border             ]  [ yes ]
-s9)  [setting_seller_geoposition_shop] "УКАЖИТЕ ЛОКАЦИЮ/ТОРГОВУЮ ТОЧКУ *" [button   ] "ОПРЕДЕЛИТЬ"        [green button/red button/gray button ]  [ yes ]
-s10) [setting_seller_active          ] "УКАЖИТЕ РАБОЧЕЕ ВРЕМЯ *"          [button   ] "НАСТРОИТЬ"         [green button/red button/gray button ]  [ yes ]
-s11) [setting_seller_img             ] "НАСТРОЙТЕ АВАТАР"                 [button   ] "УСТАНОВИТЬ"        [green button/gray button/gray button]  [ no  ]
-s12) [setting_seller_skin            ] "НАСТРОЙТЕ ФОНОВОЕ ИЗОБРАЖЕНИЕ"    [button   ] "УСТАНОВИТЬ"        [green button/gray button/gray button]  [ no  ]
+s3)  [setting_user_username          ] "ИМЯ ИЛИ НАЗВАНИЕ КОМПАНИИ *"      [input    ]                     [green border/red border             ]  [ yes ]
+s5)  [setting_user_phone             ] секция из двух расположенных вряд элементов:
+---- [setting_user_phone_dropdown    ]                                    [dropdown ]                     [green button                        ]  [ yes ]
+---- [setting_user_phone_input       ] "ТЕЛЕФОННЫЙ НОМЕР *"               [input    ]                     [green border/red border             ]  [ yes ]
+s6)  [setting_user_firstname         ] "НАСТОЯЩЕЕ ИМЯ *"                  [input    ]                     [green border/red border             ]  [ yes ]
+s7)  [setting_user_secondname        ] "НАСТОЯЩАЯ ФАМИЛИЯ *"              [input    ]                     [green border/red border             ]  [ yes ]
+s8)  [setting_user_passport          ] "НОМЕР ПАСПОРТА *"                 [input    ]                     [green border/red border             ]  [ yes ]
+s9)  [setting_seller_geoposition_shop] "ЛОКАЦИЮ/ТОРГОВУЮ ТОЧКУ *"         [button   ] "ОПРЕДЕЛИТЬ"        [green button/red button/gray button ]  [ yes ]
+s10) [setting_seller_active          ] "РАБОЧЕЕ ВРЕМЯ *"                  [button   ] "НАСТРОИТЬ"         [green button/red button/gray button ]  [ yes ]
+s11) [setting_seller_img             ] "АВАТАР"                           [button   ] "УСТАНОВИТЬ"        [green button/gray button/gray button]  [ no  ]
+s12) [setting_seller_skin            ] "ФОНОВОЕ ИЗОБРАЖЕНИЕ"              [button   ] "УСТАНОВИТЬ"        [green button/gray button/gray button]  [ no  ]
 s13) секция из двух расположенных вряд кнопок:
 ---- [setting_seller_button_no       ]                                    [button   ] "ОТМЕНА"            [gray button                         ]
 ---- [setting_seller_button_yes      ]                                    [button   ] "ПРИМЕНИТЬ"         [green button/gray button            ]
@@ -353,7 +354,7 @@ s13) секция из двух расположенных вряд кнопок
                                                                ————————————————————————————————————————————————
 
      [setting_seller_header                                ]               "НАСТРОЙТЕ ВАШ ПРОФИЛЬ"
-         
+     [setting_seller_protip                                ]    "ПЕРЕД ТЕМ КАК ПРОДОЛЖИТЬ, ПОЖАЛУЙСТА УКАЖИТЕ ВАШИ ДАННЫЕ"
      [setting_seller_protip                                ]    "* - ОБЯЗАТЕЛЬНО ДЛЯ ЗАПОЛНЕНИЯ"
      [setting_seller_protip                                ]    "В ДАЛЬНЕЙШЕМ ВЫ МОЖЕТЕ ИЗМЕНИТЬ/ОТРЕДАКТИРОВАТЬ ДАННЫЕ ЧЕРЕЗ НАСТРОЙКИ"
          
@@ -477,61 +478,106 @@ INTERACTION
 
 🡆 setting_user_phone
 
-Опция setting_user_phone представлена в качестве комбинации dropdown (позиция - слева) и input (позиция - справа). Кнопка для выбора кода страны выполнена в виде dropdown (setting_user_phone_dropdown), имея контент представленный по шаблону: { flag | +code }, который проставляется автоматически основываясь на данных setting_user_country. При нажатии на setting_user_phone_dropdown выпадает список кодов с соответствующим этому коду названием страны по схеме: [ code - country ]. Согласно setting_user_country автоматически определяется длина телефонного номера используемого в соответствующей стране, на основе чего строится шаблон, где в input (setting_user_phone_input) проставляется количество ячеек под цифры. 
+Опция setting_user_phone предназначена для ввода номера мобильного телефона, представлена в качестве секции setting_user_phone_form включающей:
+- setting_user_phone_header      - имеет следующее содержание: "Телефонный номер";
+- setting_user_phone_form_button - кнопка с выпадающим списком setting_user_phone_dropdown предназначеннная для выбора кода страны;
+- setting_user_phone_form_input  - поле предназначеннное для ввода телефонного номера.
 
+                  codename:                           type:         default_color:           valid/invalid:          important:      location:
+1)  [ setting_user_phone_header                ]   [ header   ]                                                                     [ center  ]
+2)  [ setting_user_phone_form                  ]                                                                                    [ center  ]
+--- [ setting_user_phone_form_button           ]   [ button   ]    [ gray button  ]   [green button / gray button]    [ yes ]       [ left    ]
+------ [ setting_user_phone_form_button_flag   ]   [ icon     ]                                                                     [ left    ]
+------ [ setting_user_phone_form_button_code   ]   [ number   ]                                                                     [ right   ]
+3)  [ setting_user_phone_form_input            ]   [ input    ]    [ gray border  ]   [green button / red button ]    [ yes ]       [ right   ]
+
+Сам выпадающий список представлен сущностью setting_user_phone_dropdown состоящий из элементов кнопок setting_user_phone_dropdown_item:
+
+4)  [ setting_user_phone_dropdown              ]   [ dropdown ]                                                                     [ center  ]
+5)  [ setting_user_phone_dropdown_item         ]   [ button   ]    [ gray button  ]   [gray button               ]    [ yes ]       [ center  ]
+--- [ setting_user_phone_dropdown_item_flag    ]   [ icon     ]                                                                     [ left    ]
+--- [ setting_user_phone_dropdown_item_code    ]   [ number   ]                                                                     [ between ]
+--- [ setting_user_phone_dropdown_item_country ]   [ text     ]                                                                     [ right   ]	
+
+✠ details
+Опция setting_user_phone представляет собой комбинацию кнопки setting_user_phone_form_button (позиция - слева) и setting_user_phone_form_input (позиция - справа). setting_user_phone_form_button для выбора кода страны выполнена в виде кнопки и представлена 2 составляющими: setting_user_phone_form_button_flag (позиция - слева), setting_user_phone_form_button_code (позиция - справа); по шаблону: { flag | +code }. Согласно setting_user_phone_form_button_code автоматически определяется длина телефонного номера используемого в соответствующей стране, на основе чего строится шаблон, где в input (setting_user_phone_form_input) проставляется количество ячеек под цифры от количества которых отталкиваются алгоритмы input_checks. 
+При нажатии setting_user_phone_form_button, выпадает список setting_user_phone_dropdown представленный столбцом кнопок setting_user_phone_dropdown_item с содержанием выполненным по шаблону: { flag | +code | country name }.
+
+✠ actions
+• setting_user_phone_form_button:
+╠ valid / invalid
+║ occasion: нажатие setting_user_phone_form_button;
+║ condition: в любой ситуации;
+╙ result: выпадает список setting_user_phone_dropdown.
+• setting_user_phone_dropdown_item:
+╠ valid / invalid
+║ occasion: нажатие setting_user_phone_dropdown_item;
+║ condition: в любой ситуации;
+║ result: 
+║ && - происходит выбор setting_user_phone_dropdown_item_code и setting_user_phone_dropdown_item_flag согласно нажатой setting_user_phone_dropdown_item;
+║ && - setting_user_phone_dropdown_item_code и setting_user_phone_dropdown_item_flag вставляются в setting_user_phone_form как setting_user_phone_form_button_flag и ╙ setting_user_phone_form_button_code соответственно.
 
 ✠ input_checks
 • integrity: 
 Делается анализ на предмет длины (целостности) номера в соответствии с шаблоном страны.
-При вводе phone, в ситуации если цифр меньше чем предназначенных для них ячеек, под setting_user_phone_input всплывает setting_user_phone_alert_integrity.
+При вводе phone, в ситуации если цифр меньше чем предназначенных для них ячеек, под setting_user_phone_form_input всплывает setting_user_phone_form_alert_integrity.
 • stopsymbol:
 Анализ на нажатие запрещенных клавиш базирующийся на превентивной блокировке ввода со всех клавиш кроме отвечающих за цифры. 
-При вводе phone, в ситуации если использованы любые символы кроме цифр, под setting_user_phone_input всплывает setting_user_phone_alert_stopsymbol.
+При вводе phone, в ситуации если использованы любые символы кроме цифр, под setting_user_phone_form_input всплывает setting_user_phone_form_alert_stopsymbol.
 • emptiness:
 Реакция на факт отсутствие введенных данных.
-В ситуации если поле пустое, а юзер нажимает на setting_seller_button_yes, под setting_user_phone_input всплывает setting_user_phone_alert_emptiness.
+В ситуации если поле пустое, а юзер нажимает на setting_seller_button_yes, под setting_user_phone_form_input всплывает setting_user_phone_form_alert_emptiness.
 
 INTERACTION
-—• setting_user_phone_input
+—• setting_user_phone_form_input
 
 ✠ color_states
 • red border (при соблюдении одного или всех нижеперечисленных условий): 
-- || - невалидность по факту проверки на integrity; 
-- || - невалидность по факту проверки на stopsymbol; 
-- || - невалидность по факту проверки на emptiness;
+- || - invalid по факту проверки на integrity; 
+- || - invalid по факту проверки на stopsymbol; 
+- || - invalid по факту проверки на emptiness;
+- || - нажатие setting_seller_button_yes при условии || invalid по integrity || invalid по emptiness.
 • green border (при соблюдении всех нижеперечисленных условий):
-- && - валидность по факту проверки на integrity;
-- && - валидность по факту проверки на stopsymbol;
-- && - валидность по факту проверки на emptiness.
+- && - valid по факту проверки на integrity;
+- && - valid по факту проверки на stopsymbol;
+- && - valid по факту проверки на emptiness.
 
 ✠ alert_states
-• setting_user_phone_alert_prompt:
+• setting_user_phone_form_alert_prompt:
 - focusing: да;
-- location: появляется над setting_user_phone_input;
-- occasion: в процессе ввода данных в setting_user_phone_input;
+- location: появляется над setting_user_phone_form_input;
+- occasion: в процессе ввода данных в setting_user_phone_form_input;
 - content:  "УКАЖИТЕ ТЕЛЕФОННЫЙ КОД СТРАНЫ ИСПОЛЬЗУЯ КНОПКУ ПЕРЕД СТРОКОЙ. ДАЛЕЕ ВВЕДИТЕ ВСЕ ЦИФРЫ ВАШЕГО ТЕЛЕФОННОГО НОМЕРА".
-• setting_user_phone_alert_integrity:
+• setting_user_phone_form_alert_integrity:
 - focusing: да;
-- location: появляется под setting_user_phone_input;
-- occasion: если в setting_user_phone_input введено цифр < ячеек;
+- location: появляется под setting_user_phone_form_input;
+- occasion: если в setting_user_phone_form_input введено цифр < ячеек;
 - content:  "ПОЖАЛУЙСТА ПРАВИЛЬНО ВВОДИТЕ ВСЕ ЦИФРЫ".
-• setting_user_phone_alert_stopsymbol:
+• setting_user_phone_form_alert_stopsymbol:
 - focusing: да;
-- location: появляется под setting_user_phone_input;
+- location: появляется под setting_user_phone_form_input;
 - occasion: если использованы запрещенные символы;
 - content:  "ИСПОЛЬЗОВАН ЗАПРЕЩЕННЫЙ СИМВОЛ: {указывается запрещенный символ жирным шрифтом белого цвета на красном фоне}. ПОЖАЛУЙСТА ИСПОЛЬЗУЙТЕ ТОЛЬКО ЦИФРЫ".
-• setting_user_phone_alert_emptiness:
+• setting_user_phone_form_alert_emptiness:
 - focusing: нет;
-- location: появляется под setting_user_phone_input;
-- occasion: нажатие на setting_seller_button_yes, если setting_user_phone_input пустой;
+- location: появляется под setting_user_phone_form_input;
+- occasion: нажатие на setting_seller_button_yes, если setting_user_phone_form_input пустой;
 - content:  "ПОЖАЛУЙСТА ВВЕДИТЕ ЗДЕСЬ ВАШЕ ИМЯ".
 
+INTERACTION
+—• setting_user_phone_form_button
+
+✠ color_states  
+• gray button
+------ если setting_user_phone_form_button находится в disable_state;
+• green button
+------ если setting_user_phone_form_button находится в enable_state.
 
 INTERACTION
 —• setting_user_phone_dropdown
 
-✠ color_states   (setting_user_phone_dropdown) 
-• green button:
+✠ color_states  
+• gray button:
 - при любом состоянии.
 
 
@@ -2516,12 +2562,12 @@ seller_active_time_auto_button_yes
                 codename:                         type:         button_name:       default_color:            valid/invalid:             important:
 s1) [ setting_seller_img_header       ]        [ header    ]        		      
 s2) [ setting_seller_img_protip       ]        [ paragraph ]  
-s3) [ setting_seller_img_frame        ]        [ editor    ]
---- [ setting_seller_img_frame_edit   ]        [ frame     ]                      
+s3) [ setting_seller_img_frame        ] секция из редактируемой области и 2 расположенных вряд кнопок:
+--- [ setting_seller_img_frame_edit   ]        [ editor    ]                      
 --- [ setting_seller_img_frame_zoom   ]        [ frame     ]                      [ gray border  ]    [ green border / gray border ]
 --- [ setting_seller_img_frame_protip ]        [ button    ]    "?"               [ gray button  ]    [ gray button                ]
 --- [ setting_seller_img_frame_test   ]        [ button    ]    "ТЕСТ"            [ gray button  ]    [ gray button                ]      [ no ]
-s4) секция из заголовка и двух расположенных столбцом кнопок:
+s4) [ setting_seller_img_add          ] секция из заголовка и двух расположенных столбцом кнопок:
 --- [ setting_seller_img_add_header   ]        [ header    ]
 --- [ setting_seller_img_add_selfie   ]        [ button    ]    "СЕЛФИ"           [ gray button  ]    [ gray  button / gray button ]      [ no ]
 --- [ setting_seller_img_add_gallery  ]        [ button    ]    "ГАЛЕРЕЯ"         [ gray button  ]    [ green button / gray button ]      [ no ]
@@ -2664,12 +2710,12 @@ setting_seller_img_button_yes
                 codename:                          type:           button_name:     default_color:          valid/invalid:           important:     location:
 s1) [ setting_seller_skin_header             ]   [ header    ]                                                                                      [ center ]
 s2) [ setting_seller_skin_protip             ]   [ paragraph ]                                                                                      [ center ] 
-s3) секция из 4 элементов расположенных сверху-вниз в следующем порядке:
+s3) [ setting_seller_skin_theme              ]   секция из 4 элементов расположенных сверху-вниз в следующем порядке:
 --- [ setting_seller_skin_theme_header       ]   [ header    ]                                                                                      [ center ]
 --- [ setting_seller_skin_theme_light_button ]   [ button    ]    "СВЕТЛАЯ ТЕМА"   [ gray button  ]  [ green button / gray button ]  [ yes/no ]     [ center ]
 --- [ setting_seller_skin_theme_gray_button  ]   [ button    ]    "СЕРАЯ ТЕМА"     [ green button ]  [ green button / gray button ]  [ yes/no ]     [ center ]
 --- [ setting_seller_skin_theme_dark_button  ]   [ button    ]    "ТЁМНАЯ ТЕМА"    [ gray button  ]  [ green button / gray button ]  [ yes/no ]     [ center ]
-s4) секция из 4 элементов расположенных сверху-вниз в следующем порядке:
+s4) [ setting_seller_skin_custom             ]   секция из 4 элементов расположенных сверху-вниз в следующем порядке:
 --- [ setting_seller_skin_custom_header      ]   [ header    ]                                                                                      [ center ]
 --- [ setting_seller_skin_custom_button      ]   [ button    ]    "ГАЛЕРЕЯ"        [ gray button  ]  [ green button / gray button ]  [ no     ]     [ center ]
 --- [ setting_seller_skin_custom_widget      ]   [ widget    ]                     [ gray border  ]  [ green border / gray border ]  [ no     ]     [ center ]
@@ -2854,6 +2900,7 @@ seller_active_time_auto_button_yes
 • green button
 ------ в любой ситуации.
 ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+
 
 
 
