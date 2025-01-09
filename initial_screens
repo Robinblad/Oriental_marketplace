@@ -3,8 +3,6 @@
 
 
 
-
-
 init_trial_screen 
 ■■■■■■■■■■■■■■■■■
 В режиме trial_mode при первом открытии shop_screen, поверх него открывается форма init_trial_screen_form из 10 основных секций озаглавленный "ВВЕДИТЕ ВАШИ ДАННЫЕ", где юзеру предлагается задать следующий перечень настроек (часть полей обязательны для заполнения):
@@ -326,13 +324,13 @@ init_usual_screen
                codename:                          header:                    type:          text:                valid/invalid/default:          important:
 s1)  [setting_seller_header          ] "НАСТРОЙТЕ ВАШ ПРОФИЛЬ"            [header   ]        		      
 s2)  [setting_seller_protip          ]                                    [paragraph] { параграф текста }
-s3)  [setting_user_username          ] "ИМЯ ИЛИ НАЗВАНИЕ КОМПАНИИ *"      [input    ]                     [green border/red border/red border  ]  [ yes ]
-s5)  [setting_user_phone             ] секция из двух расположенных вряд элементов:
----- [setting_user_phone_dropdown    ]                                    [dropdown ]                     [green button                        ]  [ yes ]
----- [setting_user_phone_input       ] "ТЕЛЕФОННЫЙ НОМЕР *"               [input    ]                     [green border/red border/red border  ]  [ yes ]
-s6)  [setting_user_firstname         ] "ИМЯ *"                            [input    ]                     [green border/red border/red border  ]  [ yes ]
-s7)  [setting_user_secondname        ] "ФАМИЛИЯ *"                        [input    ]                     [green border/red border/red border  ]  [ yes ]
-s8)  [setting_user_passport          ] "НОМЕР ПАСПОРТА *"                 [input    ]                     [green border/red border/red border  ]  [ yes ]
+s3)  [setting_user_username          ] "ИМЯ ИЛИ НАЗВАНИЕ КОМПАНИИ *"      [input    ]                     [green border/red border/gray border ]  [ yes ]
+s5)  [setting_user_phone_form        ] секция из двух расположенных вряд элементов:
+---- [setting_user_phone_form_button ]                                    [dropdown ]                     [green button                        ]  [ yes ]
+---- [setting_user_phone_form_input  ] "ТЕЛЕФОННЫЙ НОМЕР *"               [input    ]                     [green border/red border/gray border ]  [ yes ]
+s6)  [setting_user_firstname         ] "ИМЯ *"                            [input    ]                     [green border/red border/gray border ]  [ yes ]
+s7)  [setting_user_secondname        ] "ФАМИЛИЯ *"                        [input    ]                     [green border/red border/gray border ]  [ yes ]
+s8)  [setting_user_passport          ] "НОМЕР ПАСПОРТА *"                 [input    ]                     [green border/red border/gray border ]  [ yes ]
 s9)  [setting_seller_geoposition_shop] "ГЕОЛОКАЦИЯ *"                     [button   ] "ОТКРЫТЬ НАСТРОЙКИ" [green button/red button/gray button ]  [ yes ]
 s10) [setting_seller_active          ] "РАБОЧЕЕ ВРЕМЯ *"                  [button   ] "ОТКРЫТЬ НАСТРОЙКИ" [green button/red button/gray button ]  [ yes ]
 s11) [setting_seller_img             ] "АВАТАР"                           [button   ] "ОТКРЫТЬ НАСТРОЙКИ" [green button/gray button/gray button]  [ no  ]
@@ -342,34 +340,34 @@ s13) секция из двух расположенных вряд кнопок
 ---- [setting_seller_button_yes      ]                                    [button   ] "ПРИМЕНИТЬ"         [green button/gray button            ]
 
 
-                                                               Схематическое представление init_usual_screen:
-                                                               ————————————————————————————————————————————————
+                                                                                 Схематическое представление init_usual_screen:
+                                                                                 ————————————————————————————————————————————————
 
-     [setting_seller_header                                ]    "НАСТРОЙТЕ ВАШ ПРОФИЛЬ"
-     [setting_seller_protip                                ]    "ПЕРЕД ТЕМ КАК ПРОДОЛЖИТЬ, ПОЖАЛУЙСТА УКАЖИТЕ ВАШИ ДАННЫЕ"
-     [setting_seller_protip                                ]    "* - ТРЕБУЕТСЯ УКАЗАТЬ"
-     [setting_seller_protip                                ]    "В ДАЛЬНЕЙШЕМ ВЫ МОЖЕТЕ ИЗМЕНИТЬ/ОТРЕДАКТИРОВАТЬ ДАННЫЕ ЧЕРЕЗ НАСТРОЙКИ"
+     [setting_seller_header                                         ]    "НАСТРОЙТЕ ВАШ ПРОФИЛЬ"
+     [setting_seller_protip                                         ]    "ПЕРЕД ТЕМ КАК ПРОДОЛЖИТЬ, ПОЖАЛУЙСТА УКАЖИТЕ ВАШИ ДАННЫЕ"
+     [setting_seller_protip                                         ]    "* - ТРЕБУЕТСЯ УКАЗАТЬ"
+     [setting_seller_protip                                         ]    "В ДАЛЬНЕЙШЕМ ВЫ МОЖЕТЕ ИЗМЕНИТЬ/ОТРЕДАКТИРОВАТЬ ДАННЫЕ ЧЕРЕЗ НАСТРОЙКИ"
          
-     [setting_user_username_header                         ]    "ИМЯ ИЛИ НАЗВАНИЕ КОМПАНИИ *"
-     [setting_user_username_input                          ]    <                       поле для ввода данных                          >
-	 [setting_user_phone_header                            ]    "ТЕЛЕФОННЫЙ НОМЕР *"
-	 [setting_user_phone_dropdown  setting_user_phone_input]    <             выпадающий список | поле для ввода данных                >
-     [setting_user_firstname_header                        ]    "ИМЯ *"
-     [setting_user_firstname_input                         ]    <                       поле для ввода данных                          >
-     [setting_user_secondname_header                       ]    "ФАМИЛИЯ *"
-     [setting_user_secondname_input                        ]    <                       поле для ввода данных                          >
-     [setting_user_passport_header                         ]    "НОМЕР ПАСПОРТА *"
-     [setting_user_passport_input                          ]    <                       поле для ввода данных                          >
-     [setting_seller_geoposition_shop_header               ]    "ГЕОЛОКАЦИЯ *"
-     [setting_seller_geoposition_shop_button               ]    <                       кнопка: "ОТКРЫТЬ НАСТРОЙКИ"                    >
-     [setting_seller_active_header                         ]    "РАБОЧЕЕ ВРЕМЯ *"
-     [setting_seller_active_button                         ]    <                       кнопка: "ОТКРЫТЬ НАСТРОЙКИ"                    >
-     [setting_seller_img_header                            ]    "НАСТРОЙТЕ АВАТАР"
-     [setting_seller_img_button                            ]    <                       кнопка: "ОТКРЫТЬ НАСТРОЙКИ"                    >
-     [setting_seller_skin_header                           ]    "НАСТРОЙТЕ ФОНОВОЕ ИЗОБРАЖЕНИЕ"
-     [setting_seller_skin_button                           ]    <                       кнопка: "ОТКРЫТЬ НАСТРОЙКИ"                    >
+     [setting_user_username_header                                  ]    "ИМЯ ИЛИ НАЗВАНИЕ КОМПАНИИ *"
+     [setting_user_username_input                                   ]    <                       поле для ввода данных                          >
+	 [setting_user_phone_header                                     ]    "ТЕЛЕФОННЫЙ НОМЕР *"
+	 [setting_user_phone_form_button + setting_user_phone_form_input]    <             выпадающий список | поле для ввода данных                >
+     [setting_user_firstname_header                                 ]    "ИМЯ *"
+     [setting_user_firstname_input                                  ]    <                       поле для ввода данных                          >
+     [setting_user_secondname_header                                ]    "ФАМИЛИЯ *"
+     [setting_user_secondname_input                                 ]    <                       поле для ввода данных                          >
+     [setting_user_passport_header                                  ]    "НОМЕР ПАСПОРТА *"
+     [setting_user_passport_input                                   ]    <                       поле для ввода данных                          >
+     [setting_seller_geoposition_shop_header                        ]    "ГЕОЛОКАЦИЯ *"
+     [setting_seller_geoposition_shop_button                        ]    <                       кнопка: "ОТКРЫТЬ НАСТРОЙКИ"                    >
+     [setting_seller_active_header                                  ]    "РАБОЧЕЕ ВРЕМЯ *"
+     [setting_seller_active_button                                  ]    <                       кнопка: "ОТКРЫТЬ НАСТРОЙКИ"                    >
+     [setting_seller_img_header                                     ]    "НАСТРОЙТЕ АВАТАР"
+     [setting_seller_img_button                                     ]    <                       кнопка: "ОТКРЫТЬ НАСТРОЙКИ"                    >
+     [setting_seller_skin_header                                    ]    "НАСТРОЙТЕ ФОНОВОЕ ИЗОБРАЖЕНИЕ"
+     [setting_seller_skin_button                                    ]    <                       кнопка: "ОТКРЫТЬ НАСТРОЙКИ"                    >
          
-     [setting_seller_button_no    setting_seller_button_yes]    <              кнопка: "ОТМЕНА" | кнопка: "ПРИМЕНИТЬ"                  >
+     [setting_seller_button_no    setting_seller_button_yes         ]    <              кнопка: "ОТМЕНА" | кнопка: "ПРИМЕНИТЬ"                  >
 ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 
 По умолчанию часть формы (с введенными ранее данными) имеет зеленый цвет полей и кнопок. Незаполненные пустые поля и кнопки имеют красный цвет. После того как юзер начинает вводить данные, эти элементы могут менять цвет между зеленым и красным, в зависимости от валидности информации. Если s3-s9 имеют зеленый цвет input и button, тогда setting_seller_button_yes также приобретает зеленый цвет. 
@@ -2901,7 +2899,6 @@ seller_active_time_auto_button_yes
 • green button
 ------ в любой ситуации.
 ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
-
 
 
 
