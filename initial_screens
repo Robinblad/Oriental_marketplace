@@ -377,6 +377,11 @@ s13) секция из двух расположенных вряд кнопок
 
 🡆 setting_user_username
 
+✠ details
+Секция setting_user_username состоит из блока включающего 2 компонента:
+- заголовок setting_user_username_header с содержанием: "ИМЯ ИЛИ НАЗВАНИЕ КОМПАНИИ *";
+- поле для ввода данных setting_user_username_input.
+
 ✠ actions
 • setting_user_username_input:
 ╠ valid / invalid
@@ -600,6 +605,11 @@ INTERACTION
 
 🡆 setting_user_firstname
 
+✠ details
+Секция setting_user_firstname состоит из блока включающего 2 компонента:
+- заголовок setting_user_firstname_header с содержанием: "ИМЯ *";
+- поле для ввода данных setting_user_firstname_input.
+
 ✠ actions
 • setting_user_firstname_input:
 ╠ valid / invalid
@@ -676,6 +686,11 @@ INTERACTION
 
 
 🡆 setting_user_secondname
+
+✠ details
+Секция setting_user_secondname состоит из блока включающего 2 компонента:
+- заголовок setting_user_secondname_header с содержанием: "ФАМИЛИЯ *";
+- поле для ввода данных setting_user_secondname_input.
 
 ✠ actions
 • setting_user_secondname_input:
@@ -754,6 +769,11 @@ INTERACTION
 
 🡆 setting_user_passport
 
+✠ details
+Секция setting_user_passport состоит из блока включающего 2 компонента:
+- заголовок setting_user_passport_header с содержанием: "НОМЕР ПАСПОРТА *";
+- поле для ввода данных setting_user_passport_input.
+
 ✠ actions
 • setting_user_passport_input:
 ╠ valid / invalid
@@ -831,6 +851,11 @@ INTERACTION
 
 🡆 setting_seller_geoposition_shop
 
+✠ details
+Секция setting_seller_geoposition_shop состоит из блока включающего 2 компонента:
+- заголовок setting_seller_geoposition_shop_header с содержанием: "ГЕОЛОКАЦИЯ *";
+- кнопка setting_seller_geoposition_shop_button с наименованием "ОТКРЫТЬ НАСТРОЙКИ".
+
 ✠ actions
 • setting_seller_geoposition_shop_button:
 ╠ valid / invalid
@@ -839,15 +864,11 @@ INTERACTION
 ╙ result: открывается setting_seller_geoposition_shop_screen;
 
 ✠ input_checks
-Фильтры проверяющие на соответствие нормативам содержание setting_seller_geoposition_shop_button. Если в ходе проверки фиксируется несоответствие, тогда состояние setting_seller_geoposition_shop_button позиционируется как invalid, в соответствии с чем отображается соответствующее типу проблемы предупреждение.
+Фильтр проверяющий на соответствие нормативу содержание setting_seller_geoposition_shop_button. Если в ходе проверки фиксируется несоответствие, тогда состояние setting_seller_geoposition_shop_button позиционируется как invalid, в соответствии с чем отображается соответствующее типу проблемы предупреждение.
 • omission:
 Реакция на факт отсутствие настройки setting_seller_geoposition_shop.
 Работает в inactive_state.
 В ситуации отстутствия фактора {seller_geoposition_shop_determine_function = success}, если юзер нажимает на setting_seller_button_yes, под setting_seller_geoposition_shop_button всплывает setting_seller_geoposition_shop_alert_omission.
-• emptiness:
-Анализ на пустотность.
-Работает в active_state и inactive_state.
-Работает в любой ситуации делая проверку на предмет отсутствия настройки setting_seller_geoposition_shop. 
 
 ✠ color_states   
 • red border: 
@@ -855,7 +876,12 @@ INTERACTION
 • green border:
 ------ фактор {seller_geoposition_shop_determine_function = success}.
 
-
+✠ alert_states
+• setting_seller_geoposition_shop_alert_omission:
+- focusing: нет;
+- location: появляется под setting_seller_geoposition_shop_button;
+- occasion: нажатие на setting_seller_button_yes, если не сделаны настройки в setting_seller_geoposition_shop_screen;
+- content:  "ПОЖАЛУЙСТА СДЕЛАЙТЕ НАСТРОЙКУ".
 
 
 
@@ -3073,6 +3099,8 @@ setting_seller_button_yes
 - || - invalid по setting_seller_geoposition_shop;
 - || - invalid по setting_seller_active.
 ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+
+
 
 
 
