@@ -5,9 +5,70 @@
 
 
 
+
 init_trial_screen 
 ■■■■■■■■■■■■■■■■■
-В режиме trial_mode при первом открытии shop_screen, поверх него открывается форма init_trial_screen_form из 10 основных секций озаглавленный "ВВЕДИТЕ ВАШИ ДАННЫЕ", где юзеру предлагается задать следующий перечень настроек (часть полей обязательны для заполнения):
+В режиме trial_mode при первом открытии shop_screen, поверх него открывается форма init_trial_screen_form из 9 основных секций озаглавленный "ВВЕДИТЕ ВАШИ ДАННЫЕ", где юзеру предлагается задать следующий перечень настроек (часть полей обязательны для заполнения):
+
+                 codename:                                header:                    type:          text:                valid/invalid/default:          important:
+s1)    [setting_seller_header                 ] "НАСТРОЙТЕ ВАШ ПРОФИЛЬ"            [header   ]        		      
+s2)    [setting_seller_protip                 ]                                    [paragraph] { параграф текста }
+s3)  ┌─[setting_user_username                 ]                                    [section  ]
+---- ├ [setting_user_username_header          ] "ИМЯ ИЛИ НАЗВАНИЕ КОМПАНИИ *"      [header   ]                      
+---- └ [setting_user_username_input           ]                                    [input    ]                     [green border/red border/red border  ]  [ yes ]  
+s4)  ┌─[setting_user_phone_form               ]                                    [section  ]
+---- ├ [setting_user_phone_form_button        ]                                    [dropdown ]                     [green button/red button/green button]  [ yes ]
+---- └ [setting_user_phone_form_input         ] "ТЕЛЕФОННЫЙ НОМЕР *"               [input    ]                     [green border/red border/red border  ]  [ yes ]
+s5)  ┌─[setting_seller_geoposition_shop       ]                                    [section  ]
+---- ├ [setting_seller_geoposition_shop_header] "ГЕОЛОКАЦИЯ *"                     [header   ]  
+---- └ [setting_seller_geoposition_shop_button]                                    [button   ] "ОТКРЫТЬ НАСТРОЙКИ" [green button/red button/gray button ]  [ yes ]
+s6)  ┌─[setting_seller_active                 ]                                    [section  ]
+---- ├ [setting_seller_active_header          ] "РАБОЧЕЕ ВРЕМЯ *"                  [header   ]  
+---- └ [setting_seller_active_button          ]                                    [button   ] "ОТКРЫТЬ НАСТРОЙКИ" [green button/red button/gray button ]  [ yes ]
+s7)  ┌─[setting_seller_img                    ]                                    [section  ]
+---- ├ [setting_seller_img_header             ] "АВАТАР"                           [header   ]  
+---- └ [setting_seller_img_button             ]                                    [button   ] "ОТКРЫТЬ НАСТРОЙКИ" [green button/gray button/gray button]  [ no  ]
+s8)  ┌─[setting_seller_skin                   ]                                    [section  ]
+---- ├ [setting_seller_skin_header            ] "ФОНОВОЕ ИЗОБРАЖЕНИЕ"              [header   ]  
+---- └ [setting_seller_skin_button            ]                                    [button   ] "ОТКРЫТЬ НАСТРОЙКИ" [green button/gray button/gray button]  [ no  ]
+s9)  ┌─[setting_seller_button                 ]                                    [section  ]
+---- ├ [setting_seller_button_no              ]                                    [button   ] "ОТМЕНА"            [gray button                         ]  [ no  ]
+---- └ [setting_seller_button_yes             ]                                    [button   ] "ПРИМЕНИТЬ"         [green button/red button/red button  ]  [ yes ]
+
+
+                                                                                 Схематическое представление init_trial_screen:
+                                                                                 ————————————————————————————————————————————————
+
+     [setting_seller_header                                         ]    "НАСТРОЙТЕ ВАШ ПРОФИЛЬ"
+     [setting_seller_protip                                         ]    "ПЕРЕД ТЕМ КАК ПРОДОЛЖИТЬ, ПОЖАЛУЙСТА УКАЖИТЕ ВАШИ ДАННЫЕ"
+     [setting_seller_protip                                         ]    "* - ТРЕБУЕТСЯ УКАЗАТЬ"
+     [setting_seller_protip                                         ]    "В ДАЛЬНЕЙШЕМ ВЫ МОЖЕТЕ ИЗМЕНИТЬ/ОТРЕДАКТИРОВАТЬ ДАННЫЕ ЧЕРЕЗ НАСТРОЙКИ"  
+     [setting_user_username_header                                  ]    "ИМЯ ИЛИ НАЗВАНИЕ КОМПАНИИ *"
+     [setting_user_username_input                                   ]    <                       поле для ввода данных                          >
+     [setting_user_phone_header                                     ]    "ТЕЛЕФОННЫЙ НОМЕР *"
+     [setting_user_phone_form_button + setting_user_phone_form_input]    <             выпадающий список | поле для ввода данных                >
+     [setting_user_firstname_header                                 ]    "ИМЯ *"
+     [setting_user_firstname_input                                  ]    <                       поле для ввода данных                          >
+     [setting_user_secondname_header                                ]    "ФАМИЛИЯ *"
+     [setting_user_secondname_input                                 ]    <                       поле для ввода данных                          >
+     [setting_user_passport_header                                  ]    "НОМЕР ПАСПОРТА *"
+     [setting_user_passport_input                                   ]    <                       поле для ввода данных                          >
+     [setting_seller_geoposition_shop_header                        ]    "ГЕОЛОКАЦИЯ *"
+     [setting_seller_geoposition_shop_button                        ]    <                       кнопка: "ОТКРЫТЬ НАСТРОЙКИ"                    >
+     [setting_seller_active_header                                  ]    "РАБОЧЕЕ ВРЕМЯ *"
+     [setting_seller_active_button                                  ]    <                       кнопка: "ОТКРЫТЬ НАСТРОЙКИ"                    >
+     [setting_seller_img_header                                     ]    "НАСТРОЙТЕ АВАТАР"
+     [setting_seller_img_button                                     ]    <                       кнопка: "ОТКРЫТЬ НАСТРОЙКИ"                    >
+     [setting_seller_skin_header                                    ]    "НАСТРОЙТЕ ФОНОВОЕ ИЗОБРАЖЕНИЕ"
+     [setting_seller_skin_button                                    ]    <                       кнопка: "ОТКРЫТЬ НАСТРОЙКИ"                    >
+         
+     [setting_seller_button_no    setting_seller_button_yes         ]    <              кнопка: "ОТМЕНА" | кнопка: "ПРИМЕНИТЬ"                  >
+———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+
+
+
+
+
 
                codename:                          header:                      type:             text:                valid/invalid/default:        important:
 s1) [setting_seller_header          ] "ВВЕДИТЕ ВАШИ ДАННЫЕ"              [header        ]        		      
@@ -322,23 +383,39 @@ init_usual_screen
 ■■■■■■■■■■■■■■■■■
 В режиме usual_mode при первом открытии shop_screen, поверх него открывается init_usual_screen. Подразумевается что юзер уже ввел как минимум setting_user_username и setting_user_phone в init_trial_screen, поэтому все ранее введенные значения вставляются в поля init_usual_screen_form. Большинство опций обязательны для настройки. init_usual_screen состоит из 13 секций представленный следующим перечнем настроек:
 
-               codename:                          header:                    type:          text:                valid/invalid/default:          important:
-s1)  [setting_seller_header          ] "НАСТРОЙТЕ ВАШ ПРОФИЛЬ"            [header   ]        		      
-s2)  [setting_seller_protip          ]                                    [paragraph] { параграф текста }
-s3)  [setting_user_username          ] "ИМЯ ИЛИ НАЗВАНИЕ КОМПАНИИ *"      [input    ]                     [green border/red border/red border  ]  [ yes ]
-s5)  [setting_user_phone_form        ] секция из двух расположенных вряд элементов:
----- [setting_user_phone_form_button ]                                    [dropdown ]                     [green button/red button/green button]  [ yes ]
----- [setting_user_phone_form_input  ] "ТЕЛЕФОННЫЙ НОМЕР *"               [input    ]                     [green border/red border/red border  ]  [ yes ]
-s6)  [setting_user_firstname         ] "ИМЯ *"                            [input    ]                     [green border/red border/red border  ]  [ yes ]
-s7)  [setting_user_secondname        ] "ФАМИЛИЯ *"                        [input    ]                     [green border/red border/red border  ]  [ yes ]
-s8)  [setting_user_passport          ] "НОМЕР ПАСПОРТА *"                 [input    ]                     [green border/red border/red border  ]  [ yes ]
-s9)  [setting_seller_geoposition_shop] "ГЕОЛОКАЦИЯ *"                     [button   ] "ОТКРЫТЬ НАСТРОЙКИ" [green button/red button/gray button ]  [ yes ]
-s10) [setting_seller_active          ] "РАБОЧЕЕ ВРЕМЯ *"                  [button   ] "ОТКРЫТЬ НАСТРОЙКИ" [green button/red button/gray button ]  [ yes ]
-s11) [setting_seller_img             ] "АВАТАР"                           [button   ] "ОТКРЫТЬ НАСТРОЙКИ" [green button/gray button/gray button]  [ no  ]
-s12) [setting_seller_skin            ] "ФОНОВОЕ ИЗОБРАЖЕНИЕ"              [button   ] "ОТКРЫТЬ НАСТРОЙКИ" [green button/gray button/gray button]  [ no  ]
-s13) секция из двух расположенных вряд кнопок:
----- [setting_seller_button_no       ]                                    [button   ] "ОТМЕНА"            [gray button                         ]
----- [setting_seller_button_yes      ]                                    [button   ] "ПРИМЕНИТЬ"         [green button/red button/red button  ]
+                 codename:                                header:                    type:          text:                valid/invalid/default:          important:
+s1)    [setting_seller_header                 ] "НАСТРОЙТЕ ВАШ ПРОФИЛЬ"            [header   ]        		      
+s2)    [setting_seller_protip                 ]                                    [paragraph] { параграф текста }
+s3)  ┌─[setting_user_username                 ]                                    [section  ]
+---- ├ [setting_user_username_header          ] "ИМЯ ИЛИ НАЗВАНИЕ КОМПАНИИ *"      [header   ]                      
+---- └ [setting_user_username_input           ]                                    [input    ]                     [green border/red border/red border  ]  [ yes ]  
+s5)  ┌─[setting_user_phone_form               ]                                    [section  ]
+---- ├ [setting_user_phone_form_button        ]                                    [dropdown ]                     [green button/red button/green button]  [ yes ]
+---- └ [setting_user_phone_form_input         ] "ТЕЛЕФОННЫЙ НОМЕР *"               [input    ]                     [green border/red border/red border  ]  [ yes ]
+s6)  ┌─[setting_user_firstname                ]                                    [section  ]
+---- ├ [setting_user_firstname_header         ] "ИМЯ *"                            [header   ]                      
+---- └ [setting_user_firstname_input          ]                                    [input    ]                     [green border/red border/red border  ]  [ yes ]
+s7)  ┌─[setting_user_secondname               ]                                    [section  ]
+---- ├ [setting_user_secondname_header        ] "ФАМИЛИЯ *"                        [header   ]                      
+---- └ [setting_user_secondname_input         ]                                    [input    ]                     [green border/red border/red border  ]  [ yes ]
+s8)  ┌─[setting_user_passport                 ]                                    [section  ]
+---- ├ [setting_user_passport                 ] "НОМЕР ПАСПОРТА *"                 [header   ]                      
+---- └ [setting_user_passport                 ]                                    [input    ]                     [green border/red border/red border  ]  [ yes ]
+s9)  ┌─[setting_seller_geoposition_shop       ]                                    [section  ]
+---- ├ [setting_seller_geoposition_shop_header] "ГЕОЛОКАЦИЯ *"                     [header   ]  
+---- └ [setting_seller_geoposition_shop_button]                                    [button   ] "ОТКРЫТЬ НАСТРОЙКИ" [green button/red button/gray button ]  [ yes ]
+s10) ┌─[setting_seller_active                 ]                                    [section  ]
+---- ├ [setting_seller_active_header          ] "РАБОЧЕЕ ВРЕМЯ *"                  [header   ]  
+---- └ [setting_seller_active_button          ]                                    [button   ] "ОТКРЫТЬ НАСТРОЙКИ" [green button/red button/gray button ]  [ yes ]
+s11) ┌─[setting_seller_img                    ]                                    [section  ]
+---- ├ [setting_seller_img_header             ] "АВАТАР"                           [header   ]  
+---- └ [setting_seller_img_button             ]                                    [button   ] "ОТКРЫТЬ НАСТРОЙКИ" [green button/gray button/gray button]  [ no  ]
+s12) ┌─[setting_seller_skin                   ]                                    [section  ]
+---- ├ [setting_seller_skin_header            ] "ФОНОВОЕ ИЗОБРАЖЕНИЕ"              [header   ]  
+---- └ [setting_seller_skin_button            ]                                    [button   ] "ОТКРЫТЬ НАСТРОЙКИ" [green button/gray button/gray button]  [ no  ]
+s13) ┌─[setting_seller_button                 ]                                    [section  ]
+---- ├ [setting_seller_button_no              ]                                    [button   ] "ОТМЕНА"            [gray button                         ]  [ no  ]
+---- └ [setting_seller_button_yes             ]                                    [button   ] "ПРИМЕНИТЬ"         [green button/red button/red button  ]  [ yes ]
 
 
                                                                                  Схематическое представление init_usual_screen:
@@ -347,11 +424,11 @@ s13) секция из двух расположенных вряд кнопок
      [setting_seller_header                                         ]    "НАСТРОЙТЕ ВАШ ПРОФИЛЬ"
      [setting_seller_protip                                         ]    "ПЕРЕД ТЕМ КАК ПРОДОЛЖИТЬ, ПОЖАЛУЙСТА УКАЖИТЕ ВАШИ ДАННЫЕ"
      [setting_seller_protip                                         ]    "* - ТРЕБУЕТСЯ УКАЗАТЬ"
-     [setting_seller_protip                                         ]    "В ДАЛЬНЕЙШЕМ ВЫ МОЖЕТЕ ИЗМЕНИТЬ/ОТРЕДАКТИРОВАТЬ ДАННЫЕ ЧЕРЕЗ НАСТРОЙКИ"       
+     [setting_seller_protip                                         ]    "В ДАЛЬНЕЙШЕМ ВЫ МОЖЕТЕ ИЗМЕНИТЬ/ОТРЕДАКТИРОВАТЬ ДАННЫЕ ЧЕРЕЗ НАСТРОЙКИ"  
      [setting_user_username_header                                  ]    "ИМЯ ИЛИ НАЗВАНИЕ КОМПАНИИ *"
      [setting_user_username_input                                   ]    <                       поле для ввода данных                          >
-	 [setting_user_phone_header                                     ]    "ТЕЛЕФОННЫЙ НОМЕР *"
-	 [setting_user_phone_form_button + setting_user_phone_form_input]    <             выпадающий список | поле для ввода данных                >
+     [setting_user_phone_header                                     ]    "ТЕЛЕФОННЫЙ НОМЕР *"
+     [setting_user_phone_form_button + setting_user_phone_form_input]    <             выпадающий список | поле для ввода данных                >
      [setting_user_firstname_header                                 ]    "ИМЯ *"
      [setting_user_firstname_input                                  ]    <                       поле для ввода данных                          >
      [setting_user_secondname_header                                ]    "ФАМИЛИЯ *"
@@ -368,7 +445,7 @@ s13) секция из двух расположенных вряд кнопок
      [setting_seller_skin_button                                    ]    <                       кнопка: "ОТКРЫТЬ НАСТРОЙКИ"                    >
          
      [setting_seller_button_no    setting_seller_button_yes         ]    <              кнопка: "ОТМЕНА" | кнопка: "ПРИМЕНИТЬ"                  >
-——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 
 ✠ details
 По умолчанию часть формы (с введенными ранее данными) имеет зеленый цвет полей и кнопок. Все элементы по умолчанию находятся в inactive_state. Незаполненные пустые поля и кнопки имеют красный цвет. После того как юзер начинает вводить данные, эти элементы могут менять цвет между зеленым и красным, в зависимости от валидности информации. Если s3-s9 имеют зеленый цвет input и button, тогда setting_seller_button_yes также приобретает зеленый цвет. 
@@ -864,16 +941,16 @@ INTERACTION
 ╙ result: открывается setting_seller_geoposition_shop_screen;
 
 ✠ input_checks
-Фильтр проверяющий на соответствие нормативу содержание setting_seller_geoposition_shop_button. Если в ходе проверки фиксируется несоответствие, тогда состояние setting_seller_geoposition_shop_button позиционируется как invalid, в соответствии с чем отображается соответствующее типу проблемы предупреждение.
+Фильтр проверяющий на соответствие нормативу настроек в setting_seller_geoposition_shop_screen. Если в ходе проверки фиксируется несоответствие, тогда состояние setting_seller_geoposition_shop_button позиционируется как invalid, в соответствии с чем отображается соответствующее типу проблемы предупреждение.
 • omission:
 Реакция на факт отсутствие настройки setting_seller_geoposition_shop.
 Работает в inactive_state.
 В ситуации отстутствия фактора {seller_geoposition_shop_determine_function = success}, если юзер нажимает на setting_seller_button_yes, под setting_seller_geoposition_shop_button всплывает setting_seller_geoposition_shop_alert_omission.
 
 ✠ color_states   
-• red border: 
+• red button: 
 ------ фактор {seller_geoposition_shop_determine_function = error}
-• green border:
+• green button:
 ------ фактор {seller_geoposition_shop_determine_function = success}.
 
 ✠ alert_states
@@ -884,15 +961,6 @@ INTERACTION
 - content:  "ПОЖАЛУЙСТА СДЕЛАЙТЕ НАСТРОЙКУ".
 
 
-
-
-
-
-
-
-
-
-
 🡆🡆 setting_seller_geoposition_shop_screen
 Экран setting_seller_geoposition_shop_screen представлен 4 секциями расположенными сверху-вниз в следующем порядке:
 
@@ -901,8 +969,8 @@ s1) [ seller_geoposition_shop_header     ]    [ header    ]
 s2) [ seller_geoposition_shop_protip     ]    [ paragraph ]  
 s3) [ seller_geoposition_shop_determine  ]    [ button    ]   "ОПРЕДЕЛИТЬ"   [ gray button ]     [ green button/red button ]       [ yes ]
 s4) секция из двух расположенных вряд кнопок:
---- [ seller_geoposition_shop_button_no  ]    [ button    ]   "ОТМЕНА"       [ gray border ]     [ gray border             ]
---- [ seller_geoposition_shop_button_yes ]    [ button    ]   "ПРИМЕНИТЬ"    [ gray border ]     [ green button/red button ]
+--- [ seller_geoposition_shop_button_no  ]    [ button    ]   "ОТМЕНА"       [ gray button ]     [ gray button             ]
+--- [ seller_geoposition_shop_button_yes ]    [ button    ]   "ПРИМЕНИТЬ"    [ gray button ]     [ green button/red button ]
 
 ✠ details
 • seller_geoposition_shop_header:
@@ -986,7 +1054,29 @@ seller_geoposition_shop_button_yes
 
 
 🡆 setting_seller_active
-При тапе на кнопку "НАСТРОИТЬ" всплывает setting_seller_active_screen с настройками регулирования рабочим временем, которые представлены 5 секциями:
+
+✠ details
+Секция setting_seller_active состоит из блока включающего 2 компонента:
+- заголовок setting_seller_active_header с содержанием: "РАБОЧЕЕ ВРЕМЯ *";
+- кнопка setting_seller_active_button с наименованием "ОТКРЫТЬ НАСТРОЙКИ".
+
+✠ actions
+• setting_seller_active_button:
+╠ valid / invalid
+║ occasion: нажатие setting_seller_active_button;
+║ condition: в любой ситуации;
+╙ result: открывается setting_seller_active_screen;
+
+✠ input_checks
+В отношении setting_seller_active фильтры не действуют, так как настройки setting_seller_active_screen настроены по умолчанию и при корректировке не могут иметь статус invalid.
+
+✠ color_states   
+• green button:
+------ в любой ситуации.
+
+
+🡆🡆 setting_seller_active_screen
+Экран setting_seller_active_screen с настройками регулирования рабочим временем представлен 5 секциями расположенными сверху-вниз в следующем порядке:
 
                codename:                          header:            type:     button_name:    widget:            valid/invalid:       default_color:  important:
 
@@ -1078,7 +1168,7 @@ seller_active_time_button_yes
 ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 
 
-🡆🡆 seller_active_time_schedule
+🡆🡆🡆 seller_active_time_schedule
 При тапе на кнопку seller_active_time_schedule всплывает seller_active_time_schedule_screen разделенный на 6 секций и размещенных сверху-вниз в следующем порядке:
 
                     codename:                                         type:      button_name:    placeholder:       valid/invalid:     important:  default_color:
@@ -1857,7 +1947,7 @@ seller_active_time_schedule_button_yes_button
 ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 
 
-🡆🡆🡆 seller_active_time_schedule_weekends
+🡆🡆🡆🡆 seller_active_time_schedule_weekends
 При тапе на кнопку seller_active_time_schedule_weekends всплывает seller_active_time_schedule_weekends_screen состоящий из 3 секторов расположенными сверху-вниз в следующем порядке: 
                         codename:                          type:          button_name:            valid/invalid:            important:      default_color:
 s1) [ seller_active_time_schedule_weekends_header     ]  [ header ]        			   
@@ -2042,7 +2132,7 @@ seller_active_time_schedule_weekends_button_yes
 ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 
 
-🡆🡆🡆 seller_active_time_schedule_holidays_screen
+🡆🡆🡆🡆 seller_active_time_schedule_holidays_screen
 При тапе на кнопку seller_active_time_schedule_holidays открывается seller_active_time_schedule_holidays_screen представленный 5 секциями включая кнопки для настройки года, месяца и дня:
 
                         codename:                           type:               button_name:         valid/invalid:           default_color:    important:
@@ -2194,7 +2284,7 @@ seller_active_time_schedule_holidays_button_yes
 ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 
 
-🡆🡆🡆🡆 seller_active_time_schedule_holidays_year
+🡆🡆🡆🡆🡆 seller_active_time_schedule_holidays_year
 При тапе на кнопку seller_active_time_schedule_holidays_year_button всплывает seller_active_time_schedule_holidays_year_popup с 10 кнопками:
 
                      codename:                               type:               button_name:                valid/invalid:            important:
@@ -2366,7 +2456,7 @@ seller_active_time_schedule_holidays_year_popup_year9_button
 ------ если не нажата.
 
 
-🡆🡆🡆🡆 seller_active_time_schedule_holidays_month
+🡆🡆🡆🡆🡆 seller_active_time_schedule_holidays_month
 При тапе на кнопку seller_active_time_schedule_holidays_month_button всплывает seller_active_time_schedule_holidays_month_popup с 12 кнопками:
 
                      codename:                              type:     button_name:       valid/invalid:                   default_color:          important:
@@ -2565,7 +2655,7 @@ seller_active_time_schedule_holidays_month_popup_dec_button
 ------ если не нажата.
 
 
-🡆🡆 seller_active_time_auto
+🡆🡆🡆 seller_active_time_auto
 При нажатии на кнопку всплывает seller_active_time_auto_screen с заголовком "ЧЕРЕЗ GPS ПОЗИЦИОНИРОВАНИЕ". Всего в seller_active_time_auto_screen 4 секции: 
 
                    codename:                     type:          button_name:     default_color:            valid/invalid:            important:
@@ -2628,7 +2718,7 @@ seller_active_time_auto_button_yes
 ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 
 
-🡆🡆 seller_active_time_manual
+🡆🡆🡆 seller_active_time_manual
 При нажатии на кнопку всплывает seller_active_time_manual_screen с заголовком "ЧЕРЕЗ РУЧНОЕ УПРАВЛЕНИЕ". Всего в seller_active_time_manual_screen 4 секции: 
 
                    codename:                        type:        button_name:       default_color:               valid/invalid:           important:
@@ -2690,9 +2780,31 @@ seller_active_time_auto_button_yes
 ------ seller_active_time_manual_detection_function активирована.
 ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 
- 
+
 🡆 setting_seller_img
-При тапе на кнопку setting_seller_img всплывает setting_seller_img_screen предназначенный для настройки аватара, который содержит 5 секций расположенных сверху-вниз в следующем порядке:
+
+✠ details
+Секция setting_seller_img состоит из блока включающего 2 компонента:
+- заголовок setting_seller_img_header с содержанием: "НАСТРОЙТЕ АВАТАР *";
+- кнопка setting_seller_img_button с наименованием "ОТКРЫТЬ НАСТРОЙКИ".
+
+✠ actions
+• setting_seller_img_button:
+╠ valid / invalid
+║ occasion: нажатие setting_seller_img_button;
+║ condition: в любой ситуации;
+╙ result: открывается setting_seller_img_screen;
+
+✠ input_checks
+В отношении setting_seller_img фильтры не действуют, так как настройки setting_seller_img_screen не имеют критического значения.
+
+✠ color_states   
+• green button:
+------ в любой ситуации.
+
+ 
+🡆🡆 setting_seller_img_screen
+Экран setting_seller_img_screen предназначенный для настройки аватара представлен 5 секциями расположенными сверху-вниз в следующем порядке:
 
                 codename:                         type:         button_name:       default_color:            valid/invalid:             important:
 s1) [ setting_seller_img_header       ]        [ header    ]        		      
@@ -2839,9 +2951,32 @@ setting_seller_img_button_yes
 ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 
  
-🡆 setting_seller_skin
-При нажатии на кнопку setting_seller_skin всплывает setting_seller_skin_screen предназначенный для настройки фона и обоев интерфейса, с содержанием из 5 секций расположенных сверху-вниз в следующем порядке:
 
+🡆 setting_seller_skin
+
+✠ details
+Секция setting_seller_skin состоит из блока включающего 2 компонента:
+- заголовок setting_seller_skin_header с содержанием: "НАСТРОЙТЕ ФОНОВОЕ ИЗОБРАЖЕНИЕ *";
+- кнопка setting_seller_skin_button с наименованием "ОТКРЫТЬ НАСТРОЙКИ".
+
+✠ actions
+• setting_seller_skin_button:
+╠ valid / invalid
+║ occasion: нажатие setting_seller_skin_button;
+║ condition: в любой ситуации;
+╙ result: открывается setting_seller_skin_screen;
+
+✠ input_checks
+В отношении setting_seller_skin фильтры не действуют, так как настройки setting_seller_skin_screen не имеют критического значения.
+
+✠ color_states   
+• green button:
+------ в любой ситуации.
+
+
+🡆🡆 setting_seller_skin_screen
+Экран setting_seller_skin_screen предназначенный для настройки фона и обоев интерфейса представлен 5 секциями расположенными сверху-вниз в следующем порядке:
+ 
                 codename:                          type:           button_name:     default_color:          valid/invalid:           important:     location:
 s1) [ setting_seller_skin_header             ]   [ header    ]                                                                                      [ center ]
 s2) [ setting_seller_skin_protip             ]   [ paragraph ]                                                                                      [ center ] 
@@ -3099,6 +3234,8 @@ setting_seller_button_yes
 - || - invalid по setting_seller_geoposition_shop;
 - || - invalid по setting_seller_active.
 ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+
+
 
 
 
