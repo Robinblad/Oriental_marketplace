@@ -5,10 +5,9 @@
 
 
 
-
 init_trial_screen 
 ■■■■■■■■■■■■■■■■■
-В режиме trial_mode при первом открытии shop_screen, поверх него открывается форма init_trial_screen_form из 9 основных секций озаглавленный "ВВЕДИТЕ ВАШИ ДАННЫЕ", где юзеру предлагается задать следующий перечень настроек (часть полей обязательны для заполнения):
+В режиме trial_mode при первом открытии shop_screen, поверх него открывается форма init_trial_screen из 9 основных секций озаглавленный "ВВЕДИТЕ ВАШИ ДАННЫЕ", где юзеру предлагается задать следующий перечень настроек (часть полей обязательны для заполнения):
 
                  codename:                                header:                    type:          text:                valid/invalid/default:          important:
 s1)    [setting_seller_header                 ] "НАСТРОЙТЕ ВАШ ПРОФИЛЬ"            [header   ]        		      
@@ -23,8 +22,8 @@ s5)  ┌─[setting_seller_geoposition_shop       ]                             
 ---- ├ [setting_seller_geoposition_shop_header] "ГЕОЛОКАЦИЯ *"                     [header   ]  
 ---- └ [setting_seller_geoposition_shop_button]                                    [button   ] "ОТКРЫТЬ НАСТРОЙКИ" [green button/red button/gray button ]  [ yes ]
 s6)  ┌─[setting_seller_active                 ]                                    [section  ]
----- ├ [setting_seller_active_header          ] "РАБОЧЕЕ ВРЕМЯ *"                  [header   ]  
----- └ [setting_seller_active_button          ]                                    [button   ] "ОТКРЫТЬ НАСТРОЙКИ" [green button/red button/gray button ]  [ yes ]
+---- ├ [setting_seller_active_header          ] "РАБОЧЕЕ ВРЕМЯ"                    [header   ]  
+---- └ [setting_seller_active_button          ]                                    [button   ] "ОТКРЫТЬ НАСТРОЙКИ" [green button/red button/gray button ]  [ no  ]
 s7)  ┌─[setting_seller_img                    ]                                    [section  ]
 ---- ├ [setting_seller_img_header             ] "АВАТАР"                           [header   ]  
 ---- └ [setting_seller_img_button             ]                                    [button   ] "ОТКРЫТЬ НАСТРОЙКИ" [green button/gray button/gray button]  [ no  ]
@@ -40,7 +39,7 @@ s9)  ┌─[setting_seller_button                 ]                             
                                                                                  ————————————————————————————————————————————————
 
      [setting_seller_header                                         ]    "НАСТРОЙТЕ ВАШ ПРОФИЛЬ"
-     [setting_seller_protip                                         ]    "ПЕРЕД ТЕМ КАК ПРОДОЛЖИТЬ, ПОЖАЛУЙСТА УКАЖИТЕ ВАШИ ДАННЫЕ"
+     [setting_seller_protip                                         ]    "ПОЖАЛУЙСТА УКАЖИТЕ НЕОБХОДИМЫЕ ДАННЫЕ"
      [setting_seller_protip                                         ]    "* - ТРЕБУЕТСЯ УКАЗАТЬ"
      [setting_seller_protip                                         ]    "В ДАЛЬНЕЙШЕМ ВЫ МОЖЕТЕ ИЗМЕНИТЬ/ОТРЕДАКТИРОВАТЬ ДАННЫЕ ЧЕРЕЗ НАСТРОЙКИ"  
      [setting_user_username_header                                  ]    "ИМЯ ИЛИ НАЗВАНИЕ КОМПАНИИ *"
@@ -55,7 +54,7 @@ s9)  ┌─[setting_seller_button                 ]                             
      [setting_user_passport_input                                   ]    <                       поле для ввода данных                          >
      [setting_seller_geoposition_shop_header                        ]    "ГЕОЛОКАЦИЯ *"
      [setting_seller_geoposition_shop_button                        ]    <                       кнопка: "ОТКРЫТЬ НАСТРОЙКИ"                    >
-     [setting_seller_active_header                                  ]    "РАБОЧЕЕ ВРЕМЯ *"
+     [setting_seller_active_header                                  ]    "РАБОЧЕЕ ВРЕМЯ"
      [setting_seller_active_button                                  ]    <                       кнопка: "ОТКРЫТЬ НАСТРОЙКИ"                    >
      [setting_seller_img_header                                     ]    "НАСТРОЙТЕ АВАТАР"
      [setting_seller_img_button                                     ]    <                       кнопка: "ОТКРЫТЬ НАСТРОЙКИ"                    >
@@ -65,56 +64,18 @@ s9)  ┌─[setting_seller_button                 ]                             
      [setting_seller_button_no    setting_seller_button_yes         ]    <              кнопка: "ОТМЕНА" | кнопка: "ПРИМЕНИТЬ"                  >
 ———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 
+✠ details
+Все элементы по умолчанию находятся в inactive_state. Пустые поля имеют красный цвет а кнопки имеют серый цвет. После того как юзер начинает вводить данные в поля, они могут менять цвет между зеленым и красным, в зависимости от валидности информации. Кнопки приобретают зеленый цвет в случае валидности настроек с ними связанных. Если s3-s5 имеют зеленый цвет для input и button, тогда setting_seller_button_yes также автоматически приобретает зеленый цвет. 
+После успешного прохождения процесса верификации, данные формы init_usual_screen_form отправляются с устройства юзера в базу данных seller_db.
 
 
 
 
 
-               codename:                          header:                      type:             text:                valid/invalid/default:        important:
-s1) [setting_seller_header          ] "ВВЕДИТЕ ВАШИ ДАННЫЕ"              [header        ]        		      
-s2) [setting_seller_protip          ]                                    [paragraph     ] { параграф текста } 
-s3) [setting_user_username          ] "ВАШЕ ИМЯ ИЛИ НАЗВАНИЕ КОМПАНИИ *" [input         ] "МИНИМУМ 3 СИМВОЛА" [green border/red border/gray border ]  [ yes ]
-s4) [setting_user_phone             ] "ВВЕДИТЕ ВАШ ТЕЛЕФОННЫЙ НОМЕР *"   [dropdown+input]                     [green border/red border/gray border ]  [ yes ]
-s5) [setting_seller_geoposition_shop] "УКАЗАТЬ ЛОКАЦИЮ/ТОРГОВУЮ ТОЧКУ *" [button        ] "ОПРЕДЕЛИТЬ"        [green button/red button/gray button ]  [ yes ]
-s6) [setting_seller_active          ] "РЕГУЛИРОВКА РАБОЧЕГО ВРЕМЕНИ *"   [button        ] "НАСТРОИТЬ"         [green button/red button/gray button ]  [ yes ]
-s7) [setting_seller_img             ] "НАСТРОИТЬ АВАТАР"                 [button        ] "УСТАНОВИТЬ"        [green button/gray button/gray button]  [ no  ]
-s8) [setting_seller_skin            ] "НАСТРОИТЬ ФОНОВОЕ ИЗОБРАЖЕНИЕ"    [button        ] "УСТАНОВИТЬ"        [green button/gray button/gray button]  [ no  ]
-s9) секция из двух расположенных вряд кнопок:
---- [setting_seller_button_no       ]                                    [button        ] "ОТМЕНА"            [gray button                         ]
---- [setting_seller_button_yes      ]                                    [button        ] "ПРИМЕНИТЬ"         [green button/gray button            ]
-
-setting_seller_protip представлен двумя параграфами расположенными друг над другом со следующим содержанием: 
-"* - ТРЕБУЕТСЯ УКАЗАТЬ."
-"В ДАЛЬНЕЙШЕМ ВЫ МОЖЕТЕ ИЗМЕНИТЬ/ОТРЕДАКТИРОВАТЬ ДАННЫЕ ЧЕРЕЗ НАСТРОЙКИ"
-
-                                                               Схематическое представление init_trial_screen:
-                                                               ————————————————————————————————————————————————
-
-     [setting_seller_header                                ]    "ПОЖАЛУЙСТА ЗАПОЛНИТЕ НЕОБХОДИМЫЕ ДАННЫЕ"
-         
-     [setting_seller_protip                                ]    "* - ТРЕБУЕТСЯ УКАЗАТЬ"
-     [setting_seller_protip                                ]    "В ДАЛЬНЕЙШЕМ ВЫ МОЖЕТЕ ИЗМЕНИТЬ/ОТРЕДАКТИРОВАТЬ ДАННЫЕ ЧЕРЕЗ НАСТРОЙКИ"
-         
-     [setting_user_username_header                         ]          "ВАШЕ ИМЯ ИЛИ НАЗВАНИЕ КОМПАНИИ *"
-     [setting_user_username_input                          ]    <           поле для ввода данных           >
-	 [setting_user_phone_header                            ]          "ВВЕДИТЕ ВАШ ТЕЛЕФОННЫЙ НОМЕР *"
-	 [setting_user_phone_dropdown  setting_user_phone_input]    < выпадающий список | поле для ввода данных >
-     [setting_seller_geoposition_shop_header               ]          "УКАЖИТЕ ЛОКАЦИЮ/ТОРГОВУЮ ТОЧКУ *"
-     [setting_seller_geoposition_shop_button               ]    <           кнопка: "ОПРЕДЕЛИТЬ"            >
-     [setting_seller_active_header                         ]             "УКАЖИТЕ РАБОЧЕЕ ВРЕМЯ *"
-     [setting_seller_active_button                         ]    <           кнопка: "НАСТРОИТЬ"             >
-     [setting_seller_img_header                            ]                "НАСТРОЙТЕ АВАТАР"
-     [setting_seller_img_button                            ]    <           кнопка: "УСТАНОВИТЬ"            >
-     [setting_seller_skin_header                           ]          "НАСТРОЙТЕ ФОНОВОЕ ИЗОБРАЖЕНИЕ"
-     [setting_seller_skin_button                           ]    <           кнопка: "УСТАНОВИТЬ"            >
-         
-     [setting_seller_button_no    setting_seller_button_yes]    <  кнопка: "ОТМЕНА" | кнопка: "ПРИМЕНИТЬ"   >
-                                                               ————————————————————————————————————————————————
 
 
-По умолчанию все (элементы) пустые поля и кнопки имеют серый цвет. После того как юзер начинает вводить данные, эти элементы могут менять цвет между зеленым и красным, в зависимости от валидности информации. Если s3-s6 имеют зеленый цвет input и button, тогда setting_seller_button_yes также приобретает зеленый цвет. 
+После нажатия на setting_seller_button_yes в ситуации, если все введенные данные в init_trial_screen валидны, а данные в setting_user_phone_form_input были изменены, всплывает setting_seller_trial_popup с 4 секциями:
 
-После нажатия на setting_seller_button_yes всплывает setting_seller_trial_popup с 4 секциями:
                   codename:                                             condition:
 s1) [ setting_seller_trial_popup_header ]  "ПОДТВЕРДИТЕ РЕГИСТРАЦИЮ"
 s2) [ setting_seller_trial_popup_protip ]  "ДЛЯ ПОДТВЕРЖДЕНИЯ РЕГИСТРАЦИИ НА ВАШ ТЕЛЕФОН ВЫСЛАН ПИН КОД. ПОЖАЛУЙСТА ВСТАВЬТЕ ЕГО В ФОРМУ".
@@ -122,7 +83,7 @@ s3) [ setting_seller_trial_popup_input  ]
 s4) [ setting_seller_trial_popup_button ]  "ПОДТВЕРДИТЬ"
 
 На телефон юзера отправляется sms в виде четырехзначного init_trial_pincode, после вставки которого в setting_seller_trial_popup_input, происходит процесс верификации аккаунта seller.
-После успешного прохождения процесса верификации, данные формы init_trial_screen_form отправляются с устройства юзера в базу данных seller_db.
+После успешного прохождения процесса верификации, данные формы init_trial_screen отправляются с устройства юзера в базу данных seller_db.
 
 
 🡆 setting_user_username
@@ -381,39 +342,39 @@ setting_seller_skin_opacity_widget отображает цифровое зна�
 
 init_usual_screen
 ■■■■■■■■■■■■■■■■■
-В режиме usual_mode при первом открытии shop_screen, поверх него открывается init_usual_screen. Подразумевается что юзер уже ввел как минимум setting_user_username и setting_user_phone в init_trial_screen, поэтому все ранее введенные значения вставляются в поля init_usual_screen_form. Большинство опций обязательны для настройки. init_usual_screen состоит из 13 секций представленный следующим перечнем настроек:
+В режиме usual_mode при первом открытии shop_screen, поверх него открывается init_usual_screen. Данный экран появляется через некоторый период после первичной регистрации (1-3 месяца спустя регистрации посредством init_trial_screen) подразумевая, что юзер уже ввел базовые данные. В init_usual_screen от юзера требуется ввести больше конфеденциальных данных для продолжения пользования приложением. init_usual_screen состоит из 12 секций представленный следующим перечнем настроек:
 
                  codename:                                header:                    type:          text:                valid/invalid/default:          important:
 s1)    [setting_seller_header                 ] "НАСТРОЙТЕ ВАШ ПРОФИЛЬ"            [header   ]        		      
 s2)    [setting_seller_protip                 ]                                    [paragraph] { параграф текста }
 s3)  ┌─[setting_user_username                 ]                                    [section  ]
 ---- ├ [setting_user_username_header          ] "ИМЯ ИЛИ НАЗВАНИЕ КОМПАНИИ *"      [header   ]                      
----- └ [setting_user_username_input           ]                                    [input    ]                     [green border/red border/red border  ]  [ yes ]  
-s5)  ┌─[setting_user_phone_form               ]                                    [section  ]
+---- └ [setting_user_username_input           ]                                    [input    ]                     [green border/red border/green border]  [ yes ]  
+s4)  ┌─[setting_user_phone_form               ]                                    [section  ]
 ---- ├ [setting_user_phone_form_button        ]                                    [dropdown ]                     [green button/red button/green button]  [ yes ]
----- └ [setting_user_phone_form_input         ] "ТЕЛЕФОННЫЙ НОМЕР *"               [input    ]                     [green border/red border/red border  ]  [ yes ]
-s6)  ┌─[setting_user_firstname                ]                                    [section  ]
+---- └ [setting_user_phone_form_input         ] "ТЕЛЕФОННЫЙ НОМЕР *"               [input    ]                     [green border/red border/green border]  [ yes ]
+s5)  ┌─[setting_user_firstname                ]                                    [section  ]
 ---- ├ [setting_user_firstname_header         ] "ИМЯ *"                            [header   ]                      
 ---- └ [setting_user_firstname_input          ]                                    [input    ]                     [green border/red border/red border  ]  [ yes ]
-s7)  ┌─[setting_user_secondname               ]                                    [section  ]
+s6)  ┌─[setting_user_secondname               ]                                    [section  ]
 ---- ├ [setting_user_secondname_header        ] "ФАМИЛИЯ *"                        [header   ]                      
 ---- └ [setting_user_secondname_input         ]                                    [input    ]                     [green border/red border/red border  ]  [ yes ]
-s8)  ┌─[setting_user_passport                 ]                                    [section  ]
+s7)  ┌─[setting_user_passport                 ]                                    [section  ]
 ---- ├ [setting_user_passport                 ] "НОМЕР ПАСПОРТА *"                 [header   ]                      
 ---- └ [setting_user_passport                 ]                                    [input    ]                     [green border/red border/red border  ]  [ yes ]
-s9)  ┌─[setting_seller_geoposition_shop       ]                                    [section  ]
+s8)  ┌─[setting_seller_geoposition_shop       ]                                    [section  ]
 ---- ├ [setting_seller_geoposition_shop_header] "ГЕОЛОКАЦИЯ *"                     [header   ]  
 ---- └ [setting_seller_geoposition_shop_button]                                    [button   ] "ОТКРЫТЬ НАСТРОЙКИ" [green button/red button/gray button ]  [ yes ]
-s10) ┌─[setting_seller_active                 ]                                    [section  ]
----- ├ [setting_seller_active_header          ] "РАБОЧЕЕ ВРЕМЯ *"                  [header   ]  
----- └ [setting_seller_active_button          ]                                    [button   ] "ОТКРЫТЬ НАСТРОЙКИ" [green button/red button/gray button ]  [ yes ]
-s11) ┌─[setting_seller_img                    ]                                    [section  ]
+s9)  ┌─[setting_seller_active                 ]                                    [section  ]
+---- ├ [setting_seller_active_header          ] "РАБОЧЕЕ ВРЕМЯ"                    [header   ]  
+---- └ [setting_seller_active_button          ]                                    [button   ] "ОТКРЫТЬ НАСТРОЙКИ" [green button/red button/gray button ]  [ no  ]
+s10) ┌─[setting_seller_img                    ]                                    [section  ]
 ---- ├ [setting_seller_img_header             ] "АВАТАР"                           [header   ]  
 ---- └ [setting_seller_img_button             ]                                    [button   ] "ОТКРЫТЬ НАСТРОЙКИ" [green button/gray button/gray button]  [ no  ]
-s12) ┌─[setting_seller_skin                   ]                                    [section  ]
+s11) ┌─[setting_seller_skin                   ]                                    [section  ]
 ---- ├ [setting_seller_skin_header            ] "ФОНОВОЕ ИЗОБРАЖЕНИЕ"              [header   ]  
 ---- └ [setting_seller_skin_button            ]                                    [button   ] "ОТКРЫТЬ НАСТРОЙКИ" [green button/gray button/gray button]  [ no  ]
-s13) ┌─[setting_seller_button                 ]                                    [section  ]
+s12) ┌─[setting_seller_button                 ]                                    [section  ]
 ---- ├ [setting_seller_button_no              ]                                    [button   ] "ОТМЕНА"            [gray button                         ]  [ no  ]
 ---- └ [setting_seller_button_yes             ]                                    [button   ] "ПРИМЕНИТЬ"         [green button/red button/red button  ]  [ yes ]
 
@@ -426,29 +387,33 @@ s13) ┌─[setting_seller_button                 ]                             
      [setting_seller_protip                                         ]    "* - ТРЕБУЕТСЯ УКАЗАТЬ"
      [setting_seller_protip                                         ]    "В ДАЛЬНЕЙШЕМ ВЫ МОЖЕТЕ ИЗМЕНИТЬ/ОТРЕДАКТИРОВАТЬ ДАННЫЕ ЧЕРЕЗ НАСТРОЙКИ"  
      [setting_user_username_header                                  ]    "ИМЯ ИЛИ НАЗВАНИЕ КОМПАНИИ *"
-     [setting_user_username_input                                   ]    <                       поле для ввода данных                          >
+     [setting_user_username_input                                   ]    <       поле для ввода данных (заполнено но доступно для правки)             >
      [setting_user_phone_header                                     ]    "ТЕЛЕФОННЫЙ НОМЕР *"
-     [setting_user_phone_form_button + setting_user_phone_form_input]    <             выпадающий список | поле для ввода данных                >
+     [setting_user_phone_form_button + setting_user_phone_form_input]    <выпадающий список | поле для ввода данных (заполнено но доступно для правки)>
      [setting_user_firstname_header                                 ]    "ИМЯ *"
-     [setting_user_firstname_input                                  ]    <                       поле для ввода данных                          >
+     [setting_user_firstname_input                                  ]    <                       поле для ввода данных                                >
      [setting_user_secondname_header                                ]    "ФАМИЛИЯ *"
-     [setting_user_secondname_input                                 ]    <                       поле для ввода данных                          >
+     [setting_user_secondname_input                                 ]    <                       поле для ввода данных                                >
      [setting_user_passport_header                                  ]    "НОМЕР ПАСПОРТА *"
-     [setting_user_passport_input                                   ]    <                       поле для ввода данных                          >
+     [setting_user_passport_input                                   ]    <                       поле для ввода данных                                >
      [setting_seller_geoposition_shop_header                        ]    "ГЕОЛОКАЦИЯ *"
-     [setting_seller_geoposition_shop_button                        ]    <                       кнопка: "ОТКРЫТЬ НАСТРОЙКИ"                    >
-     [setting_seller_active_header                                  ]    "РАБОЧЕЕ ВРЕМЯ *"
-     [setting_seller_active_button                                  ]    <                       кнопка: "ОТКРЫТЬ НАСТРОЙКИ"                    >
+     [setting_seller_geoposition_shop_button                        ]    <                       кнопка: "ОТКРЫТЬ НАСТРОЙКИ"                          >
+     [setting_seller_active_header                                  ]    "РАБОЧЕЕ ВРЕМЯ"
+     [setting_seller_active_button                                  ]    <                       кнопка: "ОТКРЫТЬ НАСТРОЙКИ"                          >
      [setting_seller_img_header                                     ]    "НАСТРОЙТЕ АВАТАР"
-     [setting_seller_img_button                                     ]    <                       кнопка: "ОТКРЫТЬ НАСТРОЙКИ"                    >
+     [setting_seller_img_button                                     ]    <                       кнопка: "ОТКРЫТЬ НАСТРОЙКИ"                          >
      [setting_seller_skin_header                                    ]    "НАСТРОЙТЕ ФОНОВОЕ ИЗОБРАЖЕНИЕ"
-     [setting_seller_skin_button                                    ]    <                       кнопка: "ОТКРЫТЬ НАСТРОЙКИ"                    >
+     [setting_seller_skin_button                                    ]    <                       кнопка: "ОТКРЫТЬ НАСТРОЙКИ"                          >
          
-     [setting_seller_button_no    setting_seller_button_yes         ]    <              кнопка: "ОТМЕНА" | кнопка: "ПРИМЕНИТЬ"                  >
+     [setting_seller_button_no    setting_seller_button_yes         ]    <              кнопка: "ОТМЕНА" | кнопка: "ПРИМЕНИТЬ"                        >
 ———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 
 ✠ details
-По умолчанию часть формы (с введенными ранее данными) имеет зеленый цвет полей и кнопок. Все элементы по умолчанию находятся в inactive_state. Незаполненные пустые поля и кнопки имеют красный цвет. После того как юзер начинает вводить данные, эти элементы могут менять цвет между зеленым и красным, в зависимости от валидности информации. Если s3-s9 имеют зеленый цвет input и button, тогда setting_seller_button_yes также приобретает зеленый цвет. 
+По умолчанию часть формы (с введенными данными в init_trial_screen) имеет зеленый цвет полей и кнопок. Поля с заполненными данными:
+- setting_user_username_input
+- setting_user_phone_form_input
+
+Все элементы по умолчанию находятся в inactive_state. Незаполненные пустые поля имеют красный цвет а кнопки имеют серый цвет. После того как юзер начинает вводить данные в поля, они могут менять цвет между зеленым и красным, в зависимости от валидности информации. Кнопки приобретают зеленый цвет в случае валидности настроек с ними связанных. Если s3-s9 имеют зеленый цвет для input и button, тогда setting_seller_button_yes также автоматически приобретает зеленый цвет. 
 После успешного прохождения процесса верификации, данные формы init_usual_screen_form отправляются с устройства юзера в базу данных seller_db.
 
 
@@ -1057,7 +1022,7 @@ seller_geoposition_shop_button_yes
 
 ✠ details
 Секция setting_seller_active состоит из блока включающего 2 компонента:
-- заголовок setting_seller_active_header с содержанием: "РАБОЧЕЕ ВРЕМЯ *";
+- заголовок setting_seller_active_header с содержанием: "РАБОЧЕЕ ВРЕМЯ";
 - кнопка setting_seller_active_button с наименованием "ОТКРЫТЬ НАСТРОЙКИ".
 
 ✠ actions
@@ -3192,9 +3157,8 @@ seller_active_time_auto_button_yes
 ║ && - valid по setting_user_secondname;
 ║ && - valid по setting_user_passport;
 ║ && - valid по setting_seller_geoposition_shop;
-║ && - valid по setting_seller_active;
 ║ result:
-║ && - init_usual_screen закрывается с сохранением изменений;
+║ && - init_usual_screen закрывается с сохранением изменений в базу данных seller_db;
 ║ && - совершается переход к shop_seller_screen.
 ╠ invalid
 ║ occasion: нажатие setting_seller_button_yes;
@@ -3205,7 +3169,6 @@ seller_active_time_auto_button_yes
 ║ || - invalid по setting_user_secondname;
 ║ || - invalid по setting_user_passport;
 ║ || - invalid по setting_seller_geoposition_shop;
-║ || - invalid по setting_seller_active;
 ╙ result: setting_seller_button_yes не реагирует на нажатие.
 
 ✠ color_states  
@@ -3223,20 +3186,34 @@ setting_seller_button_yes
 - && - valid по setting_user_firstname;
 - && - valid по setting_user_secondname;
 - && - valid по setting_user_passport;
-- && - valid по setting_seller_geoposition_shop;
-- && - valid по setting_seller_active.
-• red button
+- && - valid по setting_seller_geoposition_shop.
+• red button (pressing_state)
 - || - invalid по setting_user_username;
 - || - invalid по setting_user_phone;
 - || - invalid по setting_user_firstname;
 - || - invalid по setting_user_secondname;
 - || - invalid по setting_user_passport;
-- || - invalid по setting_seller_geoposition_shop;
-- || - invalid по setting_seller_active.
+- || - invalid по setting_seller_geoposition_shop.
+• gray button (inactive_state)
+- || - invalid по setting_user_username;
+- || - invalid по setting_user_phone;
+- || - invalid по setting_user_firstname;
+- || - invalid по setting_user_secondname;
+- || - invalid по setting_user_passport;
+- || - invalid по setting_seller_geoposition_shop.
+
 ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 
+После нажатия на setting_seller_button_yes в ситуации, если все введенные данные в init_usual_screen валидны, а данные в setting_user_phone_form_input были изменены, всплывает setting_seller_usual_popup с 4 секциями:
 
+                  codename:                                             condition:
+s1) [ setting_seller_usual_popup_header ]  "ПОДТВЕРДИТЕ РЕГИСТРАЦИЮ"
+s2) [ setting_seller_usual_popup_protip ]  "ДЛЯ ПОДТВЕРЖДЕНИЯ РЕГИСТРАЦИИ НА ВАШ ТЕЛЕФОН ВЫСЛАН ПИН КОД. ПОЖАЛУЙСТА ВСТАВЬТЕ ЕГО В ФОРМУ".
+s3) [ setting_seller_usual_popup_input  ] 
+s4) [ setting_seller_usual_popup_button ]  "ПОДТВЕРДИТЬ"
 
+На телефон юзера отправляется sms в виде четырехзначного init_usual_pincode, после вставки которого в setting_seller_usual_popup_input, происходит процесс подтверждения номера телефона аккаунта seller.
+После успешного прохождения процесса подтверждения, данные формы init_usual_screen отправляются с устройства юзера в базу данных seller_db.
 
 
 
