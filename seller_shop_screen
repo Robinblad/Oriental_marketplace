@@ -6,7 +6,6 @@
 
 
 
-
 seller_shop_screen
 ■■■■■■■■■■■■■■■■■■
 seller_shop_screen является домашним экраном seller_mode, вход в который осуществляется посредством кнопки "МАГАЗИН" на seller_shop_nav и представляет собой информационный экран с органами управления наиболее динамических настроек. seller_shop_screen разделен на 10 sections следующего содержания расположенных сверху-вниз:
@@ -17,11 +16,14 @@ s1)  ┌─[seller_shop_cap                      ]                              
 ---- ├ [seller_shop_cap_book                 ]                                  [button+widget ] "ДОХОД"               [color1/color2]      
 ---- ├ [seller_shop_cap_username             ]                                  [widget        ] "ДОХОД"               [color1/color2]    
 ---- └ [seller_shop_cap_setting              ]                                  [button        ] "НАСТРОЙКИ"           [color1/color2]          [ yes ] 
-s2)  ┌─[seller_shop_top                      ]                                  [section       ]
----- ├ [seller_shop_top_avatar               ]                                  [widget+button ]                       [color2]                 [ no  ]
----- ├ [seller_shop_top_indicator            ]                                  [indicator     ]                       [color1/color2]          [ no  ]
----- ├ [seller_shop_top_username             ]                                  [widget        ]                       [color1/color2]          [ no  ]
----- └ [seller_shop_top_toggle               ]                                  [toggle        ] "РЕЖИМ"               [color1/color2]          [ yes ]
+s2) ┌┬─[seller_shop_top                      ]                                  [section       ]
+----│├ [seller_shop_top_avatar               ]                                  [widget+button ]                       [color2]                 [ no  ]
+----│├ [seller_shop_top_indicator            ]                                  [indicator     ]                       [color1/color2]          [ no  ]
+----│└ [seller_shop_top_username             ]                                  [widget        ]                       [color1/color2]          [ no  ]
+----└┬ [seller_shop_top_toggle               ]                                  [toggle        ]                                                [ yes ]
+---- ├ [seller_shop_top_toggle_header        ]                                  [header        ] "РЕЖИМ МАГАЗИНА"      [color2]                 [ no  ]
+---- ├ [seller_shop_top_toggle_switcher      ]                                  [toggle        ]                       [color1/color2]          [ yes ]
+---- └ [seller_shop_top_toggle_icon          ]                                  [icon          ]                       [color2]                 [ no  ]
 s3) ┌──[seller_shop_pubstat                  ]                                  [section+button]                                                [ yes ]
 ----├┬ [seller_shop_pubstat_rating           ]                                  [subsection    ]                       [color1/color2]          [ no  ]
 ----│├ [seller_shop_pubstat_rating_header    ]                                  [header        ] "РЕЙТИНГ"             [color2       ]          [ no  ]
@@ -32,9 +34,11 @@ s3) ┌──[seller_shop_pubstat                  ]                            
 ----└┬ [seller_shop_pubstat_rank             ]                                  [subsection    ]                       [color1/color2]          [ no  ]
 ---- ├ [seller_shop_pubstat_rank_header      ]                                  [header        ] "РАНГ"                [color2       ]          [ no  ]
 ---- └ [seller_shop_pubstat_rank_widget      ]                                  [widget        ] ">>>>>"               [color1/color2]            
-s4)  ┌─[seller_shop_activity                 ]                                  [section       ]
----- ├ [seller_shop_activity_button          ]                                  [button        ] "АКТИВНОСТЬ"                                   [ yes ]
----- ├ [seller_shop_activity_widget          ]                                  [widget        ]                                                [ no  ]
+s4) ┌──[seller_shop_activity                 ]                                  [section       ]
+----├┬ [seller_shop_activity_button          ]                                  [button        ]                                                [ yes ]
+----│├ [seller_shop_activity_button_header   ]                                  [header        ] "АКТИВНОСТЬ"                                   [ no  ]
+----│└ [seller_shop_activity_button_badge    ]                                  [badge         ] { number }                                     [ no  ]
+----└┬ [seller_shop_activity_widget          ]                                  [widget        ]                                                [ no  ]
 ---- ├ [seller_shop_activity_toggle          ]                                  [toggle        ]                       [color1/color2]          [ yes ]
 ---- └ [seller_shop_activity_indicator       ]                                  [indicator     ]                       [color1/color2]          [ no  ]
 s5)  ┌─[seller_shop_delivery                 ]                                  [section       ]
@@ -83,7 +87,10 @@ s10)┌─ [seller_nav                           ]                              
 - seller_shop_top_avatar - изображение в виде миниатюры;
 - seller_shop_top_indicator - индиакатор отображающий состояние присутствия в сети, может иметь состояние online (есть интернет соединение), или offline (нет интернет соединения);
 - seller_shop_top_username - псевдоним или название магазина
-- seller_shop_top_toggle - переключатель режимов между seller_mode (левая позиция) и buyer_mode (правая позиция). По умолчанию для seller активирован seller_mode, когда рычаг seller_shop_top_toggle находится в левой позиции. 
+- seller_shop_top_toggle - состоит из 3 элементов:
+- seller_shop_top_toggle_header - заголовок "РЕЖИМ МАГАЗИНА";
+- seller_shop_top_toggle_switcher - переключатель режимов между seller_mode (левая позиция) и buyer_mode (правая позиция). По умолчанию для seller активирован seller_mode, когда рычаг seller_shop_top_toggle находится в левой позиции;
+- seller_shop_top_toggle_icon - иконка корзины покупателя.
 
 ✠ actions
 • seller_shop_top_avatar:
@@ -126,8 +133,11 @@ s10)┌─ [seller_nav                           ]                              
 
 ✠ details
 Секция seller_shop_top состоит из секции seller_shop_pubstat представляющего собой кнопку и включающего 3 компонента:
+- seller_shop_pubstat_rating_header - наименование кнопки "РЕЙТИНГ";
 - seller_shop_pubstat_rating - отображает рейтинг seller в виде 10-звездного индикатора "★★★★★★★★★★";
+- seller_shop_pubstat_reputation_header - наименование кнопки "РЕПУТАЦИЯ";
 - seller_shop_pubstat_reputation - отображает репутацию seller в виде наименования в диапазоне: ОТЛИЧНАЯ, ХОРОШАЯ, СРЕДНЯЯ, СОМНИТЕЛЬНАЯ, ПЛОХАЯ;
+- seller_shop_pubstat_rank_header - наименование кнопки "РАНГ";
 - seller_shop_pubstat_rank - отображает ранг seller в виде 5-символьного индикатора: ">>>>>".
 
 ✠ actions
@@ -135,8 +145,59 @@ s10)┌─ [seller_nav                           ]                              
 ╠ valid / invalid
 ║ occasion: нажатие в любой области секции seller_shop_pubstat;
 ║ condition: в любой ситуации;
-╙ result: открывается setting_seller_screen.
+╙ result: открывается seller_pubstat_screen.
 
+✠ color_states
+┌─
+│seller_shop_pubstat_rating_widget
+│---------------------------
+│• color1
+│------ окрашиваются { ★ } отображающие диапазон величины актуального рейтинга;
+│• color2
+│------ окрашиваются { ☆ } выходящие за диапазон актуального рейтинга.
+└─
+┌─
+│seller_shop_pubstat_reputation_widget
+│---------------------------
+│• color1
+│------ если фигурируют значения ОТЛИЧНАЯ или ХОРОШАЯ;
+│• color2
+│------ если фигурируют значение СРЕДНЯЯ;
+│• color3
+│------ если фигурируют значение СОМНИТЕЛЬНАЯ или ПЛОХАЯ.
+└─
+┌─
+│seller_shop_pubstat_rank_widget
+│---------------------------
+│• color1
+│------ окрашиваются { > } отображающие диапазон величины актуального ранга;
+│• color2
+│------ окрашиваются { > } выходящие за диапазон актуального ранга.
+└─
+
+
+🡆 seller_shop_activity
+
+✠ details
+Секция seller_shop_activity состоит из секции включающего 4 компонента:
+- seller_shop_activity_button - кнопка с бейджем, при нажатии на которую открывается seller_stat_screen;
+- seller_shop_activity_button_header - наименование кнопки АКТИВНОСТЬ;
+- seller_shop_activity_button_badge - индиакатор отображающий количество посетителей магазина на текущий момент времени;
+- seller_shop_activity_widget - псевдоним или название магазина
+- seller_shop_activity_toggle - переключатель режимов между seller_mode (левая позиция) и buyer_mode (правая позиция). По умолчанию для seller активирован seller_mode, когда рычаг seller_shop_top_toggle находится в левой позиции. 
+- seller_shop_activity_indicator
+
+✠ actions
+• seller_shop_top_avatar:
+╠ valid / invalid
+║ occasion: нажатие seller_shop_top_avatar;
+║ condition: в любой ситуации;
+╙ result: открывается setting_seller_screen.
+• seller_shop_top_toggle:
+╠ valid / invalid
+║ occasion: нажатие seller_shop_top_toggle;
+║ condition: seller_mode;
+╙ result: открывается observer_screen в режиме buyer_mode. 
 
 ✠ color_states
 ┌─
@@ -161,6 +222,8 @@ s10)┌─ [seller_nav                           ]                              
 │• color2
 │------ основное тело seller_shop_top_toggle.
 └─
+
+
 
 
 
