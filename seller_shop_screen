@@ -1,5 +1,5 @@
 
-Конфигурация интерфейса seller_mode
+
 
 
 
@@ -12,7 +12,7 @@ seller_shop_screen является домашним экраном seller_mode,
 
                  codename:                                header:                  type:        button_name:          active/inactive:       interaction:
 s1)  ┌─[seller_shop_cap                      ]                                  [section       ]
----- ├ [seller_shop_cap_delivery             ]                                  [button+widget ] "ПРОДАЖИ"             [color1/color2]          [ yes ]
+---- ├ [seller_shop_cap_ship                 ]                                  [button+widget ] "ПРОДАЖИ"             [color1/color2]          [ yes ]
 ---- ├ [seller_shop_cap_book                 ]                                  [button+widget ] "ДОХОД"               [color1/color2]      
 ---- ├ [seller_shop_cap_username             ]                                  [widget        ] "ДОХОД"               [color1/color2]    
 ---- └ [seller_shop_cap_setting              ]                                  [button        ] "НАСТРОЙКИ"           [color1/color2]          [ yes ] 
@@ -21,31 +21,37 @@ s2) ┌┬─[seller_shop_top                      ]                            
 ----│├ [seller_shop_top_indicator            ]                                  [indicator     ]                       [color1/color2]          [ no  ]
 ----│└ [seller_shop_top_username             ]                                  [widget        ]                       [color1/color2]          [ no  ]
 ----└┬ [seller_shop_top_toggle               ]                                  [toggle        ]                                                [ yes ]
----- ├ [seller_shop_top_toggle_header        ]                                  [header        ] "РЕЖИМ МАГАЗИНА"      [color2]                 [ no  ]
+---- ├ [seller_shop_top_toggle_header        ]                                  [header        ] "РЕЖИМ МАГАЗИНА"                               [ no  ]
 ---- ├ [seller_shop_top_toggle_switcher      ]                                  [toggle        ]                       [color1/color2]          [ yes ]
 ---- └ [seller_shop_top_toggle_icon          ]                                  [icon          ]                       [color2]                 [ no  ]
 s3) ┌──[seller_shop_pubstat                  ]                                  [section+button]                                                [ yes ]
 ----├┬ [seller_shop_pubstat_rating           ]                                  [subsection    ]                       [color1/color2]          [ no  ]
-----│├ [seller_shop_pubstat_rating_header    ]                                  [header        ] "РЕЙТИНГ"             [color2       ]          [ no  ]
+----│├ [seller_shop_pubstat_rating_header    ]                                  [header        ] "РЕЙТИНГ"                                      [ no  ]
 ----│└ [seller_shop_pubstat_rating_widget    ]                                  [widget        ] "★★★★★★★★★★"          [color1/color2]            
 ----├┬ [seller_shop_pubstat_reputation       ]                                  [subsection    ]                       [color1/color2]          [ no  ]
-----│├ [seller_shop_pubstat_reputation_header]                                  [header        ] "РЕПУТАЦИЯ"           [color2       ]          [ no  ]
+----│├ [seller_shop_pubstat_reputation_header]                                  [header        ] "РЕПУТАЦИЯ"                                    [ no  ]
 ----│└ [seller_shop_pubstat_reputation_widget]                                  [widget        ] "BAD, GOOD ..."       [color1/color2]            	
 ----└┬ [seller_shop_pubstat_rank             ]                                  [subsection    ]                       [color1/color2]          [ no  ]
----- ├ [seller_shop_pubstat_rank_header      ]                                  [header        ] "РАНГ"                [color2       ]          [ no  ]
+---- ├ [seller_shop_pubstat_rank_header      ]                                  [header        ] "РАНГ"                                         [ no  ]
 ---- └ [seller_shop_pubstat_rank_widget      ]                                  [widget        ] ">>>>>"               [color1/color2]            
 s4) ┌──[seller_shop_activity                 ]                                  [section       ]
 ----├┬ [seller_shop_activity_button          ]                                  [button        ]                                                [ yes ]
 ----│├ [seller_shop_activity_button_header   ]                                  [header        ] "АКТИВНОСТЬ"                                   [ no  ]
 ----│└ [seller_shop_activity_button_badge    ]                                  [badge         ] { number }                                     [ no  ]
-----└┬ [seller_shop_activity_widget          ]                                  [widget        ]                                                [ no  ]
----- ├ [seller_shop_activity_toggle          ]                                  [toggle        ]                       [color1/color2]          [ yes ]
----- └ [seller_shop_activity_indicator       ]                                  [indicator     ]                       [color1/color2]          [ no  ]
-s5)  ┌─[seller_shop_delivery                 ]                                  [section       ]
----- ├ [seller_shop_delivery_button          ]                                  [button        ] "ДОСТАВКА"                                     [ yes ]
----- ├ [seller_shop_delivery_widget          ]                                  [widget        ]                                                [ no  ]
----- ├ [seller_shop_delivery_toggle          ]                                  [toggle        ]                       [color1/color2]          [ yes ]
----- └ [seller_shop_delivery_indicator       ]                                  [indicator     ]                       [color1/color2]          [ no  ]
+----├─ [seller_shop_activity_widget          ]                                  [widget        ]                                                [ no  ]
+----└┬ [seller_shop_activity_toggle          ]                                  [toggle        ]                                                [ yes ]
+---- ├ [seller_shop_activity_toggle_header   ]                                  [header        ] "РАБОТАЮ/НЕ РАБОТАЮ"                           [ no  ]
+---- ├ [seller_shop_activity_toggle_switcher ]                                  [toggle        ]                       [color1/color2]          [ yes ]
+---- └ [seller_shop_activity_toggle_indicator]                                  [indicator     ]                       [color1/color2]          [ no  ]
+s5) ┌──[seller_shop_ship                     ]                                  [section       ]
+----├┬ [seller_shop_ship_button              ]                                  [button        ]                                                [ yes ]
+----│├ [seller_shop_ship_button_header       ]                                  [header        ] "ДОСТАВКА"                                     [ no  ]
+----│└ [seller_shop_ship_button_badge        ]                                  [badge         ] { number }                                     [ no  ]
+----├─ [seller_shop_ship_widget              ]                                  [widget        ]                                                [ no  ]
+----└┬ [seller_shop_ship_toggle              ]                                  [toggle        ]                                                [ yes ]
+---- ├ [seller_shop_ship_toggle_header       ]                                  [header        ] "АКТИВИРОВАНО/НЕ..."                           [ no  ]
+---- ├ [seller_shop_ship_toggle_switcher     ]                                  [toggle        ]                       [color1/color2]          [ yes ]
+---- └ [seller_shop_ship_toggle_indicator    ]                                  [indicator     ]                       [color1/color2]          [ no  ]
 s6)  ┌─[seller_shop_book                     ]                                  [section       ]
 ---- ├ [seller_shop_book_button              ]                                  [button        ] "РЕЗЕРВИРОВАНИЕ"                               [ yes ]
 ---- ├ [seller_shop_book_widget              ]                                  [widget        ]                                                [ no  ]
@@ -132,7 +138,7 @@ s10)┌─ [seller_nav                           ]                              
 🡆 seller_shop_pubstat
 
 ✠ details
-Секция seller_shop_top состоит из секции seller_shop_pubstat представляющего собой кнопку и включающего 3 компонента:
+Секция seller_shop_top состоит из секции seller_shop_pubstat представляющего собой кнопку и включающей 3 компонента:
 - seller_shop_pubstat_rating_header - наименование кнопки "РЕЙТИНГ";
 - seller_shop_pubstat_rating - отображает рейтинг seller в виде 10-звездного индикатора "★★★★★★★★★★";
 - seller_shop_pubstat_reputation_header - наименование кнопки "РЕПУТАЦИЯ";
@@ -179,51 +185,165 @@ s10)┌─ [seller_nav                           ]                              
 🡆 seller_shop_activity
 
 ✠ details
-Секция seller_shop_activity состоит из секции включающего 4 компонента:
-- seller_shop_activity_button - кнопка с бейджем, при нажатии на которую открывается seller_stat_screen;
-- seller_shop_activity_button_header - наименование кнопки АКТИВНОСТЬ;
-- seller_shop_activity_button_badge - индиакатор отображающий количество посетителей магазина на текущий момент времени;
-- seller_shop_activity_widget - псевдоним или название магазина
-- seller_shop_activity_toggle - переключатель режимов между seller_mode (левая позиция) и buyer_mode (правая позиция). По умолчанию для seller активирован seller_mode, когда рычаг seller_shop_top_toggle находится в левой позиции. 
-- seller_shop_activity_indicator
+Секция seller_shop_activity состоит из секции включающей 3 компонента:
+1) seller_shop_activity_button - кнопка с бейджем, при нажатии на которую открывается seller_stat_visitors_screen;
+-- seller_shop_activity_button_header - наименование кнопки АКТИВНОСТЬ;
+-- seller_shop_activity_button_badge - индиакатор отображающий количество посетителей магазина на текущий момент времени;
+2) seller_shop_activity_widget - отображает настройки сделанные в setting_seller_active_screen: 
+-- если выбран seller_active_time_schedule, тогда в первой строке фигурирует сокращенное наименование варианта регулировки рабочего времени: "ГРАФИК", во второй строке фигурирует значение seller_active_time_schedule_worktime;
+-- если выбран seller_active_time_auto, тогда 1 или 2 строками фигурирует сокращенное наименование варианта регулировки рабочего времени: "GPS ПОЗИЦИОНИРОВАНИЕ"; 
+-- если выбран seller_active_time_manual, тогда 1 или 2 строками фигурирует сокращенное наименование варианта регулировки рабочего времени: "РУЧНОЕ УПРАВЛЕНИЕ";
+3) seller_shop_activity_toggle - переключатель режимов между seller_mode и buyer_mode, включает 3 элемента (вся область компонента активна):
+-- seller_shop_activity_toggle_header - имеет наименование "РАБОТАЮ" в активированном режиме и наименование "НЕ РАБОТАЮ" в дезактивированном режиме;
+-- seller_shop_activity_toggle_switcher - переключатель между рабочим (seller_shop_activity_toggle_switcher = on) и нерабочим режимом (seller_shop_activity_toggle_switcher = off). Если активирован seller_active_time_schedule, тогда seller_shop_activity_toggle_switcher автоматически переключается между on и off согласно рабочему графику. Если активирован seller_active_time_auto, тогда seller_shop_activity_toggle_switcher автоматически переключается между on и off согласно геолокации устройства seller. Если активирован seller_active_time_manual, тогда seller_shop_activity_toggle_switcher переключается между on и off вручную.
+-- seller_shop_activity_toggle_indicator - отображает состояние согласно on/off для seller_shop_activity_toggle_switcher.
 
 ✠ actions
-• seller_shop_top_avatar:
+• seller_shop_activity_button:
 ╠ valid / invalid
-║ occasion: нажатие seller_shop_top_avatar;
+║ occasion: нажатие seller_shop_activity_button;
 ║ condition: в любой ситуации;
-╙ result: открывается setting_seller_screen.
-• seller_shop_top_toggle:
+╙ result: открывается seller_stat_visitors_screen.
+• seller_shop_activity_toggle:
 ╠ valid / invalid
-║ occasion: нажатие seller_shop_top_toggle;
-║ condition: seller_mode;
-╙ result: открывается observer_screen в режиме buyer_mode. 
+║ occasion: нажатие seller_shop_activity_toggle;
+║ condition: в любой ситуации;
+║ result: 
+║ || - если seller_shop_activity_toggle_switcher = off, переключается в режим seller_shop_activity_toggle_switcher = on;
+╙ || - если seller_shop_activity_toggle_switcher = on, переключается в режим seller_shop_activity_toggle_switcher = off.
+
+✠ affections
+• seller_shop_activity_button_badge
+╠ valid
+║ occasion: buyer заходит в магазин seller;
+║ condition: seller online;
+║ result: отображение в seller_shop_activity_button_badge цифрового значения равного количеству находящихся в магазине покупателей.
+╠ invalid
+║ occasion: buyer заходит в магазин seller;
+║ condition: seller offline;
+╙ result: отображение в seller_shop_activity_button_badge цифрового значения равного 0.
 
 ✠ color_states
 ┌─
-│seller_shop_top_avatar
+│seller_shop_activity_button
 │---------------------------
 │• color2
-│------ если setting_seller_img_avatar нет.
+│------ в inactive_state.
+│• color1
+│------ в pressing_state;
 └─
 ┌─
-│seller_shop_top_indicator
+│seller_shop_activity_button_badge
 │---------------------------
-│• color1
-│------ если юзер online;
-│• color2
-│------ если юзер offline.
+│• color4
+│------ в любой ситуации.
 └─
 ┌─
-│seller_shop_top_toggle
+│seller_shop_activity_toggle
+│---------------------------
+│• color2
+│------ в любой ситуации.
+└─
+┌─
+│seller_shop_activity_toggle_switcher
 │---------------------------
 │• color1
-│------ рычаг seller_shop_top_toggle;
+│------ окрашивается рычаг seller_shop_activity_toggle_switcher находящийся в правой позиции;
 │• color2
-│------ основное тело seller_shop_top_toggle.
+│------ окрашивается рычаг seller_shop_activity_toggle_switcher находящийся в левой позиции;
+└─
+┌─
+│seller_shop_activity_toggle_indicator
+│---------------------------
+│• color1
+│------ если рычаг seller_shop_activity_toggle_switcher находящийся в правой позиции;
+│• color2
+│------ если рычаг seller_shop_activity_toggle_switcher находящийся в левой позиции;
 └─
 
 
+🡆 seller_shop_ship
+
+✠ details
+Секция seller_shop_ship состоит из секции включающего 3 компонента:  
+1) seller_shop_ship_button - кнопка с бейджем, при нажатии на которую открывается seller_money_screen;
+-- seller_shop_ship_button_header - наименование кнопки ДОСТАВКА;
+-- seller_shop_ship_button_badge - индиакатор отображающий количество невыполненных заказов с доставкой;
+2) seller_shop_ship_widget - отображает настройки сделанные в setting_seller_ship_screen: 
+-- если выбран seller_active_time_schedule, тогда в первой строке фигурирует сокращенное наименование варианта регулировки рабочего времени: "ГРАФИК", во второй строке фигурирует значение seller_active_time_schedule_worktime;
+-- если выбран seller_active_time_auto, тогда 1 или 2 строками фигурирует сокращенное наименование варианта регулировки рабочего времени: "GPS ПОЗИЦИОНИРОВАНИЕ"; 
+-- если выбран seller_active_time_manual, тогда 1 или 2 строками фигурирует сокращенное наименование варианта регулировки рабочего времени: "РУЧНОЕ УПРАВЛЕНИЕ";
+3) seller_shop_ship_toggle - переключатель режимов между активацией и дезактивацией опции, включает 3 элемента (вся область компонента активна):
+-- seller_shop_ship_toggle_header - имеет наименование "АКТИВИРОВАНО" в активированном режиме и наименование "НЕ АКТИВИРОВАНО" в дезактивированном режиме;
+-- seller_shop_ship_toggle_switcher - переключатель между рабочим (seller_shop_ship_toggle_switcher = on) и нерабочим режимом (seller_shop_ship_toggle_switcher = off). Включается и отключается вручную.
+-- seller_shop_ship_toggle_indicator - отображает состояние согласно on/off для seller_shop_ship_toggle_switcher.
+
+✠ actions
+• seller_shop_ship_button:
+╠ valid / invalid
+║ occasion: нажатие seller_shop_ship_button;
+║ condition: в любой ситуации;
+╙ result: открывается seller_money_screen.
+• seller_shop_ship_toggle:
+╠ valid / invalid
+║ occasion: нажатие seller_shop_ship_toggle;
+║ condition: в любой ситуации;
+║ result: 
+║ || - если seller_shop_ship_toggle_switcher = off: 
+║ ---- переключается в режим seller_shop_ship_toggle_switcher = on; 
+║ ---- opacity=1 для seller_shop_ship_button и seller_shop_ship_widget;
+║ || - если seller_shop_ship_toggle_switcher = on:
+║ ---- переключается в режим seller_shop_ship_toggle_switcher = off; 
+╙ ---- opacity=0.2 для seller_shop_ship_button и seller_shop_ship_widget.
+
+✠ affections
+• seller_shop_ship_button_badge
+╠ valid
+║ occasion: buyer совершает покупку с доставкой;
+║ condition: seller_shop_ship_toggle_switcher = on;
+║ result: отображение в seller_shop_ship_button_badge цифрового значения равного количеству покупок с доставкой.
+╠ invalid
+║ occasion: buyer планирует совершить покупку с доставкой;
+║ condition: seller_shop_ship_toggle_switcher = off;
+╙ result: не реагирует.
+
+✠ color_states
+┌─
+│seller_shop_ship_button
+│---------------------------
+│• color2
+│------ в inactive_state.
+│• color1
+│------ в pressing_state;
+└─
+┌─
+│seller_shop_ship_button_badge
+│---------------------------
+│• color4
+│------ seller_shop_ship_toggle_switcher = on.
+└─
+┌─
+│seller_shop_ship_toggle
+│---------------------------
+│• color2
+│------ в любой ситуации.
+└─
+┌─
+│seller_shop_ship_toggle_switcher
+│---------------------------
+│• color1
+│------ окрашивается рычаг seller_shop_ship_toggle_switcher находящийся в правой позиции;
+│• color2
+│------ окрашивается рычаг seller_shop_ship_toggle_switcher находящийся в левой позиции;
+└─
+┌─
+│seller_shop_ship_toggle_indicator
+│---------------------------
+│• color1
+│------ если рычаг seller_shop_ship_toggle_switcher находящийся в правой позиции;
+│• color2
+│------ если рычаг seller_shop_ship_toggle_switcher находящийся в левой позиции;
+└─
 
 
 
