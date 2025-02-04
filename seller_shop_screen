@@ -6,7 +6,6 @@
 
 
 
-
 seller_shop_screen
 ■■■■■■■■■■■■■■■■■■
 seller_shop_screen является домашним экраном seller_mode, вход в который осуществляется посредством кнопки "МАГАЗИН" на seller_shop_nav и представляет собой информационный экран с органами управления наиболее динамических настроек. seller_shop_screen разделен на 10 sections следующего содержания расположенных сверху-вниз:
@@ -236,7 +235,7 @@ s10)┌─ [seller_nav                           ]                          [sec
 ╠ valid
 ║ occasion: buyer заходит в магазин seller;
 ║ condition: seller online;
-║ result: отображение в seller_shop_activity_button_badge цифрового значения равного количеству находящихся в магазине покупателей.
+║ result: отображение в seller_shop_activity_button_badge цифрового значения равного количеству находящихся в магазине посетителей.
 ╠ invalid
 ║ occasion: buyer заходит в магазин seller;
 ║ condition: seller offline;
@@ -614,7 +613,7 @@ description:                         codename:                              type
 -- seller_shop_stat_sales_value - отображает количество покупателей за последние 24 часа.
 2) seller_shop_stat_profit - выполняющий комбинированную функцию widget + button и включающий 2 основных элемента:
 -- seller_shop_stat_profit_header - представлен заголовком "ДОХОД";
--- seller_shop_stat_profit_value - отображает доход в указанной seller в настройках за последние 24 часа.
+-- seller_shop_stat_profit_value - отображает доход в указанной валюте за последние 24 часа.
  
 ✠ actions
 • seller_shop_stat_sales:
@@ -680,16 +679,115 @@ description:                         codename:                              type
 -- seller_nav_monitor_badge - отображает количество hunt_screen_monitor_message в seller_hunt_screen.
 2) seller_nav_chat_button - кнопка с наименованием и бейджем, предназначена для перехода к seller_chat_screen;
 -- seller_nav_chat_header - представлен заголовком "ЧАТ";
--- seller_nav_chat_badge - отображает доход в указанной seller в настройках за последние 24 часа.
+-- seller_nav_chat_badge - отображает количество непросмотренных chat_screen_chat_message_node.
 3) seller_nav_shop_button - кнопка с наименованием и бейджем, предназначена для перехода к seller_shop_screen (активирована по умолчанию);
 -- seller_nav_shop_header - представлен заголовком "МАГАЗИН";
--- seller_nav_shop_badge - отображает доход в указанной seller в настройках за последние 24 часа.
+-- seller_nav_shop_badge - отображает количество посетителей находящихся в магазине в текущий момент.
 4) seller_nav_lots_button - кнопка с наименованием и бейджем, предназначена для перехода к seller_lot_screen;
 -- seller_nav_lots_header - представлен заголовком "ТОВАРЫ";
--- seller_nav_lots_badge - отображает доход в указанной seller в настройках за последние 24 часа.
+-- seller_nav_lots_badge - отображает число лотов по которым заканчивается товар.
 5) seller_nav_finance_button - кнопка с наименованием и бейджем, предназначена для перехода к seller_money_screen;
 -- seller_nav_finance_header - представлен заголовком "ФИНАНСЫ";
--- seller_nav_finance_badge - отображает доход в указанной seller в настройках за последние 24 часа.
+-- seller_nav_finance_badge - отображает количество денежных транзакций.
+
+✠ actions
+• seller_nav_monitor_button:
+╠ valid / invalid
+║ occasion: нажатие seller_nav_monitor_button;
+║ condition: в любой ситуации;
+╙ result: открывается seller_hunt_screen.
+• seller_nav_chat_button:
+╠ valid / invalid
+║ occasion: нажатие seller_nav_chat_button;
+║ condition: в любой ситуации;
+╙ result: открывается seller_chat_screen.
+• seller_nav_shop_button:
+╠ valid / invalid
+║ occasion: нажатие seller_nav_shop_button;
+║ condition: в любой ситуации;
+╙ result: открывается seller_shop_screen.
+• seller_nav_lots_button:
+╠ valid / invalid
+║ occasion: нажатие seller_nav_lots_button;
+║ condition: в любой ситуации;
+╙ result: открывается seller_lot_screen.
+• seller_nav_finance_button:
+╠ valid / invalid
+║ occasion: нажатие seller_nav_finance_button;
+║ condition: в любой ситуации;
+╙ result: открывается seller_money_screen.
+
+✠ color_states
+┌─
+│seller_nav_monitor_button  
+│---------------------------
+│• color2
+│------ в inactive_state;
+│• color1
+│------ в active_state.
+└─
+┌─
+│seller_nav_monitor_badge  
+│---------------------------
+│• color4
+│------ в любой ситуации.
+└─
+┌─
+│seller_nav_chat_button  
+│---------------------------
+│• color2
+│------ в inactive_state;
+│• color1
+│------ в active_state.
+└─
+┌─
+│seller_nav_chat_badge  
+│---------------------------
+│• color4
+│------ в любой ситуации.
+└─
+┌─
+│seller_nav_shop_button  
+│---------------------------
+│• color2
+│------ в inactive_state;
+│• color1
+│------ в active_state.
+└─
+┌─
+│seller_nav_shop_badge  
+│---------------------------
+│• color4
+│------ в любой ситуации.
+└─
+┌─
+│seller_nav_lots_button  
+│---------------------------
+│• color2
+│------ в inactive_state;
+│• color1
+│------ в active_state.
+└─
+┌─
+│seller_nav_lots_badge  
+│---------------------------
+│• color4
+│------ в любой ситуации.
+└─
+┌─
+│seller_nav_finance_button  
+│---------------------------
+│• color2
+│------ в inactive_state;
+│• color1
+│------ в active_state.
+└─
+┌─
+│seller_nav_finance_badge  
+│---------------------------
+│• color4
+│------ в любой ситуации.
+└─
 
 
 
