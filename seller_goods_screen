@@ -1,0 +1,109 @@
+
+
+
+
+-------------------------------------------------------------------
+-------------------------------------------------------------------
+-------------------------------------------------------------------
+-------------------------------------------------------------------
+-------------------------------------------------------------------
+
+
+
+
+
+
+seller_goods_screen
+■■■■■■■■■■■■■■■■■■
+seller_goods_screen предназначен для отображения товаров seller в качестве так называемых (торговых) лотов, вход в который осуществляется посредством кнопки "МАГАЗИН" на seller_shop_nav и представляет собой информационный экран с органами управления наиболее динамических настроек. seller_goods_screen разделен на 10 sections следующего содержания расположенных сверху-вниз:
+
+                 codename:                                header:          type:                button_name:         active/inactive:       interaction:
+s1)  ┌─[seller_shop_cap                      ]                          [section       ]
+---- ├ [seller_shop_cap_ship                 ]                          [button+widget ] "ПРОДАЖИ"                    [color1/color2]          [ yes ]
+---- ├ [seller_shop_cap_book                 ]                          [button+widget ] "ДОХОД"                      [color1/color2]      
+---- ├ [seller_shop_cap_username             ]                          [widget        ] "ДОХОД"                      [color1/color2]    
+---- └ [seller_shop_cap_setting              ]                          [button        ] "НАСТРОЙКИ"                  [color1/color2]          [ yes ] 
+s2) ┌┬─[seller_shop_top                      ]                          [section       ]
+----│├ [seller_shop_top_avatar               ]                          [widget+button ]                              [color2]                 [ no  ]
+----│├ [seller_shop_top_indicator            ]                          [indicator     ]                              [color1/color2]          [ no  ]
+----│└ [seller_shop_top_username             ]                          [widget        ]                              [color1/color2]          [ no  ]
+----└┬ [seller_shop_top_toggle               ]                          [toggle        ]                                                       [ yes ]
+---- ├ [seller_shop_top_toggle_header        ]                          [header        ] "РЕЖИМ МАГАЗИНА"                                      [ no  ]
+---- ├ [seller_shop_top_toggle_switcher      ]                          [toggle        ]                              [color1/color2]          [ yes ]
+---- └ [seller_shop_top_toggle_icon          ]                          [icon          ]                              [color2]                 [ no  ]
+s3) ┌──[seller_shop_pubstat                  ]                          [section+button]                                                       [ yes ]
+----├┬ [seller_shop_pubstat_rating           ]                          [subsection    ]                              [color1/color2]          [ no  ]
+----│├ [seller_shop_pubstat_rating_header    ]                          [header        ] "РЕЙТИНГ"                                             [ no  ]
+----│└ [seller_shop_pubstat_rating_widget    ]                          [widget        ] "★★★★★★★★★★"                 [color1/color2]            
+----├┬ [seller_shop_pubstat_reputation       ]                          [subsection    ]                              [color1/color2]          [ no  ]
+----│├ [seller_shop_pubstat_reputation_header]                          [header        ] "РЕПУТАЦИЯ"                                           [ no  ]
+----│└ [seller_shop_pubstat_reputation_widget]                          [widget        ] "BAD, GOOD, NORMAL ..."      [color1/color2]            	
+----└┬ [seller_shop_pubstat_rank             ]                          [subsection    ]                              [color1/color2]          [ no  ]
+---- ├ [seller_shop_pubstat_rank_header      ]                          [header        ] "РАНГ"                                                [ no  ]
+---- └ [seller_shop_pubstat_rank_widget      ]                          [widget        ] ">>>>>"                      [color1/color2]            
+s4) ┌──[seller_shop_activity                 ]                          [section       ]
+----├┬ [seller_shop_activity_button          ]                          [button        ]                                                       [ yes ]
+----│├ [seller_shop_activity_button_header   ]                          [header        ] "АКТИВНОСТЬ"                                          [ no  ]
+----│└ [seller_shop_activity_button_badge    ]                          [badge         ] { number }                                            [ no  ]
+----├─ [seller_shop_activity_widget          ]                          [widget        ]                                                       [ no  ]
+----└┬ [seller_shop_activity_toggle          ]                          [toggle        ]                                                       [ yes ]
+---- ├ [seller_shop_activity_toggle_header   ]                          [header        ] "РАБОТАЮ/НЕ РАБОТАЮ"                                  [ no  ]
+---- ├ [seller_shop_activity_toggle_switcher ]                          [toggle        ]                              [color1/color2]          [ yes ]
+---- └ [seller_shop_activity_toggle_indicator]                          [indicator     ]                              [color1/color2]          [ no  ]
+s5) ┌──[seller_shop_ship                     ]                          [section       ]
+----├┬ [seller_shop_ship_button              ]                          [button        ]                                                       [ yes ]
+----│├ [seller_shop_ship_button_header       ]                          [header        ] "ДОСТАВКА"                                            [ no  ]
+----│└ [seller_shop_ship_button_badge        ]                          [badge         ] { number }                                            [ no  ]
+----├─ [seller_shop_ship_widget              ]                          [widget        ]                                                       [ no  ]
+----└┬ [seller_shop_ship_toggle              ]                          [toggle        ]                                                       [ yes ]
+---- ├ [seller_shop_ship_toggle_header       ]                          [header        ] "АКТИВИРОВАНО/ОТКЛЮЧЕНО"                              [ no  ]
+---- ├ [seller_shop_ship_toggle_switcher     ]                          [toggle        ]                              [color1/color2]          [ yes ]
+---- └ [seller_shop_ship_toggle_indicator    ]                          [indicator     ]                              [color1/color2]          [ no  ]
+s6) ┌──[seller_shop_book                     ]                          [section       ]
+----├┬ [seller_shop_book_button              ]                          [button        ]                                                       [ yes ]
+----│├ [seller_shop_book_button_header       ]                          [header        ] "РЕЗЕРВИРОВАНИЕ"                                      [ no  ]
+----│└ [seller_shop_book_button_badge        ]                          [badge         ] { number }                                            [ no  ]
+----├─ [seller_shop_book_widget              ]                          [widget        ]                                                       [ no  ]
+----└┬ [seller_shop_book_toggle              ]                          [toggle        ]                                                       [ yes ]
+---- ├ [seller_shop_book_toggle_header       ]                          [header        ] "АКТИВИРОВАНО/ОТКЛЮЧЕНО"                              [ no  ]
+---- ├ [seller_shop_book_toggle_switcher     ]                          [toggle        ]                              [color1/color2]          [ yes ]
+---- └ [seller_shop_book_toggle_indicator    ]                          [indicator     ]                              [color1/color2]          [ no  ]
+s7) ┌┬─[seller_shop_geoposition              ]                          [section       ]
+----│├ [seller_shop_geoposition_address      ]                          [text          ]                                                       [ no  ]
+----│└ [seller_shop_geoposition_geomap_mini  ]                          [widget        ]                                                       [ no  ]  
+----└┬ [seller_shop_geoposition_button       ]                          [button        ]                              [color1/color2]          [ yes ]
+---- ├ [seller_shop_geoposition_button_icon  ]                          [icon          ]                              [color1/color2]          [ no  ]
+---- └ [seller_shop_geoposition_button_header]                          [header        ] "ГЕО"                        [color1/color2]          [ no  ]
+s8) ┌──[seller_shop_searchlot                ]                          [section       ]
+----├┬ [seller_shop_searcher                 ]                          [input         ]                              [color1/color2]          [ yes ]
+----│├ [seller_shop_searcher_icon            ]                          [icon          ]                              [color1/color2]          [ no  ]
+----│└ [seller_shop_searcher_placeholder     ]                          [placeholder   ] "ПОИСК ЛОТА"                 [color2       ]          [ yes ]
+----└┬ [seller_shop_add_lot                  ]                          [button        ]                              [color1/color2]          [ yes ]
+---- ├ [seller_shop_add_lot_icon             ]                          [icon          ]                              [color1/color2]          [ no  ]
+---- └ [seller_shop_add_lot_header           ]                          [header        ] "ЛОТ"                        [color2       ]          [ no  ]
+s9) ┌──[seller_shop_stat                     ]                          [section       ]
+----├┬ [seller_shop_stat_sales               ]                          [widget+button ]                              [color1/color2]          [ yes ] 
+----│├ [seller_shop_stat_sales_header        ]                          [header        ] "ПРОДАЖИ"                    [color1/color2]          [ no  ] 
+----│└ [seller_shop_stat_sales_value         ]                          [value         ] { number }                   [color1/color2]          [ no  ] 
+----└┬ [seller_shop_stat_profit              ]                          [widget+button ]                              [color1/color2]          [ yes ] 
+---- ├ [seller_shop_stat_profit_header       ]                          [header        ] "ДОХОД"                      [color1/color2]          [ no  ]
+---- └ [seller_shop_stat_profit_value        ]                          [value         ] { number }                   [color1/color2]          [ no  ]      
+s10)┌─ [seller_nav                           ]                          [section       ]
+----├┬ [seller_nav_monitor_button            ]                          [button        ]                              [color1/color2]          [ yes ]
+    │├ [seller_nav_monitor_header            ]                          [header        ] "МОНИТОР"                    [color1/color2]          [ no  ]  
+	│└ [seller_nav_monitor_badge             ]                          [badge         ] { number }                   [color1/color2]          [ no  ] 	
+----├┬ [seller_nav_chat_button               ]                          [button        ]                              [color1/color2]          [ yes ]   
+----│├ [seller_nav_chat_header               ]                          [header        ] "ЧАТ"                        [color1/color2]          [ no  ] 
+----│└ [seller_nav_chat_badge                ]                          [badge         ] { number }                   [color1/color2]          [ no  ] 
+----├┬ [seller_nav_shop_button               ]                          [button        ]                              [color1/color2]          [ yes ]   
+----│├ [seller_nav_shop_header               ]                          [header        ] "МАГАЗИН"                    [color1/color2]          [ no  ] 
+----│└ [seller_nav_shop_badge                ]                          [badge         ] { number }                   [color1/color2]          [ no  ]   
+----├┬ [seller_nav_lots_button               ]                          [button        ]                              [color1/color2]          [ yes ]   
+----│├ [seller_nav_lots_header               ]                          [header        ] "ТОВАРЫ"                     [color1/color2]          [ no  ] 
+----│└ [seller_nav_lots_badge                ]                          [badge         ] { number }                   [color1/color2]          [ no  ]     
+----└┬ [seller_nav_finance_button            ]                          [button        ]                              [color1/color2]          [ yes ]   
+---- ├ [seller_nav_finance_header            ]                          [header        ] "ФИНАНСЫ"                    [color1/color2]          [ no  ] 
+---- └ [seller_nav_finance_badge             ]                          [badge         ] { number }                   [color1/color2]          [ no  ]  
+        
+
+
