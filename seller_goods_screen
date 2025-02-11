@@ -11,11 +11,9 @@
 
 
 
-
-
 seller_goods_screen
 ■■■■■■■■■■■■■■■■■■
-seller_goods_screen предназначен для отображения товаров seller в качестве так называемых (торговых) лотов, вход в который осуществляется посредством кнопки "МАГАЗИН" на seller_shop_nav и представляет собой информационный экран с органами управления наиболее динамических настроек. seller_goods_screen разделен на 10 sections следующего содержания расположенных сверху-вниз:
+seller_goods_screen предназначен для отображения товаров seller в качестве так называемых (торговых) лотов, вход в который осуществляется посредством кнопки "ТОВАРЫ" на seller_nav_lots и представляет список товаров выполненных в виде блоков с краткой информацией о товаре. seller_goods_screen разделен на 10 sections следующего содержания расположенных сверху-вниз:
 
                  codename:                                header:          type:                button_name:         active/inactive:       interaction:
 s1)  ┌─[seller_shop_cap                      ]                          [section       ]
@@ -106,4 +104,53 @@ s10)┌─ [seller_nav                           ]                          [sec
 ---- └ [seller_nav_finance_badge             ]                          [badge         ] { number }                   [color1/color2]          [ no  ]  
         
 
+
+
+
+<<<<< seller_goods_screen >>>>>    
+
+В разделе размещается список товаров seller_place в виде единого списка seller_shop_lot_list. Над списком вверху располагается кнопка seller_shop_searcher_button (дублируется в shop_screen) и ниже seller_add_lot_button (дублируется в shop_screen). 
+
+Каждый seller_shop_lot в seller_shop_lot_list отображается в виде lot_cover - прямоугольного блока данных занимающего приблизительно 15-20% по высоте относительно вертикального размера экрана и 100% по ширине, который представлен следующим перечнем данных:
+
+  description:	          type:        	  lot_edit_button_mainname           codename:                       location:                              color:
+- наименование         [ widget ]                                       [ lot_name_widget ]            (в левой части, сверху)
+- цена                 [ widget ]                                       [ lot_price_widget ]           (в левой части, ниже)
+- количество           [ widget ]                                       [ lot_quantity_widget ]        (в левой части, ниже)
+- изображение          [ widget ]                                       [ lot_img_widget ]             (в центральной части)
+- редактирование       [ button ]                "ИЗМЕНИТЬ"             [ lot_edit_button ]            (в правой части, выше lot_hide_toggle)     [ color1 ]
+- видимость            [ button ]         "СКРЫТЬ" / "ВОССТАНОВИТЬ"     [ lot_hide_toggle ]            (в правой части, ниже lot_edit_button)     [ color1 ]
+- удаление             [ button ]                "УДАЛИТЬ"              [ lot_delete_button ]          (в правой части, ниже lot_hide_toggle)     [ color3 ]
+
+При нажатии на: 
+- lot_edit_button
+- seller_add_lot_button
+- lot_cover (в любом месте тела блока исключая кнопки lot_hide_toggle и lot_delete_button) 
+открывается одно и то же окно редактирования данных лота lot_edit_screen. 
+
+lot_hide_toggle
+При нажатии lot_hide_toggle выбранный lot перестает отображаться для buyer. Нажимая данную кнопку впервые для seller всплывает lot_hide_modal разделенный на 4 sections следующего содержания расположенных сверху-вниз:
+s1) - text: "НАЖИМАЯ ДАННУЮ КНОПКУ ВЫ СКРЫВАЕТЕ ВЫБРАННЫЙ ТОВАР ДЛЯ ПОКУПАТЕЛЯ, ДЛЯ ВАС ОН ОСТАНЕТСЯ ВИДИМЫМ";
+s2) - text: "ЕСЛИ ВЫ УВЕРЕНЫ НАЖМИТЕ 'СКРЫТЬ'";
+s3) - секция из двух расположенных вряд кнопок:
+              codename:             type:          name:
+	    - lot_hide_button_no      [ button ]     ["ОТМЕНА"]
+	    - lot_hide_toggle_yes:
+		- lot_hide_toggle_on      [ button ]     ["СКРЫТЬ"] 
+		- lot_hide_toggle_off     [ button ]     ["ВОССТАНОВИТЬ"]   
+При нажатии lot_hide_toggle со второго раза и впоследствии функция lot_hide применяется немедленно без lot_hide_modal.
+После применения lot_hide: 
+- у lot_cover снижается видимость наполовину (opacity=0.5);
+- lot_hide_toggle_on переключается в состояние lot_hide_toggle_off и меняет название "СКРЫТЬ" на "ВОССТАНОВИТЬ".
+При нажатии lot_hide_toggle в состоянии lot_hide_toggle_off:
+- у lot_cover восстанавливается видимость до номинала (opacity=1);
+- lot_hide_toggle_off переключается в состояние lot_hide_toggle_on и меняет название "ВОССТАНОВИТЬ" на "СКРЫТЬ".
+
+lot_delete_button
+При нажатии lot_delete_button данные lot_data выбранного лота полностью удаляются из seller_goods_screen. При нажатии lot_delete_button всплывает lot_hide_modal разделенный на 3 sections следующего содержания расположенных сверху-вниз: 
+s1) - text: "НАЖИМАЯ ДАННУЮ КНОПКУ ВЫ УДАЛЯЕТЕ ВЫБРАННЫЙ ТОВАР";
+s2) - text: "ЕСЛИ ВЫ УВЕРЕНЫ НАЖМИТЕ 'УДАЛИТЬ'"; 
+s3) - секция из двух расположенных вряд кнопок:
+	- lot_delete_button_no       ["ОТМЕНА"]    [ button ]
+	- lot_delete_button_yes      ["УДАЛИТЬ"]   [ button ]
 
