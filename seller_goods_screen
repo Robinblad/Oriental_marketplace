@@ -11,34 +11,40 @@
 
 
 
-seller_goods_screen
+
+
+seller_lot_screen
 ■■■■■■■■■■■■■■■■■■
-seller_goods_screen предназначен для отображения товаров seller в качестве так называемых (торговых) лотов, вход в который осуществляется посредством кнопки "ТОВАРЫ" на seller_nav_lots и представляет список товаров выполненных в виде блоков с краткой информацией о товаре. seller_goods_screen разделен на 10 sections следующего содержания расположенных сверху-вниз:
+seller_lot_screen предназначен для отображения товаров seller в качестве так называемых (торговых) лотов, вход в который осуществляется посредством кнопки "ТОВАРЫ" на seller_nav_lots и представляет список товаров выполненных в виде блоков с краткой информацией. seller_lot_screen разделен на 3 sections следующего содержания расположенных сверху-вниз:
 
                  codename:                                header:          type:                button_name:         active/inactive:       interaction:
-s1)  ┌─[seller_shop_cap                      ]                          [section       ]
----- ├ [seller_shop_cap_ship                 ]                          [button+widget ] "ПРОДАЖИ"                    [color1/color2]          [ yes ]
----- ├ [seller_shop_cap_book                 ]                          [button+widget ] "ДОХОД"                      [color1/color2]      
----- ├ [seller_shop_cap_username             ]                          [widget        ] "ДОХОД"                      [color1/color2]    
----- └ [seller_shop_cap_setting              ]                          [button        ] "НАСТРОЙКИ"                  [color1/color2]          [ yes ] 
-s2) ┌┬─[seller_shop_top                      ]                          [section       ]
-----│├ [seller_shop_top_avatar               ]                          [widget+button ]                              [color2]                 [ no  ]
-----│├ [seller_shop_top_indicator            ]                          [indicator     ]                              [color1/color2]          [ no  ]
-----│└ [seller_shop_top_username             ]                          [widget        ]                              [color1/color2]          [ no  ]
-----└┬ [seller_shop_top_toggle               ]                          [toggle        ]                                                       [ yes ]
----- ├ [seller_shop_top_toggle_header        ]                          [header        ] "РЕЖИМ МАГАЗИНА"                                      [ no  ]
----- ├ [seller_shop_top_toggle_switcher      ]                          [toggle        ]                              [color1/color2]          [ yes ]
----- └ [seller_shop_top_toggle_icon          ]                          [icon          ]                              [color2]                 [ no  ]
-s3) ┌──[seller_shop_pubstat                  ]                          [section+button]                                                       [ yes ]
-----├┬ [seller_shop_pubstat_rating           ]                          [subsection    ]                              [color1/color2]          [ no  ]
-----│├ [seller_shop_pubstat_rating_header    ]                          [header        ] "РЕЙТИНГ"                                             [ no  ]
-----│└ [seller_shop_pubstat_rating_widget    ]                          [widget        ] "★★★★★★★★★★"                 [color1/color2]            
-----├┬ [seller_shop_pubstat_reputation       ]                          [subsection    ]                              [color1/color2]          [ no  ]
-----│├ [seller_shop_pubstat_reputation_header]                          [header        ] "РЕПУТАЦИЯ"                                           [ no  ]
-----│└ [seller_shop_pubstat_reputation_widget]                          [widget        ] "BAD, GOOD, NORMAL ..."      [color1/color2]            	
-----└┬ [seller_shop_pubstat_rank             ]                          [subsection    ]                              [color1/color2]          [ no  ]
----- ├ [seller_shop_pubstat_rank_header      ]                          [header        ] "РАНГ"                                                [ no  ]
----- └ [seller_shop_pubstat_rank_widget      ]                          [widget        ] ">>>>>"                      [color1/color2]            
+s1) ┌──[seller_shop_searchlot                ]                          [section       ]
+----├┬ [seller_shop_searcher                 ]                          [input         ]                              [color1/color2]          [ yes ]
+----│├ [seller_shop_searcher_icon            ]                          [icon          ]                              [color1/color2]          [ no  ]
+----│└ [seller_shop_searcher_placeholder     ]                          [placeholder   ] "ПОИСК ЛОТА"                 [color2       ]          [ yes ]
+----└┬ [seller_shop_add_lot                  ]                          [button        ]                              [color1/color2]          [ yes ]
+---- ├ [seller_shop_add_lot_icon             ]                          [icon          ]                              [color1/color2]          [ no  ]
+---- └ [seller_shop_add_lot_header           ]                          [header        ] "ЛОТ"                        [color2       ]          [ no  ] 
+s2)    [seller_shop_lot_list                 ]                          [section       ]
+s2) ┌┬─[seller_shop_lot_cover                ]                          [section       ]
+----│├ [seller_shop_lot_cover_info           ]                          [component     ]                              [color2]                 [ no  ]
+----│├ [seller_shop_lot_cover_info_name      ]                          [widget        ]                              [color1/color2]          [ no  ]
+----│├ [seller_shop_lot_cover_info_price     ]                          [widget        ]                              [color1/color2]          [ no  ]
+----│└ [seller_shop_lot_cover_info_quantity  ]                          [widget        ]                              [color1/color2]          [ no  ]
+----└┬ [seller_shop_lot_cover_img            ]                          [picture+button]                                                       [ no  ]
+---- ├ [seller_shop_lot_cover_control_edit   ]                          [button        ] "РЕЖИМ МАГАЗИНА"                                      [ no  ]
+---- ├ [seller_shop_lot_cover_control_hide   ]                          [button        ]                              [color1/color2]          [ yes ]
+---- └ [seller_shop_lot_cover_control_close  ]                          [button        ]                              [color2]                 [ no  ]
+
+- наименование         [ widget ]                                       [ lot_name_widget ]            (в левой части, сверху)
+- цена                 [ widget ]                                       [ lot_price_widget ]           (в левой части, ниже)
+- количество           [ widget ]                                       [ lot_quantity_widget ]        (в левой части, ниже)
+- изображение          [ widget ]                                       [ lot_img_widget ]             (в центральной части)
+- редактирование       [ button ]                "ИЗМЕНИТЬ"             [ lot_edit_button ]            (в правой части, выше lot_hide_toggle)     [ color1 ]
+- видимость            [ button ]         "СКРЫТЬ" / "ВОССТАНОВИТЬ"     [ lot_hide_toggle ]            (в правой части, ниже lot_edit_button)     [ color1 ]
+- удаление             [ button ]                "УДАЛИТЬ"              [ lot_close_button ]          (в правой части, ниже lot_hide_toggle)     [ color3 ]
+
+
 s4) ┌──[seller_shop_activity                 ]                          [section       ]
 ----├┬ [seller_shop_activity_button          ]                          [button        ]                                                       [ yes ]
 ----│├ [seller_shop_activity_button_header   ]                          [header        ] "АКТИВНОСТЬ"                                          [ no  ]
@@ -71,21 +77,7 @@ s7) ┌┬─[seller_shop_geoposition              ]                          [s
 ----│└ [seller_shop_geoposition_geomap_mini  ]                          [widget        ]                                                       [ no  ]  
 ----└┬ [seller_shop_geoposition_button       ]                          [button        ]                              [color1/color2]          [ yes ]
 ---- ├ [seller_shop_geoposition_button_icon  ]                          [icon          ]                              [color1/color2]          [ no  ]
----- └ [seller_shop_geoposition_button_header]                          [header        ] "ГЕО"                        [color1/color2]          [ no  ]
-s8) ┌──[seller_shop_searchlot                ]                          [section       ]
-----├┬ [seller_shop_searcher                 ]                          [input         ]                              [color1/color2]          [ yes ]
-----│├ [seller_shop_searcher_icon            ]                          [icon          ]                              [color1/color2]          [ no  ]
-----│└ [seller_shop_searcher_placeholder     ]                          [placeholder   ] "ПОИСК ЛОТА"                 [color2       ]          [ yes ]
-----└┬ [seller_shop_add_lot                  ]                          [button        ]                              [color1/color2]          [ yes ]
----- ├ [seller_shop_add_lot_icon             ]                          [icon          ]                              [color1/color2]          [ no  ]
----- └ [seller_shop_add_lot_header           ]                          [header        ] "ЛОТ"                        [color2       ]          [ no  ]
-s9) ┌──[seller_shop_stat                     ]                          [section       ]
-----├┬ [seller_shop_stat_sales               ]                          [widget+button ]                              [color1/color2]          [ yes ] 
-----│├ [seller_shop_stat_sales_header        ]                          [header        ] "ПРОДАЖИ"                    [color1/color2]          [ no  ] 
-----│└ [seller_shop_stat_sales_value         ]                          [value         ] { number }                   [color1/color2]          [ no  ] 
-----└┬ [seller_shop_stat_profit              ]                          [widget+button ]                              [color1/color2]          [ yes ] 
----- ├ [seller_shop_stat_profit_header       ]                          [header        ] "ДОХОД"                      [color1/color2]          [ no  ]
----- └ [seller_shop_stat_profit_value        ]                          [value         ] { number }                   [color1/color2]          [ no  ]      
+---- └ [seller_shop_geoposition_button_header]                          [header        ] "ГЕО"                        [color1/color2]          [ no  ]    
 s10)┌─ [seller_nav                           ]                          [section       ]
 ----├┬ [seller_nav_monitor_button            ]                          [button        ]                              [color1/color2]          [ yes ]
     │├ [seller_nav_monitor_header            ]                          [header        ] "МОНИТОР"                    [color1/color2]          [ no  ]  
@@ -96,9 +88,9 @@ s10)┌─ [seller_nav                           ]                          [sec
 ----├┬ [seller_nav_shop_button               ]                          [button        ]                              [color1/color2]          [ yes ]   
 ----│├ [seller_nav_shop_header               ]                          [header        ] "МАГАЗИН"                    [color1/color2]          [ no  ] 
 ----│└ [seller_nav_shop_badge                ]                          [badge         ] { number }                   [color1/color2]          [ no  ]   
-----├┬ [seller_nav_lots_button               ]                          [button        ]                              [color1/color2]          [ yes ]   
-----│├ [seller_nav_lots_header               ]                          [header        ] "ТОВАРЫ"                     [color1/color2]          [ no  ] 
-----│└ [seller_nav_lots_badge                ]                          [badge         ] { number }                   [color1/color2]          [ no  ]     
+----├┬ [seller_nav_lot_button               ]                          [button        ]                              [color1/color2]          [ yes ]   
+----│├ [seller_nav_lot_header               ]                          [header        ] "ТОВАРЫ"                     [color1/color2]          [ no  ] 
+----│└ [seller_nav_lot_badge                ]                          [badge         ] { number }                   [color1/color2]          [ no  ]     
 ----└┬ [seller_nav_finance_button            ]                          [button        ]                              [color1/color2]          [ yes ]   
 ---- ├ [seller_nav_finance_header            ]                          [header        ] "ФИНАНСЫ"                    [color1/color2]          [ no  ] 
 ---- └ [seller_nav_finance_badge             ]                          [badge         ] { number }                   [color1/color2]          [ no  ]  
@@ -107,7 +99,7 @@ s10)┌─ [seller_nav                           ]                          [sec
 
 
 
-<<<<< seller_goods_screen >>>>>    
+<<<<< seller_lot_screen >>>>>    
 
 В разделе размещается список товаров seller_place в виде единого списка seller_shop_lot_list. Над списком вверху располагается кнопка seller_shop_searcher_button (дублируется в shop_screen) и ниже seller_add_lot_button (дублируется в shop_screen). 
 
@@ -147,10 +139,12 @@ s3) - секция из двух расположенных вряд кнопо�
 - lot_hide_toggle_off переключается в состояние lot_hide_toggle_on и меняет название "ВОССТАНОВИТЬ" на "СКРЫТЬ".
 
 lot_delete_button
-При нажатии lot_delete_button данные lot_data выбранного лота полностью удаляются из seller_goods_screen. При нажатии lot_delete_button всплывает lot_hide_modal разделенный на 3 sections следующего содержания расположенных сверху-вниз: 
+При нажатии lot_delete_button данные lot_data выбранного лота полностью удаляются из seller_lot_screen. При нажатии lot_delete_button всплывает lot_hide_modal разделенный на 3 sections следующего содержания расположенных сверху-вниз: 
 s1) - text: "НАЖИМАЯ ДАННУЮ КНОПКУ ВЫ УДАЛЯЕТЕ ВЫБРАННЫЙ ТОВАР";
 s2) - text: "ЕСЛИ ВЫ УВЕРЕНЫ НАЖМИТЕ 'УДАЛИТЬ'"; 
 s3) - секция из двух расположенных вряд кнопок:
 	- lot_delete_button_no       ["ОТМЕНА"]    [ button ]
 	- lot_delete_button_yes      ["УДАЛИТЬ"]   [ button ]
+
+
 
