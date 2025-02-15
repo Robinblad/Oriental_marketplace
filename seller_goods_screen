@@ -13,7 +13,6 @@
 
 
 
-
 seller_lot_screen
 ■■■■■■■■■■■■■■■■■■
 seller_lot_screen предназначен для отображения товаров seller в качестве так называемых (торговых) лотов, вход в который осуществляется посредством кнопки "ТОВАРЫ" на seller_nav_lots и представляет список товаров выполненных в виде блоков с краткой информацией. seller_lot_screen разделен на 3 sections следующего содержания расположенных сверху-вниз:
@@ -35,7 +34,7 @@ s2)    [seller_lot_list                      ]                          [section
 ----├─ [seller_lot_cover_img                 ]                          [picture+button]                              [color2]                 [ yes ]
 ----└┬ [seller_lot_cover_control             ]                          [component     ]                                                       [ no  ]
 ---- ├ [seller_lot_cover_control_edit        ]                          [button        ] "ИЗМЕНИТЬ"                   [color1/color2]          [ yes ]
----- ├ [seller_lot_cover_control_hide        ]                          [button        ] "СКРЫТЬ" / "ВОССТАНОВИТЬ"    [color1/color2]          [ yes ]
+---- ├ [seller_lot_cover_control_veil        ]                          [button        ] "СКРЫТЬ" / "ОТКРЫТЬ"         [color1/color2]          [ yes ]
 ---- └ [seller_lot_cover_control_close       ]                          [button        ] "ЗАКРЫТЬ"                    [color1/color2]          [ yes ]  
 s3) ┌─ [seller_nav                           ]                          [section       ]
 ----├┬ [seller_nav_monitor_button            ]                          [button        ]                              [color1/color2]          [ yes ]
@@ -145,7 +144,7 @@ s3) ┌─ [seller_nav                           ]                          [sec
 ----├─ [seller_lot_cover_img                 ]                          [picture+button]                              [color2]                 [ yes ]
 ----└┬ [seller_lot_cover_control             ]                          [component     ]                                                       [ no  ]
 ---- ├ [seller_lot_cover_control_edit        ]                          [button        ] "ИЗМЕНИТЬ"                   [color1/color2]          [ yes ]
----- ├ [seller_lot_cover_control_hide        ]                          [button        ] "СКРЫТЬ" / "ВОССТАНОВИТЬ"    [color1/color2]          [ yes ]
+---- ├ [seller_lot_cover_control_veil        ]                          [button        ] "СКРЫТЬ" / "ОТКРЫТЬ"         [color1/color2]          [ yes ]
 ---- └ [seller_lot_cover_control_close       ]                          [button        ] "ЗАКРЫТЬ"                    [color1/color2]          [ yes ] 
 
 ✠ actions
@@ -155,7 +154,7 @@ s3) ┌─ [seller_nav                           ]                          [sec
 ║ condition: в любой ситуации;
 ║ result: 
 ║ || - если seller_lot_searcher_modal_lot_status = active, открывается seller_lot_screen с целевым лотом, lot_cover которого прижат к верхней границе экрана;
-║ || - если seller_lot_searcher_modal_lot_status = sold, открывается seller_lot_screen с целевым лотом, lot_cover которого прижат к верхней границе экрана;
+║ || - если seller_lot_searcher_modal_lot_status = inactive, открывается seller_lot_screen с целевым лотом, lot_cover которого прижат к верхней границе экрана;
 ╙ || - если lot_cover имеет seller_lot_searcher_modal_lot_status = archive, открывается seller_goods_screen_archive с целевым лотом, lot_cover которого прижат к верхней границе экрана.
 
 ✠ color_states
@@ -177,6 +176,8 @@ s3) ┌─ [seller_nav                           ]                          [sec
 2) seller_lot_add_lot - кнопка включающая 2 основных элемента:
 -- seller_lot_add_lot_icon - в виде символа "+";
 -- seller_lot_add_lot_header - отображает название кнопки "ЛОТ".
+
+
 
 
 
