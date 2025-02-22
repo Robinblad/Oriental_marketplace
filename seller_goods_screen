@@ -170,14 +170,28 @@ s3) ┌─ [seller_nav                           ]                          [sec
 🡆 seller_lot_list
 
 ✠ details
-Секция seller_lot_searchlot состоит из компонента seller_lot_searcher предназначенного для поиска по лотам магазина seller включая как открытые так и закрытые лоты, и компонента seller_lot_add_lot (дублирует функцию seller_add_lot_button) предназначенного для быстрого добавления лота: 
-1) seller_lot_searcher - выполняющий функцию input и включающий 2 основных элемента:
--- seller_lot_searcher_icon - в виде символа увеличительной лупы;
--- seller_lot_searcher_placeholder - в качестве placeholder используется "ПОИСК ЛОТА".
-2) seller_lot_add_lot - кнопка включающая 2 основных элемента:
--- seller_lot_add_lot_icon - в виде символа "+";
--- seller_lot_add_lot_header - отображает название кнопки "ЛОТ".
+Секция seller_lot_list представляет собой макро-структуру включающую группу секций lot_cover. Локально seller_lot_list располагается в центральной части между seller_lot_searchlot и seller_nav, по ширине занимая все пространство экрана. Высота seller_lot_list недетерминирована и зависит от количества lot_cover. Другими словами высота seller_lot_list = количеству lot_cover. Если высота seller_lot_list превышает видимую область экрана: 
+- у seller_lot_list появляется скролл;
+- seller_lot_cover в топе seller_lot_list прижимается к нижней границе seller_lot_searchlot;
+- нижний край seller_lot_list может выходить за видимую область экрана. 
 
+✠ details
+Что из себя представляет lot_cover:
+
+                 codename:                           header:          type:                button_name:         active/inactive:       interaction:
+----┌──[seller_lot_cover               ]                          [section       ]
+----├┬ [seller_lot_cover_info          ]                          [component     ]                              [color2]                 [ no  ]
+----│├ [seller_lot_cover_info_name     ]                          [widget        ] { string }                   [color1/color2]          [ no  ]
+----│├ [seller_lot_cover_info_price    ]                          [widget        ] { number }                   [color1/color2]          [ no  ]
+----│└ [seller_lot_cover_info_quantity ]                          [widget        ] { number }                   [color1/color2]          [ no  ]
+----├─ [seller_lot_cover_img           ]                          [picture+button]                              [color2]                 [ yes ]
+----└┬ [seller_lot_cover_control       ]                          [component     ]                                                       [ no  ]
+---- ├ [seller_lot_cover_control_edit  ]                          [button        ] "ИЗМЕНИТЬ"                   [color1/color2]          [ yes ]
+---- ├ [seller_lot_cover_control_veil  ]                          [button        ] "СКРЫТЬ" / "ОТКРЫТЬ"         [color1/color2]          [ yes ]
+---- └ [seller_lot_cover_control_close ]                          [button        ] "ЗАКРЫТЬ"                    [color1/color2]          [ yes ] 
+
+
+lot_cover может быть в трех состояниях:
 
 
 
