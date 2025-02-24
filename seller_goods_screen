@@ -13,6 +13,8 @@
 
 
 
+
+
 seller_lot_screen
 ■■■■■■■■■■■■■■■■■■
 seller_lot_screen предназначен для отображения товаров seller в качестве так называемых (торговых) лотов, вход в который осуществляется посредством кнопки "ТОВАРЫ" на seller_nav_lots и представляет список товаров выполненных в виде блоков с краткой информацией. seller_lot_screen разделен на 3 sections следующего содержания расположенных сверху-вниз:
@@ -174,80 +176,102 @@ s3) ┌─ [seller_nav                           ]                          [sec
 - seller_lot_cover в топе seller_lot_list прижимается к нижней границе seller_lot_searchlot;
 - нижний край seller_lot_list может выходить за видимую область экрана. 
 
+
+🡆🡆 lot_cover
+
 ✠ details
 lot_cover может быть в трех состояниях:
  - unveiled - видимый (active) лот, видимый для buyer и seller в seller_lot_screen;
  - veiled   - невидимый (passive) лот, невидимый для buyer и видимый для buyer в seller_lot_screen;
- - closed   - закрытый (archive) лот, хранящийся в архивном каталоге и видимый только для seller.
+ - archived - удаленный (archive) лот, хранящийся в архивном каталоге и видимый только для seller.
  
 lot_cover_unveiled:
 
-                 codename:                      type:                   button_name:     location:    active/inactive:     opacity:   interaction:
-----┌──[seller_lot_cover              ]      [section       ]                             [ ✜ ✜ ]
-----├┬ [seller_lot_cover_info         ]      [component     ]                             [ 🡄 ✜ ]      [color2]            [ 100% ]     [ no  ]
-----│├ [seller_lot_cover_info_name    ]      [widget        ]    { string }               [ 🡄 🡅 ]      [color1/color2]     [ 100% ]     [ no  ]
-----│├ [seller_lot_cover_info_price   ]      [widget        ]    { number }               [ 🡄 ✜ ]      [color1/color2]     [ 100% ]     [ no  ]
-----│└ [seller_lot_cover_info_quantity]      [widget        ]    { number }               [ 🡄 🡇 ]      [color1/color2]     [ 100% ]     [ no  ]
-----├┬ [seller_lot_cover_img          ]      [section       ]                             [ ✜ ✜ ]                          [ 100% ]     [ no  ]
-----│├ [seller_lot_cover_img_frame    ]      [picture+button]                             [ ✜ ✜ ]      [color2]            [ 100% ]     [ yes ]
-----│└ [seller_lot_cover_img_indicator]      [indicator     ]                             [ 🡆 🡅 ]      [color1]            [ 100% ]     [ no  ]
-----└┬ [seller_lot_cover_control      ]      [component     ]                             [ ✜ 🡆 ]                          [ 100% ]     [ no  ]
----- ├ [seller_lot_cover_control_edit ]      [button        ]    "ИЗМЕНИТЬ"               [ 🡆 🡅 ]      [color1/color2]     [ 100% ]     [ yes ]
----- ├ [seller_lot_cover_control_veil ]      [button        ]    "СКРЫТЬ" / "ОТКРЫТЬ"     [ 🡆 ✜ ]      [color1/color2]     [ 100% ]     [ yes ]
----- └ [seller_lot_cover_control_close]      [button        ]    "ЗАКРЫТЬ"                [ 🡆 🡇 ]      [color1/color2]     [ 100% ]     [ yes ]
+                 codename:                     type:        variable:    determined_name:  location:    active/inactive:     opacity:   interaction:
+----┌──[seller_lot_cover              ]   [section       ]                                  [ ✜ ✜ ]
+----├┬ [seller_lot_cover_info         ]   [component     ]                                  [ 🡄 ✜ ]      [color2]            [ 100% ]     [ no  ]
+----│├ [seller_lot_cover_info_name    ]   [widget        ]   {string  }                     [ 🡄 🡅 ]      [color1/color2]     [ 100% ]     [ no  ]
+----│├ [seller_lot_cover_info_price   ]   [widget        ]   {number  }                     [ 🡄 ✜ ]      [color1/color2]     [ 100% ]     [ no  ]
+----│└ [seller_lot_cover_info_quantity]   [widget        ]   {number  }                     [ 🡄 🡇 ]      [color1/color2]     [ 100% ]     [ no  ]
+----├┬ [seller_lot_cover_img          ]   [section       ]                                  [ ✜ ✜ ]                          [ 100% ]     [ no  ]
+----│├ [seller_lot_cover_img_frame    ]   [picture+button]   {img     }                     [ ✜ ✜ ]      [color2]            [ 100% ]     [ yes ]
+----│└ [seller_lot_cover_img_widget   ]   [widget        ]   {unveiled}                     [ 🡆 🡅 ]      [color1]            [ 100% ]     [ no  ]
+----└┬ [seller_lot_cover_control      ]   [component     ]                                  [ ✜ 🡆 ]                          [ 100% ]     [ no  ]
+---- ├ [seller_lot_cover_control_edit ]   [button        ]   {edit    }    "ИЗМЕНИТЬ"       [ 🡆 🡅 ]      [color1/color2]     [ 100% ]     [ yes ]
+---- ├ [seller_lot_cover_control_veil ]   [button        ]   {veil    }    "СКРЫТЬ"         [ 🡆 ✜ ]      [color1/color2]     [ 100% ]     [ yes ]
+---- └ [seller_lot_cover_control_expo ]   [button        ]   {remove  }    "УДАЛИТЬ"        [ 🡆 🡇 ]      [color1/color2]     [ 100% ]     [ yes ]
 
 
 lot_cover_veiled:
 
-                 codename:                      type:                   button_name:     location:    active/inactive:     opacity:   interaction:
-----┌──[seller_lot_cover              ]      [section       ]                             [ ✜ ✜ ]
-----├┬ [seller_lot_cover_info         ]      [component     ]                             [ 🡄 ✜ ]      [color2]            [ 100% ]     [ no  ]
-----│├ [seller_lot_cover_info_name    ]      [widget        ]    { string }               [ 🡄 🡅 ]      [color1/color2]     [ 100% ]     [ no  ]
-----│├ [seller_lot_cover_info_price   ]      [widget        ]    { number }               [ 🡄 ✜ ]      [color1/color2]     [ 100% ]     [ no  ]
-----│└ [seller_lot_cover_info_quantity]      [widget        ]    { number }               [ 🡄 🡇 ]      [color1/color2]     [ 100% ]     [ no  ]
-----├┬ [seller_lot_cover_img          ]      [section       ]                             [ ✜ ✜ ]                          [ 100% ]     [ no  ]
-----│├ [seller_lot_cover_img_frame    ]      [picture+button]                             [ ✜ ✜ ]      [color2]            [ 100% ]     [ yes ]
-----│└ [seller_lot_cover_img_widget   ]      [widget        ]    "СКРЫТО"                 [ 🡆 🡅 ]      [color3]            [ 100% ]     [ no  ]
-----└┬ [seller_lot_cover_control      ]      [component     ]                             [ ✜ 🡆 ]                          [ 100% ]     [ no  ]
----- ├ [seller_lot_cover_control_edit ]      [button        ]    "ИЗМЕНИТЬ"               [ 🡆 🡅 ]      [color1/color2]     [ 100% ]     [ yes ]
----- ├ [seller_lot_cover_control_veil ]      [button        ]    "СКРЫТЬ" / "ОТКРЫТЬ"     [ 🡆 ✜ ]      [color1/color2]     [ 100% ]     [ yes ]
----- └ [seller_lot_cover_control_close]      [button        ]    "ЗАКРЫТЬ"                [ 🡆 🡇 ]      [color1/color2]     [ 100% ]     [ yes ]
+                 codename:                      type:         variable:  determined_name:  location:    active/inactive:     opacity:   interaction:
+----┌──[seller_lot_cover              ]   [section       ]                                  [ ✜ ✜ ]
+----├┬ [seller_lot_cover_info         ]   [component     ]                                  [ 🡄 ✜ ]      [color2]            [ 100% ]     [ no  ]
+----│├ [seller_lot_cover_info_name    ]   [widget        ]   {string  }                     [ 🡄 🡅 ]      [color1/color2]     [ 100% ]     [ no  ]
+----│├ [seller_lot_cover_info_price   ]   [widget        ]   {number  }                     [ 🡄 ✜ ]      [color1/color2]     [ 100% ]     [ no  ]
+----│└ [seller_lot_cover_info_quantity]   [widget        ]   {number  }                     [ 🡄 🡇 ]      [color1/color2]     [ 100% ]     [ no  ]
+----├┬ [seller_lot_cover_img          ]   [section       ]                                  [ ✜ ✜ ]                          [ 100% ]     [ no  ]
+----│├ [seller_lot_cover_img_frame    ]   [picture+button]   {img     }                     [ ✜ ✜ ]      [color2]            [ 100% ]     [ yes ]
+----│└ [seller_lot_cover_img_widget   ]   [widget        ]   {veiled  }    "СКРЫТО"         [ 🡆 🡅 ]      [color3]            [ 100% ]     [ no  ]
+----└┬ [seller_lot_cover_control      ]   [component     ]                                  [ ✜ 🡆 ]                          [ 100% ]     [ no  ]
+---- ├ [seller_lot_cover_control_edit ]   [button        ]   {edit    }    "ИЗМЕНИТЬ"       [ 🡆 🡅 ]      [color1/color2]     [ 100% ]     [ yes ]
+---- ├ [seller_lot_cover_control_veil ]   [button        ]   {unveil  }    "ОТКРЫТЬ"        [ 🡆 ✜ ]      [color1/color2]     [ 100% ]     [ yes ]
+---- └ [seller_lot_cover_control_expo ]   [button        ]   {remove  }    "УДАЛИТЬ"        [ 🡆 🡇 ]      [color1/color2]     [ 100% ]     [ yes ]
 
 
-lot_cover_closed:
+lot_cover_archived:
 
-                 codename:                      type:                   button_name:     location:    active/inactive:     opacity:   interaction:
-----┌──[seller_lot_cover              ]      [section       ]                             [ ✜ ✜ ]
-----├┬ [seller_lot_cover_info         ]      [component     ]                             [ 🡄 ✜ ]      [color2]            [ 30%  ]     [ no  ]
-----│├ [seller_lot_cover_info_name    ]      [widget        ]    { string }               [ 🡄 🡅 ]      [color1/color2]     [ 30%  ]     [ no  ]
-----│├ [seller_lot_cover_info_price   ]      [widget        ]    { number }               [ 🡄 ✜ ]      [color1/color2]     [ 30%  ]     [ no  ]
-----│└ [seller_lot_cover_info_quantity]      [widget        ]    { number }               [ 🡄 🡇 ]      [color1/color2]     [ 30%  ]     [ no  ]
-----├┬ [seller_lot_cover_img          ]      [section       ]                             [ ✜ ✜ ]                          [ 100% ]     [ no  ]
-----│├ [seller_lot_cover_img_frame    ]      [picture+button]                             [ ✜ ✜ ]      [color2]            [ 30%  ]     [ yes ]
-----│└ [seller_lot_cover_img_widget   ]      [widget        ]    "ЗАКРЫТО"                [ 🡆 🡅 ]      [color3]            [ 100% ]     [ no  ]
-----└┬ [seller_lot_cover_control      ]      [component     ]                             [ ✜ 🡆 ]                          [ 100% ]     [ no  ]
----- ├ [seller_lot_cover_control_edit ]      [button        ]    "ИЗМЕНИТЬ"               [ 🡆 🡅 ]      [color1/color2]     [ 100% ]     [ yes ]
----- ├ [seller_lot_cover_control_veil ]      [button        ]    "СКРЫТЬ" / "ОТКРЫТЬ"     [ 🡆 ✜ ]      [color1/color2]     [ 30%  ]     [ no  ]
----- └ [seller_lot_cover_control_close]      [button        ]    "ЗАКРЫТЬ"                [ 🡆 🡇 ]      [color1/color2]     [ 100% ]     [ yes ]
+                 codename:                      type:         variable:  determined_name:  location:    active/inactive:     opacity:   interaction:
+----┌──[seller_lot_cover              ]   [section       ]                                  [ ✜ ✜ ]
+----├┬ [seller_lot_cover_info         ]   [component     ]                                  [ 🡄 ✜ ]      [color2]            [ 30%  ]     [ no  ]
+----│├ [seller_lot_cover_info_name    ]   [widget        ]   {string  }                     [ 🡄 🡅 ]      [color1/color2]     [ 30%  ]     [ no  ]
+----│├ [seller_lot_cover_info_price   ]   [widget        ]   {number  }                     [ 🡄 ✜ ]      [color1/color2]     [ 30%  ]     [ no  ]
+----│└ [seller_lot_cover_info_quantity]   [widget        ]   {number  }                     [ 🡄 🡇 ]      [color1/color2]     [ 30%  ]     [ no  ]
+----├┬ [seller_lot_cover_img          ]   [section       ]                                  [ ✜ ✜ ]                          [ 100% ]     [ no  ]
+----│├ [seller_lot_cover_img_frame    ]   [picture+button]   {img     }                     [ ✜ ✜ ]      [color2]            [ 30%  ]     [ yes ]
+----│└ [seller_lot_cover_img_widget   ]   [widget        ]   {archived}    "ЗАКРЫТО"        [ 🡆 🡅 ]      [color3]            [ 100% ]     [ no  ]
+----└┬ [seller_lot_cover_control      ]   [component     ]                                  [ ✜ 🡆 ]                          [ 100% ]     [ no  ]
+---- ├ [seller_lot_cover_control_edit ]   [button        ]   {edit    }    "ИЗМЕНИТЬ"       [ 🡆 🡅 ]      [color1/color2]     [ 100% ]     [ yes ]
+---- ├ [seller_lot_cover_control_veil ]   [button        ]   {unveil  }    "ОТКРЫТЬ"        [ 🡆 ✜ ]      [color1/color2]     [ 30%  ]     [ yes ]
+---- └ [seller_lot_cover_control_expo ]   [button        ]   {restore }    "ВОССТАНОВИТЬ"   [ 🡆 🡇 ]      [color1/color2]     [ 100% ]     [ yes ]
 
 
 ✠ actions
 • lot_cover:
 ╠ valid / invalid
-║ occasion: нажатие в любой области lot_cover кроме кнопок seller_lot_cover_control_veil и seller_lot_cover_control_close;
+║ occasion: нажатие в любой области lot_cover кроме кнопок seller_lot_cover_control_veil и seller_lot_cover_control_expo;
 ║ condition: в любой ситуации;
 ║ result: 
-║ || - для lot_cover_unveiled открывается lot_edit_screen целевого лота;
-║ || - для lot_cover_veiled открывается lot_edit_screen целевого лота;
-╙ || - для lot_cover_closed открывается lot_archive_screen целевого лота;
+║ || - для lot_cover_unveiled - открывается lot_edit_screen целевого лота;
+║ || - для lot_cover_veiled   - открывается lot_edit_screen целевого лота;
+╙ || - для lot_cover_archived - открывается lot_archive_screen целевого лота;
 • seller_lot_cover_control_edit:
 ╠ valid / invalid
 ║ occasion: нажатие seller_lot_cover_control_edit;
 ║ condition: в любой ситуации;
 ║ result: 
-║ || - для lot_cover_unveiled открывается lot_edit_screen целевого лота;
-║ || - для lot_cover_veiled открывается lot_edit_screen целевого лота;
-╙ || - для lot_cover_closed открывается lot_archive_screen целевого лота;
+║ || - для lot_cover_unveiled - открывается lot_edit_screen целевого лота;
+║ || - для lot_cover_veiled   - открывается lot_edit_screen целевого лота;
+╙ || - для lot_cover_archived - открывается lot_archive_screen целевого лота;
+• seller_lot_cover_control_veil:
+╠ valid / invalid
+║ occasion: нажатие seller_lot_cover_control_veil;
+║ condition: в любой ситуации;
+║ result: 
+║ || - для lot_cover_unveiled - лот меняет свое состояние на lot_cover_veiled;
+║ || - для lot_cover_veiled   - лот меняет свое состояние на lot_cover_unveiled;
+╙ || - для lot_cover_archived - не реагирует на нажатие;
+• seller_lot_cover_control_expo:
+╠ valid / invalid
+║ occasion: нажатие seller_lot_cover_control_expo;
+║ condition: в любой ситуации;
+║ result: 
+║ || - для lot_cover_unveiled - лот меняет свое состояние на lot_cover_archived;
+║ ---- && - opacity становится 30% для seller_lot_cover_info;
+║ ---- && - opacity становится 30% для seller_lot_cover_img_frame;
+║ ---- && - seller_lot_cover_img_widget увеличивается по ширине до 50% ширины seller_lot_cover_img_frame, приобретает color3 и надпись "ЗАКРЫТО";
+║ || - для lot_cover_veiled   - лот меняет свое состояние на lot_cover_archived;
+╙ || - для lot_cover_archived - лот меняет свое состояние на lot_cover_veiled.
 
 
 ✠ color_states
@@ -257,6 +281,7 @@ lot_cover_closed:
 │• color2
 │------ в любой ситуации.
 └─
+
 
 
 
