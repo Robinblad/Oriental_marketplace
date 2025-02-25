@@ -185,7 +185,7 @@ lot_cover может быть в трех состояниях:
  - veiled   - невидимый (passive) лот, невидимый для buyer и видимый для buyer в seller_lot_screen;
  - archived - удаленный (archive) лот, хранящийся в архивном каталоге и видимый только для seller.
  
-lot_cover_unveiled:
+lot_cover_unveiled_state:
 
                  codename:                     type:        variable:    determined_name:  location:    active/inactive:     opacity:   interaction:
 ----┌──[seller_lot_cover              ]   [section       ]                                  [ ✜ ✜ ]
@@ -202,7 +202,7 @@ lot_cover_unveiled:
 ---- └ [seller_lot_cover_control_expo ]   [button        ]   {remove  }    "УДАЛИТЬ"        [ 🡆 🡇 ]      [color1/color2]     [ 100% ]     [ yes ]
 
 
-lot_cover_veiled:
+lot_cover_veiled_state:
 
                  codename:                      type:         variable:  determined_name:  location:    active/inactive:     opacity:   interaction:
 ----┌──[seller_lot_cover              ]   [section       ]                                  [ ✜ ✜ ]
@@ -219,7 +219,7 @@ lot_cover_veiled:
 ---- └ [seller_lot_cover_control_expo ]   [button        ]   {remove  }    "УДАЛИТЬ"        [ 🡆 🡇 ]      [color1/color2]     [ 100% ]     [ yes ]
 
 
-lot_cover_archived:
+lot_cover_archived_state:
 
                  codename:                      type:         variable:  determined_name:  location:    active/inactive:     opacity:   interaction:
 ----┌──[seller_lot_cover              ]   [section       ]                                  [ ✜ ✜ ]
@@ -242,37 +242,74 @@ lot_cover_archived:
 ║ occasion: нажатие в любой области lot_cover кроме кнопок seller_lot_cover_control_veil и seller_lot_cover_control_expo;
 ║ condition: в любой ситуации;
 ║ result: 
-║ || - для lot_cover_unveiled - открывается lot_edit_screen целевого лота;
-║ || - для lot_cover_veiled   - открывается lot_edit_screen целевого лота;
-╙ || - для lot_cover_archived - открывается lot_archive_screen целевого лота;
+║ || - для lot_cover_unveiled_state - открывается lot_edit_screen целевого лота;
+║ || - для lot_cover_veiled_state   - открывается lot_edit_screen целевого лота;
+╙ || - для lot_cover_archived_state - открывается lot_archive_screen целевого лота;
 • seller_lot_cover_control_edit:
 ╠ valid / invalid
 ║ occasion: нажатие seller_lot_cover_control_edit;
 ║ condition: в любой ситуации;
 ║ result: 
-║ || - для lot_cover_unveiled - открывается lot_edit_screen целевого лота;
-║ || - для lot_cover_veiled   - открывается lot_edit_screen целевого лота;
-╙ || - для lot_cover_archived - открывается lot_archive_screen целевого лота;
+║ || - для lot_cover_unveiled_state - открывается lot_edit_screen целевого лота;
+║ || - для lot_cover_veiled_state   - открывается lot_edit_screen целевого лота;
+╙ || - для lot_cover_archived_state - открывается lot_archive_screen целевого лота;
 • seller_lot_cover_control_veil:
-╠ valid / invalid
+╠ valid / invalid  (lot_cover_unveiled_state)
 ║ occasion: нажатие seller_lot_cover_control_veil;
-║ condition: в любой ситуации;
+║ condition: lot_cover_unveiled_state;
 ║ result: 
-║ || - для lot_cover_unveiled - лот меняет свое состояние на lot_cover_veiled;
-║ || - для lot_cover_veiled   - лот меняет свое состояние на lot_cover_unveiled;
-╙ || - для lot_cover_archived - не реагирует на нажатие;
+║ && - лот меняет свое состояние на lot_cover_veiled_state;
+║ && - seller_lot_cover_img_widget увеличивается по ширине до 60% ширины seller_lot_cover_img_frame;
+║ && - seller_lot_cover_img_widget приобретает окраску color3;
+║ && - seller_lot_cover_img_widget приобретает надпись "СКРЫТО";
+║ && - seller_lot_cover_control_veil меняет наименование со "СКРЫТЬ" на "ОТКРЫТЬ";
+╠ valid / invalid  (lot_cover_veiled_state)
+║ occasion: нажатие seller_lot_cover_control_veil;
+║ condition: lot_cover_veiled_state;
+║ result: 
+║ && - лот меняет свое состояние на lot_cover_veiled_state;
+║ && - seller_lot_cover_img_widget уменьшается по ширине до 10% ширины seller_lot_cover_img_frame;
+║ && - seller_lot_cover_img_widget приобретает окраску color1;
+║ && - seller_lot_cover_img_widget теряет наименование;
+║ && - seller_lot_cover_control_veil меняет наименование с "ОТКРЫТЬ" на "СКРЫТЬ";
+╠ valid / invalid  (lot_cover_archived_state)
+║ occasion: нажатие seller_lot_cover_control_veil;
+║ condition: lot_cover_archived_state;
+╙ result: seller_lot_cover_control_veil не реагирует на нажатие; 
 • seller_lot_cover_control_expo:
-╠ valid / invalid
+╠ valid / invalid  (lot_cover_unveiled_state) 
 ║ occasion: нажатие seller_lot_cover_control_expo;
-║ condition: в любой ситуации;
+║ condition: lot_cover_unveiled_state;
 ║ result: 
-║ || - для lot_cover_unveiled - лот меняет свое состояние на lot_cover_archived;
-║ ---- && - opacity становится 30% для seller_lot_cover_info;
-║ ---- && - opacity становится 30% для seller_lot_cover_img_frame;
-║ ---- && - seller_lot_cover_img_widget увеличивается по ширине до 50% ширины seller_lot_cover_img_frame, приобретает color3 и надпись "ЗАКРЫТО";
-║ || - для lot_cover_veiled   - лот меняет свое состояние на lot_cover_archived;
-╙ || - для lot_cover_archived - лот меняет свое состояние на lot_cover_veiled.
-
+║ && - лот меняет свое состояние на lot_cover_archived_state;
+║ && - opacity становится = 30% для seller_lot_cover_info;
+║ && - opacity становится = 30% для seller_lot_cover_img_frame;
+║ && - opacity становится = 30% для seller_lot_cover_control_veil;
+║ && - seller_lot_cover_control_veil меняет наименование со "СКРЫТЬ" на "ОТКРЫТЬ";
+║ && - seller_lot_cover_control_expo меняет наименование с "УДАЛИТЬ" на "ВОССТАНОВИТЬ";
+║ && - seller_lot_cover_img_widget увеличивается по ширине до 60% ширины seller_lot_cover_img_frame;
+║ && - seller_lot_cover_img_widget приобретает окраску color3;
+║ && - seller_lot_cover_img_widget приобретает надпись "ЗАКРЫТО";
+╠ valid / invalid  (lot_cover_veiled_state) 
+║ occasion: нажатие seller_lot_cover_control_expo;
+║ condition: lot_cover_veiled_state;
+║ result: 
+║ && - лот меняет свое состояние на lot_cover_archived_state;
+║ && - opacity становится = 30% для seller_lot_cover_info;
+║ && - opacity становится = 30% для seller_lot_cover_img_frame;
+║ && - opacity становится = 30% для seller_lot_cover_control_veil;
+║ && - seller_lot_cover_control_expo меняет наименование с "УДАЛИТЬ" на "ВОССТАНОВИТЬ";
+║ && - seller_lot_cover_img_widget меняет надпись со "СКРЫТО" на "ЗАКРЫТО";
+╠ valid / invalid  (lot_cover_archived_state) 
+║ occasion: нажатие seller_lot_cover_control_expo;
+║ condition: lot_cover_archived_state;
+║ result: 
+║ && - лот меняет свое состояние на lot_cover_veiled_state;
+║ && - opacity становится = 100% для seller_lot_cover_info;
+║ && - opacity становится = 100% для seller_lot_cover_img_frame;
+║ && - opacity становится = 100% для seller_lot_cover_control_veil;
+║ && - seller_lot_cover_control_expo меняет наименование с "ВОССТАНОВИТЬ" на "УДАЛИТЬ";
+╙ && - seller_lot_cover_img_widget меняет надпись со "ЗАКРЫТО" на "СКРЫТО";
 
 ✠ color_states
 ┌─
