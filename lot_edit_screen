@@ -1,0 +1,45 @@
+
+
+
+🡆🡆 lot_edit_screen
+■■■■■■■■■■■■■■■■■■
+Открытие lot_edit_screen осуществляется через нажатие либо кнопки seller_lot_add_lot, либо seller_shop_add_lot. При инициации каждого нового лота создается индивидуальная форма lot_data, где хранится весь перечень его данных. В lot_edit_screen осуществляется ввод и корректировка данных товара. Конфигурация lot_edit_screen представлен 6 секциями, каждая из которых имеет свой header который размещается над содержанием. Перечень данных lot_edit_screen приведенных в порядке расположения сверху-вниз:
+
+                 codename:                                header:                    type:            text:          valid/invalid/default:      important:
+s1) ┌──[setting_lot_edit_header                   ] "НАСТРОЙТЕ ВАШ ПРОФИЛЬ"            [header   ]        		      
+s2) ├┬─[setting_lot_edit_name                     ]                                    [section  ]
+--- │├ [setting_lot_edit_name_header              ] "ИМЯ ИЛИ НАЗВАНИЕ КОМПАНИИ *"      [header   ]                      
+--- │└ [setting_lot_edit_name_input               ]                                    [input    ]                       [color1/color3/color1]        [ yes ]  
+s3) ├┌─[setting_lot_edit_price                    ]                                    [section  ]
+--- │├ [setting_lot_edit_price_header             ]                                    [dropdown ]                       [color1/color3/color1]        [ yes ]
+--- │└ [setting_lot_edit_price_input              ] "ТЕЛЕФОННЫЙ НОМЕР *"               [input    ]                       [color1/color3/color1]        [ yes ]
+s4) ├┬─[setting_lot_edit_measure                  ]                                    [section  ]
+--- │├ [setting_lot_edit_measure_header           ] "ИМЯ *"                            [header   ]                      
+--- │├ [setting_lot_edit_measure_dropdown         ]                                    [dropdown ]                       [color1/color3/color3]        [ yes ]
+--- │└─[setting_lot_edit_measure_protip           ]                                    [button   ]      "?"              [color2 / color2]          [ color2 ]
+s5) ├┬─[setting_lot_edit_quantity                 ]                                    [section  ]
+--- │├ [setting_lot_edit_quantity_header          ] "КОЛИЧЕСТВО *"                     [header   ]                      
+--- │├ [setting_lot_edit_quantity_input           ]                                    [input    ]                       [color1/color3/color3]        [ yes ]
+--- │└─[setting_lot_edit_quantity_protip          ]                                    [button   ]       "?"             [color2/color2/color2]
+s6) ├┬─[setting_lot_edit_quantity_manager         ]                                    [section  ]
+--- │├ [setting_lot_edit_quantity_manager_header  ] "ИНДИКАТОР КОЛИЧЕСТВА *"           [header   ]                      
+--- │├ [setting_lot_edit_quantity_manager_dropdown]                                    [dropdown ]                       [color1/color3/color3]        [ yes ]
+--- │└─[setting_lot_edit_quantity_manager_protip  ]                                    [button   ]       "?"             [color2/color2/color2]
+s7) ├┬─[setting_lot_edit_saletype                 ]                                    [section  ]
+--- │├ [setting_lot_edit_saletype_header          ] "РОЗНИЦА ИЛИ ОПТ *"                [header   ]                      
+--- │├ [setting_lot_edit_saletype_dropdown        ]                                    [dropdown ]                       [color1/color3/color3]        [ yes ]
+--- │└─[setting_lot_edit_saletype_protip          ]                                    [button   ]       "?"             [color2/color2/color2]
+s8) ├┬─[setting_lot_edit_image                    ]                                    [section  ]
+--- │├ [setting_lot_edit_image_header             ] "ДОБАВИТЬ ИЗОБРАЖЕНИЕ *"           [header   ]                      
+--- │├ [setting_lot_edit_image_button             ]                                    [button   ]                       [color1/color3/color3]        [ yes ]
+--- │└─[setting_lot_edit_image_protip             ]                                    [button   ]       "?"             [color2/color2/color2]
+s9) ├┬─[setting_lot_edit_description              ]                                    [section  ]
+--- │├ [setting_lot_edit_description_header       ] "ОПИСАНИЕ ТОВАРА *"                [header   ]                      
+--- │└─[setting_lot_edit_description_input        ]                                    [button   ]                       [color1/color3/color3]        [ yes ]
+s10)├─[setting_lot_edit_button                   ]                                    [section  ]
+--- ├ [setting_lot_edit_button_no                ]                                    [button   ] "ОТМЕНА"              [color2              ]        [ no  ]
+--- └ [setting_lot_edit_button_yes               ]                                    [button   ] "ПРИМЕНИТЬ"           [color1/color3/color2]        [ yes ]
+
+
+
+
