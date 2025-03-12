@@ -57,8 +57,9 @@ s10)└┬─[setting_lot_edit_button                   ]                       
 
 ■ setting_lot_edit_name
 
-✠ details
 Настройка является обязательной для валидации lot_data и регистрации лота.
+
+✠ details
 Секция setting_lot_edit_name состоит из 2 компонентов:
 - заголовок setting_lot_edit_name_header с содержанием: "НАИМЕНОВАНИЕ ТОВАРА";
 - поле для ввода данных setting_lot_edit_name_input.
@@ -80,23 +81,23 @@ s10)└┬─[setting_lot_edit_button                   ]                       
 • undernaming:
 Анализ на неудовлетворение лимита допустимой длины name.
 Работает в active_state.
-При вводе name, в ситуации если символов < 2, под setting_lot_edit_name_input всплывает setting_lot_edit_alert_undernaming.
+При вводе name, в ситуации если символов < 2, под setting_lot_edit_name_input всплывает setting_lot_edit_name_alert_undernaming.
 • overnaming:
 Анализ на превышение лимита допустимой длины name.
 Работает в active_state.
-При вводе name, в ситуации если символов > 50, под setting_lot_edit_name_input всплывает setting_lot_edit_alert_overnaming.
+При вводе name, в ситуации если символов > 50, под setting_lot_edit_name_input всплывает setting_lot_edit_name_alert_overnaming.
 • stopsymbol:
 Анализ на нажатие запрещенных клавиш базирующийся на превентивной блокировке ввода неразрешенных символов.
 Работает в active_state. 
-При вводе name, в ситуации если использованы запрещенные символы, под setting_lot_edit_name_input всплывает setting_lot_edit_alert_stopsymbol.
+При вводе name, в ситуации если использованы запрещенные символы, под setting_lot_edit_name_input всплывает setting_lot_edit_name_alert_stopsymbol.
 • stopword:
 Анализ на запрещенные слова, базирующийся на тезариусе содержащем надлежащий материал.
 Работает в active_state.
-При вводе name, в ситуации если использованы запрещенные слова, под setting_lot_edit_name_input всплывает setting_lot_edit_alert_stopword.
+При вводе name, в ситуации если использованы запрещенные слова, под setting_lot_edit_name_input всплывает setting_lot_edit_name_alert_stopword.
 • omission:
 Реакция на факт отсутствие введенных данных.
 Работает в inactive_state.
-В ситуации если поле пустое, а юзер нажимает на setting_lot_edit_button_yes, под setting_lot_edit_name_input всплывает setting_lot_edit_alert_omission.
+В ситуации если поле пустое, а юзер нажимает на setting_lot_edit_button_yes, под setting_lot_edit_name_input всплывает setting_lot_edit_name_alert_omission.
 • emptiness:
 Анализ на пустотность.
 Работает в active_state и inactive_state.
@@ -123,32 +124,32 @@ s10)└┬─[setting_lot_edit_button                   ]                       
 └─
 
 ✠ alert_states
-• setting_lot_edit_alert_prompt:
+• setting_lot_edit_name_alert_prompt:
 - focusing: да;
 - location: появляется над setting_lot_edit_name_input;
 - occasion: в процессе ввода данных в setting_lot_edit_name_input;
 - content:  "НАЗВАНИЕ ТОВАРА МОЖЕТ СОСТОЯТЬ ОТ 2 ДО 99 СИМВОЛОВ ВКЛЮЧАЯ БУКВЫ, ЦИФРЫ, ПРОБЕЛЫ И СЛЕДУЮЩИЕ СИМВОЛЫ (. , $ & @ # : ; – _)".
-• setting_lot_edit_alert_undernaming:
+• setting_lot_edit_name_alert_undernaming:
 - focusing: да;
 - location: появляется под setting_lot_edit_name_input;
 - occasion: невалидность по факту проверки на undernaming;
 - content:  "НАЗВАНИЕ СЛИШКОМ КОРОТКОЕ, ПОЖАЛУЙСТА ИСПОЛЬЗУЙТЕ БОЛЬШЕ СИМВОЛОВ".
-• setting_lot_edit_alert_overnaming:
+• setting_lot_edit_name_alert_overnaming:
 - focusing: да;
 - location: появляется под setting_lot_edit_name_input;
 - occasion: невалидность по факту проверки на overnaming;
 - content:  "НАЗВАНИЕ СЛИШКОМ ДЛИННОЕ, ПОЖАЛУЙСТА ИСПОЛЬЗУЙТЕ МЕНЬШЕ СИМВОЛОВ".
-• setting_lot_edit_alert_stopsymbol:
+• setting_lot_edit_name_alert_stopsymbol:
 - focusing: да;
 - location: появляется под setting_lot_edit_name_input;
 - occasion: невалидность по факту проверки на stopsymbol;
 - content:  "ИСПОЛЬЗОВАН ЗАПРЕЩЕННЫЙ СИМВОЛ: {указывается запрещенный символ жирным шрифтом белого цвета на color3 фоне}".
-• setting_lot_edit_alert_stopword:
+• setting_lot_edit_name_alert_stopword:
 - focusing: да;
 - location: появляется под setting_lot_edit_name_input;
 - occasion: невалидность по факту проверки на stopword;
 - content:  "ИСПОЛЬЗОВАНО ЗАПРЕЩЕННОЕ СЛОВО {указывается запрещенное слово жирным шрифтом белого цвета на color3 фоне}".
-• setting_lot_edit_alert_omission:
+• setting_lot_edit_name_alert_omission:
 - focusing: нет;
 - location: появляется под setting_lot_edit_name_input;
 - occasion: нажатие на setting_lot_edit_button_yes, если setting_lot_edit_name_input пустой;
@@ -157,8 +158,9 @@ s10)└┬─[setting_lot_edit_button                   ]                       
 
 ■ setting_lot_edit_price
 
-✠ details
 Настройка является обязательной для валидации lot_data и регистрации лота.
+
+✠ details
 Секция setting_lot_edit_price состоит из 2 компонентов:
 - заголовок setting_lot_edit_price_header с содержанием: "СТОИМОСТЬ ТОВАРА";
 - поле для ввода данных setting_lot_edit_price_input.
@@ -180,15 +182,15 @@ s10)└┬─[setting_lot_edit_button                   ]                       
 • overnaming:
 Анализ на превышение лимита допустимой длины price.
 Работает в active_state.
-При вводе price, в ситуации если символов > 99, под setting_lot_edit_price_input всплывает setting_lot_edit_alert_overnaming.
+При вводе price, в ситуации если символов > 99, под setting_lot_edit_price_input всплывает setting_lot_edit_price_alert_overnaming.
 • stopsymbol:
 Анализ на нажатие запрещенных клавиш базирующийся на превентивной блокировке ввода с любых клавиш кроме от 0 до 9.
 Работает в active_state. 
-При вводе price, в ситуации если использованы не цифры, под setting_lot_edit_price_input всплывает setting_lot_edit_alert_stopsymbol.
+При вводе price, в ситуации если использованы не цифры, под setting_lot_edit_price_input всплывает setting_lot_edit_price_alert_stopsymbol.
 • omission:
 Реакция на факт отсутствие введенных данных.
 Работает в inactive_state.
-В ситуации если поле пустое, а юзер нажимает на setting_lot_edit_button_yes, под setting_lot_edit_price_input всплывает setting_lot_edit_alert_omission.
+В ситуации если поле пустое, а юзер нажимает на setting_lot_edit_button_yes, под setting_lot_edit_price_input всплывает setting_lot_edit_price_alert_omission.
 • emptiness:
 Анализ на пустотность.
 Работает в active_state и inactive_state.
@@ -211,22 +213,22 @@ s10)└┬─[setting_lot_edit_button                   ]                       
 └─
 
 ✠ alert_states
-• setting_lot_edit_alert_prompt:
+• setting_lot_edit_price_alert_prompt:
 - focusing: да;
 - location: появляется над setting_lot_edit_price_input для первых 3 лотов активированных seller;
 - occasion: в процессе ввода данных в setting_lot_edit_price_input;
 - content:  "ВВОДИТЕ ЗНАЧЕНИЕ ЦЕНЫ ИСПОЛЬЗУЯ ЦИФРЫ".
-• setting_lot_edit_alert_overnaming:
+• setting_lot_edit_price_alert_overnaming:
 - focusing: да;
 - location: появляется под setting_lot_edit_price_input;
 - occasion: невалидность по факту проверки на overnaming;
 - content:  "ЗНАЧЕНИЕ ЦЕНЫ СЛИШКОМ ДЛИННОЕ, ПОЖАЛУЙСТА ИСПОЛЬЗУЙТЕ МЕНЬШЕ СИМВОЛОВ".
-• setting_lot_edit_alert_stopsymbol:
+• setting_lot_edit_price_alert_stopsymbol:
 - focusing: да;
 - location: появляется под setting_lot_edit_price_input;
 - occasion: невалидность по факту проверки на stopsymbol;
 - content:  "ИСПОЛЬЗОВАН ЗАПРЕЩЕННЫЙ СИМВОЛ: {указывается запрещенный символ жирным шрифтом белого цвета на color3 фоне}".
-• setting_lot_edit_alert_omission:
+• setting_lot_edit_price_alert_omission:
 - focusing: нет;
 - location: появляется под setting_lot_edit_price_input;
 - occasion: нажатие на setting_lot_edit_button_yes, если setting_lot_edit_price_input пустой;
@@ -243,32 +245,256 @@ s10)└┬─[setting_lot_edit_button                   ]                       
 - setting_lot_edit_measure_dropdown - кнопка с выпадающим списком с наименованием "ВЫБРАТЬ";
 - setting_lot_edit_measure_protip - кнопка отвечающая за вызов подсказки setting_lot_edit_measure_protip_modal;  
 
-При нажатии на setting_lot_edit_measure_dropdown из него выпадает список из 19 элементов-кнопок setting_lot_edit_measure_dropdown_item, который при первом открытии ранжирован следующим образом:
+При нажатии на setting_lot_edit_measure_dropdown из него выпадает список из 19 элементов-кнопок setting_lot_edit_measure_dropdown_list (при всплытии списка все остальные элементы на экране блокируются и список не схлопывается до момента пока не будет нажата одна из его кнопок), который при первом открытии ранжирован следующим образом:
 
               codename:                                    type:            button_name:            pressed/defaul:      important:
 [setting_lot_edit_measure_dropdown                 ]     [dropdown]     "ВЫБРАТЬ"                   [color4/color2]        [ no  ]				  
-[setting_lot_edit_measure_dropdown_item_items      ]     [button  ]     "ШТУК"                      [color4/color2]        [ no  ]
-[setting_lot_edit_measure_dropdown_item_grams      ]     [button  ]     "ГРАММ"                     [color4/color2]        [ no  ]
-[setting_lot_edit_measure_dropdown_item_kilos      ]     [button  ]     "КИЛОГРАММ"                 [color4/color2]        [ no  ]
-[setting_lot_edit_measure_dropdown_item_tons       ]     [button  ]     "ТОНН"                      [color4/color2]        [ no  ]
-[setting_lot_edit_measure_dropdown_item_milliliters]     [button  ]     "МИЛИЛИТРОВ"                [color4/color2]        [ no  ]
-[setting_lot_edit_measure_dropdown_item_liters     ]     [button  ]     "ЛИТРОВ"                    [color4/color2]        [ no  ]
-[setting_lot_edit_measure_dropdown_item_millimeters]     [button  ]     "МИЛИМЕТРОВ"                [color4/color2]        [ no  ]
-[setting_lot_edit_measure_dropdown_item_centimeters]     [button  ]     "САНТИМЕТРОВ"               [color4/color2]        [ no  ]
-[setting_lot_edit_measure_dropdown_item_meters     ]     [button  ]     "МЕТРОВ"                    [color4/color2]        [ no  ]
-[setting_lot_edit_measure_dropdown_item_kilometers ]     [button  ]     "КИЛОМЕТРОВ"                [color4/color2]        [ no  ]
-[setting_lot_edit_measure_dropdown_item_boxes      ]     [button  ]     "ЯЩИКОВ"                    [color4/color2]        [ no  ]
-[setting_lot_edit_measure_dropdown_item_containers ]     [button  ]     "КОНТЕЙНЕРОВ"               [color4/color2]        [ no  ]
-[setting_lot_edit_measure_dropdown_item_places     ]     [button  ]     "МЕСТ"                      [color4/color2]        [ no  ]
-[setting_lot_edit_measure_dropdown_item_rooms      ]     [button  ]     "КОМНАТ"                    [color4/color2]        [ no  ]
-[setting_lot_edit_measure_dropdown_item_vehicles   ]     [button  ]     "ТРАНСПОРТНЫХ СРЕДСТВ"      [color4/color2]        [ no  ]
-[setting_lot_edit_measure_dropdown_item_vans       ]     [button  ]     "ВАГОНОВ"                   [color4/color2]        [ no  ]
-[setting_lot_edit_measure_dropdown_item_heads      ]     [button  ]     "ГОЛОВ"                     [color4/color2]        [ no  ]
-[setting_lot_edit_measure_dropdown_item_animals    ]     [button  ]     "ЖИВОТНЫХ"                  [color4/color2]        [ no  ]
-[setting_lot_edit_measure_dropdown_item_families   ]     [button  ]     "СЕМЕЙ"                     [color4/color2]        [ no  ]
+[setting_lot_edit_measure_dropdown_list_items      ]     [button  ]     "ШТУК"                      [color4/color2]        [ no  ]
+[setting_lot_edit_measure_dropdown_list_grams      ]     [button  ]     "ГРАММ"                     [color4/color2]        [ no  ]
+[setting_lot_edit_measure_dropdown_list_kilos      ]     [button  ]     "КИЛОГРАММ"                 [color4/color2]        [ no  ]
+[setting_lot_edit_measure_dropdown_list_tons       ]     [button  ]     "ТОНН"                      [color4/color2]        [ no  ]
+[setting_lot_edit_measure_dropdown_list_milliliters]     [button  ]     "МИЛИЛИТРОВ"                [color4/color2]        [ no  ]
+[setting_lot_edit_measure_dropdown_list_liters     ]     [button  ]     "ЛИТРОВ"                    [color4/color2]        [ no  ]
+[setting_lot_edit_measure_dropdown_list_millimeters]     [button  ]     "МИЛИМЕТРОВ"                [color4/color2]        [ no  ]
+[setting_lot_edit_measure_dropdown_list_centimeters]     [button  ]     "САНТИМЕТРОВ"               [color4/color2]        [ no  ]
+[setting_lot_edit_measure_dropdown_list_meters     ]     [button  ]     "МЕТРОВ"                    [color4/color2]        [ no  ]
+[setting_lot_edit_measure_dropdown_list_kilometers ]     [button  ]     "КИЛОМЕТРОВ"                [color4/color2]        [ no  ]
+[setting_lot_edit_measure_dropdown_list_boxes      ]     [button  ]     "ЯЩИКОВ"                    [color4/color2]        [ no  ]
+[setting_lot_edit_measure_dropdown_list_containers ]     [button  ]     "КОНТЕЙНЕРОВ"               [color4/color2]        [ no  ]
+[setting_lot_edit_measure_dropdown_list_places     ]     [button  ]     "МЕСТ"                      [color4/color2]        [ no  ]
+[setting_lot_edit_measure_dropdown_list_rooms      ]     [button  ]     "КОМНАТ"                    [color4/color2]        [ no  ]
+[setting_lot_edit_measure_dropdown_list_vehicles   ]     [button  ]     "ТРАНСПОРТНЫХ СРЕДСТВ"      [color4/color2]        [ no  ]
+[setting_lot_edit_measure_dropdown_list_vans       ]     [button  ]     "ВАГОНОВ"                   [color4/color2]        [ no  ]
+[setting_lot_edit_measure_dropdown_list_heads      ]     [button  ]     "ГОЛОВ"                     [color4/color2]        [ no  ]
+[setting_lot_edit_measure_dropdown_list_animals    ]     [button  ]     "ЖИВОТНЫХ"                  [color4/color2]        [ no  ]
+[setting_lot_edit_measure_dropdown_list_families   ]     [button  ]     "СЕМЕЙ"                     [color4/color2]        [ no  ]
 
 После активации первого лота lot_1, выбранный для него item_X1 при открытии setting_lot_edit_measure_dropdown для второго лота ранжируется таким образом, где X1 располагается в самом верху списка top_1. Для lot_2 также сохраняется выбранный для него item_X2 и ранжируется согласно дате выбора (последний по дате занимает top_1), где item_X2 располагается фигурирует в качестве top_1 и следом идет item_X1 как top_2 (если это не один и тот же item). Item_X3 в свою очередь займет top_1 сдвинув на lot_2 и lot_3 позиции item_X2 item_X1 соответственно. И т.д. согласно дате выбора каждый новый выбранный item оказывается к топе. Кнопки находящиеся в позициях: top_1, top_2, top_3, top_4, top_5 окрашиваются в color4.
 
+✠ actions
+• setting_lot_edit_measure_dropdown:
+╠ valid / invalid
+║ occasion: нажатие setting_lot_edit_measure_dropdown;
+║ condition: в любой ситуации;
+╙ result: открывается setting_lot_edit_measure_dropdown_list.
+• setting_lot_edit_measure_dropdown_list_items:
+╠ valid / invalid
+║ occasion: нажатие setting_lot_edit_measure_dropdown_list_items;
+║ condition: в любой ситуации;
+╙ result: для текущего лота setting_lot_edit_measure_value = items.
+• setting_lot_edit_measure_dropdown_list_grams:
+╠ valid / invalid
+║ occasion: нажатие setting_lot_edit_measure_dropdown_list_grams;
+║ condition: в любой ситуации;
+╙ result: для текущего лота setting_lot_edit_measure_value = grams.
+• setting_lot_edit_measure_dropdown_list_kilos:
+╠ valid / invalid
+║ occasion: нажатие setting_lot_edit_measure_dropdown_list_kilos;
+║ condition: в любой ситуации;
+╙ result: для текущего лота setting_lot_edit_measure_value = kilos.
+• setting_lot_edit_measure_dropdown_list_tons:
+╠ valid / invalid
+║ occasion: нажатие setting_lot_edit_measure_dropdown_list_tons;
+║ condition: в любой ситуации;
+╙ result: для текущего лота setting_lot_edit_measure_value = tons.
+• setting_lot_edit_measure_dropdown_list_milliliters:
+╠ valid / invalid
+║ occasion: нажатие setting_lot_edit_measure_dropdown_list_milliliters;
+║ condition: в любой ситуации;
+╙ result: для текущего лота setting_lot_edit_measure_value = milliliters.
+• setting_lot_edit_measure_dropdown_list_liters:
+╠ valid / invalid
+║ occasion: нажатие setting_lot_edit_measure_dropdown_list_liters;
+║ condition: в любой ситуации;
+╙ result: для текущего лота setting_lot_edit_measure_value = liters.
+• setting_lot_edit_measure_dropdown_list_millimeters:
+╠ valid / invalid
+║ occasion: нажатие setting_lot_edit_measure_dropdown_list_millimeters;
+║ condition: в любой ситуации;
+╙ result: для текущего лота setting_lot_edit_measure_value = millimeters.
+• setting_lot_edit_measure_dropdown_list_centimeters:
+╠ valid / invalid
+║ occasion: нажатие setting_lot_edit_measure_dropdown_list_centimeters;
+║ condition: в любой ситуации;
+╙ result: для текущего лота setting_lot_edit_measure_value = centimeters.
+• setting_lot_edit_measure_dropdown_list_meters:
+╠ valid / invalid
+║ occasion: нажатие setting_lot_edit_measure_dropdown_list_meters;
+║ condition: в любой ситуации;
+╙ result: для текущего лота setting_lot_edit_measure_value = meters.
+• setting_lot_edit_measure_dropdown_list_kilometers:
+╠ valid / invalid
+║ occasion: нажатие setting_lot_edit_measure_dropdown_list_kilometers;
+║ condition: в любой ситуации;
+╙ result: для текущего лота setting_lot_edit_measure_value = kilometers.
+• setting_lot_edit_measure_dropdown_list_boxes:
+╠ valid / invalid
+║ occasion: нажатие setting_lot_edit_measure_dropdown_list_boxes;
+║ condition: в любой ситуации;
+╙ result: для текущего лота setting_lot_edit_measure_value = boxes.
+• setting_lot_edit_measure_dropdown_list_containers:
+╠ valid / invalid
+║ occasion: нажатие setting_lot_edit_measure_dropdown_list_containers;
+║ condition: в любой ситуации;
+╙ result: для текущего лота setting_lot_edit_measure_value = containers.
+• setting_lot_edit_measure_dropdown_list_places:
+╠ valid / invalid
+║ occasion: нажатие setting_lot_edit_measure_dropdown_list_places;
+║ condition: в любой ситуации;
+╙ result: для текущего лота setting_lot_edit_measure_value = places.
+• setting_lot_edit_measure_dropdown_list_rooms:
+╠ valid / invalid
+║ occasion: нажатие setting_lot_edit_measure_dropdown_list_rooms;
+║ condition: в любой ситуации;
+╙ result: для текущего лота setting_lot_edit_measure_value = rooms.
+• setting_lot_edit_measure_dropdown_list_vehicles:
+╠ valid / invalid
+║ occasion: нажатие setting_lot_edit_measure_dropdown_list_vehicles;
+║ condition: в любой ситуации;
+╙ result: для текущего лота setting_lot_edit_measure_value = vehicles.
+• setting_lot_edit_measure_dropdown_list_vans:
+╠ valid / invalid
+║ occasion: нажатие setting_lot_edit_measure_dropdown_list_vans;
+║ condition: в любой ситуации;
+╙ result: для текущего лота setting_lot_edit_measure_value = vans.
+• setting_lot_edit_measure_dropdown_list_heads:
+╠ valid / invalid
+║ occasion: нажатие setting_lot_edit_measure_dropdown_list_heads;
+║ condition: в любой ситуации;
+╙ result: для текущего лота setting_lot_edit_measure_value = heads.
+• setting_lot_edit_measure_dropdown_list_animals:
+╠ valid / invalid
+║ occasion: нажатие setting_lot_edit_measure_dropdown_list_animals;
+║ condition: в любой ситуации;
+╙ result: для текущего лота setting_lot_edit_measure_value = animals.
+• setting_lot_edit_measure_dropdown_list_families:
+╠ valid / invalid
+║ occasion: нажатие setting_lot_edit_measure_dropdown_list_families;
+║ condition: в любой ситуации;
+╙ result: для текущего лота setting_lot_edit_measure_value = families.
+
+✠ color_states
+┌─
+│setting_lot_edit_measure_dropdown
+│---------------------------------
+│• color2
+│------ в inactive_state;
+│• color1
+│------ в pressing_state.
+└─
+┌─
+│setting_lot_edit_measure_dropdown_list_items
+│setting_lot_edit_measure_dropdown_list_grams
+│setting_lot_edit_measure_dropdown_list_kilos
+│setting_lot_edit_measure_dropdown_list_tons
+│setting_lot_edit_measure_dropdown_list_milliliters
+│setting_lot_edit_measure_dropdown_list_liters
+│setting_lot_edit_measure_dropdown_list_millimeters
+│setting_lot_edit_measure_dropdown_list_centimeters
+│setting_lot_edit_measure_dropdown_list_meters
+│setting_lot_edit_measure_dropdown_list_kilometers
+│setting_lot_edit_measure_dropdown_list_boxes
+│setting_lot_edit_measure_dropdown_list_containers
+│setting_lot_edit_measure_dropdown_list_places
+│setting_lot_edit_measure_dropdown_list_rooms
+│setting_lot_edit_measure_dropdown_list_vehicles
+│setting_lot_edit_measure_dropdown_list_vans
+│setting_lot_edit_measure_dropdown_list_heads
+│setting_lot_edit_measure_dropdown_list_animals
+│setting_lot_edit_measure_dropdown_list_families
+│---------------------------------
+│• color2
+│------ в inactive_state;
+│• color1
+│------ в pressing_state.
+└─
+┌─
+│setting_lot_edit_measure_protip
+│-------------------------------
+│• color2
+│------ в любой ситуации.
+└─
+
+
+■ setting_lot_edit_quantity
+
+Опция setting_lot_edit_quantity предназначена для указания количественного показателя в указанных (посредством setting_lot_edit_measure) единицах.
+
+✠ details
+Секция setting_lot_edit_measure состоит из 3 компонентов:  
+- setting_lot_edit_quantity_header - заголовок с содержанием: "ЕДИНИЦА ИЗМЕРЕНИЯ";
+- setting_lot_edit_quantity_input - поле для ввода данных, по умолчанию setting_lot_edit_quantity_value=1;
+- setting_lot_edit_quantity_protip - кнопка отвечающая за вызов подсказки setting_lot_edit_quantity_protip_modal;  
+Нормативы для setting_lot_edit_quantity_input: 
+- минимум 1 символ;
+- максимум 99 символов;
+- минимум setting_lot_edit_quantity_value=1;
+- допускаются цифры (0-9);
+- чувствительность к регистру отсутствует.
+
+✠ actions
+• setting_lot_edit_quantity_input:
+╠ valid / invalid
+║ occasion: нажатие setting_lot_edit_quantity_input;
+║ condition: в любой ситуации;
+╙ result: setting_lot_edit_quantity_input переходит в active_state. 
+
+✠ input_checks
+Фильтры проверяющие на соответствие нормативам содержание setting_lot_edit_quantity_input. Если в ходе проверки фиксируется несоответствие, тогда состояние setting_lot_edit_quantity_input позиционируется как invalid, в соответствии с чем отображается соответствующее типу проблемы предупреждение.
+• overnaming:
+Анализ на превышение лимита допустимой длины quantity.
+Работает в active_state.
+При вводе quantity, в ситуации если символов > 99, под setting_lot_edit_quantity_input всплывает setting_lot_edit_quantity_alert_overnaming.
+• stopsymbol:
+Анализ на нажатие запрещенных клавиш базирующийся на превентивной блокировке ввода с любых клавиш кроме от 0 до 9.
+Работает в active_state. 
+При вводе quantity, в ситуации если использованы не цифры, под setting_lot_edit_quantity_input всплывает setting_lot_edit_quantity_alert_stopsymbol.
+• omission:
+Реакция на факт отсутствие введенных данных.
+Работает в inactive_state.
+В ситуации если поле пустое, а юзер нажимает на setting_lot_edit_button_yes, под setting_lot_edit_quantity_input всплывает setting_lot_edit_quantity_alert_omission.
+• emptiness:
+Анализ на пустотность.
+Работает в active_state и inactive_state.
+Работает в любой ситуации делая проверку на предмет отсутствия данных в setting_lot_edit_quantity_input.  
+
+✠ color_states
+┌─
+│setting_lot_edit_quantity_input
+│---------------------------
+│• color3:
+│- || - invalid по факту проверки на overnaming; 
+│- || - invalid по факту проверки на stopsymbol; 
+│- || - invalid по факту проверки на omission;
+│- || - invalid по факту проверки на emptiness.
+│• color1:
+│- && - valid по факту проверки на overnaming.
+│- && - valid по факту проверки на stopsymbol;
+│- && - valid по факту проверки на omission;
+│- && - valid по факту проверки на emptiness.
+└─
+
+✠ alert_states
+• setting_lot_edit_quantity_alert_prompt:
+- focusing: да;
+- location: появляется над setting_lot_edit_quantity_input для первых 3 лотов активированных seller;
+- occasion: в процессе ввода данных в setting_lot_edit_quantity_input;
+- content:  "ВВОДИТЕ КОЛИЧЕСТВО ТОВАРА ИСПОЛЬЗУЯ ЦИФРЫ".
+• setting_lot_edit_quantity_alert_overnaming:
+- focusing: да;
+- location: появляется под setting_lot_edit_quantity_input;
+- occasion: невалидность по факту проверки на overnaming;
+- content:  "КОЛИЧЕСТВО СЛИШКОМ БОЛЬШОЕ, ПОЖАЛУЙСТА ИСПОЛЬЗУЙТЕ МЕНЬШЕ СИМВОЛОВ".
+• setting_lot_edit_quantity_alert_stopsymbol:
+- focusing: да;
+- location: появляется под setting_lot_edit_quantity_input;
+- occasion: невалидность по факту проверки на stopsymbol;
+- content:  "ИСПОЛЬЗОВАН ЗАПРЕЩЕННЫЙ СИМВОЛ: {указывается запрещенный символ жирным шрифтом белого цвета на color3 фоне}".
+• setting_lot_edit_quantity_alert_omission:
+- focusing: нет;
+- location: появляется под setting_lot_edit_quantity_input;
+- occasion: нажатие на setting_lot_edit_button_yes, если setting_lot_edit_quantity_input пустой;
+- content:  "ПОЖАЛУЙСТА ВВЕДИТЕ КОЛИЧЕСТВО ТОВАРА".
 
 
 
