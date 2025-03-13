@@ -32,7 +32,7 @@ s4) ├┬─[setting_lot_edit_measure                  ]                       
 --- │├─[setting_lot_edit_measure_dropdown         ]                           [dropdown ]  "ВЫБРАТЬ"                 [color2/color2/color2]        [ no  ]
 --- │└─[setting_lot_edit_measure_protip           ]                           [button   ]  "?"                       [color2/color2/color2]
 s5) ├┬─[setting_lot_edit_quantity                 ]                           [section  ]
---- │├─[setting_lot_edit_quantity_header          ] "КОЛИЧЕСТВО"              [header   ]                      
+--- │├─[setting_lot_edit_quantity_header          ] "КОЛИЧЕСТВО ТОВАРА"       [header   ]                      
 --- │├─[setting_lot_edit_quantity_input           ]                           [input    ]  "1"                       [color1/color3/color1]        [ no  ]
 --- │└─[setting_lot_edit_quantity_protip          ]                           [button   ]  "?"                       [color2/color2/color2]
 s6) ├┬─[setting_lot_edit_quantity_manager         ]                           [section  ]
@@ -248,26 +248,26 @@ s10)└┬─[setting_lot_edit_button                   ]                       
 При нажатии на setting_lot_edit_measure_dropdown из него выпадает список из 19 элементов-кнопок setting_lot_edit_measure_dropdown_list (при всплытии списка все остальные элементы на экране блокируются и список не схлопывается до момента пока не будет нажата одна из его кнопок), который при первом открытии ранжирован следующим образом:
 
               codename:                                    type:            button_name:            pressed/defaul:      important:
-[setting_lot_edit_measure_dropdown                 ]     [dropdown]     "ВЫБРАТЬ"                   [color4/color2]        [ no  ]				  
-[setting_lot_edit_measure_dropdown_list_items      ]     [button  ]     "ШТУК"                      [color4/color2]        [ no  ]
-[setting_lot_edit_measure_dropdown_list_grams      ]     [button  ]     "ГРАММ"                     [color4/color2]        [ no  ]
-[setting_lot_edit_measure_dropdown_list_kilos      ]     [button  ]     "КИЛОГРАММ"                 [color4/color2]        [ no  ]
-[setting_lot_edit_measure_dropdown_list_tons       ]     [button  ]     "ТОНН"                      [color4/color2]        [ no  ]
-[setting_lot_edit_measure_dropdown_list_milliliters]     [button  ]     "МИЛИЛИТРОВ"                [color4/color2]        [ no  ]
-[setting_lot_edit_measure_dropdown_list_liters     ]     [button  ]     "ЛИТРОВ"                    [color4/color2]        [ no  ]
-[setting_lot_edit_measure_dropdown_list_millimeters]     [button  ]     "МИЛИМЕТРОВ"                [color4/color2]        [ no  ]
-[setting_lot_edit_measure_dropdown_list_centimeters]     [button  ]     "САНТИМЕТРОВ"               [color4/color2]        [ no  ]
-[setting_lot_edit_measure_dropdown_list_meters     ]     [button  ]     "МЕТРОВ"                    [color4/color2]        [ no  ]
-[setting_lot_edit_measure_dropdown_list_kilometers ]     [button  ]     "КИЛОМЕТРОВ"                [color4/color2]        [ no  ]
-[setting_lot_edit_measure_dropdown_list_boxes      ]     [button  ]     "ЯЩИКОВ"                    [color4/color2]        [ no  ]
-[setting_lot_edit_measure_dropdown_list_containers ]     [button  ]     "КОНТЕЙНЕРОВ"               [color4/color2]        [ no  ]
-[setting_lot_edit_measure_dropdown_list_places     ]     [button  ]     "МЕСТ"                      [color4/color2]        [ no  ]
-[setting_lot_edit_measure_dropdown_list_rooms      ]     [button  ]     "КОМНАТ"                    [color4/color2]        [ no  ]
-[setting_lot_edit_measure_dropdown_list_vehicles   ]     [button  ]     "ТРАНСПОРТНЫХ СРЕДСТВ"      [color4/color2]        [ no  ]
-[setting_lot_edit_measure_dropdown_list_vans       ]     [button  ]     "ВАГОНОВ"                   [color4/color2]        [ no  ]
-[setting_lot_edit_measure_dropdown_list_heads      ]     [button  ]     "ГОЛОВ"                     [color4/color2]        [ no  ]
-[setting_lot_edit_measure_dropdown_list_animals    ]     [button  ]     "ЖИВОТНЫХ"                  [color4/color2]        [ no  ]
-[setting_lot_edit_measure_dropdown_list_families   ]     [button  ]     "СЕМЕЙ"                     [color4/color2]        [ no  ]
+[setting_lot_edit_measure_dropdown                 ]     [dropdown]     "ВЫБРАТЬ"                   [color1/color2]        [ no  ]				  
+[setting_lot_edit_measure_dropdown_list_items      ]     [button  ]     "ШТУК"                      [color1/color2]        [ no  ]
+[setting_lot_edit_measure_dropdown_list_grams      ]     [button  ]     "ГРАММ"                     [color1/color2]        [ no  ]
+[setting_lot_edit_measure_dropdown_list_kilos      ]     [button  ]     "КИЛОГРАММ"                 [color1/color2]        [ no  ]
+[setting_lot_edit_measure_dropdown_list_tons       ]     [button  ]     "ТОНН"                      [color1/color2]        [ no  ]
+[setting_lot_edit_measure_dropdown_list_milliliters]     [button  ]     "МИЛИЛИТРОВ"                [color1/color2]        [ no  ]
+[setting_lot_edit_measure_dropdown_list_liters     ]     [button  ]     "ЛИТРОВ"                    [color1/color2]        [ no  ]
+[setting_lot_edit_measure_dropdown_list_millimeters]     [button  ]     "МИЛИМЕТРОВ"                [color1/color2]        [ no  ]
+[setting_lot_edit_measure_dropdown_list_centimeters]     [button  ]     "САНТИМЕТРОВ"               [color1/color2]        [ no  ]
+[setting_lot_edit_measure_dropdown_list_meters     ]     [button  ]     "МЕТРОВ"                    [color1/color2]        [ no  ]
+[setting_lot_edit_measure_dropdown_list_kilometers ]     [button  ]     "КИЛОМЕТРОВ"                [color1/color2]        [ no  ]
+[setting_lot_edit_measure_dropdown_list_boxes      ]     [button  ]     "ЯЩИКОВ"                    [color1/color2]        [ no  ]
+[setting_lot_edit_measure_dropdown_list_containers ]     [button  ]     "КОНТЕЙНЕРОВ"               [color1/color2]        [ no  ]
+[setting_lot_edit_measure_dropdown_list_places     ]     [button  ]     "МЕСТ"                      [color1/color2]        [ no  ]
+[setting_lot_edit_measure_dropdown_list_rooms      ]     [button  ]     "КОМНАТ"                    [color1/color2]        [ no  ]
+[setting_lot_edit_measure_dropdown_list_vehicles   ]     [button  ]     "ТРАНСПОРТНЫХ СРЕДСТВ"      [color1/color2]        [ no  ]
+[setting_lot_edit_measure_dropdown_list_vans       ]     [button  ]     "ВАГОНОВ"                   [color1/color2]        [ no  ]
+[setting_lot_edit_measure_dropdown_list_heads      ]     [button  ]     "ГОЛОВ"                     [color1/color2]        [ no  ]
+[setting_lot_edit_measure_dropdown_list_animals    ]     [button  ]     "ЖИВОТНЫХ"                  [color1/color2]        [ no  ]
+[setting_lot_edit_measure_dropdown_list_families   ]     [button  ]     "СЕМЕЙ"                     [color1/color2]        [ no  ]
 
 После активации первого лота lot_1, выбранный для него item_X1 при открытии setting_lot_edit_measure_dropdown для второго лота ранжируется таким образом, где X1 располагается в самом верху списка top_1. Для lot_2 также сохраняется выбранный для него item_X2 и ранжируется согласно дате выбора (последний по дате занимает top_1), где item_X2 располагается фигурирует в качестве top_1 и следом идет item_X1 как top_2 (если это не один и тот же item). Item_X3 в свою очередь займет top_1 сдвинув на lot_2 и lot_3 позиции item_X2 item_X1 соответственно. И т.д. согласно дате выбора каждый новый выбранный item оказывается к топе. Кнопки находящиеся в позициях: top_1, top_2, top_3, top_4, top_5 окрашиваются в color4.
 
@@ -416,13 +416,47 @@ s10)└┬─[setting_lot_edit_button                   ]                       
 └─
 
 
+🡆🡆🡆 setting_lot_edit_measure_protip_modal
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+При тапе на кнопку setting_lot_edit_measure_protip всплывает setting_lot_edit_measure_protip_modal со следующим содержанием:
+
+                      codename:                               header:            type:        button_name:     inactive/pressed:   
+--- [setting_lot_edit_measure_protip_modal_header]     "ЕДИНИЦА ИЗМЕРЕНИЯ"      [header]        		      
+--- [setting_lot_edit_measure_protip_modal_text  ]                              [text  ]
+--- [setting_lot_edit_measure_protip_modal_button]                              [button]          "ОК"          [color2/color1]
+
+✠ details
+setting_lot_edit_measure_protip_modal располагается по центру, занимает порядка 50% в ширину и 70% в высоту экрана. На остальную область экрана (содержимое lot_edit_screen) применяется эффект blur. Для закрытия setting_lot_edit_measure_protip_modal необходимо нажатие setting_lot_edit_measure_protip_modal_button. 
+Содержимое setting_lot_edit_measure_protip_modal_text: "Данная настройка позволяет указать единицу измерения товара. Например, если вы продаете товар коробками или ящиками - укажите единицу измерения "ящик". По умолчанию для каждого товара устанавливается единица измерения в "штуках". Данная настройка не является обязательной при публикации лота."
+
+✠ actions
+• setting_lot_edit_measure_protip_modal_button:
+╠ valid / invalid
+║ occasion: нажатие setting_lot_edit_measure_protip_modal_button;
+║ condition: в любой ситуации;
+║ result: 
+║ && - setting_lot_edit_measure_protip_modal закрывается;
+╙ && - делается возврат к lot_edit_screen.
+
+✠ color_states
+┌─
+│setting_lot_edit_measure_protip_modal_button
+│---------------------------------------------
+│• color2
+│------ в inactive_state;
+│• color1
+│------ в pressing_state.
+└─
+
+
 ■ setting_lot_edit_quantity
 
 Опция setting_lot_edit_quantity предназначена для указания количественного показателя в указанных (посредством setting_lot_edit_measure) единицах.
 
 ✠ details
 Секция setting_lot_edit_measure состоит из 3 компонентов:  
-- setting_lot_edit_quantity_header - заголовок с содержанием: "ЕДИНИЦА ИЗМЕРЕНИЯ";
+- setting_lot_edit_quantity_header - заголовок с содержанием: "КОЛИЧЕСТВО ТОВАРА";
 - setting_lot_edit_quantity_input - поле для ввода данных, по умолчанию setting_lot_edit_quantity_value=1;
 - setting_lot_edit_quantity_protip - кнопка отвечающая за вызов подсказки setting_lot_edit_quantity_protip_modal;  
 Нормативы для setting_lot_edit_quantity_input: 
@@ -495,6 +529,134 @@ s10)└┬─[setting_lot_edit_button                   ]                       
 - location: появляется под setting_lot_edit_quantity_input;
 - occasion: нажатие на setting_lot_edit_button_yes, если setting_lot_edit_quantity_input пустой;
 - content:  "ПОЖАЛУЙСТА ВВЕДИТЕ КОЛИЧЕСТВО ТОВАРА".
+
+
+🡆🡆🡆 setting_lot_edit_quantity_protip_modal
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+При тапе на кнопку setting_lot_edit_quantity_protip всплывает setting_lot_edit_quantity_protip_modal со следующим содержанием:
+
+                      codename:                               header:            type:        button_name:     inactive/pressed:   
+--- [setting_lot_edit_quantity_protip_modal_header]    "КОЛИЧЕСТВО ТОВАРА"      [header]        		      
+--- [setting_lot_edit_quantity_protip_modal_text  ]                             [text  ]
+--- [setting_lot_edit_quantity_protip_modal_button]                             [button]          "ОК"          [color2/color1]
+
+✠ details
+setting_lot_edit_quantity_protip_modal располагается по центру, занимает порядка 50% в ширину и 70% в высоту экрана. На остальную область экрана (содержимое lot_edit_screen) применяется эффект blur. Для закрытия setting_lot_edit_quantity_protip_modal необходимо нажатие setting_lot_edit_quantity_protip_modal_button. 
+Содержимое setting_lot_edit_quantity_protip_modal_text: "Пожалуйста укажите количество товара в выбранных единицах измерения. По умолчанию для каждого товара устанавливается значение = 1. Данная настройка не является обязательной."
+
+✠ actions
+• setting_lot_edit_quantity_protip_modal_button:
+╠ valid / invalid
+║ occasion: нажатие setting_lot_edit_quantity_protip_modal_button;
+║ condition: в любой ситуации;
+║ result: 
+║ && - setting_lot_edit_quantity_protip_modal закрывается;
+╙ && - делается возврат к lot_edit_screen.
+
+✠ color_states
+┌─
+│setting_lot_edit_quantity_protip_modal_button
+│---------------------------------------------
+│• color2
+│------ в inactive_state;
+│• color1
+│------ в pressing_state.
+└─
+
+
+■ setting_lot_edit_quantity_manager
+
+Опция setting_lot_edit_quantity_manager предназначена для настройки виджета отображения количества товара seller_lot_cover_info_quantity.
+
+✠ details
+Секция setting_lot_edit_quantity_manager состоит из 3 компонентов:  
+- setting_lot_edit_quantity_manager_header - заголовок с содержанием: "ИНДИКАТОР КОЛИЧЕСТВА";
+- setting_lot_edit_quantity_manager_dropdown - кнопка с выпадающим списком с наименованием "ВЫБРАТЬ";
+- setting_lot_edit_quantity_manager_protip - кнопка отвечающая за вызов подсказки setting_lot_edit_quantity_manager_protip_modal;  
+
+При нажатии на setting_lot_edit_quantity_manager_dropdown из него выпадает список из 2 элементов-кнопок setting_lot_edit_quantity_manager_dropdown_list (при всплытии списка все остальные элементы на экране блокируются и список не схлопывается до момента пока не будет нажата одна из его кнопок), который при первом открытии ранжирован следующим образом:
+
+                       codename:                                    type:           button_name:             pressed/defaul:      important:
+[setting_lot_edit_quantity_manager_dropdown                 ]     [dropdown]     "ВЫБРАТЬ"                   [color1/color2]        [ no  ]				  
+[setting_lot_edit_quantity_manager_dropdown_list_definite   ]     [button  ]     "ТОЧНЫЙ"                    [color1/color2]        [ no  ]
+[setting_lot_edit_quantity_manager_dropdown_list_approximate]     [button  ]     "ПРИБЛИЗИТЕЛЬНЫЙ"           [color1/color2]        [ no  ]
+
+✠ actions
+• setting_lot_edit_quantity_manager_dropdown:
+╠ valid / invalid
+║ occasion: нажатие setting_lot_edit_quantity_manager_dropdown;
+║ condition: в любой ситуации;
+╙ result: открывается setting_lot_edit_quantity_manager_dropdown_list.
+• setting_lot_edit_quantity_manager_dropdown_list_definite:
+╠ valid / invalid
+║ occasion: нажатие setting_lot_edit_quantity_manager_dropdown_list_definite;
+║ condition: в любой ситуации;
+╙ result: для текущего лота setting_lot_edit_quantity_manager_value = definite.
+• setting_lot_edit_quantity_manager_dropdown_list_approximate:
+╠ valid / invalid
+║ occasion: нажатие setting_lot_edit_quantity_manager_dropdown_list_approximate;
+║ condition: в любой ситуации;
+╙ result: для текущего лота setting_lot_edit_quantity_manager_value = approximate.
+
+✠ color_states
+┌─
+│setting_lot_edit_quantity_manager_dropdown
+│---------------------------------
+│• color2
+│------ в inactive_state;
+│• color1
+│------ в pressing_state.
+└─
+┌─
+│setting_lot_edit_quantity_manager_dropdown_list_definite
+│setting_lot_edit_quantity_manager_dropdown_list_approximate
+│---------------------------------
+│• color2
+│------ в inactive_state;
+│• color1
+│------ в pressing_state.
+└─
+┌─
+│setting_lot_edit_quantity_manager_protip
+│-------------------------------
+│• color2
+│------ в любой ситуации.
+└─
+
+
+🡆🡆🡆 setting_lot_edit_quantity_manager_protip_modal
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+При тапе на кнопку setting_lot_edit_quantity_manager_protip всплывает setting_lot_edit_quantity_manager_protip_modal со следующим содержанием:
+
+                      codename:                                          header:             type:        button_name:     inactive/pressed:   
+--- [setting_lot_edit_quantity_manager_protip_modal_header]     "ИНДИКАТОР КОЛИЧЕСТВА"      [header]        		      
+--- [setting_lot_edit_quantity_manager_protip_modal_text  ]                                 [text  ]
+--- [setting_lot_edit_quantity_manager_protip_modal_button]                                 [button]          "ОК"          [color2/color1]
+
+✠ details
+setting_lot_edit_quantity_manager_protip_modal располагается по центру, занимает порядка 50% в ширину и 70% в высоту экрана. На остальную область экрана (содержимое lot_edit_screen) применяется эффект blur. Для закрытия setting_lot_edit_quantity_manager_protip_modal необходимо нажатие setting_lot_edit_quantity_manager_protip_modal_button. 
+Содержимое setting_lot_edit_quantity_manager_protip_modal_text: "С помощью данной настройки можно выбрать индикатор количества товара. "Точный" вариант отображает количество в единицах. "Приблизительный" вариант отображает количество такми формулировками как: "много", "есть", "мало". Индикатор отображается как для вас (позволяет регулировать количество), так и для покупателя (позволяет увидеть объем товара). По умолчанию устанавливается "приблизительный" вариант. Данная настройка не является обязательной при публикации лота."
+
+✠ actions
+• setting_lot_edit_quantity_manager_protip_modal_button:
+╠ valid / invalid
+║ occasion: нажатие setting_lot_edit_quantity_manager_protip_modal_button;
+║ condition: в любой ситуации;
+║ result: 
+║ && - setting_lot_edit_quantity_manager_protip_modal закрывается;
+╙ && - делается возврат к lot_edit_screen.
+
+✠ color_states
+┌─
+│setting_lot_edit_quantity_manager_protip_modal_button
+│---------------------------------------------
+│• color2
+│------ в inactive_state;
+│• color1
+│------ в pressing_state.
+└─
 
 
 
