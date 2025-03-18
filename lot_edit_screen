@@ -15,7 +15,6 @@ color5 - actived;
 
 
 
-
 🡆🡆 lot_edit_screen
 ■■■■■■■■■■■■■■■■■■
 Открытие lot_edit_screen осуществляется через нажатие либо кнопки seller_lot_add_lot, либо seller_shop_add_lot. При инициации каждого нового лота создается индивидуальная форма lot_data, где хранится весь перечень его данных. В lot_edit_screen осуществляется ввод и корректировка данных товара. Конфигурация lot_edit_screen представлен 10 секциями, каждая из которых (исключая последнюю секцию) имеет свой header, который размещается над содержанием. Обязательными для активации = публикации лота являются setting_lot_edit_name и setting_lot_edit_price. Перечень данных lot_edit_screen приведенных в порядке расположения сверху-вниз:
@@ -281,7 +280,7 @@ s10)└┬─[setting_lot_edit_button                   ]                       
 ╠ valid / invalid
 ║ occasion: нажатие setting_lot_edit_measure_dropdown_list_items;
 ║ condition: в любой ситуации;
-╙ result: для текущего лота setting_lot_edit_measure_value = items.
+╙ result: для текущего лота setting_lot_edit_measure_value = items (активирован по умолчанию для первого лота).
 • setting_lot_edit_measure_dropdown_list_grams:
 ╠ valid / invalid
 ║ occasion: нажатие setting_lot_edit_measure_dropdown_list_grams;
@@ -461,7 +460,7 @@ setting_lot_edit_measure_protip_modal располагается по центр
 ✠ details
 Секция setting_lot_edit_measure состоит из 3 компонентов:  
 - setting_lot_edit_quantity_header - заголовок с содержанием: "КОЛИЧЕСТВО ТОВАРА";
-- setting_lot_edit_quantity_input - поле для ввода данных, по умолчанию setting_lot_edit_quantity_value=1;
+- setting_lot_edit_quantity_input - поле для ввода данных, по умолчанию (для каждого лота) setting_lot_edit_quantity_value=1;
 - setting_lot_edit_quantity_protip - кнопка отвечающая за вызов подсказки setting_lot_edit_quantity_protip_modal;  
 Нормативы для setting_lot_edit_quantity_input: 
 - минимум 1 символ;
@@ -600,7 +599,7 @@ setting_lot_edit_quantity_protip_modal располагается по цент�
 ╠ valid / invalid
 ║ occasion: нажатие setting_lot_edit_quantity_manager_dropdown_list_definite;
 ║ condition: в любой ситуации;
-╙ result: для текущего лота setting_lot_edit_quantity_manager_value = definite.
+╙ result: для текущего лота setting_lot_edit_quantity_manager_value = definite (активирован по умолчанию для первого лота).
 • setting_lot_edit_quantity_manager_dropdown_list_approximate:
 ╠ valid / invalid
 ║ occasion: нажатие setting_lot_edit_quantity_manager_dropdown_list_approximate;
@@ -698,7 +697,7 @@ setting_lot_edit_quantity_manager_protip_modal располагается по �
 ╠ valid / invalid
 ║ occasion: нажатие setting_lot_edit_saletype_dropdown_list_retail;
 ║ condition: в любой ситуации;
-╙ result: для текущего лота setting_lot_edit_saletype_value = retail.
+╙ result: для текущего лота setting_lot_edit_saletype_value = retail (активирован по умолчанию для первого лота).
 • setting_lot_edit_saletype_dropdown_list_wholesale:
 ╠ valid / invalid
 ║ occasion: нажатие setting_lot_edit_saletype_dropdown_list_wholesale;
@@ -995,6 +994,9 @@ setting_lot_edit_description_value = {text}    - описание присутс
 ║ && - lot_edit_screen закрывается с сохранением изменений в базу данных seller_db по setting_lot_edit_image (все изображения) в секцию с присвоенным lot_id;
 ║ && - lot_edit_screen закрывается с сохранением изменений в базу данных seller_db по setting_lot_edit_description_value в секцию с присвоенным lot_id;
 ║ && - осуществляется публикация лота в качестве seller_lot_cover в топ seller_lot_list;
+║ && - setting_lot_edit_measure_value сохраняется в local_storage;
+║ && - setting_lot_edit_quantity_manager_value сохраняется в local_storage;
+║ && - setting_lot_edit_saletype_value сохраняется в local_storage;
 ║ && - совершается переход к seller_lot_screen с фиксацией viewport, где верхний край экрана отображает верхнюю границу seller_lot_list.
 ╠ invalid
 ║ occasion: нажатие setting_lot_edit_button_yes;
@@ -1024,7 +1026,7 @@ setting_lot_edit_description_value = {text}    - описание присутс
 │- || - invalid по setting_lot_edit_price.
 └─
 
-При создании лота создается lot_id, который включает следующий перечень данных: 
+При публикации лота создается lot_id, который включает следующий перечень данных: 
  - unix_time (milliseconds); 
  - setting_user_phone.
  
@@ -1037,5 +1039,7 @@ setting_lot_edit_description_value = {text}    - описание присутс
 
 Результирующее значение lot_id:
 1739818921072662_996550698598.
+
+
 
 
