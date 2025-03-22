@@ -13,6 +13,7 @@ color5 - actived;
 -------------------------------------------------------------------
 
 
+
 🡆🡆 lot_edit_screen
 ■■■■■■■■■■■■■■■■■■
 Открытие lot_edit_screen осуществляется через нажатие либо кнопки seller_lot_add_lot, либо seller_shop_add_lot. При инициации каждого нового лота создается индивидуальная форма lot_data, где хранится весь перечень его данных. В lot_edit_screen осуществляется ввод и корректировка данных товара. Конфигурация lot_edit_screen представлен 10 секциями, каждая из которых (исключая последнюю секцию) имеет свой header, который размещается над содержанием. Обязательными для активации = публикации лота являются setting_lot_edit_name и setting_lot_edit_price. Перечень данных lot_edit_screen приведенных в порядке расположения сверху-вниз:
@@ -152,6 +153,18 @@ s10)└┬─[setting_lot_edit_button                   ]                       
 - occasion: нажатие на setting_lot_edit_button_yes, если setting_lot_edit_name_input пустой;
 - content:  "ПОЖАЛУЙСТА ВВЕДИТЕ ЗДЕСЬ НАЗВАНИЕ ТОВАРА".
 
+✠ outputs
+• setting_lot_edit_name_input:
+║occasion: нажатие setting_lot_edit_button_yes;
+║condition: 
+║- && - valid по факту проверки на undernaming;
+║- && - valid по факту проверки на overnaming.
+║- && - valid по факту проверки на stopsymbol;
+║- && - valid по факту проверки на stopword;
+║- && - valid по факту проверки на omission;
+║- && - valid по факту проверки на emptiness;
+╙ result: cодержимое setting_lot_edit_name_input преобразуется в setting_lot_edit_name_value.
+
 
 ■ setting_lot_edit_price
 
@@ -230,6 +243,16 @@ s10)└┬─[setting_lot_edit_button                   ]                       
 - location: появляется под setting_lot_edit_price_input;
 - occasion: нажатие на setting_lot_edit_button_yes, если setting_lot_edit_price_input пустой;
 - content:  "ПОЖАЛУЙСТА ВВЕДИТЕ ЦЕНУ ТОВАРА".
+
+✠ outputs
+• setting_lot_edit_price_input:
+║occasion: нажатие setting_lot_edit_button_yes;
+║condition: 
+║- && - valid по факту проверки на overnaming.
+║- && - valid по факту проверки на stopsymbol;
+║- && - valid по факту проверки на omission;
+║- && - valid по факту проверки на emptiness.
+╙ result: cодержимое setting_lot_edit_price_input преобразуется в setting_lot_edit_price_value.
 
 
 ■ setting_lot_edit_measure
@@ -417,6 +440,31 @@ s10)└┬─[setting_lot_edit_button                   ]                       
 │------ в любой ситуации.
 └─
 
+✠ outputs
+• setting_lot_edit_measure_dropdown:
+║ occasion: нажатие setting_lot_edit_button_yes;
+║ condition: 
+║- || - активация setting_lot_edit_measure_dropdown_list_items;
+║- || - активация setting_lot_edit_measure_dropdown_list_grams;
+║- || - активация setting_lot_edit_measure_dropdown_list_kilos;
+║- || - активация setting_lot_edit_measure_dropdown_list_tons;
+║- || - активация setting_lot_edit_measure_dropdown_list_milliliters;
+║- || - активация setting_lot_edit_measure_dropdown_list_liters;
+║- || - активация setting_lot_edit_measure_dropdown_list_millimeters;
+║- || - активация setting_lot_edit_measure_dropdown_list_centimeters;
+║- || - активация setting_lot_edit_measure_dropdown_list_meters;
+║- || - активация setting_lot_edit_measure_dropdown_list_kilometers;
+║- || - активация setting_lot_edit_measure_dropdown_list_boxes;
+║- || - активация setting_lot_edit_measure_dropdown_list_containers;
+║- || - активация setting_lot_edit_measure_dropdown_list_places;
+║- || - активация setting_lot_edit_measure_dropdown_list_rooms;
+║- || - активация setting_lot_edit_measure_dropdown_list_vehicles;
+║- || - активация setting_lot_edit_measure_dropdown_list_vans;
+║- || - активация setting_lot_edit_measure_dropdown_list_heads;
+║- || - активация setting_lot_edit_measure_dropdown_list_animals;
+║- || - активация setting_lot_edit_measure_dropdown_list_families;
+╙ result: выбранный вариант из setting_lot_edit_measure_dropdown_list преобразуется в setting_lot_edit_measure_value.
+
 
 🡆🡆🡆 setting_lot_edit_measure_protip_modal
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
@@ -536,6 +584,16 @@ setting_lot_edit_measure_protip_modal располагается по центр
 - occasion: нажатие на setting_lot_edit_button_yes, если setting_lot_edit_quantity_input пустой;
 - content:  "ПОЖАЛУЙСТА ВВЕДИТЕ КОЛИЧЕСТВО ТОВАРА".
 
+✠ outputs
+• setting_lot_edit_quantity_input:
+║occasion: нажатие setting_lot_edit_button_yes;
+║condition: 
+║- && - valid по факту проверки на overnaming.
+║- && - valid по факту проверки на stopsymbol;
+║- && - valid по факту проверки на omission;
+║- && - valid по факту проверки на emptiness;
+╙ result: cодержимое setting_lot_edit_quantity_input преобразуется в setting_lot_edit_quantity_value.
+
 
 🡆🡆🡆 setting_lot_edit_quantity_protip_modal
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
@@ -633,6 +691,14 @@ setting_lot_edit_quantity_protip_modal располагается по цент�
 │• color2
 │------ в любой ситуации.
 └─
+
+✠ outputs
+• setting_lot_edit_quantity_manager_dropdown:
+║ occasion: нажатие setting_lot_edit_button_yes;
+║ condition:  
+║- || - активация setting_lot_edit_quantity_manager_dropdown_list_definite;
+║- || - активация setting_lot_edit_quantity_manager_dropdown_list_approximate;
+╙ result: выбранный вариант из setting_lot_edit_quantity_manager_dropdown преобразуется в setting_lot_edit_quantity_manager_value.
 
 
 🡆🡆🡆 setting_lot_edit_quantity_manager_protip_modal
@@ -732,6 +798,14 @@ setting_lot_edit_quantity_manager_protip_modal располагается по �
 │------ в любой ситуации.
 └─
 
+✠ outputs
+• setting_lot_edit_saletype_dropdown:
+║ occasion: нажатие setting_lot_edit_button_yes;
+║ condition:  
+║- || - активация setting_lot_edit_saletype_dropdown_list_retail;
+║- || - активация setting_lot_edit_saletype_dropdown_list_wholesale;
+╙ result: выбранный вариант из setting_lot_edit_saletype_dropdown преобразуется в setting_lot_edit_saletype_value.
+
 
 🡆🡆🡆 setting_lot_edit_saletype_protip_modal
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
@@ -781,7 +855,7 @@ setting_lot_edit_saletype_protip_modal располагается по цент�
            codename:                     type:           mode:          pressed/defaul:        interaction:        important:
 [setting_lot_edit_image_value]          [image]      [mini,macro]       [color1/color2]          [ yes ]             [ no  ]				  
 
-Допускается добавление до 12 изображений. Размеры setting_lot_edit_image_value адаптивны и зависят от величины экрана. В ширину могут быть размещаться до 4 setting_lot_edit_image_value. При тапе на setting_lot_edit_image_value, оно увеличивается переключаясь в полноэкранный режим setting_lot_edit_image_value = macro. В seller_db общее количество хранимых изображение выражается через setting_lot_edit_image_value. Например если лот содержит 12 фото, тогда setting_lot_edit_image_value = 12. Каждому конкретному лоту присваивается имя состоящее из: {строка setting_lot_edit_image} + {нижнее подчеркивание} + {последовательный номер согласно дате вставки в лот от 1 до 12} + {нижнее подчеркивание} + {уникальное имя изображения в системе пользователя}. Так если это фото вставленное в лот под номером 7 с именем 20273645_133514-0, тогда полное наименование в базе данного изображения будет: setting_lot_edit_image_7_20273645_133514-0.
+Допускается добавление до 12 изображений. Размеры setting_lot_edit_image_value адаптивны и зависят от величины экрана. В ширину могут быть размещаться до 4 setting_lot_edit_image_value mini. При тапе на setting_lot_edit_image_value, оно увеличивается переключаясь в полноэкранный режим setting_lot_edit_image_value = macro. В seller_db общее количество хранимых изображение выражается через setting_lot_edit_image_value. Например если лот содержит 12 фото, тогда setting_lot_edit_image_value = 12. Каждому конкретному лоту присваивается имя состоящее из: {строка setting_lot_edit_image} + {нижнее подчеркивание} + {последовательный номер согласно дате вставки в лот от 1 до 12} + {нижнее подчеркивание} + {уникальное имя изображения в системе пользователя}. Так если это фото вставленное в лот под номером 7 с именем 20273645_133514-0, тогда полное наименование в базе данного изображения будет: setting_lot_edit_image_7_20273645_133514-0.
 
 ✠ actions
 • setting_lot_edit_image_button:
@@ -805,6 +879,14 @@ setting_lot_edit_saletype_protip_modal располагается по цент�
 │• color2
 │------ в любой ситуации.
 └─
+
+✠ outputs
+• setting_lot_edit_image_button:
+║ occasion: нажатие setting_lot_edit_button_yes;
+║ condition: setting_lot_edit_image_value > 0;
+║ result:  
+║ && - вывод setting_lot_edit_image_value;
+╙ && - вывод всех image согласно наименованию.
 
 
 🡆🡆🡆 setting_lot_edit_image_value_popup
@@ -963,6 +1045,15 @@ setting_lot_edit_description_value = {text}    - описание присутс
 - occasion: невалидность по факту проверки на stopword;
 - content:  "ИСПОЛЬЗОВАНО ЗАПРЕЩЕННОЕ СЛОВО {указывается запрещенное слово жирным шрифтом белого цвета на color3 фоне}".
 
+✠ outputs
+• setting_lot_edit_description_textaria:
+║occasion: нажатие setting_lot_edit_button_yes;
+║condition: 
+║- && - valid по факту проверки на overnaming.
+║- && - valid по факту проверки на stopsymbol;
+║- && - valid по факту проверки на stopword;
+╙ result: cодержимое setting_lot_edit_description_textaria преобразуется в setting_lot_edit_description_value.
+
 
 ■ setting_lot_edit_button
 
@@ -1037,5 +1128,6 @@ setting_lot_edit_description_value = {text}    - описание присутс
 
 Результирующее значение lot_id:
 1739818921072662_996550698598.
+
 
 
