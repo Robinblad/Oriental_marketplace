@@ -20,7 +20,6 @@ location:
 
 
 
-
 🡆 seller_lot_screen
 ■■■■■■■■■■■■■■■■■■■
 seller_lot_screen предназначен для отображения товаров seller в качестве так называемых (торговых) лотов, вход в который осуществляется посредством кнопки "ТОВАРЫ" на seller_nav_lots и представляет список товаров выполненных в виде блоков с краткой информацией. seller_lot_screen разделен на 3 sections следующего содержания расположенных сверху-вниз:
@@ -152,75 +151,75 @@ seller_lot_cover может быть в трех состояниях:
 
 lot_cover_unveiled_state:
 
-                         codename:                      type:        variable:     button_name:  location:    active/inactive:    opacity:   interaction:
-┌┬┬┬───[seller_lot_cover                        ] [section       ]                                [ ✜ ✜ ] 
-│││└───[seller_lot_cover_name                   ] [component_lev1] {string     }                  [ 🡅 ✜ ]     [color2]            [ 100% ]     [ no  ]
-││└┬┬┬─[seller_lot_cover_info                   ] [component_lev1] {           }                  [ 🡇 🡄 ]     [color2]            [ 100% ]     [ no  ]
-││ ││└┬[seller_lot_cover_info_date              ] [component_lev2] {           }                  [ 🡅 ✜ ]     [color1/color2]     [ 100% ]     [ no  ]
-││ ││ ├[seller_lot_cover_info_date_value        ] [widget        ] {number     }                  [ ✜ 🡄 ]     [color1/color2]     [ 100% ]     [ no  ]
-││ ││ └[seller_lot_cover_info_date_designation  ] [widget        ] {           }                  [ ✜ 🡆 ]     [color1/color2]     [ 100% ]     [ no  ]
-││ │└─┬[seller_lot_cover_info_price             ] [component_lev2] {           }                  [ ✜ ✜ ]     [color1/color2]     [ 100% ]     [ no  ]
-││ │  ├[seller_lot_cover_info_price_value       ] [widget        ] {number     }                  [ ✜ 🡄 ]     [color1/color2]     [ 100% ]     [ no  ]
-││ │  └[seller_lot_cover_info_price_measure     ] [widget        ] {string     }                  [ ✜ 🡆 ]     [color1/color2]     [ 100% ]     [ no  ]
-││ └──┬[seller_lot_cover_info_quantity          ] [component_lev2] {           }                  [ 🡇 ✜ ]     [color1/color2]     [ 100% ]     [ no  ]
-││    ├[seller_lot_cover_info_quantity_minus    ] [button        ] {number     }  "-"             [ ✜ 🡄 ]     [color1/color2]     [ 100% ]     [ yes ]
-││    ├[seller_lot_cover_info_quantity_indicator] [widget        ] {number/icon}                  [ ✜ ✜ ]     [color1/color2]     [ 100% ]     [ no  ]
-││    └[seller_lot_cover_info_quantity_plus     ] [button        ] {number     }  "+"             [ ✜ 🡆 ]     [color1/color2]     [ 100% ]     [ yes ]
-│└────┬[seller_lot_cover_img                    ] [component_lev1] {           }                  [ 🡇 ✜ ]                         [ 100% ]     [ no  ]
-│     ├[seller_lot_cover_img_frame              ] [picture+button] {img        }                  [ ✜ ✜ ]     [color2]            [ 100% ]     [ yes ]
-│     └[seller_lot_cover_img_widget             ] [widget        ] {unveiled   }                  [ 🡅 🡆 ]     [color1]            [ 100% ]     [ no  ]
-└─────┬[seller_lot_cover_control                ] [component_lev1] {           }                  [ 🡇 🡆 ]                         [ 100% ]     [ no  ]
-      ├[seller_lot_cover_control_edit           ] [button        ] {edit       }  "ИЗМЕНИТЬ"      [ 🡅 ✜ ]     [color1/color2]     [ 100% ]     [ yes ]
-      ├[seller_lot_cover_control_veil           ] [button        ] {veil       }  "СКРЫТЬ"        [ ✜ ✜ ]     [color1/color2]     [ 100% ]     [ yes ]
-      └[seller_lot_cover_control_expo           ] [button        ] {remove     }  "УДАЛИТЬ"       [ 🡇 ✜ ]     [color1/color2]     [ 100% ]     [ yes ]
+                         codename:                    type:        variable:     button_name:  location:    active/inactive:    opacity:   interaction:
+┌┬┬┬───[seller_lot_cover                      ] [section       ]                                [ ✜ ✜ ] 
+│││└───[seller_lot_cover_name                 ] [component_lev1] {string     }                  [ 🡅 ✜ ]     [color2]            [ 100% ]     [ no  ]
+││└┬┬┬─[seller_lot_cover_info                 ] [component_lev1] {           }                  [ 🡇 🡄 ]     [color2]            [ 100% ]     [ no  ]
+││ ││└┬[seller_lot_cover_info_date            ] [component_lev2] {           }                  [ 🡅 ✜ ]     [color1/color2]     [ 100% ]     [ no  ]
+││ ││ ├[seller_lot_cover_info_date_value      ] [widget        ] {number     }                  [ ✜ 🡄 ]     [color1/color2]     [ 100% ]     [ no  ]
+││ ││ └[seller_lot_cover_info_date_designation] [widget        ] {           }                  [ ✜ 🡆 ]     [color1/color2]     [ 100% ]     [ no  ]
+││ │└─┬[seller_lot_cover_info_price           ] [component_lev2] {           }                  [ ✜ ✜ ]     [color1/color2]     [ 100% ]     [ no  ]
+││ │  ├[seller_lot_cover_info_price_value     ] [widget        ] {number     }                  [ ✜ 🡄 ]     [color1/color2]     [ 100% ]     [ no  ]
+││ │  └[seller_lot_cover_info_price_measure   ] [widget        ] {string     }                  [ ✜ 🡆 ]     [color1/color2]     [ 100% ]     [ no  ]
+││ └──┬[seller_lot_cover_info_quantity        ] [component_lev2] {           }                  [ 🡇 ✜ ]     [color1/color2]     [ 100% ]     [ no  ]
+││    ├[seller_lot_cover_info_quantity_minus  ] [button        ] {number     }  "-"             [ ✜ 🡄 ]     [color1/color2]     [ 100% ]     [ yes ]
+││    ├[seller_lot_cover_info_quantity_value  ] [widget        ] {number/icon}                  [ ✜ ✜ ]     [color1/color2]     [ 100% ]     [ no  ]
+││    └[seller_lot_cover_info_quantity_plus   ] [button        ] {number     }  "+"             [ ✜ 🡆 ]     [color1/color2]     [ 100% ]     [ yes ]
+│└────┬[seller_lot_cover_img                  ] [component_lev1] {           }                  [ 🡇 ✜ ]                         [ 100% ]     [ no  ]
+│     ├[seller_lot_cover_img_frame            ] [picture+button] {img        }                  [ ✜ ✜ ]     [color2]            [ 100% ]     [ yes ]
+│     └[seller_lot_cover_img_widget           ] [widget        ] {unveiled   }                  [ 🡅 🡆 ]     [color1]            [ 100% ]     [ no  ]
+└─────┬[seller_lot_cover_control              ] [component_lev1] {           }                  [ 🡇 🡆 ]                         [ 100% ]     [ no  ]
+      ├[seller_lot_cover_control_edit         ] [button        ] {edit       }  "ИЗМЕНИТЬ"      [ 🡅 ✜ ]     [color1/color2]     [ 100% ]     [ yes ]
+      ├[seller_lot_cover_control_veil         ] [button        ] {veil       }  "СКРЫТЬ"        [ ✜ ✜ ]     [color1/color2]     [ 100% ]     [ yes ]
+      └[seller_lot_cover_control_expo         ] [button        ] {remove     }  "УДАЛИТЬ"       [ 🡇 ✜ ]     [color1/color2]     [ 100% ]     [ yes ]
 
 lot_cover_veiled_state:
 
-                         codename:                      type:        variable:     button_name:  location:    active/inactive:    opacity:   interaction:
-┌┬┬┬───[seller_lot_cover                        ] [section       ]                                [ ✜ ✜ ] 
-│││└───[seller_lot_cover_name                   ] [component_lev1] {string     }                  [ 🡅 ✜ ]     [color2]            [ 100% ]     [ no  ]
-││└┬┬┬─[seller_lot_cover_info                   ] [component_lev1] {           }                  [ 🡇 🡄 ]     [color2]            [ 100% ]     [ no  ]
-││ ││└┬[seller_lot_cover_info_date              ] [component_lev2] {           }                  [ 🡅 ✜ ]     [color1/color2]     [ 100% ]     [ no  ]
-││ ││ ├[seller_lot_cover_info_date_value        ] [widget        ] {number     }                  [ ✜ 🡄 ]     [color1/color2]     [ 100% ]     [ no  ]
-││ ││ └[seller_lot_cover_info_date_designation  ] [widget        ] {           }                  [ ✜ 🡆 ]     [color1/color2]     [ 100% ]     [ no  ]
-││ │└─┬[seller_lot_cover_info_price             ] [component_lev2] {           }                  [ ✜ ✜ ]     [color1/color2]     [ 100% ]     [ no  ]
-││ │  ├[seller_lot_cover_info_price_value       ] [widget        ] {number     }                  [ ✜ 🡄 ]     [color1/color2]     [ 100% ]     [ no  ]
-││ │  └[seller_lot_cover_info_price_measure     ] [widget        ] {string     }                  [ ✜ 🡆 ]     [color1/color2]     [ 100% ]     [ no  ]
-││ └──┬[seller_lot_cover_info_quantity          ] [component_lev2] {           }                  [ 🡇 ✜ ]     [color1/color2]     [ 100% ]     [ no  ]
-││    ├[seller_lot_cover_info_quantity_minus    ] [button        ] {number     }  "-"             [ ✜ 🡄 ]     [color1/color2]     [ 100% ]     [ yes ]
-││    ├[seller_lot_cover_info_quantity_indicator] [widget        ] {number/icon}                  [ ✜ ✜ ]     [color1/color2]     [ 100% ]     [ no  ]
-││    └[seller_lot_cover_info_quantity_plus     ] [button        ] {number     }  "+"             [ ✜ 🡆 ]     [color1/color2]     [ 100% ]     [ yes ]
-│└────┬[seller_lot_cover_img                    ] [component_lev1] {           }                  [ 🡇 ✜ ]                         [ 100% ]     [ no  ]
-│     ├[seller_lot_cover_img_frame              ] [picture+button] {img        }                  [ ✜ ✜ ]     [color2]            [ 100% ]     [ yes ]
-│     └[seller_lot_cover_img_widget             ] [widget        ] {veiled     }  "СКРЫТО"        [ 🡅 🡆 ]     [color3]            [ 100% ]     [ no  ]
-└─────┬[seller_lot_cover_control                ] [component_lev1] {           }                  [ 🡇 🡆 ]                         [ 100% ]     [ no  ]
-      ├[seller_lot_cover_control_edit           ] [button        ] {edit       }  "ИЗМЕНИТЬ"      [ 🡅 ✜ ]     [color1/color2]     [ 100% ]     [ yes ]
-      ├[seller_lot_cover_control_veil           ] [button        ] {unveil     }  "ОТКРЫТЬ"       [ ✜ ✜ ]     [color1/color2]     [ 100% ]     [ yes ]
-      └[seller_lot_cover_control_expo           ] [button        ] {remove     }  "УДАЛИТЬ"       [ 🡇 ✜ ]     [color1/color2]     [ 100% ]     [ yes ]
+                         codename:                    type:        variable:     button_name:  location:    active/inactive:    opacity:   interaction:
+┌┬┬┬───[seller_lot_cover                      ] [section       ]                                [ ✜ ✜ ] 
+│││└───[seller_lot_cover_name                 ] [component_lev1] {string     }                  [ 🡅 ✜ ]     [color2]            [ 100% ]     [ no  ]
+││└┬┬┬─[seller_lot_cover_info                 ] [component_lev1] {           }                  [ 🡇 🡄 ]     [color2]            [ 100% ]     [ no  ]
+││ ││└┬[seller_lot_cover_info_date            ] [component_lev2] {           }                  [ 🡅 ✜ ]     [color1/color2]     [ 100% ]     [ no  ]
+││ ││ ├[seller_lot_cover_info_date_value      ] [widget        ] {number     }                  [ ✜ 🡄 ]     [color1/color2]     [ 100% ]     [ no  ]
+││ ││ └[seller_lot_cover_info_date_designation] [widget        ] {           }                  [ ✜ 🡆 ]     [color1/color2]     [ 100% ]     [ no  ]
+││ │└─┬[seller_lot_cover_info_price           ] [component_lev2] {           }                  [ ✜ ✜ ]     [color1/color2]     [ 100% ]     [ no  ]
+││ │  ├[seller_lot_cover_info_price_value     ] [widget        ] {number     }                  [ ✜ 🡄 ]     [color1/color2]     [ 100% ]     [ no  ]
+││ │  └[seller_lot_cover_info_price_measure   ] [widget        ] {string     }                  [ ✜ 🡆 ]     [color1/color2]     [ 100% ]     [ no  ]
+││ └──┬[seller_lot_cover_info_quantity        ] [component_lev2] {           }                  [ 🡇 ✜ ]     [color1/color2]     [ 100% ]     [ no  ]
+││    ├[seller_lot_cover_info_quantity_minus  ] [button        ] {number     }  "-"             [ ✜ 🡄 ]     [color1/color2]     [ 100% ]     [ yes ]
+││    ├[seller_lot_cover_info_quantity_value  ] [widget        ] {number/icon}                  [ ✜ ✜ ]     [color1/color2]     [ 100% ]     [ no  ]
+││    └[seller_lot_cover_info_quantity_plus   ] [button        ] {number     }  "+"             [ ✜ 🡆 ]     [color1/color2]     [ 100% ]     [ yes ]
+│└────┬[seller_lot_cover_img                  ] [component_lev1] {           }                  [ 🡇 ✜ ]                         [ 100% ]     [ no  ]
+│     ├[seller_lot_cover_img_frame            ] [picture+button] {img        }                  [ ✜ ✜ ]     [color2]            [ 100% ]     [ yes ]
+│     └[seller_lot_cover_img_widget           ] [widget        ] {veiled     }  "СКРЫТО"        [ 🡅 🡆 ]     [color3]            [ 100% ]     [ no  ]
+└─────┬[seller_lot_cover_control              ] [component_lev1] {           }                  [ 🡇 🡆 ]                         [ 100% ]     [ no  ]
+      ├[seller_lot_cover_control_edit         ] [button        ] {edit       }  "ИЗМЕНИТЬ"      [ 🡅 ✜ ]     [color1/color2]     [ 100% ]     [ yes ]
+      ├[seller_lot_cover_control_veil         ] [button        ] {unveil     }  "ОТКРЫТЬ"       [ ✜ ✜ ]     [color1/color2]     [ 100% ]     [ yes ]
+      └[seller_lot_cover_control_expo         ] [button        ] {remove     }  "УДАЛИТЬ"       [ 🡇 ✜ ]     [color1/color2]     [ 100% ]     [ yes ]
 
 lot_cover_archived_state:
 
-                         codename:                      type:        variable:     button_name:  location:    active/inactive:    opacity:   interaction:
-┌┬┬┬───[seller_lot_cover                        ] [section       ]                                [ ✜ ✜ ] 
-│││└───[seller_lot_cover_name                   ] [component_lev1] {string     }                  [ 🡅 ✜ ]     [color2]            [ 100% ]     [ no  ]
-││└┬┬┬─[seller_lot_cover_info                   ] [component_lev1] {           }                  [ 🡇 🡄 ]     [color2]            [ 30%  ]     [ no  ]
-││ ││└┬[seller_lot_cover_info_date              ] [component_lev2] {           }                  [ 🡅 ✜ ]     [color1/color2]     [ 30%  ]     [ no  ]
-││ ││ ├[seller_lot_cover_info_date_value        ] [widget        ] {number     }                  [ ✜ 🡄 ]     [color1/color2]     [ 30%  ]     [ no  ]
-││ ││ └[seller_lot_cover_info_date_designation  ] [widget        ] {           }                  [ ✜ 🡆 ]     [color1/color2]     [ 30%  ]     [ no  ]
-││ │└─┬[seller_lot_cover_info_price             ] [component_lev2] {           }                  [ ✜ ✜ ]     [color1/color2]     [ 30%  ]     [ no  ]
-││ │  ├[seller_lot_cover_info_price_value       ] [widget        ] {number     }                  [ ✜ 🡄 ]     [color1/color2]     [ 30%  ]     [ no  ]
-││ │  └[seller_lot_cover_info_price_measure     ] [widget        ] {string     }                  [ ✜ 🡆 ]     [color1/color2]     [ 30%  ]     [ no  ]
-││ └──┬[seller_lot_cover_info_quantity          ] [component_lev2] {           }                  [ 🡇 ✜ ]     [color1/color2]     [ 30%  ]     [ no  ]
-││    ├[seller_lot_cover_info_quantity_minus    ] [button        ] {number     }  "-"             [ ✜ 🡄 ]     [color1/color2]     [ 30%  ]     [ yes ]
-││    ├[seller_lot_cover_info_quantity_indicator] [widget        ] {number/icon}                  [ ✜ ✜ ]     [color1/color2]     [ 30%  ]     [ no  ]
-││    └[seller_lot_cover_info_quantity_plus     ] [button        ] {number     }  "+"             [ ✜ 🡆 ]     [color1/color2]     [ 30%  ]     [ yes ]
-│└────┬[seller_lot_cover_img                    ] [component_lev1] {           }                  [ 🡇 ✜ ]                         [ 30%  ]     [ no  ]
-│     ├[seller_lot_cover_img_frame              ] [picture+button] {img        }                  [ ✜ ✜ ]     [color2]            [ 30%  ]     [ yes ]
-│     └[seller_lot_cover_img_widget             ] [widget        ] {archived   }  "ЗАКРЫТО"       [ 🡅 🡆 ]     [color3]            [ 30%  ]     [ no  ]
-└─────┬[seller_lot_cover_control                ] [component_lev1] {           }                  [ 🡇 🡆 ]                         [ 100% ]     [ no  ]
-      ├[seller_lot_cover_control_edit           ] [button        ] {edit       }  "ИЗМЕНИТЬ"      [ 🡅 ✜ ]     [color1/color2]     [ 100% ]     [ yes ]
-      ├[seller_lot_cover_control_veil           ] [button        ] {unveil     }  "ОТКРЫТЬ"       [ ✜ ✜ ]     [color1/color2]     [ 30%  ]     [ yes ]
-      └[seller_lot_cover_control_expo           ] [button        ] {restore    }  "ВОССТАНОВИТЬ"  [ 🡇 ✜ ]     [color1/color2]     [ 100% ]     [ yes ]
+                         codename:                    type:        variable:     button_name:  location:    active/inactive:    opacity:   interaction:
+┌┬┬┬───[seller_lot_cover                      ] [section       ]                                [ ✜ ✜ ] 
+│││└───[seller_lot_cover_name                 ] [component_lev1] {string     }                  [ 🡅 ✜ ]     [color2]            [ 100% ]     [ no  ]
+││└┬┬┬─[seller_lot_cover_info                 ] [component_lev1] {           }                  [ 🡇 🡄 ]     [color2]            [ 30%  ]     [ no  ]
+││ ││└┬[seller_lot_cover_info_date            ] [component_lev2] {           }                  [ 🡅 ✜ ]     [color1/color2]     [ 30%  ]     [ no  ]
+││ ││ ├[seller_lot_cover_info_date_value      ] [widget        ] {number     }                  [ ✜ 🡄 ]     [color1/color2]     [ 30%  ]     [ no  ]
+││ ││ └[seller_lot_cover_info_date_designation] [widget        ] {           }                  [ ✜ 🡆 ]     [color1/color2]     [ 30%  ]     [ no  ]
+││ │└─┬[seller_lot_cover_info_price           ] [component_lev2] {           }                  [ ✜ ✜ ]     [color1/color2]     [ 30%  ]     [ no  ]
+││ │  ├[seller_lot_cover_info_price_value     ] [widget        ] {number     }                  [ ✜ 🡄 ]     [color1/color2]     [ 30%  ]     [ no  ]
+││ │  └[seller_lot_cover_info_price_measure   ] [widget        ] {string     }                  [ ✜ 🡆 ]     [color1/color2]     [ 30%  ]     [ no  ]
+││ └──┬[seller_lot_cover_info_quantity        ] [component_lev2] {           }                  [ 🡇 ✜ ]     [color1/color2]     [ 30%  ]     [ no  ]
+││    ├[seller_lot_cover_info_quantity_minus  ] [button        ] {number     }  "-"             [ ✜ 🡄 ]     [color1/color2]     [ 30%  ]     [ yes ]
+││    ├[seller_lot_cover_info_quantity_value  ] [widget        ] {number/icon}                  [ ✜ ✜ ]     [color1/color2]     [ 30%  ]     [ no  ]
+││    └[seller_lot_cover_info_quantity_plus   ] [button        ] {number     }  "+"             [ ✜ 🡆 ]     [color1/color2]     [ 30%  ]     [ yes ]
+│└────┬[seller_lot_cover_img                  ] [component_lev1] {           }                  [ 🡇 ✜ ]                         [ 30%  ]     [ no  ]
+│     ├[seller_lot_cover_img_frame            ] [picture+button] {img        }                  [ ✜ ✜ ]     [color2]            [ 30%  ]     [ yes ]
+│     └[seller_lot_cover_img_widget           ] [widget        ] {archived   }  "ЗАКРЫТО"       [ 🡅 🡆 ]     [color3]            [ 30%  ]     [ no  ]
+└─────┬[seller_lot_cover_control              ] [component_lev1] {           }                  [ 🡇 🡆 ]                         [ 100% ]     [ no  ]
+      ├[seller_lot_cover_control_edit         ] [button        ] {edit       }  "ИЗМЕНИТЬ"      [ 🡅 ✜ ]     [color1/color2]     [ 100% ]     [ yes ]
+      ├[seller_lot_cover_control_veil         ] [button        ] {unveil     }  "ОТКРЫТЬ"       [ ✜ ✜ ]     [color1/color2]     [ 30%  ]     [ yes ]
+      └[seller_lot_cover_control_expo         ] [button        ] {restore    }  "ВОССТАНОВИТЬ"  [ 🡇 ✜ ]     [color1/color2]     [ 100% ]     [ yes ]
 
 ✠ actions
 • seller_lot_cover:
@@ -260,21 +259,30 @@ seller_lot_cover состоит из 4 компонентов:
 - seller_lot_cover_control.
 
 1) seller_lot_cover_name
-Располагается в верхней части seller_lot_cover в качестве блока занимающего всю ширину seller_lot_cover. Состоит из из 2 компонентов:
-- setting_lot_edit_name_value - обладает font-weight:bold и размещается в левой области (в зависимости от длины может занимать всю ширину seller_lot_cover_name);
-- lot_description - обладает font-weight:normal, помещается в двойные кавычки, отображается начало содержания lot_description и размещается с отступом справа от setting_lot_edit_name_value. 
+В рамках seller_lot_cover локализован в верхней его части в качестве блока занимающего всю ширину seller_lot_cover. Состоит из 2 компонентов:
+- setting_lot_edit_name_value - отвечает за отображение setting_lot_edit_name_value. В рамках seller_lot_cover_name локализован в левой области. Обладает font-weight:bold. В зависимости от длины может занимать всю ширину seller_lot_cover_name;
+- lot_description - отвечает за отображение setting_lot_edit_description_value. В рамках seller_lot_cover_name локализован в правой области. Обладает font-weight:normal. Помещается в двойные кавычки, где отображается начало содержания lot_description и размещается с отступом справа от setting_lot_edit_name_value. 
 2) seller_lot_cover_info
-Располагается в левой части seller_lot_cover под seller_lot_cover_name, занимает 30-40% ширины seller_lot_cover_name. Состоит из 3 компонентов:
-- seller_lot_cover_info_date - находится в верхней области seller_lot_cover_info, состоит из 2 элементов:
+В рамках seller_lot_cover локализован в левой его части под seller_lot_cover_name, занимает 30-40% ширины seller_lot_cover_name. Состоит из 3 компонентов:
+- seller_lot_cover_info_date - в рамках seller_lot_cover_info локализован в верхней области, состоит из 2 компонентов:
 -- seller_lot_cover_info_date_value - отображает lot_date (локализован слева); 
 -- seller_lot_cover_info_date_designation - отображает назначение индикатора (локализован справа); 
-- seller_lot_cover_info_price - находится в центральной области seller_lot_cover_info, состоит из 2 элементов:
+- seller_lot_cover_info_price - в рамках seller_lot_cover_info локализован в центральной области, состоит из 2 компонентов:
 -- seller_lot_cover_info_price_value - отображает lot_price (локализован слева); 
--- seller_lot_cover_info_price_measure - отображает lot_measure (локализован справа); 
-- seller_lot_cover_info_quantity - находится в нижней области seller_lot_cover_info, состоит из 3 элементов:
--- seller_lot_cover_info_quantity_minus - является кнопкой которая призвана уменьшать значение  (локализован слева); 
--- seller_lot_cover_info_quantity_indicator - отображает lot_measure (локализован справа);
--- seller_lot_cover_info_quantity_plus - отображает lot_measure (локализован справа);
+-- seller_lot_cover_info_price_measure - отображает lot_measure (локализован справа);
+- seller_lot_cover_info_quantity - в рамках seller_lot_cover_info локализован в нижней области, состоит из 3 компонентов:
+-- seller_lot_cover_info_quantity_minus - кнопка отвечающая за уменьшение seller_lot_cover_info_quantity_value (локализован слева); 
+-- seller_lot_cover_info_quantity_value - отображает seller_lot_cover_info_quantity_value (локализован по центру);
+-- seller_lot_cover_info_quantity_plus - кнопка отвечающая за увеличение seller_lot_cover_info_quantity_value (локализован справа).
+3) seller_lot_cover_img
+В рамках seller_lot_cover локализован в центральной его части под seller_lot_cover_name, занимает ~30% ширины seller_lot_cover_name. Состоит из 2 компонентов:
+- seller_lot_cover_img_frame - является областью отображения setting_lot_edit_image_value_mini, в рамках seller_lot_cover_img локализован в центральной области;
+- seller_lot_cover_img_widget - в качестве виджета отображает состояние seller_lot_cover, в рамках seller_lot_cover_img локализован в верхней правой области;
+4) seller_lot_cover_control
+В рамках seller_lot_cover локализован в правой его части под seller_lot_cover_name, занимает 25-30% ширины seller_lot_cover_name. Состоит из 3 компонентов:
+- seller_lot_cover_control_edit - кнопка отвечающая за открытие lot_edit_screen, в рамках seller_lot_cover_control локализован в верхней области;
+- seller_lot_cover_control_veil - обладает font-weight:normal, помещается в двойные кавычки, где отображается начало содержания lot_description и размещается с отступом справа от setting_lot_edit_name_value.
+- seller_lot_cover_control_expo - обладает font-weight:normal, помещается в двойные кавычки, где отображается начало содержания lot_description и размещается с отступом справа от setting_lot_edit_name_value.
 
 если указывается setting_lot_edit_quantity_manager_value = approximate, тогда setting_lot_edit_quantity_value становится "∞"
 
@@ -301,75 +309,75 @@ seller_lot_cover может быть в трех состояниях:
 
 lot_cover_unveiled_state:
 
-                         codename:                      type:        variable:     button_name:  location:    active/inactive:    opacity:   interaction:
-┌┬┬┬───[seller_lot_cover                        ] [section       ]                                [ ✜ ✜ ] 
-│││└───[seller_lot_cover_name                   ] [component_lev1] {string     }                  [ 🡅 ✜ ]     [color2]            [ 100% ]     [ no  ]
-││└┬┬┬─[seller_lot_cover_info                   ] [component_lev1] {           }                  [ 🡇 🡄 ]     [color2]            [ 100% ]     [ no  ]
-││ ││└┬[seller_lot_cover_info_date              ] [component_lev2] {           }                  [ 🡅 ✜ ]     [color1/color2]     [ 100% ]     [ no  ]
-││ ││ ├[seller_lot_cover_info_date_value        ] [widget        ] {number     }                  [ ✜ 🡄 ]     [color1/color2]     [ 100% ]     [ no  ]
-││ ││ └[seller_lot_cover_info_date_designation  ] [widget        ] {           }                  [ ✜ 🡆 ]     [color1/color2]     [ 100% ]     [ no  ]
-││ │└─┬[seller_lot_cover_info_price             ] [component_lev2] {           }                  [ ✜ ✜ ]     [color1/color2]     [ 100% ]     [ no  ]
-││ │  ├[seller_lot_cover_info_price_value       ] [widget        ] {number     }                  [ ✜ 🡄 ]     [color1/color2]     [ 100% ]     [ no  ]
-││ │  └[seller_lot_cover_info_price_measure     ] [widget        ] {string     }                  [ ✜ 🡆 ]     [color1/color2]     [ 100% ]     [ no  ]
-││ └──┬[seller_lot_cover_info_quantity          ] [component_lev2] {           }                  [ 🡇 ✜ ]     [color1/color2]     [ 100% ]     [ no  ]
-││    ├[seller_lot_cover_info_quantity_minus    ] [button        ] {number     }  "-"             [ ✜ 🡄 ]     [color1/color2]     [ 100% ]     [ yes ]
-││    ├[seller_lot_cover_info_quantity_indicator] [widget        ] {number/icon}                  [ ✜ ✜ ]     [color1/color2]     [ 100% ]     [ no  ]
-││    └[seller_lot_cover_info_quantity_plus     ] [button        ] {number     }  "+"             [ ✜ 🡆 ]     [color1/color2]     [ 100% ]     [ yes ]
-│└────┬[seller_lot_cover_img                    ] [component_lev1] {           }                  [ 🡇 ✜ ]                         [ 100% ]     [ no  ]
-│     ├[seller_lot_cover_img_frame              ] [picture+button] {img        }                  [ ✜ ✜ ]     [color2]            [ 100% ]     [ yes ]
-│     └[seller_lot_cover_img_widget             ] [widget        ] {unveiled   }                  [ 🡅 🡆 ]     [color1]            [ 100% ]     [ no  ]
-└─────┬[seller_lot_cover_control                ] [component_lev1] {           }                  [ 🡇 🡆 ]                         [ 100% ]     [ no  ]
-      ├[seller_lot_cover_control_edit           ] [button        ] {edit       }  "ИЗМЕНИТЬ"      [ 🡅 ✜ ]     [color1/color2]     [ 100% ]     [ yes ]
-      ├[seller_lot_cover_control_veil           ] [button        ] {veil       }  "СКРЫТЬ"        [ ✜ ✜ ]     [color1/color2]     [ 100% ]     [ yes ]
-      └[seller_lot_cover_control_expo           ] [button        ] {remove     }  "УДАЛИТЬ"       [ 🡇 ✜ ]     [color1/color2]     [ 100% ]     [ yes ]
+                         codename:                    type:        variable:     button_name:  location:    active/inactive:    opacity:   interaction:
+┌┬┬┬───[seller_lot_cover                      ] [section       ]                                [ ✜ ✜ ] 
+│││└───[seller_lot_cover_name                 ] [component_lev1] {string     }                  [ 🡅 ✜ ]     [color2]            [ 100% ]     [ no  ]
+││└┬┬┬─[seller_lot_cover_info                 ] [component_lev1] {           }                  [ 🡇 🡄 ]     [color2]            [ 100% ]     [ no  ]
+││ ││└┬[seller_lot_cover_info_date            ] [component_lev2] {           }                  [ 🡅 ✜ ]     [color1/color2]     [ 100% ]     [ no  ]
+││ ││ ├[seller_lot_cover_info_date_value      ] [widget        ] {number     }                  [ ✜ 🡄 ]     [color1/color2]     [ 100% ]     [ no  ]
+││ ││ └[seller_lot_cover_info_date_designation] [widget        ] {           }                  [ ✜ 🡆 ]     [color1/color2]     [ 100% ]     [ no  ]
+││ │└─┬[seller_lot_cover_info_price           ] [component_lev2] {           }                  [ ✜ ✜ ]     [color1/color2]     [ 100% ]     [ no  ]
+││ │  ├[seller_lot_cover_info_price_value     ] [widget        ] {number     }                  [ ✜ 🡄 ]     [color1/color2]     [ 100% ]     [ no  ]
+││ │  └[seller_lot_cover_info_price_measure   ] [widget        ] {string     }                  [ ✜ 🡆 ]     [color1/color2]     [ 100% ]     [ no  ]
+││ └──┬[seller_lot_cover_info_quantity        ] [component_lev2] {           }                  [ 🡇 ✜ ]     [color1/color2]     [ 100% ]     [ no  ]
+││    ├[seller_lot_cover_info_quantity_minus  ] [button        ] {number     }  "-"             [ ✜ 🡄 ]     [color1/color2]     [ 100% ]     [ yes ]
+││    ├[seller_lot_cover_info_quantity_value  ] [widget        ] {number/icon}                  [ ✜ ✜ ]     [color1/color2]     [ 100% ]     [ no  ]
+││    └[seller_lot_cover_info_quantity_plus   ] [button        ] {number     }  "+"             [ ✜ 🡆 ]     [color1/color2]     [ 100% ]     [ yes ]
+│└────┬[seller_lot_cover_img                  ] [component_lev1] {           }                  [ 🡇 ✜ ]                         [ 100% ]     [ no  ]
+│     ├[seller_lot_cover_img_frame            ] [picture+button] {img        }                  [ ✜ ✜ ]     [color2]            [ 100% ]     [ yes ]
+│     └[seller_lot_cover_img_widget           ] [widget        ] {unveiled   }                  [ 🡅 🡆 ]     [color1]            [ 100% ]     [ no  ]
+└─────┬[seller_lot_cover_control              ] [component_lev1] {           }                  [ 🡇 🡆 ]                         [ 100% ]     [ no  ]
+      ├[seller_lot_cover_control_edit         ] [button        ] {edit       }  "ИЗМЕНИТЬ"      [ 🡅 ✜ ]     [color1/color2]     [ 100% ]     [ yes ]
+      ├[seller_lot_cover_control_veil         ] [button        ] {veil       }  "СКРЫТЬ"        [ ✜ ✜ ]     [color1/color2]     [ 100% ]     [ yes ]
+      └[seller_lot_cover_control_expo         ] [button        ] {remove     }  "УДАЛИТЬ"       [ 🡇 ✜ ]     [color1/color2]     [ 100% ]     [ yes ]
 
 lot_cover_veiled_state:
 
-                         codename:                      type:        variable:     button_name:  location:    active/inactive:    opacity:   interaction:
-┌┬┬┬───[seller_lot_cover                        ] [section       ]                                [ ✜ ✜ ] 
-│││└───[seller_lot_cover_name                   ] [component_lev1] {string     }                  [ 🡅 ✜ ]     [color2]            [ 100% ]     [ no  ]
-││└┬┬┬─[seller_lot_cover_info                   ] [component_lev1] {           }                  [ 🡇 🡄 ]     [color2]            [ 100% ]     [ no  ]
-││ ││└┬[seller_lot_cover_info_date              ] [component_lev2] {           }                  [ 🡅 ✜ ]     [color1/color2]     [ 100% ]     [ no  ]
-││ ││ ├[seller_lot_cover_info_date_value        ] [widget        ] {number     }                  [ ✜ 🡄 ]     [color1/color2]     [ 100% ]     [ no  ]
-││ ││ └[seller_lot_cover_info_date_designation  ] [widget        ] {           }                  [ ✜ 🡆 ]     [color1/color2]     [ 100% ]     [ no  ]
-││ │└─┬[seller_lot_cover_info_price             ] [component_lev2] {           }                  [ ✜ ✜ ]     [color1/color2]     [ 100% ]     [ no  ]
-││ │  ├[seller_lot_cover_info_price_value       ] [widget        ] {number     }                  [ ✜ 🡄 ]     [color1/color2]     [ 100% ]     [ no  ]
-││ │  └[seller_lot_cover_info_price_measure     ] [widget        ] {string     }                  [ ✜ 🡆 ]     [color1/color2]     [ 100% ]     [ no  ]
-││ └──┬[seller_lot_cover_info_quantity          ] [component_lev2] {           }                  [ 🡇 ✜ ]     [color1/color2]     [ 100% ]     [ no  ]
-││    ├[seller_lot_cover_info_quantity_minus    ] [button        ] {number     }  "-"             [ ✜ 🡄 ]     [color1/color2]     [ 100% ]     [ yes ]
-││    ├[seller_lot_cover_info_quantity_indicator] [widget        ] {number/icon}                  [ ✜ ✜ ]     [color1/color2]     [ 100% ]     [ no  ]
-││    └[seller_lot_cover_info_quantity_plus     ] [button        ] {number     }  "+"             [ ✜ 🡆 ]     [color1/color2]     [ 100% ]     [ yes ]
-│└────┬[seller_lot_cover_img                    ] [component_lev1] {           }                  [ 🡇 ✜ ]                         [ 100% ]     [ no  ]
-│     ├[seller_lot_cover_img_frame              ] [picture+button] {img        }                  [ ✜ ✜ ]     [color2]            [ 100% ]     [ yes ]
-│     └[seller_lot_cover_img_widget             ] [widget        ] {veiled     }  "СКРЫТО"        [ 🡅 🡆 ]     [color3]            [ 100% ]     [ no  ]
-└─────┬[seller_lot_cover_control                ] [component_lev1] {           }                  [ 🡇 🡆 ]                         [ 100% ]     [ no  ]
-      ├[seller_lot_cover_control_edit           ] [button        ] {edit       }  "ИЗМЕНИТЬ"      [ 🡅 ✜ ]     [color1/color2]     [ 100% ]     [ yes ]
-      ├[seller_lot_cover_control_veil           ] [button        ] {unveil     }  "ОТКРЫТЬ"       [ ✜ ✜ ]     [color1/color2]     [ 100% ]     [ yes ]
-      └[seller_lot_cover_control_expo           ] [button        ] {remove     }  "УДАЛИТЬ"       [ 🡇 ✜ ]     [color1/color2]     [ 100% ]     [ yes ]
+                         codename:                    type:        variable:     button_name:  location:    active/inactive:    opacity:   interaction:
+┌┬┬┬───[seller_lot_cover                      ] [section       ]                                [ ✜ ✜ ] 
+│││└───[seller_lot_cover_name                 ] [component_lev1] {string     }                  [ 🡅 ✜ ]     [color2]            [ 100% ]     [ no  ]
+││└┬┬┬─[seller_lot_cover_info                 ] [component_lev1] {           }                  [ 🡇 🡄 ]     [color2]            [ 100% ]     [ no  ]
+││ ││└┬[seller_lot_cover_info_date            ] [component_lev2] {           }                  [ 🡅 ✜ ]     [color1/color2]     [ 100% ]     [ no  ]
+││ ││ ├[seller_lot_cover_info_date_value      ] [widget        ] {number     }                  [ ✜ 🡄 ]     [color1/color2]     [ 100% ]     [ no  ]
+││ ││ └[seller_lot_cover_info_date_designation] [widget        ] {           }                  [ ✜ 🡆 ]     [color1/color2]     [ 100% ]     [ no  ]
+││ │└─┬[seller_lot_cover_info_price           ] [component_lev2] {           }                  [ ✜ ✜ ]     [color1/color2]     [ 100% ]     [ no  ]
+││ │  ├[seller_lot_cover_info_price_value     ] [widget        ] {number     }                  [ ✜ 🡄 ]     [color1/color2]     [ 100% ]     [ no  ]
+││ │  └[seller_lot_cover_info_price_measure   ] [widget        ] {string     }                  [ ✜ 🡆 ]     [color1/color2]     [ 100% ]     [ no  ]
+││ └──┬[seller_lot_cover_info_quantity        ] [component_lev2] {           }                  [ 🡇 ✜ ]     [color1/color2]     [ 100% ]     [ no  ]
+││    ├[seller_lot_cover_info_quantity_minus  ] [button        ] {number     }  "-"             [ ✜ 🡄 ]     [color1/color2]     [ 100% ]     [ yes ]
+││    ├[seller_lot_cover_info_quantity_value  ] [widget        ] {number/icon}                  [ ✜ ✜ ]     [color1/color2]     [ 100% ]     [ no  ]
+││    └[seller_lot_cover_info_quantity_plus   ] [button        ] {number     }  "+"             [ ✜ 🡆 ]     [color1/color2]     [ 100% ]     [ yes ]
+│└────┬[seller_lot_cover_img                  ] [component_lev1] {           }                  [ 🡇 ✜ ]                         [ 100% ]     [ no  ]
+│     ├[seller_lot_cover_img_frame            ] [picture+button] {img        }                  [ ✜ ✜ ]     [color2]            [ 100% ]     [ yes ]
+│     └[seller_lot_cover_img_widget           ] [widget        ] {veiled     }  "СКРЫТО"        [ 🡅 🡆 ]     [color3]            [ 100% ]     [ no  ]
+└─────┬[seller_lot_cover_control              ] [component_lev1] {           }                  [ 🡇 🡆 ]                         [ 100% ]     [ no  ]
+      ├[seller_lot_cover_control_edit         ] [button        ] {edit       }  "ИЗМЕНИТЬ"      [ 🡅 ✜ ]     [color1/color2]     [ 100% ]     [ yes ]
+      ├[seller_lot_cover_control_veil         ] [button        ] {unveil     }  "ОТКРЫТЬ"       [ ✜ ✜ ]     [color1/color2]     [ 100% ]     [ yes ]
+      └[seller_lot_cover_control_expo         ] [button        ] {remove     }  "УДАЛИТЬ"       [ 🡇 ✜ ]     [color1/color2]     [ 100% ]     [ yes ]
 
 lot_cover_archived_state:
 
-                         codename:                      type:        variable:     button_name:  location:    active/inactive:    opacity:   interaction:
-┌┬┬┬───[seller_lot_cover                        ] [section       ]                                [ ✜ ✜ ] 
-│││└───[seller_lot_cover_name                   ] [component_lev1] {string     }                  [ 🡅 ✜ ]     [color2]            [ 100% ]     [ no  ]
-││└┬┬┬─[seller_lot_cover_info                   ] [component_lev1] {           }                  [ 🡇 🡄 ]     [color2]            [ 30%  ]     [ no  ]
-││ ││└┬[seller_lot_cover_info_date              ] [component_lev2] {           }                  [ 🡅 ✜ ]     [color1/color2]     [ 30%  ]     [ no  ]
-││ ││ ├[seller_lot_cover_info_date_value        ] [widget        ] {number     }                  [ ✜ 🡄 ]     [color1/color2]     [ 30%  ]     [ no  ]
-││ ││ └[seller_lot_cover_info_date_designation  ] [widget        ] {           }                  [ ✜ 🡆 ]     [color1/color2]     [ 30%  ]     [ no  ]
-││ │└─┬[seller_lot_cover_info_price             ] [component_lev2] {           }                  [ ✜ ✜ ]     [color1/color2]     [ 30%  ]     [ no  ]
-││ │  ├[seller_lot_cover_info_price_value       ] [widget        ] {number     }                  [ ✜ 🡄 ]     [color1/color2]     [ 30%  ]     [ no  ]
-││ │  └[seller_lot_cover_info_price_measure     ] [widget        ] {string     }                  [ ✜ 🡆 ]     [color1/color2]     [ 30%  ]     [ no  ]
-││ └──┬[seller_lot_cover_info_quantity          ] [component_lev2] {           }                  [ 🡇 ✜ ]     [color1/color2]     [ 30%  ]     [ no  ]
-││    ├[seller_lot_cover_info_quantity_minus    ] [button        ] {number     }  "-"             [ ✜ 🡄 ]     [color1/color2]     [ 30%  ]     [ yes ]
-││    ├[seller_lot_cover_info_quantity_indicator] [widget        ] {number/icon}                  [ ✜ ✜ ]     [color1/color2]     [ 30%  ]     [ no  ]
-││    └[seller_lot_cover_info_quantity_plus     ] [button        ] {number     }  "+"             [ ✜ 🡆 ]     [color1/color2]     [ 30%  ]     [ yes ]
-│└────┬[seller_lot_cover_img                    ] [component_lev1] {           }                  [ 🡇 ✜ ]                         [ 30%  ]     [ no  ]
-│     ├[seller_lot_cover_img_frame              ] [picture+button] {img        }                  [ ✜ ✜ ]     [color2]            [ 30%  ]     [ yes ]
-│     └[seller_lot_cover_img_widget             ] [widget        ] {archived   }  "ЗАКРЫТО"       [ 🡅 🡆 ]     [color3]            [ 30%  ]     [ no  ]
-└─────┬[seller_lot_cover_control                ] [component_lev1] {           }                  [ 🡇 🡆 ]                         [ 100% ]     [ no  ]
-      ├[seller_lot_cover_control_edit           ] [button        ] {edit       }  "ИЗМЕНИТЬ"      [ 🡅 ✜ ]     [color1/color2]     [ 100% ]     [ yes ]
-      ├[seller_lot_cover_control_veil           ] [button        ] {unveil     }  "ОТКРЫТЬ"       [ ✜ ✜ ]     [color1/color2]     [ 30%  ]     [ yes ]
-      └[seller_lot_cover_control_expo           ] [button        ] {restore    }  "ВОССТАНОВИТЬ"  [ 🡇 ✜ ]     [color1/color2]     [ 100% ]     [ yes ]
+                         codename:                    type:        variable:     button_name:  location:    active/inactive:    opacity:   interaction:
+┌┬┬┬───[seller_lot_cover                      ] [section       ]                                [ ✜ ✜ ] 
+│││└───[seller_lot_cover_name                 ] [component_lev1] {string     }                  [ 🡅 ✜ ]     [color2]            [ 100% ]     [ no  ]
+││└┬┬┬─[seller_lot_cover_info                 ] [component_lev1] {           }                  [ 🡇 🡄 ]     [color2]            [ 30%  ]     [ no  ]
+││ ││└┬[seller_lot_cover_info_date            ] [component_lev2] {           }                  [ 🡅 ✜ ]     [color1/color2]     [ 30%  ]     [ no  ]
+││ ││ ├[seller_lot_cover_info_date_value      ] [widget        ] {number     }                  [ ✜ 🡄 ]     [color1/color2]     [ 30%  ]     [ no  ]
+││ ││ └[seller_lot_cover_info_date_designation] [widget        ] {           }                  [ ✜ 🡆 ]     [color1/color2]     [ 30%  ]     [ no  ]
+││ │└─┬[seller_lot_cover_info_price           ] [component_lev2] {           }                  [ ✜ ✜ ]     [color1/color2]     [ 30%  ]     [ no  ]
+││ │  ├[seller_lot_cover_info_price_value     ] [widget        ] {number     }                  [ ✜ 🡄 ]     [color1/color2]     [ 30%  ]     [ no  ]
+││ │  └[seller_lot_cover_info_price_measure   ] [widget        ] {string     }                  [ ✜ 🡆 ]     [color1/color2]     [ 30%  ]     [ no  ]
+││ └──┬[seller_lot_cover_info_quantity        ] [component_lev2] {           }                  [ 🡇 ✜ ]     [color1/color2]     [ 30%  ]     [ no  ]
+││    ├[seller_lot_cover_info_quantity_minus  ] [button        ] {number     }  "-"             [ ✜ 🡄 ]     [color1/color2]     [ 30%  ]     [ yes ]
+││    ├[seller_lot_cover_info_quantity_value  ] [widget        ] {number/icon}                  [ ✜ ✜ ]     [color1/color2]     [ 30%  ]     [ no  ]
+││    └[seller_lot_cover_info_quantity_plus   ] [button        ] {number     }  "+"             [ ✜ 🡆 ]     [color1/color2]     [ 30%  ]     [ yes ]
+│└────┬[seller_lot_cover_img                  ] [component_lev1] {           }                  [ 🡇 ✜ ]                         [ 30%  ]     [ no  ]
+│     ├[seller_lot_cover_img_frame            ] [picture+button] {img        }                  [ ✜ ✜ ]     [color2]            [ 30%  ]     [ yes ]
+│     └[seller_lot_cover_img_widget           ] [widget        ] {archived   }  "ЗАКРЫТО"       [ 🡅 🡆 ]     [color3]            [ 30%  ]     [ no  ]
+└─────┬[seller_lot_cover_control              ] [component_lev1] {           }                  [ 🡇 🡆 ]                         [ 100% ]     [ no  ]
+      ├[seller_lot_cover_control_edit         ] [button        ] {edit       }  "ИЗМЕНИТЬ"      [ 🡅 ✜ ]     [color1/color2]     [ 100% ]     [ yes ]
+      ├[seller_lot_cover_control_veil         ] [button        ] {unveil     }  "ОТКРЫТЬ"       [ ✜ ✜ ]     [color1/color2]     [ 30%  ]     [ yes ]
+      └[seller_lot_cover_control_expo         ] [button        ] {restore    }  "ВОССТАНОВИТЬ"  [ 🡇 ✜ ]     [color1/color2]     [ 100% ]     [ yes ]
 
 
 ✠ actions
