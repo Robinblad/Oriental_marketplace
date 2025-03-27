@@ -11,12 +11,12 @@ location:
 
 
 
--------------------------------------------------------------------
--------------------------------------------------------------------
--------------------------------------------------------------------
--------------------------------------------------------------------
--------------------------------------------------------------------
 
+-------------------------------------------------------------------
+-------------------------------------------------------------------
+-------------------------------------------------------------------
+-------------------------------------------------------------------
+-------------------------------------------------------------------
 
 
 
@@ -272,19 +272,36 @@ seller_lot_cover состоит из 4 компонентов:
 -- seller_lot_cover_info_price_measure - отображает lot_measure (локализован справа);
 - seller_lot_cover_info_quantity - в рамках seller_lot_cover_info локализован в нижней области, состоит из 3 компонентов:
 -- seller_lot_cover_info_quantity_minus - кнопка отвечающая за уменьшение seller_lot_cover_info_quantity_value (локализован слева); 
--- seller_lot_cover_info_quantity_value - отображает seller_lot_cover_info_quantity_value (локализован по центру);
+-- seller_lot_cover_info_quantity_value - отображает definite или approx виджет (локализован по центру);
 -- seller_lot_cover_info_quantity_plus - кнопка отвечающая за увеличение seller_lot_cover_info_quantity_value (локализован справа).
 3) seller_lot_cover_img
 В рамках seller_lot_cover локализован в центральной его части под seller_lot_cover_name, занимает ~30% ширины seller_lot_cover_name. Состоит из 2 компонентов:
 - seller_lot_cover_img_frame - является областью отображения setting_lot_edit_image_value_mini, в рамках seller_lot_cover_img локализован в центральной области;
-- seller_lot_cover_img_widget - в качестве виджета отображает состояние seller_lot_cover, в рамках seller_lot_cover_img локализован в верхней правой области;
+- seller_lot_cover_img_widget - в качестве виджета отображает состояние seller_lot_cover, в рамках seller_lot_cover_img локализован в верхней правой области.
 4) seller_lot_cover_control
 В рамках seller_lot_cover локализован в правой его части под seller_lot_cover_name, занимает 25-30% ширины seller_lot_cover_name. Состоит из 3 компонентов:
 - seller_lot_cover_control_edit - кнопка отвечающая за открытие lot_edit_screen, в рамках seller_lot_cover_control локализован в верхней области;
-- seller_lot_cover_control_veil - обладает font-weight:normal, помещается в двойные кавычки, где отображается начало содержания lot_description и размещается с отступом справа от setting_lot_edit_name_value.
-- seller_lot_cover_control_expo - обладает font-weight:normal, помещается в двойные кавычки, где отображается начало содержания lot_description и размещается с отступом справа от setting_lot_edit_name_value.
+- seller_lot_cover_control_veil - кнопка отвечающая за функцию veil для seller_lot_cover от buyer (может находиться либо в состоянии veiled, либо в состоянии unveiled), в рамках seller_lot_cover_control локализован в центральной области;
+- seller_lot_cover_control_expo - кнопка отвечающая за функцию удаления seller_lot_cover из seller_lot_screen (может находиться либо в состоянии removed, либо в состоянии existed), в рамках seller_lot_cover_control локализован в нижней области.
 
-если указывается setting_lot_edit_quantity_manager_value = approximate, тогда setting_lot_edit_quantity_value становится "∞"
+seller_lot_cover_info_quantity_value задается посредством setting_lot_edit_quantity_manager и может быть двух типов:
+- если активирован setting_lot_edit_quantity_manager_definite - seller_lot_cover_info_quantity_value отображает виджет в качестве числового значения (seller_lot_cover_info_quantity_value_definite);
+- если активирован setting_lot_edit_quantity_manager_approx - seller_lot_cover_info_quantity_value отображает виджет в качестве иконки с трехступенчатой композицией баров (seller_lot_cover_info_quantity_value_approx).
+
+Нормативы отображения для seller_lot_cover_info_quantity_value_definite: 
+- целые числа отображаются о 1 до 999;
+- числа > 999 отображаются с использовании аббревиатуры;
+- числа > 999 отображаются с округлением;
+- так число >= 1000 и < 1500 отображается как 1K;
+- число 1000000 отображается как 1M;
+- число 1000000000 отображается как 1B;
+- числа > 1000000000 отображаются как 1B+.
+
+seller_lot_cover_info_quantity_value_approx может находиться в трех состояниях визуально выражаемых через цветовую дифференциацию:
+seller_lot_cover_info_quantity_value_approx = low;
+seller_lot_cover_info_quantity_value_approx = norm;
+seller_lot_cover_info_quantity_value_approx = high.
+
 
 lot_id
 lot_date
@@ -406,7 +423,8 @@ lot_cover_archived_state:
 ║ && - seller_lot_cover_img_widget увеличивается по ширине до 60% ширины seller_lot_cover_img_frame;
 ║ && - seller_lot_cover_img_widget приобретает окраску color3;
 ║ && - seller_lot_cover_img_widget приобретает надпись "СКРЫТО";
-║ && - seller_lot_cover_control_veil меняет наименование со "СКРЫТЬ" на "ОТКРЫТЬ";
+║ && - seller_lot_cover_control_veil = unveil меняется на seller_lot_cover_control_veil = veil;
+║ && - seller_lot_cover_control_veil меняет наименование кнопки со "СКРЫТЬ" на "ОТКРЫТЬ";
 ╠ valid / invalid  (lot_cover_veiled_state)
 ║ occasion: нажатие seller_lot_cover_control_veil;
 ║ condition: lot_cover_veiled_state;
@@ -415,7 +433,8 @@ lot_cover_archived_state:
 ║ && - seller_lot_cover_img_widget уменьшается по ширине до 10% ширины seller_lot_cover_img_frame;
 ║ && - seller_lot_cover_img_widget приобретает окраску color1;
 ║ && - seller_lot_cover_img_widget теряет наименование;
-║ && - seller_lot_cover_control_veil меняет наименование с "ОТКРЫТЬ" на "СКРЫТЬ";
+║ && - seller_lot_cover_control_veil = veil меняется на seller_lot_cover_control_veil = unveil;
+║ && - seller_lot_cover_control_veil меняет наименование кнопки с "ОТКРЫТЬ" на "СКРЫТЬ";
 ╠ valid / invalid  (lot_cover_archived_state)
 ║ occasion: нажатие seller_lot_cover_control_veil;
 ║ condition: lot_cover_archived_state;
@@ -454,67 +473,65 @@ lot_cover_archived_state:
 ║ && - opacity становится = 100% для seller_lot_cover_control_veil;
 ║ && - seller_lot_cover_control_expo меняет наименование с "ВОССТАНОВИТЬ" на "УДАЛИТЬ";
 ╙ && - seller_lot_cover_img_widget меняет надпись со "ЗАКРЫТО" на "СКРЫТО";
-• seller_lot_cover_info_quantity_value_plus:
-╠ valid
-║ • setting_lot_edit_quantity_manager_value = definite
-║ occasion: нажатие seller_lot_cover_info_quantity_value_plus;
-║ condition: если seller_lot_cover_info_quantity_value >= 0 || < 9e49;
-║ result: seller_lot_cover_info_quantity_value_output отображает увеличение значения на +1.
-║ • setting_lot_edit_quantity_manager_value = approximate
-║ occasion: нажатие seller_lot_cover_info_quantity_value_plus;
-║ condition: если seller_lot_cover_info_quantity_value >= 0 || < 9e49;
-║ result: seller_lot_cover_info_quantity_value_output отображает увеличение значения на +1.
+• seller_lot_cover_info_quantity_plus
+╠ valid       
+║ • seller_lot_cover_info_quantity_value_definite
+║ occasion: нажатие seller_lot_cover_info_quantity_plus;
+║ condition: если seller_lot_cover_info_quantity_value_definite >= 0 || < 9e49;
+║ result: seller_lot_cover_info_quantity_value_definite ++1.
+║ • seller_lot_cover_info_quantity_value_approx = low
+║ occasion: нажатие seller_lot_cover_info_quantity_plus;
+║ condition: если seller_lot_cover_info_quantity_value_approx = low;
+║ result: seller_lot_cover_info_quantity_value_approx = norm.
+║ • seller_lot_cover_info_quantity_value_approx = norm
+║ occasion: нажатие seller_lot_cover_info_quantity_plus;
+║ condition: если seller_lot_cover_info_quantity_value_approx = norm;
+║ result: seller_lot_cover_info_quantity_value_approx = high.
 ╠ invalid
-║ • setting_lot_edit_quantity_manager_value = definite
-║ occasion: нажатие seller_lot_cover_info_quantity_value_plus;
-║ condition: если seller_lot_cover_info_quantity_value < 0 || >= 9e49;
-║ result: 
-╙ && - seller_lot_cover_info_quantity_value_plus не реагирует на нажатие.
-• seller_lot_cover_info_quantity_value_plus:
+║ • seller_lot_cover_info_quantity_value_definite
+║ occasion: нажатие seller_lot_cover_info_quantity_plus;
+║ condition: если seller_lot_cover_info_quantity_value_definite < 0 || >= 9e49;
+║ result: seller_lot_cover_info_quantity_plus не реагирует на нажатие.
+║ • seller_lot_cover_info_quantity_value_approx
+║ occasion: нажатие seller_lot_cover_info_quantity_plus;
+║ condition: если seller_lot_cover_info_quantity_value_approx = high;
+╙ result: seller_lot_cover_info_quantity_plus не реагирует на нажатие.
+• seller_lot_cover_info_quantity_minus:
 ╠ valid
-║ • setting_lot_edit_quantity_manager_value = approximate
-║ occasion: нажатие seller_lot_cover_info_quantity_value_plus;
-║ condition: если seller_lot_cover_info_quantity_value >= 0 || < 9e49;
-║ result: seller_lot_cover_info_quantity_value_output отображает увеличение значения на +1.
+║ • seller_lot_cover_info_quantity_value_definite
+║ occasion: нажатие seller_lot_cover_info_quantity_minus;
+║ condition: если seller_lot_cover_info_quantity_value_definite >= 1 || <= 9e49;
+║ result: seller_lot_cover_info_quantity_value_definite отображает уменьшение значения на -1.
 ╠ invalid
-║ occasion: нажатие seller_lot_cover_info_quantity_value_plus;
-║ condition: если seller_lot_cover_info_quantity_value < 0 || >= 9e49;
+║ occasion: нажатие seller_lot_cover_info_quantity_minus;
+║ condition: если seller_lot_cover_info_quantity_value_definite <= 0 || > 9e49;
 ║ result: 
-╙ && - seller_lot_cover_info_quantity_value_plus не реагирует на нажатие.
-• seller_lot_cover_info_quantity_value_minus:
-╠ valid
-║ • setting_lot_edit_quantity_manager_value = definite
-║ occasion: нажатие seller_lot_cover_info_quantity_value_minus;
-║ condition: если seller_lot_cover_info_quantity_value >= 1 || <= 9e49;
-║ result: seller_lot_cover_info_quantity_value_output отображает уменьшение значения на -1.
-╠ invalid
-║ occasion: нажатие seller_lot_cover_info_quantity_value_minus;
-║ condition: если seller_lot_cover_info_quantity_value <= 0 || > 9e49;
-║ result: 
-╙ && - seller_lot_cover_info_quantity_value_minus не реагирует на нажатие.
+╙ && - seller_lot_cover_info_quantity_minus не реагирует на нажатие.
 
-• seller_lot_cover_info_quantity_value_minus:
+• seller_lot_cover_info_quantity_minus:
 ╠ valid
-║ • setting_lot_edit_quantity_manager_value = definite
-║ occasion: нажатие seller_lot_cover_info_quantity_value_minus;
+║ • seller_lot_cover_info_quantity_value_definite
+║ occasion: нажатие seller_lot_cover_info_quantity_minus;
 ║ condition: если seller_lot_cover_info_quantity_value >= 0 || < 9e49;
 ║ result: seller_lot_cover_info_quantity_value_output отображает увеличение значения на +1.
-║ • seller_lot_cover_info_quantity_value_minus
-║ occasion: нажатие seller_lot_cover_info_quantity_value_minus;
+║ • seller_lot_cover_info_quantity_minus
+║ occasion: нажатие seller_lot_cover_info_quantity_minus;
 ║ condition: если seller_active_time_schedule_worktime_fixed_to_min_value >= 0 || <= 58;
 ║ result: 
 ║ && - seller_active_time_schedule_worktime_fixed_to_min_widget отображает увеличение значения на +2 в секунду времени;
 ║ && - происходит дезактивация seller_active_time_schedule_worktime_float, если она была активирована;
 ║ && - происходит дезактивация seller_active_time_schedule_worktime_24, если она была активирована;
 ╠ invalid
-║ occasion: нажатие seller_lot_cover_info_quantity_value_plus;
+║ occasion: нажатие seller_lot_cover_info_quantity_plus;
 ║ condition: если seller_active_time_schedule_worktime_fixed_to_min_value >= 59 || < 0;
 ║ result: 
 ║ && - seller_active_time_schedule_worktime_fixed_to_min_widget не реагирует на нажатие;
 ╙ && - ничего не происходит.
 
-setting_lot_edit_quantity_manager_value = definite  setting_lot_edit_quantity_manager_value = approximate
+seller_lot_cover_info_quantity_value = definite  seller_lot_cover_info_quantity_value = approximate
 
+seller_lot_cover_info_quantity_value_approx = norm;
+seller_lot_cover_info_quantity_value_approx = high.
 
 ✠ color_states
 ┌─
@@ -534,10 +551,14 @@ setting_lot_edit_quantity_manager_value = definite  setting_lot_edit_quantity_ma
 └─
 
 
+setting_lot_edit_quantity_manager_approx_icon_bar_low
+setting_lot_edit_quantity_manager_approx_icon_bar_norm
+setting_lot_edit_quantity_manager_approx_icon_bar_high
 
 
-
-
+seller_lot_cover_info_quantity_value_approx = low;
+seller_lot_cover_info_quantity_value_approx = norm;
+seller_lot_cover_info_quantity_value_approx = high.
 
 
 
