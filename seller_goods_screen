@@ -20,6 +20,8 @@ location:
 
 
 
+
+
 🡆 seller_lot_screen
 ■■■■■■■■■■■■■■■■■■■
 seller_lot_screen предназначен для отображения товаров seller в качестве так называемых (торговых) лотов, вход в который осуществляется посредством кнопки "ТОВАРЫ" на seller_nav_lots и представляет список товаров выполненных в виде блоков с краткой информацией. seller_lot_screen разделен на 3 sections следующего содержания расположенных сверху-вниз:
@@ -117,7 +119,7 @@ s3) ┌─ [seller_nav                           ]                          [sec
 │---------------------------
 │• color2
 │------ в inactive_state;
-│• color1
+│• color5
 │------ в pressing_state.
 └─
 ┌─
@@ -125,7 +127,7 @@ s3) ┌─ [seller_nav                           ]                          [sec
 │---------------------------
 │• color2
 │------ в inactive_state;
-│• color1
+│• color5
 │------ в pressing_state.
 └─
 
@@ -156,11 +158,11 @@ lot_cover_unveiled_state:
 │││└───[seller_lot_cover_name                 ] [component_lev1] {string     }                  [ 🡅 ✜ ]     [color2]            [ 100% ]     [ no  ]
 ││└┬┬┬─[seller_lot_cover_info                 ] [component_lev1] {           }                  [ 🡇 🡄 ]     [color2]            [ 100% ]     [ no  ]
 ││ ││└┬[seller_lot_cover_info_date            ] [component_lev2] {           }                  [ 🡅 ✜ ]     [color1/color2]     [ 100% ]     [ no  ]
-││ ││ ├[seller_lot_cover_info_date_value      ] [widget        ] {number     }                  [ ✜ 🡄 ]     [color1/color2]     [ 100% ]     [ no  ]
-││ ││ └[seller_lot_cover_info_date_designation] [widget        ] {           }                  [ ✜ 🡆 ]     [color1/color2]     [ 100% ]     [ no  ]
+││ ││ ├[seller_lot_cover_info_date_value      ] [widget        ] {number     }                  [ ✜ 🡄 ]                         [ 100% ]     [ no  ]
+││ ││ └[seller_lot_cover_info_date_designation] [widget        ] {           }                  [ ✜ 🡆 ]     [color2/color2]     [ 100% ]     [ no  ]
 ││ │└─┬[seller_lot_cover_info_price           ] [component_lev2] {           }                  [ ✜ ✜ ]     [color1/color2]     [ 100% ]     [ no  ]
-││ │  ├[seller_lot_cover_info_price_value     ] [widget        ] {number     }                  [ ✜ 🡄 ]     [color1/color2]     [ 100% ]     [ no  ]
-││ │  └[seller_lot_cover_info_price_measure   ] [widget        ] {string     }                  [ ✜ 🡆 ]     [color1/color2]     [ 100% ]     [ no  ]
+││ │  ├[seller_lot_cover_info_price_value     ] [widget        ] {number     }                  [ ✜ 🡄 ]                         [ 100% ]     [ no  ]
+││ │  └[seller_lot_cover_info_price_measure   ] [widget        ] {string     }                  [ ✜ 🡆 ]     [color2/color2]     [ 100% ]     [ no  ]
 ││ └──┬[seller_lot_cover_info_quantity        ] [component_lev2] {           }                  [ 🡇 ✜ ]     [color1/color2]     [ 100% ]     [ no  ]
 ││    ├[seller_lot_cover_info_quantity_minus  ] [button        ] {number     }  "-"             [ ✜ 🡄 ]     [color1/color2]     [ 100% ]     [ yes ]
 ││    ├[seller_lot_cover_info_quantity_value  ] [widget        ] {number/icon}                  [ ✜ ✜ ]     [color1/color2]     [ 100% ]     [ no  ]
@@ -180,11 +182,11 @@ lot_cover_veiled_state:
 │││└───[seller_lot_cover_name                 ] [component_lev1] {string     }                  [ 🡅 ✜ ]     [color2]            [ 100% ]     [ no  ]
 ││└┬┬┬─[seller_lot_cover_info                 ] [component_lev1] {           }                  [ 🡇 🡄 ]     [color2]            [ 100% ]     [ no  ]
 ││ ││└┬[seller_lot_cover_info_date            ] [component_lev2] {           }                  [ 🡅 ✜ ]     [color1/color2]     [ 100% ]     [ no  ]
-││ ││ ├[seller_lot_cover_info_date_value      ] [widget        ] {number     }                  [ ✜ 🡄 ]     [color1/color2]     [ 100% ]     [ no  ]
-││ ││ └[seller_lot_cover_info_date_designation] [widget        ] {           }                  [ ✜ 🡆 ]     [color1/color2]     [ 100% ]     [ no  ]
+││ ││ ├[seller_lot_cover_info_date_value      ] [widget        ] {number     }                  [ ✜ 🡄 ]                         [ 100% ]     [ no  ]
+││ ││ └[seller_lot_cover_info_date_designation] [widget        ] {           }                  [ ✜ 🡆 ]     [color2/color2]     [ 100% ]     [ no  ]
 ││ │└─┬[seller_lot_cover_info_price           ] [component_lev2] {           }                  [ ✜ ✜ ]     [color1/color2]     [ 100% ]     [ no  ]
-││ │  ├[seller_lot_cover_info_price_value     ] [widget        ] {number     }                  [ ✜ 🡄 ]     [color1/color2]     [ 100% ]     [ no  ]
-││ │  └[seller_lot_cover_info_price_measure   ] [widget        ] {string     }                  [ ✜ 🡆 ]     [color1/color2]     [ 100% ]     [ no  ]
+││ │  ├[seller_lot_cover_info_price_value     ] [widget        ] {number     }                  [ ✜ 🡄 ]                         [ 100% ]     [ no  ]
+││ │  └[seller_lot_cover_info_price_measure   ] [widget        ] {string     }                  [ ✜ 🡆 ]     [color2/color2]     [ 100% ]     [ no  ]
 ││ └──┬[seller_lot_cover_info_quantity        ] [component_lev2] {           }                  [ 🡇 ✜ ]     [color1/color2]     [ 100% ]     [ no  ]
 ││    ├[seller_lot_cover_info_quantity_minus  ] [button        ] {number     }  "-"             [ ✜ 🡄 ]     [color1/color2]     [ 100% ]     [ yes ]
 ││    ├[seller_lot_cover_info_quantity_value  ] [widget        ] {number/icon}                  [ ✜ ✜ ]     [color1/color2]     [ 100% ]     [ no  ]
@@ -204,11 +206,11 @@ lot_cover_archived_state:
 │││└───[seller_lot_cover_name                 ] [component_lev1] {string     }                  [ 🡅 ✜ ]     [color2]            [ 100% ]     [ no  ]
 ││└┬┬┬─[seller_lot_cover_info                 ] [component_lev1] {           }                  [ 🡇 🡄 ]     [color2]            [ 30%  ]     [ no  ]
 ││ ││└┬[seller_lot_cover_info_date            ] [component_lev2] {           }                  [ 🡅 ✜ ]     [color1/color2]     [ 30%  ]     [ no  ]
-││ ││ ├[seller_lot_cover_info_date_value      ] [widget        ] {number     }                  [ ✜ 🡄 ]     [color1/color2]     [ 30%  ]     [ no  ]
-││ ││ └[seller_lot_cover_info_date_designation] [widget        ] {           }                  [ ✜ 🡆 ]     [color1/color2]     [ 30%  ]     [ no  ]
+││ ││ ├[seller_lot_cover_info_date_value      ] [widget        ] {number     }                  [ ✜ 🡄 ]                         [ 30%  ]     [ no  ]
+││ ││ └[seller_lot_cover_info_date_designation] [widget        ] {           }                  [ ✜ 🡆 ]     [color2/color2]     [ 30%  ]     [ no  ]
 ││ │└─┬[seller_lot_cover_info_price           ] [component_lev2] {           }                  [ ✜ ✜ ]     [color1/color2]     [ 30%  ]     [ no  ]
-││ │  ├[seller_lot_cover_info_price_value     ] [widget        ] {number     }                  [ ✜ 🡄 ]     [color1/color2]     [ 30%  ]     [ no  ]
-││ │  └[seller_lot_cover_info_price_measure   ] [widget        ] {string     }                  [ ✜ 🡆 ]     [color1/color2]     [ 30%  ]     [ no  ]
+││ │  ├[seller_lot_cover_info_price_value     ] [widget        ] {number     }                  [ ✜ 🡄 ]                         [ 30%  ]     [ no  ]
+││ │  └[seller_lot_cover_info_price_measure   ] [widget        ] {string     }                  [ ✜ 🡆 ]     [color2/color2]     [ 30%  ]     [ no  ]
 ││ └──┬[seller_lot_cover_info_quantity        ] [component_lev2] {           }                  [ 🡇 ✜ ]     [color1/color2]     [ 30%  ]     [ no  ]
 ││    ├[seller_lot_cover_info_quantity_minus  ] [button        ] {number     }  "-"             [ ✜ 🡄 ]     [color1/color2]     [ 30%  ]     [ yes ]
 ││    ├[seller_lot_cover_info_quantity_value  ] [widget        ] {number/icon}                  [ ✜ ✜ ]     [color1/color2]     [ 30%  ]     [ no  ]
@@ -298,31 +300,17 @@ seller_lot_cover_info_quantity_value задается посредством set
 - числа > 1000000000 отображаются как 1B+.
 
 seller_lot_cover_info_quantity_value_approx может находиться в трех состояниях визуально выражаемых через цветовую дифференциацию:
+seller_lot_cover_info_quantity_value_approx = sold;
 seller_lot_cover_info_quantity_value_approx = low;
 seller_lot_cover_info_quantity_value_approx = norm;
 seller_lot_cover_info_quantity_value_approx = high.
 
-
-lot_id
-lot_date
-lot_name
-lot_price
-lot_measure
-lot_quantity
-lot_quantity_manager
-lot_saletype
-lot_image
-lot_image_link
-lot_description
-
-Содержит setting_lot_edit_name_value
+✠ tables
 
 seller_lot_cover может быть в трех состояниях:
  - unveiled - видимый (active) лот, видимый для buyer и seller в seller_lot_screen;
  - veiled   - невидимый (passive) лот, невидимый для buyer и видимый для buyer в seller_lot_screen;
  - archived - удаленный (archive) лот, хранящийся в архивном каталоге и видимый только для seller.
-
-✠ tables
 
 lot_cover_unveiled_state:
 
@@ -331,11 +319,11 @@ lot_cover_unveiled_state:
 │││└───[seller_lot_cover_name                 ] [component_lev1] {string     }                  [ 🡅 ✜ ]     [color2]            [ 100% ]     [ no  ]
 ││└┬┬┬─[seller_lot_cover_info                 ] [component_lev1] {           }                  [ 🡇 🡄 ]     [color2]            [ 100% ]     [ no  ]
 ││ ││└┬[seller_lot_cover_info_date            ] [component_lev2] {           }                  [ 🡅 ✜ ]     [color1/color2]     [ 100% ]     [ no  ]
-││ ││ ├[seller_lot_cover_info_date_value      ] [widget        ] {number     }                  [ ✜ 🡄 ]     [color1/color2]     [ 100% ]     [ no  ]
-││ ││ └[seller_lot_cover_info_date_designation] [widget        ] {           }                  [ ✜ 🡆 ]     [color1/color2]     [ 100% ]     [ no  ]
+││ ││ ├[seller_lot_cover_info_date_value      ] [widget        ] {number     }                  [ ✜ 🡄 ]                         [ 100% ]     [ no  ]
+││ ││ └[seller_lot_cover_info_date_designation] [widget        ] {           }                  [ ✜ 🡆 ]     [color2/color2]     [ 100% ]     [ no  ]
 ││ │└─┬[seller_lot_cover_info_price           ] [component_lev2] {           }                  [ ✜ ✜ ]     [color1/color2]     [ 100% ]     [ no  ]
-││ │  ├[seller_lot_cover_info_price_value     ] [widget        ] {number     }                  [ ✜ 🡄 ]     [color1/color2]     [ 100% ]     [ no  ]
-││ │  └[seller_lot_cover_info_price_measure   ] [widget        ] {string     }                  [ ✜ 🡆 ]     [color1/color2]     [ 100% ]     [ no  ]
+││ │  ├[seller_lot_cover_info_price_value     ] [widget        ] {number     }                  [ ✜ 🡄 ]                         [ 100% ]     [ no  ]
+││ │  └[seller_lot_cover_info_price_measure   ] [widget        ] {string     }                  [ ✜ 🡆 ]     [color2/color2]     [ 100% ]     [ no  ]
 ││ └──┬[seller_lot_cover_info_quantity        ] [component_lev2] {           }                  [ 🡇 ✜ ]     [color1/color2]     [ 100% ]     [ no  ]
 ││    ├[seller_lot_cover_info_quantity_minus  ] [button        ] {number     }  "-"             [ ✜ 🡄 ]     [color1/color2]     [ 100% ]     [ yes ]
 ││    ├[seller_lot_cover_info_quantity_value  ] [widget        ] {number/icon}                  [ ✜ ✜ ]     [color1/color2]     [ 100% ]     [ no  ]
@@ -355,11 +343,11 @@ lot_cover_veiled_state:
 │││└───[seller_lot_cover_name                 ] [component_lev1] {string     }                  [ 🡅 ✜ ]     [color2]            [ 100% ]     [ no  ]
 ││└┬┬┬─[seller_lot_cover_info                 ] [component_lev1] {           }                  [ 🡇 🡄 ]     [color2]            [ 100% ]     [ no  ]
 ││ ││└┬[seller_lot_cover_info_date            ] [component_lev2] {           }                  [ 🡅 ✜ ]     [color1/color2]     [ 100% ]     [ no  ]
-││ ││ ├[seller_lot_cover_info_date_value      ] [widget        ] {number     }                  [ ✜ 🡄 ]     [color1/color2]     [ 100% ]     [ no  ]
-││ ││ └[seller_lot_cover_info_date_designation] [widget        ] {           }                  [ ✜ 🡆 ]     [color1/color2]     [ 100% ]     [ no  ]
+││ ││ ├[seller_lot_cover_info_date_value      ] [widget        ] {number     }                  [ ✜ 🡄 ]                         [ 100% ]     [ no  ]
+││ ││ └[seller_lot_cover_info_date_designation] [widget        ] {           }                  [ ✜ 🡆 ]     [color2/color2]     [ 100% ]     [ no  ]
 ││ │└─┬[seller_lot_cover_info_price           ] [component_lev2] {           }                  [ ✜ ✜ ]     [color1/color2]     [ 100% ]     [ no  ]
-││ │  ├[seller_lot_cover_info_price_value     ] [widget        ] {number     }                  [ ✜ 🡄 ]     [color1/color2]     [ 100% ]     [ no  ]
-││ │  └[seller_lot_cover_info_price_measure   ] [widget        ] {string     }                  [ ✜ 🡆 ]     [color1/color2]     [ 100% ]     [ no  ]
+││ │  ├[seller_lot_cover_info_price_value     ] [widget        ] {number     }                  [ ✜ 🡄 ]                         [ 100% ]     [ no  ]
+││ │  └[seller_lot_cover_info_price_measure   ] [widget        ] {string     }                  [ ✜ 🡆 ]     [color2/color2]     [ 100% ]     [ no  ]
 ││ └──┬[seller_lot_cover_info_quantity        ] [component_lev2] {           }                  [ 🡇 ✜ ]     [color1/color2]     [ 100% ]     [ no  ]
 ││    ├[seller_lot_cover_info_quantity_minus  ] [button        ] {number     }  "-"             [ ✜ 🡄 ]     [color1/color2]     [ 100% ]     [ yes ]
 ││    ├[seller_lot_cover_info_quantity_value  ] [widget        ] {number/icon}                  [ ✜ ✜ ]     [color1/color2]     [ 100% ]     [ no  ]
@@ -379,11 +367,11 @@ lot_cover_archived_state:
 │││└───[seller_lot_cover_name                 ] [component_lev1] {string     }                  [ 🡅 ✜ ]     [color2]            [ 100% ]     [ no  ]
 ││└┬┬┬─[seller_lot_cover_info                 ] [component_lev1] {           }                  [ 🡇 🡄 ]     [color2]            [ 30%  ]     [ no  ]
 ││ ││└┬[seller_lot_cover_info_date            ] [component_lev2] {           }                  [ 🡅 ✜ ]     [color1/color2]     [ 30%  ]     [ no  ]
-││ ││ ├[seller_lot_cover_info_date_value      ] [widget        ] {number     }                  [ ✜ 🡄 ]     [color1/color2]     [ 30%  ]     [ no  ]
-││ ││ └[seller_lot_cover_info_date_designation] [widget        ] {           }                  [ ✜ 🡆 ]     [color1/color2]     [ 30%  ]     [ no  ]
+││ ││ ├[seller_lot_cover_info_date_value      ] [widget        ] {number     }                  [ ✜ 🡄 ]                         [ 30%  ]     [ no  ]
+││ ││ └[seller_lot_cover_info_date_designation] [widget        ] {           }                  [ ✜ 🡆 ]     [color2/color2]     [ 30%  ]     [ no  ]
 ││ │└─┬[seller_lot_cover_info_price           ] [component_lev2] {           }                  [ ✜ ✜ ]     [color1/color2]     [ 30%  ]     [ no  ]
-││ │  ├[seller_lot_cover_info_price_value     ] [widget        ] {number     }                  [ ✜ 🡄 ]     [color1/color2]     [ 30%  ]     [ no  ]
-││ │  └[seller_lot_cover_info_price_measure   ] [widget        ] {string     }                  [ ✜ 🡆 ]     [color1/color2]     [ 30%  ]     [ no  ]
+││ │  ├[seller_lot_cover_info_price_value     ] [widget        ] {number     }                  [ ✜ 🡄 ]                         [ 30%  ]     [ no  ]
+││ │  └[seller_lot_cover_info_price_measure   ] [widget        ] {string     }                  [ ✜ 🡆 ]     [color2/color2]     [ 30%  ]     [ no  ]
 ││ └──┬[seller_lot_cover_info_quantity        ] [component_lev2] {           }                  [ 🡇 ✜ ]     [color1/color2]     [ 30%  ]     [ no  ]
 ││    ├[seller_lot_cover_info_quantity_minus  ] [button        ] {number     }  "-"             [ ✜ 🡄 ]     [color1/color2]     [ 30%  ]     [ yes ]
 ││    ├[seller_lot_cover_info_quantity_value  ] [widget        ] {number/icon}                  [ ✜ ✜ ]     [color1/color2]     [ 30%  ]     [ no  ]
@@ -395,7 +383,6 @@ lot_cover_archived_state:
       ├[seller_lot_cover_control_edit         ] [button        ] {edit       }  "ИЗМЕНИТЬ"      [ 🡅 ✜ ]     [color1/color2]     [ 100% ]     [ yes ]
       ├[seller_lot_cover_control_veil         ] [button        ] {unveil     }  "ОТКРЫТЬ"       [ ✜ ✜ ]     [color1/color2]     [ 30%  ]     [ yes ]
       └[seller_lot_cover_control_expo         ] [button        ] {restore    }  "ВОССТАНОВИТЬ"  [ 🡇 ✜ ]     [color1/color2]     [ 100% ]     [ yes ]
-
 
 ✠ actions
 • seller_lot_cover:
@@ -501,41 +488,50 @@ lot_cover_archived_state:
 ║ • seller_lot_cover_info_quantity_value_definite
 ║ occasion: нажатие seller_lot_cover_info_quantity_minus;
 ║ condition: если seller_lot_cover_info_quantity_value_definite >= 1 || <= 9e49;
-║ result: seller_lot_cover_info_quantity_value_definite отображает уменьшение значения на -1.
-╠ invalid
+║ result: seller_lot_cover_info_quantity_value_definite --1.
+║ • seller_lot_cover_info_quantity_value_approx = high
 ║ occasion: нажатие seller_lot_cover_info_quantity_minus;
-║ condition: если seller_lot_cover_info_quantity_value_definite <= 0 || > 9e49;
+║ condition: если seller_lot_cover_info_quantity_value_approx = high;
+║ result: seller_lot_cover_info_quantity_value_approx = norm.
+║ • seller_lot_cover_info_quantity_value_approx = norm
+║ occasion: нажатие seller_lot_cover_info_quantity_minus;
+║ condition: если seller_lot_cover_info_quantity_value_approx = norm;
+║ result: seller_lot_cover_info_quantity_value_approx = low.
+║ • seller_lot_cover_info_quantity_value_approx = low
+║ occasion: нажатие seller_lot_cover_info_quantity_minus;
+║ condition: если seller_lot_cover_info_quantity_value_approx = low;
 ║ result: 
-╙ && - seller_lot_cover_info_quantity_minus не реагирует на нажатие.
-
-• seller_lot_cover_info_quantity_minus:
-╠ valid
+║ && - seller_lot_cover_info_quantity_value_approx = sold;
+║ && - lot_cover_unveiled_state переходит в lot_cover_veiled_state.
+╠ invalid
 ║ • seller_lot_cover_info_quantity_value_definite
 ║ occasion: нажатие seller_lot_cover_info_quantity_minus;
-║ condition: если seller_lot_cover_info_quantity_value >= 0 || < 9e49;
-║ result: seller_lot_cover_info_quantity_value_output отображает увеличение значения на +1.
-║ • seller_lot_cover_info_quantity_minus
+║ condition: если seller_lot_cover_info_quantity_value_definite <= 0 || > 9e49;
+║ result: seller_lot_cover_info_quantity_minus не реагирует на нажатие.
+║ • seller_lot_cover_info_quantity_value_approx
 ║ occasion: нажатие seller_lot_cover_info_quantity_minus;
-║ condition: если seller_active_time_schedule_worktime_fixed_to_min_value >= 0 || <= 58;
-║ result: 
-║ && - seller_active_time_schedule_worktime_fixed_to_min_widget отображает увеличение значения на +2 в секунду времени;
-║ && - происходит дезактивация seller_active_time_schedule_worktime_float, если она была активирована;
-║ && - происходит дезактивация seller_active_time_schedule_worktime_24, если она была активирована;
-╠ invalid
-║ occasion: нажатие seller_lot_cover_info_quantity_plus;
-║ condition: если seller_active_time_schedule_worktime_fixed_to_min_value >= 59 || < 0;
-║ result: 
-║ && - seller_active_time_schedule_worktime_fixed_to_min_widget не реагирует на нажатие;
-╙ && - ничего не происходит.
-
-seller_lot_cover_info_quantity_value = definite  seller_lot_cover_info_quantity_value = approximate
-
-seller_lot_cover_info_quantity_value_approx = norm;
-seller_lot_cover_info_quantity_value_approx = high.
+║ condition: если seller_lot_cover_info_quantity_value_approx = sold;
+╙ result: seller_lot_cover_info_quantity_minus не реагирует на нажатие.
 
 ✠ color_states
 ┌─
 │lot_cover  (border)
+│---------------------------
+│• color2
+│------ в любой ситуации.
+└─
+┌─
+│seller_lot_cover_control_edit  
+│seller_lot_cover_control_veil  
+│seller_lot_cover_control_expo  
+│---------------------------
+│• color2
+│------ в inactive_state;
+│• color5
+│------ в pressing_state.
+└─
+┌─
+│seller_lot_cover_img_frame  (border)
 │---------------------------
 │• color2
 │------ в любой ситуации.
@@ -546,21 +542,36 @@ seller_lot_cover_info_quantity_value_approx = high.
 │• color1
 │------ для lot_cover_unveiled_state;
 │• color3
-│------ для lot_cover_veiled_state;  
+│------ для lot_cover_veiled_state;
 │------ для lot_cover_archived_state.
 └─
-
-
-setting_lot_edit_quantity_manager_approx_icon_bar_low
-setting_lot_edit_quantity_manager_approx_icon_bar_norm
-setting_lot_edit_quantity_manager_approx_icon_bar_high
-
-
-seller_lot_cover_info_quantity_value_approx = low;
-seller_lot_cover_info_quantity_value_approx = norm;
-seller_lot_cover_info_quantity_value_approx = high.
-
-
+┌─
+│seller_lot_cover_info_quantity_plus  
+│seller_lot_cover_info_quantity_minus  
+│---------------------------
+│• color2
+│------ в inactive_state;
+│• color5
+│------ в pressing_state.
+└─
+┌─
+│seller_lot_cover_info_quantity_value_definite 
+│---------------------------
+│• color2
+│------ в любой ситуации.
+└─
+┌─
+│seller_lot_cover_info_quantity_value_approx  
+│---------------------------
+│• color2
+│------ для seller_lot_cover_info_quantity_value_approx = sold;
+│• color3
+│------ для seller_lot_cover_info_quantity_value_approx = low;
+│• color6
+│------ для seller_lot_cover_info_quantity_value_approx = norm;
+│• color1
+│------ для seller_lot_cover_info_quantity_value_approx = high.
+└─
 
 
 ■ seller_nav
@@ -671,7 +682,6 @@ seller_lot_cover_info_quantity_value_approx = high.
 │• color4
 │------ в любой ситуации.
 └─
-
 
 
 
