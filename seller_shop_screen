@@ -1,8 +1,17 @@
 
 
+color1 - success;
+color2 - neutral;
+color3 - warning;
+color4 - accentual;
+color5 - actived;
+color6 - middle;
 
-
-
+-------------------------------------------------------------------
+-------------------------------------------------------------------
+-------------------------------------------------------------------
+-------------------------------------------------------------------
+-------------------------------------------------------------------
 
 
 
@@ -248,7 +257,7 @@ s10)┌─ [seller_nav                           ]                          [sec
 │---------------------------
 │• color2
 │------ в inactive_state.
-│• color1
+│• color5
 │------ в pressing_state;
 └─
 ┌─
@@ -334,7 +343,7 @@ s10)┌─ [seller_nav                           ]                          [sec
 │---------------------------
 │• color2
 │------ в inactive_state.
-│• color1
+│• color5
 │------ в pressing_state;
 └─
 ┌─
@@ -420,7 +429,7 @@ s10)┌─ [seller_nav                           ]                          [sec
 │---------------------------
 │• color2
 │------ в inactive_state.
-│• color1
+│• color5
 │------ в pressing_state;
 └─
 ┌─
@@ -478,7 +487,7 @@ s10)┌─ [seller_nav                           ]                          [sec
 │---------------------------
 │• color2
 │------ в inactive_state;
-│• color1
+│• color5
 │------ в pressing_state.
 └─
 ┌─
@@ -486,7 +495,7 @@ s10)┌─ [seller_nav                           ]                          [sec
 │---------------------------
 │• color2
 │------ в inactive_state;
-│• color1
+│• color5
 │------ в pressing_state.
 └─
 ┌─
@@ -553,7 +562,7 @@ s10)┌─ [seller_nav                           ]                          [sec
 │---------------------------
 │• color2
 │------ в inactive_state;
-│• color1
+│• color5
 │------ в pressing_state.
 └─
 ┌─
@@ -561,7 +570,7 @@ s10)┌─ [seller_nav                           ]                          [sec
 │---------------------------
 │• color2
 │------ в inactive_state;
-│• color1
+│• color5
 │------ в pressing_state.
 └─
 
@@ -635,7 +644,7 @@ description:                         codename:                              type
 │---------------------------
 │• color2
 │------ в inactive_state;
-│• color1
+│• color5
 │------ в pressing_state.
 └─
 ┌─
@@ -655,7 +664,7 @@ description:                         codename:                              type
 │---------------------------
 │• color2
 │------ в inactive_state;
-│• color1
+│• color5
 │------ в pressing_state.
 └─
 ┌─
@@ -780,6 +789,8 @@ description:                         codename:                              type
 │• color4
 │------ в любой ситуации.
 └─
+
+
 
 
 
