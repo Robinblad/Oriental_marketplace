@@ -1,0 +1,93 @@
+
+🡆 seller_chat_screen
+■■■■■■■■■■■■■■■■■■■■
+
+seller_chat_screen является экраном где seller получает/отправляет текстовые сообщения. Вход в seller_chat_screen осуществляется посредством кнопки "ЧАТ" на seller_shop_nav.
+
+seller_chat_screen имеет три кнопки-вкладки в верхней части экрана: 
+- blog  - seller_chat_nav_blog, при нажатии на которую открывается seller_chat_blog_screen;
+- forum - seller_chat_nav_forum, при нажатии на которую открывается seller_chat_forum_screen;
+- chat  - seller_chat_nav_chat, при нажатии на которую открывается seller_chat_chat_screen;
+При открытии seller_chat_screen логика допускает активность одной из вкладок в каждый момент времени.
+
+               codename:            type:       button_name:     active/inactive:       interaction:
+   ┌┬┬[seller_chat_nav      ]    		 
+s1)││└[seller_chat_nav_blog ]     [button]        "БЛОГ"         [color5/color2]          [ yes ]
+s2)│└─[seller_chat_nav_forum]     [button]        "ФОРУМ"        [color5/color2]          [ yes ]
+s3)└──[seller_chat_nav_chat ]     [button]        "ЧАТ"          [color5/color2]          [ yes ]
+
+
+🡆🡆 seller_chat_blog_screen
+■■■■■■■■■■■■■■■■■■■■■■■■■■
+Blog является официальным рупором seller, где выкладываются новости, публикации, афишируются конкурсы и акции. Посты публикуются и демонстрируются согласно хронологии сверху-вниз. 
+
+seller_chat_blog_screen имеет два варианта отображения:
+seller_chat_blog_list - интерфейс листинга постов;
+seller_chat_blog_edit - интерфейс редактируемого поста;
+
+
+seller_chat_blog_screen разделен на 2 sections следующего содержания расположенных сверху-вниз:
+ 
+                   codename:                         type:          button_name:       pressed/default:      location:      interaction:
+   ┌┬──[seller_chat_blog_list             ]        
+s1)│└┬─[seller_chat_blog_list_new         ]       [section   ]                                                [ 🡅 ✜ ]         [ yes ]
+---│ ├ [seller_chat_blog_list_new_info    ]       [widget    ]                                                [ ✜ 🡄 ]         [ no  ]
+---│ └ [seller_chat_blog_list_new_button  ]       [button    ]     "НОВЫЙ ПОСТ"        [color5/color2]        [ ✜ 🡆 ]         [ yes ]   
+s2)└─┬─[seller_chat_blog_list_post        ]       [section   ]                         [color5/color2]        [ 🡇 ✜ ]         [ yes ]
+---  ├ [seller_chat_blog_list_post_header ]       [header    ]                                                [ 🡅 ✜ ]         [ no  ] 
+---  ├ [seller_chat_blog_list_post_content]       [image+text]                                                [ ✜ ✜ ]         [ no  ]
+---  ├ [seller_chat_blog_list_post_emoji  ]       [icon      ]                                                [ 🡇 🡄 ]         [ yes ]
+---  ├ [seller_chat_blog_list_post_viewer ]       [icon      ]                                                [ 🡇 ✜ ]         [ no  ]
+---  └ [seller_chat_blog_list_post_time   ]       [widget    ]                                                [ 🡇 🡆 ]         [ no  ]
+
+
+■ seller_chat_blog_list_new
+
+✠ details
+seller_chat_blog_list_new расположен в верхней области экрана под seller_chat_nav и состоит из 2 компонентов:  
+- seller_chat_blog_list_new_info   - виджет отображающий количество опубликованных постов и среднее количество опубликованных постов в неделю;
+- seller_chat_blog_list_new_button - кнопка при нажатии на которую совершается переход к seller_chat_blog_edit;
+
+✠ actions
+• seller_chat_blog_list_new_button:
+╠ valid / invalid
+║ occasion: нажатие seller_chat_blog_list_new_button;
+║ condition: в любой ситуации;
+╙ result: открывается seller_chat_blog_edit.
+
+✠ color_states
+┌─
+│seller_chat_blog_list_new_button
+│---------------------------------
+│• color2
+│------ в inactive_state;
+│• color5
+│------ в pressing_state.
+└─
+
+
+■ seller_chat_blog_list_post
+
+seller_chat_blog_list_post является телом опубликованного поста.
+
+✠ details
+seller_chat_blog_list_post появляется после процедуры публикации поста; занимает по ширине всю доступную область экрана, по высоте каждый пост имеет индивидуальный размер зависящий от содержания seller_chat_blog_list_post_content и состоит из 5 компонентов:  
+- seller_chat_blog_list_post_header - заголовок поста с увеличенным в 2 раза размером шрифта параграфа font-size: 2.0rem;
+- seller_chat_blog_list_post_content - представляет собой комбинацию изображения/видео и текста, либо только изображение/видео или текст;
+- seller_chat_blog_list_post_emoji - виджет отображающий лайк/дизлайк либо другой вариант эмоционального выражения;
+- seller_chat_blog_list_post_viewer - виджет отображающий количество просмотров поста;
+- seller_chat_blog_list_post_time - виджет отображающий время публикации поста.
+
+✠ actions
+• seller_chat_blog_list_post:
+╠ valid / invalid
+║ • tap 
+║ occasion: нажатие seller_chat_blog_list_post;
+║ condition: в любой ситуации;
+║ result: появляется seller_chat_blog_list_post_emoji_popup.
+║ • tap & hold 1
+║ occasion: нажатие и удержание от 1 и более секунд seller_chat_blog_list_post;
+║ condition: в любой ситуации;
+║ result: 
+║ && - вокруг seller_chat_blog_list_post возникает окантовка;
+║ && - под seller_chat_blog_list_post появляется кнопка seller_chat_blog_list_post_delete;
