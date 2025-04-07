@@ -1,4 +1,8 @@
 
+
+
+
+
 🡆 seller_chat_screen
 ■■■■■■■■■■■■■■■■■■■■
 
@@ -17,15 +21,18 @@ s2)│└─[seller_chat_nav_forum]     [button]        "ФОРУМ"        [col
 s3)└──[seller_chat_nav_chat ]     [button]        "ЧАТ"          [color5/color2]          [ yes ]
 
 
-🡆🡆 seller_chat_blog_screen
-■■■■■■■■■■■■■■■■■■■■■■■■■■
+🡆🡆 seller_chat_blog
+
 Blog является официальным рупором seller, где выкладываются новости, публикации, афишируются конкурсы и акции. Посты публикуются и демонстрируются согласно хронологии сверху-вниз. 
 
-seller_chat_blog_screen имеет два варианта отображения:
-seller_chat_blog_list - интерфейс листинга постов;
-seller_chat_blog_edit - интерфейс редактируемого поста;
+seller_chat_blog имеет два варианта отображения:
+seller_chat_blog_list_screen - интерфейс листинга постов;
+seller_chat_blog_edit_screen - интерфейс редактируемого поста;
 
+🡆🡆 seller_chat_blog_list_screen
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 
+✠ tables
 seller_chat_blog_screen разделен на 2 sections следующего содержания расположенных сверху-вниз:
  
                    codename:                         type:          button_name:       pressed/default:      location:      interaction:
@@ -36,8 +43,8 @@ s1)│└┬─[seller_chat_blog_list_new         ]       [section   ]          
 s2)└─┬─[seller_chat_blog_list_post        ]       [section   ]                         [color5/color2]        [ 🡇 ✜ ]         [ yes ]
 ---  ├ [seller_chat_blog_list_post_header ]       [header    ]                                                [ 🡅 ✜ ]         [ no  ] 
 ---  ├ [seller_chat_blog_list_post_content]       [image+text]                                                [ ✜ ✜ ]         [ no  ]
----  ├ [seller_chat_blog_list_post_emoji  ]       [icon      ]                                                [ 🡇 🡄 ]         [ yes ]
----  ├ [seller_chat_blog_list_post_viewer ]       [icon      ]                                                [ 🡇 ✜ ]         [ no  ]
+---  ├ [seller_chat_blog_list_post_emoji  ]       [widget    ]                                                [ 🡇 🡄 ]         [ yes ]
+---  ├ [seller_chat_blog_list_post_viewer ]       [widget    ]                                                [ 🡇 ✜ ]         [ no  ]
 ---  └ [seller_chat_blog_list_post_time   ]       [widget    ]                                                [ 🡇 🡆 ]         [ no  ]
 
 
@@ -90,4 +97,84 @@ seller_chat_blog_list_post появляется после процедуры п
 ║ condition: в любой ситуации;
 ║ result: 
 ║ && - вокруг seller_chat_blog_list_post возникает окантовка;
-║ && - под seller_chat_blog_list_post появляется кнопка seller_chat_blog_list_post_delete;
+║ && - по центру seller_chat_blog_list_post появляется кнопка seller_chat_blog_list_post_delete;
+• seller_chat_blog_list_post_emoji:
+╠ valid / invalid
+║ • tap 
+║ occasion: нажатие на конкретный seller_chat_blog_list_post_emoji_item;
+║ condition: в ситуации наличия минимум одного emoji;
+║ result: совершается увеличение значения seller_chat_blog_list_post_emoji_item_value на +1.
+
+✠ color_states
+┌─
+│seller_chat_blog_list_post
+│---------------------------------------------
+│• color2
+│------ в inactive_state;
+│• color5
+│------ в pressing_state (tap & hold 1).
+└─
+┌─
+│seller_chat_blog_list_post_viewer
+│---------------------------------------------
+│• color2
+│------ в любой ситуации.
+└─
+┌─
+│seller_chat_blog_list_post_time
+│---------------------------------------------
+│• color2
+│------ в любой ситуации.
+└─
+
+
+🡆🡆🡆 seller_chat_blog_list_post_emoji_popup
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+✠ tables
+При тапе на кнопку seller_chat_blog_list_post всплывает seller_chat_blog_list_post_emoji_popup со следующим содержанием:
+
+                        codename:                               type:           interaction:      location:         inactive/active:    		      
+[seller_chat_blog_list_post_emoji_popup_symbol_like   ]     [icon+button]         [ yes ]          [ ✜ ✜ ]          [color2/color5]
+[seller_chat_blog_list_post_emoji_popup_symbol_dislike]     [icon+button]         [ yes ]          [ ✜ ✜ ]          [color2/color5]
+[seller_chat_blog_list_post_emoji_popup_symbol_fire   ]     [icon+button]         [ yes ]          [ ✜ ✜ ]          [color2/color5]
+[seller_chat_blog_list_post_emoji_popup_symbol_100%   ]     [icon+button]         [ yes ]          [ ✜ ✜ ]          [color2/color5]
+[seller_chat_blog_list_post_emoji_popup_symbol_heart  ]     [icon+button]         [ yes ]          [ ✜ ✜ ]          [color2/color5]
+[seller_chat_blog_list_post_emoji_popup_symbol_look   ]     [icon+button]         [ yes ]          [ ✜ ✜ ]          [color2/color5]
+[seller_chat_blog_list_post_emoji_popup_symbol_shit   ]     [icon+button]         [ yes ]          [ ✜ ✜ ]          [color2/color5]
+[seller_chat_blog_list_post_emoji_popup_symbol_ok     ]     [icon+button]         [ yes ]          [ ✜ ✜ ]          [color2/color5]
+[seller_chat_blog_list_post_emoji_popup_button        ]     [button     ]         [ yes ]          [ ✜ 🡆 ]          [color2/color5]
+
+✠ details
+seller_chat_blog_list_post_emoji_popup выполнен в виде панели высотой ~5% и шириной 80-90% экрана со всеми компонентами расположенными в одну строку. Местоположение seller_chat_blog_list_post_emoji_popup зависит от места нажатия и возникает чуть выше (5% от высоты экрана) этого места. 
+seller_chat_blog_list_post_emoji_popup содержит следующие компоненты:
+seller_chat_blog_list_post_emoji_popup_symbol - массив emoji-символов (в tables представлена часть возможных вариантов);
+seller_chat_blog_list_post_emoji_popup_button - кнопка отвечающая за открытие всего перечня emoji-символов.
+
+✠ actions
+• seller_chat_blog_list_post_emoji_popup_symbol:
+╠ valid / invalid
+║ occasion: нажатие (tap) любого seller_chat_blog_list_post_emoji_popup_symbol;
+║ condition: в любой ситуации;
+║ result: 
+║ && - seller_chat_blog_list_post_emoji_popup закрывается;
+║ && - целевой seller_chat_blog_list_post_emoji_popup_symbol появляется в качестве seller_chat_blog_list_post_emoji в seller_chat_blog_list_post.
+• seller_chat_blog_list_post_emoji_popup_button:
+╠ valid / invalid
+║ occasion: нажатие (tap) seller_chat_blog_list_post_emoji_popup_button;
+║ condition: в любой ситуации;
+║ result:
+║ && - происходит плавное вертикальное центрирование на целевом setting_lot_edit_image_value;
+║ && - над целевым setting_lot_edit_image_value появляется seller_chat_blog_list_post_emoji_popup_basket;
+╙ && - под целевым setting_lot_edit_image_value появляется seller_chat_blog_list_post_emoji_popup_text.
+
+✠ color_states
+┌─
+│seller_chat_blog_list_post_emoji_popup_button
+│---------------------------------------------
+│• color2
+│------ в inactive_state;
+│• color5
+│------ в pressing_state.
+└─
+
