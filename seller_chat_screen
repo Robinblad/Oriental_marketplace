@@ -2,6 +2,14 @@
 
 
 
+-------------------------------------------------------------------
+-------------------------------------------------------------------
+-------------------------------------------------------------------
+-------------------------------------------------------------------
+-------------------------------------------------------------------
+
+
+
 
 🡆 seller_chat_screen
 ■■■■■■■■■■■■■■■■■■■■
@@ -33,7 +41,7 @@ seller_chat_blog_edit_screen - интерфейс редактируемого �
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 
 ✠ tables
-seller_chat_blog_screen разделен на 2 sections следующего содержания расположенных сверху-вниз:
+seller_chat_blog_list_screen разделен на 2 sections следующего содержания расположенных сверху-вниз:
  
                    codename:                         type:          button_name:       pressed/default:      location:      interaction:
    ┌┬──[seller_chat_blog_list             ]        
@@ -46,6 +54,22 @@ s2)└─┬─[seller_chat_blog_list_post        ]       [section   ]          
 ---  ├ [seller_chat_blog_list_post_emoji  ]       [widget    ]                                                [ 🡇 🡄 ]         [ yes ]
 ---  ├ [seller_chat_blog_list_post_viewer ]       [widget    ]                                                [ 🡇 ✜ ]         [ no  ]
 ---  └ [seller_chat_blog_list_post_time   ]       [widget    ]                                                [ 🡇 🡆 ]         [ no  ]
+s3) ┌─ [seller_nav                        ]       [section   ]                                                [ 🡇 ✜ ]
+----├┬ [seller_nav_monitor_button         ]       [button    ]                         [color1/color2]        [ ✜ 🡄 ]         [ yes ]
+----│├ [seller_nav_monitor_header         ]       [header    ]     "МОНИТОР"           [color1/color2]        [ ✜ ✜ ]         [ no  ]  
+----│└ [seller_nav_monitor_badge          ]       [badge     ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ] 	
+----├┬ [seller_nav_chat_button            ]       [button    ]                         [color1/color2]        [ ✜ 🡄 ]         [ yes ]   
+----│├ [seller_nav_chat_header            ]       [header    ]     "ЧАТ"               [color1/color2]        [ ✜ ✜ ]         [ no  ] 
+----│└ [seller_nav_chat_badge             ]       [badge     ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ] 
+----├┬ [seller_nav_shop_button            ]       [button    ]                         [color1/color2]        [ ✜ ✜ ]         [ yes ]   
+----│├ [seller_nav_shop_header            ]       [header    ]     "МАГАЗИН"           [color1/color2]        [ ✜ ✜ ]         [ no  ] 
+----│└ [seller_nav_shop_badge             ]       [badge     ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ]   
+----├┬ [seller_nav_lot_button             ]       [button    ]                         [color1/color2]        [ ✜ 🡆 ]         [ yes ]   
+----│├ [seller_nav_lot_header             ]       [header    ]     "ТОВАРЫ"            [color1/color2]        [ ✜ ✜ ]         [ no  ] 
+----│└ [seller_nav_lot_badge              ]       [badge     ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ]     
+----└┬ [seller_nav_finance_button         ]       [button    ]                         [color1/color2]        [ ✜ 🡆 ]         [ yes ]   
+---- ├ [seller_nav_finance_header         ]       [header    ]     "ФИНАНСЫ"           [color1/color2]        [ ✜ ✜ ]         [ no  ] 
+---- └ [seller_nav_finance_badge          ]       [badge     ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ] 
 
 
 ■ seller_chat_blog_list_new
@@ -116,11 +140,6 @@ seller_chat_blog_list_post появляется после процедуры п
 └─
 ┌─
 │seller_chat_blog_list_post_viewer
-│---------------------------------------------
-│• color2
-│------ в любой ситуации.
-└─
-┌─
 │seller_chat_blog_list_post_time
 │---------------------------------------------
 │• color2
@@ -163,13 +182,11 @@ seller_chat_blog_list_post_emoji_popup_button - кнопка отвечающа�
 ╠ valid / invalid
 ║ occasion: нажатие (tap) seller_chat_blog_list_post_emoji_popup_button;
 ║ condition: в любой ситуации;
-║ result:
-║ && - происходит плавное вертикальное центрирование на целевом setting_lot_edit_image_value;
-║ && - над целевым setting_lot_edit_image_value появляется seller_chat_blog_list_post_emoji_popup_basket;
-╙ && - под целевым setting_lot_edit_image_value появляется seller_chat_blog_list_post_emoji_popup_text.
+╙ result: происходит плавное раскрытие seller_chat_blog_list_post_emoji_popup сверху вниз, в результате чего его размер по вертикали увеличивается минимум при котором все доступные emoji помещаются в seller_chat_blog_list_post_emoji_popup и максимум до 25% от высоты экрана с возможностью скроллирования seller_chat_blog_list_post_emoji_popup.
 
 ✠ color_states
 ┌─
+│seller_chat_blog_list_post_emoji_popup_symbol
 │seller_chat_blog_list_post_emoji_popup_button
 │---------------------------------------------
 │• color2
@@ -177,4 +194,36 @@ seller_chat_blog_list_post_emoji_popup_button - кнопка отвечающа�
 │• color5
 │------ в pressing_state.
 └─
+
+
+🡆🡆 seller_chat_blog_edit_screen
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+
+✠ tables
+seller_chat_blog_edit_screen разделен на 2 sections следующего содержания расположенных сверху-вниз:
+ 
+                   codename:                        type:          button_name:       pressed/default:     location:    interaction:
+s1) ┌──[seller_chat_blog_edit           ]                                                                   [ ✜ ✜ ]
+--- └┬─[seller_chat_blog_edit_header    ]       [section     ]   [""            ]                           [ 🡅 ✜ ]       [ yes ]
+---  ├ [seller_chat_blog_edit_image     ]       [image+button]   ["ИЗОБРАЖЕНИЕ" ]                           [ ✜ 🡄 ]       [ no  ]
+---  ├ [seller_chat_blog_edit_text      ]       [textaria    ]   [""                  [color5/color2]       [ ✜ 🡆 ]       [ yes ]   
+---  ├ [seller_chat_blog_edit_button_no ]       [button      ]   ["ЗАКРЫТЬ"     ]     [color5/color2]       
+---  └ [seller_chat_blog_edit_button_yes]       [button      ]   ["ОПУБЛИКОВАТЬ"]     [color1/color2]      
+s2) ┌─ [seller_nav                      ]       [section     ]                                              [ 🡇 ✜ ]
+--- ├┬ [seller_nav_monitor_button       ]       [button      ]                        [color1/color2]       [ ✜ 🡄 ]       [ yes ]
+--- │├ [seller_nav_monitor_header       ]       [header      ]   ["МОНИТОР"     ]     [color1/color2]       [ ✜ ✜ ]       [ no  ]  
+--- │└ [seller_nav_monitor_badge        ]       [badge       ]   [{ number }    ]     [color1/color2]       [ 🡅 🡆 ]       [ no  ] 	
+--- ├┬ [seller_nav_chat_button          ]       [button      ]                        [color1/color2]       [ ✜ 🡄 ]       [ yes ]   
+--- │├ [seller_nav_chat_header          ]       [header      ]   ["ЧАТ"         ]     [color1/color2]       [ ✜ ✜ ]       [ no  ] 
+--- │└ [seller_nav_chat_badge           ]       [badge       ]   [{ number }    ]     [color1/color2]       [ 🡅 🡆 ]       [ no  ] 
+--- ├┬ [seller_nav_shop_button          ]       [button      ]                        [color1/color2]       [ ✜ ✜ ]       [ yes ]   
+--- │├ [seller_nav_shop_header          ]       [header      ]   ["МАГАЗИН"     ]     [color1/color2]       [ ✜ ✜ ]       [ no  ] 
+--- │└ [seller_nav_shop_badge           ]       [badge       ]   [{ number }    ]     [color1/color2]       [ 🡅 🡆 ]       [ no  ]   
+--- ├┬ [seller_nav_lot_button           ]       [button      ]                        [color1/color2]       [ ✜ 🡆 ]       [ yes ]   
+--- │├ [seller_nav_lot_header           ]       [header      ]   ["ТОВАРЫ"      ]     [color1/color2]       [ ✜ ✜ ]       [ no  ] 
+--- │└ [seller_nav_lot_badge            ]       [badge       ]   [{ number }    ]     [color1/color2]       [ 🡅 🡆 ]       [ no  ]     
+--- └┬ [seller_nav_finance_button       ]       [button      ]                        [color1/color2]       [ ✜ 🡆 ]       [ yes ]   
+---  ├ [seller_nav_finance_header       ]       [header      ]   ["ФИНАНСЫ"     ]     [color1/color2]       [ ✜ ✜ ]       [ no  ] 
+---  └ [seller_nav_finance_badge        ]       [badge       ]   [{ number }    ]     [color1/color2]       [ 🡅 🡆 ]       [ no  ] 
+
 
