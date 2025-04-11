@@ -12,6 +12,7 @@
 
 
 
+
 🡆 seller_chat_screen
 ■■■■■■■■■■■■■■■■■■■■
 
@@ -126,14 +127,14 @@ seller_chat_nav представлен 3 компонентами:
 ✠ details
 seller_chat_blog_list_new расположен в верхней области экрана под seller_chat_nav и состоит из 2 компонентов:  
 - seller_chat_blog_list_new_info   - виджет отображающий количество опубликованных постов и среднее количество опубликованных постов в неделю;
-- seller_chat_blog_list_new_button - кнопка при нажатии на которую совершается переход к seller_chat_blog_edit;
+- seller_chat_blog_list_new_button - кнопка при нажатии на которую совершается переход к seller_chat_blog_edit_screen;
 
 ✠ actions
 • seller_chat_blog_list_new_button:
 ╠ valid / invalid
 ║ occasion: нажатие seller_chat_blog_list_new_button;
 ║ condition: в любой ситуации;
-╙ result: открывается seller_chat_blog_edit.
+╙ result: открывается seller_chat_blog_edit_screen.
 
 ✠ color_states
 ┌─
@@ -358,36 +359,38 @@ seller_chat_blog_list_post_emoji_popup_button - кнопка отвечающа�
 🡆🡆 seller_chat_blog_edit_screen
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 
+seller_chat_blog_edit_screen открывается после нажатия seller_chat_blog_list_new_button. 
+
 ✠ tables
 seller_chat_blog_edit_screen разделен на 3 sections следующего содержания расположенных сверху-вниз:
  
-                   codename:                        type:          button_name:       pressed/default:     location:    interaction:    important:
-s1)  ┌─[seller_chat_nav                 ]       [section     ] 
----  ├ [seller_chat_nav_blog            ]       [button      ]   ["БЛОГ"        ]     [color5/color2]       [ ✜ 🡄 ]       [ yes ]
----  ├ [seller_chat_nav_forum           ]       [button      ]   ["ФОРУМ"       ]     [color5/color2]       [ ✜ ✜ ]       [ yes ]
----  └ [seller_chat_nav_chat            ]       [button      ]   ["ЧАТ"         ]     [color5/color2]       [ ✜ 🡆 ]       [ yes ]  
-s2) ┌──[seller_chat_blog_edit           ]                                                                   [ ✜ ✜ ]
---- └┬─[seller_chat_blog_edit_header    ]       [section     ]   [""            ]                           [ 🡅 ✜ ]       [ yes ]        [ yes ]
----  ├ [seller_chat_blog_edit_image     ]       [image+button]   ["ИЗОБРАЖЕНИЕ" ]                           [ ✜ 🡄 ]       [ no  ]        [ no  ]
----  ├ [seller_chat_blog_edit_text      ]       [textaria    ]   [""                  [color5/color2]       [ ✜ 🡆 ]       [ yes ]        [ yes ]   
----  ├ [seller_chat_blog_edit_close     ]       [button      ]   ["ЗАКРЫТЬ"     ]     [color5/color2]       [ 🡇 🡄 ]       [ yes ]        
----  └ [seller_chat_blog_edit_public    ]       [button      ]   ["ОПУБЛИКОВАТЬ"]     [color1/color2]       [ 🡇 🡆 ]       [ yes ]
-s3) ┌─ [seller_nav                      ]       [section     ]                                              [ 🡇 ✜ ]
---- ├┬ [seller_nav_monitor_button       ]       [button      ]                        [color1/color2]       [ ✜ 🡄 ]       [ yes ]
---- │├ [seller_nav_monitor_header       ]       [header      ]   ["МОНИТОР"     ]     [color1/color2]       [ ✜ ✜ ]       [ no  ]  
---- │└ [seller_nav_monitor_badge        ]       [badge       ]   [{ number }    ]     [color1/color2]       [ 🡅 🡆 ]       [ no  ] 	
---- ├┬ [seller_nav_chat_button          ]       [button      ]                        [color1/color2]       [ ✜ 🡄 ]       [ yes ]   
---- │├ [seller_nav_chat_header          ]       [header      ]   ["ЧАТ"         ]     [color1/color2]       [ ✜ ✜ ]       [ no  ] 
---- │└ [seller_nav_chat_badge           ]       [badge       ]   [{ number }    ]     [color1/color2]       [ 🡅 🡆 ]       [ no  ] 
---- ├┬ [seller_nav_shop_button          ]       [button      ]                        [color1/color2]       [ ✜ ✜ ]       [ yes ]   
---- │├ [seller_nav_shop_header          ]       [header      ]   ["МАГАЗИН"     ]     [color1/color2]       [ ✜ ✜ ]       [ no  ] 
---- │└ [seller_nav_shop_badge           ]       [badge       ]   [{ number }    ]     [color1/color2]       [ 🡅 🡆 ]       [ no  ]   
---- ├┬ [seller_nav_lot_button           ]       [button      ]                        [color1/color2]       [ ✜ 🡆 ]       [ yes ]   
---- │├ [seller_nav_lot_header           ]       [header      ]   ["ТОВАРЫ"      ]     [color1/color2]       [ ✜ ✜ ]       [ no  ] 
---- │└ [seller_nav_lot_badge            ]       [badge       ]   [{ number }    ]     [color1/color2]       [ 🡅 🡆 ]       [ no  ]     
---- └┬ [seller_nav_finance_button       ]       [button      ]                        [color1/color2]       [ ✜ 🡆 ]       [ yes ]   
----  ├ [seller_nav_finance_header       ]       [header      ]   ["ФИНАНСЫ"     ]     [color1/color2]       [ ✜ ✜ ]       [ no  ] 
----  └ [seller_nav_finance_badge        ]       [badge       ]   [{ number }    ]     [color1/color2]       [ 🡅 🡆 ]       [ no  ] 
+                   codename:                    type:          button_name:     pressed/default:     location:    interaction:    important:
+s1)  ┌─[seller_chat_nav                 ]   [section     ] 
+---  ├ [seller_chat_nav_blog            ]   [button      ]   ["БЛОГ"        ]   [color5/color2]       [ ✜ 🡄 ]       [ yes ]
+---  ├ [seller_chat_nav_forum           ]   [button      ]   ["ФОРУМ"       ]   [color5/color2]       [ ✜ ✜ ]       [ yes ]
+---  └ [seller_chat_nav_chat            ]   [button      ]   ["ЧАТ"         ]   [color5/color2]       [ ✜ 🡆 ]       [ yes ]  
+s2) ┌──[seller_chat_blog_edit           ]                                                             [ ✜ ✜ ]
+--- └┬─[seller_chat_blog_edit_header    ]   [section     ]   [""            ]                         [ 🡅 ✜ ]       [ yes ]        [ yes ]
+---  ├ [seller_chat_blog_edit_image     ]   [image+button]   ["ИЗОБРАЖЕНИЕ" ]                         [ ✜ 🡄 ]       [ no  ]        [ no  ]
+---  ├ [seller_chat_blog_edit_text      ]   [textaria    ]   [""                [color5/color2]       [ ✜ 🡆 ]       [ yes ]        [ yes ]   
+---  ├ [seller_chat_blog_edit_close     ]   [button      ]   ["ЗАКРЫТЬ"     ]   [color5/color2]       [ 🡇 🡄 ]       [ yes ]        
+---  └ [seller_chat_blog_edit_public    ]   [button      ]   ["ОПУБЛИКОВАТЬ"]   [color1/color2]       [ 🡇 🡆 ]       [ yes ]
+s3) ┌─ [seller_nav                      ]   [section     ]                                            [ 🡇 ✜ ]
+--- ├┬ [seller_nav_monitor_button       ]   [button      ]                      [color1/color2]       [ ✜ 🡄 ]       [ yes ]
+--- │├ [seller_nav_monitor_header       ]   [header      ]   ["МОНИТОР"     ]   [color1/color2]       [ ✜ ✜ ]       [ no  ]  
+--- │└ [seller_nav_monitor_badge        ]   [badge       ]   [{ number }    ]   [color1/color2]       [ 🡅 🡆 ]       [ no  ] 	
+--- ├┬ [seller_nav_chat_button          ]   [button      ]                      [color1/color2]       [ ✜ 🡄 ]       [ yes ]   
+--- │├ [seller_nav_chat_header          ]   [header      ]   ["ЧАТ"         ]   [color1/color2]       [ ✜ ✜ ]       [ no  ] 
+--- │└ [seller_nav_chat_badge           ]   [badge       ]   [{ number }    ]   [color1/color2]       [ 🡅 🡆 ]       [ no  ] 
+--- ├┬ [seller_nav_shop_button          ]   [button      ]                      [color1/color2]       [ ✜ ✜ ]       [ yes ]   
+--- │├ [seller_nav_shop_header          ]   [header      ]   ["МАГАЗИН"     ]   [color1/color2]       [ ✜ ✜ ]       [ no  ] 
+--- │└ [seller_nav_shop_badge           ]   [badge       ]   [{ number }    ]   [color1/color2]       [ 🡅 🡆 ]       [ no  ]   
+--- ├┬ [seller_nav_lot_button           ]   [button      ]                      [color1/color2]       [ ✜ 🡆 ]       [ yes ]   
+--- │├ [seller_nav_lot_header           ]   [header      ]   ["ТОВАРЫ"      ]   [color1/color2]       [ ✜ ✜ ]       [ no  ] 
+--- │└ [seller_nav_lot_badge            ]   [badge       ]   [{ number }    ]   [color1/color2]       [ 🡅 🡆 ]       [ no  ]     
+--- └┬ [seller_nav_finance_button       ]   [button      ]                      [color1/color2]       [ ✜ 🡆 ]       [ yes ]   
+---  ├ [seller_nav_finance_header       ]   [header      ]   ["ФИНАНСЫ"     ]   [color1/color2]       [ ✜ ✜ ]       [ no  ] 
+---  └ [seller_nav_finance_badge        ]   [badge       ]   [{ number }    ]   [color1/color2]       [ 🡅 🡆 ]       [ no  ] 
 
 
 ■ seller_chat_nav
@@ -445,33 +448,111 @@ seller_chat_nav представлен 3 компонентами:
 seller_chat_blog_edit является формой создаваемого поста. 
 
 ✠ details
-seller_chat_blog_edit открывается после нажатия seller_chat_blog_list_new_button; верхняя часть seller_chat_blog_edit примыкает к seller_chat_nav; занимает по ширине и высоте всю доступную область экрана и состоит из 5 компонентов:  
+Верхняя часть seller_chat_blog_edit примыкает к seller_chat_nav; занимает по ширине и высоте всю доступную область экрана и состоит из 5 компонентов:  
 - seller_chat_blog_edit_header - заголовок поста с увеличенным в 2 раза размером шрифта параграфа font-size: 2.0rem (обязательное наличие);
 - seller_chat_blog_edit_image - представлен в качестве иконки-кнопки "+" при нажатии на которую открывается приложение "галерия" на устройстве, где seller может выбрать требуемый контент, который может быть как статичным изображением так и видео; если изображение уже вставлено, то при нажатии на него также открывается "галерия", после применения новый контент заменяет предыдущий;
-- seller_chat_blog_edit_text - текстовая информация с лимитами: минимум - 10 символов, максимум - 10000 символов (обязательное наличие);
-- seller_chat_blog_edit_button_no - кнопка отвечающая за функцию закрытия seller_chat_blog_edit без принятия изменений;
-- seller_chat_blog_edit_button_yes - кнопка отвечающая за функцию публикации нового поста.
+- seller_chat_blog_edit_text - поле для ввода текста с лимитами: минимум - 10 символов, максимум - 10000 символов (обязательное наличие);
+- seller_chat_blog_edit_close - кнопка отвечающая за функцию закрытия seller_chat_blog_edit без принятия изменений;
+- seller_chat_blog_edit_public - кнопка отвечающая за функцию публикации нового поста.
 Как минимум seller_chat_blog_edit для возможности публикации должен содержать заголовок и текст.
 
 ✠ actions
-• seller_chat_blog_edit:
+• seller_chat_blog_edit_image:
+╠ valid / invalid 
+║ • tap 
+║ occasion: нажатие в область seller_chat_blog_edit_image;
+║ condition: в любой ситуации;
+╙ result: открывается приложение "галерия" на устройстве.
+• seller_chat_blog_edit_text:
 ╠ valid / invalid
 ║ • tap 
-║ occasion: нажатие seller_chat_blog_edit;
+║ occasion: нажатие в область seller_chat_blog_edit_text;
 ║ condition: в любой ситуации;
-║ result: появляется seller_chat_blog_edit_emoji_popup.
-║ • tap & hold 1
-║ occasion: нажатие и удержание от 1 и более секунд seller_chat_blog_edit;
-║ condition: в любой ситуации;
-║ result: 
-║ && - вокруг seller_chat_blog_edit возникает окантовка;
-║ && - по центру seller_chat_blog_edit появляется кнопка seller_chat_blog_edit_delete;
-• seller_chat_blog_edit_emoji:
+╙ result: активируется клавиатура на устройстве.
+• seller_chat_blog_edit_close:
 ╠ valid / invalid
 ║ • tap 
-║ occasion: нажатие на конкретный seller_chat_blog_edit_emoji_item;
-║ condition: в ситуации наличия минимум одного emoji;
-║ result: совершается увеличение значения seller_chat_blog_edit_emoji_item_value на +1.
+║ occasion: нажатие кнопки seller_chat_blog_edit_close;
+║ condition: в любой ситуации;
+╙ result: seller_chat_blog_edit_screen закрывается без публикации поста с удалением всей введенной информацией в поля seller_chat_blog_edit.
+• seller_chat_blog_edit_public:
+╠ valid
+║ • tap 
+║ occasion: нажатие кнопки seller_chat_blog_edit_public;
+║ condition: 
+║ && - valid по seller_chat_blog_edit_header;
+║ && - valid по seller_chat_blog_edit_text;
+╙ result: в seller_chat_blog_list_screen публикуется новый пост.
+• seller_chat_blog_edit_public:
+╠ invalid
+║ • tap 
+║ occasion: нажатие кнопки seller_chat_blog_edit_public;
+║ condition: 
+║ || - invalid по seller_chat_blog_edit_header;
+║ || - invalid по seller_chat_blog_edit_text;
+╙ result: в seller_chat_blog_list_screen публикуется новый пост.
+ 
+
+
+✠ input_checks
+Фильтры проверяющие на соответствие нормативам содержание setting_user_firstname_input. Если в ходе проверки фиксируется несоответствие, тогда состояние setting_user_firstname_input позиционируется как invalid, в соответствии с чем отображается соответствующее типу проблемы предупреждение.
+• overnaming:
+Анализ на превышение лимита допустимой длины firstname.
+Работает в active_state.
+При вводе firstname, в ситуации если букв > 50, под setting_user_firstname_input всплывает setting_user_firstname_alert_overnaming.
+• stopsymbol:
+Анализ на нажатие запрещенных клавиш базирующийся на превентивной блокировке ввода со всех клавиш кроме отвечающих за буквы, дефис и пробел. 
+Работает в active_state.
+При вводе firstname, в ситуации если использованы запрещенные символы, под setting_user_firstname_input всплывает setting_user_firstname_alert_stopsymbol.
+• stopword:
+Анализ на запрещенные слова, базирующийся на тезариусе содержащем надлежащий материал.
+Работает в active_state.
+При вводе firstname, в ситуации если использованы запрещенные слова, под setting_user_firstname_input всплывает setting_user_firstname_alert_stopword.
+• omission:
+Реакция на факт отсутствие введенных данных.
+Работает в inactive_state.
+В ситуации если поле пустое, а юзер нажимает на setting_seller_button_yes, под setting_user_firstname_input всплывает setting_user_firstname_alert_omission.
+• emptiness:
+Анализ на пустотность.
+Работает в active_state и inactive_state.
+Работает в любой ситуации делая проверку на предмет отсутствия данных в setting_user_firstname_input. 
+
+✠ alert_states
+• seller_chat_blog_edit_header_alert_prompt:
+- focusing: да;
+- location: появляется над seller_chat_blog_edit_header_input;
+- occasion: в процессе ввода данных в seller_chat_blog_edit_header_input;
+- content:  "ИМЯ МОЖЕТ СОСТОЯТЬ ОТ 1 ДО 50 СИМВОЛОВ ВКЛЮЧАЯ БУКВЫ, ДЕФИСЫ И ПРОБЕЛЫ".
+• seller_chat_blog_edit_header_alert_undernaming:
+- focusing: да;
+- location: появляется под setting_user_username_input;
+- occasion: невалидность по факту проверки на undernaming;
+- content:  "ИМЯ СЛИШКОМ КОРОТКОЕ, ПОЖАЛУЙСТА ИСПОЛЬЗУЙТЕ БОЛЬШЕ СИМВОЛОВ".
+• seller_chat_blog_edit_header_alert_overnaming:
+- focusing: да;
+- location: появляется под seller_chat_blog_edit_header_input;
+- occasion: если в seller_chat_blog_edit_header_input введено букв > 50;
+- content:  "ИМЯ СЛИШКОМ ДЛИННОЕ, ПОЖАЛУЙСТА ИСПОЛЬЗУЙТЕ МЕНЬШЕ СИМВОЛОВ".
+• seller_chat_blog_edit_header_alert_stopsymbol:
+- focusing: да;
+- location: появляется под seller_chat_blog_edit_header_input;
+- occasion: если использованы запрещенные символы;
+- content:  "ИСПОЛЬЗОВАН ЗАПРЕЩЕННЫЙ СИМВОЛ: {указывается запрещенный символ жирным шрифтом белого цвета на color3 фоне}".
+• seller_chat_blog_edit_header_alert_stopword:
+- focusing: да;
+- location: появляется под seller_chat_blog_edit_header_input;
+- occasion: если использованы запрещенные слова;
+- content:  "ИСПОЛЬЗОВАНО ЗАПРЕЩЕННОЕ СЛОВО {указывается запрещенное слово жирным шрифтом белого цвета на color3 фоне}".
+• seller_chat_blog_edit_header_alert_omission:
+- focusing: нет;
+- location: появляется под seller_chat_blog_edit_header_input;
+- occasion: нажатие на setting_seller_button_yes, если seller_chat_blog_edit_header_input пустой;
+- content:  "ПОЖАЛУЙСТА ВВЕДИТЕ ЗДЕСЬ ВАШЕ ИМЯ".
+
+
+
+
+
 
 ✠ color_states
 ┌─
