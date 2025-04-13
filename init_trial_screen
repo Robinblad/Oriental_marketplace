@@ -12,7 +12,6 @@ color5 - actived;
 
 
 
-
 🡆 init_trial_screen 
 ■■■■■■■■■■■■■■■■■■■
 В режиме trial_mode при первом открытии shop_screen, поверх него открывается форма init_trial_screen из 9 основных секций озаглавленный "ВВЕДИТЕ ВАШИ ДАННЫЕ", где юзеру предлагается задать следующий перечень настроек (часть полей обязательны для заполнения):
@@ -81,7 +80,7 @@ s9)  ┌─[setting_seller_button                 ]                             
 ■ setting_user_username
 
 ✠ details
-Секция setting_user_username состоит из блока включающего 2 компонента:
+Секция setting_user_username состоит из 2 компонентов:
 - заголовок setting_user_username_header с содержанием: "ИМЯ ИЛИ НАЗВАНИЕ КОМПАНИИ *";
 - поле для ввода данных setting_user_username_input.
 Нормативы для setting_user_username_input: 
@@ -104,11 +103,11 @@ Username анализируется на предмет совпадения с 
 Работает в active_state.
 При вводе username, в ситуации если имя уже существует, под setting_user_username_input всплывает setting_user_username_alert_duplicity.
 • undernaming:
-Анализ на неудовлетворение лимита допустимой длины username.
+Анализ на недостижение лимита допустимой длины username (недостижение норматива).
 Работает в active_state.
 При вводе username, в ситуации если букв < 5, под setting_user_username_input всплывает setting_user_username_alert_undernaming.
 • overnaming:
-Анализ на превышение лимита допустимой длины username.
+Анализ на превышение лимита допустимой длины username (превышение норматива).
 Работает в active_state.
 При вводе username, в ситуации если букв > 50, под setting_user_username_input всплывает setting_user_username_alert_overnaming.
 • stopsymbol:
@@ -313,7 +312,7 @@ Username анализируется на предмет совпадения с 
 ■ setting_seller_geoposition_shop
 
 ✠ details
-Секция setting_seller_geoposition_shop состоит из блока включающего 2 компонента:
+Секция setting_seller_geoposition_shop состоит из 2 компонентов:
 - заголовок setting_seller_geoposition_shop_header с содержанием: "ГЕОЛОКАЦИЯ *";
 - кнопка setting_seller_geoposition_shop_button с наименованием "ОТКРЫТЬ НАСТРОЙКИ".
 
@@ -448,7 +447,7 @@ s4) секция из двух расположенных вряд кнопок:
 ■ setting_seller_active
 
 ✠ details
-Секция setting_seller_active состоит из блока включающего 2 компонента:
+Секция setting_seller_active состоит из 2 компонентов:
 - заголовок setting_seller_active_header с содержанием: "РАБОЧЕЕ ВРЕМЯ";
 - кнопка setting_seller_active_button с наименованием "ОТКРЫТЬ НАСТРОЙКИ".
 
@@ -1218,21 +1217,21 @@ s6) представлена кнопками "ОТМЕНА" и "ОК";
 в обязательном порядке по методу взаимного исключения всегда активирована одна из групп настроек.
 • seller_active_time_schedule_worktime
 - Для seller_active_time_schedule_worktime одномоментно активирована одна из следующих групп:
-- || - активирована seller_active_time_schedule_worktime_fixed;
-- || - активирована seller_active_time_schedule_worktime_float;
-- || - активирована seller_active_time_schedule_worktime_24.
+- || - seller_active_time_schedule_worktime_fixed;
+- || - seller_active_time_schedule_worktime_float;
+- || - seller_active_time_schedule_worktime_24.
 • seller_active_time_schedule_lunchtime
 - Для seller_active_time_schedule_lunchtime одномоментно активирована одна из следующих групп:
-- || - активирована seller_active_time_schedule_lunchtime_fixed;
-- || - активирована seller_active_time_schedule_lunchtime_nolunch.
+- || - seller_active_time_schedule_lunchtime_fixed;
+- || - seller_active_time_schedule_lunchtime_nolunch.
 • seller_active_time_schedule_weekends
 - Для seller_active_time_schedule_weekends одномоментно активирована одна из следующих групп:
-- || - активирована seller_active_time_schedule_weekends_no;
-- || - активирована seller_active_time_schedule_weekends_schedule.
+- || - seller_active_time_schedule_weekends_no;
+- || - seller_active_time_schedule_weekends_schedule.
 • seller_active_time_schedule_holidays
 - Для seller_active_time_schedule_weekends одномоментно активирована одна из следующих групп:
-- || - активирована seller_active_time_schedule_holidays_no;
-- || - активирована seller_active_time_schedule_holidays_schedule.
+- || - seller_active_time_schedule_holidays_no;
+- || - seller_active_time_schedule_holidays_schedule.
 
 ✠ color_states  
 ┌─
@@ -2254,7 +2253,7 @@ s3) Кнопка seller_active_time_manual_detection располагается 
 ■ setting_seller_img
 
 ✠ details
-Секция setting_seller_img состоит из блока включающего 2 компонента:
+Секция setting_seller_img состоит из 2 компонентов:
 - заголовок setting_seller_img_header с содержанием: "НАСТРОЙТЕ АВАТАР *";
 - кнопка setting_seller_img_button с наименованием "ОТКРЫТЬ НАСТРОЙКИ".
 
@@ -2432,7 +2431,7 @@ s4) Содержание заголовка setting_seller_img_add_header: "ДО
 ■ setting_seller_skin
 
 ✠ details
-Секция setting_seller_skin состоит из блока включающего 2 компонента:
+Секция setting_seller_skin состоит из 2 компонентов:
 - заголовок setting_seller_skin_header с содержанием: "НАСТРОЙТЕ ФОНОВОЕ ИЗОБРАЖЕНИЕ *";
 - кнопка setting_seller_skin_button с наименованием "ОТКРЫТЬ НАСТРОЙКИ".
 
@@ -2738,9 +2737,6 @@ s4) [ setting_seller_trial_modal_button ]  "ПОДТВЕРДИТЬ"
 
 На телефон юзера отправляется sms в виде четырехзначного init_trial_pincode, после вставки которого в setting_seller_trial_modal_input, происходит процесс верификации аккаунта seller.
 После успешного прохождения процесса верификации, данные формы init_trial_screen отправляются с устройства юзера в базу данных seller_db.
-
-
-
 
 
 
