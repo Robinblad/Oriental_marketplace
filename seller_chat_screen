@@ -752,5 +752,49 @@ seller_chat_blog_edit является формой создаваемого п�
 
 
 
+---------------------------------------------------------
+
+
+
+
+
+🡆 seller_chat_forum_screen
+■■■■■■■■■■■■■■■■■■■■■■■■■■
+
+Forum представляет собой публичную дискуссионную площадку обсуждения посетителей (потенциальных и реальных buyer) с seller, где все сообщения размещаются единым потоком, а последние сообщения отображаются в нижней части. Интерфейс seller_chat_forum_screen разделен на 3 sections следующего содержания расположенных сверху-вниз:
+
+✠ tables
+
+                   codename:                           type:         button_name:        pressed/default:      location:      interaction:
+s1)  ┌─[seller_chat_nav                     ]       [section   ] 
+---  ├ [seller_chat_nav_blog                ]       [button    ]     "БЛОГ"              [color5/color2]        [ ✜ 🡄 ]         [ yes ]
+---  ├ [seller_chat_nav_forum               ]       [button    ]     "ФОРУМ"             [color5/color2]        [ ✜ ✜ ]         [ yes ]
+---  └ [seller_chat_nav_chat                ]       [button    ]     "ЧАТ"               [color5/color2]        [ ✜ 🡆 ]         [ yes ]  
+s2)┌┬┬─[seller_chat_forum_blog              ]       [section   ]
+---││└ [seller_chat_forum_blog_dots         ]       [button    ]                                                [ 🡅 🡆 ]         [ yes ]
+---│└┬ [seller_chat_forum_blog_node         ]       [subsection]                                                [ ✜ 🡄 ]         [ no  ]
+---│ ├ [seller_chat_forum_blog_node_author  ]       [button    ]     "НОВЫЙ ПОСТ"        [color5/color2]        [ ✜ 🡆 ]         [ yes ]   
+---│ ├ [seller_chat_forum_blog_node_data    ]       [section   ]                         [color5/color2]        [ 🡇 ✜ ]         [ yes ]
+---│ └ [seller_chat_forum_blog_node_like    ]       [header    ]                                                [ 🡅 ✜ ]         [ no  ] 
+---└─┬ [seller_chat_forum_blog_message      ]       [subsection]                                                [ ✜ ✜ ]         [ no  ]
+---  ├ [seller_chat_forum_blog_message_input]       [widget    ]                                                [ 🡇 🡄 ]         [ yes ]
+---  └ [seller_chat_forum_blog_message_sent ]       [widget    ]                                                [ 🡇 ✜ ]         [ no  ]
+s4) ┌─ [seller_nav                          ]       [section   ]                                                [ 🡇 ✜ ]
+----├┬ [seller_nav_monitor_button           ]       [button    ]                         [color1/color2]        [ ✜ 🡄 ]         [ yes ]
+----│├ [seller_nav_monitor_header           ]       [header    ]     "МОНИТОР"           [color1/color2]        [ ✜ ✜ ]         [ no  ]  
+----│└ [seller_nav_monitor_badge            ]       [badge     ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ] 	
+----├┬ [seller_nav_chat_button              ]       [button    ]                         [color1/color2]        [ ✜ 🡄 ]         [ yes ]   
+----│├ [seller_nav_chat_header              ]       [header    ]     "ЧАТ"               [color1/color2]        [ ✜ ✜ ]         [ no  ] 
+----│└ [seller_nav_chat_badge               ]       [badge     ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ] 
+----├┬ [seller_nav_shop_button              ]       [button    ]                         [color1/color2]        [ ✜ ✜ ]         [ yes ]   
+----│├ [seller_nav_shop_header              ]       [header    ]     "МАГАЗИН"           [color1/color2]        [ ✜ ✜ ]         [ no  ] 
+----│└ [seller_nav_shop_badge               ]       [badge     ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ]   
+----├┬ [seller_nav_lot_button               ]       [button    ]                         [color1/color2]        [ ✜ 🡆 ]         [ yes ]   
+----│├ [seller_nav_lot_header               ]       [header    ]     "ТОВАРЫ"            [color1/color2]        [ ✜ ✜ ]         [ no  ] 
+----│└ [seller_nav_lot_badge                ]       [badge     ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ]     
+----└┬ [seller_nav_finance_button           ]       [button    ]                         [color1/color2]        [ ✜ 🡆 ]         [ yes ]   
+---- ├ [seller_nav_finance_header           ]       [header    ]     "ФИНАНСЫ"           [color1/color2]        [ ✜ ✜ ]         [ no  ] 
+---- └ [seller_nav_finance_badge            ]       [badge     ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ] 
+
 
 
