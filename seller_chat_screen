@@ -88,16 +88,19 @@ seller_chat_nav представлен 3 компонентами:
 ✠ actions
 • seller_chat_nav_blog:
 ╠ valid / invalid
+║ • tap 
 ║ occasion: нажатие seller_chat_nav_blog;
 ║ condition: в любой ситуации;
 ╙ result: открывается seller_chat_blog_list_screen.
 • seller_chat_nav_forum:
 ╠ valid / invalid
+║ • tap 
 ║ occasion: нажатие seller_chat_nav_forum;
 ║ condition: в любой ситуации;
 ╙ result: открывается seller_chat_forum.
 • seller_chat_nav_chat:
 ╠ valid / invalid
+║ • tap 
 ║ occasion: нажатие seller_chat_nav_chat;
 ║ condition: в любой ситуации;
 ╙ result: открывается seller_chat_chat.
@@ -137,6 +140,7 @@ seller_chat_blog_list_new расположен в верхней области 
 ✠ actions
 • seller_chat_blog_list_new_button:
 ╠ valid / invalid
+║ • tap 
 ║ occasion: нажатие seller_chat_blog_list_new_button;
 ║ condition: в любой ситуации;
 ╙ result: открывается seller_chat_blog_edit_screen.
@@ -225,26 +229,31 @@ seller_chat_blog_list_post появляется после процедуры п
 ✠ actions
 • seller_nav_monitor_button:
 ╠ valid / invalid
+║ • tap 
 ║ occasion: нажатие seller_nav_monitor_button;
 ║ condition: в любой ситуации;
 ╙ result: открывается seller_hunt_screen.
 • seller_nav_chat_button:
 ╠ valid / invalid
+║ • tap 
 ║ occasion: нажатие seller_nav_chat_button;
 ║ condition: в любой ситуации;
 ╙ result: открывается seller_chat_screen.
 • seller_nav_shop_button:
 ╠ valid / invalid
+║ • tap 
 ║ occasion: нажатие seller_nav_shop_button;
 ║ condition: в любой ситуации;
 ╙ result: открывается seller_shop_screen.
 • seller_nav_lot_button:
 ╠ valid / invalid
+║ • tap 
 ║ occasion: нажатие seller_nav_lot_button;
 ║ condition: в любой ситуации;
 ╙ result: открывается seller_lot_screen.
 • seller_nav_finance_button:
 ╠ valid / invalid
+║ • tap 
 ║ occasion: нажатие seller_nav_finance_button;
 ║ condition: в любой ситуации;
 ╙ result: открывается seller_money_screen.
@@ -338,14 +347,16 @@ seller_chat_blog_list_post_emoji_popup_button - кнопка отвечающа�
 ✠ actions
 • seller_chat_blog_list_post_emoji_popup_symbol:
 ╠ valid / invalid
-║ occasion: нажатие (tap) любого seller_chat_blog_list_post_emoji_popup_symbol;
+║ • tap 
+║ occasion: нажатие любого seller_chat_blog_list_post_emoji_popup_symbol;
 ║ condition: в любой ситуации;
 ║ result: 
 ║ && - seller_chat_blog_list_post_emoji_popup закрывается;
 ║ && - целевой seller_chat_blog_list_post_emoji_popup_symbol появляется в качестве seller_chat_blog_list_post_emoji в seller_chat_blog_list_post.
 • seller_chat_blog_list_post_emoji_popup_button:
 ╠ valid / invalid
-║ occasion: нажатие (tap) seller_chat_blog_list_post_emoji_popup_button;
+║ • tap 
+║ occasion: нажатие seller_chat_blog_list_post_emoji_popup_button;
 ║ condition: в любой ситуации;
 ╙ result: происходит плавное раскрытие seller_chat_blog_list_post_emoji_popup сверху вниз, в результате чего его размер по вертикали увеличивается минимум при котором все доступные emoji помещаются в seller_chat_blog_list_post_emoji_popup и максимум до 25% от высоты экрана с возможностью скроллирования seller_chat_blog_list_post_emoji_popup.
 
@@ -409,16 +420,19 @@ seller_chat_nav представлен 3 компонентами:
 ✠ actions
 • seller_chat_nav_blog:
 ╠ valid / invalid
+║ • tap 
 ║ occasion: нажатие seller_chat_nav_blog;
 ║ condition: в любой ситуации;
 ╙ result: открывается seller_chat_blog_list_screen.
 • seller_chat_nav_forum:
 ╠ valid / invalid
+║ • tap 
 ║ occasion: нажатие seller_chat_nav_forum;
 ║ condition: в любой ситуации;
 ╙ result: открывается seller_chat_forum.
 • seller_chat_nav_chat:
 ╠ valid / invalid
+║ • tap 
 ║ occasion: нажатие seller_chat_nav_chat;
 ║ condition: в любой ситуации;
 ╙ result: открывается seller_chat_chat.
@@ -637,6 +651,8 @@ seller_chat_blog_edit является формой создаваемого п�
 • seller_chat_blog_edit_header
 • seller_chat_blog_edit_image
 • seller_chat_blog_edit_text
+╠ valid / invalid
+║ • tap 
 ║occasion: нажатие seller_chat_blog_edit_public;
 ║condition: 
 ║ && - valid по факту проверки на undernaming;
@@ -669,26 +685,31 @@ seller_chat_blog_edit является формой создаваемого п�
 ✠ actions
 • seller_nav_monitor_button:
 ╠ valid / invalid
+║ • tap 
 ║ occasion: нажатие seller_nav_monitor_button;
 ║ condition: в любой ситуации;
 ╙ result: открывается seller_hunt_screen.
 • seller_nav_chat_button:
+║ • tap 
 ╠ valid / invalid
 ║ occasion: нажатие seller_nav_chat_button;
 ║ condition: в любой ситуации;
 ╙ result: открывается seller_chat_screen.
 • seller_nav_shop_button:
 ╠ valid / invalid
+║ • tap 
 ║ occasion: нажатие seller_nav_shop_button;
 ║ condition: в любой ситуации;
 ╙ result: открывается seller_shop_screen.
 • seller_nav_lot_button:
 ╠ valid / invalid
+║ • tap 
 ║ occasion: нажатие seller_nav_lot_button;
 ║ condition: в любой ситуации;
 ╙ result: открывается seller_lot_screen.
 • seller_nav_finance_button:
 ╠ valid / invalid
+║ • tap 
 ║ occasion: нажатие seller_nav_finance_button;
 ║ condition: в любой ситуации;
 ╙ result: открывается seller_money_screen.
@@ -923,22 +944,12 @@ seller_chat_nav представлен 3 компонентами:
 
 ■ seller_chat_forum_blog
 
-seller_chat_forum_blog содержит основной контент состоящий из двух секцией:
-- seller_chat_forum_blog_node     - является телом сообщения;
-- seller_chat_forum_blog_messager - является инструментом создания сообщений.
-
 ✠ details
-seller_chat_forum_blog_node появляется после создания сообщения; каждый новый пост над предыдущим (position: relative); node занимает по ширине всю доступную область экрана, по высоте каждый node имеет индивидуальный размер зависящий от содержания seller_chat_forum_blog_node_body; состоит из 4 компонентов:  
+seller_chat_forum_blog_node является телом сообщения, который появляется после создания сообщения; каждый новый пост над предыдущим (position: relative); node занимает по ширине всю доступную область экрана, по высоте каждый node имеет индивидуальный размер зависящий от содержания seller_chat_forum_blog_node_body; состоит из 4 компонентов:  
 - seller_chat_forum_blog_node_author - username автора сообщения;
 - seller_chat_forum_blog_node_body   - текст сообщения;
 - seller_chat_forum_blog_node_emoji  - виджет-кнопка отображающий лайк/дизлайк либо другой вариант эмоционального выражения;
 - seller_chat_forum_blog_node_time   - виджет отображающий время публикации сообщения.
-
-seller_chat_forum_blog_messager - расположен в нижней части экрана над seller_nav (position: fixed); по ширине занимает всю доступную область экрана, по высоте занимает порядка 5-7% размера экрана; состоит из 3 компонентов: 
-- seller_chat_forum_blog_messager_search - кнопка инициализации поиска введенного в seller_chat_forum_blog_messager_input, расположена слева.
-- seller_chat_forum_blog_messager_input  - поле для ввода текстового сообщения, расположено по центру;
-- seller_chat_forum_blog_messager_dots   - кнопка открывающая доступ к дополнительным настройкам, расположена между messager_input и messager_sent;
-- seller_chat_forum_blog_messager_sent   - кнопка инициализации отправки сообщения из seller_chat_forum_blog_messager_input, расположена справа.
 
 ✠ actions
 • seller_chat_forum_blog_node:
@@ -959,6 +970,28 @@ seller_chat_forum_blog_messager - расположен в нижней част�
 ║ occasion: нажатие на конкретный seller_chat_forum_blog_emoji_item;
 ║ condition: в ситуации наличия emoji минимум одного типа;
 ╙ result: совершается увеличение значения seller_chat_forum_blog_emoji_item_value на +1.
+
+✠ color_states
+┌─
+│seller_chat_forum_blog_node
+│---------------------------------------------
+│• color2
+│------ в любой ситуации.
+└─
+ 
+
+■ seller_chat_forum_blog_messager
+
+seller_chat_forum_blog_messager - является инструментом создания сообщений; расположен в нижней части экрана над seller_nav (position: fixed); по ширине занимает всю доступную область экрана, по высоте занимает порядка 5-7% размера экрана.
+
+seller_chat_forum_screen_state1
+ 
+- seller_chat_forum_blog_messager_search - кнопка инициализации поиска введенного в seller_chat_forum_blog_messager_input, расположена слева.
+- seller_chat_forum_blog_messager_input  - поле для ввода текстового сообщения, расположено по центру;
+- seller_chat_forum_blog_messager_dots   - кнопка открывающая доступ к дополнительным настройкам, расположена между messager_input и messager_sent;
+- seller_chat_forum_blog_messager_sent   - кнопка инициализации отправки сообщения из seller_chat_forum_blog_messager_input, расположена справа.
+
+✠ actions
 • seller_chat_forum_blog_messager_search:
 ╠ valid / invalid
 ║ • tap 
@@ -974,10 +1007,10 @@ seller_chat_forum_blog_messager - расположен в нижней част�
 
 
 
-
+ 
 ✠ color_states
 ┌─
-│seller_chat_forum_blog
+│seller_chat_blog_list_post
 │---------------------------------------------
 │• color2
 │------ в inactive_state;
@@ -985,11 +1018,9 @@ seller_chat_forum_blog_messager - расположен в нижней част�
 │------ в pressing_state (tap & hold 1).
 └─
 ┌─
-│seller_chat_forum_blog_viewer
-│seller_chat_forum_blog_time
+│seller_chat_blog_list_post_viewer
+│seller_chat_blog_list_post_time
 │---------------------------------------------
 │• color2
 │------ в любой ситуации.
 └─
-
-
