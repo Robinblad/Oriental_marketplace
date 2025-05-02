@@ -1065,7 +1065,7 @@ seller_chat_forum_state2_messager - активируется в момент к�
 ║ condition: в состоянии seller_chat_forum_state2_messager;
 ║ result: 
 ║ && - появляется клавиатура для ввода (если она была закрыта);
-╙ && - карет устанавливается в конце текста;
+╙ && - карет устанавливается в конце текста (если он есть);
 • seller_chat_forum_state2_messager_sent:
 ╠ valid / invalid
 ║ • tap 
@@ -1107,8 +1107,8 @@ seller_chat_forum_state3_messager - активируется в момент к�
 - seller_chat_forum_state3_messager_input  - поле для ввода текстового сообщения, расположено по центру;
 - seller_chat_forum_state3_messager_close  - кнопка сброса содержимого input;
 - seller_chat_forum_state3_messager_updown - пара кнопок отвечающих за навигацию по результатам поиска, расположены справа;
--- seller_chat_forum_state3_messager_updown_up   - кнопка отвечающая за перебор найденных слов против хронологического порядка;
--- seller_chat_forum_state3_messager_updown_down - кнопка отвечающая за перебор найденных слов по хронологическому порядку.
+-- seller_chat_forum_state3_messager_updown_up   - кнопка отвечающая за перебор matched_words в обратном хронологическом порядке;
+-- seller_chat_forum_state3_messager_updown_down - кнопка отвечающая за перебор matched_words по хронологическому порядку.
 
 ✠ actions
 • seller_chat_forum_state3_messager_search:
@@ -1127,42 +1127,43 @@ seller_chat_forum_state3_messager - активируется в момент к�
 ║ condition: в состоянии seller_chat_forum_state3_messager;
 ║ result: 
 ║ && - появляется клавиатура для ввода (если она была закрыта);
-╙ && - карет устанавливается в конце текста;
+╙ && - карет устанавливается в конце текста (если он есть);
 • seller_chat_forum_state3_messager_close:
 ╠ valid / invalid
 ║ • tap 
 ║ occasion: нажатие на seller_chat_forum_state3_messager_close;
 ║ condition: в состоянии seller_chat_forum_state3_messager;
-╙ result: происходит очищение seller_chat_forum_state3_messager_input.
+║ result:
+║ && - происходит очищение seller_chat_forum_state3_messager_input;
+╙ && - происходит переход к seller_chat_forum_state1_messager;
 • seller_chat_forum_state3_messager_updown_up:
 ╠ valid
 ║ • tap 
 ║ occasion: нажатие на seller_chat_forum_state3_messager_updown_up;
-║ condition: в ситуации если есть минимум 1 match_node;
-║ result: делается центрирование на следующий против хронологического порядка seller_chat_forum_node.
+║ condition: в ситуации если есть минимум 1 matched_node;
+║ result: делается центрирование на следующий в обратном хронологическом порядке seller_chat_forum_node в котором присутствует matched_words.
 ╠ invalid
 ║ • tap 
 ║ occasion: нажатие на seller_chat_forum_state3_messager_updown_up;
-║ condition: в ситуации если нет match_node;
+║ condition: в ситуации если нет ни одного matched_node;
 ╙ result: seller_chat_forum_state3_messager_updown_up не реагирует на нажатие.
-
 • seller_chat_forum_state3_messager_updown_down:
 ╠ valid
 ║ • tap 
 ║ occasion: нажатие на seller_chat_forum_state3_messager_updown_down;
-║ condition: в ситуации если есть минимум 1 match_node;
-║ result: делается центрирование на следующий против хронологического порядка seller_chat_forum_node.
+║ condition: в ситуации если есть минимум 1 matched_node;
+║ result: делается центрирование на следующий по хронологическому порядку seller_chat_forum_node в котором присутствует matched_words.
 ╠ invalid
 ║ • tap 
 ║ occasion: нажатие на seller_chat_forum_state3_messager_updown_down;
-║ condition: в ситуации если нет match_node;
+║ condition: в ситуации если нет ни одного matched_node;
 ╙ result: seller_chat_forum_state3_messager_updown_down не реагирует на нажатие.
 
 ✠ color_states
 ┌─
 │seller_chat_forum_state3_messager_search
 │---------------------------------------------
-│• color2
+│• color7
 │------ в inactive_state;
 │• color5
 │------ в pressing_state.
@@ -1174,16 +1175,12 @@ seller_chat_forum_state3_messager - активируется в момент к�
 │------ в любой ситуации.
 └─
 ┌─
-│seller_chat_forum_state3_messager_sent
+│seller_chat_forum_state3_messager_updown_up
+│seller_chat_forum_state3_messager_updown_down
 │---------------------------------------------
 │• color2
 │------ в inactive_state;
-│• color1
+│• color5
 │------ в pressing_state.
 └─
-
----  ├ [seller_chat_forum_state3_messager_updown_up  ]       [button+icon   ]                         [color1/color2]        [ ✜ 🡄 ]         [ yes ]
----  └ [seller_chat_forum_state3_messager_updown_down]       [button+icon   ]                         [color1/color2]        [ ✜ 🡆 ]         [ yes ]
-
-
 
