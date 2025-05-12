@@ -83,9 +83,9 @@ s4) ┌─ [seller_nav                        ]       [section       ]          
 
 ✠ details
 seller_chat_nav представлен 3 компонентами: 
-- seller_chat_nav_blog - кнопка расположенная в левой части секции отвечающая за переход к seller_chat_blog_list_screen (активирован по умолчанию);
-- seller_chat_nav_forum - кнопка расположенная в центральной части секции отвечающая за переход к seller_chat_forum;
-- seller_chat_nav_chat - кнопка расположенная в правой части секции отвечающая за переход к seller_chat_chat;
+- seller_chat_nav_blog - кнопка расположенная в левой части секции отвечающая за переход к seller_chat_blog_list_screen (для seller_chat_blog_list_screen активирована по умолчанию);
+- seller_chat_nav_forum - кнопка расположенная в центральной части секции отвечающая за переход к seller_chat_forum_screen;
+- seller_chat_nav_chat - кнопка расположенная в правой части секции отвечающая за переход к seller_chat_chat_screen;
 
 ✠ actions
 • seller_chat_nav_blog:
@@ -99,13 +99,13 @@ seller_chat_nav представлен 3 компонентами:
 ║ • tap 
 ║ occasion: нажатие seller_chat_nav_forum;
 ║ condition: в любой ситуации;
-╙ result: открывается seller_chat_forum.
+╙ result: открывается seller_chat_forum_screen.
 • seller_chat_nav_chat:
 ╠ valid / invalid
 ║ • tap 
 ║ occasion: нажатие seller_chat_nav_chat;
 ║ condition: в любой ситуации;
-╙ result: открывается seller_chat_chat.
+╙ result: открывается seller_chat_chat_screen.
 
 ✠ color_states
 ┌─
@@ -871,44 +871,44 @@ s5)  ┌─ [seller_nav                              ]       [section       ]   
 
 seller_chat_forum_screen_state3
 
-                    codename:                                      type:           button_name:        pressed/default:      location:      interaction:
-s1)   ┌─[seller_chat_nav                              ]       [section       ] 
----   ├ [seller_chat_nav_blog                         ]       [button        ]     "БЛОГ"              [color5/color2]        [ ✜ 🡄 ]         [ yes ]
----   ├ [seller_chat_nav_forum                        ]       [button        ]     "ФОРУМ"             [color5/color2]        [ ✜ ✜ ]         [ yes ]
----   └ [seller_chat_nav_chat                         ]       [button        ]     "ЧАТ"               [color5/color2]        [ ✜ 🡆 ]         [ yes ] 
-s2)     [seller_chat_forum_list                       ]       [section       ] 
-s3)┌┬┬──[seller_chat_forum_node                       ]       [section+button]                                                [ ✜ ✜ ]         [ yes ]
----││└┬ [seller_chat_forum_node_top                   ]       [subsection    ]                                                [ 🡅 ✜ ]         [ no  ] 
----││ ├ [seller_chat_forum_node_top_author            ]       [header        ]     ""                                         [ ✜ ✜ ]         [ no  ]
----││ ├ [seller_chat_forum_node_top_avatar            ]       [widget        ]                                                [ ✜   ]         [ no  ]
----││ └ [seller_chat_forum_node_top_active            ]       [widget        ]                                                [ ✜   ]         [ no  ]  
----│└── [seller_chat_forum_node_body                  ]       [text          ]     ""                                         [ ✜ ✜ ]         [ no  ]
----└──┬ [seller_chat_forum_node_bottom                ]       [subsection    ]                                                [ 🡇 ✜ ]         [ yes ]
----   ├ [seller_chat_forum_node_bottom_emoji          ]       [widget+button ]                                                [ ✜ 🡄 ]         [ yes ] 
----   └ [seller_chat_forum_node_bottom_time           ]       [widget        ]                                                [ ✜ 🡆 ]         [ no  ] 
-s4)  ┌┬─[seller_chat_forum_state3_messager            ]       [section       ]                                                [ 🡇 ✜ ]         [ no  ]
----  │├ [seller_chat_forum_state3_messager_search     ]       [button+icon   ]                         [color1/color2]        [ ✜ 🡄 ]         [ yes ]
----  │├ [seller_chat_forum_state3_messager_input      ]       [input         ]                         [color2/color2]        [ ✜ ✜ ]         [ yes ]
----  │└ [seller_chat_forum_state3_messager_close      ]       [button+icon   ]                         [color2/color2]        [ ✜ 🡆 ]         [ yes ]
----  └┬ [seller_chat_forum_state3_messager_updown     ]       [subsection    ]                                                [ ✜ 🡆 ]         [ yes ]
----   ├ [seller_chat_forum_state3_messager_updown_up  ]       [button+icon   ]                         [color1/color2]        [ ✜ 🡄 ]         [ yes ]
----   └ [seller_chat_forum_state3_messager_updown_down]       [button+icon   ]                         [color1/color2]        [ ✜ 🡆 ]         [ yes ]
-s5)  ┌─ [seller_nav                                   ]       [section       ]                                                [ 🡇 ✜ ]
----  ├┬ [seller_nav_monitor_button                    ]       [button        ]                         [color1/color2]        [ ✜ 🡄 ]         [ yes ]
----  │├ [seller_nav_monitor_header                    ]       [header        ]     "МОНИТОР"           [color1/color2]        [ ✜ ✜ ]         [ no  ]  
----  │└ [seller_nav_monitor_badge                     ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ] 	
----  ├┬ [seller_nav_chat_button                       ]       [button        ]                         [color1/color2]        [ ✜ 🡄 ]         [ yes ]   
----  │├ [seller_nav_chat_header                       ]       [header        ]     "ЧАТ"               [color1/color2]        [ ✜ ✜ ]         [ no  ] 
----  │└ [seller_nav_chat_badge                        ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ] 
----  ├┬ [seller_nav_shop_button                       ]       [button        ]                         [color1/color2]        [ ✜ ✜ ]         [ yes ]   
----  │├ [seller_nav_shop_header                       ]       [header        ]     "МАГАЗИН"           [color1/color2]        [ ✜ ✜ ]         [ no  ] 
----  │└ [seller_nav_shop_badge                        ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ]   
----  ├┬ [seller_nav_lot_button                        ]       [button        ]                         [color1/color2]        [ ✜ 🡆 ]         [ yes ]   
----  │├ [seller_nav_lot_header                        ]       [header        ]     "ТОВАРЫ"            [color1/color2]        [ ✜ ✜ ]         [ no  ] 
----  │└ [seller_nav_lot_badge                         ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ]     
----  └┬ [seller_nav_finance_button                    ]       [button        ]                         [color1/color2]        [ ✜ 🡆 ]         [ yes ]   
----   ├ [seller_nav_finance_header                    ]       [header        ]     "ФИНАНСЫ"           [color1/color2]        [ ✜ ✜ ]         [ no  ] 
----   └ [seller_nav_finance_badge                     ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ] 
+                    codename:                                   type:           button_name:        pressed/default:      location:      interaction:
+s1)   ┌─[seller_chat_nav                           ]       [section       ] 
+---   ├ [seller_chat_nav_blog                      ]       [button        ]     "БЛОГ"              [color5/color2]        [ ✜ 🡄 ]         [ yes ]
+---   ├ [seller_chat_nav_forum                     ]       [button        ]     "ФОРУМ"             [color5/color2]        [ ✜ ✜ ]         [ yes ]
+---   └ [seller_chat_nav_chat                      ]       [button        ]     "ЧАТ"               [color5/color2]        [ ✜ 🡆 ]         [ yes ] 
+s2)     [seller_chat_forum_list                    ]       [section       ] 
+s3)┌┬┬──[seller_chat_forum_node                    ]       [section+button]                                                [ ✜ ✜ ]         [ yes ]
+---││└┬ [seller_chat_forum_node_top                ]       [subsection    ]                                                [ 🡅 ✜ ]         [ no  ] 
+---││ ├ [seller_chat_forum_node_top_author         ]       [header        ]     ""                                         [ ✜ ✜ ]         [ no  ]
+---││ ├ [seller_chat_forum_node_top_avatar         ]       [widget        ]                                                [ ✜   ]         [ no  ]
+---││ └ [seller_chat_forum_node_top_active         ]       [widget        ]                                                [ ✜   ]         [ no  ]  
+---│└── [seller_chat_forum_node_body               ]       [text          ]     ""                                         [ ✜ ✜ ]         [ no  ]
+---└──┬ [seller_chat_forum_node_bottom             ]       [subsection    ]                                                [ 🡇 ✜ ]         [ yes ]
+---   ├ [seller_chat_forum_node_bottom_emoji       ]       [widget+button ]                                                [ ✜ 🡄 ]         [ yes ] 
+---   └ [seller_chat_forum_node_bottom_time        ]       [widget        ]                                                [ ✜ 🡆 ]         [ no  ] 
+s4)  ┌┬─[seller_chat_forum_state3_messager         ]       [section       ]                                                [ 🡇 ✜ ]         [ no  ]
+---  │├ [seller_chat_forum_state3_messager_search  ]       [button+icon   ]                         [color1/color2]        [ ✜ 🡄 ]         [ yes ]
+---  │├ [seller_chat_forum_state3_messager_input   ]       [input         ]                         [color2/color2]        [ ✜ ✜ ]         [ yes ]
+---  │└ [seller_chat_forum_state3_messager_close   ]       [button+icon   ]                         [color2/color2]        [ ✜ 🡆 ]         [ yes ]
+---  └┬ [seller_chat_forum_state3_messager_nav     ]       [subsection    ]                                                [ ✜ 🡆 ]         [ yes ]
+---   ├ [seller_chat_forum_state3_messager_nav_up  ]       [button+icon   ]                         [color1/color2]        [ ✜ 🡄 ]         [ yes ]
+---   └ [seller_chat_forum_state3_messager_nav_down]       [button+icon   ]                         [color1/color2]        [ ✜ 🡆 ]         [ yes ]
+s5)  ┌─ [seller_nav                                ]       [section       ]                                                [ 🡇 ✜ ]
+---  ├┬ [seller_nav_monitor_button                 ]       [button        ]                         [color1/color2]        [ ✜ 🡄 ]         [ yes ]
+---  │├ [seller_nav_monitor_header                 ]       [header        ]     "МОНИТОР"           [color1/color2]        [ ✜ ✜ ]         [ no  ]  
+---  │└ [seller_nav_monitor_badge                  ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ] 	
+---  ├┬ [seller_nav_chat_button                    ]       [button        ]                         [color1/color2]        [ ✜ 🡄 ]         [ yes ]   
+---  │├ [seller_nav_chat_header                    ]       [header        ]     "ЧАТ"               [color1/color2]        [ ✜ ✜ ]         [ no  ] 
+---  │└ [seller_nav_chat_badge                     ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ] 
+---  ├┬ [seller_nav_shop_button                    ]       [button        ]                         [color1/color2]        [ ✜ ✜ ]         [ yes ]   
+---  │├ [seller_nav_shop_header                    ]       [header        ]     "МАГАЗИН"           [color1/color2]        [ ✜ ✜ ]         [ no  ] 
+---  │└ [seller_nav_shop_badge                     ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ]   
+---  ├┬ [seller_nav_lot_button                     ]       [button        ]                         [color1/color2]        [ ✜ 🡆 ]         [ yes ]   
+---  │├ [seller_nav_lot_header                     ]       [header        ]     "ТОВАРЫ"            [color1/color2]        [ ✜ ✜ ]         [ no  ] 
+---  │└ [seller_nav_lot_badge                      ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ]     
+---  └┬ [seller_nav_finance_button                 ]       [button        ]                         [color1/color2]        [ ✜ 🡆 ]         [ yes ]   
+---   ├ [seller_nav_finance_header                 ]       [header        ]     "ФИНАНСЫ"           [color1/color2]        [ ✜ ✜ ]         [ no  ] 
+---   └ [seller_nav_finance_badge                  ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ] 
 
 
 ■ seller_chat_nav
@@ -916,8 +916,8 @@ s5)  ┌─ [seller_nav                                   ]       [section      
 ✠ details
 seller_chat_nav представлен 3 компонентами: 
 - seller_chat_nav_blog - кнопка расположенная в левой части секции отвечающая за переход к seller_chat_list_screen;
-- seller_chat_nav_forum - кнопка расположенная в центральной части секции отвечающая за переход к seller_chat_forum (активирован по умолчанию);
-- seller_chat_nav_chat - кнопка расположенная в правой части секции отвечающая за переход к seller_chat_chat;
+- seller_chat_nav_forum - кнопка расположенная в центральной части секции отвечающая за переход к seller_chat_forum_screen (для seller_chat_forum_screen активирована по умолчанию);
+- seller_chat_nav_chat - кнопка расположенная в правой части секции отвечающая за переход к seller_chat_chat_screen;
 
 ✠ actions
 • seller_chat_nav_blog:
@@ -929,12 +929,12 @@ seller_chat_nav представлен 3 компонентами:
 ╠ valid / invalid
 ║ occasion: нажатие seller_chat_nav_forum;
 ║ condition: в любой ситуации;
-╙ result: открывается seller_chat_forum.
+╙ result: открывается seller_chat_forum_screen.
 • seller_chat_nav_chat:
 ╠ valid / invalid
 ║ occasion: нажатие seller_chat_nav_chat;
 ║ condition: в любой ситуации;
-╙ result: открывается seller_chat_chat.
+╙ result: открывается seller_chat_chat_screen.
 
 ✠ color_states
 ┌─
@@ -964,7 +964,7 @@ seller_chat_nav представлен 3 компонентами:
 ■ seller_chat_forum_node
 
 ✠ details
-seller_chat_forum_node является контейнером сообщения, который появляется после его инициализации. Каждый новый node возникает над предыдущим (position: relative). Node занимает по ширине всю доступную область экрана, по высоте каждый node имеет индивидуальный размер зависящий от содержания seller_chat_forum_node_body. seller_chat_forum_node состоит из следующих 3 компонентов: 
+seller_chat_forum_node является контейнером сообщения, который появляется после его инициализации. Каждый новый node возникает над предыдущим (position: relative). Node занимает по ширине всю доступную область экрана, по высоте каждый node имеет индивидуальный размер зависящий от содержания seller_chat_forum_node_body. 
 
 - seller_chat_forum_node               - секция seller_chat_forum_node являющаяся кнопкой (вся область компонента активна);
 - seller_chat_forum_node_top           - шапка seller_chat_forum_node которая содержит 3 элемента:
@@ -1024,20 +1024,9 @@ seller_chat_forum_state1_messager - состояние по умолчанию, 
 • seller_chat_forum_state1_messager_input:
 ╠ valid / invalid
 ║ • tap 
-║ occasion: нажатие в область seller_chat_forum_state1_messager_input;
-║ condition: в любой ситуации;
-╙ result: появляется клавиатура для ввода.
-• seller_chat_forum_state1_messager_sent:
-╠ valid
-║ • tap 
-║ occasion: нажатие на seller_chat_forum_state1_messager_sent;
-║ condition: если seller_chat_forum_state1_messager_input не пустое;
-║ result: происходит создание seller_chat_forum_node.
-╠ invalid
-║ • tap 
-║ occasion: нажатие на seller_chat_forum_state1_messager_sent;
-║ condition: если seller_chat_forum_state1_messager_input пустое;
-╙ result: seller_chat_forum_state1_messager_sent не реагирует на нажатие.
+║ occasion: введение минимум одного символа;  
+║ condition: нажатие в область seller_chat_forum_state1_messager_input;
+╙ result: происходит переход в состояние seller_chat_forum_screen_state2.
 
 ✠ color_states
 ┌─
@@ -1058,16 +1047,14 @@ seller_chat_forum_state1_messager - состояние по умолчанию, 
 │seller_chat_forum_state1_messager_sent
 │---------------------------------------------
 │• color2
-│------ в inactive_state;
-│• color1
-│------ в pressing_state.
+│------ в любой ситуации.
 └─
 
 
 ■ seller_chat_forum_state2_messager
 
 seller_chat_forum_state2_messager - является инструментом создания сообщений; расположен в нижней части экрана над seller_nav (position: fixed); по ширине занимает всю доступную область экрана, по высоте занимает порядка 5-7% размера экрана. 
-seller_chat_forum_state2_messager - активируется в момент когда в seller_chat_forum_state2_messager_input введен минимум 1 символ. В данном состоянии конфигурация состоит из 3 компонентов:
+seller_chat_forum_state2_messager - активируется в момент когда в seller_chat_forum_state2_messager_input введен минимум 1 символ. В данном состоянии конфигурация содержит 3 компонента:
 
 - seller_chat_forum_state2_messager_search - кнопка инициализации поиска введенного в input, расположена слева;
 - seller_chat_forum_state2_messager_input  - поле для ввода текстового сообщения, расположено по центру;
@@ -1087,7 +1074,7 @@ seller_chat_forum_state2_messager - активируется в момент к�
 ║ condition: в состоянии seller_chat_forum_state2_messager;
 ║ result: 
 ║ && - появляется клавиатура для ввода (если она была закрыта);
-╙ && - карет устанавливается в конце текста (если он есть);
+╙ && - карет устанавливается в конце текста (если текст наличествует);
 • seller_chat_forum_state2_messager_sent:
 ╠ valid / invalid
 ║ • tap 
@@ -1120,6 +1107,19 @@ seller_chat_forum_state2_messager - активируется в момент к�
 └─
 
 
+✠ outputs
+• seller_chat_forum_node
+╠ valid / invalid
+║ • tap 
+║occasion: нажатие seller_chat_forum_state2_messager_sent;
+║condition: 
+║ && - valid по факту проверки на undernaming;
+║ && - valid по факту проверки на overnaming.
+║ && - valid по факту проверки на stopword;
+║ && - valid по факту проверки на omission;
+╙ result: пост публикуется в seller_chat_blog_list_screen.
+
+
 ■ seller_chat_forum_state3_messager
 
 seller_chat_forum_state3_messager - является инструментом создания сообщений; расположен в нижней части экрана над seller_nav (position: fixed); по ширине занимает всю доступную область экрана, по высоте занимает порядка 5-7% размера экрана. 
@@ -1128,12 +1128,11 @@ seller_chat_forum_state3_messager - активируется в момент к�
 - seller_chat_forum_state3_messager_search - кнопка инициализации поиска введенного в input, расположена слева;
 - seller_chat_forum_state3_messager_input  - поле для ввода текстового сообщения, расположено по центру;
 - seller_chat_forum_state3_messager_close  - кнопка сброса содержимого input;
-- seller_chat_forum_state3_messager_updown - пара кнопок отвечающих за навигацию по результатам поиска, расположены справа;
--- seller_chat_forum_state3_messager_updown_up   - кнопка отвечающая за перебор matched_word в обратном хронологическом порядке;
--- seller_chat_forum_state3_messager_updown_down - кнопка отвечающая за перебор matched_word по хронологическому порядку.
+- seller_chat_forum_state3_messager_nav - пара кнопок отвечающих за навигацию по результатам поиска, расположены справа;
+-- seller_chat_forum_state3_messager_nav_up   - кнопка отвечающая за перебор matched_word в обратном хронологическом порядке;
+-- seller_chat_forum_state3_messager_nav_down - кнопка отвечающая за перебор matched_word по хронологическому порядку.
 
 seller_chat_forum_node_matched - это seller_chat_forum_node с наличием одного или нескольких matched_word.
-
 
 ✠ actions
 • seller_chat_forum_state3_messager_search:
@@ -1152,7 +1151,7 @@ seller_chat_forum_node_matched - это seller_chat_forum_node с наличие
 ║ condition: в состоянии seller_chat_forum_state3_messager;
 ║ result: 
 ║ && - появляется клавиатура для ввода (если она была закрыта);
-╙ && - карет устанавливается в конце текста (если он есть);
+╙ && - карет устанавливается в конце текста (если текст наличествует);
 • seller_chat_forum_state3_messager_close:
 ╠ valid / invalid
 ║ • tap 
@@ -1161,28 +1160,28 @@ seller_chat_forum_node_matched - это seller_chat_forum_node с наличие
 ║ result:
 ║ && - происходит очищение seller_chat_forum_state3_messager_input;
 ╙ && - происходит переход к seller_chat_forum_state1_messager;
-• seller_chat_forum_state3_messager_updown_up:
+• seller_chat_forum_state3_messager_nav_up:
 ╠ valid
 ║ • tap 
-║ occasion: нажатие на seller_chat_forum_state3_messager_updown_up;
+║ occasion: нажатие на seller_chat_forum_state3_messager_nav_up;
 ║ condition: в ситуации если есть минимум 1 seller_chat_forum_node_matched;
 ║ result: делается центрирование на следующий в обратном хронологическом порядке seller_chat_forum_node в котором присутствует matched_word.
 ╠ invalid
 ║ • tap 
-║ occasion: нажатие на seller_chat_forum_state3_messager_updown_up;
+║ occasion: нажатие на seller_chat_forum_state3_messager_nav_up;
 ║ condition: в ситуации если нет ни одного seller_chat_forum_node_matched;
-╙ result: seller_chat_forum_state3_messager_updown_up не реагирует на нажатие.
-• seller_chat_forum_state3_messager_updown_down:
+╙ result: seller_chat_forum_state3_messager_nav_up не реагирует на нажатие.
+• seller_chat_forum_state3_messager_nav_down:
 ╠ valid
 ║ • tap 
-║ occasion: нажатие на seller_chat_forum_state3_messager_updown_down;
+║ occasion: нажатие на seller_chat_forum_state3_messager_nav_down;
 ║ condition: в ситуации если есть минимум 1 seller_chat_forum_node_matched;
 ║ result: делается центрирование на следующий по хронологическому порядку seller_chat_forum_node в котором присутствует matched_word.
 ╠ invalid
 ║ • tap 
-║ occasion: нажатие на seller_chat_forum_state3_messager_updown_down;
+║ occasion: нажатие на seller_chat_forum_state3_messager_nav_down;
 ║ condition: в ситуации если нет ни одного seller_chat_forum_node_matched;
-╙ result: seller_chat_forum_state3_messager_updown_down не реагирует на нажатие.
+╙ result: seller_chat_forum_state3_messager_nav_down не реагирует на нажатие.
 
 ✠ color_states
 ┌─
@@ -1200,8 +1199,8 @@ seller_chat_forum_node_matched - это seller_chat_forum_node с наличие
 │------ в любой ситуации.
 └─
 ┌─
-│seller_chat_forum_state3_messager_updown_up
-│seller_chat_forum_state3_messager_updown_down
+│seller_chat_forum_state3_messager_nav_up
+│seller_chat_forum_state3_messager_nav_down
 │---------------------------------------------
 │• color2
 │------ в inactive_state;
@@ -1341,7 +1340,7 @@ seller_chat_chat_screen_state1
                    codename:                                type:           button_name:        pressed/default:      location:      interaction:
 s1)  ┌─[seller_chat_nav                        ]       [section       ] 
 ---  ├ [seller_chat_nav_blog                   ]       [button        ]     "БЛОГ"              [color5/color2]        [ ✜ 🡄 ]         [ yes ]
----  ├ [seller_chat_nav_chat                   ]       [button        ]     "ФОРУМ"             [color5/color2]        [ ✜ ✜ ]         [ yes ]
+---  ├ [seller_chat_nav_forum                  ]       [button        ]     "ФОРУМ"             [color5/color2]        [ ✜ ✜ ]         [ yes ]
 ---  └ [seller_chat_nav_chat                   ]       [button        ]     "ЧАТ"               [color5/color2]        [ ✜ 🡆 ]         [ yes ]  
 s2)    [seller_chat_chat_list                  ]       [section       ]
 s3)  ┌─[seller_chat_chat_node                  ]       [section+button]                                                [ ✜ ✜ ]         [ yes ]   
@@ -1374,7 +1373,7 @@ seller_chat_chat_screen_state2
                    codename:                                type:           button_name:        pressed/default:      location:      interaction:
 s1)  ┌─[seller_chat_nav                        ]       [section       ] 
 ---  ├ [seller_chat_nav_blog                   ]       [button        ]     "БЛОГ"              [color5/color2]        [ ✜ 🡄 ]         [ yes ]
----  ├ [seller_chat_nav_chat                   ]       [button        ]     "ФОРУМ"             [color5/color2]        [ ✜ ✜ ]         [ yes ]
+---  ├ [seller_chat_nav_forum                  ]       [button        ]     "ФОРУМ"             [color5/color2]        [ ✜ ✜ ]         [ yes ]
 ---  └ [seller_chat_nav_chat                   ]       [button        ]     "ЧАТ"               [color5/color2]        [ ✜ 🡆 ]         [ yes ]  
 s2)    [seller_chat_chat_list                  ]       [section       ]
 s3)  ┌─[seller_chat_chat_node                  ]       [section+button]                                                [ ✜ ✜ ]         [ yes ]  
@@ -1404,47 +1403,47 @@ s5) ┌─ [seller_nav                             ]       [section       ]     
 
 seller_chat_chat_screen_state3
 
-                   codename:                                     type:           button_name:        pressed/default:      location:      interaction:
-s1)  ┌─[seller_chat_nav                             ]       [section       ] 
----  ├ [seller_chat_nav_blog                        ]       [button        ]     "БЛОГ"              [color5/color2]        [ ✜ 🡄 ]         [ yes ]
----  ├ [seller_chat_nav_chat                        ]       [button        ]     "ФОРУМ"             [color5/color2]        [ ✜ ✜ ]         [ yes ]
----  └ [seller_chat_nav_chat                        ]       [button        ]     "ЧАТ"               [color5/color2]        [ ✜ 🡆 ]         [ yes ] 
-s2)    [seller_chat_chat_list                       ]       [section       ] 
-s3)  ┌─[seller_chat_chat_node                       ]       [section+button]                                                [ ✜ ✜ ]         [ yes ]  
----  ├ [seller_chat_chat_node_body                  ]       [text          ]     ""                  [color5/color2]        [ ✜ ✜ ]         [ no  ]
----  └ [seller_chat_chat_node_time                  ]       [widget        ]                         [color5/color2]        [ 🡇 🡆 ]         [ no  ] 
-s4) ┌┬─[seller_chat_chat_state3_messager            ]       [section       ]                                                [ 🡇 ✜ ]         [ no  ]
---- │├ [seller_chat_chat_state3_messager_search     ]       [button+icon   ]                         [color1/color2]        [ ✜ 🡄 ]         [ yes ]
---- │├ [seller_chat_chat_state3_messager_input      ]       [input         ]                         [color2/color2]        [ ✜ ✜ ]         [ yes ]
---- │└ [seller_chat_chat_state3_messager_close      ]       [button+icon   ]                         [color2/color2]        [ ✜ 🡆 ]         [ yes ]
---- └┬ [seller_chat_chat_state3_messager_updown     ]       [subsection    ]                                                [ ✜ 🡆 ]         [ yes ]
----  ├ [seller_chat_chat_state3_messager_updown_up  ]       [button+icon   ]                         [color1/color2]        [ ✜ 🡄 ]         [ yes ]
----  └ [seller_chat_chat_state3_messager_updown_down]       [button+icon   ]                         [color1/color2]        [ ✜ 🡆 ]         [ yes ]
-s5) ┌─ [seller_nav                                  ]       [section       ]                                                [ 🡇 ✜ ]
-----├┬ [seller_nav_monitor_button                   ]       [button        ]                         [color1/color2]        [ ✜ 🡄 ]         [ yes ]
-----│├ [seller_nav_monitor_header                   ]       [header        ]     "МОНИТОР"           [color1/color2]        [ ✜ ✜ ]         [ no  ]  
-----│└ [seller_nav_monitor_badge                    ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ] 	
-----├┬ [seller_nav_chat_button                      ]       [button        ]                         [color1/color2]        [ ✜ 🡄 ]         [ yes ]   
-----│├ [seller_nav_chat_header                      ]       [header        ]     "ЧАТ"               [color1/color2]        [ ✜ ✜ ]         [ no  ] 
-----│└ [seller_nav_chat_badge                       ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ] 
-----├┬ [seller_nav_shop_button                      ]       [button        ]                         [color1/color2]        [ ✜ ✜ ]         [ yes ]   
-----│├ [seller_nav_shop_header                      ]       [header        ]     "МАГАЗИН"           [color1/color2]        [ ✜ ✜ ]         [ no  ] 
-----│└ [seller_nav_shop_badge                       ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ]   
-----├┬ [seller_nav_lot_button                       ]       [button        ]                         [color1/color2]        [ ✜ 🡆 ]         [ yes ]   
-----│├ [seller_nav_lot_header                       ]       [header        ]     "ТОВАРЫ"            [color1/color2]        [ ✜ ✜ ]         [ no  ] 
-----│└ [seller_nav_lot_badge                        ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ]     
-----└┬ [seller_nav_finance_button                   ]       [button        ]                         [color1/color2]        [ ✜ 🡆 ]         [ yes ]   
----- ├ [seller_nav_finance_header                   ]       [header        ]     "ФИНАНСЫ"           [color1/color2]        [ ✜ ✜ ]         [ no  ] 
----- └ [seller_nav_finance_badge                    ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ] 
+                   codename:                                  type:           button_name:        pressed/default:      location:      interaction:
+s1)  ┌─[seller_chat_nav                          ]       [section       ] 
+---  ├ [seller_chat_nav_blog                     ]       [button        ]     "БЛОГ"              [color5/color2]        [ ✜ 🡄 ]         [ yes ]
+---  ├ [seller_chat_nav_forum                    ]       [button        ]     "ФОРУМ"             [color5/color2]        [ ✜ ✜ ]         [ yes ]
+---  └ [seller_chat_nav_chat                     ]       [button        ]     "ЧАТ"               [color5/color2]        [ ✜ 🡆 ]         [ yes ] 
+s2)    [seller_chat_chat_list                    ]       [section       ] 
+s3)  ┌─[seller_chat_chat_node                    ]       [section+button]                                                [ ✜ ✜ ]         [ yes ]  
+---  ├ [seller_chat_chat_node_body               ]       [text          ]     ""                  [color5/color2]        [ ✜ ✜ ]         [ no  ]
+---  └ [seller_chat_chat_node_time               ]       [widget        ]                         [color5/color2]        [ 🡇 🡆 ]         [ no  ] 
+s4) ┌┬─[seller_chat_chat_state3_messager         ]       [section       ]                                                [ 🡇 ✜ ]         [ no  ]
+--- │├ [seller_chat_chat_state3_messager_search  ]       [button+icon   ]                         [color1/color2]        [ ✜ 🡄 ]         [ yes ]
+--- │├ [seller_chat_chat_state3_messager_input   ]       [input         ]                         [color2/color2]        [ ✜ ✜ ]         [ yes ]
+--- │└ [seller_chat_chat_state3_messager_close   ]       [button+icon   ]                         [color2/color2]        [ ✜ 🡆 ]         [ yes ]
+--- └┬ [seller_chat_chat_state3_messager_nav     ]       [subsection    ]                                                [ ✜ 🡆 ]         [ yes ]
+---  ├ [seller_chat_chat_state3_messager_nav_up  ]       [button+icon   ]                         [color1/color2]        [ ✜ 🡄 ]         [ yes ]
+---  └ [seller_chat_chat_state3_messager_nav_down]       [button+icon   ]                         [color1/color2]        [ ✜ 🡆 ]         [ yes ]
+s5) ┌─ [seller_nav                               ]       [section       ]                                                [ 🡇 ✜ ]
+----├┬ [seller_nav_monitor_button                ]       [button        ]                         [color1/color2]        [ ✜ 🡄 ]         [ yes ]
+----│├ [seller_nav_monitor_header                ]       [header        ]     "МОНИТОР"           [color1/color2]        [ ✜ ✜ ]         [ no  ]  
+----│└ [seller_nav_monitor_badge                 ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ] 	
+----├┬ [seller_nav_chat_button                   ]       [button        ]                         [color1/color2]        [ ✜ 🡄 ]         [ yes ]   
+----│├ [seller_nav_chat_header                   ]       [header        ]     "ЧАТ"               [color1/color2]        [ ✜ ✜ ]         [ no  ] 
+----│└ [seller_nav_chat_badge                    ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ] 
+----├┬ [seller_nav_shop_button                   ]       [button        ]                         [color1/color2]        [ ✜ ✜ ]         [ yes ]   
+----│├ [seller_nav_shop_header                   ]       [header        ]     "МАГАЗИН"           [color1/color2]        [ ✜ ✜ ]         [ no  ] 
+----│└ [seller_nav_shop_badge                    ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ]   
+----├┬ [seller_nav_lot_button                    ]       [button        ]                         [color1/color2]        [ ✜ 🡆 ]         [ yes ]   
+----│├ [seller_nav_lot_header                    ]       [header        ]     "ТОВАРЫ"            [color1/color2]        [ ✜ ✜ ]         [ no  ] 
+----│└ [seller_nav_lot_badge                     ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ]     
+----└┬ [seller_nav_finance_button                ]       [button        ]                         [color1/color2]        [ ✜ 🡆 ]         [ yes ]   
+---- ├ [seller_nav_finance_header                ]       [header        ]     "ФИНАНСЫ"           [color1/color2]        [ ✜ ✜ ]         [ no  ] 
+---- └ [seller_nav_finance_badge                 ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ] 
 
 
 ■ seller_chat_nav
 
 ✠ details
 seller_chat_nav представлен 3 компонентами: 
-- seller_chat_nav_blog - кнопка расположенная в левой части секции отвечающая за переход к seller_chat_list_screen;
-- seller_chat_nav_chat - кнопка расположенная в центральной части секции отвечающая за переход к seller_chat_chat (активирован по умолчанию);
-- seller_chat_nav_chat - кнопка расположенная в правой части секции отвечающая за переход к seller_chat_chat;
+- seller_chat_nav_blog  - кнопка расположенная в левой части секции отвечающая за переход к seller_chat_list_screen;
+- seller_chat_nav_forum - кнопка расположенная в центральной части секции отвечающая за переход к seller_chat_forum_screen;
+- seller_chat_nav_chat  - кнопка расположенная в правой части секции отвечающая за переход к seller_chat_chat_screen (для seller_chat_chat_screen активирована по умолчанию);
 
 ✠ actions
 • seller_chat_nav_blog:
@@ -1452,20 +1451,28 @@ seller_chat_nav представлен 3 компонентами:
 ║ occasion: нажатие seller_chat_nav_blog;
 ║ condition: в любой ситуации;
 ╙ result: открывается seller_chat_list_screen.
+• seller_chat_nav_forum:
+╠ valid / invalid
+║ occasion: нажатие seller_chat_nav_forum;
+║ condition: в любой ситуации;
+╙ result: открывается seller_chat_forum_screen.
 • seller_chat_nav_chat:
 ╠ valid / invalid
 ║ occasion: нажатие seller_chat_nav_chat;
 ║ condition: в любой ситуации;
-╙ result: открывается seller_chat_chat.
-• seller_chat_nav_chat:
-╠ valid / invalid
-║ occasion: нажатие seller_chat_nav_chat;
-║ condition: в любой ситуации;
-╙ result: открывается seller_chat_chat.
+╙ result: открывается seller_chat_chat_screen.
 
 ✠ color_states
 ┌─
 │seller_chat_nav_blog
+│---------------------------------
+│• color2
+│------ в inactive_state;
+│• color5
+│------ в pressing_state.
+└─
+┌─
+│seller_chat_nav_forum
 │---------------------------------
 │• color2
 │------ в inactive_state;
@@ -1478,44 +1485,24 @@ seller_chat_nav представлен 3 компонентами:
 │• color7
 │------ в любой ситуации.
 └─
-┌─
-│seller_chat_nav_chat
-│---------------------------------
-│• color2
-│------ в inactive_state;
-│• color5
-│------ в pressing_state.
-└─
 
 
 ■ seller_chat_chat_node
 
 ✠ details
-seller_chat_chat_node является телом сообщения, который появляется после создания сообщения. Каждый новый node возникает над предыдущим (position: relative). Node занимает по ширине всю доступную область экрана, по высоте каждый node имеет индивидуальный размер зависящий от содержания seller_chat_chat_node_body. seller_chat_chat_node состоит из следующих 4 компонентов:  
-- seller_chat_chat_node_author - username автора сообщения;
-- seller_chat_chat_node_body   - текст сообщения;
-- seller_chat_chat_node_emoji  - виджет-кнопка отображающий лайк/дизлайк либо другой вариант эмоционального выражения;
-- seller_chat_chat_node_time   - виджет отображающий время публикации сообщения.
+seller_chat_chat_node является телом сообщения, который появляется после его создания. Каждый новый node возникает над предыдущим (position: relative). Node располагаются в шахматном порядке, где каждый второй имеет позицию смещенную влево и каждый второй имеет позицию смещенную вправо. Node занимает по ширине ~80% области экрана, по высоте каждый node имеет индивидуальный размер зависящий от содержания seller_chat_forum_node_body. seller_chat_chat_node состоит из следующих 2 компонентов:  
+- seller_chat_chat_node_body - текст сообщения;
+- seller_chat_chat_node_time - виджет отображающий время публикации сообщения.
 
 ✠ actions
 • seller_chat_chat_node:
 ╠ valid / invalid
-║ • tap 
-║ occasion: нажатие seller_chat_chat_node;
-║ condition: в любой ситуации;
-║ result: появляется seller_chat_chat_emoji_popup.
 ║ • tap & hold 1
 ║ occasion: нажатие и удержание от 1 и более секунд seller_chat_chat_node;
 ║ condition: в любой ситуации;
 ║ result: 
 ║ && - вокруг seller_chat_chat_node возникает окантовка;
 ╙ && - по центру seller_chat_chat_node появляется кнопка seller_chat_chat_delete;
-• seller_chat_chat_node_emoji:
-╠ valid / invalid
-║ • tap 
-║ occasion: нажатие на конкретный seller_chat_chat_emoji_item;
-║ condition: в ситуации наличия emoji минимум одного типа;
-╙ result: совершается увеличение значения seller_chat_chat_emoji_item_value на +1.
 
 ✠ color_states
 ┌─
@@ -1608,7 +1595,7 @@ seller_chat_chat_state2_messager - активируется в момент ко
 ║ condition: в состоянии seller_chat_chat_state2_messager;
 ║ result: 
 ║ && - появляется клавиатура для ввода (если она была закрыта);
-╙ && - карет устанавливается в конце текста (если он есть);
+╙ && - карет устанавливается в конце текста (если текст наличествует);
 • seller_chat_chat_state2_messager_sent:
 ╠ valid / invalid
 ║ • tap 
@@ -1649,12 +1636,11 @@ seller_chat_chat_state3_messager - активируется в момент ко
 - seller_chat_chat_state3_messager_search - кнопка инициализации поиска введенного в input, расположена слева;
 - seller_chat_chat_state3_messager_input  - поле для ввода текстового сообщения, расположено по центру;
 - seller_chat_chat_state3_messager_close  - кнопка сброса содержимого input;
-- seller_chat_chat_state3_messager_updown - пара кнопок отвечающих за навигацию по результатам поиска, расположены справа;
--- seller_chat_chat_state3_messager_updown_up   - кнопка отвечающая за перебор matched_word в обратном хронологическом порядке;
--- seller_chat_chat_state3_messager_updown_down - кнопка отвечающая за перебор matched_word по хронологическому порядку.
+- seller_chat_chat_state3_messager_nav - пара кнопок отвечающих за навигацию по результатам поиска, расположены справа;
+-- seller_chat_chat_state3_messager_nav_up   - кнопка отвечающая за перебор matched_word в обратном хронологическом порядке;
+-- seller_chat_chat_state3_messager_nav_down - кнопка отвечающая за перебор matched_word по хронологическому порядку.
 
 seller_chat_chat_node_matched - это seller_chat_chat_node с наличием одного или нескольких matched_word.
-
 
 ✠ actions
 • seller_chat_chat_state3_messager_search:
@@ -1673,7 +1659,7 @@ seller_chat_chat_node_matched - это seller_chat_chat_node с наличием
 ║ condition: в состоянии seller_chat_chat_state3_messager;
 ║ result: 
 ║ && - появляется клавиатура для ввода (если она была закрыта);
-╙ && - карет устанавливается в конце текста (если он есть);
+╙ && - карет устанавливается в конце текста (если текст наличествует);
 • seller_chat_chat_state3_messager_close:
 ╠ valid / invalid
 ║ • tap 
@@ -1682,28 +1668,28 @@ seller_chat_chat_node_matched - это seller_chat_chat_node с наличием
 ║ result:
 ║ && - происходит очищение seller_chat_chat_state3_messager_input;
 ╙ && - происходит переход к seller_chat_chat_state1_messager;
-• seller_chat_chat_state3_messager_updown_up:
+• seller_chat_chat_state3_messager_nav_up:
 ╠ valid
 ║ • tap 
-║ occasion: нажатие на seller_chat_chat_state3_messager_updown_up;
+║ occasion: нажатие на seller_chat_chat_state3_messager_nav_up;
 ║ condition: в ситуации если есть минимум 1 seller_chat_chat_node_matched;
 ║ result: делается центрирование на следующий в обратном хронологическом порядке seller_chat_chat_node в котором присутствует matched_word.
 ╠ invalid
 ║ • tap 
-║ occasion: нажатие на seller_chat_chat_state3_messager_updown_up;
+║ occasion: нажатие на seller_chat_chat_state3_messager_nav_up;
 ║ condition: в ситуации если нет ни одного seller_chat_chat_node_matched;
-╙ result: seller_chat_chat_state3_messager_updown_up не реагирует на нажатие.
-• seller_chat_chat_state3_messager_updown_down:
+╙ result: seller_chat_chat_state3_messager_nav_up не реагирует на нажатие.
+• seller_chat_chat_state3_messager_nav_down:
 ╠ valid
 ║ • tap 
-║ occasion: нажатие на seller_chat_chat_state3_messager_updown_down;
+║ occasion: нажатие на seller_chat_chat_state3_messager_nav_down;
 ║ condition: в ситуации если есть минимум 1 seller_chat_chat_node_matched;
 ║ result: делается центрирование на следующий по хронологическому порядку seller_chat_chat_node в котором присутствует matched_word.
 ╠ invalid
 ║ • tap 
-║ occasion: нажатие на seller_chat_chat_state3_messager_updown_down;
+║ occasion: нажатие на seller_chat_chat_state3_messager_nav_down;
 ║ condition: в ситуации если нет ни одного seller_chat_chat_node_matched;
-╙ result: seller_chat_chat_state3_messager_updown_down не реагирует на нажатие.
+╙ result: seller_chat_chat_state3_messager_nav_down не реагирует на нажатие.
 
 ✠ color_states
 ┌─
@@ -1721,8 +1707,8 @@ seller_chat_chat_node_matched - это seller_chat_chat_node с наличием
 │------ в любой ситуации.
 └─
 ┌─
-│seller_chat_chat_state3_messager_updown_up
-│seller_chat_chat_state3_messager_updown_down
+│seller_chat_chat_state3_messager_nav_up
+│seller_chat_chat_state3_messager_nav_down
 │---------------------------------------------
 │• color2
 │------ в inactive_state;
@@ -1844,8 +1830,6 @@ seller_chat_chat_node_matched - это seller_chat_chat_node с наличием
 │• color4
 │------ в любой ситуации.
 └─
-
-
 
 
 
