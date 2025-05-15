@@ -11,8 +11,6 @@
 
 
 
-
-
 🡆 seller_chat
 ■■■■■■■■■■■■■■■■■■■■
 
@@ -1442,11 +1440,14 @@ Forum представляет собой приватный чат для ин�
 
 - seller_chat_chat_screen_state1 - состояние по умолчанию;
 - seller_chat_chat_screen_state2 - состояние при котором сделан ввод текста в seller_chat_chat_messager_input;
-- seller_chat_chat_screen_state3 - состояние при котором нажата кнопка seller_chat_chat_messager_search.
+- seller_chat_chat_screen_state3 - состояние при котором нажата кнопка seller_chat_chat_messager_search;
+- seller_chat_chat_screen_state4 - состояние при котором нажата кнопка seller_chat_chat_state4_messager_mic.
+
 
 ✠ tables
 
 seller_chat_chat_screen_state1
+
 
                    codename:                                type:           button_name:        pressed/default:      location:      interaction:
 s1)  ┌─[seller_chat_nav                        ]       [section       ] 
@@ -1460,7 +1461,7 @@ s3)  ┌─[seller_chat_chat_node                  ]       [section+button]     
 s4)  ┌─[seller_chat_chat_state1_messager       ]       [section       ]                                                [ 🡇 ✜ ]         [ no  ]
 ---  ├ [seller_chat_chat_state1_messager_option]       [button+icon   ]                         [color1/color2]        [ ✜ 🡄 ]         [ yes ]
 ---  ├ [seller_chat_chat_state1_messager_input ]       [input         ]                         [color2/color2]        [ ✜ ✜ ]         [ yes ]
----  └ [seller_chat_chat_state1_messager_sent  ]       [button+icon   ]                         [color1/color2]        [ ✜ 🡆 ]         [ yes ]
+---  └ [seller_chat_chat_state1_messager_mic   ]       [button+icon   ]                         [color5/color4]        [ ✜ 🡆 ]         [ yes ]
 s5) ┌─ [seller_nav                             ]       [section       ]                                                [ 🡇 ✜ ]
 ----├┬ [seller_nav_monitor_button              ]       [button        ]                         [color1/color2]        [ ✜ 🡄 ]         [ yes ]
 ----│├ [seller_nav_monitor_header              ]       [header        ]     "МОНИТОР"           [color1/color2]        [ ✜ ✜ ]         [ no  ]  
@@ -1548,6 +1549,49 @@ s5) ┌─ [seller_nav                               ]       [section       ]   
 ---- └ [seller_nav_finance_badge                 ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ] 
 
 
+seller_chat_chat_screen_state4
+
+                    codename:                                         type:           button_name:        pressed/default:      location:      interaction:
+s1)   ┌─[seller_chat_nav                                 ]       [section       ] 
+---   ├ [seller_chat_nav_blog                            ]       [button        ]     "БЛОГ"              [color5/color2]        [ ✜ 🡄 ]         [ yes ]
+---   ├ [seller_chat_nav_chat                            ]       [button        ]     "ФОРУМ"             [color5/color2]        [ ✜ ✜ ]         [ yes ]
+---   └ [seller_chat_nav_chat                            ]       [button        ]     "ЧАТ"               [color5/color2]        [ ✜ 🡆 ]         [ yes ] 
+s2)     [seller_chat_chat_list                           ]       [section       ] 
+s3)┌┬┬──[seller_chat_chat_node                           ]       [section+button]                                                [ ✜ ✜ ]         [ yes ]
+---││└┬ [seller_chat_chat_node_top                       ]       [subsection    ]                                                [ 🡅 ✜ ]         [ no  ] 
+---││ ├ [seller_chat_chat_node_top_author                ]       [header        ]     ""                                         [ ✜ ✜ ]         [ no  ]
+---││ ├ [seller_chat_chat_node_top_avatar                ]       [widget        ]                                                [ ✜   ]         [ no  ]
+---││ └ [seller_chat_chat_node_top_active                ]       [widget        ]                                                [ ✜   ]         [ no  ]  
+---│└── [seller_chat_chat_node_body                      ]       [text          ]     ""                                         [ ✜ ✜ ]         [ no  ]
+---└──┬ [seller_chat_chat_node_bottom                    ]       [subsection    ]                                                [ 🡇 ✜ ]         [ yes ]
+---   ├ [seller_chat_chat_node_bottom_emoji              ]       [widget+button ]                                                [ ✜ 🡄 ]         [ yes ] 
+---   └ [seller_chat_chat_node_bottom_time               ]       [widget        ]                                                [ ✜ 🡆 ]         [ no  ] 
+s4) ┌┬──[seller_chat_chat_state4_messager                ]       [section       ]                                                [ 🡇 ✜ ]         [ no  ]
+--- │└┬ [seller_chat_chat_state4_messager_container      ]       [subsection    ]                         [color1/color2]        [ ✜ ✜ ]         [ no  ]
+--- │ ├ [seller_chat_chat_state4_messager_container_time ]       [widget        ]                         [color2/color2]        [ ✜ 🡄 ]         [ no  ]
+--- │ ├ [seller_chat_chat_state4_messager_container_bulb ]       [widget        ]                         [color4/color4]        [ ✜ 🡄 ]         [ no  ]
+--- │ ├ [seller_chat_chat_state4_messager_container_audio]       [widget        ]                         [color2/color2]        [ ✜ 🡆 ]         [ no  ]
+--- │ └ [seller_chat_chat_state4_messager_container_rec  ]       [widget        ]                         [color4/color4]        [ ✜ ✜ ]         [ no  ]
+--- └── [seller_chat_chat_state4_messager_mic            ]       [button+icon   ]                         [color5/color4]        [ ✜ 🡆 ]         [ yes ]
+s5)  ┌─ [seller_nav                                      ]       [section       ]                                                [ 🡇 ✜ ]
+---  ├┬ [seller_nav_monitor_button                       ]       [button        ]                         [color1/color2]        [ ✜ 🡄 ]         [ yes ]
+---  │├ [seller_nav_monitor_header                       ]       [header        ]     "МОНИТОР"           [color1/color2]        [ ✜ ✜ ]         [ no  ]  
+---  │└ [seller_nav_monitor_badge                        ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ] 	
+---  ├┬ [seller_nav_chat_button                          ]       [button        ]                         [color1/color2]        [ ✜ 🡄 ]         [ yes ]   
+---  │├ [seller_nav_chat_header                          ]       [header        ]     "ЧАТ"               [color1/color2]        [ ✜ ✜ ]         [ no  ] 
+---  │└ [seller_nav_chat_badge                           ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ] 
+---  ├┬ [seller_nav_shop_button                          ]       [button        ]                         [color1/color2]        [ ✜ ✜ ]         [ yes ]   
+---  │├ [seller_nav_shop_header                          ]       [header        ]     "МАГАЗИН"           [color1/color2]        [ ✜ ✜ ]         [ no  ] 
+---  │└ [seller_nav_shop_badge                           ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ]   
+---  ├┬ [seller_nav_lot_button                           ]       [button        ]                         [color1/color2]        [ ✜ 🡆 ]         [ yes ]   
+---  │├ [seller_nav_lot_header                           ]       [header        ]     "ТОВАРЫ"            [color1/color2]        [ ✜ ✜ ]         [ no  ] 
+---  │└ [seller_nav_lot_badge                            ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ]     
+---  └┬ [seller_nav_finance_button                       ]       [button        ]                         [color1/color2]        [ ✜ 🡆 ]         [ yes ]   
+---   ├ [seller_nav_finance_header                       ]       [header        ]     "ФИНАНСЫ"           [color1/color2]        [ ✜ ✜ ]         [ no  ] 
+---   └ [seller_nav_finance_badge                        ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ] 
+
+
+
 ■ seller_chat_nav
 
 ✠ details
@@ -1622,7 +1666,7 @@ seller_chat_chat_node является телом сообщения, котор
 │• color2
 │------ в любой ситуации.
 └─
- 
+
 
 ■ seller_chat_chat_state1_messager
 
@@ -1631,7 +1675,7 @@ seller_chat_chat_state1_messager - состояние по умолчанию, �
 
 - seller_chat_chat_state1_messager_option - кнопка отвечающая за доступ к настройкам, расположена слева;
 - seller_chat_chat_state1_messager_input  - поле для ввода текстового сообщения, расположено по центру;
-- seller_chat_chat_state1_messager_sent   - кнопка инициализации отправки сообщения из input, расположена справа.
+- seller_chat_chat_state1_messager_mic    - кнопка для инициализации звукового сообщения, расположена справа.
 
 ✠ actions
 • seller_chat_chat_state1_messager_option:
@@ -1645,18 +1689,18 @@ seller_chat_chat_state1_messager - состояние по умолчанию, �
 ║ • tap 
 ║ occasion: нажатие в область seller_chat_chat_state1_messager_input;
 ║ condition: в любой ситуации;
-╙ result: появляется клавиатура для ввода.
-• seller_chat_chat_state1_messager_sent:
+╙ result: происходит переход в состояние seller_chat_chat_screen_state2.
+• seller_chat_chat_state1_messager_mic:
 ╠ valid
-║ • tap 
-║ occasion: нажатие на seller_chat_chat_state1_messager_sent;
-║ condition: если seller_chat_chat_state1_messager_input не пустое;
-║ result: происходит создание seller_chat_chat_node.
+║ • tap & hold
+║ occasion: нажатие и удержание от 1 и более секунд seller_chat_chat_state1_messager_mic;
+║ condition: в состоянии seller_chat_chat_state1_messager;
+║ result: происходит переход в состояние seller_chat_chat_screen_state4.
 ╠ invalid
-║ • tap 
-║ occasion: нажатие на seller_chat_chat_state1_messager_sent;
-║ condition: если seller_chat_chat_state1_messager_input пустое;
-╙ result: seller_chat_chat_state1_messager_sent не реагирует на нажатие.
+║ • tap
+║ occasion: нажатие на seller_chat_chat_state1_messager_mic;
+║ condition: в состоянии seller_chat_chat_state1_messager;
+╙ result: seller_chat_chat_state1_messager_mic не реагирует на нажатие.
 
 ✠ color_states
 ┌─
@@ -1674,11 +1718,11 @@ seller_chat_chat_state1_messager - состояние по умолчанию, �
 │------ в любой ситуации.
 └─
 ┌─
-│seller_chat_chat_state1_messager_sent
+│seller_chat_chat_state1_messager_mic
 │---------------------------------------------
-│• color2
+│• color4
 │------ в inactive_state;
-│• color1
+│• color5
 │------ в pressing_state.
 └─
 
@@ -1828,6 +1872,66 @@ seller_chat_chat_node_matched - это seller_chat_chat_node с наличием
 └─
 
 
+■ seller_chat_chat_state4_messager
+
+seller_chat_chat_state4_messager - является инструментом создания сообщений; расположен в нижней части экрана над seller_nav (position: fixed); по ширине занимает всю доступную область экрана, по высоте занимает порядка 5-7% размера экрана. 
+seller_chat_chat_state4_messager - активируется в момент когда в состоянии seller_chat_forum_state1_messager нажимается seller_chat_forum_state1_messager_mic. В данном состоянии конфигурация состоит из 5 компонентов:
+
+- seller_chat_chat_state4_messager_container - контейнер в виде прямоугольного блока занимающего 80-90% ширины экрана, включает следующие компоненты:
+-- seller_chat_chat_state4_messager_container_time  - виджет отображающий время записи, расположен слева;
+-- seller_chat_chat_state4_messager_container_bulb  - виджет символизирующий активность процесса записи, расположен справа от container_time;
+-- seller_chat_chat_state4_messager_container_audio - виджет отображающий аудиограмму записи, расположен справа от container_bulb;
+-- seller_chat_chat_state4_messager_container_rec   - виджет символизирующий наименование процесса записи, расположен справа от container_audio;
+-- seller_chat_chat_state4_messager_mic   - кнопка отвечающая за остановку процесса записи;
+ 
+✠ actions
+• seller_chat_chat_state4_messager_mic:
+╠ valid / invalid
+║ • release 
+║ occasion: отпускание seller_chat_chat_state4_messager_mic;
+║ condition: в состоянии recording_state;
+║ result: 
+╙ && - происходит создание seller_chat_forum_node_audio.
+
+✠ color_states
+┌─
+│seller_chat_chat_state4_messager_container_time
+│seller_chat_chat_state4_messager_container_audio
+│---------------------------------------------
+│• color2
+│------ в любой ситуации.
+└─
+┌─
+│seller_chat_chat_state4_messager_container_bulb
+│seller_chat_chat_state4_messager_container_rec
+│---------------------------------------------
+│• color4
+│------ в любой ситуации.
+└─
+┌─
+│seller_chat_chat_state4_messager_input
+│---------------------------------------------
+│• color2
+│------ в любой ситуации.
+└─
+┌─
+│seller_chat_chat_state4_messager_mic
+│---------------------------------------------
+│• color4
+│------ в inactive_state;
+│• color5
+│------ в pressing_state.
+└─
+
+✠ outputs
+• seller_chat_forum_node_audio
+╠ valid / invalid
+║ • tap 
+║ occasion: отпускание seller_chat_chat_state4_messager_mic;
+║ condition: в состоянии seller_chat_chat_state4_messager;
+╙ result: seller_chat_forum_node_audio публикуется в seller_chat_forum_list.
+
+
 ■ seller_nav
 
 ✠ details
@@ -1941,5 +2045,4 @@ seller_chat_chat_node_matched - это seller_chat_chat_node с наличием
 │• color4
 │------ в любой ситуации.
 └─
-
 
