@@ -11,6 +11,7 @@
 
 
 
+
 🡆 seller_chat
 ■■■■■■■■■■■■■■■■■■■■
 
@@ -1554,7 +1555,7 @@ seller_chat_chat_screen_state4
                     codename:                                         type:           button_name:        pressed/default:      location:      interaction:
 s1)   ┌─[seller_chat_nav                                 ]       [section       ] 
 ---   ├ [seller_chat_nav_blog                            ]       [button        ]     "БЛОГ"              [color5/color2]        [ ✜ 🡄 ]         [ yes ]
----   ├ [seller_chat_nav_chat                            ]       [button        ]     "ФОРУМ"             [color5/color2]        [ ✜ ✜ ]         [ yes ]
+---   ├ [seller_chat_nav_forum                           ]       [button        ]     "ФОРУМ"             [color5/color2]        [ ✜ ✜ ]         [ yes ]
 ---   └ [seller_chat_nav_chat                            ]       [button        ]     "ЧАТ"               [color5/color2]        [ ✜ 🡆 ]         [ yes ] 
 s2)     [seller_chat_chat_list                           ]       [section       ] 
 s3)┌┬┬──[seller_chat_chat_node                           ]       [section+button]                                                [ ✜ ✜ ]         [ yes ]
@@ -1757,6 +1758,11 @@ seller_chat_chat_state2_messager - активируется в момент ко
 ║ occasion: нажатие на seller_chat_chat_state2_messager_sent;
 ║ condition: в состоянии seller_chat_chat_state2_messager;
 ╙ result: происходит создание seller_chat_chat_node.
+
+Каждому новому seller_chat_chat_node (seller_chat_chat_node_audio включительно) в последовательном хронологическом порядке присваивается seller_chat_chat_node_id.
+При закрытии seller_chat_chat_screen запоминается seller_chat_chat_node_id с самым большим значением (seller_chat_chat_node_id_max), который выводился на экран в момент закрытия. Впоследствии при следующем открытии seller_chat_chat_screen экран центрируется на seller_chat_chat_node_id_id_max.
+
+
 
 ✠ color_states
 ┌─
@@ -2045,4 +2051,6 @@ seller_chat_chat_state4_messager - активируется в момент ко
 │• color4
 │------ в любой ситуации.
 └─
+
+
 
