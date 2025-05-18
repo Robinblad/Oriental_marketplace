@@ -1,0 +1,11 @@
+
+
+description:                                codename:                 type:               item_name:                               location:
+заголовок                         [ hunt_screen_header_data    ]    [ data   ]    "МОНИТОРИНГ/ИДЕТ СКАНИРОВАНИЕ"     [ в верхней части по центру        ]
+кнопка активации сканирования     [ hunt_screen_start_button   ]    [ button ]    "СТАРТ/СТОП"                       [ слева над hunt_screen_monitor    ]
+виджет сканирования               [ hunt_screen_scan_widget    ]    [ widget ]                                       [ в центре над hunt_screen_monitor ]
+кнопка к настройкам               [ hunt_screen_options_button ]    [ button ]    "НАСТРОЙКИ"                        [ справа над hunt_screen_monitor   ]
+область монитора                  [ hunt_screen_monitor        ]                                                     [ в центральной области            ]
+слайдер фильтрации по корреляции  [ hunt_screen_sens_slider    ]    [ slider ]    "ЧУВСТВИТЕЛЬНОСТЬ"                 [ в центре под hunt_screen_monitor ]
+кнопка к фильтрации по региону    [ hunt_screen_area_button    ]    [ button ]    "ОХВАТ"                            [ слева под hunt_screen_monitor    ]
+слайдер фильтрации по рейтингу    [ hunt_screen_rating_slider  ]    [ slider ]    "РЕЙТИНГ"                          [ справа под hunt_screen_monitor   ]
