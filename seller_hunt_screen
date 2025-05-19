@@ -1,11 +1,58 @@
 
 
-description:                                codename:                 type:               item_name:                               location:
-заголовок                         [ hunt_screen_header_data    ]    [ data   ]    "МОНИТОРИНГ/ИДЕТ СКАНИРОВАНИЕ"     [ в верхней части по центру        ]
-кнопка активации сканирования     [ hunt_screen_start_button   ]    [ button ]    "СТАРТ/СТОП"                       [ слева над hunt_screen_monitor    ]
-виджет сканирования               [ hunt_screen_scan_widget    ]    [ widget ]                                       [ в центре над hunt_screen_monitor ]
-кнопка к настройкам               [ hunt_screen_options_button ]    [ button ]    "НАСТРОЙКИ"                        [ справа над hunt_screen_monitor   ]
-область монитора                  [ hunt_screen_monitor        ]                                                     [ в центральной области            ]
-слайдер фильтрации по корреляции  [ hunt_screen_sens_slider    ]    [ slider ]    "ЧУВСТВИТЕЛЬНОСТЬ"                 [ в центре под hunt_screen_monitor ]
-кнопка к фильтрации по региону    [ hunt_screen_area_button    ]    [ button ]    "ОХВАТ"                            [ слева под hunt_screen_monitor    ]
-слайдер фильтрации по рейтингу    [ hunt_screen_rating_slider  ]    [ slider ]    "РЕЙТИНГ"                          [ справа под hunt_screen_monitor   ]
+
+
+
+-------------------------------------------------------------------
+-------------------------------------------------------------------
+-------------------------------------------------------------------
+-------------------------------------------------------------------
+-------------------------------------------------------------------
+
+
+
+🡆 seller_hunt_screen
+■■■■■■■■■■■■■■■■■■■■
+
+seller_hunt (это номинальное название генерализированного chat раздела а не интерфейс) является разделом, где осуществляется коммуникация seller с buyers: - blog  - публикация постов;
+- forum - участие в открытых дискуссиях;
+- chat  - ведение личной переписки.
+Вход в seller_hunt осуществляется посредством кнопки "ЧАТ" на seller_shop_nav.
+
+
+
+✠ tables
+seller_hunt_blog_list_screen разделен на 4 sections следующего содержания расположенных сверху-вниз:
+ 
+                   codename:                            type:          button_name:        pressed/default:      location:      interaction:
+s1)  ┌─[seller_hunt_nav                   ]       [section       ] 
+---  ├ [seller_hunt_nav_blog              ]       [button        ]     "БЛОГ"              [color5/color2]        [ ✜ 🡄 ]         [ yes ]
+---  ├ [seller_hunt_nav_forum             ]       [button        ]     "ФОРУМ"             [color5/color2]        [ ✜ ✜ ]         [ yes ]
+---  └ [seller_hunt_nav_chat              ]       [button        ]     "ЧАТ"               [color5/color2]        [ ✜ 🡆 ]         [ yes ]  
+   ┌┬──[seller_hunt_blog_list             ]       [container     ]    
+s2)│└┬─[seller_hunt_blog_list_new         ]       [section       ]                                                [ 🡅 ✜ ]         [ yes ]
+---│ ├ [seller_hunt_blog_list_new_info    ]       [widget        ]                                                [ ✜ 🡄 ]         [ no  ]
+---│ └ [seller_hunt_blog_list_new_button  ]       [button        ]     "НОВЫЙ ПОСТ"        [color5/color2]        [ ✜ 🡆 ]         [ yes ]   
+s3)└─┬─[seller_hunt_blog_list_post        ]       [section+button]                         [color5/color2]        [ 🡇 ✜ ]         [ yes ]
+---  ├ [seller_hunt_blog_list_post_header ]       [header        ]                                                [ 🡅 ✜ ]         [ no  ] 
+---  ├ [seller_hunt_blog_list_post_content]       [image+text    ]                                                [ ✜ ✜ ]         [ no  ]
+---  ├ [seller_hunt_blog_list_post_emoji  ]       [widget+button ]                                                [ 🡇 🡄 ]         [ yes ]
+---  ├ [seller_hunt_blog_list_post_viewer ]       [widget        ]                                                [ 🡇 ✜ ]         [ no  ]
+---  └ [seller_hunt_blog_list_post_time   ]       [widget        ]                                                [ 🡇 🡆 ]         [ no  ]
+s4) ┌─ [seller_nav                        ]       [section       ]                                                [ 🡇 ✜ ]
+----├┬ [seller_nav_monitor_button         ]       [button        ]                         [color1/color2]        [ ✜ 🡄 ]         [ yes ]
+----│├ [seller_nav_monitor_header         ]       [header        ]     "МОНИТОР"           [color1/color2]        [ ✜ ✜ ]         [ no  ]  
+----│└ [seller_nav_monitor_badge          ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ] 	
+----├┬ [seller_nav_chat_button            ]       [button        ]                         [color1/color2]        [ ✜ 🡄 ]         [ yes ]   
+----│├ [seller_nav_chat_header            ]       [header        ]     "ЧАТ"               [color1/color2]        [ ✜ ✜ ]         [ no  ] 
+----│└ [seller_nav_chat_badge             ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ] 
+----├┬ [seller_nav_shop_button            ]       [button        ]                         [color1/color2]        [ ✜ ✜ ]         [ yes ]   
+----│├ [seller_nav_shop_header            ]       [header        ]     "МАГАЗИН"           [color1/color2]        [ ✜ ✜ ]         [ no  ] 
+----│└ [seller_nav_shop_badge             ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ]   
+----├┬ [seller_nav_lot_button             ]       [button        ]                         [color1/color2]        [ ✜ 🡆 ]         [ yes ]   
+----│├ [seller_nav_lot_header             ]       [header        ]     "ТОВАРЫ"            [color1/color2]        [ ✜ ✜ ]         [ no  ] 
+----│└ [seller_nav_lot_badge              ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ]     
+----└┬ [seller_nav_finance_button         ]       [button        ]                         [color1/color2]        [ ✜ 🡆 ]         [ yes ]   
+---- ├ [seller_nav_finance_header         ]       [header        ]     "ФИНАНСЫ"           [color1/color2]        [ ✜ ✜ ]         [ no  ] 
+---- └ [seller_nav_finance_badge          ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ] 
+
