@@ -64,3 +64,22 @@ s4) ┌─ [seller_nav                                 ]       [section       ] 
 
 
 
+hunt_screen обладает двумя режимами:
+hunt_screen_monitor_inactive - в котором сканирования не производится;
+hunt_screen_monitor_active - в котором сканирование производится.
+
+hunt_screen_start_button
+
+Посредством hunt_screen_start_button совершается переключение между hunt_screen_monitor_active и hunt_screen_monitor_inactive. По умолчанию при первом открытии hunt_screen в качестве нового юзера, так и после перезапуска приложения, hunt_screen открывается в режиме hunt_screen_monitor_inactive. Текст кнопки зависит от соответствующего действующего режима:
+- в режиме: [ hunt_screen_monitor_inactive ] кнопка [ hunt_screen_start_button ] отображает: "СТАРТ"
+- в режиме: [ hunt_screen_monitor_active   ] кнопка [ hunt_screen_start_button ] отображает: "СТОП"
+
+hunt_screen_monitor_widget
+Работа hunt_screen_monitor_widget зависит от задействованного режима:
+- в режиме: [ hunt_screen_monitor_inactive ] виджет [ hunt_screen_monitor_widget ] отображает: [ статическое изображение ]
+- в режиме: [ hunt_screen_monitor_active   ] виджет [ hunt_screen_monitor_widget ] отображает: [ анимацию                ]
+
+hunt_screen_header
+Заголовок расположен вверху по центру и может иметь два режима: 
+- в стандартном режиме, когда:  [ hunt_screen_monitor_active   ] тогда [ hunt_screen_header_data ] демонстрирует: "ИДЕТ СКАНИРОВАНИЕ"
+- в режиме сканирования, когда: [ hunt_screen_monitor_inactive ] тогда [ hunt_screen_header_data ] демонстрирует: "МОНИТОРИНГ"
