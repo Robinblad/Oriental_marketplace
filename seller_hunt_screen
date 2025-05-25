@@ -64,22 +64,28 @@ s4) ┌─ [seller_nav                                 ]       [section       ] 
 
 
 
-hunt_screen обладает двумя режимами:
-hunt_screen_monitor_inactive - в котором сканирования не производится;
-hunt_screen_monitor_active - в котором сканирование производится.
 
-hunt_screen_start_button
+■ seller_hunt_head
 
-Посредством hunt_screen_start_button совершается переключение между hunt_screen_monitor_active и hunt_screen_monitor_inactive. По умолчанию при первом открытии hunt_screen в качестве нового юзера, так и после перезапуска приложения, hunt_screen открывается в режиме hunt_screen_monitor_inactive. Текст кнопки зависит от соответствующего действующего режима:
-- в режиме: [ hunt_screen_monitor_inactive ] кнопка [ hunt_screen_start_button ] отображает: "СТАРТ"
-- в режиме: [ hunt_screen_monitor_active   ] кнопка [ hunt_screen_start_button ] отображает: "СТОП"
+✠ details
+seller_hunt_head является телом сообщения, который появляется после его создания. Каждый новый node возникает над предыдущим (position: relative). Node располагаются в шахматном порядке, где каждый второй имеет позицию смещенную влево и каждый второй имеет позицию смещенную вправо. Node занимает по ширине ~80% области экрана, по высоте каждый node имеет индивидуальный размер зависящий от содержания seller_hunt_head_body. seller_hunt_head состоит из следующих 2 компонентов:  
+- seller_hunt_head_body - текст сообщения;
+- seller_hunt_head_time - виджет отображающий время публикации сообщения.
 
-hunt_screen_monitor_widget
-Работа hunt_screen_monitor_widget зависит от задействованного режима:
-- в режиме: [ hunt_screen_monitor_inactive ] виджет [ hunt_screen_monitor_widget ] отображает: [ статическое изображение ]
-- в режиме: [ hunt_screen_monitor_active   ] виджет [ hunt_screen_monitor_widget ] отображает: [ анимацию                ]
+✠ actions
+• seller_hunt_head:
+╠ valid / invalid
+║ • tap & hold 1
+║ occasion: нажатие и удержание от 1 и более секунд seller_hunt_head;
+║ condition: в любой ситуации;
+║ result: 
+║ && - вокруг seller_hunt_head возникает окантовка;
+╙ && - по центру seller_hunt_head появляется кнопка seller_chat_chat_delete;
 
-hunt_screen_header
-Заголовок расположен вверху по центру и может иметь два режима: 
-- в стандартном режиме, когда:  [ hunt_screen_monitor_active   ] тогда [ hunt_screen_header_data ] демонстрирует: "ИДЕТ СКАНИРОВАНИЕ"
-- в режиме сканирования, когда: [ hunt_screen_monitor_inactive ] тогда [ hunt_screen_header_data ] демонстрирует: "МОНИТОРИНГ"
+✠ color_states
+┌─
+│seller_hunt_head
+│---------------------------------------------
+│• color2
+│------ в любой ситуации.
+└─
