@@ -30,24 +30,19 @@ color3f - warning - focusing;
 
 
 
-
-
 🡆 seller_hunt_screen
 ■■■■■■■■■■■■■■■■■■■■
 
 seller_hunt_screen предоставляет seller инструмент реализации специфического подхода работы с потенциальными клиентами (описание скрыто по причине защиты бизнес идеи). 
  
 ✠ tables
-seller_hunt_screen разделен на 4 sections следующего содержания расположенных сверху-вниз:
+seller_hunt_screen разделен на 5 sections следующего содержания расположенных сверху-вниз:
  
                          codename:                              type:           button_name:        pressed/default:      location:      interaction:
-s1)  ┌─[seller_hunt_head                           ]       [section       ]                                                [ 🡅 ✜ ]         [ no  ]
----  ├ [seller_hunt_head_header                    ]       [subsection    ]                                                [ 🡅 ✜ ]         [ yes ]
----  ├ [seller_hunt_head_header_widget             ]       [header        ]     "МОНИТОРИНГ"        [color2/color2]        [ ✜ ✜ ]         [ yes ]
----  ├ [seller_hunt_head_starter                   ]       [subsection    ]                                                [ 🡇 ✜ ]         [ no  ]
----  ├ [seller_hunt_head_starter_options           ]       [button        ]     "НАСТРОЙКИ"         [color5/color2]        [ ✜ 🡄 ]         [ yes ]
----  ├ [seller_hunt_head_starter_scan              ]       [widget        ]                         [color7/color2]        [ ✜ ✜ ]         [ yes ]  
-     └ [seller_hunt_head_starter_start             ]       [button        ]     "СТАРТ/СТОП"        [color5/color2]        [ ✜ 🡆 ]         [ yes ]    
+s1)  ┌─[seller_hunt_header                         ]       [section       ]                                                [ 🡅 ✜ ]         [ no  ]
+---  ├ [seller_hunt_header_widget                  ]       [header        ]     "МОНИТОРИНГ"        [color2/color2]        [ ✜ ✜ ]         [ yes ]
+---  ├ [seller_hunt_header_options                 ]       [button        ]     "НАСТРОЙКИ"         [color5/color2]        [ ✜ 🡄 ]         [ yes ]
+---  └ [seller_hunt_header_scan                    ]       [widget        ]                         [color7/color2]        [ ✜ ✜ ]         [ yes ]
 s2)┌───[seller_hunt_monitor                        ]       [section       ]                                                [ ✜ ✜ ]         [ no  ]
 ---├┬──[seller_hunt_monitor_message                ]       [subsection    ]                                                [ ✜ 🡄 ]         [ yes ]
 ---│└┬ [seller_hunt_monitor_message_header         ]       [widget        ]                                                [ ✜ 🡄 ]         [ no  ]
@@ -62,7 +57,9 @@ s3)  ┌─[seller_hunt_tune                           ]       [section       ] 
 ---  ├ [seller_hunt_tune_sens                      ]       [slider        ]     "ЧУВСТВИТЕЛЬНОСТЬ"  [color2/color2]        [ ✜ 🡄 ]         [ yes ]
 ---  ├ [seller_hunt_tune_area                      ]       [button        ]     "ОХВАТ"             [color5/color2]        [ ✜ ✜ ]         [ yes ]
 ---  └ [seller_hunt_tune_rating                    ]       [slider        ]     "РЕЙТИНГ"           [color2/color2]        [ ✜ 🡆 ]         [ yes ]
-s4) ┌─ [seller_nav                                 ]       [section       ]                                                [ 🡇 ✜ ]         [ no  ]
+s4)  ┌─[seller_hunt_starter                        ]       [section       ]                                                [ 🡇 ✜ ]         [ no  ]
+---  └ [seller_hunt_starter_start                  ]       [button        ]     "СТАРТ/СТОП"        [color5/color2]        [ ✜ 🡆 ]         [ yes ] 
+s5) ┌─ [seller_nav                                 ]       [section       ]                                                [ 🡇 ✜ ]         [ no  ]
 ----├┬ [seller_nav_monitor_button                  ]       [button        ]                         [color1/color2]        [ ✜ 🡄 ]         [ yes ]
 ----│├ [seller_nav_monitor_header                  ]       [header        ]     "МОНИТОР"           [color1/color2]        [ ✜ ✜ ]         [ no  ]  
 ----│└ [seller_nav_monitor_badge                   ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ] 	
