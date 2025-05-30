@@ -30,35 +30,33 @@ color3f - warning - focusing;
 
 
 
+
 🡆 seller_hunt_screen
 ■■■■■■■■■■■■■■■■■■■■
 
-seller_hunt_screen предоставляет seller инструмент реализации специфического подхода работы с потенциальными клиентами (описание скрыто по причине защиты бизнес идеи). 
+seller_hunt_screen предоставляет seller инструмент реализации специфического подхода работы с потенциальными клиентами (описание скрыто по причине защиты бизнес идеи). seller_hunt_screen разделен на 5 sections и может находиться в 2 состояниях:
+ 
+seller_hunt_inactive_screen - состояние при котором сканирование не производится;
+seller_hunt_active_screen - состояние при котором производится сканирование.
+ 
  
 ✠ tables
-seller_hunt_screen разделен на 5 sections следующего содержания расположенных сверху-вниз:
+
+seller_hunt_inactive_screen
  
                          codename:                              type:           button_name:        pressed/default:      location:      interaction:
 s1)  ┌─[seller_hunt_header                         ]       [section       ]                                                [ 🡅 ✜ ]         [ no  ]
----  ├ [seller_hunt_header_widget                  ]       [header        ]     "МОНИТОРИНГ"        [color2/color2]        [ ✜ ✜ ]         [ yes ]
----  ├ [seller_hunt_header_options                 ]       [button        ]     "НАСТРОЙКИ"         [color5/color2]        [ ✜ 🡄 ]         [ yes ]
----  └ [seller_hunt_header_scan                    ]       [widget        ]                         [color7/color2]        [ ✜ ✜ ]         [ yes ]
-s2)┌───[seller_hunt_monitor                        ]       [section       ]                                                [ ✜ ✜ ]         [ no  ]
----├┬──[seller_hunt_monitor_message                ]       [subsection    ]                                                [ ✜ 🡄 ]         [ yes ]
----│└┬ [seller_hunt_monitor_message_header         ]       [widget        ]                                                [ ✜ 🡄 ]         [ no  ]
----│ ├ [seller_hunt_monitor_message_header_username]       [widget        ]                                                [ ✜ 🡄 ]         [ no  ]
----│ ├ [seller_hunt_monitor_message_header_location]       [widget        ]                                                [ ✜ 🡄 ]         [ no  ]
----│ ├ [seller_hunt_monitor_message_header_time    ]       [widget        ]                                                [ ✜ 🡄 ]         [ no  ]
----│ ├ [seller_hunt_monitor_message_header_data    ]       [widget        ]                                                [ ✜ 🡄 ]         [ no  ]
----│ ├ [seller_hunt_monitor_message_header_rating  ]       [widget        ]                                                [ ✜ 🡄 ]         [ no  ]
----│ └ [seller_hunt_monitor_message_header_known   ]       [widget        ]                                                [ ✜ 🡄 ]         [ no  ]
----└── [seller_hunt_monitor_message_text           ]       [text          ]     ""                  [color5/color2]        [ ✜ 🡆 ]         [ yes ]   
+---  ├ [seller_hunt_header_title                   ]       [header        ]     "МОНИТОРИНГ"        [color2/color2]        [ 🡅 🡄 ]         [ no  ]
+---  ├ [seller_hunt_header_bulb                    ]       [widget        ]                         [color2/color2]        [ 🡅 ✜ ]         [ no  ]
+---  ├ [seller_hunt_header_options                 ]       [button        ]     "НАСТРОЙКИ"         [color5/color2]        [ 🡅 🡆 ]         [ yes ]
+---  └ [seller_hunt_header_scan                    ]       [widget        ]                         [color2/color2]        [ 🡇 ✜ ]         [ no  ]
+s2)    [seller_hunt_monitor                        ]       [section       ]                                                [ ✜ ✜ ]         [ no  ]   
 s3)  ┌─[seller_hunt_tune                           ]       [section       ]                                                [ 🡇 ✜ ]         [ no  ] 
 ---  ├ [seller_hunt_tune_sens                      ]       [slider        ]     "ЧУВСТВИТЕЛЬНОСТЬ"  [color2/color2]        [ ✜ 🡄 ]         [ yes ]
 ---  ├ [seller_hunt_tune_area                      ]       [button        ]     "ОХВАТ"             [color5/color2]        [ ✜ ✜ ]         [ yes ]
 ---  └ [seller_hunt_tune_rating                    ]       [slider        ]     "РЕЙТИНГ"           [color2/color2]        [ ✜ 🡆 ]         [ yes ]
 s4)  ┌─[seller_hunt_starter                        ]       [section       ]                                                [ 🡇 ✜ ]         [ no  ]
----  └ [seller_hunt_starter_start                  ]       [button        ]     "СТАРТ/СТОП"        [color5/color2]        [ ✜ 🡆 ]         [ yes ] 
+---  └ [seller_hunt_starter_start                  ]       [button        ]     "СТАРТ"             [color5/color2]        [ ✜ ✜ ]         [ yes ] 
 s5) ┌─ [seller_nav                                 ]       [section       ]                                                [ 🡇 ✜ ]         [ no  ]
 ----├┬ [seller_nav_monitor_button                  ]       [button        ]                         [color1/color2]        [ ✜ 🡄 ]         [ yes ]
 ----│├ [seller_nav_monitor_header                  ]       [header        ]     "МОНИТОР"           [color1/color2]        [ ✜ ✜ ]         [ no  ]  
@@ -77,6 +75,47 @@ s5) ┌─ [seller_nav                                 ]       [section       ] 
 ---- └ [seller_nav_finance_badge                   ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ] 
 
 
+seller_hunt_active_screen
+ 
+                         codename:                              type:           button_name:        pressed/default:      location:      interaction:
+s1)  ┌─[seller_hunt_header                         ]       [section       ]                                                [ 🡅 ✜ ]         [ no  ]
+---  ├ [seller_hunt_header_title                   ]       [header        ]     "МОНИТОРИНГ"        [color2/color2]        [ 🡅 🡄 ]         [ no  ]
+---  ├ [seller_hunt_header_bulb                    ]       [widget        ]                         [color7/color7]        [ 🡅 ✜ ]         [ no  ]
+---  ├ [seller_hunt_header_options                 ]       [button        ]     "НАСТРОЙКИ"         [color5/color2]        [ 🡅 🡆 ]         [ yes ]
+---  └ [seller_hunt_header_scan                    ]       [widget        ]                         [color7/color7]        [ 🡇 ✜ ]         [ no  ]
+s2)┌───[seller_hunt_monitor                        ]       [section       ]                                                [ ✜ ✜ ]         [ no  ]
+---├┬──[seller_hunt_monitor_message                ]       [subsection    ]                                                [ ✜ ✜ ]         [ yes ]
+---│└┬ [seller_hunt_monitor_message_header         ]       [wraper        ]                                                [ ✜ 🡄 ]         [ no  ]
+---│ ├ [seller_hunt_monitor_message_header_username]       [widget        ]                                                [ ✜ 🡄 ]         [ no  ]
+---│ ├ [seller_hunt_monitor_message_header_location]       [widget        ]                                                [ ✜ ✜ ]         [ no  ]
+---│ ├ [seller_hunt_monitor_message_header_time    ]       [widget        ]                                                [ ✜ ✜ ]         [ no  ]
+---│ ├ [seller_hunt_monitor_message_header_date    ]       [widget        ]                                                [ ✜ ✜ ]         [ no  ]
+---│ ├ [seller_hunt_monitor_message_header_rating  ]       [widget        ]                                                [ ✜ 🡆 ]         [ no  ]
+---│ └ [seller_hunt_monitor_message_header_known   ]       [widget        ]                                                [ ✜ 🡆 ]         [ no  ]
+---└─┬ [seller_hunt_monitor_message_body           ]       [wraper        ]                                                [ 🡇 ✜ ]         [ yes ] 
+---  └ [seller_hunt_monitor_message_body_text      ]       [text          ]     ""                  [color5/color2]        [ ✜ ✜ ]         [ yes ]   
+s3)  ┌─[seller_hunt_tune                           ]       [section       ]                                                [ 🡇 ✜ ]         [ no  ] 
+---  ├ [seller_hunt_tune_sens                      ]       [slider        ]     "ЧУВСТВИТЕЛЬНОСТЬ"  [color2/color2]        [ ✜ 🡄 ]         [ yes ]
+---  ├ [seller_hunt_tune_area                      ]       [button        ]     "ОХВАТ"             [color5/color2]        [ ✜ ✜ ]         [ yes ]
+---  └ [seller_hunt_tune_rating                    ]       [slider        ]     "РЕЙТИНГ"           [color2/color2]        [ ✜ 🡆 ]         [ yes ]
+s4)  ┌─[seller_hunt_starter                        ]       [section       ]                                                [ 🡇 ✜ ]         [ no  ]
+---  └ [seller_hunt_starter_start                  ]       [button        ]     "СТОП"              [color5/color2]        [ ✜ ✜ ]         [ yes ] 
+s5) ┌─ [seller_nav                                 ]       [section       ]                                                [ 🡇 ✜ ]         [ no  ]
+----├┬ [seller_nav_monitor_button                  ]       [button        ]                         [color1/color2]        [ ✜ 🡄 ]         [ yes ]
+----│├ [seller_nav_monitor_header                  ]       [header        ]     "МОНИТОР"           [color1/color2]        [ ✜ ✜ ]         [ no  ]  
+----│└ [seller_nav_monitor_badge                   ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ] 	
+----├┬ [seller_nav_chat_button                     ]       [button        ]                         [color1/color2]        [ ✜ 🡄 ]         [ yes ]   
+----│├ [seller_nav_chat_header                     ]       [header        ]     "ЧАТ"               [color1/color2]        [ ✜ ✜ ]         [ no  ] 
+----│└ [seller_nav_chat_badge                      ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ] 
+----├┬ [seller_nav_shop_button                     ]       [button        ]                         [color1/color2]        [ ✜ ✜ ]         [ yes ]   
+----│├ [seller_nav_shop_header                     ]       [header        ]     "МАГАЗИН"           [color1/color2]        [ ✜ ✜ ]         [ no  ] 
+----│└ [seller_nav_shop_badge                      ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ]   
+----├┬ [seller_nav_lot_button                      ]       [button        ]                         [color1/color2]        [ ✜ 🡆 ]         [ yes ]   
+----│├ [seller_nav_lot_header                      ]       [header        ]     "ТОВАРЫ"            [color1/color2]        [ ✜ ✜ ]         [ no  ] 
+----│└ [seller_nav_lot_badge                       ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ]     
+----└┬ [seller_nav_finance_button                  ]       [button        ]                         [color1/color2]        [ ✜ 🡆 ]         [ yes ]   
+---- ├ [seller_nav_finance_header                  ]       [header        ]     "ФИНАНСЫ"           [color1/color2]        [ ✜ ✜ ]         [ no  ] 
+---- └ [seller_nav_finance_badge                   ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ] 
 
 
 ■ seller_hunt_head
