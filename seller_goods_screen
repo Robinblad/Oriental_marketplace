@@ -28,41 +28,41 @@ location:
 ■■■■■■■■■■■■■■■■■■■
 seller_lot_screen предназначен для отображения товаров seller в качестве так называемых (торговых) лотов, вход в который осуществляется посредством кнопки "ТОВАРЫ" на seller_nav_lots и представляет список товаров выполненных в виде блоков с краткой информацией. seller_lot_screen разделен на 3 sections следующего содержания расположенных сверху-вниз:
 
-                 codename:                                header:          type:                button_name:         active/inactive:       interaction:
-s1) ┌──[seller_lot_searchlot                 ]                          [section       ]
-----├┬ [seller_lot_searcher                  ]                          [input         ]                              [color1/color2]          [ yes ]
-----│├ [seller_lot_searcher_icon             ]         { symbol }       [icon          ]                              [color1/color2]          [ no  ]
-----│└ [seller_lot_searcher_placeholder      ]                          [placeholder   ] "ПОИСК ЛОТА"                 [color2       ]          [ yes ]
-----└┬ [seller_lot_add_lot                   ]                          [button        ]                              [color1/color2]          [ yes ]
----- ├ [seller_lot_add_lot_icon              ]         { symbol }       [icon          ]                              [color1/color2]          [ no  ]
----- └ [seller_lot_add_lot_header            ]                          [header        ] "ЛОТ"                        [color2       ]          [ no  ] 
-s2)    [seller_lot_list                      ]                          [section       ]
-----┌──[seller_lot_cover                     ]                          [section       ]
-----├┬ [seller_lot_cover_info                ]                          [component     ]                              [color2]                 [ no  ]
-----│├ [seller_lot_cover_info_date           ]                          [widget        ] { string }                   [color1/color2]          [ no  ]
-----│├ [seller_lot_cover_info_price          ]                          [widget        ] { number }                   [color1/color2]          [ no  ]
-----│└ [seller_lot_cover_info_quantity       ]                          [widget        ] { number }                   [color1/color2]          [ no  ]
-----├─ [seller_lot_cover_img                 ]                          [picture+button]                              [color2]                 [ yes ]
-----└┬ [seller_lot_cover_control             ]                          [component     ]                                                       [ no  ]
----- ├ [seller_lot_cover_control_edit        ]                          [button        ] "ИЗМЕНИТЬ"                   [color1/color2]          [ yes ]
----- ├ [seller_lot_cover_control_veil        ]                          [button        ] "СКРЫТЬ" / "ОТКРЫТЬ"         [color1/color2]          [ yes ]
----- └ [seller_lot_cover_control_close       ]                          [button        ] "ЗАКРЫТЬ"                    [color1/color2]          [ yes ]  
-s3) ┌─ [seller_nav                           ]                          [section       ]
-----├┬ [seller_nav_monitor_button            ]                          [button        ]                              [color1/color2]          [ yes ]
-----│├ [seller_nav_monitor_header            ]                          [header        ] "МОНИТОР"                    [color1/color2]          [ no  ]  
-----│└ [seller_nav_monitor_badge             ]                          [badge         ] { number }                   [color1/color2]          [ no  ] 	
-----├┬ [seller_nav_chat_button               ]                          [button        ]                              [color1/color2]          [ yes ]   
-----│├ [seller_nav_chat_header               ]                          [header        ] "ЧАТ"                        [color1/color2]          [ no  ] 
-----│└ [seller_nav_chat_badge                ]                          [badge         ] { number }                   [color1/color2]          [ no  ] 
-----├┬ [seller_nav_shop_button               ]                          [button        ]                              [color1/color2]          [ yes ]   
-----│├ [seller_nav_shop_header               ]                          [header        ] "МАГАЗИН"                    [color1/color2]          [ no  ] 
-----│└ [seller_nav_shop_badge                ]                          [badge         ] { number }                   [color1/color2]          [ no  ]   
-----├┬ [seller_nav_lot_button                ]                          [button        ]                              [color1/color2]          [ yes ]   
-----│├ [seller_nav_lot_header                ]                          [header        ] "ТОВАРЫ"                     [color1/color2]          [ no  ] 
-----│└ [seller_nav_lot_badge                 ]                          [badge         ] { number }                   [color1/color2]          [ no  ]     
-----└┬ [seller_nav_finance_button            ]                          [button        ]                              [color1/color2]          [ yes ]   
----- ├ [seller_nav_finance_header            ]                          [header        ] "ФИНАНСЫ"                    [color1/color2]          [ no  ] 
----- └ [seller_nav_finance_badge             ]                          [badge         ] { number }                   [color1/color2]          [ no  ]  
+                 codename:                         header:            type:                button_name:         active/inactive:       interaction:
+s1) ┌──[seller_lot_searchlot           ]                          [section       ]
+----├┬ [seller_lot_searcher            ]                          [input         ]                              [color1/color2]          [ yes ]
+----│├ [seller_lot_searcher_icon       ]         { symbol }       [icon          ]                              [color1/color2]          [ no  ]
+----│└ [seller_lot_searcher_placeholder]                          [placeholder   ] "ПОИСК ЛОТА"                 [color2       ]          [ yes ]
+----└┬ [seller_lot_add_lot             ]                          [button        ]                              [color1/color2]          [ yes ]
+---- ├ [seller_lot_add_lot_icon        ]         { symbol }       [icon          ]                              [color1/color2]          [ no  ]
+---- └ [seller_lot_add_lot_header      ]                          [header        ] "ЛОТ"                        [color2       ]          [ no  ] 
+s2)┌───[seller_lot_list                ]                          [section       ]
+---└┬──[seller_lot_cover               ]                          [section       ]
+----├┬ [seller_lot_cover_info          ]                          [component     ]                              [color2]                 [ no  ]
+----│├ [seller_lot_cover_info_date     ]                          [widget        ] { string }                   [color1/color2]          [ no  ]
+----│├ [seller_lot_cover_info_price    ]                          [widget        ] { number }                   [color1/color2]          [ no  ]
+----│└ [seller_lot_cover_info_quantity ]                          [widget        ] { number }                   [color1/color2]          [ no  ]
+----├─ [seller_lot_cover_img           ]                          [picture+button]                              [color2]                 [ yes ]
+----└┬ [seller_lot_cover_control       ]                          [component     ]                                                       [ no  ]
+---- ├ [seller_lot_cover_control_edit  ]                          [button        ] "ИЗМЕНИТЬ"                   [color1/color2]          [ yes ]
+---- ├ [seller_lot_cover_control_veil  ]                          [button        ] "СКРЫТЬ" / "ОТКРЫТЬ"         [color1/color2]          [ yes ]
+---- └ [seller_lot_cover_control_close ]                          [button        ] "ЗАКРЫТЬ"                    [color1/color2]          [ yes ]  
+s3) ┌─ [seller_nav                     ]                          [section       ]
+----├┬ [seller_nav_monitor_button      ]                          [button        ]                              [color1/color2]          [ yes ]
+----│├ [seller_nav_monitor_header      ]                          [header        ] "МОНИТОР"                    [color1/color2]          [ no  ]  
+----│└ [seller_nav_monitor_badge       ]                          [badge         ] { number }                   [color1/color2]          [ no  ] 	
+----├┬ [seller_nav_chat_button         ]                          [button        ]                              [color1/color2]          [ yes ]   
+----│├ [seller_nav_chat_header         ]                          [header        ] "ЧАТ"                        [color1/color2]          [ no  ] 
+----│└ [seller_nav_chat_badge          ]                          [badge         ] { number }                   [color1/color2]          [ no  ] 
+----├┬ [seller_nav_shop_button         ]                          [button        ]                              [color1/color2]          [ yes ]   
+----│├ [seller_nav_shop_header         ]                          [header        ] "МАГАЗИН"                    [color1/color2]          [ no  ] 
+----│└ [seller_nav_shop_badge          ]                          [badge         ] { number }                   [color1/color2]          [ no  ]   
+----├┬ [seller_nav_lot_button          ]                          [button        ]                              [color1/color2]          [ yes ]   
+----│├ [seller_nav_lot_header          ]                          [header        ] "ТОВАРЫ"                     [color1/color2]          [ no  ] 
+----│└ [seller_nav_lot_badge           ]                          [badge         ] { number }                   [color1/color2]          [ no  ]     
+----└┬ [seller_nav_finance_button      ]                          [button        ]                              [color1/color2]          [ yes ]   
+---- ├ [seller_nav_finance_header      ]                          [header        ] "ФИНАНСЫ"                    [color1/color2]          [ no  ] 
+---- └ [seller_nav_finance_badge       ]                          [badge         ] { number }                   [color1/color2]          [ no  ]  
         
 
 ■ seller_lot_searchlot
@@ -95,8 +95,10 @@ s3) ┌─ [seller_nav                           ]                          [sec
 
 ✠ color_states
 ┌─
-│seller_lot_searcher  (border)
+│seller_lot_searcher  
 │---------------------------
+│⟪⟪ border ⟫⟫ 
+│--------
 │• color2
 │------ в inactive_state;
 │• color1
@@ -105,6 +107,8 @@ s3) ┌─ [seller_nav                           ]                          [sec
 ┌─
 │seller_lot_searcher_icon  
 │---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color2
 │------ в inactive_state;
 │• color1
@@ -113,12 +117,16 @@ s3) ┌─ [seller_nav                           ]                          [sec
 ┌─
 │seller_lot_searcher_placeholder  
 │---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color2
 │------ в любой ситуации.
 └─
 ┌─
-│seller_lot_add_lot  (border)
+│seller_lot_add_lot   
 │---------------------------
+│⟪⟪ border ⟫⟫ 
+│--------
 │• color2
 │------ в inactive_state;
 │• color5
@@ -127,6 +135,8 @@ s3) ┌─ [seller_nav                           ]                          [sec
 ┌─
 │seller_lot_add_lot_icon  
 │---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color2
 │------ в inactive_state;
 │• color5
@@ -237,8 +247,10 @@ lot_cover_archived_state:
 
 ✠ color_states
 ┌─
-│seller_lot_cover  (border)
+│seller_lot_cover  
 │---------------------------
+│⟪⟪ border ⟫⟫ 
+│--------
 │• color2
 │------ в любой ситуации.
 └─
@@ -517,8 +529,10 @@ lot_cover_archived_state:
 
 ✠ color_states
 ┌─
-│lot_cover  (border)
+│lot_cover  
 │---------------------------
+│⟪⟪ border ⟫⟫ 
+│--------
 │• color2
 │------ в любой ситуации.
 └─
@@ -527,20 +541,26 @@ lot_cover_archived_state:
 │seller_lot_cover_control_veil  
 │seller_lot_cover_control_expo  
 │---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color2
 │------ в inactive_state;
 │• color5
 │------ в pressing_state.
 └─
 ┌─
-│seller_lot_cover_img_frame  (border)
+│seller_lot_cover_img_frame  
 │---------------------------
+│⟪⟪ border ⟫⟫ 
+│--------
 │• color2
 │------ в любой ситуации.
 └─
 ┌─
-│seller_lot_cover_img_widget  (body)
+│seller_lot_cover_img_widget  
 │---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color1
 │------ для lot_cover_unveiled_state;
 │• color3
@@ -551,6 +571,8 @@ lot_cover_archived_state:
 │seller_lot_cover_info_quantity_plus  
 │seller_lot_cover_info_quantity_minus  
 │---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color2
 │------ в inactive_state;
 │• color5
@@ -559,12 +581,16 @@ lot_cover_archived_state:
 ┌─
 │seller_lot_cover_info_quantity_value_definite 
 │---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color2
 │------ в любой ситуации.
 └─
 ┌─
 │seller_lot_cover_info_quantity_value_approx  
 │---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color2
 │------ для seller_lot_cover_info_quantity_value_approx = sold;
 │• color3
@@ -625,65 +651,44 @@ lot_cover_archived_state:
 
 ✠ color_states
 ┌─
-│seller_nav_monitor_button  
+│seller_nav_lot_button
 │---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color7
+│------ в любой ситуации.
+└─
+┌─
+│seller_nav_lot_badge
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color2
+│------ в любой ситуации.
+└─
+┌─
+│seller_nav_monitor_button  
+│seller_nav_shop_button
+│seller_nav_chat_button
+│seller_nav_finance_button
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color2
 │------ в любой ситуации.
 └─
 ┌─
 │seller_nav_monitor_badge  
-│---------------------------
-│• color4
-│------ в любой ситуации.
-└─
-┌─
-│seller_nav_chat_button  
-│---------------------------
-│• color2
-│------ в любой ситуации.
-└─
-┌─
-│seller_nav_chat_badge  
-│---------------------------
-│• color4
-│------ в любой ситуации.
-└─
-┌─
-│seller_nav_shop_button  
-│---------------------------
-│• color2
-│------ в любой ситуации.
-└─
-┌─
 │seller_nav_shop_badge  
+│seller_nav_chat_badge  
+│seller_nav_finance_badge 
 │---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color4
 │------ в любой ситуации.
 └─
-┌─
-│seller_nav_lot_button  
-│---------------------------
-│• color5
-│------ в любой ситуации.
-└─
-┌─
-│seller_nav_lot_badge  
-│---------------------------
-│• color4
-│------ в любой ситуации.
-└─
-┌─
-│seller_nav_finance_button  
-│---------------------------
-│• color2
-│------ в любой ситуации.
-└─
-┌─
-│seller_nav_finance_badge  
-│---------------------------
-│• color4
-│------ в любой ситуации.
-└─
+
 
 
 lot_id
@@ -697,5 +702,13 @@ lot_saletype
 lot_image
 lot_image_link
 lot_description
+
+
+
+location:
+первая координата - по вертикали
+вторая координата - по горизонтали
+[ 🡅 ✜ ] - элемент прижат кверху с выравниванием по центру 
+
 
 
