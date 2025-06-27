@@ -114,6 +114,8 @@ color5 - actived;
 ┌─
 │setting_lot_edit_name_input
 │---------------------------
+│⟪⟪ border ⟫⟫ 
+│--------
 │• color3:
 │- || - invalid по факту проверки на undernaming; 
 │- || - invalid по факту проверки на overnaming; 
@@ -220,6 +222,8 @@ color5 - actived;
 ┌─
 │setting_lot_edit_price_input
 │---------------------------
+│⟪⟪ border ⟫⟫ 
+│--------
 │• color3:
 │- || - invalid по факту проверки на overnaming; 
 │- || - invalid по факту проверки на stopsymbol; 
@@ -433,6 +437,8 @@ color5 - actived;
 ┌─
 │setting_lot_edit_measure_dropdown
 │---------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color2
 │------ в inactive_state;
 │• color5
@@ -459,6 +465,8 @@ color5 - actived;
 │setting_lot_edit_measure_dropdown_list_animals
 │setting_lot_edit_measure_dropdown_list_families
 │---------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color2
 │------ в inactive_state;
 │• color5
@@ -467,6 +475,8 @@ color5 - actived;
 ┌─
 │setting_lot_edit_measure_protip
 │-------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color2
 │------ в любой ситуации.
 └─
@@ -499,6 +509,8 @@ color5 - actived;
 ╙ && - выбранный вариант сохраняется в local_storage и по умолчанию применяется при открытии lot_edit_screen для публикации следующего лота.
 
 
+
+
 🡆🡆🡆 setting_lot_edit_measure_protip_modal
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 
@@ -526,6 +538,8 @@ setting_lot_edit_measure_protip_modal располагается по центр
 ┌─
 │setting_lot_edit_measure_protip_modal_button
 │---------------------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color2
 │------ в inactive_state;
 │• color5
@@ -580,6 +594,8 @@ setting_lot_edit_quantity_manager_approx - активирует виджет в 
 │setting_lot_edit_quantity_manager_definite
 │setting_lot_edit_quantity_manager_approx
 │---------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color2
 │------ в inactive_state;
 │• color5
@@ -588,6 +604,8 @@ setting_lot_edit_quantity_manager_approx - активирует виджет в 
 ┌─
 │setting_lot_edit_quantity_manager_protip
 │-------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color2
 │------ в любой ситуации.
 └─
@@ -634,6 +652,8 @@ setting_lot_edit_quantity_manager_protip_modal располагается по �
 ┌─
 │setting_lot_edit_quantity_manager_protip_modal_button
 │---------------------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color2
 │------ в inactive_state;
 │• color5
@@ -694,6 +714,8 @@ setting_lot_edit_quantity_manager_protip_modal располагается по �
 ┌─
 │setting_lot_edit_quantity_input
 │---------------------------
+│⟪⟪ border ⟫⟫ 
+│--------
 │• color3:
 │- || - invalid по факту проверки на overnaming; 
 │- || - invalid по факту проверки на stopsymbol; 
@@ -766,6 +788,8 @@ setting_lot_edit_quantity_protip_modal располагается по цент�
 ┌─
 │setting_lot_edit_quantity_protip_modal_button
 │---------------------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color2
 │------ в inactive_state;
 │• color5
@@ -820,6 +844,8 @@ setting_lot_edit_quantity_protip_modal располагается по цент�
 ┌─
 │setting_lot_edit_saletype_dropdown
 │---------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color2
 │------ в inactive_state;
 │• color5
@@ -829,6 +855,8 @@ setting_lot_edit_quantity_protip_modal располагается по цент�
 │setting_lot_edit_saletype_dropdown_list_retail
 │setting_lot_edit_saletype_dropdown_list_wholesale
 │---------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color2
 │------ в inactive_state;
 │• color5
@@ -837,6 +865,8 @@ setting_lot_edit_quantity_protip_modal располагается по цент�
 ┌─
 │setting_lot_edit_saletype_protip
 │-------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color2
 │------ в любой ситуации.
 └─
@@ -879,6 +909,8 @@ setting_lot_edit_saletype_protip_modal располагается по цент�
 ┌─
 │setting_lot_edit_saletype_protip_modal_button
 │---------------------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color2
 │------ в inactive_state;
 │• color5
@@ -915,6 +947,8 @@ setting_lot_edit_saletype_protip_modal располагается по цент�
 ┌─
 │setting_lot_edit_image_button
 │---------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color2
 │------ в inactive_state;
 │• color5
@@ -923,6 +957,8 @@ setting_lot_edit_saletype_protip_modal располагается по цент�
 ┌─
 │setting_lot_edit_image_protip
 │-------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color2
 │------ в любой ситуации.
 └─
@@ -977,6 +1013,8 @@ setting_lot_edit_saletype_protip_modal располагается по цент�
 ┌─
 │setting_lot_edit_image_value_popup_button
 │---------------------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color2
 │------ в inactive_state;
 │• color5
@@ -1011,6 +1049,8 @@ setting_lot_edit_image_protip_modal располагается по центру
 ┌─
 │setting_lot_edit_image_protip_modal_button
 │---------------------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color2
 │------ в inactive_state;
 │• color5
@@ -1060,7 +1100,9 @@ setting_lot_edit_description_value = {text}    - описание присутс
 ✠ color_states
 ┌─
 │setting_lot_edit_description_textaria
-│---------------------------
+│-------------------------------------
+│⟪⟪ border ⟫⟫ 
+│--------
 │• color3:
 │- || - invalid по факту проверки на overnaming; 
 │- || - invalid по факту проверки на stopsymbol; 
@@ -1148,12 +1190,16 @@ setting_lot_edit_description_value = {text}    - описание присутс
 ┌─
 │setting_lot_edit_button_no
 │------------------------ 
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color2
 │------ в любой ситуации.
 └─
 ┌─
 │setting_lot_edit_button_yes
 │------------------------- 
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color1
 │- && - valid по setting_lot_edit_name;
 │- && - valid по setting_lot_edit_price.
@@ -1194,6 +1240,7 @@ lot_saletype
 lot_image
 lot_image_link
 lot_description
+
 
 
 
