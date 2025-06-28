@@ -11,6 +11,8 @@
 
 
 
+
+
 🡆 seller_chat
 ■■■■■■■■■■■■■■■■■■■■
 
@@ -109,12 +111,16 @@ seller_chat_nav представлен 3 компонентами:
 ┌─
 │seller_chat_nav_blog
 │---------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color7
 │------ в любой ситуации.
 └─
 ┌─
 │seller_chat_nav_forum
 │---------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color2
 │------ в inactive_state;
 │• color5
@@ -123,6 +129,8 @@ seller_chat_nav представлен 3 компонентами:
 ┌─
 │seller_chat_nav_chat
 │---------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color2
 │------ в inactive_state;
 │• color5
@@ -149,6 +157,8 @@ seller_chat_blog_list_new расположен в верхней области 
 ┌─
 │seller_chat_blog_list_new_button
 │---------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color2
 │------ в inactive_state;
 │• color5
@@ -192,6 +202,8 @@ seller_chat_blog_list_post появляется после процедуры п
 ┌─
 │seller_chat_blog_list_post
 │---------------------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color2
 │------ в inactive_state;
 │• color5
@@ -201,6 +213,8 @@ seller_chat_blog_list_post появляется после процедуры п
 │seller_chat_blog_list_post_viewer
 │seller_chat_blog_list_post_time
 │---------------------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color2
 │------ в любой ситуации.
 └─
@@ -260,65 +274,45 @@ seller_chat_blog_list_post появляется после процедуры п
 
 ✠ color_states
 ┌─
-│seller_nav_monitor_button  
+│seller_nav_chat_button
 │---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color7
+│------ в любой ситуации.
+└─
+┌─
+│seller_nav_chat_badge
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color2
+│------ в любой ситуации.
+└─
+┌─
+│seller_nav_monitor_button  
+│seller_nav_shop_button
+│seller_nav_lot_button
+│seller_nav_finance_button
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color2
 │------ в любой ситуации.
 └─
 ┌─
 │seller_nav_monitor_badge  
-│---------------------------
-│• color4
-│------ в любой ситуации.
-└─
-┌─
-│seller_nav_chat_button  
-│---------------------------
-│• color7
-│------ в любой ситуации.
-└─
-┌─
-│seller_nav_chat_badge  
-│---------------------------
-│• color4
-│------ в любой ситуации.
-└─
-┌─
-│seller_nav_shop_button  
-│---------------------------
-│• color2
-│------ в любой ситуации.
-└─
-┌─
 │seller_nav_shop_badge  
-│---------------------------
-│• color4
-│------ в любой ситуации.
-└─
-┌─
-│seller_nav_lot_button  
-│---------------------------
-│• color2
-│------ в любой ситуации.
-└─
-┌─
 │seller_nav_lot_badge  
+│seller_nav_finance_badge 
 │---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color4
 │------ в любой ситуации.
 └─
-┌─
-│seller_nav_finance_button  
-│---------------------------
-│• color2
-│------ в любой ситуации.
-└─
-┌─
-│seller_nav_finance_badge  
-│---------------------------
-│• color4
-│------ в любой ситуации.
-└─
+
+
 
 
 🡆🡆🡆 seller_chat_blog_list_post_emoji_popup
@@ -365,6 +359,8 @@ seller_chat_blog_list_post_emoji_popup_button - кнопка отвечающа�
 │seller_chat_blog_list_post_emoji_popup_symbol
 │seller_chat_blog_list_post_emoji_popup_button
 │---------------------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color2
 │------ в inactive_state;
 │• color5
@@ -441,12 +437,16 @@ seller_chat_nav представлен 3 компонентами:
 ┌─
 │seller_chat_nav_blog
 │---------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color7
 │------ в любой ситуации.
 └─
 ┌─
 │seller_chat_nav_forum
 │---------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color2
 │------ в inactive_state;
 │• color5
@@ -455,6 +455,8 @@ seller_chat_nav представлен 3 компонентами:
 ┌─
 │seller_chat_nav_chat
 │---------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color2
 │------ в inactive_state;
 │• color5
@@ -595,8 +597,10 @@ seller_chat_blog_edit является формой создаваемого п�
 
 ✠ color_states
 ┌─
-│seller_chat_blog_edit_header (border)
+│seller_chat_blog_edit_header 
 │---------------------------
+│⟪⟪ border ⟫⟫ 
+│--------
 │• color3:
 │- || - invalid по факту проверки на undernaming; 
 │- || - invalid по факту проверки на overnaming; 
@@ -609,14 +613,18 @@ seller_chat_blog_edit является формой создаваемого п�
 │- && - valid по факту проверки на omission.
 └─
 ┌─
-│seller_chat_blog_edit_image (border)
+│seller_chat_blog_edit_image  
 │---------------------------
+│⟪⟪ border ⟫⟫ 
+│--------
 │• color2:
 │------ в любой ситуации.
 └─
 ┌─
-│seller_chat_blog_edit_text (border)
+│seller_chat_blog_edit_text 
 │---------------------------
+│⟪⟪ border ⟫⟫ 
+│--------
 │• color3:
 │- || - invalid по факту проверки на undernaming; 
 │- || - invalid по факту проверки на overnaming; 
@@ -629,14 +637,18 @@ seller_chat_blog_edit является формой создаваемого п�
 │- && - valid по факту проверки на omission.
 └─
 ┌─
-│seller_chat_blog_edit_close (body)
+│seller_chat_blog_edit_close  
 │---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color2:
 │------ в любой ситуации.
 └─
 ┌─
-│seller_chat_blog_edit_public (body)
+│seller_chat_blog_edit_public 
 │------------------------- 
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color1
 │- && - valid по seller_chat_blog_edit_header;
 │- && - valid по seller_chat_blog_edit_text.
@@ -716,65 +728,44 @@ seller_chat_blog_edit является формой создаваемого п�
 
 ✠ color_states
 ┌─
-│seller_nav_monitor_button  
+│seller_nav_chat_button
 │---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color7
+│------ в любой ситуации.
+└─
+┌─
+│seller_nav_chat_badge
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color2
+│------ в любой ситуации.
+└─
+┌─
+│seller_nav_monitor_button  
+│seller_nav_shop_button
+│seller_nav_lot_button
+│seller_nav_finance_button
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color2
 │------ в любой ситуации.
 └─
 ┌─
 │seller_nav_monitor_badge  
-│---------------------------
-│• color4
-│------ в любой ситуации.
-└─
-┌─
-│seller_nav_chat_button  
-│---------------------------
-│• color7
-│------ в любой ситуации.
-└─
-┌─
-│seller_nav_chat_badge  
-│---------------------------
-│• color4
-│------ в любой ситуации.
-└─
-┌─
-│seller_nav_shop_button  
-│---------------------------
-│• color2
-│------ в любой ситуации.
-└─
-┌─
 │seller_nav_shop_badge  
-│---------------------------
-│• color4
-│------ в любой ситуации.
-└─
-┌─
-│seller_nav_lot_button  
-│---------------------------
-│• color2
-│------ в любой ситуации.
-└─
-┌─
 │seller_nav_lot_badge  
+│seller_nav_finance_badge 
 │---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color4
 │------ в любой ситуации.
 └─
-┌─
-│seller_nav_finance_button  
-│---------------------------
-│• color2
-│------ в любой ситуации.
-└─
-┌─
-│seller_nav_finance_badge  
-│---------------------------
-│• color4
-│------ в любой ситуации.
-└─
+
 
 
 
@@ -790,7 +781,7 @@ Forum представляет собой публичную дискуссио�
 
 ✠ tables
 
-seller_chat_forum_screen_state1
+■ seller_chat_forum_screen_state1 ■
 
                    codename:                                 type:           button_name:        pressed/default:      location:      interaction:
 s1)   ┌─[seller_chat_nav                         ]       [section       ] 
@@ -829,7 +820,7 @@ s5)  ┌─ [seller_nav                              ]       [section       ]   
 ---   └ [seller_nav_finance_badge                ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ] 
 
 
-seller_chat_forum_screen_state2
+■ seller_chat_forum_screen_state2 ■
 
                     codename:                                 type:           button_name:        pressed/default:      location:      interaction:
 s1)   ┌─[seller_chat_nav                         ]       [section       ] 
@@ -868,7 +859,7 @@ s5)  ┌─ [seller_nav                              ]       [section       ]   
 ---   └ [seller_nav_finance_badge                ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ] 
 
 
-seller_chat_forum_screen_state3
+■ seller_chat_forum_screen_state3 ■
 
                     codename:                                   type:           button_name:        pressed/default:      location:      interaction:
 s1)   ┌─[seller_chat_nav                           ]       [section       ] 
@@ -910,7 +901,7 @@ s5)  ┌─ [seller_nav                                ]       [section       ] 
 ---   └ [seller_nav_finance_badge                  ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ] 
 
 
-seller_chat_forum_screen_state4
+■ seller_chat_forum_screen_state4 ■
 
                     codename:                                          type:           button_name:        pressed/default:      location:      interaction:
 s1)   ┌─[seller_chat_nav                                  ]       [section       ] 
@@ -930,9 +921,9 @@ s3)┌┬┬──[seller_chat_forum_node                           ]       [sec
 s4) ┌┬──[seller_chat_forum_state4_messager                ]       [section       ]                                                [ 🡇 ✜ ]         [ no  ]
 --- │└┬ [seller_chat_forum_state4_messager_container      ]       [subsection    ]                         [color1/color2]        [ ✜ ✜ ]         [ no  ]
 --- │ ├ [seller_chat_forum_state4_messager_container_time ]       [widget        ]                         [color2/color2]        [ ✜ 🡄 ]         [ no  ]
---- │ ├ [seller_chat_forum_state4_messager_container_bulb ]       [widget        ]                         [color4/color4]        [ ✜ 🡄 ]         [ no  ]
+--- │ ├ [seller_chat_forum_state4_messager_container_bulb ]       [widget        ]                         [color3/color3]        [ ✜ 🡄 ]         [ no  ]
 --- │ ├ [seller_chat_forum_state4_messager_container_audio]       [widget        ]                         [color2/color2]        [ ✜ 🡆 ]         [ no  ]
---- │ └ [seller_chat_forum_state4_messager_container_rec  ]       [widget        ]                         [color4/color4]        [ ✜ ✜ ]         [ no  ]
+--- │ └ [seller_chat_forum_state4_messager_container_rec  ]       [widget        ]                         [color3/color3]        [ ✜ ✜ ]         [ no  ]
 --- └── [seller_chat_forum_state4_messager_mic            ]       [button+icon   ]                         [color5/color4]        [ ✜ 🡆 ]         [ yes ]
 s5)  ┌─ [seller_nav                                       ]       [section       ]                                                [ 🡇 ✜ ]
 ---  ├┬ [seller_nav_monitor_button                        ]       [button        ]                         [color1/color2]        [ ✜ 🡄 ]         [ yes ]
@@ -963,16 +954,19 @@ seller_chat_nav представлен 3 компонентами:
 ✠ actions
 • seller_chat_nav_blog:
 ╠ valid / invalid
+║ • tap 
 ║ occasion: нажатие seller_chat_nav_blog;
 ║ condition: в любой ситуации;
 ╙ result: открывается seller_chat_list_screen.
 • seller_chat_nav_forum:
 ╠ valid / invalid
+║ • tap 
 ║ occasion: нажатие seller_chat_nav_forum;
 ║ condition: в любой ситуации;
 ╙ result: открывается seller_chat_forum_screen.
 • seller_chat_nav_chat:
 ╠ valid / invalid
+║ • tap 
 ║ occasion: нажатие seller_chat_nav_chat;
 ║ condition: в любой ситуации;
 ╙ result: открывается seller_chat_chat_screen.
@@ -981,6 +975,8 @@ seller_chat_nav представлен 3 компонентами:
 ┌─
 │seller_chat_nav_blog
 │---------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color2
 │------ в inactive_state;
 │• color5
@@ -989,12 +985,16 @@ seller_chat_nav представлен 3 компонентами:
 ┌─
 │seller_chat_nav_forum
 │---------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color7
 │------ в любой ситуации.
 └─
 ┌─
 │seller_chat_nav_chat
 │---------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color2
 │------ в inactive_state;
 │• color5
@@ -1041,6 +1041,8 @@ seller_chat_forum_node является контейнером сообщени�
 ┌─
 │seller_chat_forum_node
 │---------------------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color2
 │------ в любой ситуации.
 └─
@@ -1084,6 +1086,8 @@ seller_chat_forum_state1_messager - состояние по умолчанию, 
 ┌─
 │seller_chat_forum_state1_messager_option
 │---------------------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color2
 │------ в inactive_state;
 │• color5
@@ -1092,12 +1096,16 @@ seller_chat_forum_state1_messager - состояние по умолчанию, 
 ┌─
 │seller_chat_forum_state1_messager_input
 │---------------------------------------------
+│⟪⟪ border ⟫⟫ 
+│--------
 │• color2
 │------ в любой ситуации.
 └─
 ┌─
 │seller_chat_forum_state1_messager_mic
 │---------------------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color4
 │------ в inactive_state;
 │• color5
@@ -1144,6 +1152,8 @@ seller_chat_forum_state2_messager - активируется в момент к�
 ┌─
 │seller_chat_forum_state2_messager_search
 │---------------------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color2
 │------ в inactive_state;
 │• color5
@@ -1152,12 +1162,16 @@ seller_chat_forum_state2_messager - активируется в момент к�
 ┌─
 │seller_chat_forum_state2_messager_input
 │---------------------------------------------
+│⟪⟪ border ⟫⟫ 
+│--------
 │• color2
 │------ в любой ситуации.
 └─
 ┌─
 │seller_chat_forum_state2_messager_sent
 │---------------------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color4
 │------ в inactive_state;
 │• color5
@@ -1240,6 +1254,8 @@ seller_chat_forum_node_matched - это seller_chat_forum_node с наличие
 ┌─
 │seller_chat_forum_state3_messager_search
 │---------------------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color7
 │------ в inactive_state;
 │• color5
@@ -1248,6 +1264,8 @@ seller_chat_forum_node_matched - это seller_chat_forum_node с наличие
 ┌─
 │seller_chat_forum_state3_messager_input
 │---------------------------------------------
+│⟪⟪ border ⟫⟫ 
+│--------
 │• color2
 │------ в любой ситуации.
 └─
@@ -1255,6 +1273,8 @@ seller_chat_forum_node_matched - это seller_chat_forum_node с наличие
 │seller_chat_forum_state3_messager_nav_up
 │seller_chat_forum_state3_messager_nav_down
 │---------------------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color2
 │------ в inactive_state;
 │• color5
@@ -1292,6 +1312,8 @@ seller_chat_forum_state4_messager - активируется в момент к�
 │seller_chat_forum_state4_messager_container_time
 │seller_chat_forum_state4_messager_container_audio
 │---------------------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color2
 │------ в любой ситуации.
 └─
@@ -1299,18 +1321,24 @@ seller_chat_forum_state4_messager - активируется в момент к�
 │seller_chat_forum_state4_messager_container_bulb
 │seller_chat_forum_state4_messager_container_rec
 │---------------------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color4
 │------ в любой ситуации.
 └─
 ┌─
 │seller_chat_forum_state4_messager_input
 │---------------------------------------------
+│⟪⟪ border ⟫⟫ 
+│--------
 │• color2
 │------ в любой ситуации.
 └─
 ┌─
 │seller_chat_forum_state4_messager_mic
 │---------------------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color4
 │------ в inactive_state;
 │• color5
@@ -1380,65 +1408,45 @@ seller_chat_forum_state4_messager - активируется в момент к�
 
 ✠ color_states
 ┌─
-│seller_nav_monitor_button  
+│seller_nav_chat_button
 │---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color7
+│------ в любой ситуации.
+└─
+┌─
+│seller_nav_chat_badge
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color2
+│------ в любой ситуации.
+└─
+┌─
+│seller_nav_monitor_button  
+│seller_nav_shop_button
+│seller_nav_lot_button
+│seller_nav_finance_button
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color2
 │------ в любой ситуации.
 └─
 ┌─
 │seller_nav_monitor_badge  
-│---------------------------
-│• color4
-│------ в любой ситуации.
-└─
-┌─
-│seller_nav_chat_button  
-│---------------------------
-│• color7
-│------ в любой ситуации.
-└─
-┌─
-│seller_nav_chat_badge  
-│---------------------------
-│• color4
-│------ в любой ситуации.
-└─
-┌─
-│seller_nav_shop_button  
-│---------------------------
-│• color2
-│------ в любой ситуации.
-└─
-┌─
 │seller_nav_shop_badge  
-│---------------------------
-│• color4
-│------ в любой ситуации.
-└─
-┌─
-│seller_nav_lot_button  
-│---------------------------
-│• color2
-│------ в любой ситуации.
-└─
-┌─
 │seller_nav_lot_badge  
+│seller_nav_finance_badge 
 │---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color4
 │------ в любой ситуации.
 └─
-┌─
-│seller_nav_finance_button  
-│---------------------------
-│• color2
-│------ в любой ситуации.
-└─
-┌─
-│seller_nav_finance_badge  
-│---------------------------
-│• color4
-│------ в любой ситуации.
-└─
+
+
 
 
 🡆 seller_chat_chat_screen
@@ -1454,7 +1462,7 @@ Forum представляет собой приватный чат для ин�
 
 ✠ tables
 
-seller_chat_chat_screen_state1
+■ seller_chat_chat_screen_state1 ■
 
 
                    codename:                                type:           button_name:        pressed/default:      location:      interaction:
@@ -1488,7 +1496,7 @@ s5) ┌─ [seller_nav                             ]       [section       ]     
 ---- └ [seller_nav_finance_badge               ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ] 
 
 
-seller_chat_chat_screen_state2
+■ seller_chat_chat_screen_state2 ■
 
                    codename:                                type:           button_name:        pressed/default:      location:      interaction:
 s1)  ┌─[seller_chat_nav                        ]       [section       ] 
@@ -1521,7 +1529,7 @@ s5) ┌─ [seller_nav                             ]       [section       ]     
 ---- └ [seller_nav_finance_badge               ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ] 
 
 
-seller_chat_chat_screen_state3
+■ seller_chat_chat_screen_state3 ■
 
                    codename:                                  type:           button_name:        pressed/default:      location:      interaction:
 s1)  ┌─[seller_chat_nav                          ]       [section       ] 
@@ -1557,7 +1565,7 @@ s5) ┌─ [seller_nav                               ]       [section       ]   
 ---- └ [seller_nav_finance_badge                 ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ] 
 
 
-seller_chat_chat_screen_state4
+■ seller_chat_chat_screen_state4 ■
 
                     codename:                                         type:           button_name:        pressed/default:      location:      interaction:
 s1)   ┌─[seller_chat_nav                                 ]       [section       ] 
@@ -1577,9 +1585,9 @@ s3)┌┬┬──[seller_chat_chat_node                           ]       [sect
 s4) ┌┬──[seller_chat_chat_state4_messager                ]       [section       ]                                                [ 🡇 ✜ ]         [ no  ]
 --- │└┬ [seller_chat_chat_state4_messager_container      ]       [subsection    ]                         [color1/color2]        [ ✜ ✜ ]         [ no  ]
 --- │ ├ [seller_chat_chat_state4_messager_container_time ]       [widget        ]                         [color2/color2]        [ ✜ 🡄 ]         [ no  ]
---- │ ├ [seller_chat_chat_state4_messager_container_bulb ]       [widget        ]                         [color4/color4]        [ ✜ 🡄 ]         [ no  ]
+--- │ ├ [seller_chat_chat_state4_messager_container_bulb ]       [widget        ]                         [color3/color3]        [ ✜ 🡄 ]         [ no  ]
 --- │ ├ [seller_chat_chat_state4_messager_container_audio]       [widget        ]                         [color2/color2]        [ ✜ 🡆 ]         [ no  ]
---- │ └ [seller_chat_chat_state4_messager_container_rec  ]       [widget        ]                         [color4/color4]        [ ✜ ✜ ]         [ no  ]
+--- │ └ [seller_chat_chat_state4_messager_container_rec  ]       [widget        ]                         [color3/color3]        [ ✜ ✜ ]         [ no  ]
 --- └── [seller_chat_chat_state4_messager_mic            ]       [button+icon   ]                         [color5/color4]        [ ✜ 🡆 ]         [ yes ]
 s5)  ┌─ [seller_nav                                      ]       [section       ]                                                [ 🡇 ✜ ]
 ---  ├┬ [seller_nav_monitor_button                       ]       [button        ]                         [color1/color2]        [ ✜ 🡄 ]         [ yes ]
@@ -1629,6 +1637,8 @@ seller_chat_nav представлен 3 компонентами:
 ┌─
 │seller_chat_nav_blog
 │---------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color2
 │------ в inactive_state;
 │• color5
@@ -1637,6 +1647,8 @@ seller_chat_nav представлен 3 компонентами:
 ┌─
 │seller_chat_nav_forum
 │---------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color2
 │------ в inactive_state;
 │• color5
@@ -1645,6 +1657,8 @@ seller_chat_nav представлен 3 компонентами:
 ┌─
 │seller_chat_nav_chat
 │---------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color7
 │------ в любой ситуации.
 └─
@@ -1671,6 +1685,8 @@ seller_chat_chat_node является телом сообщения, котор
 ┌─
 │seller_chat_chat_node
 │---------------------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color2
 │------ в любой ситуации.
 └─
@@ -1714,6 +1730,8 @@ seller_chat_chat_state1_messager - состояние по умолчанию, �
 ┌─
 │seller_chat_chat_state1_messager_option
 │---------------------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color2
 │------ в inactive_state;
 │• color5
@@ -1722,12 +1740,16 @@ seller_chat_chat_state1_messager - состояние по умолчанию, �
 ┌─
 │seller_chat_chat_state1_messager_input
 │---------------------------------------------
+│⟪⟪ border ⟫⟫ 
+│--------
 │• color2
 │------ в любой ситуации.
 └─
 ┌─
 │seller_chat_chat_state1_messager_mic
 │---------------------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color4
 │------ в inactive_state;
 │• color5
@@ -1774,6 +1796,8 @@ seller_chat_chat_state2_messager - активируется в момент ко
 ┌─
 │seller_chat_chat_state2_messager_search
 │---------------------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color2
 │------ в inactive_state;
 │• color5
@@ -1782,12 +1806,16 @@ seller_chat_chat_state2_messager - активируется в момент ко
 ┌─
 │seller_chat_chat_state2_messager_input
 │---------------------------------------------
+│⟪⟪ border ⟫⟫ 
+│--------
 │• color2
 │------ в любой ситуации.
 └─
 ┌─
 │seller_chat_chat_state2_messager_sent
 │---------------------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color2
 │------ в inactive_state;
 │• color1
@@ -1862,6 +1890,8 @@ seller_chat_chat_node_matched - это seller_chat_chat_node с наличием
 ┌─
 │seller_chat_chat_state3_messager_search
 │---------------------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color7
 │------ в inactive_state;
 │• color5
@@ -1870,6 +1900,8 @@ seller_chat_chat_node_matched - это seller_chat_chat_node с наличием
 ┌─
 │seller_chat_chat_state3_messager_input
 │---------------------------------------------
+│⟪⟪ border ⟫⟫ 
+│--------
 │• color2
 │------ в любой ситуации.
 └─
@@ -1877,6 +1909,8 @@ seller_chat_chat_node_matched - это seller_chat_chat_node с наличием
 │seller_chat_chat_state3_messager_nav_up
 │seller_chat_chat_state3_messager_nav_down
 │---------------------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color2
 │------ в inactive_state;
 │• color5
@@ -1913,6 +1947,8 @@ seller_chat_chat_state4_messager - активируется в момент ко
 │seller_chat_chat_state4_messager_container_time
 │seller_chat_chat_state4_messager_container_audio
 │---------------------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color2
 │------ в любой ситуации.
 └─
@@ -1920,18 +1956,24 @@ seller_chat_chat_state4_messager - активируется в момент ко
 │seller_chat_chat_state4_messager_container_bulb
 │seller_chat_chat_state4_messager_container_rec
 │---------------------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color4
 │------ в любой ситуации.
 └─
 ┌─
 │seller_chat_chat_state4_messager_input
 │---------------------------------------------
+│⟪⟪ border ⟫⟫ 
+│--------
 │• color2
 │------ в любой ситуации.
 └─
 ┌─
 │seller_chat_chat_state4_messager_mic
 │---------------------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color4
 │------ в inactive_state;
 │• color5
@@ -2001,65 +2043,44 @@ seller_chat_chat_state4_messager - активируется в момент ко
 
 ✠ color_states
 ┌─
-│seller_nav_monitor_button  
+│seller_nav_chat_button
 │---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color7
+│------ в любой ситуации.
+└─
+┌─
+│seller_nav_chat_badge
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color2
+│------ в любой ситуации.
+└─
+┌─
+│seller_nav_monitor_button  
+│seller_nav_shop_button
+│seller_nav_lot_button
+│seller_nav_finance_button
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color2
 │------ в любой ситуации.
 └─
 ┌─
 │seller_nav_monitor_badge  
-│---------------------------
-│• color4
-│------ в любой ситуации.
-└─
-┌─
-│seller_nav_chat_button  
-│---------------------------
-│• color7
-│------ в любой ситуации.
-└─
-┌─
-│seller_nav_chat_badge  
-│---------------------------
-│• color4
-│------ в любой ситуации.
-└─
-┌─
-│seller_nav_shop_button  
-│---------------------------
-│• color2
-│------ в любой ситуации.
-└─
-┌─
 │seller_nav_shop_badge  
-│---------------------------
-│• color4
-│------ в любой ситуации.
-└─
-┌─
-│seller_nav_lot_button  
-│---------------------------
-│• color2
-│------ в любой ситуации.
-└─
-┌─
 │seller_nav_lot_badge  
+│seller_nav_finance_badge 
 │---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
 │• color4
 │------ в любой ситуации.
 └─
-┌─
-│seller_nav_finance_button  
-│---------------------------
-│• color2
-│------ в любой ситуации.
-└─
-┌─
-│seller_nav_finance_badge  
-│---------------------------
-│• color4
-│------ в любой ситуации.
-└─
+
 
 
 
