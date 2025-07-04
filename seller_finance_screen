@@ -1,1 +1,55 @@
-seller_finance_screen
+
+
+
+
+🡆 seller_money_screen
+■■■■■■■■■■■■■■■■■■■■■
+
+seller_money_screen предоставляет seller инструмент реализации специфического подхода работы с потенциальными клиентами (описание скрыто по причине защиты бизнес идеи). seller_money_screen разделен на 5 sections и может находиться в 2 состояниях:
+ 
+seller_hunt_inactive_state - состояние при котором сканирование не производится;
+seller_hunt_active_state - состояние при котором производится сканирование.
+ 
+ 
+✠ tables
+
+■ seller_hunt_inactive_state ■
+
+✠ tables
+  
+                          codename:                              type:           button_name:        pressed/default:      location:      interaction:
+s1)   ┌─[seller_hunt_header                         ]       [section       ]                                                [ 🡅 ✜ ]         [ no  ]
+---   ├ [seller_hunt_header_title                   ]       [header        ]     "МОНИТОРИНГ"        [color2/color2]        [ ✜ 🡄 ]         [ no  ]
+---   ├ [seller_hunt_header_bulb                    ]       [widget        ]                         [color2/color2]        [ ✜ ✜ ]         [ no  ]
+---   ├ [seller_hunt_header_options                 ]       [button        ]     "НАСТРОЙКИ"         [color5/color2]        [ ✜ 🡆 ]         [ yes ]
+---   └ [seller_hunt_header_scan                    ]       [widget        ]                         [color2/color2]        [ 🡇 ✜ ]         [ no  ]
+s2)   ┌─[seller_hunt_inactive_monitor               ]       [section       ]                                                [ ✜ ✜ ]         [ no  ]  
+      └ [seller_hunt_inactive_monitor_paragraph     ]       [text          ]     "..."               [color2/color2]        [ ✜ ✜ ]         [ no  ] 
+s3)┌┬┬──[seller_hunt_inactive_tune                  ]       [section       ]                                                [ 🡇 ✜ ]         [ no  ] 
+---││└┬ [seller_hunt_inactive_tune_sens             ]       [subsection    ]                                                [ ✜ 🡄 ]         [ no  ]
+---││ ├ [seller_hunt_inactive_tune_sens_header      ]       [header        ]     "ЧУВСТВИТЕЛЬНОСТЬ"  [color2/color2]        [ 🡅 ✜ ]         [ no  ]
+---││ └ [seller_hunt_inactive_tune_sens_slider      ]       [slider        ]                         [color2/color2]        [ 🡇 ✜ ]         [ yes ]
+---│└─┬ [seller_hunt_inactive_tune_area             ]       [subsection    ]                                                [ ✜ ✜ ]         [ no  ]
+---│  ├ [seller_hunt_inactive_tune_area_widget      ]       [widget        ]     "..."               [color2/color2]        [ 🡅 ✜ ]         [ no  ]
+---│  └ [seller_hunt_inactive_tune_area_button      ]       [button        ]     "ОХВАТ"             [color5/color2]        [ 🡇 ✜ ]         [ yes ]
+---└──┬ [seller_hunt_inactive_tune_rating           ]       [subsection    ]                                                [ ✜ 🡆 ]         [ no  ]
+---   ├ [seller_hunt_inactive_tune_rating_header    ]       [header        ]     "РЕЙТИНГ"           [color2/color2]        [ 🡅 ✜ ]         [ no  ]
+---   └ [seller_hunt_inactive_tune_rating_slider    ]       [slider        ]                         [color2/color2]        [ 🡇 ✜ ]         [ yes ] 
+s4)   ┌─[seller_hunt_inactive_controller            ]       [section       ]                                                [ 🡇 ✜ ]         [ no  ]
+---   └ [seller_hunt_inactive_controller_button     ]       [button        ]     "СТАРТ"             [color5/color2]        [ ✜ ✜ ]         [ yes ] 
+s5)  ┌─ [seller_nav                                 ]       [section       ]                                                [ 🡇 ✜ ]         [ no  ]
+---- ├┬ [seller_nav_monitor_button                  ]       [button        ]                         [color1/color2]        [ ✜ 🡄 ]         [ yes ]
+---- │├ [seller_nav_monitor_header                  ]       [header        ]     "МОНИТОР"           [color1/color2]        [ ✜ ✜ ]         [ no  ]  
+---- │└ [seller_nav_monitor_badge                   ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ] 	
+---- ├┬ [seller_nav_chat_button                     ]       [button        ]                         [color1/color2]        [ ✜ 🡄 ]         [ yes ]   
+---- │├ [seller_nav_chat_header                     ]       [header        ]     "ЧАТ"               [color1/color2]        [ ✜ ✜ ]         [ no  ] 
+---- │└ [seller_nav_chat_badge                      ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ] 
+---- ├┬ [seller_nav_shop_button                     ]       [button        ]                         [color1/color2]        [ ✜ ✜ ]         [ yes ]   
+---- │├ [seller_nav_shop_header                     ]       [header        ]     "МАГАЗИН"           [color1/color2]        [ ✜ ✜ ]         [ no  ] 
+---- │└ [seller_nav_shop_badge                      ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ]   
+---- ├┬ [seller_nav_lot_button                      ]       [button        ]                         [color1/color2]        [ ✜ 🡆 ]         [ yes ]   
+---- │├ [seller_nav_lot_header                      ]       [header        ]     "ТОВАРЫ"            [color1/color2]        [ ✜ ✜ ]         [ no  ] 
+---- │└ [seller_nav_lot_badge                       ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ]     
+---- └┬ [seller_nav_finance_button                  ]       [button        ]                         [color1/color2]        [ ✜ 🡆 ]         [ yes ]   
+----  ├ [seller_nav_finance_header                  ]       [header        ]     "ФИНАНСЫ"           [color1/color2]        [ ✜ ✜ ]         [ no  ] 
+----  └ [seller_nav_finance_badge                   ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ] 
