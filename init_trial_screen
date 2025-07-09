@@ -11,6 +11,7 @@ color5 - actived;
 
 
 
+
 🡆 init_trial_screen 
 ■■■■■■■■■■■■■■■■■■■
 В режиме trial_mode при первом открытии shop_screen, поверх него открывается форма init_trial_screen из 9 основных секций озаглавленный "ВВЕДИТЕ ВАШИ ДАННЫЕ", где юзеру предлагается задать следующий перечень настроек (часть полей обязательны для заполнения):
@@ -94,7 +95,9 @@ s9)  ┌─[setting_seller_button                 ]                             
 ║ • tap
 ║ occasion: нажатие setting_user_username_input;
 ║ condition: в любой ситуации;
-╙ result: setting_user_username_input переходит в active_state. 
+║ result: 
+║ && - setting_user_username_input переходит в active_state;
+╙ && - происходит открытие клавиатуры.
 
 ✠ input_checks
 Фильтры проверяющие на соответствие нормативам содержание setting_user_username_input. Если в ходе проверки фиксируется несоответствие, тогда состояние setting_user_username_input позиционируется как invalid, в соответствии с чем отображается соответствующее типу проблемы предупреждение.
@@ -1003,7 +1006,7 @@ s6) представлена кнопками "ОТМЕНА" и "ОК";
 ╠ valid / invalid
 ║ occasion: нажатие seller_active_time_schedule_worktime_float_protip_button;
 ║ condition: в любой ситуации;
-╙ result: всплывает seller_active_time_schedule_worktime_float_protip_modal;
+╙ result: всплывает seller_active_time_schedule_worktime_float_protip_popover;
 • seller_active_time_schedule_worktime_24:
 ╠ valid
 ║ occasion: нажатие seller_active_time_schedule_worktime_24_button;
@@ -1027,7 +1030,7 @@ s6) представлена кнопками "ОТМЕНА" и "ОК";
 ╠ valid / invalid
 ║ occasion: нажатие seller_active_time_schedule_worktime_24_protip_button;
 ║ condition: в любой ситуации;
-╙ result: всплывает seller_active_time_schedule_worktime_24_protip_modal;
+╙ result: всплывает seller_active_time_schedule_worktime_24_protip_popover;
 • seller_active_time_schedule_lunchtime_fixed_from_hour_plus:
 ╠ valid
 ║ occasion: нажатие seller_active_time_schedule_lunchtime_fixed_from_hour_plus_button;
@@ -1152,7 +1155,7 @@ s6) представлена кнопками "ОТМЕНА" и "ОК";
 ╠ valid / invalid
 ║ occasion: нажатие seller_active_time_schedule_lunchtime_nolunch_protip_button;
 ║ condition: в любой ситуации;
-╙ result: всплывает seller_active_time_schedule_lunchtime_nolunch_protip_modal;
+╙ result: всплывает seller_active_time_schedule_lunchtime_nolunch_protip_popover;
 • seller_active_time_schedule_weekends_no:
 ╠ valid
 ║ occasion: нажатие seller_active_time_schedule_weekends_no_button;
@@ -1207,18 +1210,18 @@ s6) представлена кнопками "ОТМЕНА" и "ОК";
 ║ && - seller_active_time_schedule_screen закрывается с сохранением изменений;
 ╙ && - совершается переход к setting_seller_active_screen.
 
-✠ modal_states
-• seller_active_time_schedule_worktime_float_protip_modal:
+✠ popover_states
+• seller_active_time_schedule_worktime_float_protip_popover:
 - focusing: да;
 - location: появляется справа над seller_active_time_schedule_worktime_float_protip_button;
 - occasion: после нажатия на seller_active_time_schedule_worktime_float_protip_button;
 - content:  "ПЛАВАЮЩИЙ РЕЖИМ РАБОТЫ ОЗНАЧАЕТ, ЧТО ВЫ ОПРЕДЕЛЯЕТЕ ЧАСЫ РАБОТЫ В ЗАВИСИМОСТИ ОТ СИТУАЦИИ".
-• seller_active_time_schedule_worktime_24_protip_modal:
+• seller_active_time_schedule_worktime_24_protip_popover:
 - focusing: да;
 - location: появляется слева над seller_active_time_schedule_worktime_24_protip_button;
 - occasion: после нажатия на seller_active_time_schedule_worktime_24_protip_button;
 - content:  "24-ЧАСОВОЙ РЕЖИМ РАБОТЫ ОЗНАЧАЕТ, ЧТО ВЫ РАБОТАЕТЕ КРУГЛОСУТОЧНО".
-• seller_active_time_schedule_lunchtime_nolunch_protip_modal:
+• seller_active_time_schedule_lunchtime_nolunch_protip_popover:
 - focusing: да;
 - location: появляется над seller_active_time_schedule_lunchtime_nolunch_protip_button;
 - occasion: нажатие на seller_active_time_schedule_lunchtime_nolunch_protip_button;
@@ -2398,7 +2401,7 @@ s3) Секция состоит из 4 составляющих и позвол�
     1) setting_seller_img_frame_edit - представляет собой прямоугольную область для отображения выбранного setting_seller_img_image (умолчанию пустой), по ширине занимает порядка 100%. 
 	2) setting_seller_img_frame_zoom - представляет собой круглую рамку по центру setting_seller_img_frame_edit. В setting_seller_img_frame_zoom отображается область изображения setting_seller_img_image которая будет применяться в качестве аватара. 
 	3) setting_seller_img_frame_test - является кнопкой расположенной по центру позволяющей провести тест заключающийся в том, что после активации на область setting_seller_img_frame_edit за пределами setting_seller_img_frame_zoom накладывается эффект blur.
-	4) setting_seller_img_frame_protip - является кнопкой расположенная слева от setting_seller_img_frame_test, при нажатии на которую всплывает setting_seller_img_frame_protip_modal со следующим содержанием: 
+	4) setting_seller_img_frame_protip - является кнопкой расположенная слева от setting_seller_img_frame_test, при нажатии на которую всплывает setting_seller_img_frame_protip_popover со следующим содержанием: 
 	"ЕСЛИ НЕОБХОДИМО, СДЕЛАЙТЕ НАСТРОЙКУ ПЕРЕДВИГАЯ И МАСШТАБИРУЯ ВАШЕ ИЗОБРАЖЕНИЕ. ОБЛАСТЬ ИЗОБРАЖЕНИЯ В КРУГЛОЙ РАМКЕ БУДЕТ ОТОБРАЖАТЬСЯ В КАЧЕСТВЕ ВАШЕГО АВАТАРА (ВАШЕГО ЛИЦА). ВЫ МОЖЕТЕ ПРОТЕСТИРОВАТЬ КАК БУДЕТ ВЫГЛЯДЕТЬ ВАШ ГОТОВЫЙ АВАТАР НАЖАВ КНОПКУ 'ТЕСТ'".
 s4) Содержание заголовка setting_seller_img_add_header: "ДОБАВИТЬ ИЗОБРАЖЕНИЕ ИЗ".
     setting_seller_img_add_selfie - является кнопкой открывающей приложение камеры на устройстве, после того как изображение получено и выбрано, оно передается в setting_seller_img_buffer как setting_seller_img_image и вставляется в setting_seller_img_frame_edit.
@@ -2453,7 +2456,7 @@ s4) Содержание заголовка setting_seller_img_add_header: "ДО
 ║ • tap
 ║ occasion: нажатие setting_seller_img_frame_protip_button;
 ║ condition: в любой ситуации;
-╙ result: всплытие setting_seller_img_frame_protip_modal. 
+╙ result: всплытие setting_seller_img_frame_protip_popover. 
 • setting_seller_img_add_selfie:
 ╠ valid / invalid 
 ║ • tap
@@ -2849,17 +2852,16 @@ setting_seller_theme_store никогда не очищается.
 │- || - invalid по setting_seller_geoposition_shop.
 └─
 
-После нажатия на setting_seller_button_yes в ситуации, если все введенные данные в init_trial_screen валидны, а данные в setting_user_phone_form_input были изменены, всплывает setting_seller_trial_modal с 4 секциями:
+После нажатия на setting_seller_button_yes в ситуации, если все введенные данные в init_trial_screen валидны, а данные в setting_user_phone_form_input были изменены, всплывает setting_seller_trial_popover с 4 секциями:
 
                   codename:                                             condition:
-s1) [ setting_seller_trial_modal_header ]  "ПОДТВЕРДИТЕ РЕГИСТРАЦИЮ"
-s2) [ setting_seller_trial_modal_protip ]  "ДЛЯ ПОДТВЕРЖДЕНИЯ РЕГИСТРАЦИИ НА ВАШ ТЕЛЕФОН ВЫСЛАН ПИН КОД. ПОЖАЛУЙСТА ВСТАВЬТЕ ЕГО В ФОРМУ".
-s3) [ setting_seller_trial_modal_input  ] 
-s4) [ setting_seller_trial_modal_button ]  "ПОДТВЕРДИТЬ"
+s1) [ setting_seller_trial_popover_header ]  "ПОДТВЕРДИТЕ РЕГИСТРАЦИЮ"
+s2) [ setting_seller_trial_popover_protip ]  "ДЛЯ ПОДТВЕРЖДЕНИЯ РЕГИСТРАЦИИ НА ВАШ ТЕЛЕФОН ВЫСЛАН ПИН КОД. ПОЖАЛУЙСТА ВСТАВЬТЕ ЕГО В ФОРМУ".
+s3) [ setting_seller_trial_popover_input  ] 
+s4) [ setting_seller_trial_popover_button ]  "ПОДТВЕРДИТЬ"
 
-На телефон юзера отправляется sms в виде четырехзначного init_trial_pincode, после вставки которого в setting_seller_trial_modal_input, происходит процесс верификации аккаунта seller.
+На телефон юзера отправляется sms в виде четырехзначного init_trial_pincode, после вставки которого в setting_seller_trial_popover_input, происходит процесс верификации аккаунта seller.
 После успешного прохождения процесса верификации, данные формы init_trial_screen отправляются с устройства юзера в базу данных seller_db.
-
 
 
 
