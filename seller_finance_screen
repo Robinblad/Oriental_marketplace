@@ -1,6 +1,7 @@
 
 
 
+
 seller_finance_screen
 
 
@@ -66,3 +67,25 @@ seller_hunt_header дает общее представление о состо�
 - seller_hunt_header_options - кнопка открывающая настройки монитора, находится в правой части;
 - seller_hunt_header_scan - индикатор отображающий процесс сканирования, расположен по центру.
 
+
+
+seller_money_screen
+
+
+<<<<< money_screen >>>>>    (seller_money_screen)
+
+Money_screen предназначен для обзора текущих и закрытых ордеров, подключения платежных инструментов, обзора статистики. 
+
+Money_screen содержит следующий перечень компонентов:
+
+   description:                             codename:                       item_name:       type:                              location:
+открывает card_screen      [ money_screen_to_card_screen_button       ]     "КАРТЫ"        [ button   ]     [ слева от money_screen_to_graph_screen_button  ]
+открывает graph_screen     [ money_screen_to_graph_screen_button      ]     "ГРАФИКИ"      [ button   ]     [ в центре между двух кнопок                    ]
+открывает order_screen     [ money_screen_to_order_screen_button      ]     "БУХУЧЕТ"      [ button   ]     [ справа от money_screen_to_graph_screen_button ]
+показывает виджет          [ money_screen_order_complete_widget       ]                    [ widget   ]     [ под money_screen_to_order_screen_button       ]
+переключатель              [ money_screen_order_autocomplete_toggle   ]     "АВТОЧЕК"      [ toggle   ]     [ слева от money_screen_order_complete_widget   ]
+листинг ордеров            [ money_screen_order_list                  ]                                     [ под widget и toggle                           ]
+ранжирование по прибыли    [ money_screen_ranging_profit_button       ]                    [ button   ]     [ под money_screen_order_list                   ]
+ранжирование по количеству [ money_screen_ranging_quantity_button     ]                    [ button   ]     [ под money_screen_order_list                   ]
+ранжирование по алфавиту   [ money_screen_ranging_alphabet_button     ]                    [ button   ]     [ под money_screen_order_list                   ]
+ранжирование по дате       [ money_screen_ranging_date_button         ]                    [ button   ]     [ под money_screen_order_list                   ]
