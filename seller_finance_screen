@@ -74,6 +74,7 @@ seller_money_screen
 
 <<<<< money_screen >>>>>    (seller_money_screen)
 
+
 Money_screen предназначен для обзора текущих и закрытых ордеров, подключения платежных инструментов, обзора статистики. 
 
 Money_screen содержит следующий перечень компонентов:
@@ -89,3 +90,23 @@ Money_screen содержит следующий перечень компоне
 ранжирование по количеству [ money_screen_ranging_quantity_button     ]                    [ button   ]     [ под money_screen_order_list                   ]
 ранжирование по алфавиту   [ money_screen_ranging_alphabet_button     ]                    [ button   ]     [ под money_screen_order_list                   ]
 ранжирование по дате       [ money_screen_ranging_date_button         ]                    [ button   ]     [ под money_screen_order_list                   ]
+
+
+description:                     codename:                         type:           presentation:
+имя ордера        [ money_screen_order_name_data         ]     [ data     ]     [ буквы + цифры  ]
+название лота     [ money_screen_lot_name_data           ]     [ data     ]     [ буквы + цифры  ]
+количество        [ money_screen_lot_quantity_widget     ]     [ widget   ]     [ иконка + цифры ]
+резервирование    [ money_screen_booking_widget          ]     [ widget   ]     [ иконка         ]           (если активировано)
+доставка          [ money_screen_seller_ship_widget      ]     [ widget   ]     [ иконка         ]           (если активировано)
+статус оплаты     [ money_screen_order_paided_widget     ]     [ widget   ]     [ иконка         ]
+статус ордера     [ money_screen_order_complete_checkbox ]     [ checkbox ]     [ чекбокс        ]
+
+money_screen_order_complete_checkbox
+Чекбокс имеет два состояния:
+checkbox_order_complete_off - свидетельствует о том, что ордер не закрыт, обладает color1 окантовкой order_cover
+checkbox_order_complete_on - свидетельствует о том, что ордер закрыт, обладает color2 окантовкой order_cover
+
+Пример отображения order_cover для трех ордеров:
+[ Поль____300_11_35     Малина        2 ящик            -            Доставка       Оплачено       checkbox_order_complete_on  ]
+[ Клара___913_11_23     Земляника     1 ящик            -            Доставка       Не оплачено    checkbox_order_complete_off ]
+[ Рузанна_565_11_17     Малина        3 ящик     Резерв до 18:00        -           Не оплачено    checkbox_order_complete_off ]
