@@ -79,7 +79,7 @@ s5)  ┌─ [seller_nav                                 ]       [section       ]
 ---- │├ [seller_nav_lot_header                      ]       [header        ]     "ТОВАРЫ"            [color1/color2]        [ ✜ ✜ ]         [ no  ] 
 ---- │└ [seller_nav_lot_badge                       ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ]     
 ---- └┬ [seller_nav_finance_button                  ]       [button        ]                         [color1/color2]        [ ✜ 🡆 ]         [ yes ]   
-----  ├ [seller_nav_finance_header                  ]       [header        ]     "ФИНАНСЫ"           [color1/color2]        [ ✜ ✜ ]         [ no  ] 
+----  ├ [seller_nav_finance_header                  ]       [header        ]     "КАБИНЕТ"           [color1/color2]        [ ✜ ✜ ]         [ no  ] 
 ----  └ [seller_nav_finance_badge                   ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ] 
 
 
@@ -293,7 +293,7 @@ s5)  ┌─ [seller_nav                                        ]       [section 
 ---  │├ [seller_nav_lot_header                             ]       [header        ]     "ТОВАРЫ"            [color1/color2]        [ ✜ ✜ ]         [ no  ] 
 ---  │└ [seller_nav_lot_badge                              ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ]     
 ---  └┬ [seller_nav_finance_button                         ]       [button        ]                         [color1/color2]        [ ✜ 🡆 ]         [ yes ]   
----   ├ [seller_nav_finance_header                         ]       [header        ]     "ФИНАНСЫ"           [color1/color2]        [ ✜ ✜ ]         [ no  ] 
+---   ├ [seller_nav_finance_header                         ]       [header        ]     "КАБИНЕТ"           [color1/color2]        [ ✜ ✜ ]         [ no  ] 
 ---   └ [seller_nav_finance_badge                          ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ] 
 
 
@@ -516,7 +516,7 @@ seller_hunt_active_controller является настройкой остана
 -- seller_nav_lot_header - представлен заголовком "ТОВАРЫ";
 -- seller_nav_lot_badge - отображает число лотов по которым заканчивается товар.
 5) seller_nav_finance_button - кнопка с наименованием и бейджем, предназначена для перехода к seller_money_screen;
--- seller_nav_finance_header - представлен заголовком "ФИНАНСЫ";
+-- seller_nav_finance_header - представлен заголовком "КАБИНЕТ";
 -- seller_nav_finance_badge - отображает количество непросмотренных денежных транзакций.
 
 ✠ actions
@@ -630,7 +630,7 @@ s4)  ┌─ [seller_nav                   ]       [section       ]              
 ---  │├ [seller_nav_lot_header        ]       [header        ]     "ТОВАРЫ"               [color1/color2]        [ ✜ ✜ ]         [ no  ] 
 ---  │└ [seller_nav_lot_badge         ]       [badge         ]     { number }             [color1/color2]        [ 🡅 🡆 ]         [ no  ]     
 ---  └┬ [seller_nav_finance_button    ]       [button        ]                            [color1/color2]        [ ✜ 🡆 ]         [ yes ]   
----   ├ [seller_nav_finance_header    ]       [header        ]     "ФИНАНСЫ"              [color1/color2]        [ ✜ ✜ ]         [ no  ] 
+---   ├ [seller_nav_finance_header    ]       [header        ]     "КАБИНЕТ"              [color1/color2]        [ ✜ ✜ ]         [ no  ] 
 ---   └ [seller_nav_finance_badge     ]       [badge         ]     { number }             [color1/color2]        [ 🡅 🡆 ]         [ no  ] 
 
 
@@ -826,7 +826,7 @@ seller_hunt_search - располагается под seller_hunt_area, пре�
 -- seller_nav_lot_header - представлен заголовком "ТОВАРЫ";
 -- seller_nav_lot_badge - отображает число лотов по которым заканчивается товар.
 5) seller_nav_finance_button - кнопка с наименованием и бейджем, предназначена для перехода к seller_money_screen;
--- seller_nav_finance_header - представлен заголовком "ФИНАНСЫ";
+-- seller_nav_finance_header - представлен заголовком "КАБИНЕТ";
 -- seller_nav_finance_badge - отображает количество непросмотренных денежных транзакций.
 
 ✠ actions
@@ -945,7 +945,7 @@ s4)  ┌─ [seller_nav                                  ]       [section       
 ---  │├ [seller_nav_lot_header                       ]       [header        ]     "ТОВАРЫ"               [color1/color2]        [ ✜ ✜ ]         [ no  ] 
 ---  │└ [seller_nav_lot_badge                        ]       [badge         ]     { number }             [color1/color2]        [ 🡅 🡆 ]         [ no  ]     
 ---  └┬ [seller_nav_finance_button                   ]       [button        ]                            [color1/color2]        [ ✜ 🡆 ]         [ yes ]   
----   ├ [seller_nav_finance_header                   ]       [header        ]     "ФИНАНСЫ"              [color1/color2]        [ ✜ ✜ ]         [ no  ] 
+---   ├ [seller_nav_finance_header                   ]       [header        ]     "КАБИНЕТ"              [color1/color2]        [ ✜ ✜ ]         [ no  ] 
 ---   └ [seller_nav_finance_badge                    ]       [badge         ]     { number }             [color1/color2]        [ 🡅 🡆 ]         [ no  ] 
 
 
@@ -1084,7 +1084,7 @@ seller_hunt_options - представляет собой группу наст�
 -- seller_nav_lot_header - представлен заголовком "ТОВАРЫ";
 -- seller_nav_lot_badge - отображает число лотов по которым заканчивается товар.
 5) seller_nav_finance_button - кнопка с наименованием и бейджем, предназначена для перехода к seller_money_screen;
--- seller_nav_finance_header - представлен заголовком "ФИНАНСЫ";
+-- seller_nav_finance_header - представлен заголовком "КАБИНЕТ";
 -- seller_nav_finance_badge - отображает количество непросмотренных денежных транзакций.
 
 ✠ actions
@@ -1158,5 +1158,8 @@ seller_hunt_options - представляет собой группу наст�
 │• color4
 │------ в любой ситуации.
 └─
+
+
+
 
 
