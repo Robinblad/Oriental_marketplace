@@ -123,3 +123,15 @@ Order_cover разбиты на data_day_group в money_screen_order_list сог
 - money_screen_ranging_quantity_button - список ранжируется по money_screen_lot_quantity ордеров сверху-вниз, где ордер имеющий наивысшее значение money_screen_lot_quantity находится вверху;
 - money_screen_ranging_alphabet_button - список ранжируется по алфавиту money_screen_lot_name сверху-вниз, где ордер имя которого начинается на букву "А" находится вверху;
 - money_screen_ranging_date_button - список ранжируется по дате регистрации ордера сверху-вниз, где ордер с более поздней датой находится вверху (данный порядок ранжирования действует по умолчанию).
+
+Order_screen призван выводить список истории ордеров из списка money_screen_order_list с состоянием checkbox_order_complete_on. 
+Ордера выводятся единым списком money_screen_ledger ранжированным по дате ордера сверху-вниз, где более поздний ордер расположен вверху списка.
+
+Order_screen содержит следующий перечень компонентов:
+
+                  codename:                  button_name:       type:                           location:
+- [ order_screen_to_card_screen_button  ]     "КАРТЫ"        [ button ]     [ слева от money_screen_to_graph_screen_button  ]
+- [ order_screen_to_graph_screen_button ]     "ГРАФИКИ"      [ button ]     [ в центре между двух кнопок                    ]
+- [ order_screen_to_money_screen_button ]     "ОРДЕРА"       [ button ]     [ справа от money_screen_to_graph_screen_button ]
+- [ order_screen_ledger                 ]                                   [ под кнопками                                  ]
+
