@@ -135,3 +135,19 @@ Order_screen содержит следующий перечень компоне
 - [ order_screen_to_money_screen_button ]     "ОРДЕРА"       [ button ]     [ справа от money_screen_to_graph_screen_button ]
 - [ order_screen_ledger                 ]                                   [ под кнопками                                  ]
 
+
+Каждый ордер в money_screen_ledger представлен строкой ledger_cover со следующим перечнем параметров: 
+
+description:                    codename:                  type:         presentation:
+трек номер        [ money_screen_track_number_data ]     [ data ]     [ цифры         ]
+название лота     [ money_screen_lot_name_data     ]     [ data ]     [ буквы + цифры ]
+сумма оплаты      [ money_screen_order_profit_data ]     [ data ]     [ цифры         ]
+
+Track_number формируется из последовательности следующих значений расположенных в строке слева-направо и разделенных low line:
+- day
+- month
+- year
+- hour
+- minute
+- phone_number 
+- order_number
