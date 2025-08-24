@@ -156,3 +156,21 @@ Track_number формируется из последовательности с
 Order_number рассчитывается в рамках суток начинаясь с 1 с 00:00 по локальному времени обнуляясь каждые 24 часа.
 
 При нажатии на ledger_cover открывается order_screen_detail с полной сводкой данных по выбранному ордеру.
+
+Order_screen_detail
+
+Order_screen_detail является полной сводкой данных ордера представленных столбцом, в котором сверху-вниз присутствует нижеперечисленное: 
+
+description:                         codename:                         type:           presentation:
+трек номер        [ order_screen_detail_track_number_data      ]     [ data   ]     [ цифры          ]
+имя ордера        [ order_screen_detail_order_name_data        ]     [ data   ]     [ буквы + цифры  ]
+название лота     [ order_screen_detail_lot_name_data          ]     [ data   ]     [ буквы + цифры  ]
+количество        [ order_screen_detail_lot_quantity_widget    ]     [ widget ]     [ иконка + цифры ]
+резервирование    [ order_screen_detail_booking_widget         ]     [ widget ]     [ иконка         ]           (если активировано)
+доставка          [ order_screen_detail_seller_ship_widget     ]     [ widget ]     [ иконка         ]           (если активировано)
+номер транзакции  [ order_screen_detail_order_transaction_data ]     [ data   ]     [ цифры          ]
+сумма оплаты      [ order_screen_detail_order_profit_data      ]     [ data   ]     [ цифры          ]
+
+В нижней части экрана под списком располагается кнопка order_screen_detail_back_button "НАЗАД", при нажатии на которую происходит возвращение к предыдущему экрану. 
+
+В ситуации если оплата произошла в обход прямой транзакции от buyer, когда seller проставляет money_screen_order_complete_checkbox ордеру, этот ордер автоматически рассчитывает money_screen_order_profit_data исходя из лота ордера и его количества. 
