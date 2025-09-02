@@ -190,3 +190,12 @@ Graph_screen_graph выполнен в минималистическом сти
 graph_screen_graph_chart_profit* - рисует кривую демонстрирующую доход в денежном выражении в совокупности по всем лотам на базе точек выражающих собой расчетный диапазон регулирующийся посредством graph_screen_slider являющихся 
 
 В нижней части экрана распологаются 6 кнопок переключения между типами графиков.
+
+
+                  codename:                   button_name:    type:                              location:                                symbolization:
+[ graph_screen_graph_chart_profit*_button  ]     "$*"       [ button ]   [ под graph_screen_graph, слева от chart_graph_order*N   ]   [ curve_image + $*   ]
+[ graph_screen_graph_chart_order*N_button  ]     "N*"       [ button ]   [ под graph_screen_graph, справа от chart_graph_profit*  ]   [ curve_image + N*   ]
+[ graph_screen_graph_chart_order10N_button ]     "N10+"     [ button ]   [ под graph_screen_graph, справа от chart_graph_order*N  ]   [ curve_image + N10+ ]
+[ graph_screen_graph_bar_order10N%_button  ]     "N10%"     [ button ]   [ под graph_screen_graph, справа от chart_graph_order10N ]   [ bar_image   + N10% ]
+[ graph_screen_graph_bar_profit10N_button  ]     "$10"      [ button ]   [ под graph_screen_graph, справа от bar_graph_order10N%  ]   [ bar_image   + $10  ]
+[ graph_screen_graph_bar_profit10N%_button ]     "$10%"     [ button ]   [ под graph_screen_graph, справа от bar_graph_profit10N  ]   [ bar_image   + $10% ]
