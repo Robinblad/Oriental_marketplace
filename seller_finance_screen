@@ -254,3 +254,12 @@ graph_screen_graph_chart_order10N_tag   - наименование 10 лотов
 10 позиций (graph_screen_graph_scale_y_grade) на graph_screen_graph_scale_y рассчитываются исходя из экстремума максимальной величины профита, когда сначала путем сопоставления определяется максимальная величина профита dot (lot_profit_max или lot_order_max) среди сопоставляемых лотов. Далее величина максимального лота делится на количество graph_screen_graph_scale_y_grade по формуле: lot_order_max / 10 = graph_screen_graph_scale_y_grade_1; в результате чего каждой из них присваивается соответствующее значение. Таким образом на графике позиция dot для lot_order_max будет находиться на уровне graph_screen_graph_scale_y_grade_10. Позиции на графике остальных лотов будут распределены согласно их относительной величины lot_order к lot_order_max. В соответствии с расчетом lot_order_max линейка graph_screen_graph_scale_y_grade градуируется 10 позициями с равным разбегом значений. Так например если lot_order_max = 150, тогда: 
 150 / 10 = 15
 Отсюда graph_screen_graph_scale_y будет строиться с разбегом в 15, где 15 будет присвоено graph_screen_graph_scale_y_grade_1, 30 будет присвоено graph_screen_graph_scale_y_grade_2, 45 будет присвоено graph_screen_graph_scale_y_grade_3 и т.д.
+
+
+graph_screen_graph_chart_profit*
+
+Расчет для каждой graph_screen_graph_chart_profit*_dot производится на основании выручки по всем ордерам для всех лотов в рамках рассчитываемого диапазона. Допустим если выбран graph_screen_slider_period_day, тогда для каждого graph_screen_graph_chart_profit*_dot делается суммирование профита в рамках 1 дня. На графике рисуется кривая. Внутри графика над кривой по центру фигурирует (graph_screen_graph_chart_profit*_icon) с наименованием "ОБЩАЯ ПРИБЫЛЬ".
+
+graph_screen_graph_chart_order*N
+
+Расчет для каждой graph_screen_graph_chart_order*N_dot производится на основании суммы количества всех ордеров для всех лотов в рамках рассчитываемого диапазона. Так если выбран graph_screen_slider_period_day, тогда для каждого graph_screen_graph_chart_order*N_dot делается суммирование количества ордеров в рамках 1 дня. На графике рисуется кривая. Внутри графика над кривой по центру фигурирует (graph_screen_graph_chart_order*N_icon) с наименованием "ОБЩЕЕ КОЛИЧЕСТВО ОРДЕРОВ". 
