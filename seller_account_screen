@@ -1,0 +1,209 @@
+
+🡆 seller_account_screen
+■■■■■■■■■■■■■■■■■■■■■■■
+
+seller_account - личный кабинет пользователя представленный в пяти подразделах навигацией по которым служит панель в верхней части экрана содержащая 5 кнопок расположенных слева-направо в следующем порядке:
+- archive  - seller_account_nav_archive, при нажатии на которую открывается seller_account_archive_screen;
+- payments - seller_account_nav_payments, при нажатии на которую открывается seller_account_payments_screen;
+- orders   - seller_account_nav_orders, при нажатии на которую открывается seller_account_orders_screen;
+- analysis - seller_account_nav_analysis, при нажатии на которую открывается seller_account_analysis_screen;
+- history  - seller_account_nav_history, при нажатии на которую открывается seller_account_history_screen.
+
+При открытии seller_account логика допускает активность одной из вкладок в каждый момент времени.
+seller_account_orders_screen является экраном по умолчанию.
+В момент выхода из seller_account посредством seller_account_state_function фиксируется раздел который был открыт. Впоследствии при входе в seller_account открывается раздел, который был открыт на момент последнего выхода из seller_account. 
+
+
+🡆🡆 seller_account_orders_screen
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+
+Подраздел в котором единым списком отображаются текущие ордера находящиеся в работе (не закрытые). Основное пространство в центральной области экрана занимает seller_account_orders состоящий из 3 секций второго уровня:
+- seller_account_orders_top  
+- seller_account_orders_list
+- seller_account_orders_bottom
+
+
+✠ tables
+
+                          codename:                              type:             designation:                  pressed/default:   location:   interaction:
+s1)   ┌─[seller_account_nav                           ]  [section_lev1       ]                                                       [ 🡅 ✜ ]      [ no  ]
+---   ├ [seller_account_nav_archive                   ]  [button             ] [ "АРХИВ"                       ] [color7/color4]     [ ✜ 🡄 ]      [ yes ]
+---   ├ [seller_account_nav_payments                  ]  [button             ] [ "ПЛАТЕЖИ"                     ] [color7/color4]     [ ✜ 🡄 ]      [ yes ]
+---   ├ [seller_account_nav_orders                    ]  [button             ] [ "ОРДЕРА"                      ] [color7/color4]     [ ✜ ✜ ]      [ yes ]
+---   ├ [seller_account_nav_analysis                  ]  [button             ] [ "АНАЛИЗ"                      ] [color7/color4]     [ ✜ 🡆 ]      [ yes ]
+---   └ [seller_account_nav_history                   ]  [button             ] [ "ИСТОРИЯ"                     ] [color7/color4]     [ ✜ 🡆 ]      [ yes ]  
+---┌┬───[seller_account_orders                        ]  [section_lev1       ]                                   [color2/color2]     [ ✜ ✜ ]      [ no  ] 
+s2)│└┬┬─[seller_account_orders_top                    ]  [section_lev2       ]                                   [color2/color2]     [ 🡅 ✜ ]      [ no  ] 
+---│ │└ [seller_account_orders_top_title              ]  [header             ] [ {{number} 'открытых ордеров'} ] [color8/color8]     [ ✜ ✜ ]      [ no  ] 
+---│ └┬ [seller_account_orders_top_options            ]  [section_lev3       ]                                   [color2/color2]     [ ✜ 🡆 ]      [ no  ]
+---│  ├ [seller_account_orders_top_options_title      ]  [header             ] [ "НАСТРОЙКИ"                   ] [color8/color8]     [ ✜ 🡆 ]      [ no  ]
+---│  ├ [seller_account_orders_top_options_icon       ]  [icon               ] [ стрелка вниз                  ] [color8/color8]     [ ✜ 🡄 ]      [ no  ]
+---│  └ [seller_account_orders_top_options_button     ]  [button             ]                                   [color7/color4]     [ ✜ ✜ ]      [ no  ]
+s3)├┬┬──[seller_account_orders_list                   ]  [section_lev2       ]                                   [color2/color2]     [ ✜ ✜ ]      [ no  ]
+---││└┬ [seller_account_orders_list_top               ]  [section_lev3       ]                                   [color2/color2]     [ 🡅 ✜ ]      [ no  ]
+---││ ├ [seller_account_orders_list_top_time          ]  [label              ] [ "ВРЕМЯ"                       ] [color8/color8]     [ ✜ 🡄 ]      [ no  ]
+---││ ├ [seller_account_orders_list_top_client        ]  [label              ] [ "КЛИЕНТ"                      ] [color8/color8]     [ ✜ 🡄 ]      [ no  ]
+---││ ├ [seller_account_orders_list_top_quantity      ]  [label              ] [ "КОЛИЧЕСТВО"                  ] [color8/color8]     [ ✜ ✜ ]      [ no  ]
+---││ ├ [seller_account_orders_list_top_book          ]  [label              ] [ "БРОНИРОВАНИЕ"                ] [color8/color8]     [ ✜ ✜ ]      [ no  ]
+---││ ├ [seller_account_orders_list_top_ship          ]  [label              ] [ "ДОСТАВКА"                    ] [color8/color8]     [ ✜ ✜ ]      [ no  ]
+---││ ├ [seller_account_orders_list_top_payment       ]  [label              ] [ "ОПЛАТА"                      ] [color8/color8]     [ ✜ 🡆 ]      [ no  ] 
+---││ └ [seller_account_orders_list_top_ready         ]  [label              ] [ "ГОТОВ"                       ] [color8/color8]     [ ✜ 🡆 ]      [ no  ]
+---│└─┬ [seller_account_orders_list_order             ]  [section_lev3+button]                                 ] [color7/color2]     [ ✜ ✜ ]      [ yes ] 
+---│  ├ [seller_account_orders_list_order_time        ]  [label+button       ] [ { string }                    ] [color2/color2]     [ ✜ 🡄 ]      [ yes ]
+---│  ├ [seller_account_orders_list_order_client      ]  [label+button       ] [ { string }                    ] [color2/color2]     [ ✜ 🡄 ]      [ yes ] 
+---│  ├ [seller_account_orders_list_order_quantity    ]  [label+button       ] [ { string }                    ] [color2/color2]     [ ✜ ✜ ]      [ yes ]
+---│  ├ [seller_account_orders_list_order_book        ]  [label+button       ] [ { string }                    ] [color2/color2]     [ ✜ ✜ ]      [ yes ]
+---│  ├ [seller_account_orders_list_order_ship        ]  [label+button       ] [ { string }                    ] [color2/color2]     [ ✜ ✜ ]      [ yes ]
+---│  ├ [seller_account_orders_list_order_payment     ]  [label+button       ] [ { string }                    ] [color2/color2]     [ ✜ 🡆 ]      [ yes ]
+---│  └ [seller_account_orders_list_order_ready       ]  [label+button       ] [ { string }                    ] [color2/color2]     [ ✜ 🡆 ]      [ yes ]
+s4)└──┬─[seller_account_orders_bottom                 ]  [section_lev2       ]                                   [color2/color2]     [ ✜ ✜ ]      [ no  ]
+---   ├ [seller_account_orders_bottom_profit          ]  [button             ] [ "ДОХОД"                       ] [color5/color2]     [ ✜ 🡄 ]      [ yes ]
+---   ├ [seller_account_orders_bottom_quantity        ]  [button             ] [ "КОЛИЧЕСТВО"                  ] [color5/color2]     [ ✜ ✜ ]      [ yes ]
+---   ├ [seller_account_orders_bottom_alphabit        ]  [button             ] [ "АЛФАВИТ"                     ] [color5/color2]     [ ✜ ✜ ]      [ yes ]
+---   └ [seller_account_orders_bottom_time            ]  [button             ] [ "ВРЕМЯ"                       ] [color5/color2]     [ ✜ 🡆 ]      [ yes ]
+s5)  ┌─ [seller_nav                                   ]  [section_lev1       ]                                   [color2/color2]     [ ✜ ✜ ]      [ no  ]
+---- ├┬ [seller_nav_monitor_button                    ]  [button             ]                                   [color7/color4]     [ ✜ 🡄 ]      [ yes ]
+---- │├ [seller_nav_monitor_header                    ]  [header             ] [ "МОНИТОР"                     ] [color8/color8]     [ ✜ ✜ ]      [ no  ]  
+---- │└ [seller_nav_monitor_badge                     ]  [badge              ] [ { number }                    ] [color4/color4]     [ 🡅 🡆 ]      [ no  ] 	
+---- ├┬ [seller_nav_chat_button                       ]  [button             ]                                   [color7/color4]     [ ✜ 🡄 ]      [ yes ]   
+---- │├ [seller_nav_chat_header                       ]  [header             ] [ "ЧАТ"                         ] [color8/color8]     [ ✜ ✜ ]      [ no  ] 
+---- │└ [seller_nav_chat_badge                        ]  [badge              ] [ { number }                    ] [color4/color4]     [ 🡅 🡆 ]      [ no  ] 
+---- ├┬ [seller_nav_shop_button                       ]  [button             ]                                   [color7/color4]     [ ✜ ✜ ]      [ yes ]   
+---- │├ [seller_nav_shop_header                       ]  [header             ] [ "МАГАЗИН"                     ] [color8/color8]     [ ✜ ✜ ]      [ no  ] 
+---- │└ [seller_nav_shop_badge                        ]  [badge              ] [ { number }                    ] [color4/color4]     [ 🡅 🡆 ]      [ no  ]   
+---- ├┬ [seller_nav_lot_button                        ]  [button             ]                                   [color7/color4]     [ ✜ 🡆 ]      [ yes ]   
+---- │├ [seller_nav_lot_header                        ]  [header             ] [ "ТОВАРЫ"                      ] [color8/color8]     [ ✜ ✜ ]      [ no  ] 
+---- │└ [seller_nav_lot_badge                         ]  [badge              ] [ { number }                    ] [color4/color4]     [ 🡅 🡆 ]      [ no  ]     
+---- └┬ [seller_nav_finance_button                    ]  [button             ]                                   [color7/color4]     [ ✜ 🡆 ]      [ yes ]   
+----  ├ [seller_nav_finance_header                    ]  [header             ] [ "КАБИНЕТ"                     ] [color8/color8]     [ ✜ ✜ ]      [ no  ] 
+----  └ [seller_nav_finance_badge                     ]  [badge              ] [ { number }                    ] [color4/color4]     [ 🡅 🡆 ]      [ no  ] 
+
+
+■ seller_account_nav
+
+✠ details
+Секция seller_account_nav является навигационной панелью seller_account и как сквозная часть интерфейса присутствует на всех экранах seller_account в верхней области. Секция состоит из 5 компонентов каждый из которых выполняет роль кнопки расположенные слева-направо в следующем порядке:
+
+1) seller_account_nav_archive - кнопка с наименованием "АРХИВ", предназначена для перехода к seller_account_archive_screen;
+2) seller_account_nav_payments - кнопка с наименованием "ПЛАТЕЖИ", предназначена для перехода к seller_account_payments_screen;
+3) seller_account_nav_orders - кнопка с наименованием "ОРДЕРА", предназначена для перехода к seller_account_orders_screen (активирована по умолчанию);
+4) seller_account_nav_analysis - кнопка с наименованием "АНАЛИЗ", предназначена для перехода к seller_account_analysis_screen;
+5) seller_account_nav_history - кнопка с наименованием "ИСТОРИЯ", предназначена для перехода к seller_account_history_screen.
+
+✠ actions
+• seller_account_nav_archive:
+╠ valid / invalid
+║ • tap 
+║ occasion: нажатие seller_account_nav_archive;
+║ condition: в любой ситуации;
+╙ result: открывается seller_account_archive_screen.
+• seller_account_nav_payments:
+║ • tap 
+╠ valid / invalid
+║ occasion: нажатие seller_account_nav_payments;
+║ condition: в любой ситуации;
+╙ result: открывается seller_account_payments_screen.
+• seller_account_nav_orders:
+╠ valid / invalid
+║ • tap 
+║ occasion: нажатие seller_account_nav_orders;
+║ condition: в любой ситуации;
+╙ result: открывается seller_account_orders_screen.
+• seller_account_nav_analysis:
+╠ valid / invalid
+║ • tap 
+║ occasion: нажатие seller_account_nav_analysis;
+║ condition: в любой ситуации;
+╙ result: открывается seller_account_analysis_screen.
+• seller_account_nav_history:
+╠ valid / invalid
+║ • tap 
+║ occasion: нажатие seller_account_nav_history;
+║ condition: в любой ситуации;
+╙ result: открывается seller_account_history_screen.
+
+✠ color_states
+┌─
+│seller_account_nav_archive  
+│seller_account_nav_payments
+│seller_account_nav_orders
+│seller_account_nav_analysis
+│seller_account_nav_history
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color4
+│------ в inactive_state;
+│• color7
+│------ в pressing_state.
+└─
+
+
+■ seller_account_orders_top
+
+Секция seller_account_orders_top расположена в верхней части seller_account_orders в виде панели которая может быть в двух состояниях:
+ - seller_account_orders_top_state1 - отображается в свернутом виде;
+ - seller_account_orders_top_state2 - отображается в развернутом виде.
+
+
+■ seller_account_orders_top_state1 ■
+
+✠ details
+
+Секция seller_account_orders_top_state1 находится в верхней части seller_account_orders и представляет собой компактную панель (не более 100px высотой) которая представлена двумя компонентами:
+- seller_account_orders_top_title - заголовок со значением переменной отображающий количество открытых ордеров;
+- seller_account_orders_top_options - кнопка содержащая 3 элемента:
+--- seller_account_orders_top_options_title - заголовок кнопки "НАСТРОЙКИ";
+--- seller_account_orders_top_options_icon - иконка в виде стрелки вниз;
+--- seller_account_orders_top_options_button - кнопка активирующая открытие настроек;
+
+✠ actions
+• seller_account_orders_top_options:
+╠ valid / invalid
+║ • tap 
+║ occasion: нажатие seller_account_orders_top_options_button;
+║ condition: в состоянии seller_account_orders_top_state1;
+╙ result: открывается seller_account_orders_top_state2.
+
+✠ color_states
+┌─
+│seller_account_orders_top_title
+│---------------------------
+│⟪⟪ text ⟫⟫ 
+│--------
+│• color8
+│------ в любой ситуации.
+└─
+┌─
+│seller_account_orders_top_options
+│seller_account_orders_top_options_button
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color2
+│------ в любой ситуации.
+└─
+┌─
+│seller_account_orders_top_options_title
+│seller_account_orders_top_options_icon
+│---------------------------
+│⟪⟪ text ⟫⟫ 
+│--------
+│• color8
+│------ в любой ситуации.
+└─
+
+
+■ seller_account_orders_top_state2 ■
+
+✠ details
+
+
+Секция seller_account_orders_top_state2 находится в верхней части seller_account_orders и представляет собой панель (порядка 350-500px высотой) которая представлена двумя компонентами:
+- seller_account_orders_top_title - заголовок со значением переменной отображающий количество открытых ордеров;
+- seller_account_orders_top_options - кнопка содержащая 3 элемента:
+--- seller_account_orders_top_options_title - заголовок кнопки "НАСТРОЙКИ";
+--- seller_account_orders_top_options_icon - иконка в виде стрелки вниз;
+--- seller_account_orders_top_options_button - кнопка активирующая открытие настроек;
+
+
