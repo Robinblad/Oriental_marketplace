@@ -43,7 +43,7 @@ seller_account_orders_screen является экраном по умолчан
 
 ✠ tables
 
-                          codename:                              type:             designation:                  pressed/default:   location:   interaction:
+                          codename:                              type:                   designation:           pressed/default:   location:   interaction:
 s1)   ┌─[seller_account_nav                           ]  [section_lev1       ]                                                       [ 🡅 ✜ ]      [ no  ]
 ---   ├ [seller_account_nav_archive                   ]  [button             ] [ "АРХИВ"                       ] [color7/color4]     [ ✜ 🡄 ]      [ yes ]
 ---   ├ [seller_account_nav_payments                  ]  [button             ] [ "ПЛАТЕЖИ"                     ] [color7/color4]     [ ✜ 🡄 ]      [ yes ]
@@ -168,7 +168,7 @@ s5)  ┌─ [seller_nav                                   ]  [section_lev1      
 
 ✠ tables
 
-                          codename:                              type:             designation:                  pressed/default:   location:   interaction:
+                          codename:                              type:                   designation:           pressed/default:   location:   interaction:
 
 ---  ┌┬─[seller_account_orders_top                    ]  [section_lev2       ]                                   [color2/color2]     [ 🡅 ✜ ]      [ yes ] 
 ---  │└ [seller_account_orders_top_title              ]  [header             ] [ {{number} 'открытых ордеров'} ] [color8/color8]     [ ✜ ✜ ]      [ yes ] 
@@ -184,7 +184,7 @@ s5)  ┌─ [seller_nav                                   ]  [section_lev1      
 - seller_account_orders_top_options - кнопка содержащая 3 элемента:
 --- seller_account_orders_top_options_title - заголовок кнопки "НАСТРОЙКИ";
 --- seller_account_orders_top_options_icon - иконка в виде стрелки вниз;
---- seller_account_orders_top_options_button - кнопка активирующая открытие настроек;
+--- seller_account_orders_top_options_button - кнопка активирующая открытие настроек.
 
 ✠ actions
 • seller_account_orders_top_options:
@@ -227,7 +227,7 @@ s5)  ┌─ [seller_nav                                   ]  [section_lev1      
 
 ✠ tables
 
-                          codename:                              type:             designation:                  pressed/default:   location:   interaction:
+                          codename:                              type:                   designation:           pressed/default:   location:   interaction:
 
 ---┌┬┬──[seller_account_orders_top                    ]  [section_lev2       ]                                   [color2/color2]     [ 🡅 ✜ ]      [ no  ] 
 ---││└┬─[seller_account_orders_top_upper              ]  [section_lev3       ]                                   [color8/color8]     [ 🡅 ✜ ]      [ no  ]
@@ -250,7 +250,7 @@ s5)  ┌─ [seller_nav                                   ]  [section_lev1      
 - seller_account_orders_top_upper - секция расположенная в верхней части включающая 3 компонента, которые идут слева-направо в следующем порядке:
 --- seller_account_orders_top_upper_protip - круглая кнопка со знаком "?" вызывающая подсказку;
 --- seller_account_orders_top_upper_title - заголовок тумблера "Авто-закрытие ордеров";
---- seller_account_orders_top_upper_toggle - тумблер вкл/выкл функцию авто-закрытия ордеров;
+--- seller_account_orders_top_upper_toggle - тумблер вкл/выкл функцию авто-закрытия ордеров, может быть в одном из 2 состояний (on - правая позиция /off - левая позиция);
 - seller_account_orders_top_middle - секция расположенная в средней части включающая 1 компонент:
 --- seller_account_orders_top_middle_widget - находится по центру и состоит из 2 элементов:
 ----- seller_account_orders_top_middle_widget_title - заголовок виджета "Открытые ордера: ";
@@ -258,7 +258,71 @@ s5)  ┌─ [seller_nav                                   ]  [section_lev1      
 - seller_account_orders_top_lower - секция расположенная в нижней части включающая 1 компонент:
 --- seller_account_orders_top_lower_button - находится по центру и состоит из 2 элементов:
 ----- seller_account_orders_top_lower_button_icon - иконка черного цвета в виде плоской стрелки направленной вниз;
------ seller_account_orders_top_lower_button_title - заголовок кнопки "закрыть" расположена справо относително seller_account_orders_top_lower_button_icon;
+----- seller_account_orders_top_lower_button_title - заголовок кнопки "закрыть" расположена справо относително seller_account_orders_top_lower_button_icon.
+
+
+✠ actions
+• seller_account_orders_top_upper_protip:
+╠ valid / invalid
+║ • tap 
+║ occasion: нажатие seller_account_orders_top_upper_protip;
+║ condition: в состоянии seller_account_orders_top_state2;
+╙ result: открывается seller_account_orders_top_upper_protip_popover.
+• seller_account_orders_top_upper_toggle (on):
+╠ valid / invalid
+║ • tap 
+║ occasion: нажатие seller_account_orders_top_upper_toggle;
+║ condition: seller_account_orders_top_upper_toggle = off;
+╙ result: происходит переключение в seller_account_orders_top_upper_toggle = on.
+• seller_account_orders_top_upper_toggle (off):
+╠ valid / invalid
+║ • tap 
+║ occasion: нажатие seller_account_orders_top_upper_toggle;
+║ condition: seller_account_orders_top_upper_toggle = on;
+╙ result: происходит переключение в seller_account_orders_top_upper_toggle = off.
+• seller_account_orders_top_lower:
+╠ valid / invalid
+║ • tap 
+║ occasion: нажатие seller_account_orders_top_lower;
+║ condition: в состоянии seller_account_orders_top_state2;
+╙ result: seller_account_orders_top переходит в состояние seller_account_orders_top_state1.
+
+
+✠ color_states
+┌─
+│seller_account_orders_top_upper_protip
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color4
+│------ в inactive_state
+│• color5
+│------ в pressing_state
+└─
+✠ color_states
+┌─
+│seller_account_orders_top_upper_title
+│seller_account_orders_top_middle_widget_title
+│seller_account_orders_top_middle_widget_value
+│seller_account_orders_top_lower_button_icon
+│seller_account_orders_top_lower_button_title
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color8
+│------ в любой ситуации.
+└─
+┌─
+│seller_account_orders_top_upper_toggle
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color4
+│------ в inactive_state
+│• color7
+│------ в active_state
+└─
+
 
 
 
