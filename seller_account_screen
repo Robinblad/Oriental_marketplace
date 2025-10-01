@@ -69,10 +69,10 @@ s3)├┬┬──[seller_account_orders_list                   ]  [section_lev2
 ---│└─┬ [seller_account_orders_list_order             ]  [section_lev3+button]                                 ] [color7/color2]     [ ✜ ✜ ]      [ yes ] 
 ---│  ├ [seller_account_orders_list_order_time        ]  [label+button       ] [ { string }                    ] [color2/color2]     [ ✜ 🡄 ]      [ yes ]
 ---│  ├ [seller_account_orders_list_order_client      ]  [label+button       ] [ { string }                    ] [color2/color2]     [ ✜ 🡄 ]      [ yes ] 
----│  ├ [seller_account_orders_list_order_quantity    ]  [label+button       ] [ { string }                    ] [color2/color2]     [ ✜ ✜ ]      [ yes ]
+---│  ├ [seller_account_orders_list_order_quantity    ]  [label+button       ] [ { number }                    ] [color2/color2]     [ ✜ ✜ ]      [ yes ]
 ---│  ├ [seller_account_orders_list_order_book        ]  [label+button       ] [ { string }                    ] [color2/color2]     [ ✜ ✜ ]      [ yes ]
 ---│  ├ [seller_account_orders_list_order_ship        ]  [label+button       ] [ { string }                    ] [color2/color2]     [ ✜ ✜ ]      [ yes ]
----│  ├ [seller_account_orders_list_order_payment     ]  [label+button       ] [ { string }                    ] [color2/color2]     [ ✜ 🡆 ]      [ yes ]
+---│  ├ [seller_account_orders_list_order_payment     ]  [label+button       ] [ { number }                    ] [color2/color2]     [ ✜ 🡆 ]      [ yes ]
 ---│  └ [seller_account_orders_list_order_ready       ]  [label+button       ] [ { string }                    ] [color2/color2]     [ ✜ 🡆 ]      [ yes ]
 s4)└──┬─[seller_account_orders_bottom                 ]  [section_lev2       ]                                   [color2/color2]     [ ✜ ✜ ]      [ no  ]
 ---   ├ [seller_account_orders_bottom_profit          ]  [button             ] [ "ДОХОД"                       ] [color5/color2]     [ ✜ 🡄 ]      [ yes ]
@@ -178,7 +178,6 @@ s5)  ┌─ [seller_nav                                   ]  [section_lev1      
 ---   └ [seller_account_orders_top_options_button     ]  [button             ]                                   [color7/color4]     [ ✜ ✜ ]      [ yes ]
 
 ✠ details
-
 Секция seller_account_orders_top_state1 находится в верхней части seller_account_orders и представляет собой компактную панель (не более 100px высотой) которая представлена двумя компонентами:
 - seller_account_orders_top_title - заголовок со значением переменной отображающий количество открытых ордеров;
 - seller_account_orders_top_options - кнопка содержащая 3 элемента:
@@ -201,7 +200,7 @@ s5)  ┌─ [seller_nav                                   ]  [section_lev1      
 │⟪⟪ text ⟫⟫ 
 │--------
 │• color8
-│------ в любой ситуации.
+│------ в любой ситуации
 └─
 ┌─
 │seller_account_orders_top_options
@@ -210,7 +209,7 @@ s5)  ┌─ [seller_nav                                   ]  [section_lev1      
 │⟪⟪ body ⟫⟫ 
 │--------
 │• color2
-│------ в любой ситуации.
+│------ в любой ситуации
 └─
 ┌─
 │seller_account_orders_top_options_title
@@ -219,7 +218,7 @@ s5)  ┌─ [seller_nav                                   ]  [section_lev1      
 │⟪⟪ text ⟫⟫ 
 │--------
 │• color8
-│------ в любой ситуации.
+│------ в любой ситуации
 └─
 
 
@@ -245,7 +244,6 @@ s5)  ┌─ [seller_nav                                   ]  [section_lev1      
 
 
 ✠ details
-
 Секция seller_account_orders_top_state2 раскрывается вниз из seller_account_orders_top_state1 и представляет собой панель (порядка 350-500px высотой) которая представлена тремя секциями второго порядка:
 - seller_account_orders_top_upper - секция расположенная в верхней части включающая 3 компонента, которые идут слева-направо в следующем порядке:
 --- seller_account_orders_top_upper_protip - круглая кнопка со знаком "?" вызывающая подсказку;
@@ -299,7 +297,6 @@ s5)  ┌─ [seller_nav                                   ]  [section_lev1      
 │• color5
 │------ в pressing_state
 └─
-✠ color_states
 ┌─
 │seller_account_orders_top_upper_title
 │seller_account_orders_top_middle_widget_title
@@ -322,6 +319,168 @@ s5)  ┌─ [seller_nav                                   ]  [section_lev1      
 │• color7
 │------ в active_state
 └─
+
+
+
+■ seller_account_orders_list
+
+Секция seller_account_orders_list расположена в центральной части seller_account_orders в виде списка имеющего 2 секции:
+ - seller_account_orders_list_top - шапка списка состоит из 7 компонентов и призвана отобразить названия 7 столбцов seller_account_orders_list;
+ - seller_account_orders_list_order - секция в виде данных по ордеру представленного строкой подразделенной на 7 компонентов, также выполняет роль кнопки.
+
+■ seller_account_orders_list_order
+
+✠ details
+Секция seller_account_orders_list_top состоит из 7 компонентов расположенных слева-направо в следующем порядке:
+- seller_account_orders_list_order_time - отображает значение времени создания ордера по шаблону: "hh:mm:ss";
+- seller_account_orders_list_order_client - отображает фамилию и имя buyer по шаблону: "Second name.First name" (First name отображается в виде его первой буквы);
+- seller_account_orders_list_order_quantity - отображает количество позиций по ордеру;
+- seller_account_orders_list_order_book - отображает информацию о том, активирована функция бронирования покупателем или нет в виде переменной: "да/нет";
+- seller_account_orders_list_order_ship - отображает информацию о том, активирована функция доставки покупателем или нет в виде переменной: "да/нет";
+- seller_account_orders_list_order_payment - отображает значение суммы транзакции по ордеру;
+- seller_account_orders_list_order_ready - отображает выполненность ордера в качестве чекбокса.
+
+
+✠ actions
+• seller_account_orders_list_order;
+• seller_account_orders_list_order_time;
+• seller_account_orders_list_order_client;
+• seller_account_orders_list_order_quantity;
+• seller_account_orders_list_order_book;
+• seller_account_orders_list_order_ship;
+• seller_account_orders_list_order_payment;
+• seller_account_orders_list_order_ready;
+╠ valid / invalid
+║ • tap 
+║ occasion: 
+║ || нажатие seller_account_orders_list_order;
+║ || нажатие seller_account_orders_list_order_time;
+║ || нажатие seller_account_orders_list_order_client;
+║ || нажатие seller_account_orders_list_order_quantity;
+║ || нажатие seller_account_orders_list_order_book;
+║ || нажатие seller_account_orders_list_order_ship;
+║ || нажатие seller_account_orders_list_order_payment;
+║ || нажатие seller_account_orders_list_order_ready;
+║ condition: в любой ситуации;
+╙ result: открывается seller_account_orders_data_modal.
+
+
+✠ color_states
+┌─
+│seller_account_orders_list_order;
+│seller_account_orders_list_order_time;
+│seller_account_orders_list_order_client;
+│seller_account_orders_list_order_quantity;
+│seller_account_orders_list_order_book;
+│seller_account_orders_list_order_ship;
+│seller_account_orders_list_order_payment;
+│seller_account_orders_list_order_ready;
+│---------------------------
+│• color2
+│------ в inactive_state
+│• color5
+│------ в pressing_state
+└─
+
+
+✠ logics
+При проставлении чекбокса в seller_account_orders_list_order_ready:
+1) меняется seller_account_orders_top_middle_widget_value;
+2) система реагирует на состояние чекбокса следующим образом:
+- seller_account_orders_list_order_ready = off меняется на seller_account_orders_list_order_ready = on;
+- seller_account_orders_list_order с seller_account_orders_list_order_ready = on сохраняет свое присутствие в seller_account_orders_list.
+После выхода из seller_account_orders_screen конкретный seller_account_orders_list_order с seller_account_orders_list_order_ready = on удаляется из seller_account_orders_list и добавляется в seller_history_orders_list.
+
+
+
+■ seller_account_orders_bottom
+
+✠ details
+Секция seller_account_orders_bottom располагается в нижней части seller_account_orders и предназначена для выбора варианта ранжирования seller_account_orders_list (сверху-вниз). Секция включает 4 кнопки расположенных слева-направо в следующем порядке:
+
+- seller_account_orders_bottom_profit - переключает seller_account_orders_list в состояние ранжирования ордеров по доходности;
+- seller_account_orders_bottom_quantity - переключает seller_account_orders_list в состояние ранжирования ордеров по количеству товарных позиций;
+- seller_account_orders_bottom_alphabit - переключает seller_account_orders_list в состояние ранжирования ордеров по алфавиту;
+- seller_account_orders_bottom_time - переключает seller_account_orders_list в состояние ранжирования ордеров по времени (by default).
+
+
+✠ actions
+• seller_account_orders_bottom_profit:
+╠ valid
+║ • tap 
+║ occasion: нажатие seller_account_orders_bottom_profit;
+║ condition:
+║ || активирована кнопка seller_account_orders_bottom_quantity;
+║ || активирована кнопка seller_account_orders_bottom_alphabit;
+║ || активирована кнопка seller_account_orders_bottom_time;
+║ result: seller_account_orders_list переключается в состояние ранжирования по доходу, где ордер с наибольшей доходностью размещается вверху;
+╠ invalid
+║ • tap 
+║ occasion: нажатие seller_account_orders_bottom_profit;
+║ condition: активирована seller_account_orders_bottom_profit;
+╙ result: seller_account_orders_list не реагирует на нажатие.
+• seller_account_orders_bottom_quantity:
+╠ valid
+║ • tap 
+║ occasion: нажатие seller_account_orders_bottom_quantity;
+║ condition:
+║ || активирована кнопка seller_account_orders_bottom_profit;
+║ || активирована кнопка seller_account_orders_bottom_alphabit;
+║ || активирована кнопка seller_account_orders_bottom_time;
+║ result: seller_account_orders_list переключается в состояние ранжирования по количеству товарных позиций в ордере, где ордер с наибольшим количеством товарных
+║         позиций размещается в топе seller_account_orders_list;
+╠ invalid
+║ • tap 
+║ occasion: нажатие seller_account_orders_bottom_quantity;
+║ condition: активирована seller_account_orders_bottom_quantity;
+╙ result: seller_account_orders_list не реагирует на нажатие.
+• seller_account_orders_bottom_alphabit:
+╠ valid
+║ • tap 
+║ occasion: нажатие seller_account_orders_bottom_alphabit;
+║ condition:
+║ || активирована кнопка seller_account_orders_bottom_profit;
+║ || активирована кнопка seller_account_orders_bottom_quantity;
+║ || активирована кнопка seller_account_orders_bottom_time;
+║ result: seller_account_orders_list переключается в состояние ранжирования по алфавиту значения seller_account_orders_list_order_client, где
+║         seller_account_orders_list_order_client с фамилией начинающейся с буквы "A" размещается в топе seller_account_orders_list;
+╠ invalid
+║ • tap 
+║ occasion: нажатие seller_account_orders_bottom_alphabit;
+║ condition: активирована seller_account_orders_bottom_alphabit;
+╙ result: seller_account_orders_list не реагирует на нажатие.
+• seller_account_orders_bottom_time:
+╠ valid
+║ • tap 
+║ occasion: нажатие seller_account_orders_bottom_time;
+║ condition:
+║ || активирована кнопка seller_account_orders_bottom_profit;
+║ || активирована кнопка seller_account_orders_bottom_quantity;
+║ || активирована кнопка seller_account_orders_bottom_alphabit;
+║ result: seller_account_orders_list переключается в состояние ранжирования по времени создания ордера, где seller_account_orders_list_order с более поздней
+║         датой размещается в топе seller_account_orders_list;
+╠ invalid
+║ • tap 
+║ occasion: нажатие seller_account_orders_bottom_time;
+║ condition: активирована seller_account_orders_bottom_time;
+╙ result: seller_account_orders_list не реагирует на нажатие.
+
+
+✠ color_states
+┌─
+│seller_account_orders_bottom_profit
+│seller_account_orders_bottom_quantity
+│seller_account_orders_bottom_alphabit
+│seller_account_orders_bottom_time
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color4
+│------ в inactive_state
+│• color7
+│------ в pressing_state
+└─
+
 
 
 
