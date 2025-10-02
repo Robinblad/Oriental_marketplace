@@ -16,8 +16,6 @@ color8 - font;
 
 
 
-
-
 🡆 seller_account_screen
 ■■■■■■■■■■■■■■■■■■■■■■■
 
@@ -45,13 +43,13 @@ seller_account_orders_screen является экраном по умолчан
 ✠ tables
 
                           codename:                              type:                   designation:           pressed/default:   location:   interaction:
-s1)   ┌─[seller_account_nav                           ]  [section_lev1       ]                                                       [ 🡅 ✜ ]      [ no  ]
+s1)   ┌─[seller_account_nav                           ]  [section_lev1       ]                                   [color0/color0]     [ 🡅 ✜ ]      [ no  ]
 ---   ├ [seller_account_nav_archive                   ]  [button             ] [ "АРХИВ"                       ] [color7/color4]     [ ✜ 🡄 ]      [ yes ]
 ---   ├ [seller_account_nav_payments                  ]  [button             ] [ "ПЛАТЕЖИ"                     ] [color7/color4]     [ ✜ 🡄 ]      [ yes ]
 ---   ├ [seller_account_nav_orders                    ]  [button             ] [ "ОРДЕРА"                      ] [color7/color4]     [ ✜ ✜ ]      [ yes ]
 ---   ├ [seller_account_nav_analysis                  ]  [button             ] [ "АНАЛИЗ"                      ] [color7/color4]     [ ✜ 🡆 ]      [ yes ]
 ---   └ [seller_account_nav_history                   ]  [button             ] [ "ИСТОРИЯ"                     ] [color7/color4]     [ ✜ 🡆 ]      [ yes ]  
----┌┬───[seller_account_orders                        ]  [section_lev1       ]                                   [color2/color2]     [ ✜ ✜ ]      [ no  ] 
+---┌┬───[seller_account_orders                        ]  [section_lev1       ]                                   [color0/color0]     [ ✜ ✜ ]      [ no  ] 
 s2)│└┬┬─[seller_account_orders_top                    ]  [section_lev2       ]                                   [color2/color2]     [ 🡅 ✜ ]      [ yes ] 
 ---│ │└ [seller_account_orders_top_title              ]  [header             ] [ {{number} 'открытых ордеров'} ] [color8/color8]     [ ✜ ✜ ]      [ yes ] 
 ---│ └┬ [seller_account_orders_top_options            ]  [section_lev3       ]                                   [color2/color2]     [ ✜ 🡆 ]      [ yes ]
@@ -80,7 +78,7 @@ s4)└──┬─[seller_account_orders_bottom                 ]  [section_lev2
 ---   ├ [seller_account_orders_bottom_quantity        ]  [button             ] [ "КОЛИЧЕСТВО"                  ] [color5/color2]     [ ✜ ✜ ]      [ yes ]
 ---   ├ [seller_account_orders_bottom_alphabit        ]  [button             ] [ "АЛФАВИТ"                     ] [color5/color2]     [ ✜ ✜ ]      [ yes ]
 ---   └ [seller_account_orders_bottom_time            ]  [button             ] [ "ВРЕМЯ"                       ] [color5/color2]     [ ✜ 🡆 ]      [ yes ]
-s5)  ┌─ [seller_nav                                   ]  [section_lev1       ]                                   [color2/color2]     [ ✜ ✜ ]      [ no  ]
+s5)  ┌─ [seller_nav                                   ]  [section_lev1       ]                                   [color0/color0]     [ ✜ ✜ ]      [ no  ]
 ---- ├┬ [seller_nav_monitor_button                    ]  [button             ]                                   [color7/color4]     [ ✜ 🡄 ]      [ yes ]
 ---- │├ [seller_nav_monitor_header                    ]  [header             ] [ "МОНИТОР"                     ] [color8/color8]     [ ✜ ✜ ]      [ no  ]  
 ---- │└ [seller_nav_monitor_badge                     ]  [badge              ] [ { number }                    ] [color4/color4]     [ 🡅 🡆 ]      [ no  ] 	
@@ -363,7 +361,7 @@ s5)  ┌─ [seller_nav                                   ]  [section_lev1      
 ║ || нажатие seller_account_orders_list_order_payment;
 ║ || нажатие seller_account_orders_list_order_ready;
 ║ condition: в любой ситуации;
-╙ result: открывается seller_account_orders_data_modal.
+╙ result: открывается seller_account_orders_modal.
 
 
 ✠ color_states
@@ -483,45 +481,97 @@ s5)  ┌─ [seller_nav                                   ]  [section_lev1      
 └─
 
 
+■ seller_nav
 
-🡆🡆 seller_account_orders_modal
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+✠ details
+Секция seller_nav является навигационной панелью seller_mode и как сквозная часть интерфейса присутствует на всех экранах в нижней области. Секция состоит из 5 компонентов каждый из которых выполняет роль кнопки:
+1) seller_nav_monitor_button - кнопка с наименованием и бейджем, предназначена для перехода к seller_demand_screen;
+-- seller_nav_monitor_header - представлен заголовком "МОНИТОР";
+-- seller_nav_monitor_badge - отображает количество hunt_screen_monitor_message в seller_demand_screen.
+2) seller_nav_chat_button - кнопка с наименованием и бейджем, предназначена для перехода к seller_chat_screen (в seller_chat_screen активирована по умолчанию);
+-- seller_nav_chat_header - представлен заголовком "ЧАТ";
+-- seller_nav_chat_badge - отображает количество непросмотренных chat_screen_chat_message_node.
+3) seller_nav_shop_button - кнопка с наименованием и бейджем, предназначена для перехода к seller_shop_screen;
+-- seller_nav_shop_header - представлен заголовком "МАГАЗИН";
+-- seller_nav_shop_badge - отображает количество посетителей находящихся в магазине в текущий момент.
+4) seller_nav_lot_button - кнопка с наименованием и бейджем, предназначена для перехода к seller_lot_screen;
+-- seller_nav_lot_header - представлен заголовком "ТОВАРЫ";
+-- seller_nav_lot_badge - отображает число лотов по которым заканчивается товар.
+5) seller_nav_finance_button - кнопка с наименованием и бейджем, предназначена для перехода к seller_account_screen;
+-- seller_nav_finance_header - представлен заголовком "КАБИНЕТ";
+-- seller_nav_finance_badge - отображает количество непросмотренных денежных транзакций.
 
-seller_account_orders_modal отображает информационную сводку по seller_account_orders_list_order.
+✠ actions
+• seller_nav_monitor_button:
+╠ valid / invalid
+║ • tap 
+║ occasion: нажатие seller_nav_monitor_button;
+║ condition: в любой ситуации;
+╙ result: открывается seller_demand_screen.
+• seller_nav_chat_button:
+║ • tap 
+╠ valid / invalid
+║ occasion: нажатие seller_nav_chat_button;
+║ condition: в любой ситуации;
+╙ result: открывается seller_chat_screen.
+• seller_nav_shop_button:
+╠ valid / invalid
+║ • tap 
+║ occasion: нажатие seller_nav_shop_button;
+║ condition: в любой ситуации;
+╙ result: открывается seller_shop_screen.
+• seller_nav_lot_button:
+╠ valid / invalid
+║ • tap 
+║ occasion: нажатие seller_nav_lot_button;
+║ condition: в любой ситуации;
+╙ result: открывается seller_lot_screen.
+• seller_nav_finance_button:
+╠ valid / invalid
+║ • tap 
+║ occasion: нажатие seller_nav_finance_button;
+║ condition: в любой ситуации;
+╙ result: открывается seller_account_screen.
 
-
-✠ tables
-
-                              codename:                               type:                   designation:           pressed/default:   location:   interaction:
-┌┬────[seller_account_orders_modal                             ]  [section_lev1 ]                                                      [ 🡅 ✜ ]      [ no  ]
-│├┬┬──[seller_account_orders_modal_bulletin                    ]  [section_lev1 ]                                                      [ 🡅 ✜ ]      [ no  ]
-│││└┬─[seller_account_orders_modal_bulletin_part1              ]  [section_lev1 ]                                                      [ 🡅 ✜ ]      [ no  ]
-│││ ├ [seller_account_orders_modal_bulletin_part1_number       ]  [section_lev1 ]                                                      [ 🡅 ✜ ]      [ no  ]
-│││ ├ [seller_account_orders_modal_bulletin_part1_data         ]  [button       ] [ "АРХИВ"                       ] [color7/color4]    [ ✜ 🡄 ]      [ yes ]
-│││ ├ [seller_account_orders_modal_bulletin_part1_client       ]  [button       ] [ "ПЛАТЕЖИ"                     ] [color7/color4]    [ ✜ 🡄 ]      [ yes ]
-│││ ├ [seller_account_orders_modal_bulletin_part1_phone        ]  [button       ] [ "ОРДЕРА"                      ] [color7/color4]    [ ✜ ✜ ]      [ yes ]
-│││ ├ [seller_account_orders_modal_bulletin_part1_quantity     ]  [button       ] [ "АНАЛИЗ"                      ] [color7/color4]    [ ✜ 🡆 ]      [ yes ]
-│││ └ [seller_account_orders_modal_bulletin_part1_sum          ]  [button       ] [ "ИСТОРИЯ"                     ] [color7/color4]    [ ✜ 🡆 ]      [ yes ]  
-││└┬┬─[seller_account_orders_modal_bulletin_part2              ]  [section_lev1 ]                                   [color2/color2]    [ ✜ ✜ ]      [ no  ] 
-││ │├─[seller_account_orders_modal_bulletin_part2_top          ]  [section_lev1 ]                                   [color2/color2]    [ ✜ ✜ ]      [ no  ] 
-││ │├ [seller_account_orders_modal_bulletin_part2_top_number   ]  [section_lev1 ]                                   [color2/color2]    [ ✜ ✜ ]      [ no  ] 
-││ │├ [seller_account_orders_modal_bulletin_part2_top_name     ]  [section_lev1 ]                                   [color2/color2]    [ ✜ ✜ ]      [ no  ] 
-││ │├ [seller_account_orders_modal_bulletin_part2_top_quantity ]  [section_lev1 ]                                   [color2/color2]    [ ✜ ✜ ]      [ no  ] 
-││ │├ [seller_account_orders_modal_bulletin_part2_top_book     ]  [section_lev1 ]                                   [color2/color2]    [ ✜ ✜ ]      [ no  ] 
-││ │└ [seller_account_orders_modal_bulletin_part2_top_ready    ]  [section_lev1 ]                                   [color2/color2]    [ ✜ ✜ ]      [ no  ] 
-││ └┬─[seller_account_orders_modal_bulletin_part2_good         ]  [section_lev2 ]                                   [color2/color2]    [ 🡅 ✜ ]      [ yes ] 
-││  ├ [seller_account_orders_modal_bulletin_part2_good_number  ]  [label        ] [ {{number} 'открытых ордеров'} ] [color8/color8]    [ ✜ ✜ ]      [ yes ] 
-││  ├ [seller_account_orders_modal_bulletin_part2_good_name    ]  [label        ]                                   [color2/color2]    [ ✜ 🡆 ]      [ yes ]
-││  ├ [seller_account_orders_modal_bulletin_part2_good_quantity]  [label       ] [ "НАСТРОЙКИ"                   ] [color8/color8]    [ ✜ 🡆 ]      [ yes ]
-││  ├ [seller_account_orders_modal_bulletin_part2_good_book    ]  [label         ] [ стрелка вниз                  ] [color8/color8]    [ ✜ 🡄 ]      [ yes ]
-││  └ [seller_account_orders_modal_bulletin_part2_good_ready   ]  [label       ]                                   [color7/color4]    [ ✜ ✜ ]      [ yes ]
-│└──┬─[seller_account_orders_modal_bulletin_part3              ]  [section_lev2 ]                                   [color2/color2]    [ ✜ ✜ ]      [ no  ]
-│   ├ [seller_account_orders_modal_bulletin_part3_ship         ]  [section_lev3 ]                                   [color2/color2]    [ 🡅 ✜ ]      [ no  ]
-│   └ [seller_account_orders_modal_bulletin_part3_ready        ]  [label        ] [ "ВРЕМЯ"                       ] [color8/color8]    [ ✜ 🡄 ]      [ no  ]
-└──── [seller_account_orders_modal_journal                     ]  [label        ] [ "КЛИЕНТ"                      ] [color8/color8]    [ ✜ 🡄 ]      [ no  ]
-
-
-
+✠ color_states
+┌─
+│seller_nav_monitor_button  
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color7
+│------ в любой ситуации
+└─
+┌─
+│seller_nav_monitor_badge  
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color2
+│------ в любой ситуации
+└─
+┌─
+│seller_nav_chat_button  
+│seller_nav_shop_button
+│seller_nav_lot_button
+│seller_nav_finance_button
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color2
+│------ в любой ситуации
+└─
+┌─
+│seller_nav_chat_badge  
+│seller_nav_shop_badge  
+│seller_nav_lot_badge  
+│seller_nav_finance_badge 
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color4
+│------ в любой ситуации
+└─
 
 
 
