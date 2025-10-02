@@ -17,6 +17,7 @@ color8 - font;
 
 
 
+
 🡆 seller_account_screen
 ■■■■■■■■■■■■■■■■■■■■■■■
 
@@ -480,6 +481,46 @@ s5)  ┌─ [seller_nav                                   ]  [section_lev1      
 │• color7
 │------ в pressing_state
 └─
+
+
+
+🡆🡆 seller_account_orders_modal
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+seller_account_orders_modal отображает информационную сводку по seller_account_orders_list_order.
+
+
+✠ tables
+
+                              codename:                               type:                   designation:           pressed/default:   location:   interaction:
+┌┬────[seller_account_orders_modal                             ]  [section_lev1 ]                                                      [ 🡅 ✜ ]      [ no  ]
+│├┬┬──[seller_account_orders_modal_bulletin                    ]  [section_lev1 ]                                                      [ 🡅 ✜ ]      [ no  ]
+│││└┬─[seller_account_orders_modal_bulletin_part1              ]  [section_lev1 ]                                                      [ 🡅 ✜ ]      [ no  ]
+│││ ├ [seller_account_orders_modal_bulletin_part1_number       ]  [section_lev1 ]                                                      [ 🡅 ✜ ]      [ no  ]
+│││ ├ [seller_account_orders_modal_bulletin_part1_data         ]  [button       ] [ "АРХИВ"                       ] [color7/color4]    [ ✜ 🡄 ]      [ yes ]
+│││ ├ [seller_account_orders_modal_bulletin_part1_client       ]  [button       ] [ "ПЛАТЕЖИ"                     ] [color7/color4]    [ ✜ 🡄 ]      [ yes ]
+│││ ├ [seller_account_orders_modal_bulletin_part1_phone        ]  [button       ] [ "ОРДЕРА"                      ] [color7/color4]    [ ✜ ✜ ]      [ yes ]
+│││ ├ [seller_account_orders_modal_bulletin_part1_quantity     ]  [button       ] [ "АНАЛИЗ"                      ] [color7/color4]    [ ✜ 🡆 ]      [ yes ]
+│││ └ [seller_account_orders_modal_bulletin_part1_sum          ]  [button       ] [ "ИСТОРИЯ"                     ] [color7/color4]    [ ✜ 🡆 ]      [ yes ]  
+││└┬┬─[seller_account_orders_modal_bulletin_part2              ]  [section_lev1 ]                                   [color2/color2]    [ ✜ ✜ ]      [ no  ] 
+││ │├─[seller_account_orders_modal_bulletin_part2_top          ]  [section_lev1 ]                                   [color2/color2]    [ ✜ ✜ ]      [ no  ] 
+││ │├ [seller_account_orders_modal_bulletin_part2_top_number   ]  [section_lev1 ]                                   [color2/color2]    [ ✜ ✜ ]      [ no  ] 
+││ │├ [seller_account_orders_modal_bulletin_part2_top_name     ]  [section_lev1 ]                                   [color2/color2]    [ ✜ ✜ ]      [ no  ] 
+││ │├ [seller_account_orders_modal_bulletin_part2_top_quantity ]  [section_lev1 ]                                   [color2/color2]    [ ✜ ✜ ]      [ no  ] 
+││ │├ [seller_account_orders_modal_bulletin_part2_top_book     ]  [section_lev1 ]                                   [color2/color2]    [ ✜ ✜ ]      [ no  ] 
+││ │└ [seller_account_orders_modal_bulletin_part2_top_ready    ]  [section_lev1 ]                                   [color2/color2]    [ ✜ ✜ ]      [ no  ] 
+││ └┬─[seller_account_orders_modal_bulletin_part2_good         ]  [section_lev2 ]                                   [color2/color2]    [ 🡅 ✜ ]      [ yes ] 
+││  ├ [seller_account_orders_modal_bulletin_part2_good_number  ]  [label        ] [ {{number} 'открытых ордеров'} ] [color8/color8]    [ ✜ ✜ ]      [ yes ] 
+││  ├ [seller_account_orders_modal_bulletin_part2_good_name    ]  [label        ]                                   [color2/color2]    [ ✜ 🡆 ]      [ yes ]
+││  ├ [seller_account_orders_modal_bulletin_part2_good_quantity]  [label       ] [ "НАСТРОЙКИ"                   ] [color8/color8]    [ ✜ 🡆 ]      [ yes ]
+││  ├ [seller_account_orders_modal_bulletin_part2_good_book    ]  [label         ] [ стрелка вниз                  ] [color8/color8]    [ ✜ 🡄 ]      [ yes ]
+││  └ [seller_account_orders_modal_bulletin_part2_good_ready   ]  [label       ]                                   [color7/color4]    [ ✜ ✜ ]      [ yes ]
+│└──┬─[seller_account_orders_modal_bulletin_part3              ]  [section_lev2 ]                                   [color2/color2]    [ ✜ ✜ ]      [ no  ]
+│   ├ [seller_account_orders_modal_bulletin_part3_ship         ]  [section_lev3 ]                                   [color2/color2]    [ 🡅 ✜ ]      [ no  ]
+│   └ [seller_account_orders_modal_bulletin_part3_ready        ]  [label        ] [ "ВРЕМЯ"                       ] [color8/color8]    [ ✜ 🡄 ]      [ no  ]
+└──── [seller_account_orders_modal_journal                     ]  [label        ] [ "КЛИЕНТ"                      ] [color8/color8]    [ ✜ 🡄 ]      [ no  ]
+
+
 
 
 
