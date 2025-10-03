@@ -575,5 +575,82 @@ s5)  ┌─ [seller_nav                                   ]  [section_lev1      
 
 
 
+🡆🡆 seller_account_orders_modal
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+seller_account_orders_modal отображает информационную сводку по seller_account_orders_list_order.
+
+
+✠ tables
+
+                               codename:                                type:           designation:     pressed/default:  location:   interaction:
+┌┬──────[seller_account_orders_modal                              ]  [section_lev1]                      [color0/color0]    [ ✜ ✜ ]      [ no  ]
+│└┬┬┬───[seller_account_orders_modal_bulletin                     ]  [section_lev2]                      [color0/color0]    [ 🡅 ✜ ]      [ no  ]
+│ ││└┬──[seller_account_orders_modal_bulletin_part1               ]  [section_lev3]                      [color0/color0]    [ 🡅 ✜ ]      [ no  ]
+│ ││ ├┬─[seller_account_orders_modal_bulletin_part1_number        ]  [section_lev4]                      [color2/color2]    [ 🡅 ✜ ]      [ no  ]
+│ ││ │├ [seller_account_orders_modal_bulletin_part1_number_name   ]  [label       ] [ "ОРДЕР"          ] [color8/color8]    [ ✜ 🡄 ]      [ no  ]
+│ ││ │└ [seller_account_orders_modal_bulletin_part1_number_value  ]  [value       ] [ { string }       ] [color8/color8]    [ ✜ 🡆 ]      [ no  ]
+│ ││ ├┬─[seller_account_orders_modal_bulletin_part1_data          ]  [section_lev4]                      [color2/color2]    [ ✜ ✜ ]      [ no  ]
+│ ││ │├ [seller_account_orders_modal_bulletin_part1_data_name     ]  [label       ] [ "ДАТА"           ] [color8/color8]    [ ✜ 🡄 ]      [ no  ]
+│ ││ │└ [seller_account_orders_modal_bulletin_part1_data_value    ]  [value       ] [ { string }       ] [color8/color8]    [ ✜ 🡆 ]      [ no  ]
+│ ││ ├┬─[seller_account_orders_modal_bulletin_part1_client        ]  [section_lev4]                      [color2/color2]    [ ✜ ✜ ]      [ no  ]
+│ ││ │├ [seller_account_orders_modal_bulletin_part1_client_name   ]  [label       ] [ "КЛИЕНТ"         ] [color8/color8]    [ ✜ 🡄 ]      [ no  ]
+│ ││ │└ [seller_account_orders_modal_bulletin_part1_client_value  ]  [value       ] [ { string }       ] [color8/color8]    [ ✜ 🡆 ]      [ no  ]
+│ ││ ├┬─[seller_account_orders_modal_bulletin_part1_phone         ]  [section_lev4]                      [color2/color2]    [ ✜ ✜ ]      [ no  ]
+│ ││ │├ [seller_account_orders_modal_bulletin_part1_phone_name    ]  [label       ] [ "ТЕЛЕФОН"        ] [color8/color8]    [ ✜ 🡄 ]      [ no  ]
+│ ││ │└ [seller_account_orders_modal_bulletin_part1_phone_value   ]  [value       ] [ { number }       ] [color8/color8]    [ ✜ 🡆 ]      [ no  ]
+│ ││ ├┬─[seller_account_orders_modal_bulletin_part1_quantity      ]  [section_lev4]                      [color2/color2]    [ ✜ ✜ ]      [ no  ]
+│ ││ │├ [seller_account_orders_modal_bulletin_part1_quantity_name ]  [label       ] [ "ТОВАРОВ"        ] [color8/color8]    [ ✜ 🡄 ]      [ no  ]
+│ ││ │└ [seller_account_orders_modal_bulletin_part1_quantity_value]  [value       ] [ { number }       ] [color8/color8]    [ ✜ 🡆 ]      [ no  ]
+│ ││ └┬─[seller_account_orders_modal_bulletin_part1_sum           ]  [section_lev4]                      [color2/color2]    [ ✜ ✜ ]      [ no  ]
+│ ││  ├ [seller_account_orders_modal_bulletin_part1_sum_name      ]  [label       ] [ "СУММА"          ] [color8/color8]    [ ✜ 🡄 ]      [ no  ]
+│ ││  └ [seller_account_orders_modal_bulletin_part1_sum_value     ]  [value       ] [ { number }       ] [color8/color8]    [ ✜ 🡆 ]      [ no  ]
+│ │└─┬┬─[seller_account_orders_modal_bulletin_part2               ]  [section_lev3]                      [color0/color0]    [ ✜ ✜ ]      [ no  ] 
+│ │  │├─[seller_account_orders_modal_bulletin_part2_top           ]  [section_lev4]                      [color2/color2]    [ 🡅 ✜ ]      [ no  ] 
+│ │  │├ [seller_account_orders_modal_bulletin_part2_top_number    ]  [label       ] [ "# ТОВАРА"       ] [color8/color8]    [ ✜ 🡄 ]      [ no  ] 
+│ │  │├ [seller_account_orders_modal_bulletin_part2_top_name      ]  [label       ] [ "ТОВАР"          ] [color8/color8]    [ ✜ ✜ ]      [ no  ] 
+│ │  │├ [seller_account_orders_modal_bulletin_part2_top_quantity  ]  [label       ] [ "КОЛИЧ"          ] [color8/color8]    [ ✜ ✜ ]      [ no  ] 
+│ │  │├ [seller_account_orders_modal_bulletin_part2_top_book      ]  [label       ] [ "БРОН"           ] [color8/color8]    [ ✜ ✜ ]      [ no  ] 
+│ │  │└ [seller_account_orders_modal_bulletin_part2_top_ready     ]  [label       ] [ "ГОТОВ"          ] [color8/color8]    [ ✜ 🡆 ]      [ no  ] 
+│ │  └┬─[seller_account_orders_modal_bulletin_part2_good          ]  [section_lev4]                      [color2/color2]    [ 🡇 ✜ ]      [ no  ] 
+│ │   ├ [seller_account_orders_modal_bulletin_part2_good_#        ]  [value       ] [ { number }       ] [color8/color8]    [ ✜ 🡄 ]      [ no  ] 
+│ │   ├ [seller_account_orders_modal_bulletin_part2_good_name     ]  [value       ] [ { string }       ] [color8/color8]    [ ✜ ✜ ]      [ no  ] 
+│ │   ├ [seller_account_orders_modal_bulletin_part2_good_quantity ]  [value       ] [ { number }       ] [color8/color8]    [ ✜ ✜ ]      [ no  ] 
+│ │   ├ [seller_account_orders_modal_bulletin_part2_good_book     ]  [value       ] [ { string }       ] [color8/color8]    [ ✜ ✜ ]      [ no  ] 
+│ │   └ [seller_account_orders_modal_bulletin_part2_good_ready    ]  [checkbox    ]                      [color8/color8]    [ ✜ 🡆 ]      [ yes ] 
+│ └─┬┬──[seller_account_orders_modal_bulletin_part3               ]  [section_lev3]                      [color0/color0]    [ 🡇 ✜ ]      [ no  ]
+│   │└┬─[seller_account_orders_modal_bulletin_part3_ship          ]  [section_lev4]                      [color2/color2]    [ 🡅 ✜ ]      [ no  ]
+│   │ ├ [seller_account_orders_modal_bulletin_part3_ship_name     ]  [label       ] [ "ДОСТАВКА"       ] [color8/color8]    [ ✜ 🡄 ]      [ no  ]
+│   │ ├ [seller_account_orders_modal_bulletin_part3_ship_value    ]  [value       ] [ { string }       ] [color8/color8]    [ ✜ ✜ ]      [ no  ]
+│   │ └ [seller_account_orders_modal_bulletin_part3_ship_ready    ]  [checkbox    ]                      [color8/color8]    [ ✜ 🡆 ]      [ yes ]
+│   └─┬─[seller_account_orders_modal_bulletin_part3_done          ]  [section_lev4]                      [color2/color2]    [ 🡇 ✜ ]      [ no  ]
+│     ├ [seller_account_orders_modal_bulletin_part3_done_name     ]  [label       ] [ "ВЫПОЛНЕН"       ] [color8/color8]    [ ✜ 🡄 ]      [ no  ]
+│     ├ [seller_account_orders_modal_bulletin_part3_done_value    ]  [value       ] [ { string }       ] [color8/color8]    [ ✜ ✜ ]      [ no  ]
+│     └ [seller_account_orders_modal_bulletin_part3_done_ready    ]  [checkbox    ]                      [color8/color8]    [ ✜ 🡆 ]      [ yes ]
+└────── [seller_account_orders_modal_journal                      ]  [section_lev2]                      [color0/color0]    [ 🡇 ✜ ]      [ no  ]
+
+
+✠ details
+
+seller_account_orders_modal разделен на 2 части seller_account_orders_modal_bulletin и seller_account_orders_modal_journal (поскольку seller_account_orders_modal_journal формируется независимо, его описание приведено отдельно). seller_account_orders_modal_bulletin подразделяется на 3 компонента следующих друг за другом сверху-вниз:
+
+seller_account_orders_modal_bulletin_part1 - выводит 6 пар параметр/значение, где пара параметр/значение размещаются на одной строке согласно шаблону: параметр - позиция слева, значение - позиция справа. В seller_account_orders_modal_bulletin_part1 блоки параметров расположены сверху-вниз в следующем порядке:
+- seller_account_orders_modal_bulletin_part1_number - отображает значение псевдонима ордера;
+- seller_account_orders_modal_bulletin_part1_data - отображает значение времени создания ордера по шаблону: "hh:mm:ss";
+- seller_account_orders_modal_bulletin_part1_client - отображает фамилию и имя buyer по шаблону: "Second name.First name" (First name в виде его первой буквы);
+- seller_account_orders_modal_bulletin_part1_phone - отображает в качестве значения телефон buyer;
+- seller_account_orders_modal_bulletin_part1_quantity - отображает значение количества товарных позиций по ордеру;
+- seller_account_orders_modal_bulletin_part1_sum - отображает в качестве значения сумму ордера в денежном выражении.
+seller_account_orders_modal_bulletin_part2 - подразделяется на seller_account_orders_modal_bulletin_part2_top выполняющего роль шапки состоящего из 5 компонентов представляющих собой заголовки столбцов и seller_account_orders_modal_bulletin_part2_good состоящий из блоков данных seller_account_orders_list_order в виде 5 значений размещенных в 5 столбцах расположенных слева-направо в следующем порядке:
+- seller_account_orders_modal_bulletin_part2_good_# - отображает номер товарной позиции конкретного товара в ордере;
+- seller_account_orders_modal_bulletin_part2_good_name - отображает наименование товарной позиции;
+- seller_account_orders_modal_bulletin_part2_good_quantity - отображает количество товарных позиций в ордере;
+- seller_account_orders_modal_bulletin_part2_good_book - отображает значение "да/нет" (активировано/дезактивировано) функции бронирования в ордере;
+- seller_account_orders_modal_bulletin_part2_good_ready - отображает готовность ордера в виде чекбокса.
+seller_account_orders_modal_bulletin_part3 - частично повторяя шаблон seller_account_orders_modal_bulletin_part1 выводит 2 пары параметр/значение/чекбокс, где они размещаются на одной строке согласно шаблону: параметр - позиция слева, значение - позиция в центре, чекбокс - позиция справа. В seller_account_orders_modal_bulletin_part3 блоки параметров расположены сверху-вниз в следующем порядке:
+- seller_account_orders_modal_bulletin_part3_ship - отображает в качестве значения адрес buyer;
+- seller_account_orders_modal_bulletin_part3_done - отображает строковое значение в бинарном виде "да/нет".
+
+
 
 
