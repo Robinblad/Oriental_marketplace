@@ -19,8 +19,6 @@ color8 - font;
 
 
 
-
-
 🡆 seller_account_screen
 ■■■■■■■■■■■■■■■■■■■■■■■
 
@@ -622,16 +620,16 @@ seller_account_orders_modal отображает информационную с
 │ │   ├ [seller_account_orders_modal_bulletin_part2_good_name     ]  [value       ] [ { string }       ] [color8/color8]    [ ✜ ✜ ]      [ no  ] 
 │ │   ├ [seller_account_orders_modal_bulletin_part2_good_quantity ]  [value       ] [ { number }       ] [color8/color8]    [ ✜ ✜ ]      [ no  ] 
 │ │   ├ [seller_account_orders_modal_bulletin_part2_good_book     ]  [value       ] [ { string }       ] [color8/color8]    [ ✜ ✜ ]      [ no  ] 
-│ │   └ [seller_account_orders_modal_bulletin_part2_good_ready    ]  [checkbox    ]                      [color8/color8]    [ ✜ 🡆 ]      [ yes ] 
+│ │   └ [seller_account_orders_modal_bulletin_part2_good_ready    ]  [checkbox    ]                      [color7/color4]    [ ✜ 🡆 ]      [ yes ] 
 │ └─┬┬──[seller_account_orders_modal_bulletin_part3               ]  [section_lev3]                      [color0/color0]    [ 🡇 ✜ ]      [ no  ]
 │   │└┬─[seller_account_orders_modal_bulletin_part3_ship          ]  [section_lev4]                      [color2/color2]    [ 🡅 ✜ ]      [ no  ]
 │   │ ├ [seller_account_orders_modal_bulletin_part3_ship_name     ]  [label       ] [ "ДОСТАВКА"       ] [color8/color8]    [ ✜ 🡄 ]      [ no  ]
 │   │ ├ [seller_account_orders_modal_bulletin_part3_ship_value    ]  [value       ] [ { string }       ] [color8/color8]    [ ✜ ✜ ]      [ no  ]
-│   │ └ [seller_account_orders_modal_bulletin_part3_ship_ready    ]  [checkbox    ]                      [color8/color8]    [ ✜ 🡆 ]      [ yes ]
+│   │ └ [seller_account_orders_modal_bulletin_part3_ship_ready    ]  [checkbox    ]                      [color7/color4]    [ ✜ 🡆 ]      [ yes ]
 │   └─┬─[seller_account_orders_modal_bulletin_part3_done          ]  [section_lev4]                      [color2/color2]    [ 🡇 ✜ ]      [ no  ]
 │     ├ [seller_account_orders_modal_bulletin_part3_done_name     ]  [label       ] [ "ВЫПОЛНЕН"       ] [color8/color8]    [ ✜ 🡄 ]      [ no  ]
 │     ├ [seller_account_orders_modal_bulletin_part3_done_value    ]  [value       ] [ { string }       ] [color8/color8]    [ ✜ ✜ ]      [ no  ]
-│     └ [seller_account_orders_modal_bulletin_part3_done_ready    ]  [checkbox    ]                      [color8/color8]    [ ✜ 🡆 ]      [ yes ]
+│     └ [seller_account_orders_modal_bulletin_part3_done_ready    ]  [checkbox    ]                      [color7/color4]    [ ✜ 🡆 ]      [ yes ]
 └────── [seller_account_orders_modal_journal                      ]  [section_lev2]                      [color0/color0]    [ 🡇 ✜ ]      [ no  ]
 
 
@@ -686,6 +684,75 @@ seller_account_orders_modal_bulletin_part3_ship_off - отображает 2 б�
 ✠ logics
 При проставлении чекбокса в seller_account_orders_modal_bulletin_part3_done_ready в ситуации, если для seller_account_orders_modal_bulletin_part2_good_ready и/или seller_account_orders_modal_bulletin_part3_ship_ready не были проставлены чекбоксы, - эти пустые чекбоксы проставляются.
 При нажатии на проставленный чекбокс seller_account_orders_modal_bulletin_part3_done_ready, вне зависимости от состояния seller_account_orders_modal_bulletin_part2_good_ready и seller_account_orders_modal_bulletin_part3_ship_ready, их чекбоксы остаются проставленными.
+
+
+✠ color_states
+┌─
+│seller_account_orders_modal_bulletin_part1_number
+│seller_account_orders_modal_bulletin_part1_data
+│seller_account_orders_modal_bulletin_part1_client
+│seller_account_orders_modal_bulletin_part1_phone
+│seller_account_orders_modal_bulletin_part1_quantity
+│seller_account_orders_modal_bulletin_part1_sum
+│seller_account_orders_modal_bulletin_part2_good_name
+│seller_account_orders_modal_bulletin_part2_good_quantity
+│seller_account_orders_modal_bulletin_part2_good_book
+│seller_account_orders_modal_bulletin_part2_good_ready
+│seller_account_orders_modal_bulletin_part2_top_ready
+│seller_account_orders_modal_bulletin_part3_ship
+│seller_account_orders_modal_bulletin_part3_done
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color2
+│------ в любой ситуации
+└─
+┌─
+│seller_account_orders_modal_bulletin_part1_number_name
+│seller_account_orders_modal_bulletin_part1_number_value
+│seller_account_orders_modal_bulletin_part1_data_name
+│seller_account_orders_modal_bulletin_part1_data_value
+│seller_account_orders_modal_bulletin_part1_client_name
+│seller_account_orders_modal_bulletin_part1_client_value
+│seller_account_orders_modal_bulletin_part1_phone_name
+│seller_account_orders_modal_bulletin_part1_phone_value
+│seller_account_orders_modal_bulletin_part2_good_book
+│seller_account_orders_modal_bulletin_part2_good_ready
+│seller_account_orders_modal_bulletin_part1_quantity_name
+│seller_account_orders_modal_bulletin_part1_quantity_value
+│seller_account_orders_modal_bulletin_part1_sum_name
+│seller_account_orders_modal_bulletin_part1_sum_value
+│seller_account_orders_modal_bulletin_part2_top_number
+│seller_account_orders_modal_bulletin_part2_top_name
+│seller_account_orders_modal_bulletin_part2_top_quantity
+│seller_account_orders_modal_bulletin_part2_top_book
+│seller_account_orders_modal_bulletin_part2_top_ready
+│seller_account_orders_modal_bulletin_part2_good_name
+│seller_account_orders_modal_bulletin_part2_good_quantity
+│seller_account_orders_modal_bulletin_part2_good_book
+│seller_account_orders_modal_bulletin_part3_ship_name
+│seller_account_orders_modal_bulletin_part3_ship_value
+│seller_account_orders_modal_bulletin_part3_done_name
+│seller_account_orders_modal_bulletin_part3_done_value
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color8
+│------ в любой ситуации
+└─
+✠ color_states
+┌─
+│seller_account_orders_modal_bulletin_part2_good_ready
+│seller_account_orders_modal_bulletin_part3_ship_ready
+│seller_account_orders_modal_bulletin_part3_done_ready
+│---------------------------
+│⟪⟪ border ⟫⟫ 
+│--------
+│• color4
+│------ в inactive_state
+│• color7
+│------ в active_state
+└─
 
 
 
