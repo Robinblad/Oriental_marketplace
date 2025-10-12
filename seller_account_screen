@@ -968,3 +968,10 @@ s3)   ┌──[seller_nav                                        ]  [section_le
 
 
 
+✠ logics
+Первый раз при нажатии seller_account_payments_main_types_dropdown_* сразу же открывается экран настройки выбранного платежного инструмента. Так при нажатии seller_account_payments_main_types_dropdown_cards открывается seller_account_payments_cards_new_screen. Если при входе в seller_account_payments минимум одна карта была настроена, тогда при нажатии открывается seller_account_payments_cards_screen.  
+
+
+
+
+
