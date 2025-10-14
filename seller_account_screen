@@ -15,10 +15,6 @@ color8 - font;
 
 
 
-
-
-
-
 🡆 seller_account
 ■■■■■■■■■■■■■■■■
 
@@ -762,48 +758,48 @@ seller_account_orders_modal_bulletin_part3_ship_off - отображает 2 б�
 
 ✠ tables
 
-                           codename:                                 type:                  designation:          pressed/default:   location:   interaction:
-s1)    ┌─[seller_account_nav                                ]  [section_lev1  ]                                   [color0/color0]     [ 🡅 ✜ ]      [ no  ]
----    ├ [seller_account_nav_payments                       ]  [button        ] [ "ПЛАТЕЖИ"                     ] [color7/color4]     [ ✜ 🡄 ]      [ yes ]
----    ├ [seller_account_nav_orders                         ]  [button        ] [ "ОРДЕРА"                      ] [color7/color4]     [ ✜ ✜ ]      [ yes ]
----    ├ [seller_account_nav_history                        ]  [button        ] [ "ИСТОРИЯ"                     ] [color7/color4]     [ ✜ 🡆 ]      [ yes ] 
----    └ [seller_account_nav_analysis                       ]  [button        ] [ "АНАЛИЗ"                      ] [color7/color4]     [ ✜ 🡆 ]      [ yes ] 
-s2)┌┬─┬──[seller_account_payments                           ]  [section_lev1  ]                                   [color0/color0]     [ ✜ ✜ ]      [ no  ] 
----││ └┬─[seller_account_payments_top                       ]  [section_lev2  ]                                   [color2/color2]     [ 🡅 ✜ ]      [ no  ] 
----││  └ [seller_account_payments_top_text                  ]  [text          ] ["Выберите платежный инструмент"] [color8/color8]     [ ✜ ✜ ]      [ no  ] 
----│├┬┬──[seller_account_payments_main                      ]  [section_lev2  ]                                   [color2/color2]     [ ✜ ✜ ]      [ no  ]
----│││├┬─[seller_account_payments_main_types                ]  [dropdown      ]                                   [color7/color4]     [ 🡅 ✜ ]      [ yes ] 
----││││├ [seller_account_payments_main_types_header         ]  [header        ] [ "Прием платежей"              ] [color8/color8]     [ ✜ 🡆 ]      [ yes ]
----││││└ [seller_account_payments_main_types_icon           ]  [icon          ] [ стрелка вниз                  ] [color8/color8]     [ ✜ 🡄 ]      [ yes ]
----│││└┬─[seller_account_payments_main_types_dropdown       ]  [section_lev3  ]                                   [color2/color2]     [ ✜ ✜ ]      [ no  ]
----│││ ├ [seller_account_payments_main_types_dropdown_cards ]  [button        ] [ "Карты"                       ] [color7/color4]     [ 🡅 ✜ ]      [ yes ]
----│││ ├ [seller_account_payments_main_types_dropdown_bank  ]  [button        ] [ "Банковский счет"             ] [color7/color4]     [ ✜ ✜ ]      [ yes ]
----│││ ├ [seller_account_payments_main_types_dropdown_mbank ]  [button        ] [ "MBank"                       ] [color7/color4]     [ ✜ ✜ ]      [ yes ]
----│││ ├ [seller_account_payments_main_types_dropdown_paypal]  [button        ] [ "PayPal"                      ] [color7/color4]     [ ✜ ✜ ]      [ yes ]
----│││ ├ [seller_account_payments_main_types_dropdown_unipay]  [button        ] [ "Unipay"                      ] [color7/color4]     [ ✜ ✜ ]      [ yes ]
----│││ └ [seller_account_payments_main_types_dropdown_alipay]  [button        ] [ "Alipay"                      ] [color7/color4]     [ 🡇 ✜ ]      [ yes ]
----││└─┬─[seller_account_payments_main_taxes                ]  [button        ] [                                 [color7/color4]     [ 🡇 ✜ ]      [ yes ]
----││  ├ [seller_account_payments_main_taxes_header         ]  [header        ] [ "Уплата налогов"              ] [color8/color8]     [ ✜ 🡆 ]      [ yes ]
----││  └ [seller_account_payments_main_taxes_icon           ]  [icon          ] [ знак процента                 ] [color8/color8]     [ ✜ 🡄 ]      [ yes ]
----│└────[seller_account_payments_main_protip               ]  [button        ] [ "?"                           ] [color7/color4]     [ 🡇 ✜ ]      [ yes ]
----└───┬─[seller_account_payments_bottom                    ]  [section_lev2  ]                                   [color2/color2]     [ 🡇 ✜ ]      [ no  ]
----    └ [seller_account_payments_bottom_text               ]  [text          ] [ "Подключить платежное сред..."] [color8/color8]     [ ✜ ✜ ]      [ no  ]
-s3)   ┌──[seller_nav                                        ]  [section_lev1  ]                                   [color0/color0]     [ ✜ ✜ ]      [ no  ]
----   ├┬ [seller_nav_monitor_button                         ]  [button        ]                                   [color7/color4]     [ ✜ 🡄 ]      [ yes ]
----   │├ [seller_nav_monitor_header                         ]  [header        ] [ "МОНИТОР"                     ] [color8/color8]     [ ✜ ✜ ]      [ no  ]  
----   │└ [seller_nav_monitor_badge                          ]  [badge         ] [ { number }                    ] [color4/color4]     [ 🡅 🡆 ]      [ no  ]
----   ├┬ [seller_nav_chat_button                            ]  [button        ]                                   [color7/color4]     [ ✜ 🡄 ]      [ yes ]   
----   │├ [seller_nav_chat_header                            ]  [header        ] [ "ЧАТ"                         ] [color8/color8]     [ ✜ ✜ ]      [ no  ] 
----   │└ [seller_nav_chat_badge                             ]  [badge         ] [ { number }                    ] [color4/color4]     [ 🡅 🡆 ]      [ no  ] 
----   ├┬ [seller_nav_shop_button                            ]  [button        ]                                   [color7/color4]     [ ✜ ✜ ]      [ yes ]   
----   │├ [seller_nav_shop_header                            ]  [header        ] [ "МАГАЗИН"                     ] [color8/color8]     [ ✜ ✜ ]      [ no  ] 
----   │└ [seller_nav_shop_badge                             ]  [badge         ] [ { number }                    ] [color4/color4]     [ 🡅 🡆 ]      [ no  ]   
----   ├┬ [seller_nav_lot_button                             ]  [button        ]                                   [color7/color4]     [ ✜ 🡆 ]      [ yes ]   
----   │├ [seller_nav_lot_header                             ]  [header        ] [ "ТОВАРЫ"                      ] [color8/color8]     [ ✜ ✜ ]      [ no  ] 
----   │└ [seller_nav_lot_badge                              ]  [badge         ] [ { number }                    ] [color4/color4]     [ 🡅 🡆 ]      [ no  ]
----   └┬ [seller_nav_finance_button                         ]  [button        ]                                   [color7/color4]     [ ✜ 🡆 ]      [ yes ]   
----    ├ [seller_nav_finance_header                         ]  [header        ] [ "КАБИНЕТ"                     ] [color8/color8]     [ ✜ ✜ ]      [ no  ] 
----    └ [seller_nav_finance_badge                          ]  [badge         ] [ { number }                    ] [color4/color4]     [ 🡅 🡆 ]      [ no  ] 
+                          codename:                                 type:                  designation:          pressed/default:   location:   interaction:
+      ┌─[seller_account_nav                                ]  [section_lev1  ]                                   [color0/color0]     [ 🡅 ✜ ]      [ no  ]
+      ├ [seller_account_nav_payments                       ]  [button        ] [ "ПЛАТЕЖИ"                     ] [color7/color4]     [ ✜ 🡄 ]      [ yes ]
+      ├ [seller_account_nav_orders                         ]  [button        ] [ "ОРДЕРА"                      ] [color7/color4]     [ ✜ ✜ ]      [ yes ]
+      ├ [seller_account_nav_history                        ]  [button        ] [ "ИСТОРИЯ"                     ] [color7/color4]     [ ✜ 🡆 ]      [ yes ] 
+      └ [seller_account_nav_analysis                       ]  [button        ] [ "АНАЛИЗ"                      ] [color7/color4]     [ ✜ 🡆 ]      [ yes ] 
+ ┌┬──┬──[seller_account_payments                           ]  [section_lev1  ]                                   [color0/color0]     [ ✜ ✜ ]      [ no  ] 
+ ││  └┬─[seller_account_payments_top                       ]  [section_lev2  ]                                   [color2/color2]     [ 🡅 ✜ ]      [ no  ] 
+ ││   └ [seller_account_payments_top_text                  ]  [text          ] ["Выберите платежный инструмент"] [color8/color8]     [ ✜ ✜ ]      [ no  ] 
+ │├┬┬───[seller_account_payments_main                      ]  [section_lev2  ]                                   [color2/color2]     [ ✜ ✜ ]      [ no  ]
+ │││└┬┬─[seller_account_payments_main_types                ]  [dropdown      ]                                   [color7/color4]     [ 🡅 ✜ ]      [ yes ] 
+ │││ │├ [seller_account_payments_main_types_header         ]  [header        ] [ "Прием платежей"              ] [color8/color8]     [ ✜ 🡆 ]      [ yes ]
+ │││ │└ [seller_account_payments_main_types_icon           ]  [icon          ] [ стрелка вниз                  ] [color8/color8]     [ ✜ 🡄 ]      [ yes ]
+ │││ └┬─[seller_account_payments_main_types_dropdown       ]  [section_lev3  ]                                   [color2/color2]     [ ✜ ✜ ]      [ no  ]
+ │││  ├ [seller_account_payments_main_types_dropdown_cards ]  [button        ] [ "Карты"                       ] [color7/color4]     [ 🡅 ✜ ]      [ yes ]
+ │││  ├ [seller_account_payments_main_types_dropdown_bank  ]  [button        ] [ "Банковский счет"             ] [color7/color4]     [ ✜ ✜ ]      [ yes ]
+ │││  ├ [seller_account_payments_main_types_dropdown_mbank ]  [button        ] [ "MBank"                       ] [color7/color4]     [ ✜ ✜ ]      [ yes ]
+ │││  ├ [seller_account_payments_main_types_dropdown_paypal]  [button        ] [ "PayPal"                      ] [color7/color4]     [ ✜ ✜ ]      [ yes ]
+ │││  ├ [seller_account_payments_main_types_dropdown_unipay]  [button        ] [ "Unipay"                      ] [color7/color4]     [ ✜ ✜ ]      [ yes ]
+ │││  └ [seller_account_payments_main_types_dropdown_alipay]  [button        ] [ "Alipay"                      ] [color7/color4]     [ 🡇 ✜ ]      [ yes ]
+ ││└──┬─[seller_account_payments_main_taxes                ]  [button        ] [                                 [color7/color4]     [ 🡇 ✜ ]      [ yes ]
+ ││   ├ [seller_account_payments_main_taxes_header         ]  [header        ] [ "Уплата налогов"              ] [color8/color8]     [ ✜ 🡆 ]      [ yes ]
+ ││   └ [seller_account_payments_main_taxes_icon           ]  [icon          ] [ знак процента                 ] [color8/color8]     [ ✜ 🡄 ]      [ yes ]
+ │└─────[seller_account_payments_main_protip               ]  [button        ] [ "?"                           ] [color7/color4]     [ 🡇 ✜ ]      [ yes ]
+ └────┬─[seller_account_payments_bottom                    ]  [section_lev2  ]                                   [color2/color2]     [ 🡇 ✜ ]      [ no  ]
+      └ [seller_account_payments_bottom_text               ]  [text          ] [ "Подключить платежное сред..."] [color8/color8]     [ ✜ ✜ ]      [ no  ]
+     ┌──[seller_nav                                        ]  [section_lev1  ]                                   [color0/color0]     [ ✜ ✜ ]      [ no  ]
+     ├┬ [seller_nav_monitor_button                         ]  [button        ]                                   [color7/color4]     [ ✜ 🡄 ]      [ yes ]
+     │├ [seller_nav_monitor_header                         ]  [header        ] [ "МОНИТОР"                     ] [color8/color8]     [ ✜ ✜ ]      [ no  ]  
+     │└ [seller_nav_monitor_badge                          ]  [badge         ] [ { number }                    ] [color4/color4]     [ 🡅 🡆 ]      [ no  ]
+     ├┬ [seller_nav_chat_button                            ]  [button        ]                                   [color7/color4]     [ ✜ 🡄 ]      [ yes ]   
+     │├ [seller_nav_chat_header                            ]  [header        ] [ "ЧАТ"                         ] [color8/color8]     [ ✜ ✜ ]      [ no  ] 
+     │└ [seller_nav_chat_badge                             ]  [badge         ] [ { number }                    ] [color4/color4]     [ 🡅 🡆 ]      [ no  ] 
+     ├┬ [seller_nav_shop_button                            ]  [button        ]                                   [color7/color4]     [ ✜ ✜ ]      [ yes ]   
+     │├ [seller_nav_shop_header                            ]  [header        ] [ "МАГАЗИН"                     ] [color8/color8]     [ ✜ ✜ ]      [ no  ] 
+     │└ [seller_nav_shop_badge                             ]  [badge         ] [ { number }                    ] [color4/color4]     [ 🡅 🡆 ]      [ no  ]   
+     ├┬ [seller_nav_lot_button                             ]  [button        ]                                   [color7/color4]     [ ✜ 🡆 ]      [ yes ]   
+     │├ [seller_nav_lot_header                             ]  [header        ] [ "ТОВАРЫ"                      ] [color8/color8]     [ ✜ ✜ ]      [ no  ] 
+     │└ [seller_nav_lot_badge                              ]  [badge         ] [ { number }                    ] [color4/color4]     [ 🡅 🡆 ]      [ no  ]
+     └┬ [seller_nav_finance_button                         ]  [button        ]                                   [color7/color4]     [ ✜ 🡆 ]      [ yes ]   
+      ├ [seller_nav_finance_header                         ]  [header        ] [ "КАБИНЕТ"                     ] [color8/color8]     [ ✜ ✜ ]      [ no  ] 
+      └ [seller_nav_finance_badge                          ]  [badge         ] [ { number }                    ] [color4/color4]     [ 🡅 🡆 ]      [ no  ] 
 
 
 ■ seller_account_nav
@@ -913,10 +909,15 @@ s3)   ┌──[seller_nav                                        ]  [section_le
 │------ в pressing_state.
 └─
 
+✠ logics
+Первый раз при нажатии seller_account_payments_main_types_dropdown_* сразу же открывается экран настройки выбранного платежного инструмента. Так при нажатии seller_account_payments_main_types_dropdown_cards открывается seller_account_payments_cards_new_screen. Если при входе в seller_account_payments минимум одна карта была настроена, тогда при нажатии открывается seller_account_payments_cards_screen. 
 
 
 🡆🡆 seller_account_payments_cards_screen
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+
+seller_account_payments_cards_screen отвечает за управление банковскими картами.
+
 
 ✠ tables
 
@@ -930,18 +931,18 @@ s3)   ┌──[seller_nav                                        ]  [section_le
 ││    └┬─[seller_account_payments_cards_top                 ]  [section_lev2       ]                                   [color2/color2]     [ 🡅 ✜ ]      [ no  ] 
 ││     └ [seller_account_payments_cards_top_text            ]  [text               ] ["Ваши карты"                   ] [color8/color8]     [ ✜ ✜ ]      [ no  ] 
 │└┬┬┬┬───[seller_account_payments_cards_main                ]  [section_lev2       ]                                   [color2/color2]     [ ✜ ✜ ]      [ no  ]
-│ │││├┬┬─[seller_account_payments_cards_main_card           ]  [section_lev3       ]                                   [color7/color4]     [ 🡅 ✜ ]      [ yes ] 
-│ │││││└─[seller_account_payments_cards_main_card_header    ]  [header             ] ["Активная карта"               ] [color7/color4]     [ 🡅 ✜ ]      [ yes ]
-│ ││││└──[seller_account_payments_cards_main_card_number    ]  [value              ] [ { number }                    ] [color7/color4]     [ 🡅 ✜ ]      [ yes ]
-│ │││└─┬─[seller_account_payments_cards_main_card_btn       ]  [section_lev3       ]                                   [color7/color4]     [ 🡅 ✜ ]      [ yes ]
-│ │││  ├ [seller_account_payments_cards_main_card_btn_delete]  [button             ] [ "удалить"                     ] [color7/color4]     [ 🡅 ✜ ]      [ yes ]
-│ │││  └ [seller_account_payments_cards_main_card_btn_editor]  [button             ] [ "редактор"                    ] [color7/color4]     [ 🡅 ✜ ]      [ yes ]
-│ ││└──┬─[seller_account_payments_cards_main_add            ]  [section_lev3       ]                                   [color8/color8]     [ ✜ 🡆 ]      [ yes ]
-│ ││   ├ [seller_account_payments_cards_main_add_icon       ]  [header             ] [ знак плюс                     ] [color8/color8]     [ ✜ 🡆 ]      [ yes ]
+│ │││├┬┬─[seller_account_payments_cards_main_card           ]  [section_lev3       ]                                   [color2/color2]     [ 🡅 ✜ ]      [ no  ] 
+│ │││││└─[seller_account_payments_cards_main_card_header    ]  [header             ] ["Активная карта"               ] [color8/color8]     [ 🡅 ✜ ]      [ no  ]
+│ ││││└──[seller_account_payments_cards_main_card_number    ]  [value+button       ] [ { number }                    ] [color8/color8]     [ ✜ ✜ ]      [ yes ]
+│ │││└─┬─[seller_account_payments_cards_main_card_btn       ]  [section_lev3       ]                                   [color2/color2]     [ 🡇 ✜ ]      [ no  ]
+│ │││  ├ [seller_account_payments_cards_main_card_btn_delete]  [button             ] [ "удалить"                     ] [color7/color4]     [ ✜ 🡄 ]      [ yes ]
+│ │││  └ [seller_account_payments_cards_main_card_btn_editor]  [button             ] [ "редактор"                    ] [color7/color4]     [ ✜ 🡆 ]      [ yes ]
+│ ││└──┬─[seller_account_payments_cards_main_add            ]  [section_lev3       ]                                   [color7/color4]     [ ✜ ✜ ]      [ yes ]
+│ ││   ├ [seller_account_payments_cards_main_add_icon       ]  [header             ] [ знак плюс                     ] [color8/color8]     [ ✜ 🡄 ]      [ yes ]
 │ ││   └ [seller_account_payments_cards_main_add_header     ]  [header             ] [ "Добавить новую карту"        ] [color8/color8]     [ ✜ 🡆 ]      [ yes ]
 │ │└─────[seller_account_payments_cards_main_protip         ]  [button             ] [ "?"                           ] [color7/color4]     [ 🡇 ✜ ]      [ yes ]
-│ └────┬─[seller_account_payments_cards_main_ok             ]  [section_lev3       ]                                   [color2/color2]     [ 🡇 ✜ ]      [ no  ]
-│      └ [seller_account_payments_cards_main_ok_header      ]  [text               ] [ "ОК"                          ] [color8/color8]     [ ✜ ✜ ]      [ no  ]
+│ └────┬─[seller_account_payments_cards_main_ok             ]  [section_lev3+button]                                   [color7/color4]     [ 🡇 ✜ ]      [ yes ]
+│      └ [seller_account_payments_cards_main_ok_header      ]  [text               ] [ "ОК"                          ] [color8/color8]     [ ✜ ✜ ]      [ yes ]
 └──────┬─[seller_account_payments_cards_bottom              ]  [section_lev2       ]                                   [color2/color2]     [ 🡇 ✜ ]      [ no  ]
        └ [seller_account_payments_cards_bottom_text         ]  [text               ] ["Управление банковскими кар..."] [color8/color8]     [ ✜ ✜ ]      [ no  ]
       ┌──[seller_nav                                        ]  [section_lev1       ]                                   [color0/color0]     [ ✜ ✜ ]      [ no  ]
@@ -962,16 +963,60 @@ s3)   ┌──[seller_nav                                        ]  [section_le
        └ [seller_nav_finance_badge                          ]  [badge              ] [ { number }                    ] [color4/color4]     [ 🡅 🡆 ]      [ no  ] 
 
 
-✠ details
+■ seller_account_payments_cards
+
+✠ actions
+• seller_account_payments_cards_main_card_number:
+║ • tap 
+╠ valid / invalid
+║ occasion: нажатие seller_account_payments_cards_main_card_number;
+║ condition: в любой ситуации;
+╙ result: открывается seller_account_payments_card_screen.
+• seller_account_payments_cards_main_card_btn_delete:
+║ • tap 
+╠ valid / invalid
+║ occasion: нажатие seller_account_payments_cards_main_card_btn_delete;
+║ condition: в любой ситуации;
+╙ result: всплывает seller_account_payments_cards_main_card_btn_delete_modal.
+• seller_account_payments_cards_main_card_btn_editor:
+║ • tap 
+╠ valid / invalid
+║ occasion: нажатие seller_account_payments_cards_main_card_btn_editor;
+║ condition: в любой ситуации;
+╙ result: открывается seller_account_payments_card_screen.
+• seller_account_payments_cards_main_add:
+║ • tap 
+╠ valid / invalid
+║ occasion: нажатие seller_account_payments_cards_main_add;
+║ condition: в любой ситуации;
+╙ result: открывается seller_account_payments_card_screen.
+• seller_account_payments_cards_main_protip:
+║ • tap 
+╠ valid / invalid
+║ occasion: нажатие seller_account_payments_cards_main_protip;
+║ condition: в любой ситуации;
+╙ result: открывается seller_account_payments_cards_main_protip_modal.
+• seller_account_payments_cards_main_ok:
+║ • tap 
+╠ valid / invalid
+║ occasion: нажатие seller_account_payments_cards_main_ok;
+║ condition: в любой ситуации;
+╙ result: происходит возврат к seller_account_payments_main_screen.
 
 
-
-
-
-✠ logics
-Первый раз при нажатии seller_account_payments_main_types_dropdown_* сразу же открывается экран настройки выбранного платежного инструмента. Так при нажатии seller_account_payments_main_types_dropdown_cards открывается seller_account_payments_cards_new_screen. Если при входе в seller_account_payments минимум одна карта была настроена, тогда при нажатии открывается seller_account_payments_cards_screen.  
-
-
-
-
+✠ color_states
+┌─ 
+│seller_account_payments_cards_main_card_btn_delete
+│seller_account_payments_cards_main_card_btn_editor
+│seller_account_payments_cards_main_add
+│seller_account_payments_cards_main_protip
+│seller_account_payments_cards_main_ok
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color4
+│------ в inactive_state;
+│• color7
+│------ в pressing_state.
+└─
 
