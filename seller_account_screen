@@ -1020,3 +1020,49 @@ seller_account_payments_cards_screen отвечает за управление 
 │------ в pressing_state.
 └─
 
+
+✠ logics
+seller_account_payments_cards_screen появляется в случае, если как минимум 1 карта была активирована.
+
+
+
+🡆🡆 seller_account_payments_cards_main_card_btn_delete_modal
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+Всплывающее по центру экрана окно seller_account_payments_cards_main_card_btn_delete_modal появляется при нажатии seller_account_payments_cards_main_card_btn_delete являясь предупреждением перед процедурой удаления.
+
+✠ tables
+
+                                codename:                                     type:            designation:        pressed/default:  location:  interaction:
+[seller_account_payments_cards_main_card_btn_delete_modal_text         ]  [text      ]  [ "Вы действительно..." ]  [color8/color8]    [ 🡅 ✜ ]     [ no  ]
+[seller_account_payments_cards_main_card_btn_delete_modal_button       ]  [button    ]  [                       ]  [color7/color4]    [ 🡇 ✜ ]     [ yes ]
+[seller_account_payments_cards_main_card_btn_delete_modal_button_header]  [header    ]  [ "OK"                  ]  [color8/color8]    [ ✜ ✜ ]     [ yes ]
+
+
+✠ details
+seller_account_payments_cards_main_card_btn_delete_modal_text - представляет собой параграф текста следующего содержания: "Вы действительно хотите удалить карту?" Элемент расположен в верхней части модального окна с выравниванием по горизонтали.
+seller_account_payments_cards_main_card_btn_delete_modal_button - кнопка инициализирующая удаление карты, расположена в нижней части окна по центру.
+
+
+✠ actions
+• lot_cover:
+╠ valid / invalid
+║ occasion: нажатие seller_account_payments_cards_main_card_btn_delete_modal_button;
+║ condition: в любой ситуации;
+║ result: 
+║ || - seller_account_payments_cards_main_card_btn_delete_modal закрывается;
+║ || - целевая карта удаляется;
+╙ || - делается переход к seller_account_payments_main_screen.
+
+
+✠ color_states
+┌─
+│seller_account_payments_cards_main_card_btn_delete_modal_button  
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color4
+│------ в inactive_state;
+│• color7
+│------ в pressing_state.
+└─
+
