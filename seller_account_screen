@@ -16,6 +16,8 @@ color9 - attention;
 
 
 
+
+
 🡆 seller_account
 ■■■■■■■■■■■■■■■■
 
@@ -38,7 +40,6 @@ seller_account_orders_screen является экраном по умолчан
 - seller_account_orders_top  
 - seller_account_orders_list
 - seller_account_orders_bottom
-
 
 ✠ tables
 
@@ -232,7 +233,6 @@ s5)  ┌──[seller_nav                                   ]  [section_lev1    
 ---   ├ [seller_account_orders_top_lower_button_icon  ]  [icon               ] [ стрелка вверх                 ] [color8/color8]     [ ✜ 🡄 ]      [ yes ]
 ---   └ [seller_account_orders_top_lower_button_title ]  [toggle             ] [ "закрыть"                     ] [color8/color8]     [ ✜ 🡆 ]      [ yes ]
 
-
 ✠ details
 Секция seller_account_orders_top_state2 раскрывается вниз из seller_account_orders_top_state1 и представляет собой панель (порядка 350-500px высотой) которая представлена тремя секциями второго порядка:
 - seller_account_orders_top_upper - секция расположенная в верхней части включающая 3 компонента, которые идут слева-направо в следующем порядке:
@@ -247,7 +247,6 @@ s5)  ┌──[seller_nav                                   ]  [section_lev1    
 --- seller_account_orders_top_lower_button - находится по центру и состоит из 2 элементов:
 ----- seller_account_orders_top_lower_button_icon - иконка черного цвета в виде плоской стрелки направленной вниз;
 ----- seller_account_orders_top_lower_button_title - заголовок кнопки "закрыть" расположена справо относително seller_account_orders_top_lower_button_icon.
-
 
 ✠ actions
 • seller_account_orders_top_upper_protip:
@@ -274,7 +273,6 @@ s5)  ┌──[seller_nav                                   ]  [section_lev1    
 ║ occasion: нажатие seller_account_orders_top_lower;
 ║ condition: в состоянии seller_account_orders_top_state2;
 ╙ result: seller_account_orders_top переходит в состояние seller_account_orders_top_state1.
-
 
 ✠ color_states
 ┌─
@@ -311,12 +309,12 @@ s5)  ┌──[seller_nav                                   ]  [section_lev1    
 └─
 
 
-
 ■ seller_account_orders_list
 
 Секция seller_account_orders_list расположена в центральной части seller_account_orders в виде списка имеющего 2 секции:
  - seller_account_orders_list_top - шапка списка состоит из 7 компонентов и призвана отобразить названия 7 столбцов seller_account_orders_list;
  - seller_account_orders_list_order - секция в виде данных по ордеру представленного строкой подразделенной на 7 компонентов, также выполняет роль кнопки.
+
 
 ■ seller_account_orders_list_order
 
@@ -329,7 +327,6 @@ s5)  ┌──[seller_nav                                   ]  [section_lev1    
 - seller_account_orders_list_order_ship - отображает информацию о том, активирована функция доставки покупателем или нет в виде переменной: "да/нет";
 - seller_account_orders_list_order_payment - отображает значение суммы транзакции по ордеру;
 - seller_account_orders_list_order_ready - отображает выполненность ордера в качестве чекбокса.
-
 
 ✠ actions
 • seller_account_orders_list_order;
@@ -354,7 +351,6 @@ s5)  ┌──[seller_nav                                   ]  [section_lev1    
 ║ condition: в любой ситуации;
 ╙ result: открывается seller_account_orders_modal.
 
-
 ✠ color_states
 ┌─
 │seller_account_orders_list_order;
@@ -372,7 +368,6 @@ s5)  ┌──[seller_nav                                   ]  [section_lev1    
 │------ в pressing_state
 └─
 
-
 ✠ logics
 При проставлении чекбокса в seller_account_orders_list_order_ready:
 1) меняется seller_account_orders_top_middle_widget_value;
@@ -380,7 +375,6 @@ s5)  ┌──[seller_nav                                   ]  [section_lev1    
 - seller_account_orders_list_order_ready = off меняется на seller_account_orders_list_order_ready = on;
 - seller_account_orders_list_order с seller_account_orders_list_order_ready = on сохраняет свое присутствие в seller_account_orders_list.
 - после выхода из seller_account_orders_screen конкретный seller_account_orders_list_order с seller_account_orders_list_order_ready = on удаляется из seller_account_orders_list и добавляется в seller_history_orders_list.
-
 
 
 ■ seller_account_orders_bottom
@@ -392,7 +386,6 @@ s5)  ┌──[seller_nav                                   ]  [section_lev1    
 - seller_account_orders_bottom_quantity - переключает seller_account_orders_list в состояние ранжирования ордеров по количеству товарных позиций;
 - seller_account_orders_bottom_alphabit - переключает seller_account_orders_list в состояние ранжирования ордеров по алфавиту;
 - seller_account_orders_bottom_time - переключает seller_account_orders_list в состояние ранжирования ордеров по времени (by default).
-
 
 ✠ actions
 • seller_account_orders_bottom_profit:
@@ -454,7 +447,6 @@ s5)  ┌──[seller_nav                                   ]  [section_lev1    
 ║ occasion: нажатие seller_account_orders_bottom_time;
 ║ condition: активирована seller_account_orders_bottom_time;
 ╙ result: seller_account_orders_list не реагирует на нажатие.
-
 
 ✠ color_states
 ┌─
@@ -573,7 +565,6 @@ s5)  ┌──[seller_nav                                   ]  [section_lev1    
 
 seller_account_orders_modal отображает информационную сводку по seller_account_orders_list_order.
 
-
 ✠ tables
 
                                codename:                                type:           designation:     pressed/default:  location:   interaction:
@@ -649,7 +640,6 @@ seller_account_orders_modal_bulletin_part3_ship_off - отображает 2 б�
 - seller_account_orders_modal_bulletin_part3_ship - выводит параметр без значения (без адреса), где второй столбец остается пустым, а чекбокс отсутствует;
 - seller_account_orders_modal_bulletin_part3_done - выводит параметр/значение/чекбокс, где они размещаются на одной строке согласно шаблону: параметр - позиция слева, значение - позиция в центре, чекбокс - позиция справа. В качестве значения отображается: либо "да", если seller_account_orders_modal_bulletin_part3_done_ready проставлен (активирован); либо "нет", если seller_account_orders_modal_bulletin_part3_done_ready не проставлен (дезактивирован).
 
-
 ✠ actions
 • seller_account_orders_modal_bulletin_part2_good_ready:
 ╠ valid / invalid
@@ -669,7 +659,6 @@ seller_account_orders_modal_bulletin_part3_ship_off - отображает 2 б�
 ║ occasion: нажатие seller_account_orders_modal_bulletin_part3_done_ready;
 ║ condition: в любой ситуации;
 ╙ result: галочка появляется в чекбоксе/галочка исчезает в чекбоксе.
-
 
 ✠ logics
 При проставлении чекбокса в seller_account_orders_modal_bulletin_part3_done_ready в ситуации, если для seller_account_orders_modal_bulletin_part2_good_ready и/или seller_account_orders_modal_bulletin_part3_ship_ready не были проставлены чекбоксы, - эти пустые чекбоксы проставляются.
@@ -741,8 +730,6 @@ seller_account_orders_modal_bulletin_part3_ship_off - отображает 2 б�
 │• color7
 │------ в active_state
 └─
-
-
 
 
 
@@ -869,7 +856,6 @@ seller_account_orders_modal_bulletin_part3_ship_off - отображает 2 б�
 ----- seller_account_payments_main_protip - кнопка отвечает за вызов подсказки описывающей интерфейс;
 --- seller_account_payments_bottom - находится в нижней части и отображает описание экрана.
 
-
 ✠ actions
 • seller_account_payments_main_types:
 ║ • tap 
@@ -896,7 +882,6 @@ seller_account_orders_modal_bulletin_part3_ship_off - отображает 2 б�
 ║ condition: в любой ситуации;
 ╙ result: открывается seller_account_payments_main_protip_modal.
 
-
 ✠ color_states
 ┌─ 
 │seller_account_payments_main_types
@@ -911,7 +896,6 @@ seller_account_orders_modal_bulletin_part3_ship_off - отображает 2 б�
 │• color7
 │------ в pressing_state.
 └─
-
 
 ✠ logics
 Первый раз при нажатии seller_account_payments_main_types_dropdown_* сразу же открывается экран настройки выбранного платежного инструмента. Так при нажатии seller_account_payments_main_types_dropdown_cards открывается seller_account_payments_cards_new_screen. Если при входе в seller_account_payments минимум одна карта была настроена, тогда при нажатии открывается seller_account_payments_cards_screen. 
@@ -1018,7 +1002,6 @@ seller_account_orders_modal_bulletin_part3_ship_off - отображает 2 б�
 
 seller_account_payments_cards_screen отвечает за управление банковскими картами.
 
-
 ✠ tables
 
                            codename:                                   type:                   designation:           pressed/default:   location:   interaction:
@@ -1111,7 +1094,7 @@ seller_account_payments_cards_screen отвечает за управление 
 │• color4
 │------ в inactive_state;
 │• color7
-│------ в pressing_state.
+│------ в actived_state.
 └─
 
 
@@ -1131,7 +1114,6 @@ seller_account_payments_cards_screen отвечает за управление 
 ----- seller_account_payments_cards_main_protip - кнопка отвечает за вызов подсказки описывающей интерфейс, расположена над seller_account_payments_cards_main_ok;
 ----- seller_account_payments_cards_main_ok - кнопка отвечает за закрытие текущего окна, находится в нижней части с горизонтальным центрированием;
 --- seller_account_payments_cards_bottom - находится в нижней части и отображает описание экрана.
-
 
 ✠ actions
 • seller_account_payments_cards_main_card_number:
@@ -1171,7 +1153,6 @@ seller_account_payments_cards_screen отвечает за управление 
 ║ condition: в любой ситуации;
 ╙ result: происходит возврат к seller_account_payments_main_screen.
 
-
 ✠ color_states
 ┌─ 
 │seller_account_payments_cards_main_card_btn_delete
@@ -1184,10 +1165,9 @@ seller_account_payments_cards_screen отвечает за управление 
 │--------
 │• color4
 │------ в inactive_state;
-│• color7
+│• color5
 │------ в pressing_state.
 └─
-
 
 ✠ logics
 seller_account_payments_cards_screen появляется в случае, если как минимум 1 карта была активирована.
@@ -1289,43 +1269,40 @@ seller_account_payments_cards_screen появляется в случае, ес�
 
 
 
-🡆🡆 seller_account_payments_cards_main_card_btn_delete_modal
+🡆🡆 seller_account_payments_cards_main_card_btn_delete_popover
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-Всплывающее по центру экрана окно seller_account_payments_cards_main_card_btn_delete_modal появляется при нажатии seller_account_payments_cards_main_card_btn_delete являясь предупреждением перед процедурой удаления.
+Всплывающее по центру экрана окно seller_account_payments_cards_main_card_btn_delete_popover появляется при нажатии seller_account_payments_cards_main_card_btn_delete являясь предупреждением перед процедурой удаления.
 
 ✠ tables
 
                                 codename:                                     type:            designation:        pressed/default:  location:  interaction:
-[seller_account_payments_cards_main_card_btn_delete_modal_text         ]  [text      ]  [ "Вы действительно..." ]  [color8/color8]    [ 🡅 ✜ ]     [ no  ]
-[seller_account_payments_cards_main_card_btn_delete_modal_button       ]  [button    ]  [                       ]  [color7/color4]    [ 🡇 ✜ ]     [ yes ]
-[seller_account_payments_cards_main_card_btn_delete_modal_button_header]  [header    ]  [ "OK"                  ]  [color8/color8]    [ ✜ ✜ ]     [ yes ]
-
+[seller_account_payments_cards_main_card_btn_delete_popover_text         ]  [text      ]  [ "Вы действительно..." ]  [color8/color8]    [ 🡅 ✜ ]     [ no  ]
+[seller_account_payments_cards_main_card_btn_delete_popover_button       ]  [button    ]  [                       ]  [color7/color4]    [ 🡇 ✜ ]     [ yes ]
+[seller_account_payments_cards_main_card_btn_delete_popover_button_header]  [header    ]  [ "OK"                  ]  [color8/color8]    [ ✜ ✜ ]     [ yes ]
 
 ✠ details
-seller_account_payments_cards_main_card_btn_delete_modal_text - представляет собой параграф текста следующего содержания: "Вы действительно хотите удалить карту?" Элемент расположен в верхней части модального окна с выравниванием по горизонтали.
-seller_account_payments_cards_main_card_btn_delete_modal_button - кнопка инициализирующая удаление карты, расположена в нижней части окна по центру.
-
+seller_account_payments_cards_main_card_btn_delete_popover_text - представляет собой параграф текста следующего содержания: "Вы действительно хотите удалить карту?" Элемент расположен в верхней части модального окна с выравниванием по горизонтали.
+seller_account_payments_cards_main_card_btn_delete_popover_button - кнопка инициализирующая удаление карты, расположена в нижней части окна по центру.
 
 ✠ actions
-• lot_cover:
+• seller_account_payments_cards_main_card_btn_delete_popover_button:
 ╠ valid / invalid
-║ occasion: нажатие seller_account_payments_cards_main_card_btn_delete_modal_button;
+║ occasion: нажатие seller_account_payments_cards_main_card_btn_delete_popover_button;
 ║ condition: в любой ситуации;
 ║ result: 
-║ || - seller_account_payments_cards_main_card_btn_delete_modal закрывается;
+║ || - seller_account_payments_cards_main_card_btn_delete_popover закрывается;
 ║ || - целевая карта удаляется;
 ╙ || - делается переход к seller_account_payments_main_screen.
 
-
 ✠ color_states
 ┌─
-│seller_account_payments_cards_main_card_btn_delete_modal_button  
+│seller_account_payments_cards_main_card_btn_delete_popover_button  
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 │--------
 │• color4
 │------ в inactive_state;
-│• color7
+│• color5
 │------ в pressing_state.
 └─
 
@@ -1335,7 +1312,6 @@ seller_account_payments_cards_main_card_btn_delete_modal_button - кнопка �
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 
 seller_account_payments_cards_new_screen предназначается для ввода данных новой банковской карты.
-
 
 ✠ tables
 
@@ -1379,5 +1355,151 @@ seller_account_payments_cards_new_screen предназначается для �
        └ [seller_nav_finance_badge                          ]  [badge       ] [ { number }                    ] [color4/color4]     [ 🡅 🡆 ]      [ no  ] 
 
 
+✠ details
+seller_account_payments_cards_new_main является основной рабочей областью, которая расположена в центральной части и занимает: около 30% по высоте, около 80-90% по ширине. seller_account_payments_cards_new_main состоит из 2 компонентов:  
+--- seller_account_payments_cards_new_main_card - представленный четырьмя полями для ввода:
+----- seller_account_payments_cards_new_main_card_number - предназначен для ввода номера карты;
+----- seller_account_payments_cards_new_main_card_name - предназначен для ввода имени и фамилии держателя карты;
+----- seller_account_payments_cards_new_main_card_date - предназначен для ввода даты истечения срока пользования карты;
+----- seller_account_payments_cards_new_main_card_code - предназначен для ввода трехзначного кода карты;
+--- seller_account_payments_cards_new_main_btn - представленный двумя кнопками:
+----- seller_account_payments_cards_new_main_btn_cancel - кнопка отмены изменений;
+----- seller_account_payments_cards_new_main_btn_ok - кнопка применения изменений;
+--- seller_account_payments_cards_new_main_protip - кнопка вызова подсказки.
 
+✠ actions
+• seller_account_payments_cards_new_main_card_number
+╠ valid / invalid
+║ occasion: нажатие seller_account_payments_cards_new_main_card_number;
+║ condition: в любой ситуации;
+║ result: 
+║ && - seller_account_payments_cards_new_main_card_number переходит в active_state;
+╙ && - происходит открытие клавиатуры.
+• seller_account_payments_cards_new_main_card_name:
+╠ valid / invalid
+║ occasion: нажатие seller_account_payments_cards_new_main_card_name;
+║ condition: в любой ситуации;
+║ result: 
+║ && - seller_account_payments_cards_new_main_card_name переходит в active_state;
+╙ && - происходит открытие клавиатуры.
+• seller_account_payments_cards_new_main_card_date:
+╠ valid / invalid
+║ occasion: нажатие seller_account_payments_cards_new_main_card_date;
+║ condition: в любой ситуации;
+║ result: 
+║ && - seller_account_payments_cards_new_main_card_date переходит в active_state;
+╙ && - происходит открытие клавиатуры.
+• seller_account_payments_cards_new_main_card_code:
+╠ valid / invalid
+║ occasion: нажатие seller_account_payments_cards_new_main_card_code;
+║ condition: в любой ситуации;
+║ result: 
+║ && - seller_account_payments_cards_new_main_card_code переходит в active_state;
+╙ && - происходит открытие клавиатуры.
+• seller_account_payments_cards_new_main_btn_cancel:
+╠ valid / invalid
+║ occasion: нажатие seller_account_payments_cards_new_main_btn_cancel;
+╠═condition: в ситуации если нет ни одной активированной карты;
+║ result: делается переход к seller_account_payments_main_screen.
+╠═condition: в ситуации если есть минимум одна активированная карта;
+╙ result: делается переход к seller_account_payments_cards_screen.
+• seller_account_payments_cards_new_main_btn_ok:
+╠ valid
+║ occasion: нажатие seller_account_payments_cards_new_main_btn_ok;
+║ condition:
+║ && - seller_account_payments_cards_new_main_card_number = valid;
+║ && - seller_account_payments_cards_new_main_card_name = valid;
+║ && - seller_account_payments_cards_new_main_card_date = valid;
+║ && - seller_account_payments_cards_new_main_card_code = valid;
+║ result: делается переход к seller_account_payments_cards_screen.
+╠ invalid
+║ occasion: нажатие seller_account_payments_cards_new_main_btn_ok;
+║ condition:
+║ || - seller_account_payments_cards_new_main_card_number = invalid;
+║ || - seller_account_payments_cards_new_main_card_name = invalid;
+║ || - seller_account_payments_cards_new_main_card_date = invalid;
+║ || - seller_account_payments_cards_new_main_card_code = invalid;
+╙ result: seller_account_payments_cards_new_main_btn_ok не реагирует на нажатие;
+
+✠ input_checks
+Фильтры проверяющие на соответствие нормативам содержание seller_account_payments_cards_new_main_card_number. Если в ходе проверки фиксируется несоответствие, тогда состояние seller_account_payments_cards_new_main_card_number позиционируется как invalid, в соответствии с чем отображается соответствующее типу проблемы предупреждение.
+• undernaming:
+▫ tenor: Анализ на недостижение лимита допустимой длины number (недостижение норматива).
+▫ condition: Работает в active_state.
+▫ result: При вводе number, в ситуации если цифр < 16, под seller_account_payments_cards_new_main_card_number всплывает seller_account_payments_cards_new_main_card_number_alert_undernaming.
+• overnaming:
+▫ tenor: Анализ на превышение лимита допустимой длины number (превышение норматива).
+▫ condition: Работает в active_state.
+▫ result: При вводе number, в ситуации если цифр > 16, дальнейшие нажатия игнорируются.
+• stopsymbol:
+▫ tenor: Анализ на нажатие запрещенных клавиш базирующийся на превентивной блокировке ввода со всех клавиш кроме отвечающих за цифры.
+▫ condition: Работает в active_state. 
+▫ result: При вводе number, в ситуации если использованы запрещенные символы, под seller_account_payments_cards_new_main_card_number всплывает seller_account_payments_cards_new_main_card_number_alert_stopsymbol.
+• omission:
+▫ tenor: Реакция на факт отсутствия введенных данных.
+▫ condition: Работает в inactive_state.
+▫ result: В ситуации если поле пустое, а юзер нажимает на seller_account_payments_cards_new_main_btn_ok, под seller_account_payments_cards_new_main_card_number всплывает seller_account_payments_cards_new_main_card_number_alert_omission.
+• emptiness:
+▫ tenor: Анализ на пустотность.
+▫ condition: Работает в active_state и inactive_state.
+▫ result: Работает в любой ситуации делая проверку на предмет отсутствия данных в seller_account_payments_cards_new_main_card_number.  
+
+✠ color_states
+┌─
+│seller_account_payments_cards_new_main_card_number
+│seller_account_payments_cards_new_main_card_name
+│seller_account_payments_cards_new_main_card_date
+│seller_account_payments_cards_new_main_card_code
+│------------------------------------------------
+│⟪⟪ border ⟫⟫ 
+├────────
+│• color4
+│------ в inactive_state
+├────────
+│• color7
+│------ в actived_state
+├────────
+│• color3
+│- || - invalid по факту проверки на undernaming
+│- || - invalid по факту проверки на overnaming
+│- || - invalid по факту проверки на stopsymbol
+│- || - invalid по факту проверки на omission
+│- || - invalid по факту проверки на emptiness
+├────────
+│• color1
+│- && - valid по факту проверки на undernaming
+│- && - valid по факту проверки на overnaming
+│- && - valid по факту проверки на stopsymbol
+│- && - valid по факту проверки на omission
+│- && - valid по факту проверки на emptiness
+└─
+┌─
+│seller_account_payments_cards_new_main_btn_cancel  
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ в inactive_state 
+├────────
+│• color5
+│------ в pressing_state 
+└─
+┌─
+│seller_account_payments_cards_new_main_btn_ok  
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ в inactive_state
+├────────
+│• color5
+│------ в pressing_state
+├────────
+│• color0
+│- || - invalid по факту проверки на undernaming
+│- || - invalid по факту проверки на overnaming
+│- || - invalid по факту проверки на stopsymbol
+│- || - invalid по факту проверки на omission
+│- || - invalid по факту проверки на emptiness
+└─
 
