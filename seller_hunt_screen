@@ -28,92 +28,90 @@ color3f - warning - focusing;
 
 
 
-
-
-🡆 seller_hunt_screen
+🡆 seller_demand_screen
 ■■■■■■■■■■■■■■■■■■■■
 
-seller_hunt_screen предоставляет seller инструмент реализации специфического подхода работы с потенциальными клиентами (описание скрыто по причине защиты бизнес идеи). seller_hunt_screen разделен на 5 sections и может находиться в 2 состояниях:
+seller_demand_screen предоставляет seller инструмент реализации специфического подхода работы с потенциальными клиентами (описание скрыто по причине защиты бизнес идеи). seller_demand_screen разделен на 5 sections и может находиться в 2 состояниях:
  
-seller_hunt_inactive_state - состояние при котором сканирование не производится;
-seller_hunt_active_state - состояние при котором производится сканирование.
+seller_demand_inactive_state - состояние при котором сканирование не производится;
+seller_demand_active_state - состояние при котором производится сканирование.
  
  
 ✠ tables
 
-■ seller_hunt_inactive_state ■
+■ seller_demand_inactive_state ■
 
 ✠ tables
   
-                          codename:                              type:           button_name:        pressed/default:      location:      interaction:
-s1)   ┌─[seller_hunt_header                         ]       [section       ]                                                [ 🡅 ✜ ]         [ no  ]
----   ├ [seller_hunt_header_title                   ]       [header        ]     "МОНИТОРИНГ"        [color2/color2]        [ ✜ 🡄 ]         [ no  ]
----   ├ [seller_hunt_header_bulb                    ]       [widget        ]                         [color2/color2]        [ ✜ ✜ ]         [ no  ]
----   ├ [seller_hunt_header_options                 ]       [button        ]     "НАСТРОЙКИ"         [color5/color2]        [ ✜ 🡆 ]         [ yes ]
----   └ [seller_hunt_header_scan                    ]       [widget        ]                         [color2/color2]        [ 🡇 ✜ ]         [ no  ]
-s2)   ┌─[seller_hunt_inactive_monitor               ]       [section       ]                                                [ ✜ ✜ ]         [ no  ]  
-      └ [seller_hunt_inactive_monitor_paragraph     ]       [text          ]     "..."               [color2/color2]        [ ✜ ✜ ]         [ no  ] 
-s3)┌┬┬──[seller_hunt_inactive_tune                  ]       [section       ]                                                [ 🡇 ✜ ]         [ no  ] 
----││└┬ [seller_hunt_inactive_tune_sens             ]       [subsection    ]                                                [ ✜ 🡄 ]         [ no  ]
----││ ├ [seller_hunt_inactive_tune_sens_header      ]       [header        ]     "ЧУВСТВИТЕЛЬНОСТЬ"  [color2/color2]        [ 🡅 ✜ ]         [ no  ]
----││ └ [seller_hunt_inactive_tune_sens_slider      ]       [slider        ]                         [color2/color2]        [ 🡇 ✜ ]         [ yes ]
----│└─┬ [seller_hunt_inactive_tune_area             ]       [subsection    ]                                                [ ✜ ✜ ]         [ no  ]
----│  ├ [seller_hunt_inactive_tune_area_widget      ]       [widget        ]     "..."               [color2/color2]        [ 🡅 ✜ ]         [ no  ]
----│  └ [seller_hunt_inactive_tune_area_button      ]       [button        ]     "ОХВАТ"             [color5/color2]        [ 🡇 ✜ ]         [ yes ]
----└──┬ [seller_hunt_inactive_tune_rating           ]       [subsection    ]                                                [ ✜ 🡆 ]         [ no  ]
----   ├ [seller_hunt_inactive_tune_rating_header    ]       [header        ]     "РЕЙТИНГ"           [color2/color2]        [ 🡅 ✜ ]         [ no  ]
----   └ [seller_hunt_inactive_tune_rating_slider    ]       [slider        ]                         [color2/color2]        [ 🡇 ✜ ]         [ yes ] 
-s4)   ┌─[seller_hunt_inactive_controller            ]       [section       ]                                                [ 🡇 ✜ ]         [ no  ]
----   └ [seller_hunt_inactive_controller_button     ]       [button        ]     "СТАРТ"             [color5/color2]        [ ✜ ✜ ]         [ yes ] 
-s5)  ┌─ [seller_nav                                 ]       [section       ]                                                [ 🡇 ✜ ]         [ no  ]
----- ├┬ [seller_nav_monitor_button                  ]       [button        ]                         [color1/color2]        [ ✜ 🡄 ]         [ yes ]
----- │├ [seller_nav_monitor_header                  ]       [header        ]     "МОНИТОР"           [color1/color2]        [ ✜ ✜ ]         [ no  ]  
----- │└ [seller_nav_monitor_badge                   ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ] 	
----- ├┬ [seller_nav_chat_button                     ]       [button        ]                         [color1/color2]        [ ✜ 🡄 ]         [ yes ]   
----- │├ [seller_nav_chat_header                     ]       [header        ]     "ЧАТ"               [color1/color2]        [ ✜ ✜ ]         [ no  ] 
----- │└ [seller_nav_chat_badge                      ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ] 
----- ├┬ [seller_nav_shop_button                     ]       [button        ]                         [color1/color2]        [ ✜ ✜ ]         [ yes ]   
----- │├ [seller_nav_shop_header                     ]       [header        ]     "МАГАЗИН"           [color1/color2]        [ ✜ ✜ ]         [ no  ] 
----- │└ [seller_nav_shop_badge                      ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ]   
----- ├┬ [seller_nav_lot_button                      ]       [button        ]                         [color1/color2]        [ ✜ 🡆 ]         [ yes ]   
----- │├ [seller_nav_lot_header                      ]       [header        ]     "ТОВАРЫ"            [color1/color2]        [ ✜ ✜ ]         [ no  ] 
----- │└ [seller_nav_lot_badge                       ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ]     
----- └┬ [seller_nav_finance_button                  ]       [button        ]                         [color1/color2]        [ ✜ 🡆 ]         [ yes ]   
-----  ├ [seller_nav_finance_header                  ]       [header        ]     "КАБИНЕТ"           [color1/color2]        [ ✜ ✜ ]         [ no  ] 
-----  └ [seller_nav_finance_badge                   ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ] 
+                          codename:                              type:           designation:        pressed/default:      location:      interaction:
+s1)   ┌─[seller_demand_header                         ]       [section       ]                                                [ 🡅 ✜ ]         [ no  ]
+---   ├ [seller_demand_header_title                   ]       [header        ]     "МОНИТОРИНГ"        [color2/color2]        [ ✜ 🡄 ]         [ no  ]
+---   ├ [seller_demand_header_bulb                    ]       [widget        ]                         [color2/color2]        [ ✜ ✜ ]         [ no  ]
+---   ├ [seller_demand_header_options                 ]       [button        ]     "НАСТРОЙКИ"         [color5/color2]        [ ✜ 🡆 ]         [ yes ]
+---   └ [seller_demand_header_scan                    ]       [widget        ]                         [color2/color2]        [ 🡇 ✜ ]         [ no  ]
+s2)   ┌─[seller_demand_inactive_demand                ]       [section       ]                                                [ ✜ ✜ ]         [ no  ]  
+      └ [seller_demand_inactive_demand_paragraph      ]       [text          ]     "..."               [color2/color2]        [ ✜ ✜ ]         [ no  ] 
+s3)┌┬┬──[seller_demand_inactive_tune                  ]       [section       ]                                                [ 🡇 ✜ ]         [ no  ] 
+---││└┬ [seller_demand_inactive_tune_sens             ]       [subsection    ]                                                [ ✜ 🡄 ]         [ no  ]
+---││ ├ [seller_demand_inactive_tune_sens_header      ]       [header        ]     "ЧУВСТВИТЕЛЬНОСТЬ"  [color2/color2]        [ 🡅 ✜ ]         [ no  ]
+---││ └ [seller_demand_inactive_tune_sens_slider      ]       [slider        ]                         [color2/color2]        [ 🡇 ✜ ]         [ yes ]
+---│└─┬ [seller_demand_inactive_tune_area             ]       [subsection    ]                                                [ ✜ ✜ ]         [ no  ]
+---│  ├ [seller_demand_inactive_tune_area_widget      ]       [widget        ]     "..."               [color2/color2]        [ 🡅 ✜ ]         [ no  ]
+---│  └ [seller_demand_inactive_tune_area_button      ]       [button        ]     "ОХВАТ"             [color5/color2]        [ 🡇 ✜ ]         [ yes ]
+---└──┬ [seller_demand_inactive_tune_rating           ]       [subsection    ]                                                [ ✜ 🡆 ]         [ no  ]
+---   ├ [seller_demand_inactive_tune_rating_header    ]       [header        ]     "РЕЙТИНГ"           [color2/color2]        [ 🡅 ✜ ]         [ no  ]
+---   └ [seller_demand_inactive_tune_rating_slider    ]       [slider        ]                         [color2/color2]        [ 🡇 ✜ ]         [ yes ] 
+s4)   ┌─[seller_demand_inactive_controller            ]       [section       ]                                                [ 🡇 ✜ ]         [ no  ]
+---   └ [seller_demand_inactive_controller_button     ]       [button        ]     "СТАРТ"             [color5/color2]        [ ✜ ✜ ]         [ yes ] 
+s5)  ┌─ [seller_nav                                   ]       [section       ]                                                [ 🡇 ✜ ]         [ no  ]
+---- ├┬ [seller_nav_demand_button                     ]       [button        ]                         [color1/color2]        [ ✜ 🡄 ]         [ yes ]
+---- │├ [seller_nav_demand_header                     ]       [header        ]     "МОНИТОР"           [color1/color2]        [ ✜ ✜ ]         [ no  ]  
+---- │└ [seller_nav_demand_badge                      ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ] 	
+---- ├┬ [seller_nav_chat_button                       ]       [button        ]                         [color1/color2]        [ ✜ 🡄 ]         [ yes ]   
+---- │├ [seller_nav_chat_header                       ]       [header        ]     "ЧАТ"               [color1/color2]        [ ✜ ✜ ]         [ no  ] 
+---- │└ [seller_nav_chat_badge                        ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ] 
+---- ├┬ [seller_nav_shop_button                       ]       [button        ]                         [color1/color2]        [ ✜ ✜ ]         [ yes ]   
+---- │├ [seller_nav_shop_header                       ]       [header        ]     "МАГАЗИН"           [color1/color2]        [ ✜ ✜ ]         [ no  ] 
+---- │└ [seller_nav_shop_badge                        ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ]   
+---- ├┬ [seller_nav_lot_button                        ]       [button        ]                         [color1/color2]        [ ✜ 🡆 ]         [ yes ]   
+---- │├ [seller_nav_lot_header                        ]       [header        ]     "ТОВАРЫ"            [color1/color2]        [ ✜ ✜ ]         [ no  ] 
+---- │└ [seller_nav_lot_badge                         ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ]     
+---- └┬ [seller_nav_finance_button                    ]       [button        ]                         [color1/color2]        [ ✜ 🡆 ]         [ yes ]   
+----  ├ [seller_nav_finance_header                    ]       [header        ]     "КАБИНЕТ"           [color1/color2]        [ ✜ ✜ ]         [ no  ] 
+----  └ [seller_nav_finance_badge                     ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ] 
 
 
-■ seller_hunt_header
+■ seller_demand_header
 
 ✠ details
-seller_hunt_header дает общее представление о состоянии работы мониторинга, расположен в верхней части экрана и состоит из 4 компонентов:
-- seller_hunt_header_title - заголовок с font-weight: extra bold, расположен слева;
-- seller_hunt_header_bulb - индикатор активности монитора находится справа около seller_hunt_header_title;
-- seller_hunt_header_options - кнопка открывающая настройки монитора, находится в правой части;
-- seller_hunt_header_scan - индикатор отображающий процесс сканирования, расположен по центру.
+seller_demand_header дает общее представление о состоянии работы мониторинга, расположен в верхней части экрана и состоит из 4 компонентов:
+- seller_demand_header_title - заголовок с font-weight: extra bold, расположен слева;
+- seller_demand_header_bulb - индикатор активности монитора находится справа около seller_demand_header_title;
+- seller_demand_header_options - кнопка открывающая настройки монитора, находится в правой части;
+- seller_demand_header_scan - индикатор отображающий процесс сканирования, расположен по центру.
 
 ✠ actions
-• seller_hunt_header_options:
+• seller_demand_header_options:
 ╠ valid / invalid
 ║ • tap
-║ occasion: нажатие seller_hunt_header_options;
+║ occasion: нажатие seller_demand_header_options;
 ║ condition: в любой ситуации;
 ║ result: 
-╙ && - открывается seller_hunt_options_screen.
+╙ && - открывается seller_demand_options_screen.
 
 ✠ color_states
 ┌─
-│seller_hunt_header_bulb
+│seller_demand_header_bulb
 │---------------------------------------------
 │⟪⟪ body ⟫⟫ 
 │--------
 │• color2
-│------ в seller_hunt_inactive_state;
+│------ в seller_demand_inactive_state;
 │• color7
-│------ в seller_hunt_active_state.
+│------ в seller_demand_active_state.
 └─
 ┌─
-│seller_hunt_header_options
+│seller_demand_header_options
 │---------------------------------------------
 │⟪⟪ body ⟫⟫ 
 │--------
@@ -123,7 +121,7 @@ seller_hunt_header дает общее представление о состо�
 │------ в pressing_state.
 └─
 ┌─
-│seller_hunt_header_scan
+│seller_demand_header_scan
 │---------------------------------------------
 │⟪⟪ body ⟫⟫ 
 │--------
@@ -134,64 +132,64 @@ seller_hunt_header дает общее представление о состо�
 └─
 
 
-■ seller_hunt_inactive_monitor
+■ seller_demand_inactive_demand
 
 ✠ details
-seller_hunt_inactive_monitor - занимает основное пространство seller_hunt_screen находясь в центральной области экрана между seller_hunt_header и seller_inactive_hunt_tune. В seller_hunt_inactive_state область seller_hunt_inactive_monitor не содержит результатов анализа и не обладает интерактивными элементами. По центру seller_hunt_inactive_monitor размещается seller_hunt_inactive_monitor_paragraph.
-- seller_hunt_inactive_monitor_paragraph - текст имеет следующее содержание: "Для активации функции мониторинга нажмите кнопку ЗАПУСК".
+seller_demand_inactive_demand - занимает основное пространство seller_demand_screen находясь в центральной области экрана между seller_demand_header и seller_inactive_demand_tune. В seller_demand_inactive_state область seller_demand_inactive_demand не содержит результатов анализа и не обладает интерактивными элементами. По центру seller_demand_inactive_demand размещается seller_demand_inactive_demand_paragraph.
+- seller_demand_inactive_demand_paragraph - текст имеет следующее содержание: "Для активации функции мониторинга нажмите кнопку ЗАПУСК".
 
 
-■ seller_inactive_hunt_tune
+■ seller_inactive_demand_tune
 
 ✠ details
-seller_hunt_inactive_tune является блоком настроек фильтров для функции мониторинга, располагается под seller_hunt_inactive_monitor  занимая ~30% ширины экрана и состоит из 3 компонентов (описание логики скрыто по причине защиты бизнес идеи):
+seller_demand_inactive_tune является блоком настроек фильтров для функции мониторинга, располагается под seller_demand_inactive_demand  занимая ~30% ширины экрана и состоит из 3 компонентов (описание логики скрыто по причине защиты бизнес идеи):
 
-1) seller_hunt_inactive_tune_sens - настройка отвечающая за параметр чувствительности, размещается в левой части экрана под seller_hunt_inactive_monitor занимая ~30% ширины экрана и включает 2 элемента:
--- seller_hunt_inactive_tune_sens_header - заголовок компонента "ЧУВСТВИТЕЛЬНОСТЬ";
--- seller_hunt_inactive_tune_sens_slider - ползунок который горизонтально размещается под seller_hunt_inactive_tune_sens_header занимая 80-90% ширины seller_hunt_inactive_tune_sens. seller_hunt_inactive_tune_sens обладает пятью позициями которые реализованы без визуального отображения засечек/обозначений (позиция определяется положением ползунка). Наименование позиции возникает в качестве modal на 1.5 секунды после переключения на эту позицию слайдера. Позиции seller_hunt_inactive_tune_sens представлены в следующем порядке слева-направо: 
+1) seller_demand_inactive_tune_sens - настройка отвечающая за параметр чувствительности, размещается в левой части экрана под seller_demand_inactive_demand занимая ~30% ширины экрана и включает 2 элемента:
+-- seller_demand_inactive_tune_sens_header - заголовок компонента "ЧУВСТВИТЕЛЬНОСТЬ";
+-- seller_demand_inactive_tune_sens_slider - ползунок который горизонтально размещается под seller_demand_inactive_tune_sens_header занимая 80-90% ширины seller_demand_inactive_tune_sens. seller_demand_inactive_tune_sens обладает пятью позициями которые реализованы без визуального отображения засечек/обозначений (позиция определяется положением ползунка). Наименование позиции возникает в качестве modal на 1.5 секунды после переключения на эту позицию слайдера. Позиции seller_demand_inactive_tune_sens представлены в следующем порядке слева-направо: 
 description:                                codename:                  item_name:             correlation:
-низкая точность выборки:    [ seller_hunt_inactive_tune_sens_precision1 ]  "НИЗКАЯ ТОЧНОСТЬ"            [ 15%+ ]
-умеренная точность выборки: [ seller_hunt_inactive_tune_sens_precision2 ]  "УМЕРЕННАЯ ТОЧНОСТЬ"         [ 35%+ ]
-средняя точность выборки:   [ seller_hunt_inactive_tune_sens_precision3 ]  "СРЕДНЯЯ ТОЧНОСТЬ"           [ 55%+ ]           активна по умолчанию
-хорошая точность выборки:   [ seller_hunt_inactive_tune_sens_precision4 ]  "ХОРОШАЯ ТОЧНОСТЬ"           [ 75%+ ]
-высокая точность выборки:   [ seller_hunt_inactive_tune_sens_precision5 ]  "ВЫСОКАЯ ТОЧНОСТЬ"           [ 95%+ ]
+низкая точность выборки:    [ seller_demand_inactive_tune_sens_precision1 ]  "НИЗКАЯ ТОЧНОСТЬ"            [ 15%+ ]
+умеренная точность выборки: [ seller_demand_inactive_tune_sens_precision2 ]  "УМЕРЕННАЯ ТОЧНОСТЬ"         [ 35%+ ]
+средняя точность выборки:   [ seller_demand_inactive_tune_sens_precision3 ]  "СРЕДНЯЯ ТОЧНОСТЬ"           [ 55%+ ]           активна по умолчанию
+хорошая точность выборки:   [ seller_demand_inactive_tune_sens_precision4 ]  "ХОРОШАЯ ТОЧНОСТЬ"           [ 75%+ ]
+высокая точность выборки:   [ seller_demand_inactive_tune_sens_precision5 ]  "ВЫСОКАЯ ТОЧНОСТЬ"           [ 95%+ ]
 
-2) seller_hunt_inactive_tune_area - настройка отвечающая за выбор страны/региона/области/города/района в рамках которых будет совершаться мониторинг (в качестве фильтра seller_hunt_inactive_tune_area позволяет ограничить выборку результатов), размещается в середине экрана под seller_hunt_inactive_monitor занимая ~30% ширины экрана и включает 2 элемента:
--- seller_hunt_inactive_tune_area_widget - является виджетом выводящим строковое значение настройки установленной посредством seller_hunt_inactive_area_screen;
--- seller_hunt_inactive_tune_area_button - настройка реализована в виде кнопки, которая размещается под seller_hunt_inactive_tune_area_widget занимая ~80% ширины seller_hunt_inactive_tune_area и обладающая наименованием "ОХВАТ". 
+2) seller_demand_inactive_tune_area - настройка отвечающая за выбор страны/региона/области/города/района в рамках которых будет совершаться мониторинг (в качестве фильтра seller_demand_inactive_tune_area позволяет ограничить выборку результатов), размещается в середине экрана под seller_demand_inactive_demand занимая ~30% ширины экрана и включает 2 элемента:
+-- seller_demand_inactive_tune_area_widget - является виджетом выводящим строковое значение настройки установленной посредством seller_demand_inactive_area_screen;
+-- seller_demand_inactive_tune_area_button - настройка реализована в виде кнопки, которая размещается под seller_demand_inactive_tune_area_widget занимая ~80% ширины seller_demand_inactive_tune_area и обладающая наименованием "ОХВАТ". 
 
-3) seller_hunt_inactive_tune_rating - настройка отвечающая за фильтрацию seller_hunt_inactive_monitor_message по рейтингу юзера и позволяет задать порог ниже значения которого seller_hunt_inactive_monitor_message будут игнорироваться, а seller_hunt_inactive_monitor_message с рейтингом превышающим заданный порог будут выводиться на seller_hunt_inactive_monitor, размещается в правой части экрана под seller_hunt_inactive_monitor занимая ~30% ширины экрана и включает 2 элемента:
--- seller_hunt_inactive_tune_rating_header - заголовок компонента "РЕЙТИНГ";
--- seller_hunt_inactive_tune_rating_slider - ползунок который горизонтально размещается под seller_hunt_inactive_tune_rating_header занимая 80-90% ширины seller_hunt_inactive_tune_rating. seller_hunt_inactive_tune_rating_slider обладает 100 позициями без визуального отображения засечек/обозначений (позиция определяется положением ползунка). Наименование позиции возникает в качестве modal на 1.5 секунды после переключения на эту позицию слайдера. Шкала seller_hunt_inactive_tune_rating соответствует шкале buyer_pubstat_rating - по 100 значений каждая. Согласно установке seller_hunt_inactive_tune_rating, отсеву подлежат все seller_hunt_inactive_monitor_message со значением buyer_pubstat_rating ниже seller_hunt_inactive_tune_rating. То есть, если seller_hunt_inactive_tune_rating_value = 60, тогда в hunt_screen_monitor будут попадать seller_hunt_inactive_monitor_message >= seller_hunt_inactive_tune_rating_value = 60. По умолчанию seller_hunt_inactive_tune_rating установлен в позицию seller_hunt_inactive_tune_rating = 0, что означает, что функция hunt_screen_rating не задействована.
+3) seller_demand_inactive_tune_rating - настройка отвечающая за фильтрацию seller_demand_inactive_demand_message по рейтингу юзера и позволяет задать порог ниже значения которого seller_demand_inactive_demand_message будут игнорироваться, а seller_demand_inactive_demand_message с рейтингом превышающим заданный порог будут выводиться на seller_demand_inactive_demand, размещается в правой части экрана под seller_demand_inactive_demand занимая ~30% ширины экрана и включает 2 элемента:
+-- seller_demand_inactive_tune_rating_header - заголовок компонента "РЕЙТИНГ";
+-- seller_demand_inactive_tune_rating_slider - ползунок который горизонтально размещается под seller_demand_inactive_tune_rating_header занимая 80-90% ширины seller_demand_inactive_tune_rating. seller_demand_inactive_tune_rating_slider обладает 100 позициями без визуального отображения засечек/обозначений (позиция определяется положением ползунка). Наименование позиции возникает в качестве modal на 1.5 секунды после переключения на эту позицию слайдера. Шкала seller_demand_inactive_tune_rating соответствует шкале buyer_pubstat_rating - по 100 значений каждая. Согласно установке seller_demand_inactive_tune_rating, отсеву подлежат все seller_demand_inactive_demand_message со значением buyer_pubstat_rating ниже seller_demand_inactive_tune_rating. То есть, если seller_demand_inactive_tune_rating_value = 60, тогда в hunt_screen_demand будут попадать seller_demand_inactive_demand_message >= seller_demand_inactive_tune_rating_value = 60. По умолчанию seller_demand_inactive_tune_rating установлен в позицию seller_demand_inactive_tune_rating = 0, что означает, что функция hunt_screen_rating не задействована.
 
 ✠ actions
-• seller_hunt_inactive_tune_sens_slider:
+• seller_demand_inactive_tune_sens_slider:
 ╠ valid / invalid
 ║ • tap & hold & move
-║ occasion: нажатие с удержанием и движением seller_hunt_inactive_tune_sens_slider влево/вправо;
+║ occasion: нажатие с удержанием и движением seller_demand_inactive_tune_sens_slider влево/вправо;
 ║ condition: в любой ситуации;
 ║ result: 
-║ || - переключение в позицию seller_hunt_inactive_tune_sens_precision1;
-║ || - переключение в позицию seller_hunt_inactive_tune_sens_precision2;
-║ || - переключение в позицию seller_hunt_inactive_tune_sens_precision3;
-║ || - переключение в позицию seller_hunt_inactive_tune_sens_precision4;
-╙ || - переключение в позицию seller_hunt_inactive_tune_sens_precision5;
-• seller_hunt_inactive_tune_area:
+║ || - переключение в позицию seller_demand_inactive_tune_sens_precision1;
+║ || - переключение в позицию seller_demand_inactive_tune_sens_precision2;
+║ || - переключение в позицию seller_demand_inactive_tune_sens_precision3;
+║ || - переключение в позицию seller_demand_inactive_tune_sens_precision4;
+╙ || - переключение в позицию seller_demand_inactive_tune_sens_precision5;
+• seller_demand_inactive_tune_area:
 ╠ valid
 ║ • tap
-║ occasion: нажатие на seller_hunt_inactive_tune_area;
+║ occasion: нажатие на seller_demand_inactive_tune_area;
 ║ condition: в любой ситуации;
-╙ result: открывается seller_hunt_inactive_area_screen.
-• seller_hunt_inactive_tune_rating_slider:
+╙ result: открывается seller_demand_inactive_area_screen.
+• seller_demand_inactive_tune_rating_slider:
 ╠ valid / invalid
 ║ • tap & hold & move
-║ occasion: нажатие с удержанием и движением seller_hunt_inactive_tune_rating_slider влево/вправо;
+║ occasion: нажатие с удержанием и движением seller_demand_inactive_tune_rating_slider влево/вправо;
 ║ condition: в любой ситуации;
-╙ result: переключение между позицией seller_hunt_inactive_tune_rating = 1 и seller_hunt_inactive_tune_rating = 100;
+╙ result: переключение между позицией seller_demand_inactive_tune_rating = 1 и seller_demand_inactive_tune_rating = 100;
 
 ✠ color_states
 ┌─
-│seller_hunt_inactive_tune_sens_slider
+│seller_demand_inactive_tune_sens_slider
 │---------------------------------------------
 │⟪⟪ body ⟫⟫ 
 │--------
@@ -199,7 +197,7 @@ description:                                codename:                  item_name
 │------ в любой ситуации.
 └─
 ┌─
-│seller_hunt_inactive_tune_area
+│seller_demand_inactive_tune_area
 │---------------------------------------------
 │⟪⟪ body ⟫⟫ 
 │--------
@@ -209,7 +207,7 @@ description:                                codename:                  item_name
 │------ в pressing_state.
 └─
 ┌─
-│seller_hunt_inactive_tune_rating
+│seller_demand_inactive_tune_rating
 │---------------------------------------------
 │⟪⟪ body ⟫⟫ 
 │--------
@@ -218,24 +216,24 @@ description:                                codename:                  item_name
 └─
 
 
-■ seller_hunt_inactive_controller
+■ seller_demand_inactive_controller
 
 ✠ details
-seller_hunt_inactive_controller является настройкой активирующей процесс сканирования в seller_hunt_inactive_state, которая размещается в середине экрана под seller_hunt_tune занимая ~80% ширины экрана, выступает в качестве container для элемента seller_hunt_controller_button:
+seller_demand_inactive_controller является настройкой активирующей процесс сканирования в seller_demand_inactive_state, которая размещается в середине экрана под seller_demand_tune занимая ~80% ширины экрана, выступает в качестве container для элемента seller_demand_controller_button:
 
-- seller_hunt_inactive_controller_button - кнопка выполняющая функцию активации сканирования и обладающая наименованием "СТАРТ".
+- seller_demand_inactive_controller_button - кнопка выполняющая функцию активации сканирования и обладающая наименованием "СТАРТ".
 
 ✠ actions
-• seller_hunt_inactive_controller_button:
+• seller_demand_inactive_controller_button:
 ╠ valid
 ║ • tap
-║ occasion: нажатие на seller_hunt_inactive_controller_button;
+║ occasion: нажатие на seller_demand_inactive_controller_button;
 ║ condition: в любой ситуации;
-╙ result: инициализируется seller_hunt_function.
+╙ result: инициализируется seller_demand_function.
 
 ✠ color_states
 ┌─
-│seller_hunt_inactive_controller_button
+│seller_demand_inactive_controller_button
 │---------------------------------------------
 │⟪⟪ body ⟫⟫ 
 │--------
@@ -246,87 +244,87 @@ seller_hunt_inactive_controller является настройкой актив
 └─
 
 
-■ seller_hunt_active_state ■
+■ seller_demand_active_state ■
 
 ✠ tables
 
-                              codename:                                 type:           button_name:        pressed/default:      location:      interaction:
-s1)   ┌─[seller_hunt_header                                ]       [section       ]                                                [ 🡅 ✜ ]         [ no  ]
----   ├ [seller_hunt_header_title                          ]       [header        ]     "МОНИТОРИНГ"        [color2/color2]        [ ✜ 🡄 ]         [ no  ]
----   ├ [seller_hunt_header_bulb                           ]       [widget        ]                         [color7/color7]        [ ✜ ✜ ]         [ no  ]
----   ├ [seller_hunt_header_options                        ]       [button        ]     "НАСТРОЙКИ"         [color5/color2]        [ ✜ 🡆 ]         [ yes ]
----   └ [seller_hunt_header_scan                           ]       [widget        ]                         [color7/color7]        [ 🡇 ✜ ]         [ no  ]
-s2) ┌───[seller_hunt_active_monitor                        ]       [section       ]                                                [ ✜ ✜ ]         [ no  ]
---- ├┬──[seller_hunt_active_monitor_message                ]       [subsection    ]                                                [ ✜ ✜ ]         [ yes ]
---- │└┬ [seller_hunt_active_monitor_message_header         ]       [wrapper       ]                                                [ 🡅 ✜ ]         [ no  ]
---- │ ├ [seller_hunt_active_monitor_message_header_username]       [widget        ]                                                [ ✜ 🡄 ]         [ no  ]
---- │ ├ [seller_hunt_active_monitor_message_header_location]       [widget        ]                                                [ ✜ 🡄 ]         [ no  ]
---- │ ├ [seller_hunt_active_monitor_message_header_time    ]       [widget        ]                                                [ ✜ ✜ ]         [ no  ]
---- │ ├ [seller_hunt_active_monitor_message_header_date    ]       [widget        ]                                                [ ✜ ✜ ]         [ no  ]
---- │ ├ [seller_hunt_active_monitor_message_header_rating  ]       [widget        ]                                                [ ✜ 🡆 ]         [ no  ]
---- │ └ [seller_hunt_active_monitor_message_header_known   ]       [widget        ]                                                [ ✜ 🡆 ]         [ no  ]
---- └─┬ [seller_hunt_active_monitor_message_body           ]       [wrapper       ]                                                [ 🡇 ✜ ]         [ yes ] 
----   └ [seller_hunt_active_monitor_message_body_text      ]       [text          ]     ""                  [color5/color2]        [ ✜ ✜ ]         [ yes ]  
-s3)┌┬┬──[seller_hunt_active_tune                           ]       [section       ]                                                [ 🡇 ✜ ]         [ no  ] 
----││└┬ [seller_hunt_active_tune_sens                      ]       [subsection    ]                                                [ ✜ 🡄 ]         [ no  ]
----││ ├ [seller_hunt_active_tune_sens_header               ]       [header        ]     "ЧУВСТВИТЕЛЬНОСТЬ"  [color2/color2]        [ 🡅 ✜ ]         [ no  ]
----││ └ [seller_hunt_active_tune_sens_slider               ]       [slider        ]                         [color2/color2]        [ 🡇 ✜ ]         [ yes ]
----│└─┬ [seller_hunt_active_tune_area                      ]       [subsection    ]                                                [ ✜ ✜ ]         [ no  ]
----│  ├ [seller_hunt_active_tune_area_widget               ]       [widget        ]     "..."               [color2/color2]        [ 🡅 ✜ ]         [ no  ]
----│  └ [seller_hunt_active_tune_area_button               ]       [button        ]     "ОХВАТ"             [color5/color2]        [ 🡇 ✜ ]         [ yes ]
----└──┬ [seller_hunt_active_tune_rating                    ]       [subsection    ]                                                [ ✜ 🡆 ]         [ no  ]
----   ├ [seller_hunt_active_tune_rating_header             ]       [header        ]     "РЕЙТИНГ"           [color2/color2]        [ 🡅 ✜ ]         [ no  ]
----   └ [seller_hunt_active_tune_rating_slider             ]       [slider        ]                         [color2/color2]        [ 🡇 ✜ ]         [ yes ] 
-s4)   ┌─[seller_hunt_active_controller                     ]       [section       ]                                                [ 🡇 ✜ ]         [ no  ]
----   └ [seller_hunt_active_controller_button              ]       [button        ]     "СТОП"              [color5/color2]        [ ✜ ✜ ]         [ yes ] 
-s5)  ┌─ [seller_nav                                        ]       [section       ]                                                [ 🡇 ✜ ]         [ no  ]
----  ├┬ [seller_nav_monitor_button                         ]       [button        ]                         [color1/color2]        [ ✜ 🡄 ]         [ yes ]
----  │├ [seller_nav_monitor_header                         ]       [header        ]     "МОНИТОР"           [color1/color2]        [ ✜ ✜ ]         [ no  ]  
----  │└ [seller_nav_monitor_badge                          ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ] 	
----  ├┬ [seller_nav_chat_button                            ]       [button        ]                         [color1/color2]        [ ✜ 🡄 ]         [ yes ]   
----  │├ [seller_nav_chat_header                            ]       [header        ]     "ЧАТ"               [color1/color2]        [ ✜ ✜ ]         [ no  ] 
----  │└ [seller_nav_chat_badge                             ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ] 
----  ├┬ [seller_nav_shop_button                            ]       [button        ]                         [color1/color2]        [ ✜ ✜ ]         [ yes ]   
----  │├ [seller_nav_shop_header                            ]       [header        ]     "МАГАЗИН"           [color1/color2]        [ ✜ ✜ ]         [ no  ] 
----  │└ [seller_nav_shop_badge                             ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ]   
----  ├┬ [seller_nav_lot_button                             ]       [button        ]                         [color1/color2]        [ ✜ 🡆 ]         [ yes ]   
----  │├ [seller_nav_lot_header                             ]       [header        ]     "ТОВАРЫ"            [color1/color2]        [ ✜ ✜ ]         [ no  ] 
----  │└ [seller_nav_lot_badge                              ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ]     
----  └┬ [seller_nav_finance_button                         ]       [button        ]                         [color1/color2]        [ ✜ 🡆 ]         [ yes ]   
----   ├ [seller_nav_finance_header                         ]       [header        ]     "КАБИНЕТ"           [color1/color2]        [ ✜ ✜ ]         [ no  ] 
----   └ [seller_nav_finance_badge                          ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ] 
+                              codename:                                 type:           designation:        pressed/default:      location:      interaction:
+s1)   ┌─[seller_demand_header                                ]       [section       ]                                                [ 🡅 ✜ ]         [ no  ]
+---   ├ [seller_demand_header_title                          ]       [header        ]     "МОНИТОРИНГ"        [color2/color2]        [ ✜ 🡄 ]         [ no  ]
+---   ├ [seller_demand_header_bulb                           ]       [widget        ]                         [color7/color7]        [ ✜ ✜ ]         [ no  ]
+---   ├ [seller_demand_header_options                        ]       [button        ]     "НАСТРОЙКИ"         [color5/color2]        [ ✜ 🡆 ]         [ yes ]
+---   └ [seller_demand_header_scan                           ]       [widget        ]                         [color7/color7]        [ 🡇 ✜ ]         [ no  ]
+s2) ┌───[seller_demand_active_demand                        ]       [section       ]                                                [ ✜ ✜ ]         [ no  ]
+--- ├┬──[seller_demand_active_demand_message                ]       [subsection    ]                                                [ ✜ ✜ ]         [ yes ]
+--- │└┬ [seller_demand_active_demand_message_header         ]       [wrapper       ]                                                [ 🡅 ✜ ]         [ no  ]
+--- │ ├ [seller_demand_active_demand_message_header_username]       [widget        ]                                                [ ✜ 🡄 ]         [ no  ]
+--- │ ├ [seller_demand_active_demand_message_header_location]       [widget        ]                                                [ ✜ 🡄 ]         [ no  ]
+--- │ ├ [seller_demand_active_demand_message_header_time    ]       [widget        ]                                                [ ✜ ✜ ]         [ no  ]
+--- │ ├ [seller_demand_active_demand_message_header_date    ]       [widget        ]                                                [ ✜ ✜ ]         [ no  ]
+--- │ ├ [seller_demand_active_demand_message_header_rating  ]       [widget        ]                                                [ ✜ 🡆 ]         [ no  ]
+--- │ └ [seller_demand_active_demand_message_header_known   ]       [widget        ]                                                [ ✜ 🡆 ]         [ no  ]
+--- └─┬ [seller_demand_active_demand_message_body           ]       [wrapper       ]                                                [ 🡇 ✜ ]         [ yes ] 
+---   └ [seller_demand_active_demand_message_body_text      ]       [text          ]     ""                  [color5/color2]        [ ✜ ✜ ]         [ yes ]  
+s3)┌┬┬──[seller_demand_active_tune                           ]       [section       ]                                                [ 🡇 ✜ ]         [ no  ] 
+---││└┬ [seller_demand_active_tune_sens                      ]       [subsection    ]                                                [ ✜ 🡄 ]         [ no  ]
+---││ ├ [seller_demand_active_tune_sens_header               ]       [header        ]     "ЧУВСТВИТЕЛЬНОСТЬ"  [color2/color2]        [ 🡅 ✜ ]         [ no  ]
+---││ └ [seller_demand_active_tune_sens_slider               ]       [slider        ]                         [color2/color2]        [ 🡇 ✜ ]         [ yes ]
+---│└─┬ [seller_demand_active_tune_area                      ]       [subsection    ]                                                [ ✜ ✜ ]         [ no  ]
+---│  ├ [seller_demand_active_tune_area_widget               ]       [widget        ]     "..."               [color2/color2]        [ 🡅 ✜ ]         [ no  ]
+---│  └ [seller_demand_active_tune_area_button               ]       [button        ]     "ОХВАТ"             [color5/color2]        [ 🡇 ✜ ]         [ yes ]
+---└──┬ [seller_demand_active_tune_rating                    ]       [subsection    ]                                                [ ✜ 🡆 ]         [ no  ]
+---   ├ [seller_demand_active_tune_rating_header             ]       [header        ]     "РЕЙТИНГ"           [color2/color2]        [ 🡅 ✜ ]         [ no  ]
+---   └ [seller_demand_active_tune_rating_slider             ]       [slider        ]                         [color2/color2]        [ 🡇 ✜ ]         [ yes ] 
+s4)   ┌─[seller_demand_active_controller                     ]       [section       ]                                                [ 🡇 ✜ ]         [ no  ]
+---   └ [seller_demand_active_controller_button              ]       [button        ]     "СТОП"              [color5/color2]        [ ✜ ✜ ]         [ yes ] 
+s5)  ┌─ [seller_nav                                          ]       [section       ]                                                [ 🡇 ✜ ]         [ no  ]
+---  ├┬ [seller_nav_demand_button                            ]       [button        ]                         [color1/color2]        [ ✜ 🡄 ]         [ yes ]
+---  │├ [seller_nav_demand_header                            ]       [header        ]     "МОНИТОР"           [color1/color2]        [ ✜ ✜ ]         [ no  ]  
+---  │└ [seller_nav_demand_badge                             ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ] 	
+---  ├┬ [seller_nav_chat_button                              ]       [button        ]                         [color1/color2]        [ ✜ 🡄 ]         [ yes ]   
+---  │├ [seller_nav_chat_header                              ]       [header        ]     "ЧАТ"               [color1/color2]        [ ✜ ✜ ]         [ no  ] 
+---  │└ [seller_nav_chat_badge                               ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ] 
+---  ├┬ [seller_nav_shop_button                              ]       [button        ]                         [color1/color2]        [ ✜ ✜ ]         [ yes ]   
+---  │├ [seller_nav_shop_header                              ]       [header        ]     "МАГАЗИН"           [color1/color2]        [ ✜ ✜ ]         [ no  ] 
+---  │└ [seller_nav_shop_badge                               ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ]   
+---  ├┬ [seller_nav_lot_button                               ]       [button        ]                         [color1/color2]        [ ✜ 🡆 ]         [ yes ]   
+---  │├ [seller_nav_lot_header                               ]       [header        ]     "ТОВАРЫ"            [color1/color2]        [ ✜ ✜ ]         [ no  ] 
+---  │└ [seller_nav_lot_badge                                ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ]     
+---  └┬ [seller_nav_finance_button                           ]       [button        ]                         [color1/color2]        [ ✜ 🡆 ]         [ yes ]   
+---   ├ [seller_nav_finance_header                           ]       [header        ]     "КАБИНЕТ"           [color1/color2]        [ ✜ ✜ ]         [ no  ] 
+---   └ [seller_nav_finance_badge                            ]       [badge         ]     { number }          [color1/color2]        [ 🡅 🡆 ]         [ no  ] 
 
 
-■ seller_hunt_header
+■ seller_demand_header
 
 ✠ details
-seller_hunt_header дает общее представление о состоянии работы мониторинга, расположен в верхней части экрана и состоит из 4 компонентов:
-- seller_hunt_header_title - заголовок с font-weight: extra bold, расположен слева;
-- seller_hunt_header_bulb - индикатор активности монитора находится справа около seller_hunt_header_title;
-- seller_hunt_header_options - кнопка открывающая настройки монитора, находится в правой части;
-- seller_hunt_header_scan - индикатор отображающий процесс сканирования, расположен по центру.
+seller_demand_header дает общее представление о состоянии работы мониторинга, расположен в верхней части экрана и состоит из 4 компонентов:
+- seller_demand_header_title - заголовок с font-weight: extra bold, расположен слева;
+- seller_demand_header_bulb - индикатор активности монитора находится справа около seller_demand_header_title;
+- seller_demand_header_options - кнопка открывающая настройки монитора, находится в правой части;
+- seller_demand_header_scan - индикатор отображающий процесс сканирования, расположен по центру.
 
 ✠ actions
-• seller_hunt_header_options:
+• seller_demand_header_options:
 ╠ valid / invalid
 ║ • tap
-║ occasion: нажатие seller_hunt_header_options;
+║ occasion: нажатие seller_demand_header_options;
 ║ condition: в любой ситуации;
-╙ result: открывается seller_hunt_options_screen.
+╙ result: открывается seller_demand_options_screen.
 
 ✠ color_states
 ┌─
-│seller_hunt_header_bulb
+│seller_demand_header_bulb
 │---------------------------------------------
 │⟪⟪ body ⟫⟫ 
 │--------
 │• color2
-│------ в seller_hunt_inactive_state;
+│------ в seller_demand_inactive_state;
 │• color7
-│------ в seller_hunt_active_state.
+│------ в seller_demand_active_state.
 └─
 ┌─
-│seller_hunt_header_options
+│seller_demand_header_options
 │---------------------------------------------
 │⟪⟪ body ⟫⟫ 
 │--------
@@ -336,7 +334,7 @@ seller_hunt_header дает общее представление о состо�
 │------ в pressing_state.
 └─
 ┌─
-│seller_hunt_header_scan
+│seller_demand_header_scan
 │---------------------------------------------
 │⟪⟪ body ⟫⟫ 
 │--------
@@ -347,43 +345,43 @@ seller_hunt_header дает общее представление о состо�
 └─
 
 
-■ seller_hunt_active_monitor
+■ seller_demand_active_demand
 
 ✠ details
-seller_hunt_active_monitor - занимает основное пространство seller_hunt_active_screen находясь в центральной области экрана между seller_hunt_active_header и seller_hunt_active_tune. В seller_hunt_active_state область seller_hunt_active_monitor содержит seller_hunt_active_monitor_message являющихся (subsection) пользовательскими контейнерами, где 1 контейнер предназначен для одного сообщения. Каждый seller_hunt_active_monitor_message представляет собой прямоугольную область во всю ширину экрана и состоит из 2 родительских элементов (wrapper) расположенных друг над другом:
+seller_demand_active_demand - занимает основное пространство seller_demand_active_screen находясь в центральной области экрана между seller_demand_active_header и seller_demand_active_tune. В seller_demand_active_state область seller_demand_active_demand содержит seller_demand_active_demand_message являющихся (subsection) пользовательскими контейнерами, где 1 контейнер предназначен для одного сообщения. Каждый seller_demand_active_demand_message представляет собой прямоугольную область во всю ширину экрана и состоит из 2 родительских элементов (wrapper) расположенных друг над другом:
 
-1) seller_hunt_active_monitor_message_header - находится в верхней части seller_hunt_active_monitor_message, имеет стандартную высоту в одну строку текста с соответствующими параметрами margin и содержит данные buyer в количестве 6 элементов:
--- seller_hunt_active_monitor_message_header_username - имя buyer;
--- seller_hunt_active_monitor_message_header_location - геопозиционирование юзера (населенный пункт / ближайший населенный пункт);
--- seller_hunt_active_monitor_message_header_time     - время публикации seller_hunt_active_monitor_message;
--- seller_hunt_active_monitor_message_header_date     - дата публикации seller_hunt_active_monitor_message;
--- seller_hunt_active_monitor_message_header_rating   - рейтинг buyer отображаемый в качестве badge;
--- seller_hunt_active_monitor_message_header_known    - buyer_known_badge - отвечает за фактор "знакомого клиента". То есть, если этот buyer совершал ранее покупку у данного seller (который его увидел в seller_hunt_active_monitor), тогда buyer_known_badge = true и обладает color4. Если этот buyer не совершал покупку у данного seller, тогда buyer_known_badge = false и обладает color2. Факт "знакомого клиента" устанавливается через user_ID и наличие ордеров в ledger. 
+1) seller_demand_active_demand_message_header - находится в верхней части seller_demand_active_demand_message, имеет стандартную высоту в одну строку текста с соответствующими параметрами margin и содержит данные buyer в количестве 6 элементов:
+-- seller_demand_active_demand_message_header_username - имя buyer;
+-- seller_demand_active_demand_message_header_location - геопозиционирование юзера (населенный пункт / ближайший населенный пункт);
+-- seller_demand_active_demand_message_header_time     - время публикации seller_demand_active_demand_message;
+-- seller_demand_active_demand_message_header_date     - дата публикации seller_demand_active_demand_message;
+-- seller_demand_active_demand_message_header_rating   - рейтинг buyer отображаемый в качестве badge;
+-- seller_demand_active_demand_message_header_known    - buyer_known_badge - отвечает за фактор "знакомого клиента". То есть, если этот buyer совершал ранее покупку у данного seller (который его увидел в seller_demand_active_demand), тогда buyer_known_badge = true и обладает color4. Если этот buyer не совершал покупку у данного seller, тогда buyer_known_badge = false и обладает color2. Факт "знакомого клиента" устанавливается через user_ID и наличие ордеров в ledger. 
 
-2) seller_hunt_active_monitor_message_body - находится в нижней части seller_hunt_active_monitor_message, обладает высотой зависящей от количества текстового сообщения, а также более светлым оттенком нежели seller_hunt_active_monitor_message_header и содержит 1 элемент:
--- seller_hunt_active_monitor_message_body_text - текстовое сообщение buyer.
+2) seller_demand_active_demand_message_body - находится в нижней части seller_demand_active_demand_message, обладает высотой зависящей от количества текстового сообщения, а также более светлым оттенком нежели seller_demand_active_demand_message_header и содержит 1 элемент:
+-- seller_demand_active_demand_message_body_text - текстовое сообщение buyer.
 
                 codename:                                                                     content:                                         
-[seller_hunt_active_monitor_message_header] [username | location | time | date | seller_hunt_active_monitor_message_header_rating | seller_hunt_active_monitor_message_header_known]
-[seller_hunt_active_monitor_message_body  ] [ text                                                                                                                   ]
+[seller_demand_active_demand_message_header] [username | location | time | date | seller_demand_active_demand_message_header_rating | seller_demand_active_demand_message_header_known]
+[seller_demand_active_demand_message_body  ] [ text                                                                                                                   ]
 
-Когда появляется новый seller_hunt_active_monitor_message, он располагается вверху списка seller_hunt_active_monitor, который ранжируется по времени публикации сверху-вниз.
+Когда появляется новый seller_demand_active_demand_message, он располагается вверху списка seller_demand_active_demand, который ранжируется по времени публикации сверху-вниз.
 
 ✠ actions
-• seller_hunt_active_monitor_message:
+• seller_demand_active_demand_message:
 ╠ valid / invalid
 ║ • tap
-║ occasion: нажатие seller_hunt_active_monitor_message;
+║ occasion: нажатие seller_demand_active_demand_message;
 ║ condition: в любой ситуации;
 ║ result: 
 ╙ && - открывается seller_chat_chat_screen_state1.
 
 ✠ logics
-При нажатии на seller_hunt_active_monitor_message происходит переход в seller_chat_chat_screen_state1. После отправки сообщения происходит автоматический переход назад в seller_hunt_active_screen. В ситуации когда seller не отправляет сообщение а планирует вернуться в seller_hunt_active_screen, он может это сделать посредством seller_nav.
+При нажатии на seller_demand_active_demand_message происходит переход в seller_chat_chat_screen_state1. После отправки сообщения происходит автоматический переход назад в seller_demand_active_screen. В ситуации когда seller не отправляет сообщение а планирует вернуться в seller_demand_active_screen, он может это сделать посредством seller_nav.
 
 ✠ color_states
 ┌─
-│seller_hunt_active_monitor_message
+│seller_demand_active_demand_message
 │---------------------------------------------
 │⟪⟪ body ⟫⟫ 
 │--------
@@ -394,57 +392,57 @@ seller_hunt_active_monitor - занимает основное простран�
 └─
 
 
-■ seller_hunt_active_tune
+■ seller_demand_active_tune
 
 ✠ details
-seller_hunt_active_tune является блоком настроек фильтров для функции мониторинга, располагается под seller_hunt_active_monitor  занимая ~30% ширины экрана и состоит из 3 компонентов (описание логики скрыто по причине защиты бизнес идеи):
+seller_demand_active_tune является блоком настроек фильтров для функции мониторинга, располагается под seller_demand_active_demand  занимая ~30% ширины экрана и состоит из 3 компонентов (описание логики скрыто по причине защиты бизнес идеи):
 
-1) seller_hunt_active_tune_sens - настройка отвечающая за параметр чувствительности, размещается в левой части экрана под seller_hunt_active_monitor занимая ~30% ширины экрана и включает 2 элемента:
--- seller_hunt_active_tune_sens_header - заголовок компонента "ЧУВСТВИТЕЛЬНОСТЬ";
--- seller_hunt_active_tune_sens_slider - ползунок который горизонтально размещается под seller_hunt_active_tune_sens_header занимая 80-90% ширины seller_hunt_active_tune_sens. seller_hunt_active_tune_sens обладает пятью позициями которые реализованы без визуального отображения засечек/обозначений (позиция определяется положением ползунка). Наименование позиции возникает в качестве modal на 1.5 секунды после переключения на эту позицию слайдера. Позиции seller_hunt_active_tune_sens представлены в следующем порядке слева-направо: 
+1) seller_demand_active_tune_sens - настройка отвечающая за параметр чувствительности, размещается в левой части экрана под seller_demand_active_demand занимая ~30% ширины экрана и включает 2 элемента:
+-- seller_demand_active_tune_sens_header - заголовок компонента "ЧУВСТВИТЕЛЬНОСТЬ";
+-- seller_demand_active_tune_sens_slider - ползунок который горизонтально размещается под seller_demand_active_tune_sens_header занимая 80-90% ширины seller_demand_active_tune_sens. seller_demand_active_tune_sens обладает пятью позициями которые реализованы без визуального отображения засечек/обозначений (позиция определяется положением ползунка). Наименование позиции возникает в качестве modal на 1.5 секунды после переключения на эту позицию слайдера. Позиции seller_demand_active_tune_sens представлены в следующем порядке слева-направо: 
 description:                                codename:                  item_name:             correlation:
-низкая точность выборки:    [ seller_hunt_active_tune_sens_precision1 ]  "НИЗКАЯ ТОЧНОСТЬ"            [ 15%+ ]
-умеренная точность выборки: [ seller_hunt_active_tune_sens_precision2 ]  "УМЕРЕННАЯ ТОЧНОСТЬ"         [ 35%+ ]
-средняя точность выборки:   [ seller_hunt_active_tune_sens_precision3 ]  "СРЕДНЯЯ ТОЧНОСТЬ"           [ 55%+ ]           активна по умолчанию
-хорошая точность выборки:   [ seller_hunt_active_tune_sens_precision4 ]  "ХОРОШАЯ ТОЧНОСТЬ"           [ 75%+ ]
-высокая точность выборки:   [ seller_hunt_active_tune_sens_precision5 ]  "ВЫСОКАЯ ТОЧНОСТЬ"           [ 95%+ ]
+низкая точность выборки:    [ seller_demand_active_tune_sens_precision1 ]  "НИЗКАЯ ТОЧНОСТЬ"            [ 15%+ ]
+умеренная точность выборки: [ seller_demand_active_tune_sens_precision2 ]  "УМЕРЕННАЯ ТОЧНОСТЬ"         [ 35%+ ]
+средняя точность выборки:   [ seller_demand_active_tune_sens_precision3 ]  "СРЕДНЯЯ ТОЧНОСТЬ"           [ 55%+ ]           активна по умолчанию
+хорошая точность выборки:   [ seller_demand_active_tune_sens_precision4 ]  "ХОРОШАЯ ТОЧНОСТЬ"           [ 75%+ ]
+высокая точность выборки:   [ seller_demand_active_tune_sens_precision5 ]  "ВЫСОКАЯ ТОЧНОСТЬ"           [ 95%+ ]
 
-2) seller_hunt_active_tune_area - настройка отвечающая за выбор страны/региона/области/города/района в рамках которых будет совершаться мониторинг (в качестве фильтра seller_hunt_active_tune_area позволяет ограничить выборку результатов), размещается в середине экрана под seller_hunt_active_monitor занимая ~30% ширины экрана и включает 2 элемента:
--- seller_hunt_active_tune_area_widget - является виджетом выводящим строковое значение настройки установленной посредством seller_hunt_active_area_screen;
--- seller_hunt_active_tune_area_button - настройка реализована в виде кнопки, которая размещается под seller_hunt_active_tune_area_widget занимая ~80% ширины seller_hunt_active_tune_area и обладающая наименованием "ОХВАТ". 
+2) seller_demand_active_tune_area - настройка отвечающая за выбор страны/региона/области/города/района в рамках которых будет совершаться мониторинг (в качестве фильтра seller_demand_active_tune_area позволяет ограничить выборку результатов), размещается в середине экрана под seller_demand_active_demand занимая ~30% ширины экрана и включает 2 элемента:
+-- seller_demand_active_tune_area_widget - является виджетом выводящим строковое значение настройки установленной посредством seller_demand_active_area_screen;
+-- seller_demand_active_tune_area_button - настройка реализована в виде кнопки, которая размещается под seller_demand_active_tune_area_widget занимая ~80% ширины seller_demand_active_tune_area и обладающая наименованием "ОХВАТ". 
 
-3) seller_hunt_active_tune_rating - настройка отвечающая за фильтрацию seller_hunt_active_monitor_message по рейтингу юзера и позволяет задать порог ниже значения которого seller_hunt_active_monitor_message будут игнорироваться, а seller_hunt_active_monitor_message с рейтингом превышающим заданный порог будут выводиться на seller_hunt_active_monitor, размещается в правой части экрана под seller_hunt_active_monitor занимая ~30% ширины экрана и включает 2 элемента:
--- seller_hunt_active_tune_rating_header - заголовок компонента "РЕЙТИНГ";
--- seller_hunt_active_tune_rating_slider - ползунок который горизонтально размещается под seller_hunt_active_tune_rating_header занимая 80-90% ширины seller_hunt_active_tune_rating. seller_hunt_active_tune_rating_slider обладает 100 позициями без визуального отображения засечек/обозначений (позиция определяется положением ползунка). Наименование позиции возникает в качестве modal на 1.5 секунды после переключения на эту позицию слайдера. Шкала seller_hunt_active_tune_rating соответствует шкале buyer_pubstat_rating - по 100 значений каждая. Согласно установке seller_hunt_active_tune_rating, отсеву подлежат все seller_hunt_active_monitor_message со значением buyer_pubstat_rating ниже seller_hunt_active_tune_rating. То есть, если seller_hunt_active_tune_rating_value = 60, тогда в hunt_screen_monitor будут попадать seller_hunt_active_monitor_message >= seller_hunt_active_tune_rating_value = 60. По умолчанию seller_hunt_active_tune_rating установлен в позицию seller_hunt_active_tune_rating = 0, что означает, что функция hunt_screen_rating не задействована.
+3) seller_demand_active_tune_rating - настройка отвечающая за фильтрацию seller_demand_active_demand_message по рейтингу юзера и позволяет задать порог ниже значения которого seller_demand_active_demand_message будут игнорироваться, а seller_demand_active_demand_message с рейтингом превышающим заданный порог будут выводиться на seller_demand_active_demand, размещается в правой части экрана под seller_demand_active_demand занимая ~30% ширины экрана и включает 2 элемента:
+-- seller_demand_active_tune_rating_header - заголовок компонента "РЕЙТИНГ";
+-- seller_demand_active_tune_rating_slider - ползунок который горизонтально размещается под seller_demand_active_tune_rating_header занимая 80-90% ширины seller_demand_active_tune_rating. seller_demand_active_tune_rating_slider обладает 100 позициями без визуального отображения засечек/обозначений (позиция определяется положением ползунка). Наименование позиции возникает в качестве modal на 1.5 секунды после переключения на эту позицию слайдера. Шкала seller_demand_active_tune_rating соответствует шкале buyer_pubstat_rating - по 100 значений каждая. Согласно установке seller_demand_active_tune_rating, отсеву подлежат все seller_demand_active_demand_message со значением buyer_pubstat_rating ниже seller_demand_active_tune_rating. То есть, если seller_demand_active_tune_rating_value = 60, тогда в hunt_screen_demand будут попадать seller_demand_active_demand_message >= seller_demand_active_tune_rating_value = 60. По умолчанию seller_demand_active_tune_rating установлен в позицию seller_demand_active_tune_rating = 0, что означает, что функция hunt_screen_rating не задействована.
 
 ✠ actions
-• seller_hunt_active_tune_sens_slider:
+• seller_demand_active_tune_sens_slider:
 ╠ valid / invalid
 ║ • tap & hold & move
-║ occasion: нажатие с удержанием и движением seller_hunt_active_tune_sens_slider влево/вправо;
+║ occasion: нажатие с удержанием и движением seller_demand_active_tune_sens_slider влево/вправо;
 ║ condition: в любой ситуации;
 ║ result: 
-║ || - переключение в позицию seller_hunt_active_tune_sens_precision1;
-║ || - переключение в позицию seller_hunt_active_tune_sens_precision2;
-║ || - переключение в позицию seller_hunt_active_tune_sens_precision3;
-║ || - переключение в позицию seller_hunt_active_tune_sens_precision4;
-╙ || - переключение в позицию seller_hunt_active_tune_sens_precision5;
-• seller_hunt_active_tune_area:
+║ || - переключение в позицию seller_demand_active_tune_sens_precision1;
+║ || - переключение в позицию seller_demand_active_tune_sens_precision2;
+║ || - переключение в позицию seller_demand_active_tune_sens_precision3;
+║ || - переключение в позицию seller_demand_active_tune_sens_precision4;
+╙ || - переключение в позицию seller_demand_active_tune_sens_precision5;
+• seller_demand_active_tune_area:
 ╠ valid
 ║ • tap
-║ occasion: нажатие на seller_hunt_active_tune_area;
+║ occasion: нажатие на seller_demand_active_tune_area;
 ║ condition: в любой ситуации;
-╙ result: открывается seller_hunt_active_area_screen.
-• seller_hunt_active_tune_rating_slider:
+╙ result: открывается seller_demand_active_area_screen.
+• seller_demand_active_tune_rating_slider:
 ╠ valid / invalid
 ║ • tap & hold & move
-║ occasion: нажатие с удержанием и движением seller_hunt_active_tune_rating_slider влево/вправо;
+║ occasion: нажатие с удержанием и движением seller_demand_active_tune_rating_slider влево/вправо;
 ║ condition: в любой ситуации;
-╙ result: переключение между позицией seller_hunt_active_tune_rating = 1 и seller_hunt_active_tune_rating = 100;
+╙ result: переключение между позицией seller_demand_active_tune_rating = 1 и seller_demand_active_tune_rating = 100;
 
 ✠ color_states
 ┌─
-│seller_hunt_active_tune_sens_slider
+│seller_demand_active_tune_sens_slider
 │---------------------------------------------
 │⟪⟪ body ⟫⟫ 
 │--------
@@ -452,7 +450,7 @@ description:                                codename:                  item_name
 │------ в любой ситуации.
 └─
 ┌─
-│seller_hunt_active_tune_area
+│seller_demand_active_tune_area
 │---------------------------------------------
 │⟪⟪ body ⟫⟫ 
 │--------
@@ -462,7 +460,7 @@ description:                                codename:                  item_name
 │------ в pressing_state.
 └─
 ┌─
-│seller_hunt_active_tune_rating
+│seller_demand_active_tune_rating
 │---------------------------------------------
 │⟪⟪ body ⟫⟫ 
 │--------
@@ -471,24 +469,24 @@ description:                                codename:                  item_name
 └─
 
 
-■ seller_hunt_active_controller
+■ seller_demand_active_controller
 
 ✠ details
-seller_hunt_active_controller является настройкой останавливающей процесс сканирования в seller_hunt_active_state, которая размещается в середине экрана под seller_hunt_active_tune занимая ~80% ширины экрана, выступает в качестве container для элемента seller_hunt_active_controller_button:
+seller_demand_active_controller является настройкой останавливающей процесс сканирования в seller_demand_active_state, которая размещается в середине экрана под seller_demand_active_tune занимая ~80% ширины экрана, выступает в качестве container для элемента seller_demand_active_controller_button:
 
-- seller_hunt_active_controller_button - кнопка выполняющая функцию остановки сканирования и обладающая наименованием "СТОП".
+- seller_demand_active_controller_button - кнопка выполняющая функцию остановки сканирования и обладающая наименованием "СТОП".
 
 ✠ actions
-• seller_hunt_active_controller_button:
+• seller_demand_active_controller_button:
 ╠ valid
 ║ • tap
-║ occasion: нажатие на seller_hunt_active_controller_button;
+║ occasion: нажатие на seller_demand_active_controller_button;
 ║ condition: в любой ситуации;
-╙ result: дезактивация seller_hunt_active_function.
+╙ result: дезактивация seller_demand_active_function.
 
 ✠ color_states
 ┌─
-│seller_hunt_active_controller_button
+│seller_demand_active_controller_button
 │---------------------------------------------
 │⟪⟪ body ⟫⟫ 
 │--------
@@ -502,157 +500,159 @@ seller_hunt_active_controller является настройкой остана
 ■ seller_nav
 
 ✠ details
-Секция seller_nav является навигационной панелью seller_mode и как сквозная часть интерфейса присутствует на всех экранах в нижней области. Секция состоит из 5 компонентов каждый из которых выполняют роль кнопки:
-1) seller_nav_monitor_button - кнопка с наименованием и бейджем, предназначена для перехода к seller_hunt_screen;
--- seller_nav_monitor_header - представлен заголовком "МОНИТОР";
--- seller_nav_monitor_badge - отображает количество hunt_screen_monitor_message в seller_hunt_screen.
+Секция seller_nav является навигационной панелью seller_mode и как сквозная часть интерфейса присутствует на всех экранах в нижней области. Секция состоит из 5 компонентов каждый из которых выполняет роль кнопки:
+1) seller_nav_demand_button - кнопка с наименованием и бейджем, предназначена для перехода к seller_demand_screen;
+-- seller_nav_demand_header - представлен заголовком "СПРОС";
+-- seller_nav_demand_badge - отображает количество hunt_screen_demand_message в seller_demand_screen.
 2) seller_nav_chat_button - кнопка с наименованием и бейджем, предназначена для перехода к seller_chat_screen (в seller_chat_screen активирована по умолчанию);
 -- seller_nav_chat_header - представлен заголовком "ЧАТ";
 -- seller_nav_chat_badge - отображает количество непросмотренных chat_screen_chat_message_node.
 3) seller_nav_shop_button - кнопка с наименованием и бейджем, предназначена для перехода к seller_shop_screen;
 -- seller_nav_shop_header - представлен заголовком "МАГАЗИН";
 -- seller_nav_shop_badge - отображает количество посетителей находящихся в магазине в текущий момент.
-4) seller_nav_lot_button - кнопка с наименованием и бейджем, предназначена для перехода к seller_lot_screen;
--- seller_nav_lot_header - представлен заголовком "ТОВАРЫ";
--- seller_nav_lot_badge - отображает число лотов по которым заканчивается товар.
-5) seller_nav_finance_button - кнопка с наименованием и бейджем, предназначена для перехода к seller_money_screen;
--- seller_nav_finance_header - представлен заголовком "КАБИНЕТ";
--- seller_nav_finance_badge - отображает количество непросмотренных денежных транзакций.
+4) seller_nav_goods_button - кнопка с наименованием и бейджем, предназначена для перехода к seller_goods_screen;
+-- seller_nav_goods_header - представлен заголовком "ТОВАРЫ";
+-- seller_nav_goods_badge - отображает число лотов по которым заканчивается товар.
+5) seller_nav_account_button - кнопка с наименованием и бейджем, предназначена для перехода к seller_account_screen;
+-- seller_nav_account_header - представлен заголовком "КАБИНЕТ";
+-- seller_nav_account_badge - отображает количество непросмотренных денежных транзакций.
 
 ✠ actions
-• seller_nav_monitor_button:
+• seller_nav_demand_button:
 ╠ valid / invalid
 ║ • tap 
-║ occasion: нажатие seller_nav_monitor_button;
-║ condition: в любой ситуации;
-╙ result: открывается seller_hunt_screen.
+║ occasion: нажатие seller_nav_demand_button;
+║ condition: в ситуации нахождения в seller_account;
+╙ result: не реагирует на нажатие.
 • seller_nav_chat_button:
 ║ • tap 
 ╠ valid / invalid
 ║ occasion: нажатие seller_nav_chat_button;
-║ condition: в любой ситуации;
+║ condition: в ситуации нахождения в seller_account;
 ╙ result: открывается seller_chat_screen.
 • seller_nav_shop_button:
 ╠ valid / invalid
 ║ • tap 
 ║ occasion: нажатие seller_nav_shop_button;
-║ condition: в любой ситуации;
+║ condition: в ситуации нахождения в seller_account;
 ╙ result: открывается seller_shop_screen.
-• seller_nav_lot_button:
+• seller_nav_goods_button:
 ╠ valid / invalid
 ║ • tap 
-║ occasion: нажатие seller_nav_lot_button;
-║ condition: в любой ситуации;
-╙ result: открывается seller_lot_screen.
-• seller_nav_finance_button:
+║ occasion: нажатие seller_nav_goods_button;
+║ condition: в ситуации нахождения в seller_account;
+╙ result: открывается seller_goods_screen.
+• seller_nav_account_button:
 ╠ valid / invalid
 ║ • tap 
-║ occasion: нажатие seller_nav_finance_button;
-║ condition: в любой ситуации;
-╙ result: открывается seller_money_screen.
+║ occasion: нажатие seller_nav_account_button;
+║ condition: в ситуации нахождения в seller_account;
+╙ result: открывается seller_account_screen.
 
 ✠ color_states
 ┌─
-│seller_nav_monitor_button  
+│seller_nav_demand_button
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 │--------
 │• color7
-│------ в любой ситуации.
+│------ в любой ситуации
 └─
 ┌─
-│seller_nav_monitor_badge  
+│seller_nav_demand_badge 
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 │--------
 │• color2
-│------ в любой ситуации.
+│------ в любой ситуации
 └─
 ┌─
 │seller_nav_chat_button  
 │seller_nav_shop_button
-│seller_nav_lot_button
-│seller_nav_finance_button
+│seller_nav_goods_button
+│seller_nav_account_button
 │---------------------------
 │⟪⟪ body ⟫⟫ 
-│--------
-│• color2
-│------ в любой ситуации.
+├────────
+│• color4
+│------ default
+├────────
+│• color5
+│------ pressing
 └─
 ┌─
 │seller_nav_chat_badge  
 │seller_nav_shop_badge  
-│seller_nav_lot_badge  
-│seller_nav_finance_badge 
+│seller_nav_goods_badge   
+│seller_nav_account_badge 
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 │--------
-│• color4
-│------ в любой ситуации.
+│• color9
+│------ в любой ситуации
 └─
 
 
 
+🡆🡆 seller_demand_area_screen
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 
-🡆🡆 seller_hunt_area_screen
-■■■■■■■■■■■■■■■■■■■■■■■■■■
-
-При нажатии seller_hunt_tune_area всплывает seller_hunt_area_screen предназначенный для выбора локации в рамках которой производится сканирование. seller_hunt_area_screen представлен следующими 4 секторами сверху-вниз:
+При нажатии seller_demand_tune_area всплывает seller_demand_area_screen предназначенный для выбора локации в рамках которой производится сканирование. seller_demand_area_screen представлен следующими 4 секторами сверху-вниз:
 
 ✠ tables
 
-                   codename:                        type:              button_name:       pressed/default:      location:      interaction:
-s1)   ┌─[seller_hunt_header           ]       [section       ]                                                   [ 🡅 ✜ ]         [ no  ]
----   ├ [seller_hunt_header_title     ]       [header        ]     "МОНИТОРИНГ"           [color2/color2]        [ ✜ 🡄 ]         [ no  ]
----   └ [seller_hunt_header_options   ]       [button        ]     "НАСТРОЙКИ"            [color5/color2]        [ ✜ 🡆 ]         [ yes ]
-s2) ┌┬┬─[seller_hunt_area             ]       [section       ]                                                   [ ✜ ✜ ]         [ no  ]
---- ││└ [seller_hunt_area_header      ]       [header        ]     "ВЫБРАННАЯ ОБЛАСТЬ"    [color2/color2]        [ 🡅 ✜ ]         [ no  ]
---- │└┬ [seller_hunt_area_map         ]       [subsection    ]                                                   [ ✜ ✜ ]         [ yes ]
---- │ ├ [seller_hunt_area_map_select  ]       [select_area   ]                                                   [ ✜ ✜ ]         [ yes ]
---- │ └ [seller_hunt_area_map_source  ]       [map           ]                                                   [ ✜ ✜ ]         [ yes ]
---- └── [seller_hunt_area_title       ]       [widget        ]                                                   [ 🡇 ✜ ]         [ no  ]
-s3)   ┌─[seller_hunt_search           ]       [section       ]                                                   [ 🡇 ✜ ]         [ no  ] 
----   ├ [seller_hunt_search_input     ]       [input         ]     "ВВЕДИТЕ ДЛЯ ПОИСКА"   [color2/color2]        [ 🡅 ✜ ]         [ yes ]
----   ├ [seller_hunt_search_dropdown  ]       [dropdown      ]     ""                     [color2/color2]        [ 🡅 ✜ ]         [ yes ]
----   ├ [seller_hunt_search_return    ]       [button        ]     "НАЗАД"                [color5/color2]        [ 🡇 🡄 ]         [ yes ]
----   └ [seller_hunt_search_confirm   ]       [button        ]     "ПОДТВЕРДИТЬ"          [color5/color2]        [ 🡇 🡆 ]         [ yes ]
-s4)  ┌─ [seller_nav                   ]       [section       ]                                                   [ 🡇 ✜ ]         [ no  ]
----  ├┬ [seller_nav_monitor_button    ]       [button        ]                            [color1/color2]        [ ✜ 🡄 ]         [ yes ]
----  │├ [seller_nav_monitor_header    ]       [header        ]     "МОНИТОР"              [color1/color2]        [ ✜ ✜ ]         [ no  ]  
----  │└ [seller_nav_monitor_badge     ]       [badge         ]     { number }             [color1/color2]        [ 🡅 🡆 ]         [ no  ] 	
----  ├┬ [seller_nav_chat_button       ]       [button        ]                            [color1/color2]        [ ✜ 🡄 ]         [ yes ]   
----  │├ [seller_nav_chat_header       ]       [header        ]     "ЧАТ"                  [color1/color2]        [ ✜ ✜ ]         [ no  ] 
----  │└ [seller_nav_chat_badge        ]       [badge         ]     { number }             [color1/color2]        [ 🡅 🡆 ]         [ no  ] 
----  ├┬ [seller_nav_shop_button       ]       [button        ]                            [color1/color2]        [ ✜ ✜ ]         [ yes ]   
----  │├ [seller_nav_shop_header       ]       [header        ]     "МАГАЗИН"              [color1/color2]        [ ✜ ✜ ]         [ no  ] 
----  │└ [seller_nav_shop_badge        ]       [badge         ]     { number }             [color1/color2]        [ 🡅 🡆 ]         [ no  ]   
----  ├┬ [seller_nav_lot_button        ]       [button        ]                            [color1/color2]        [ ✜ 🡆 ]         [ yes ]   
----  │├ [seller_nav_lot_header        ]       [header        ]     "ТОВАРЫ"               [color1/color2]        [ ✜ ✜ ]         [ no  ] 
----  │└ [seller_nav_lot_badge         ]       [badge         ]     { number }             [color1/color2]        [ 🡅 🡆 ]         [ no  ]     
----  └┬ [seller_nav_finance_button    ]       [button        ]                            [color1/color2]        [ ✜ 🡆 ]         [ yes ]   
----   ├ [seller_nav_finance_header    ]       [header        ]     "КАБИНЕТ"              [color1/color2]        [ ✜ ✜ ]         [ no  ] 
----   └ [seller_nav_finance_badge     ]       [badge         ]     { number }             [color1/color2]        [ 🡅 🡆 ]         [ no  ] 
+                   codename:                        type:              designation:       pressed/default:      location:      interaction:
+s1)   ┌─[seller_demand_header           ]       [section       ]                                                   [ 🡅 ✜ ]         [ no  ]
+---   ├ [seller_demand_header_title     ]       [header        ]     "МОНИТОРИНГ"           [color2/color2]        [ ✜ 🡄 ]         [ no  ]
+---   └ [seller_demand_header_options   ]       [button        ]     "НАСТРОЙКИ"            [color5/color2]        [ ✜ 🡆 ]         [ yes ]
+s2) ┌┬┬─[seller_demand_area             ]       [section       ]                                                   [ ✜ ✜ ]         [ no  ]
+--- ││└ [seller_demand_area_header      ]       [header        ]     "ВЫБРАННАЯ ОБЛАСТЬ"    [color2/color2]        [ 🡅 ✜ ]         [ no  ]
+--- │└┬ [seller_demand_area_map         ]       [subsection    ]                                                   [ ✜ ✜ ]         [ yes ]
+--- │ ├ [seller_demand_area_map_select  ]       [select_area   ]                                                   [ ✜ ✜ ]         [ yes ]
+--- │ └ [seller_demand_area_map_source  ]       [map           ]                                                   [ ✜ ✜ ]         [ yes ]
+--- └── [seller_demand_area_title       ]       [widget        ]                                                   [ 🡇 ✜ ]         [ no  ]
+s3)   ┌─[seller_demand_search           ]       [section       ]                                                   [ 🡇 ✜ ]         [ no  ] 
+---   ├ [seller_demand_search_input     ]       [input         ]     "ВВЕДИТЕ ДЛЯ ПОИСКА"   [color2/color2]        [ 🡅 ✜ ]         [ yes ]
+---   ├ [seller_demand_search_dropdown  ]       [dropdown      ]     ""                     [color2/color2]        [ 🡅 ✜ ]         [ yes ]
+---   ├ [seller_demand_search_return    ]       [button        ]     "НАЗАД"                [color5/color2]        [ 🡇 🡄 ]         [ yes ]
+---   └ [seller_demand_search_confirm   ]       [button        ]     "ПОДТВЕРДИТЬ"          [color5/color2]        [ 🡇 🡆 ]         [ yes ]
+s4)  ┌─ [seller_nav                     ]       [section       ]                                                   [ 🡇 ✜ ]         [ no  ]
+---  ├┬ [seller_nav_demand_button       ]       [button        ]                            [color1/color2]        [ ✜ 🡄 ]         [ yes ]
+---  │├ [seller_nav_demand_header       ]       [header        ]     "МОНИТОР"              [color1/color2]        [ ✜ ✜ ]         [ no  ]  
+---  │└ [seller_nav_demand_badge        ]       [badge         ]     { number }             [color1/color2]        [ 🡅 🡆 ]         [ no  ] 	
+---  ├┬ [seller_nav_chat_button         ]       [button        ]                            [color1/color2]        [ ✜ 🡄 ]         [ yes ]   
+---  │├ [seller_nav_chat_header         ]       [header        ]     "ЧАТ"                  [color1/color2]        [ ✜ ✜ ]         [ no  ] 
+---  │└ [seller_nav_chat_badge          ]       [badge         ]     { number }             [color1/color2]        [ 🡅 🡆 ]         [ no  ] 
+---  ├┬ [seller_nav_shop_button         ]       [button        ]                            [color1/color2]        [ ✜ ✜ ]         [ yes ]   
+---  │├ [seller_nav_shop_header         ]       [header        ]     "МАГАЗИН"              [color1/color2]        [ ✜ ✜ ]         [ no  ] 
+---  │└ [seller_nav_shop_badge          ]       [badge         ]     { number }             [color1/color2]        [ 🡅 🡆 ]         [ no  ]   
+---  ├┬ [seller_nav_lot_button          ]       [button        ]                            [color1/color2]        [ ✜ 🡆 ]         [ yes ]   
+---  │├ [seller_nav_lot_header          ]       [header        ]     "ТОВАРЫ"               [color1/color2]        [ ✜ ✜ ]         [ no  ] 
+---  │└ [seller_nav_lot_badge           ]       [badge         ]     { number }             [color1/color2]        [ 🡅 🡆 ]         [ no  ]     
+---  └┬ [seller_nav_finance_button      ]       [button        ]                            [color1/color2]        [ ✜ 🡆 ]         [ yes ]   
+---   ├ [seller_nav_finance_header      ]       [header        ]     "КАБИНЕТ"              [color1/color2]        [ ✜ ✜ ]         [ no  ] 
+---   └ [seller_nav_finance_badge       ]       [badge         ]     { number }             [color1/color2]        [ 🡅 🡆 ]         [ no  ] 
 
 
-■ seller_hunt_header
+■ seller_demand_header
 
 ✠ details
-seller_hunt_header дает общее представление о состоянии работы мониторинга, расположен в верхней части экрана и состоит из 2 компонентов:
-- seller_hunt_header_title   - заголовок с font-weight: extra bold, расположен слева;
-- seller_hunt_header_options - кнопка открывающая настройки монитора, находится в правой части.
+seller_demand_header дает общее представление о состоянии работы мониторинга, расположен в верхней части экрана и состоит из 2 компонентов:
+- seller_demand_header_title   - заголовок с font-weight: extra bold, расположен слева;
+- seller_demand_header_options - кнопка открывающая настройки монитора, находится в правой части.
 
 ✠ actions
-• seller_hunt_header_options:
+• seller_demand_header_options:
 ╠ valid / invalid
 ║ • tap
-║ occasion: нажатие seller_hunt_header_options;
+║ occasion: нажатие seller_demand_header_options;
 ║ condition: в любой ситуации;
 ║ result: 
-╙ && - открывается seller_hunt_options_screen.
+╙ && - открывается seller_demand_options_screen.
 
 ✠ color_states
 ┌─
-│seller_hunt_header_options
+│seller_demand_header_options
 │---------------------------------------------
 │⟪⟪ body ⟫⟫ 
 │--------
@@ -663,37 +663,37 @@ seller_hunt_header дает общее представление о состо�
 └─
 
 
-■ seller_hunt_area
+■ seller_demand_area
 
 ✠ details
-seller_hunt_area - представлен в виде карты, занимает основное пространство экрана и предначен для отображения/выбора локации. Включает 3 компонента:
-1) seller_hunt_area_header     - расположен в верхней части с текстом: "ВЫБРАННАЯ ОБЛАСТЬ";
-2) seller_hunt_area_map        - карта которая призвана визуализировать целевую зону. В seller_hunt_area_map интегрирован инструмент map_selector с помощью которого происходит изменение целевой области. map_selector позволяет с помощью касания менять масштаб и двигать карту;
--- seller_hunt_area_map_select - выполнен в качестве детерминированной по размеру окружности центрированной в seller_hunt_area и занимающей ~90% его ширины. Призван определять целевую зону;
--- seller_hunt_area_map_source - карта;
-3) seller_hunt_area_title      - наименование локации (автоматически проставляется) находящейся в области seller_hunt_area_map_select (включая районы/улицы города). 
+seller_demand_area - представлен в виде карты, занимает основное пространство экрана и предначен для отображения/выбора локации. Включает 3 компонента:
+1) seller_demand_area_header     - расположен в верхней части с текстом: "ВЫБРАННАЯ ОБЛАСТЬ";
+2) seller_demand_area_map        - карта которая призвана визуализировать целевую зону. В seller_demand_area_map интегрирован инструмент map_selector с помощью которого происходит изменение целевой области. map_selector позволяет с помощью касания менять масштаб и двигать карту;
+-- seller_demand_area_map_select - выполнен в качестве детерминированной по размеру окружности центрированной в seller_demand_area и занимающей ~90% его ширины. Призван определять целевую зону;
+-- seller_demand_area_map_source - карта;
+3) seller_demand_area_title      - наименование локации (автоматически проставляется) находящейся в области seller_demand_area_map_select (включая районы/улицы города). 
 
-По умолчанию в области seller_hunt_area_map_select находится населенный пункт согласно координатам setting_seller_geoposition_shop.
+По умолчанию в области seller_demand_area_map_select находится населенный пункт согласно координатам setting_seller_geoposition_shop.
 
 ✠ actions
-• seller_hunt_area_map:
+• seller_demand_area_map:
 ╠ valid / invalid
 ║ • tap & hold & move
-║ occasion: нажатие в область seller_hunt_area_map с удержанием и движением;
+║ occasion: нажатие в область seller_demand_area_map с удержанием и движением;
 ║ condition: в любой ситуации;
-║ result: посредством map_selector происходит смещение видимой области seller_hunt_area_map_source в сторону движения.
+║ result: посредством map_selector происходит смещение видимой области seller_demand_area_map_source в сторону движения.
 ║ • pinch in
-║ occasion: жест сведения двух и большего количества пальцев в области seller_hunt_area_map;
+║ occasion: жест сведения двух и большего количества пальцев в области seller_demand_area_map;
 ║ condition: в любой ситуации;
-║ result: посредством map_selector происходит увеличение масштаба seller_hunt_area_map_source.
+║ result: посредством map_selector происходит увеличение масштаба seller_demand_area_map_source.
 ║ • pinch out
-║ occasion: жест разведения двух и большего количества пальцев в области seller_hunt_area_map;
+║ occasion: жест разведения двух и большего количества пальцев в области seller_demand_area_map;
 ║ condition: в любой ситуации;
-╙ result: посредством map_selector происходит уменьшение масштаба seller_hunt_area_map_source.
+╙ result: посредством map_selector происходит уменьшение масштаба seller_demand_area_map_source.
 
 ✠ color_states
 ┌─
-│seller_hunt_area_map_select
+│seller_demand_area_map_select
 │---------------------------------------------
 │⟪⟪ body ⟫⟫ 
 │--------
@@ -702,82 +702,82 @@ seller_hunt_area - представлен в виде карты, занимае
 └─
 
 ✠ popovers
-• seller_hunt_area_map_popover:
+• seller_demand_area_map_popover:
 - focusing: нет;
-- location: появляется по центру seller_hunt_area_map;
-- occasion: при первом открытии seller_hunt_area_screen;
+- location: появляется по центру seller_demand_area_map;
+- occasion: при первом открытии seller_demand_area_screen;
 - duration: до момента нажатия (tap) на экран; 
 - content:  анимационный GIF (рука с жестом сдвигающихся и раздвигающихся пальцев);
 - sizes:    20-30% по ширине, 10-15% по высоте.
 
 
-■ seller_hunt_search
+■ seller_demand_search
 
 ✠ details
-seller_hunt_search - располагается под seller_hunt_area, предназначен для поиска локации через поисковик. Содержит 4 компонента:
-1) seller_hunt_search_input    - поле для ввода находится в верхней части seller_hunt_search;
-2) seller_hunt_search_dropdown - выпадающий список содержащий 10 наименований населенных пунктов согласующихся с последовательностью введенных символов начала их наименования. seller_hunt_search_dropdown ранжирован сверху-вниз согласно 2 правилам (детально логика ранжирования описана отдельно): 
+seller_demand_search - располагается под seller_demand_area, предназначен для поиска локации через поисковик. Содержит 4 компонента:
+1) seller_demand_search_input    - поле для ввода находится в верхней части seller_demand_search;
+2) seller_demand_search_dropdown - выпадающий список содержащий 10 наименований населенных пунктов согласующихся с последовательностью введенных символов начала их наименования. seller_demand_search_dropdown ранжирован сверху-вниз согласно 2 правилам (детально логика ранжирования описана отдельно): 
  - rule 1 - по степени корреляции первых букв наименований населенных пунктов и введенного текста;
  - rule 2 - на основании rule 1 делается ранжирование по алфавиту;
-3) seller_hunt_search_return   - кнопка отвечающая за функцию возврата к seller_hunt_screen;
-4) seller_hunt_search_confirm  - кнопка отвечающая за функцию применения выбранной локации к настройкам seller_hunt.
+3) seller_demand_search_return   - кнопка отвечающая за функцию возврата к seller_demand_screen;
+4) seller_demand_search_confirm  - кнопка отвечающая за функцию применения выбранной локации к настройкам seller_hunt.
 
 ✠ actions
-• seller_hunt_search_input:
+• seller_demand_search_input:
 ╠ valid / invalid
 ║ • tap 
-║ occasion: нажатие на seller_hunt_search_input;
+║ occasion: нажатие на seller_demand_search_input;
 ║ condition: в любой ситуации;
 ║ result: 
-║ && - focusing на seller_hunt_search_input; 
-║ && - в левой части seller_hunt_search_input появляется каретка;
+║ && - focusing на seller_demand_search_input; 
+║ && - в левой части seller_demand_search_input появляется каретка;
 ║ && - открывается клавиатура;
 ║ • type 
 ║ occasion: нажатие на клавиши ввода;
 ║ condition: 
-║ && - focusing на seller_hunt_search_input;
+║ && - focusing на seller_demand_search_input;
 ║ && - минимум 1 буквенный символ;
-╙ result: из seller_hunt_search_input появляется/выпадает seller_hunt_search_dropdown. 
-• seller_hunt_search_dropdown:
+╙ result: из seller_demand_search_input появляется/выпадает seller_demand_search_dropdown. 
+• seller_demand_search_dropdown:
 ╠ valid / invalid
 ║ • tap 
-║ occasion: нажатие на один из пунктов seller_hunt_search_dropdown;
+║ occasion: нажатие на один из пунктов seller_demand_search_dropdown;
 ║ condition: в любой ситуации;
-╙ result: seller_hunt_area_map_select центрируется на выбранном населенном пункте (который вмещается в seller_hunt_area_map_select).
- • seller_hunt_search_return:
+╙ result: seller_demand_area_map_select центрируется на выбранном населенном пункте (который вмещается в seller_demand_area_map_select).
+ • seller_demand_search_return:
 ╠ valid / invalid
 ║ • tap 
-║ occasion: нажатие на seller_hunt_search_return; 
+║ occasion: нажатие на seller_demand_search_return; 
 ║ condition: в любой ситуации;
 ║ result: 
-║ изменения в рамках seller_hunt_area_screen не сохраняются;
-╙ совершается переход к seller_hunt_screen.
- • seller_hunt_search_confirm:
+║ изменения в рамках seller_demand_area_screen не сохраняются;
+╙ совершается переход к seller_demand_screen.
+ • seller_demand_search_confirm:
 ╠ valid / invalid
 ║ • tap 
-║ occasion: нажатие на seller_hunt_search_confirm;
+║ occasion: нажатие на seller_demand_search_confirm;
 ║ condition: в любой ситуации;
 ║ result: 
 ║ && - выбранный населенный пункт активируется в качестве целевого для мониторинга;
-╙ && - совершается переход к seller_hunt_screen.
+╙ && - совершается переход к seller_demand_screen.
 
 ✠ input_checks
-Фильтр проверяющий на соответствие нормативам содержание seller_hunt_search_input. Если в ходе проверки фиксируется несоответствие, тогда состояние seller_hunt_search_input позиционируется как invalid, в соответствии с чем отображается соответствующее типу проблемы предупреждение.
+Фильтр проверяющий на соответствие нормативам содержание seller_demand_search_input. Если в ходе проверки фиксируется несоответствие, тогда состояние seller_demand_search_input позиционируется как invalid, в соответствии с чем отображается соответствующее типу проблемы предупреждение.
 • stopsymbol:
 Анализ на нажатие запрещенных клавиш базирующийся на превентивной блокировке ввода со всех клавиш кроме отвечающих за буквы и цифры.
 Работает в active_state. 
-При вводе username, в ситуации если использованы запрещенные символы, под seller_hunt_search_input всплывает seller_hunt_search_input_alert_stopsymbol.
+При вводе username, в ситуации если использованы запрещенные символы, под seller_demand_search_input всплывает seller_demand_search_input_alert_stopsymbol.
 
 ✠ alert_states
-• seller_hunt_search_input_alert_stopsymbol:
+• seller_demand_search_input_alert_stopsymbol:
 - focusing: да;
-- location: появляется под seller_hunt_search_input;
+- location: появляется под seller_demand_search_input;
 - occasion: невалидность по факту проверки на stopsymbol;
 - content:  "ИСПОЛЬЗОВАН ЗАПРЕЩЕННЫЙ СИМВОЛ: {указывается запрещенный символ жирным шрифтом белого цвета на color3 фоне}".
 
 ✠ color_states
 ┌─
-│seller_hunt_search_input
+│seller_demand_search_input
 │---------------------------------------------
 │⟪⟪ border ⟫⟫ 
 │--------
@@ -787,9 +787,9 @@ seller_hunt_search - располагается под seller_hunt_area, пре�
 │------ в focus_state.
 └─
 ┌─
-│seller_hunt_search_dropdown
-│seller_hunt_search_return
-│seller_hunt_search_confirm
+│seller_demand_search_dropdown
+│seller_demand_search_return
+│seller_demand_search_confirm
 │---------------------------------------------
 │⟪⟪ body ⟫⟫ 
 │--------
@@ -800,10 +800,10 @@ seller_hunt_search - располагается под seller_hunt_area, пре�
 └─
 
 ✠ popovers
-• seller_hunt_search_input_popover:
+• seller_demand_search_input_popover:
 - focusing: нет;
-- location: появляется по центру экрана чуть выше seller_hunt_search_input;
-- occasion: при первом открытии seller_hunt_area_screen;
+- location: появляется по центру экрана чуть выше seller_demand_search_input;
+- occasion: при первом открытии seller_demand_area_screen;
 - duration: до момента нажатия (tap) на экран; 
 - content:  анимационный GIF (клавиатура с хаотичным надавливанием клавиш);
 - sizes:    20-30% по ширине, 10-15% по высоте.
@@ -812,229 +812,231 @@ seller_hunt_search - располагается под seller_hunt_area, пре�
 ■ seller_nav
 
 ✠ details
-Секция seller_nav является навигационной панелью seller_mode и как сквозная часть интерфейса присутствует на всех экранах в нижней области. Секция состоит из 5 компонентов каждый из которых выполняют роль кнопки:
-1) seller_nav_monitor_button - кнопка с наименованием и бейджем, предназначена для перехода к seller_hunt_screen;
--- seller_nav_monitor_header - представлен заголовком "МОНИТОР";
--- seller_nav_monitor_badge - отображает количество hunt_screen_monitor_message в seller_hunt_screen.
+Секция seller_nav является навигационной панелью seller_mode и как сквозная часть интерфейса присутствует на всех экранах в нижней области. Секция состоит из 5 компонентов каждый из которых выполняет роль кнопки:
+1) seller_nav_demand_button - кнопка с наименованием и бейджем, предназначена для перехода к seller_demand_screen;
+-- seller_nav_demand_header - представлен заголовком "СПРОС";
+-- seller_nav_demand_badge - отображает количество hunt_screen_demand_message в seller_demand_screen.
 2) seller_nav_chat_button - кнопка с наименованием и бейджем, предназначена для перехода к seller_chat_screen (в seller_chat_screen активирована по умолчанию);
 -- seller_nav_chat_header - представлен заголовком "ЧАТ";
 -- seller_nav_chat_badge - отображает количество непросмотренных chat_screen_chat_message_node.
 3) seller_nav_shop_button - кнопка с наименованием и бейджем, предназначена для перехода к seller_shop_screen;
 -- seller_nav_shop_header - представлен заголовком "МАГАЗИН";
 -- seller_nav_shop_badge - отображает количество посетителей находящихся в магазине в текущий момент.
-4) seller_nav_lot_button - кнопка с наименованием и бейджем, предназначена для перехода к seller_lot_screen;
--- seller_nav_lot_header - представлен заголовком "ТОВАРЫ";
--- seller_nav_lot_badge - отображает число лотов по которым заканчивается товар.
-5) seller_nav_finance_button - кнопка с наименованием и бейджем, предназначена для перехода к seller_money_screen;
--- seller_nav_finance_header - представлен заголовком "КАБИНЕТ";
--- seller_nav_finance_badge - отображает количество непросмотренных денежных транзакций.
+4) seller_nav_goods_button - кнопка с наименованием и бейджем, предназначена для перехода к seller_goods_screen;
+-- seller_nav_goods_header - представлен заголовком "ТОВАРЫ";
+-- seller_nav_goods_badge - отображает число лотов по которым заканчивается товар.
+5) seller_nav_account_button - кнопка с наименованием и бейджем, предназначена для перехода к seller_account_screen;
+-- seller_nav_account_header - представлен заголовком "КАБИНЕТ";
+-- seller_nav_account_badge - отображает количество непросмотренных денежных транзакций.
 
 ✠ actions
-• seller_nav_monitor_button:
+• seller_nav_demand_button:
 ╠ valid / invalid
 ║ • tap 
-║ occasion: нажатие seller_nav_monitor_button;
-║ condition: в любой ситуации;
-╙ result: открывается seller_hunt_screen.
+║ occasion: нажатие seller_nav_demand_button;
+║ condition: в ситуации нахождения в seller_account;
+╙ result: не реагирует на нажатие.
 • seller_nav_chat_button:
 ║ • tap 
 ╠ valid / invalid
 ║ occasion: нажатие seller_nav_chat_button;
-║ condition: в любой ситуации;
+║ condition: в ситуации нахождения в seller_account;
 ╙ result: открывается seller_chat_screen.
 • seller_nav_shop_button:
 ╠ valid / invalid
 ║ • tap 
 ║ occasion: нажатие seller_nav_shop_button;
-║ condition: в любой ситуации;
+║ condition: в ситуации нахождения в seller_account;
 ╙ result: открывается seller_shop_screen.
-• seller_nav_lot_button:
+• seller_nav_goods_button:
 ╠ valid / invalid
 ║ • tap 
-║ occasion: нажатие seller_nav_lot_button;
-║ condition: в любой ситуации;
-╙ result: открывается seller_lot_screen.
-• seller_nav_finance_button:
+║ occasion: нажатие seller_nav_goods_button;
+║ condition: в ситуации нахождения в seller_account;
+╙ result: открывается seller_goods_screen.
+• seller_nav_account_button:
 ╠ valid / invalid
 ║ • tap 
-║ occasion: нажатие seller_nav_finance_button;
-║ condition: в любой ситуации;
-╙ result: открывается seller_money_screen.
+║ occasion: нажатие seller_nav_account_button;
+║ condition: в ситуации нахождения в seller_account;
+╙ result: открывается seller_account_screen.
 
 ✠ color_states
 ┌─
-│seller_nav_monitor_button  
+│seller_nav_demand_button
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 │--------
 │• color7
-│------ в любой ситуации.
+│------ в любой ситуации
 └─
 ┌─
-│seller_nav_monitor_badge  
+│seller_nav_demand_badge 
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 │--------
 │• color2
-│------ в любой ситуации.
+│------ в любой ситуации
 └─
 ┌─
 │seller_nav_chat_button  
 │seller_nav_shop_button
-│seller_nav_lot_button
-│seller_nav_finance_button
+│seller_nav_goods_button
+│seller_nav_account_button
 │---------------------------
 │⟪⟪ body ⟫⟫ 
-│--------
-│• color2
-│------ в любой ситуации.
+├────────
+│• color4
+│------ default
+├────────
+│• color5
+│------ pressing
 └─
 ┌─
 │seller_nav_chat_badge  
 │seller_nav_shop_badge  
-│seller_nav_lot_badge  
-│seller_nav_finance_badge 
+│seller_nav_goods_badge   
+│seller_nav_account_badge 
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 │--------
-│• color4
-│------ в любой ситуации.
+│• color9
+│------ в любой ситуации
 └─
 
 
 
-
-🡆🡆 seller_hunt_options_screen
+🡆🡆 seller_demand_options_screen
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 
-При нажатии seller_hunt_header_options открывается seller_hunt_options_screen предназначенный для настройки  сканирование. seller_hunt_options_screen представлен следующими 3 секторами сверху-вниз:
+При нажатии seller_demand_header_options открывается seller_demand_options_screen предназначенный для настройки  сканирование. seller_demand_options_screen представлен следующими 3 секторами сверху-вниз:
 
 ✠ tables
 
-                           codename:                              type:               button_name:       pressed/default:      location:      interaction:
-s1)   ┌─[seller_hunt_header                          ]       [section       ]                                                   [ 🡅 ✜ ]         [ no  ]
----   └ [seller_hunt_header_title                    ]       [header        ]     "МОНИТОРИНГ"           [color2/color2]        [ ✜ 🡄 ]         [ no  ]
-s2)┌┬┬──[seller_hunt_options                         ]       [section       ]                                                   [ ✜ ✜ ]         [ no  ]
----││└┬─[seller_hunt_options_sound                   ]       [component_lev1]                                                   [ 🡅 ✜ ]         [ no  ]
----││ ├ [seller_hunt_options_sound_title             ]       [header        ]     "ЗВУК"                 [color2/color2]        [ 🡅 🡄 ]         [ no  ]
----││ ├ [seller_hunt_options_sound_switcher          ]       [toggle        ]                            [color7/color2]        [ 🡅 🡆 ]         [ yes ]
----││ └ [seller_hunt_options_sound_protip            ]       [text          ]                                                   [ 🡇 ✜ ]         [ no  ]
----│└┬──[seller_hunt_options_history                 ]       [component_lev1]                                                   [ ✜ ✜ ]         [ no  ]
----│ ├┬ [seller_hunt_options_history_storage         ]       [component_lev2]                                                   [ 🡅 ✜ ]         [ no  ]
----│ │├ [seller_hunt_options_history_storage_title   ]       [header        ]     "ВРЕМЯ ХРАНЕНИЯ"       [color2/color2]        [ 🡅 ✜ ]         [ no  ]
----│ │├ [seller_hunt_options_history_storage_input   ]       [input         ]                            [color2/color2]        [ ✜ ✜ ]         [ yes ]
----│ │└ [seller_hunt_options_history_storage_protip  ]       [text          ]                                                   [ 🡇 ✜ ]         [ no  ]
----│ └┬ [seller_hunt_options_history_delete          ]       [component_lev2]                                                   [ 🡇 ✜ ]         [ no  ]
----│  ├ [seller_hunt_options_history_delete_title    ]       [header        ]     "УДАЛИТЬ СООБЩЕНИЯ"    [color2/color2]        [ 🡅 ✜ ]         [ no  ]
----│  ├ [seller_hunt_options_history_delete_button   ]       [button        ]                            [color5/color2]        [ ✜ ✜ ]         [ yes ]
----│  └ [seller_hunt_options_history_delete_protip   ]       [text          ]                                                   [ 🡇 ✜ ]         [ no  ]
----└──┬─[seller_hunt_options_control                 ]       [component_lev1]                                                   [ 🡇 ✜ ]         [ no  ]
----   ├ [seller_hunt_options_control_button_no       ]       [button        ]     "ОТМЕНИТЬ"             [color5/color2]        [ ✜ 🡄 ]         [ yes ] 
----   └ [seller_hunt_options_control_button_yes      ]       [button        ]     "ПОДТВЕРДИТЬ"          [color5/color2]        [ ✜ 🡆 ]         [ yes ]
-s4)  ┌─ [seller_nav                                  ]       [section       ]                                                   [ 🡇 ✜ ]         [ no  ]
----  ├┬ [seller_nav_monitor_button                   ]       [button        ]                            [color1/color2]        [ ✜ 🡄 ]         [ yes ]
----  │├ [seller_nav_monitor_header                   ]       [header        ]     "МОНИТОР"              [color1/color2]        [ ✜ ✜ ]         [ no  ]  
----  │└ [seller_nav_monitor_badge                    ]       [badge         ]     { number }             [color1/color2]        [ 🡅 🡆 ]         [ no  ] 	
----  ├┬ [seller_nav_chat_button                      ]       [button        ]                            [color1/color2]        [ ✜ 🡄 ]         [ yes ]   
----  │├ [seller_nav_chat_header                      ]       [header        ]     "ЧАТ"                  [color1/color2]        [ ✜ ✜ ]         [ no  ] 
----  │└ [seller_nav_chat_badge                       ]       [badge         ]     { number }             [color1/color2]        [ 🡅 🡆 ]         [ no  ] 
----  ├┬ [seller_nav_shop_button                      ]       [button        ]                            [color1/color2]        [ ✜ ✜ ]         [ yes ]   
----  │├ [seller_nav_shop_header                      ]       [header        ]     "МАГАЗИН"              [color1/color2]        [ ✜ ✜ ]         [ no  ] 
----  │└ [seller_nav_shop_badge                       ]       [badge         ]     { number }             [color1/color2]        [ 🡅 🡆 ]         [ no  ]   
----  ├┬ [seller_nav_lot_button                       ]       [button        ]                            [color1/color2]        [ ✜ 🡆 ]         [ yes ]   
----  │├ [seller_nav_lot_header                       ]       [header        ]     "ТОВАРЫ"               [color1/color2]        [ ✜ ✜ ]         [ no  ] 
----  │└ [seller_nav_lot_badge                        ]       [badge         ]     { number }             [color1/color2]        [ 🡅 🡆 ]         [ no  ]     
----  └┬ [seller_nav_finance_button                   ]       [button        ]                            [color1/color2]        [ ✜ 🡆 ]         [ yes ]   
----   ├ [seller_nav_finance_header                   ]       [header        ]     "КАБИНЕТ"              [color1/color2]        [ ✜ ✜ ]         [ no  ] 
----   └ [seller_nav_finance_badge                    ]       [badge         ]     { number }             [color1/color2]        [ 🡅 🡆 ]         [ no  ] 
+                           codename:                              type:               designation:       pressed/default:      location:      interaction:
+s1)   ┌─[seller_demand_header                          ]       [section       ]                                                   [ 🡅 ✜ ]         [ no  ]
+---   └ [seller_demand_header_title                    ]       [header        ]     "МОНИТОРИНГ"           [color2/color2]        [ ✜ 🡄 ]         [ no  ]
+s2)┌┬┬──[seller_demand_options                         ]       [section       ]                                                   [ ✜ ✜ ]         [ no  ]
+---││└┬─[seller_demand_options_sound                   ]       [component_lev1]                                                   [ 🡅 ✜ ]         [ no  ]
+---││ ├ [seller_demand_options_sound_title             ]       [header        ]     "ЗВУК"                 [color2/color2]        [ 🡅 🡄 ]         [ no  ]
+---││ ├ [seller_demand_options_sound_switcher          ]       [toggle        ]                            [color7/color2]        [ 🡅 🡆 ]         [ yes ]
+---││ └ [seller_demand_options_sound_protip            ]       [text          ]                                                   [ 🡇 ✜ ]         [ no  ]
+---│└┬──[seller_demand_options_history                 ]       [component_lev1]                                                   [ ✜ ✜ ]         [ no  ]
+---│ ├┬ [seller_demand_options_history_storage         ]       [component_lev2]                                                   [ 🡅 ✜ ]         [ no  ]
+---│ │├ [seller_demand_options_history_storage_title   ]       [header        ]     "ВРЕМЯ ХРАНЕНИЯ"       [color2/color2]        [ 🡅 ✜ ]         [ no  ]
+---│ │├ [seller_demand_options_history_storage_input   ]       [input         ]                            [color2/color2]        [ ✜ ✜ ]         [ yes ]
+---│ │└ [seller_demand_options_history_storage_protip  ]       [text          ]                                                   [ 🡇 ✜ ]         [ no  ]
+---│ └┬ [seller_demand_options_history_delete          ]       [component_lev2]                                                   [ 🡇 ✜ ]         [ no  ]
+---│  ├ [seller_demand_options_history_delete_title    ]       [header        ]     "УДАЛИТЬ СООБЩЕНИЯ"    [color2/color2]        [ 🡅 ✜ ]         [ no  ]
+---│  ├ [seller_demand_options_history_delete_button   ]       [button        ]                            [color5/color2]        [ ✜ ✜ ]         [ yes ]
+---│  └ [seller_demand_options_history_delete_protip   ]       [text          ]                                                   [ 🡇 ✜ ]         [ no  ]
+---└──┬─[seller_demand_options_control                 ]       [component_lev1]                                                   [ 🡇 ✜ ]         [ no  ]
+---   ├ [seller_demand_options_control_button_no       ]       [button        ]     "ОТМЕНИТЬ"             [color5/color2]        [ ✜ 🡄 ]         [ yes ] 
+---   └ [seller_demand_options_control_button_yes      ]       [button        ]     "ПОДТВЕРДИТЬ"          [color5/color2]        [ ✜ 🡆 ]         [ yes ]
+s4)  ┌─ [seller_nav                                    ]       [section       ]                                                   [ 🡇 ✜ ]         [ no  ]
+---  ├┬ [seller_nav_demand_button                      ]       [button        ]                            [color1/color2]        [ ✜ 🡄 ]         [ yes ]
+---  │├ [seller_nav_demand_header                      ]       [header        ]     "МОНИТОР"              [color1/color2]        [ ✜ ✜ ]         [ no  ]  
+---  │└ [seller_nav_demand_badge                       ]       [badge         ]     { number }             [color1/color2]        [ 🡅 🡆 ]         [ no  ] 	
+---  ├┬ [seller_nav_chat_button                        ]       [button        ]                            [color1/color2]        [ ✜ 🡄 ]         [ yes ]   
+---  │├ [seller_nav_chat_header                        ]       [header        ]     "ЧАТ"                  [color1/color2]        [ ✜ ✜ ]         [ no  ] 
+---  │└ [seller_nav_chat_badge                         ]       [badge         ]     { number }             [color1/color2]        [ 🡅 🡆 ]         [ no  ] 
+---  ├┬ [seller_nav_shop_button                        ]       [button        ]                            [color1/color2]        [ ✜ ✜ ]         [ yes ]   
+---  │├ [seller_nav_shop_header                        ]       [header        ]     "МАГАЗИН"              [color1/color2]        [ ✜ ✜ ]         [ no  ] 
+---  │└ [seller_nav_shop_badge                         ]       [badge         ]     { number }             [color1/color2]        [ 🡅 🡆 ]         [ no  ]   
+---  ├┬ [seller_nav_lot_button                         ]       [button        ]                            [color1/color2]        [ ✜ 🡆 ]         [ yes ]   
+---  │├ [seller_nav_lot_header                         ]       [header        ]     "ТОВАРЫ"               [color1/color2]        [ ✜ ✜ ]         [ no  ] 
+---  │└ [seller_nav_lot_badge                          ]       [badge         ]     { number }             [color1/color2]        [ 🡅 🡆 ]         [ no  ]     
+---  └┬ [seller_nav_finance_button                     ]       [button        ]                            [color1/color2]        [ ✜ 🡆 ]         [ yes ]   
+---   ├ [seller_nav_finance_header                     ]       [header        ]     "КАБИНЕТ"              [color1/color2]        [ ✜ ✜ ]         [ no  ] 
+---   └ [seller_nav_finance_badge                      ]       [badge         ]     { number }             [color1/color2]        [ 🡅 🡆 ]         [ no  ] 
 
 
-■ seller_hunt_header
-
-✠ details
-seller_hunt_header дает общее представление о состоянии работы мониторинга, расположен в верхней части экрана и состоит из 1 компонента:
-- seller_hunt_header_title   - заголовок с font-weight: extra bold, расположен слева.
-
-
-■ seller_hunt_options
+■ seller_demand_header
 
 ✠ details
-seller_hunt_options - представляет собой группу настроек расположенных в центральной части экрана, которая состояит из 3 компонентов:
-1) seller_hunt_options_sound - настройка отвечающая за включение/выключение звука при получении сообщений. Настройка содержит 3 элемента:
--- seller_hunt_options_sound_title     - заголовок настройки: "ЗВУК";
--- seller_hunt_options_sound_switcher  - переключатель имеющий две позиции: левая - отключено, правая - включено;
--- seller_hunt_options_sound_protip    - описание настройки следующего содержания: "ПРОИГРЫВАТЬ ЗВУК ВО ВРЕМЯ ПОЛУЧЕНИЯ СООБЩЕНИЙ";
-2) seller_hunt_options_history - настройка позволяющая контролировать время хранения сообщений на устройстве и удалять их. Состоит из 2 компонентов: seller_hunt_options_history_storage и seller_hunt_options_history_delete.
--- seller_hunt_options_history_storage - настройка отвечающая за установку времени хранения сообщений. Настройка содержит 3 элемента:
----- seller_hunt_options_history_storage_title  - заголовок настройки: "ВРЕМЯ ХРАНЕНИЯ";
----- seller_hunt_options_history_storage_input  - поле для ввода времени хранения в часах (по умолчанию в качестве placeholder фигурирует: "24 часа";
----- seller_hunt_options_history_storage_protip - описание настройки следующего содержания: "ВРЕМЯ ХРАНЕНИЯ СООБЩЕНИЙ";
--- seller_hunt_options_history_delete - настройка отвечающая за удаление базы сообщений. Настройка содержит 3 элемента:
----- seller_hunt_options_history_delete_title   - заголовок настройки: "УДАЛЕНИЕ СООБЩЕНИЙ";
----- seller_hunt_options_history_delete_button  - кнопка предназначенная для активации функции удаления с наименованием: "УДАЛИТЬ";
----- seller_hunt_options_history_delete_protip  - описание настройки следующего содержания: "УДАЛЕНИЕ ВСЕХ СООБЩЕНИЙ В ХРАНИЛИЩЕ";
-3) seller_hunt_options_control - кнопки отвечающие за принятие либо отклонение настроек. Состоит из 2 компонентов:
--- seller_hunt_options_control_button_no  - кнопка отвечающая за функцию закрытия настроек без применения изменений. Имеет наименование "ОТМЕНИТЬ". Расположена слева;
--- seller_hunt_options_control_button_yes - кнопка отвечающая за функцию закрытия настроек без применения изменений. Имеет наименование "ПОДТВЕРДИТЬ". Расположена справа.
+seller_demand_header дает общее представление о состоянии работы мониторинга, расположен в верхней части экрана и состоит из 1 компонента:
+- seller_demand_header_title   - заголовок с font-weight: extra bold, расположен слева.
+
+
+■ seller_demand_options
+
+✠ details
+seller_demand_options - представляет собой группу настроек расположенных в центральной части экрана, которая состояит из 3 компонентов:
+1) seller_demand_options_sound - настройка отвечающая за включение/выключение звука при получении сообщений. Настройка содержит 3 элемента:
+-- seller_demand_options_sound_title     - заголовок настройки: "ЗВУК";
+-- seller_demand_options_sound_switcher  - переключатель имеющий две позиции: левая - отключено, правая - включено;
+-- seller_demand_options_sound_protip    - описание настройки следующего содержания: "ПРОИГРЫВАТЬ ЗВУК ВО ВРЕМЯ ПОЛУЧЕНИЯ СООБЩЕНИЙ";
+2) seller_demand_options_history - настройка позволяющая контролировать время хранения сообщений на устройстве и удалять их. Состоит из 2 компонентов: seller_demand_options_history_storage и seller_demand_options_history_delete.
+-- seller_demand_options_history_storage - настройка отвечающая за установку времени хранения сообщений. Настройка содержит 3 элемента:
+---- seller_demand_options_history_storage_title  - заголовок настройки: "ВРЕМЯ ХРАНЕНИЯ";
+---- seller_demand_options_history_storage_input  - поле для ввода времени хранения в часах (по умолчанию в качестве placeholder фигурирует: "24 часа";
+---- seller_demand_options_history_storage_protip - описание настройки следующего содержания: "ВРЕМЯ ХРАНЕНИЯ СООБЩЕНИЙ";
+-- seller_demand_options_history_delete - настройка отвечающая за удаление базы сообщений. Настройка содержит 3 элемента:
+---- seller_demand_options_history_delete_title   - заголовок настройки: "УДАЛЕНИЕ СООБЩЕНИЙ";
+---- seller_demand_options_history_delete_button  - кнопка предназначенная для активации функции удаления с наименованием: "УДАЛИТЬ";
+---- seller_demand_options_history_delete_protip  - описание настройки следующего содержания: "УДАЛЕНИЕ ВСЕХ СООБЩЕНИЙ В ХРАНИЛИЩЕ";
+3) seller_demand_options_control - кнопки отвечающие за принятие либо отклонение настроек. Состоит из 2 компонентов:
+-- seller_demand_options_control_button_no  - кнопка отвечающая за функцию закрытия настроек без применения изменений. Имеет наименование "ОТМЕНИТЬ". Расположена слева;
+-- seller_demand_options_control_button_yes - кнопка отвечающая за функцию закрытия настроек без применения изменений. Имеет наименование "ПОДТВЕРДИТЬ". Расположена справа.
 
 ✠ actions
-• seller_hunt_options_sound_switcher:
+• seller_demand_options_sound_switcher:
 ╠ valid / invalid
 ║ • tap 
-║ occasion: нажатие на seller_hunt_options_sound_switcher;
+║ occasion: нажатие на seller_demand_options_sound_switcher;
 ║ condition: в любой ситуации;
 ║ result: 
-║ && - если seller_hunt_options_sound_switcher находится в левой позиции, тогда происходит переключение в правую позицию;
-╙ && - если seller_hunt_options_sound_switcher находится в правой позиции, тогда происходит переключение в левую позицию.
-• seller_hunt_options_history_storage_input:
+║ && - если seller_demand_options_sound_switcher находится в левой позиции, тогда происходит переключение в правую позицию;
+╙ && - если seller_demand_options_sound_switcher находится в правой позиции, тогда происходит переключение в левую позицию.
+• seller_demand_options_history_storage_input:
 ╠ valid / invalid
 ║ • tap 
-║ occasion: нажатие в область seller_hunt_options_history_storage_input;
+║ occasion: нажатие в область seller_demand_options_history_storage_input;
 ║ condition: в любой ситуации;
 ║ result: происходит открытие клавиатуры;
-║ && - seller_hunt_options_history_storage_input переходит в active_state;
+║ && - seller_demand_options_history_storage_input переходит в active_state;
 ╙ && - происходит открытие клавиатуры.
-• seller_hunt_options_history_delete_button:
+• seller_demand_options_history_delete_button:
 ╠ valid / invalid
 ║ • tap 
-║ occasion: нажатие на seller_hunt_options_history_delete_button;
+║ occasion: нажатие на seller_demand_options_history_delete_button;
 ║ condition: в любой ситуации;
-╙ result: все сообщения из hunter_db стираются (нажатие seller_hunt_options_control_button_yes не требуется).
-• seller_hunt_options_control_button_no:
+╙ result: все сообщения из hunter_db стираются (нажатие seller_demand_options_control_button_yes не требуется).
+• seller_demand_options_control_button_no:
 ╠ valid / invalid
 ║ • tap 
-║ occasion: нажатие на seller_hunt_options_control_button_no;
-║ condition: в любой ситуации;
-║ result:
-║ изменения в рамках seller_hunt_area_screen не сохраняются;
-╙ совершается переход к seller_hunt_screen.
-• seller_hunt_options_control_button_yes:
-╠ valid / invalid
-║ • tap 
-║ occasion: нажатие на seller_hunt_options_control_button_yes;
+║ occasion: нажатие на seller_demand_options_control_button_no;
 ║ condition: в любой ситуации;
 ║ result:
-║ применяется и сохраняется настройка seller_hunt_options_sound;
-║ применяется и сохраняется настройка seller_hunt_options_history_storage;
-╙ совершается переход к seller_hunt_screen.
+║ изменения в рамках seller_demand_area_screen не сохраняются;
+╙ совершается переход к seller_demand_screen.
+• seller_demand_options_control_button_yes:
+╠ valid / invalid
+║ • tap 
+║ occasion: нажатие на seller_demand_options_control_button_yes;
+║ condition: в любой ситуации;
+║ result:
+║ применяется и сохраняется настройка seller_demand_options_sound;
+║ применяется и сохраняется настройка seller_demand_options_history_storage;
+╙ совершается переход к seller_demand_screen.
 
 ✠ input_checks
-Фильтр проверяющий на соответствие нормативам содержание seller_hunt_options_history_storage_input. Если в ходе проверки фиксируется несоответствие, тогда состояние seller_hunt_options_history_storage_input позиционируется как invalid, в соответствии с чем отображается соответствующее типу проблемы предупреждение.
+Фильтр проверяющий на соответствие нормативам содержание seller_demand_options_history_storage_input. Если в ходе проверки фиксируется несоответствие, тогда состояние seller_demand_options_history_storage_input позиционируется как invalid, в соответствии с чем отображается соответствующее типу проблемы предупреждение.
 • stopsymbol:
 Анализ на нажатие запрещенных клавиш базирующийся на превентивной блокировке ввода со всех клавиш кроме отвечающих за цифры.
 Работает в active_state. 
-При вводе username, в ситуации если использованы запрещенные символы, под seller_hunt_options_history_storage_input всплывает seller_hunt_options_history_storage_input_alert_stopsymbol.
+При вводе username, в ситуации если использованы запрещенные символы, под seller_demand_options_history_storage_input всплывает seller_demand_options_history_storage_input_alert_stopsymbol.
 
 ✠ alert_states
-• seller_hunt_options_history_storage_input_alert_stopsymbol:
+• seller_demand_options_history_storage_input_alert_stopsymbol:
 - focusing: да;
-- location: появляется под seller_hunt_options_history_storage_input;
+- location: появляется под seller_demand_options_history_storage_input;
 - occasion: невалидность по факту проверки на stopsymbol;
 - content:  "ИСПОЛЬЗОВАН ЗАПРЕЩЕННЫЙ СИМВОЛ: {указывается запрещенный символ жирным шрифтом белого цвета на color3 фоне}".
 
 ✠ color_states
 ┌─
-│seller_hunt_options_sound_switcher
+│seller_demand_options_sound_switcher
 │---------------------------------------------
 │⟪⟪ body ⟫⟫ 
 │--------
@@ -1044,7 +1046,7 @@ seller_hunt_options - представляет собой группу наст�
 │------ в правой позиции.
 └─
 ┌─
-│seller_hunt_options_history_storage_input
+│seller_demand_options_history_storage_input
 │---------------------------------------------
 │⟪⟪ border ⟫⟫ 
 │--------
@@ -1054,9 +1056,9 @@ seller_hunt_options - представляет собой группу наст�
 │------ в focus_state.
 └─
 ┌─
-│seller_hunt_options_history_delete_button
-│seller_hunt_options_control_button_no
-│seller_hunt_options_control_button_yes
+│seller_demand_options_history_delete_button
+│seller_demand_options_control_button_no
+│seller_demand_options_control_button_yes
 │---------------------------------------------
 │⟪⟪ body ⟫⟫ 
 │--------
@@ -1070,95 +1072,97 @@ seller_hunt_options - представляет собой группу наст�
 ■ seller_nav
 
 ✠ details
-Секция seller_nav является навигационной панелью seller_mode и как сквозная часть интерфейса присутствует на всех экранах в нижней области. Секция состоит из 5 компонентов каждый из которых выполняют роль кнопки:
-1) seller_nav_monitor_button - кнопка с наименованием и бейджем, предназначена для перехода к seller_hunt_screen;
--- seller_nav_monitor_header - представлен заголовком "МОНИТОР";
--- seller_nav_monitor_badge - отображает количество hunt_screen_monitor_message в seller_hunt_screen.
+Секция seller_nav является навигационной панелью seller_mode и как сквозная часть интерфейса присутствует на всех экранах в нижней области. Секция состоит из 5 компонентов каждый из которых выполняет роль кнопки:
+1) seller_nav_demand_button - кнопка с наименованием и бейджем, предназначена для перехода к seller_demand_screen;
+-- seller_nav_demand_header - представлен заголовком "СПРОС";
+-- seller_nav_demand_badge - отображает количество hunt_screen_demand_message в seller_demand_screen.
 2) seller_nav_chat_button - кнопка с наименованием и бейджем, предназначена для перехода к seller_chat_screen (в seller_chat_screen активирована по умолчанию);
 -- seller_nav_chat_header - представлен заголовком "ЧАТ";
 -- seller_nav_chat_badge - отображает количество непросмотренных chat_screen_chat_message_node.
 3) seller_nav_shop_button - кнопка с наименованием и бейджем, предназначена для перехода к seller_shop_screen;
 -- seller_nav_shop_header - представлен заголовком "МАГАЗИН";
 -- seller_nav_shop_badge - отображает количество посетителей находящихся в магазине в текущий момент.
-4) seller_nav_lot_button - кнопка с наименованием и бейджем, предназначена для перехода к seller_lot_screen;
--- seller_nav_lot_header - представлен заголовком "ТОВАРЫ";
--- seller_nav_lot_badge - отображает число лотов по которым заканчивается товар.
-5) seller_nav_finance_button - кнопка с наименованием и бейджем, предназначена для перехода к seller_money_screen;
--- seller_nav_finance_header - представлен заголовком "КАБИНЕТ";
--- seller_nav_finance_badge - отображает количество непросмотренных денежных транзакций.
+4) seller_nav_goods_button - кнопка с наименованием и бейджем, предназначена для перехода к seller_goods_screen;
+-- seller_nav_goods_header - представлен заголовком "ТОВАРЫ";
+-- seller_nav_goods_badge - отображает число лотов по которым заканчивается товар.
+5) seller_nav_account_button - кнопка с наименованием и бейджем, предназначена для перехода к seller_account_screen;
+-- seller_nav_account_header - представлен заголовком "КАБИНЕТ";
+-- seller_nav_account_badge - отображает количество непросмотренных денежных транзакций.
 
 ✠ actions
-• seller_nav_monitor_button:
+• seller_nav_demand_button:
 ╠ valid / invalid
 ║ • tap 
-║ occasion: нажатие seller_nav_monitor_button;
-║ condition: в любой ситуации;
-╙ result: открывается seller_hunt_screen.
+║ occasion: нажатие seller_nav_demand_button;
+║ condition: в ситуации нахождения в seller_account;
+╙ result: не реагирует на нажатие.
 • seller_nav_chat_button:
 ║ • tap 
 ╠ valid / invalid
 ║ occasion: нажатие seller_nav_chat_button;
-║ condition: в любой ситуации;
+║ condition: в ситуации нахождения в seller_account;
 ╙ result: открывается seller_chat_screen.
 • seller_nav_shop_button:
 ╠ valid / invalid
 ║ • tap 
 ║ occasion: нажатие seller_nav_shop_button;
-║ condition: в любой ситуации;
+║ condition: в ситуации нахождения в seller_account;
 ╙ result: открывается seller_shop_screen.
-• seller_nav_lot_button:
+• seller_nav_goods_button:
 ╠ valid / invalid
 ║ • tap 
-║ occasion: нажатие seller_nav_lot_button;
-║ condition: в любой ситуации;
-╙ result: открывается seller_lot_screen.
-• seller_nav_finance_button:
+║ occasion: нажатие seller_nav_goods_button;
+║ condition: в ситуации нахождения в seller_account;
+╙ result: открывается seller_goods_screen.
+• seller_nav_account_button:
 ╠ valid / invalid
 ║ • tap 
-║ occasion: нажатие seller_nav_finance_button;
-║ condition: в любой ситуации;
-╙ result: открывается seller_money_screen.
+║ occasion: нажатие seller_nav_account_button;
+║ condition: в ситуации нахождения в seller_account;
+╙ result: открывается seller_account_screen.
 
 ✠ color_states
 ┌─
-│seller_nav_monitor_button  
+│seller_nav_demand_button
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 │--------
 │• color7
-│------ в любой ситуации.
+│------ в любой ситуации
 └─
 ┌─
-│seller_nav_monitor_badge  
+│seller_nav_demand_badge 
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 │--------
 │• color2
-│------ в любой ситуации.
+│------ в любой ситуации
 └─
 ┌─
 │seller_nav_chat_button  
 │seller_nav_shop_button
-│seller_nav_lot_button
-│seller_nav_finance_button
+│seller_nav_goods_button
+│seller_nav_account_button
 │---------------------------
 │⟪⟪ body ⟫⟫ 
-│--------
-│• color2
-│------ в любой ситуации.
+├────────
+│• color4
+│------ default
+├────────
+│• color5
+│------ pressing
 └─
 ┌─
 │seller_nav_chat_badge  
 │seller_nav_shop_badge  
-│seller_nav_lot_badge  
-│seller_nav_finance_badge 
+│seller_nav_goods_badge   
+│seller_nav_account_badge 
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 │--------
-│• color4
-│------ в любой ситуации.
+│• color9
+│------ в любой ситуации
 └─
-
 
 
 
