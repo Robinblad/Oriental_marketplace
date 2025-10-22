@@ -730,13 +730,13 @@ seller_account_orders_modal_bulletin_part3_ship_off - отображает 2 б�
 
 Подраздел в котором осуществляется настройка платежных инструментов - вариантов способов приема денежных средств клиентов. seller_account_payments имеет несколько экранов настроек:
 
-- seller_account_payments_main_screen - стартовый экран который открывается при нажатии на seller_account_nav_history
+- seller_account_payments_screen - стартовый экран который открывается при нажатии на seller_account_nav_history
 - seller_account_payments_taxes_screen - экран предназначенный для ввода данных налоговых служб;
 - seller_account_payments_cards_screen - предназначенный для настройки данных банковских карт;
 
 
-🡆🡆 seller_account_payments_main_screen
-■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+🡆🡆 seller_account_payments_screen
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 
 ✠ tables
 
@@ -749,21 +749,21 @@ seller_account_orders_modal_bulletin_part3_ship_off - отображает 2 б�
  ┌┬──┬──[seller_account_payments                           ]  [section_lev1  ]                                   [color0/color0]     [ ✜ ✜ ]      [ no  ] 
  ││  └┬─[seller_account_payments_top                       ]  [section_lev2  ]                                   [color2/color2]     [ 🡅 ✜ ]      [ no  ] 
  ││   └ [seller_account_payments_top_text                  ]  [text          ] ["Выберите платежный инструмент"] [color8/color8]     [ ✜ ✜ ]      [ no  ] 
- │├┬┬───[seller_account_payments_main                      ]  [section_lev2  ]                                   [color2/color2]     [ ✜ ✜ ]      [ no  ]
- │││└┬┬─[seller_account_payments_main_types                ]  [dropdown      ]                                   [color7/color4]     [ 🡅 ✜ ]      [ yes ] 
- │││ │├ [seller_account_payments_main_types_header         ]  [header        ] [ "Прием платежей"              ] [color8/color8]     [ ✜ 🡆 ]      [ yes ]
- │││ │└ [seller_account_payments_main_types_icon           ]  [icon          ] [ стрелка вниз                  ] [color8/color8]     [ ✜ 🡄 ]      [ yes ]
- │││ └┬─[seller_account_payments_main_types_dropdown       ]  [section_lev3  ]                                   [color2/color2]     [ ✜ ✜ ]      [ no  ]
- │││  ├ [seller_account_payments_main_types_dropdown_cards ]  [button        ] [ "Карты"                       ] [color7/color4]     [ 🡅 ✜ ]      [ yes ]
- │││  ├ [seller_account_payments_main_types_dropdown_bank  ]  [button        ] [ "Банковский счет"             ] [color7/color4]     [ ✜ ✜ ]      [ yes ]
- │││  ├ [seller_account_payments_main_types_dropdown_mbank ]  [button        ] [ "MBank"                       ] [color7/color4]     [ ✜ ✜ ]      [ yes ]
- │││  ├ [seller_account_payments_main_types_dropdown_paypal]  [button        ] [ "PayPal"                      ] [color7/color4]     [ ✜ ✜ ]      [ yes ]
- │││  ├ [seller_account_payments_main_types_dropdown_unipay]  [button        ] [ "Unipay"                      ] [color7/color4]     [ ✜ ✜ ]      [ yes ]
- │││  └ [seller_account_payments_main_types_dropdown_alipay]  [button        ] [ "Alipay"                      ] [color7/color4]     [ 🡇 ✜ ]      [ yes ]
- ││└──┬─[seller_account_payments_main_taxes                ]  [button        ] [                                 [color7/color4]     [ 🡇 ✜ ]      [ yes ]
- ││   ├ [seller_account_payments_main_taxes_header         ]  [header        ] [ "Уплата налогов"              ] [color8/color8]     [ ✜ 🡆 ]      [ yes ]
- ││   └ [seller_account_payments_main_taxes_icon           ]  [icon          ] [ знак процента                 ] [color8/color8]     [ ✜ 🡄 ]      [ yes ]
- │└─────[seller_account_payments_main_protip               ]  [button        ] [ "?"                           ] [color7/color4]     [ 🡇 ✜ ]      [ yes ]
+ │├┬┬───[seller_account_payments                           ]  [section_lev2  ]                                   [color2/color2]     [ ✜ ✜ ]      [ no  ]
+ │││└┬┬─[seller_account_payments_types                     ]  [dropdown      ]                                   [color7/color4]     [ 🡅 ✜ ]      [ yes ] 
+ │││ │├ [seller_account_payments_types_header              ]  [header        ] [ "Прием платежей"              ] [color8/color8]     [ ✜ 🡆 ]      [ yes ]
+ │││ │└ [seller_account_payments_types_icon                ]  [icon          ] [ стрелка вниз                  ] [color8/color8]     [ ✜ 🡄 ]      [ yes ]
+ │││ └┬─[seller_account_payments_types_dropdown            ]  [section_lev3  ]                                   [color2/color2]     [ ✜ ✜ ]      [ no  ]
+ │││  ├ [seller_account_payments_types_dropdown_cards      ]  [button        ] [ "Карты"                       ] [color7/color4]     [ 🡅 ✜ ]      [ yes ]
+ │││  ├ [seller_account_payments_types_dropdown_bank       ]  [button        ] [ "Банковский счет"             ] [color7/color4]     [ ✜ ✜ ]      [ yes ]
+ │││  ├ [seller_account_payments_types_dropdown_mbank      ]  [button        ] [ "MBank"                       ] [color7/color4]     [ ✜ ✜ ]      [ yes ]
+ │││  ├ [seller_account_payments_types_dropdown_paypal     ]  [button        ] [ "PayPal"                      ] [color7/color4]     [ ✜ ✜ ]      [ yes ]
+ │││  ├ [seller_account_payments_types_dropdown_unipay     ]  [button        ] [ "Unipay"                      ] [color7/color4]     [ ✜ ✜ ]      [ yes ]
+ │││  └ [seller_account_payments_types_dropdown_alipay     ]  [button        ] [ "Alipay"                      ] [color7/color4]     [ 🡇 ✜ ]      [ yes ]
+ ││└──┬─[seller_account_payments_taxes                     ]  [button        ] [                                 [color7/color4]     [ 🡇 ✜ ]      [ yes ]
+ ││   ├ [seller_account_payments_taxes_header              ]  [header        ] [ "Уплата налогов"              ] [color8/color8]     [ ✜ 🡆 ]      [ yes ]
+ ││   └ [seller_account_payments_taxes_icon                ]  [icon          ] [ знак процента                 ] [color8/color8]     [ ✜ 🡄 ]      [ yes ]
+ │└─────[seller_account_payments_protip                    ]  [button        ] [ "?"                           ] [color7/color4]     [ 🡇 ✜ ]      [ yes ]
  └────┬─[seller_account_payments_bottom                    ]  [section_lev2  ]                                   [color2/color2]     [ 🡇 ✜ ]      [ no  ]
       └ [seller_account_payments_bottom_text               ]  [text          ] [ "Подключить платежное сред..."] [color8/color8]     [ ✜ ✜ ]      [ no  ]
      ┌──[seller_nav                                        ]  [section_lev1  ]                                   [color0/color0]     [ ✜ ✜ ]      [ no  ]
@@ -842,45 +842,46 @@ seller_account_orders_modal_bulletin_part3_ship_off - отображает 2 б�
 ✠ details
 - seller_account_payments - секция подразделяется на 3 составляющих:
 --- seller_account_payments_top - находится в верхней части и отображает описание экрана;
---- seller_account_payments_main - находится в центральной части и содержит 3 компонента:
------ seller_account_payments_main_types - кнопка отвечает за открытие выпадающего списка;
-------- seller_account_payments_main_types_dropdown - выпадающий список из 6 кнопок;
------ seller_account_payments_main_taxes - кнопка отвечает за открытие seller_account_payments_taxes_screen;
------ seller_account_payments_main_protip - кнопка отвечает за вызов подсказки описывающей интерфейс;
+--- seller_account_payments - находится в центральной части и содержит 3 компонента:
+----- seller_account_payments_types - кнопка отвечает за открытие выпадающего списка;
+------- seller_account_payments_types_dropdown - выпадающий список из 6 кнопок;
+----- seller_account_payments_taxes - кнопка отвечает за открытие seller_account_payments_taxes_screen;
+----- seller_account_payments_protip - кнопка отвечает за вызов подсказки описывающей интерфейс;
 --- seller_account_payments_bottom - находится в нижней части и отображает описание экрана.
 
 ✠ actions
-• seller_account_payments_main_types:
+• seller_account_payments_types:
 ║ • tap 
 ╠ valid / invalid
-║ occasion: нажатие seller_account_payments_main_types;
+║ occasion: нажатие seller_account_payments_types;
 ║ condition: в любой ситуации;
-╙ result: из кнопки выпадает seller_account_payments_main_types_dropdown.
-• seller_account_payments_main_types_dropdown_cards:
+╙ result: из кнопки выпадает seller_account_payments_types_dropdown.
+• seller_account_payments_types_dropdown_cards:
 ║ • tap 
 ╠ valid / invalid
-║ occasion: нажатие seller_account_payments_main_types_dropdown_cards;
+║ occasion: нажатие seller_account_payments_types_dropdown_cards;
 ║ condition: в любой ситуации;
 ╙ result: открывается seller_account_payments_cards_screen.
-• seller_account_payments_main_taxes:
+• seller_account_payments_taxes:
 ╠ valid / invalid
 ║ • tap 
-║ occasion: нажатие seller_account_payments_main_taxes;
+║ occasion: нажатие seller_account_payments_taxes;
 ║ condition: в любой ситуации;
 ╙ result: открывается seller_account_payments_taxes_screen.
-• seller_account_payments_main_protip:
+• seller_account_payments_protip:
 ╠ valid / invalid
 ║ • tap 
-║ occasion: нажатие seller_account_payments_main_protip;
+║ occasion: нажатие seller_account_payments_protip;
 ║ condition: в любой ситуации;
-╙ result: открывается seller_account_payments_main_protip_popover.
+║ && - seller_account_payments_screen темнеет на 50%;
+╙ && - всплывает seller_account_payments_protip_popover.
 
 ✠ color_states
 ┌─ 
-│seller_account_payments_main_types
-│seller_account_payments_main_taxes
-│seller_account_payments_main_protip
-│seller_account_payments_main_types_dropdown_cards
+│seller_account_payments_types
+│seller_account_payments_taxes
+│seller_account_payments_protip
+│seller_account_payments_types_dropdown_cards
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 │--------
@@ -891,7 +892,7 @@ seller_account_orders_modal_bulletin_part3_ship_off - отображает 2 б�
 └─
 
 ✠ logics
-Первый раз при нажатии seller_account_payments_main_types_dropdown_* сразу же открывается экран настройки выбранного платежного инструмента. Так при нажатии seller_account_payments_main_types_dropdown_cards открывается seller_account_payments_cards_new_screen. Если при входе в seller_account_payments минимум одна карта была настроена, тогда при нажатии открывается seller_account_payments_cards_screen. 
+Первый раз при нажатии seller_account_payments_types_dropdown_* сразу же открывается экран настройки выбранного платежного инструмента. Так при нажатии seller_account_payments_types_dropdown_cards открывается seller_account_payments_cards_new_screen. Если при входе в seller_account_payments минимум одна карта была настроена, тогда при нажатии открывается seller_account_payments_cards_screen. 
 
 
 ■ seller_nav
@@ -976,6 +977,35 @@ seller_account_orders_modal_bulletin_part3_ship_off - отображает 2 б�
 ├────────
 │• color2
 │------ в actived_state 
+└─
+
+
+
+🡆🡆🡆🡆 seller_account_payments_protip_popover
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+seller_account_payments_protip_popover - всплывающее окно по центру экрана с кратким текстом описания функциональности текущего интерфейса.
+
+✠ details
+seller_account_payments_protip_popover - занимает порядка 70-80% ширины экрана и имеет адаптивный размер по вертикали зависящий от объема текста и включает в себя элемент:
+- seller_account_payments_protip_popover_text - представляющий собой текст выравненный по центру следующего содержания: "Через кнопку 'Прием платежей' Вы можете добавить один или несколько платежных инструментов, с помощью которых клиенты могут оплачивать покупки. Через кнопку 'Уплата налогов' Вы можете указать реквизиты налоговых служб". 
+
+✠ actions
+• seller_account_payments_protip_popover:
+╠ valid / invalid
+║ • tap
+║ occasion: нажатие в любом месте seller_account_payments_screen;
+║ condition: в любой ситуации;
+╙ result: seller_account_payments_protip_popover исчезает.
+
+✠ color_states
+┌─
+│seller_account_payments_protip_popover_text  
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color8
+│------ в любой ситуации
 └─
 
 
@@ -1129,7 +1159,9 @@ seller_account_payments_cards_screen отвечает за управление 
 ╠ valid / invalid
 ║ occasion: нажатие seller_account_payments_cards_main_protip;
 ║ condition: в любой ситуации;
-╙ result: открывается seller_account_payments_cards_main_protip_popover.
+║ result: 
+║ && - seller_account_payments_cards_screen темнеет на 50%;
+╙ && - всплывает seller_account_payments_cards_protip_popover.
 • seller_account_payments_cards_main_ok:
 ║ • tap 
 ╠ valid / invalid
@@ -1283,12 +1315,32 @@ seller_account_payments_cards_main_card_btn_delete_popover_button - кнопка
 
 
 
-🡆🡆🡆🡆 seller_account_payments_cards_main_protip_popover
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+🡆🡆🡆🡆 seller_account_payments_cards_protip_popover
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 
+seller_account_payments_cards_protip_popover - всплывающее окно по центру экрана с кратким текстом описания функциональности текущего интерфейса.
 
+✠ details
+seller_account_payments_cards_protip_popover - занимает порядка 70-80% ширины экрана и имеет адаптивный размер по вертикали зависящий от объема текста и включает в себя элемент:
+- seller_account_payments_cards_protip_popover_text - представляющий собой текст выравненный по центру следующего содержания: "На данном экране отображаются банковские карты на которые Вам поступают платежи. Вы можете изменить данные требуемой карты через кнопку 'редактор', либо удалить конкретную карту с помощью кнопки 'удалить'. Добавление новой карты осуществляется посредством нажатия 'Добавить новую карту'". 
 
+✠ actions
+• seller_account_payments_cards_protip_popover:
+╠ valid / invalid
+║ • tap
+║ occasion: нажатие в любом месте seller_account_payments_cards_screen;
+║ condition: в любой ситуации;
+╙ result: seller_account_payments_cards_protip_popover исчезает.
 
+✠ color_states
+┌─
+│seller_account_payments_cards_protip_popover_text  
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color8
+│------ в любой ситуации
+└─
 
 
 
@@ -1471,7 +1523,9 @@ seller_account_payments_cards_new_main является основной раб�
 ║ • tap
 ║ occasion: нажатие seller_account_payments_cards_new_main_protip;
 ║ condition: в любой ситуации;
-╙ result: открывается seller_account_payments_cards_new_main_protip_modal.
+║ result: 
+║ && - seller_account_payments_cards_new_screen темнеет на 50%;
+╙ && - всплывает seller_account_payments_cards_new_protip_popover.
 
 ✠ input_checks
 Фильтры проверяющие на соответствие нормативам содержание seller_account_payments_cards_new_main_card_number. Если в ходе проверки фиксируется несоответствие, тогда состояние seller_account_payments_cards_new_main_card_number позиционируется как invalid, в соответствии с чем отображается соответствующее типу проблемы предупреждение.
@@ -1670,6 +1724,35 @@ seller_account_payments_cards_new_main является основной раб�
 
 
 
+🡆🡆🡆🡆 seller_account_payments_cards_new_protip_popover
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+seller_account_payments_cards_new_protip_popover - всплывающее окно по центру экрана с кратким текстом описания функциональности текущего интерфейса.
+
+✠ details
+seller_account_payments_cards_new_protip_popover - занимает порядка 70-80% ширины экрана и имеет адаптивный размер по вертикали зависящий от объема текста и включает в себя элемент:
+- seller_account_payments_cards_new_protip_popover_text - представляющий собой текст выравненный по центру следующего содержания: "Для того чтобы активировать карту, пожалуйста, правильно вводите данные карты согласно наименованию полей, после чего нажмите кнопку 'ОК' для активации". 
+
+✠ actions
+• seller_account_payments_cards_new_protip_popover:
+╠ valid / invalid
+║ • tap
+║ occasion: нажатие в любом месте seller_account_payments_cards_new_screen;
+║ condition: в любой ситуации;
+╙ result: seller_account_payments_cards_new_protip_popover исчезает.
+
+✠ color_states
+┌─
+│seller_account_payments_cards_new_protip_popover_text  
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color8
+│------ в любой ситуации
+└─
+
+
+
 🡆🡆🡆 seller_account_payments_taxes_screen 
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 
@@ -1810,7 +1893,9 @@ seller_account_payments_taxes_screen предназначается для вв�
 ║ • tap
 ║ occasion: нажатие seller_account_payments_taxes_main_protip;
 ║ condition: в любой ситуации;
-╙ result: открывается seller_account_payments_taxes_main_protip_popover.
+║ result:
+║ && - seller_account_payments_taxes_screen темнеет на 50%;
+╙ && - всплывает seller_account_payments_taxes_protip_popover.
 
 ✠ color_states
 ┌─
@@ -1924,6 +2009,35 @@ seller_account_payments_taxes_screen предназначается для вв�
 ├────────
 │• color2
 │------ в actived_state 
+└─
+
+
+
+🡆🡆🡆🡆 seller_account_payments_taxes_protip_popover
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+seller_account_payments_taxes_protip_popover - всплывающее окно по центру экрана с кратким текстом описания функциональности текущего интерфейса.
+
+✠ details
+seller_account_payments_taxes_protip_popover - занимает порядка 70-80% ширины экрана и имеет адаптивный размер по вертикали зависящий от объема текста и включает в себя элемент:
+- seller_account_payments_taxes_protip_popover_text - представляющий собой текст выравненный по центру следующего содержания: "На данном экране отображаются действующие реквизиты налоговых служб. Вы можете внести изменения путем нажатия кнопки 'редактировать'. ". 
+
+✠ actions
+• seller_account_payments_taxes_protip_popover:
+╠ valid / invalid
+║ • tap
+║ occasion: нажатие в любом месте seller_account_payments_taxes_screen;
+║ condition: в любой ситуации;
+╙ result: seller_account_payments_taxes_protip_popover исчезает.
+
+✠ color_states
+┌─
+│seller_account_payments_taxes_protip_popover_text  
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color8
+│------ в любой ситуации
 └─
 
 
