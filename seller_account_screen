@@ -18,7 +18,6 @@ color9 - attention;
 
 
 
-
 🡆 seller_account
 ■■■■■■■■■■■■■■■■
 
@@ -1463,98 +1462,6 @@ seller_account_payments_cards_new_main является основной раб�
 ----- seller_account_payments_cards_new_main_btn_ok - кнопка применения изменений;
 --- seller_account_payments_cards_new_main_protip - кнопка вызова подсказки.
 
-✠ actions
-• seller_account_payments_cards_new_main_card_number
-╠ valid / invalid
-║ • tap
-║ occasion: нажатие seller_account_payments_cards_new_main_card_number;
-║ condition: в любой ситуации;
-║ result: 
-║ && - seller_account_payments_cards_new_main_card_number переходит в active_state;
-╙ && - происходит открытие клавиатуры.
-• seller_account_payments_cards_new_main_card_name:
-╠ valid / invalid
-║ • tap
-║ occasion: нажатие seller_account_payments_cards_new_main_card_name;
-║ condition: в любой ситуации;
-║ result: 
-║ && - seller_account_payments_cards_new_main_card_name переходит в active_state;
-╙ && - происходит открытие клавиатуры.
-• seller_account_payments_cards_new_main_card_date:
-╠ valid / invalid
-║ • tap
-║ occasion: нажатие seller_account_payments_cards_new_main_card_date;
-║ condition: в любой ситуации;
-║ result: 
-║ && - seller_account_payments_cards_new_main_card_date переходит в active_state;
-╙ && - происходит открытие клавиатуры.
-• seller_account_payments_cards_new_main_card_code:
-╠ valid / invalid
-║ • tap
-║ occasion: нажатие seller_account_payments_cards_new_main_card_code;
-║ condition: в любой ситуации;
-║ result: 
-║ && - seller_account_payments_cards_new_main_card_code переходит в active_state;
-╙ && - происходит открытие клавиатуры.
-• seller_account_payments_cards_new_main_btn_cancel:
-╠ valid / invalid
-║ • tap
-║ occasion: нажатие seller_account_payments_cards_new_main_btn_cancel;
-╠═condition: в ситуации если нет ни одной активированной карты;
-║ result: делается переход к seller_account_payments_main_screen.
-╠═condition: в ситуации если есть минимум одна активированная карта;
-╙ result: делается переход к seller_account_payments_cards_screen.
-• seller_account_payments_cards_new_main_btn_ok:
-╠ valid
-║ • tap
-║ occasion: нажатие seller_account_payments_cards_new_main_btn_ok;
-║ condition:
-║ && - seller_account_payments_cards_new_main_card_number = valid;
-║ && - seller_account_payments_cards_new_main_card_name = valid;
-║ && - seller_account_payments_cards_new_main_card_date = valid;
-║ && - seller_account_payments_cards_new_main_card_code = valid;
-║ result: делается переход к seller_account_payments_cards_screen.
-╠ invalid
-║ • tap
-║ occasion: нажатие seller_account_payments_cards_new_main_btn_ok;
-║ condition:
-║ || - seller_account_payments_cards_new_main_card_number = invalid;
-║ || - seller_account_payments_cards_new_main_card_name = invalid;
-║ || - seller_account_payments_cards_new_main_card_date = invalid;
-║ || - seller_account_payments_cards_new_main_card_code = invalid;
-╙ result: seller_account_payments_cards_new_main_btn_ok не реагирует на нажатие;
-• seller_account_payments_cards_new_main_protip:
-╠ valid / invalid
-║ • tap
-║ occasion: нажатие seller_account_payments_cards_new_main_protip;
-║ condition: в любой ситуации;
-║ result: 
-║ && - seller_account_payments_cards_new_screen темнеет на 50%;
-╙ && - всплывает seller_account_payments_cards_new_protip_popover.
-
-✠ input_checks
-Фильтры проверяющие на соответствие нормативам содержание seller_account_payments_cards_new_main_card_number. Если в ходе проверки фиксируется несоответствие, тогда состояние seller_account_payments_cards_new_main_card_number позиционируется как invalid, в соответствии с чем отображается соответствующее типу проблемы предупреждение.
-• undernaming:
-- tenor: Анализ на недостижение лимита допустимой длины number (недостижение норматива).
-- condition: Работает в active_state.
-- result: При вводе number, в ситуации если цифр < 16, под seller_account_payments_cards_new_main_card_number всплывает seller_account_payments_cards_new_main_card_number_alert_undernaming.
-• overnaming:
-- tenor: Анализ на превышение лимита допустимой длины number (превышение норматива).
-- condition: Работает в active_state.
-- result: При вводе number, в ситуации если цифр > 16, дальнейшие нажатия игнорируются.
-• stopsymbol:
-- tenor: Анализ на нажатие запрещенных клавиш базирующийся на превентивной блокировке ввода со всех клавиш кроме отвечающих за цифры.
-- condition: Работает в active_state. 
-- result: При вводе number, в ситуации если совершается нажатие на запрещенные символы, такие нажатия игнорируются.
-• omission:
-- tenor: Реакция на факт отсутствия введенных данных.
-- condition: Работает в inactive_state.
-- result: В ситуации если поле пустое, а юзер нажимает на seller_account_payments_cards_new_main_btn_ok, под seller_account_payments_cards_new_main_card_number всплывает seller_account_payments_cards_new_main_card_number_alert_omission.
-• emptiness:
-- tenor: Анализ на пустотность.
-- condition: Работает в active_state и inactive_state.
-- result: Работает в любой ситуации делая проверку на предмет отсутствия данных в seller_account_payments_cards_new_main_card_number.  
-
 ✠ color_states
 ┌─
 │seller_account_payments_cards_new_main_card_number
@@ -1625,6 +1532,42 @@ seller_account_payments_cards_new_main является основной раб�
 │- || - invalid по факту проверки на emptiness
 └─
 
+
+▬▬▬ seller_account_payments_cards_new_main_card_number
+
+✠ actions
+• seller_account_payments_cards_new_main_card_number
+╠ valid / invalid
+║ • tap
+║ occasion: нажатие seller_account_payments_cards_new_main_card_number;
+║ condition: в любой ситуации;
+║ result: 
+║ && - seller_account_payments_cards_new_main_card_number переходит в active_state;
+╙ && - происходит открытие клавиатуры.
+
+✠ input_checks
+Фильтры проверяющие на соответствие нормативам содержание seller_account_payments_cards_new_main_card_number. Если в ходе проверки фиксируется несоответствие, тогда состояние seller_account_payments_cards_new_main_card_number позиционируется как invalid, в соответствии с чем отображается соответствующее типу проблемы предупреждение. Значение в поле seller_account_payments_cards_new_main_card_number является числом (number).
+• undernaming:
+- tenor: Анализ на недостижение лимита допустимой длины number (недостижение норматива).
+- condition: Работает в active_state.
+- result: При вводе number, в ситуации если цифр < 16, под seller_account_payments_cards_new_main_card_number всплывает seller_account_payments_cards_new_main_card_number_alert_undernaming.
+• overnaming:
+- tenor: Анализ на превышение лимита допустимой длины number (превышение норматива).
+- condition: Работает в active_state.
+- result: При вводе number, в ситуации если цифр > 16, дальнейшие нажатия игнорируются.
+• stopsymbol:
+- tenor: Анализ на нажатие запрещенных клавиш базирующийся на превентивной блокировке ввода со всех клавиш кроме отвечающих за цифры.
+- condition: Работает в active_state. 
+- result: При вводе number, в ситуации если совершается нажатие на запрещенные символы, такие нажатия игнорируются.
+• omission:
+- tenor: Реакция на факт отсутствия введенных данных.
+- condition: Работает в inactive_state.
+- result: В ситуации если поле пустое, а юзер нажимает на seller_account_payments_cards_new_main_btn_ok, под seller_account_payments_cards_new_main_card_number всплывает seller_account_payments_cards_new_main_card_number_alert_omission.
+• emptiness:
+- tenor: Анализ на пустотность.
+- condition: Работает в active_state и inactive_state.
+- result: Работает в любой ситуации делая проверку на предмет отсутствия данных в seller_account_payments_cards_new_main_card_number.  
+
 ✠ alert_states
 • seller_account_payments_cards_new_main_card_number_alert_prompt:
 - focusing: да;
@@ -1639,8 +1582,231 @@ seller_account_payments_cards_new_main является основной раб�
 • seller_account_payments_cards_new_main_card_number_alert_omission:
 - focusing: нет;
 - location: появляется под seller_account_payments_cards_new_main_card_number;
-- occasion: нажатие на setting_seller_button_yes, если seller_account_payments_cards_new_main_card_number пустой;
-- content:  "ПОЖАЛУЙСТА УКАЖИТЕ НОМЕР ВАШЕЙ КАРТЫ".
+- occasion: нажатие на seller_account_payments_cards_new_main_btn_ok, если seller_account_payments_cards_new_main_card_number пустой;
+- content:  "ПОЖАЛУЙСТА, УКАЖИТЕ НОМЕР ВАШЕЙ КАРТЫ".
+
+
+▬▬▬ seller_account_payments_cards_new_main_card_name
+
+✠ actions
+• seller_account_payments_cards_new_main_card_name:
+╠ valid / invalid
+║ • tap
+║ occasion: нажатие seller_account_payments_cards_new_main_card_name;
+║ condition: в любой ситуации;
+║ result: 
+║ && - seller_account_payments_cards_new_main_card_name переходит в active_state;
+╙ && - происходит открытие клавиатуры.
+
+✠ input_checks
+Фильтры проверяющие на соответствие нормативам содержание seller_account_payments_cards_new_main_card_name. Если в ходе проверки фиксируется несоответствие, тогда состояние seller_account_payments_cards_new_main_card_name позиционируется как invalid, в соответствии с чем отображается соответствующее типу проблемы предупреждение. Значение в поле seller_account_payments_cards_new_main_card_name является строкой (string).
+• undernaming:
+- tenor: Анализ на недостижение лимита допустимой длины string (недостижение норматива).
+- condition: Работает в active_state.
+- result: При вводе string, в ситуации если букв < 1, под seller_account_payments_cards_new_main_card_name всплывает seller_account_payments_cards_new_main_card_name_alert_undernaming.
+• overnaming:
+- tenor: Анализ на превышение лимита допустимой длины string (превышение норматива).
+- condition: Работает в active_state.
+- result: При вводе string, в ситуации если букв > 50, дальнейшие нажатия игнорируются и под seller_account_payments_cards_new_main_card_name всплывает seller_account_payments_cards_new_main_card_name_alert_overnaming.
+• stopsymbol:
+- tenor: Анализ на нажатие запрещенных клавиш базирующийся на превентивной блокировке ввода со всех клавиш кроме отвечающих за буквы и дефис.
+- condition: Работает в active_state. 
+- result: При вводе string, в ситуации если совершается нажатие на запрещенные символы, такие нажатия игнорируются.
+• stopword:
+- tenor: Анализ на запрещенные слова, базирующийся на тезариусе содержащем надлежащий материал.
+- condition: Работает в active_state.
+- result: При вводе данных в seller_account_payments_cards_new_main_card_name, в ситуации если использованы запрещенные слова, под seller_account_payments_cards_new_main_card_name всплывает seller_account_payments_cards_new_main_card_name_alert_stopword.
+• omission:
+- tenor: Реакция на факт отсутствия введенных данных.
+- condition: Работает в inactive_state.
+- result: В ситуации если поле пустое, а юзер нажимает на seller_account_payments_cards_new_main_btn_ok, под seller_account_payments_cards_new_main_card_name всплывает seller_account_payments_cards_new_main_card_name_alert_omission.
+• emptiness:
+- tenor: Анализ на пустотность.
+- condition: Работает в active_state и inactive_state.
+- result: Работает в любой ситуации делая проверку на предмет отсутствия данных в seller_account_payments_cards_new_main_card_name.  
+
+✠ alert_states
+• seller_account_payments_cards_new_main_card_name_alert_prompt:
+- focusing: да;
+- location: появляется над seller_account_payments_cards_new_main_card_name;
+- occasion: в процессе ввода данных в seller_account_payments_cards_new_main_card_name;
+- content:  "ВВЕДИТЕ ИМЯ И ФАМИЛИЮ ВЛАДЕЛЬЦА КАРТЫ".
+• seller_account_payments_cards_new_main_card_name_alert_undernaming:
+- focusing: да;
+- location: появляется под seller_account_payments_cards_new_main_card_name;
+- occasion: невалидность по факту проверки на undernaming;
+- content:  "ПОЖАЛУЙСТА, ВВЕДИТЕ ИМЯ И ФАМИЛИЮ ВЛАДЕЛЬЦА КАРТЫ".
+• seller_account_payments_cards_new_main_card_name_alert_overnaming:
+- focusing: да;
+- location: появляется под seller_account_payments_cards_new_main_card_name;
+- occasion: невалидность по факту проверки на overnaming;
+- content:  "СЛИШКОМ ДЛИННОЕ ИМЯ/ФАМИЛИЯ".
+• seller_account_payments_cards_new_main_card_name_alert_stopword:
+- focusing: да;
+- location: появляется под seller_account_payments_cards_new_main_card_name;
+- occasion: невалидность по факту проверки на stopword;
+- content:  "ИСПОЛЬЗОВАНО ЗАПРЕЩЕННОЕ СЛОВО".
+• seller_account_payments_cards_new_main_card_name_alert_omission:
+- focusing: нет;
+- location: появляется под seller_account_payments_cards_new_main_card_name;
+- occasion: нажатие на seller_account_payments_cards_new_main_btn_ok, если seller_account_payments_cards_new_main_card_name пустой;
+- content:  "ПОЖАЛУЙСТА, ВВЕДИТЕ ИМЯ И ФАМИЛИЮ ВЛАДЕЛЬЦА КАРТЫ".
+
+
+▬▬▬ seller_account_payments_cards_new_main_card_date
+
+✠ actions
+• seller_account_payments_cards_new_main_card_date:
+╠ valid / invalid
+║ • tap
+║ occasion: нажатие seller_account_payments_cards_new_main_card_date;
+║ condition: в любой ситуации;
+║ result: 
+║ && - seller_account_payments_cards_new_main_card_date переходит в active_state;
+╙ && - происходит открытие клавиатуры.
+
+✠ input_checks
+Фильтры проверяющие на соответствие нормативам содержание seller_account_payments_cards_new_main_card_date. Если в ходе проверки фиксируется несоответствие, тогда состояние seller_account_payments_cards_new_main_card_date позиционируется как invalid, в соответствии с чем отображается соответствующее типу проблемы предупреждение. Значение в поле seller_account_payments_cards_new_main_card_date является числом (number).
+• undernaming:
+- tenor: Анализ на недостижение лимита допустимой длины number (недостижение норматива).
+- condition: Работает в active_state.
+- result: При вводе number, в ситуации если цифр < 4, под seller_account_payments_cards_new_main_card_date всплывает seller_account_payments_cards_new_main_card_date_alert_undernaming.
+• overnaming:
+- tenor: Анализ на превышение лимита допустимой длины number (превышение норматива).
+- condition: Работает в active_state.
+- result: При вводе number, в ситуации если цифр > 4, дальнейшие нажатия игнорируются.
+• stopsymbol:
+- tenor: Анализ на нажатие запрещенных клавиш базирующийся на превентивной блокировке ввода со всех клавиш кроме отвечающих за цифры.
+- condition: Работает в active_state. 
+- result: При вводе number, в ситуации если совершается нажатие на запрещенные символы, такие нажатия игнорируются.
+• omission:
+- tenor: Реакция на факт отсутствия введенных данных.
+- condition: Работает в inactive_state.
+- result: В ситуации если поле пустое, а юзер нажимает на seller_account_payments_cards_new_main_btn_ok, под seller_account_payments_cards_new_main_card_date всплывает seller_account_payments_cards_new_main_card_date_alert_omission.
+• emptiness:
+- tenor: Анализ на пустотность.
+- condition: Работает в active_state и inactive_state.
+- result: Работает в любой ситуации делая проверку на предмет отсутствия данных в seller_account_payments_cards_new_main_card_date.  
+
+✠ alert_states
+• seller_account_payments_cards_new_main_card_date_alert_prompt:
+- focusing: да;
+- location: появляется над seller_account_payments_cards_new_main_card_date;
+- occasion: в процессе ввода данных в seller_account_payments_cards_new_main_card_date;
+- content:  "ТРЕБУЕТСЯ ВВЕСТИ ДАТУ ИСТЕЧЕНИЯ СРОКА ДЕЙСТВИЯ КАРТЫ".
+• seller_account_payments_cards_new_main_card_date_alert_undernaming:
+- focusing: да;
+- location: появляется под seller_account_payments_cards_new_main_card_date;
+- occasion: невалидность по факту проверки на undernaming;
+- content:  "ТРЕБУЕТСЯ ВВЕСТИ ДАТУ ИСТЕЧЕНИЯ СРОКА ДЕЙСТВИЯ КАРТЫ".
+• seller_account_payments_cards_new_main_card_date_alert_omission:
+- focusing: нет;
+- location: появляется под seller_account_payments_cards_new_main_card_date;
+- occasion: нажатие на seller_account_payments_cards_new_main_btn_ok, если seller_account_payments_cards_new_main_card_date пустой;
+- content:  "ПОЖАЛУЙСТА, УКАЖИТЕ ДАТУ ИСТЕЧЕНИЯ СРОКА ДЕЙСТВИЯ КАРТЫ".
+
+
+▬▬▬ seller_account_payments_cards_new_main_card_code
+
+✠ actions
+• seller_account_payments_cards_new_main_card_code:
+╠ valid / invalid
+║ • tap
+║ occasion: нажатие seller_account_payments_cards_new_main_card_code;
+║ condition: в любой ситуации;
+║ result: 
+║ && - seller_account_payments_cards_new_main_card_code переходит в active_state;
+╙ && - происходит открытие клавиатуры.
+
+✠ input_checks
+Фильтры проверяющие на соответствие нормативам содержание seller_account_payments_cards_new_main_card_code. Если в ходе проверки фиксируется несоответствие, тогда состояние seller_account_payments_cards_new_main_card_code позиционируется как invalid, в соответствии с чем отображается соответствующее типу проблемы предупреждение. Значение в поле seller_account_payments_cards_new_main_card_code является числом (number).
+• undernaming:
+- tenor: Анализ на недостижение лимита допустимой длины number (недостижение норматива).
+- condition: Работает в active_state.
+- result: При вводе number, в ситуации если цифр < 3, под seller_account_payments_cards_new_main_card_code всплывает seller_account_payments_cards_new_main_card_code_alert_undernaming.
+• overnaming:
+- tenor: Анализ на превышение лимита допустимой длины number (превышение норматива).
+- condition: Работает в active_state.
+- result: При вводе number, в ситуации если цифр > 3, дальнейшие нажатия игнорируются.
+• stopsymbol:
+- tenor: Анализ на нажатие запрещенных клавиш базирующийся на превентивной блокировке ввода со всех клавиш кроме отвечающих за цифры.
+- condition: Работает в active_state. 
+- result: При вводе number, в ситуации если совершается нажатие на запрещенные символы, такие нажатия игнорируются.
+• omission:
+- tenor: Реакция на факт отсутствия введенных данных.
+- condition: Работает в inactive_state.
+- result: В ситуации если поле пустое, а юзер нажимает на seller_account_payments_cards_new_main_btn_ok, под seller_account_payments_cards_new_main_card_code всплывает seller_account_payments_cards_new_main_card_code_alert_omission.
+• emptiness:
+- tenor: Анализ на пустотность.
+- condition: Работает в active_state и inactive_state.
+- result: Работает в любой ситуации делая проверку на предмет отсутствия данных в seller_account_payments_cards_new_main_card_code.  
+
+✠ alert_states
+• seller_account_payments_cards_new_main_card_code_alert_prompt:
+- focusing: да;
+- location: появляется над seller_account_payments_cards_new_main_card_code;
+- occasion: в процессе ввода данных в seller_account_payments_cards_new_main_card_code;
+- content:  "ТРЕБУЕТСЯ ВВЕСТИ CVV КОД, КОТОРЫЙ УКАЗАН НА ОБРАТНОЙ СТОРОНЕ КАРТЫ".
+• seller_account_payments_cards_new_main_card_code_alert_undernaming:
+- focusing: да;
+- location: появляется под seller_account_payments_cards_new_main_card_code;
+- occasion: невалидность по факту проверки на undernaming;
+- content:  "ТРЕБУЕТСЯ ВВЕСТИ CVV КОД, КОТОРЫЙ УКАЗАН НА ОБРАТНОЙ СТОРОНЕ КАРТЫ".
+• seller_account_payments_cards_new_main_card_code_alert_omission:
+- focusing: нет;
+- location: появляется под seller_account_payments_cards_new_main_card_code;
+- occasion: нажатие на seller_account_payments_cards_new_main_btn_ok, если seller_account_payments_cards_new_main_card_code пустой;
+- content:  "ПОЖАЛУЙСТА, УКАЖИТЕ CVV КОД ВАШЕЙ КАРТЫ".
+
+
+▬▬▬ seller_account_payments_cards_new_main_btn_cancel
+
+✠ actions
+• seller_account_payments_cards_new_main_btn_cancel:
+╠ valid / invalid
+║ • tap
+║ occasion: нажатие seller_account_payments_cards_new_main_btn_cancel;
+╠═condition: в ситуации если нет ни одной активированной карты;
+║ result: делается переход к seller_account_payments_main_screen.
+╠═condition: в ситуации если есть минимум одна активированная карта;
+╙ result: делается переход к seller_account_payments_cards_screen.
+
+
+▬▬▬ seller_account_payments_cards_new_main_btn_ok
+
+✠ actions
+• seller_account_payments_cards_new_main_btn_ok:
+╠ valid
+║ • tap
+║ occasion: нажатие seller_account_payments_cards_new_main_btn_ok;
+║ condition:
+║ && - seller_account_payments_cards_new_main_card_number = valid;
+║ && - seller_account_payments_cards_new_main_card_name = valid;
+║ && - seller_account_payments_cards_new_main_card_date = valid;
+║ && - seller_account_payments_cards_new_main_card_code = valid;
+║ result: делается переход к seller_account_payments_cards_screen.
+╠ invalid
+║ • tap
+║ occasion: нажатие seller_account_payments_cards_new_main_btn_ok;
+║ condition:
+║ || - seller_account_payments_cards_new_main_card_number = invalid;
+║ || - seller_account_payments_cards_new_main_card_name = invalid;
+║ || - seller_account_payments_cards_new_main_card_date = invalid;
+║ || - seller_account_payments_cards_new_main_card_code = invalid;
+╙ result: seller_account_payments_cards_new_main_btn_ok не реагирует на нажатие;
+
+
+▬▬▬ seller_account_payments_cards_new_main_protip 
+
+✠ actions
+• seller_account_payments_cards_new_main_protip:
+╠ valid / invalid
+║ • tap
+║ occasion: нажатие seller_account_payments_cards_new_main_protip;
+║ condition: в любой ситуации;
+║ result: 
+║ && - seller_account_payments_cards_new_screen темнеет на 50%;
+╙ && - всплывает seller_account_payments_cards_new_protip_popover.
 
 
 ■ seller_nav
@@ -2094,6 +2260,59 @@ seller_account_payments_taxes_edit_screen предназначается для 
        └ [seller_nav_finance_badge                            ]  [badge       ] [ { number }                      ]       [ 🡅 🡆 ]      [ no  ] 
 
 
+■ seller_account_nav
+
+✠ details
+Секция seller_account_nav является навигационной панелью seller_account и как сквозная часть интерфейса присутствует на всех экранах seller_account в верхней области. Секция состоит из 4 компонентов каждый из которых выполняет роль кнопки расположенные слева-направо в следующем порядке:
+
+1) seller_account_nav_payments - кнопка с наименованием "ПЛАТЕЖИ", предназначена для перехода к seller_account_payments;
+2) seller_account_nav_orders - кнопка с наименованием "ОРДЕРА", предназначена для перехода к seller_account_orders (активирована по умолчанию);
+3) seller_account_nav_analysis - кнопка с наименованием "АНАЛИЗ", предназначена для перехода к seller_account_analysis;
+4) seller_account_nav_history - кнопка с наименованием "ИСТОРИЯ", предназначена для перехода к seller_account_history.
+
+✠ actions
+• seller_account_nav_payments: 
+╠ valid / invalid
+║ • tap
+║ occasion: нажатие seller_account_nav_payments;
+║ condition: в любой ситуации;
+╙ result: не реагирует на нажатие.
+• seller_account_nav_orders:
+╠ valid / invalid
+║ • tap 
+║ occasion: нажатие seller_account_nav_orders;
+║ condition: в любой ситуации;
+╙ result: открывается seller_account_orders_screen.
+• seller_account_nav_analysis:
+╠ valid / invalid
+║ • tap 
+║ occasion: нажатие seller_account_nav_analysis;
+║ condition: в любой ситуации;
+╙ result: открывается seller_account_analysis_screen.
+• seller_account_nav_history:
+╠ valid / invalid
+║ • tap 
+║ occasion: нажатие seller_account_nav_history;
+║ condition: в любой ситуации;
+╙ result: открывается seller_account_history_screen.
+
+✠ color_states
+┌─ 
+│seller_account_nav_payments  (actived_state по умолчанию в seller_account_payments)
+│seller_account_nav_orders  (inactive_state по умолчанию в seller_account_payments)
+│seller_account_nav_analysis  (inactive_state по умолчанию в seller_account_payments)
+│seller_account_nav_history  (inactive_state по умолчанию в seller_account_payments)
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ в inactive_state
+├────────
+│• color7
+│------ в actived_state
+└─
+
+
 ■ seller_account_payments_taxes_edit
 
 ✠ details
@@ -2113,4 +2332,471 @@ seller_account_payments_taxes_edit_main_tax является основной р
 --- seller_account_payments_taxes_edit_main_protip - кнопка круглой формы для вызова подсказки.
 - seller_account_payments_taxes_edit_bottom - располагается в качестве компактного блока в нижней области seller_account_payments_taxes_edit и включает:
 --- seller_account_payments_taxes_edit_bottom_text - текст следующего содержания: "Указать банковские реквизиты налоговых служб".
+
+✠ color_states
+┌─
+│seller_account_payments_taxes_edit_main_tax_account1
+│seller_account_payments_taxes_edit_main_tax_account2
+│seller_account_payments_taxes_edit_main_tax_account3
+│seller_account_payments_taxes_edit_main_tax_account4
+│------------------------------------------------
+│⟪⟪ border ⟫⟫ 
+├────────
+│• color4
+│------ в inactive_state
+├────────
+│• color7
+│------ в actived_state
+├────────
+│• color3
+│- || - invalid по факту проверки на undernaming
+│- || - invalid по факту проверки на overnaming
+│- || - invalid по факту проверки на stopsymbol
+│- || - invalid по факту проверки на omission
+│- || - invalid по факту проверки на emptiness
+├────────
+│• color1
+│- && - valid по факту проверки на undernaming
+│- && - valid по факту проверки на overnaming
+│- && - valid по факту проверки на stopsymbol
+│- && - valid по факту проверки на omission
+│- && - valid по факту проверки на emptiness
+└─
+┌─
+│seller_account_payments_taxes_edit_top_text
+│seller_account_payments_taxes_edit_main_tax_title
+│seller_account_payments_taxes_edit_bottom_text 
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color8
+│------ в любой ситуации
+└─
+┌─
+│seller_account_payments_taxes_edit_main_btn_cancel
+│seller_account_payments_taxes_edit_main_protip
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ в inactive_state 
+├────────
+│• color5
+│------ в pressing_state 
+└─
+┌─
+│seller_account_payments_taxes_edit_main_btn_ok  
+│---------------------------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ в inactive_state
+├────────
+│• color5
+│------ в pressing_state
+├────────
+│• color0
+│- || - invalid по факту проверки на undernaming
+│- || - invalid по факту проверки на overnaming
+│- || - invalid по факту проверки на stopsymbol
+│- || - invalid по факту проверки на omission
+│- || - invalid по факту проверки на emptiness
+└─
+
+
+▬▬▬ seller_account_payments_taxes_edit_main_tax_account1
+
+✠ actions
+• seller_account_payments_taxes_edit_main_tax_account1:
+╠ valid / invalid
+║ • tap
+║ occasion: нажатие seller_account_payments_taxes_edit_main_tax_account1;
+║ condition: в любой ситуации;
+║ result: 
+║ && - seller_account_payments_taxes_edit_main_tax_account1 переходит в active_state;
+╙ && - происходит открытие клавиатуры.
+
+✠ input_checks
+Фильтры проверяющие на соответствие нормативам содержание seller_account_payments_taxes_edit_main_tax_account1. Если в ходе проверки фиксируется несоответствие, тогда состояние seller_account_payments_taxes_edit_main_tax_account1 позиционируется как invalid, в соответствии с чем отображается соответствующее типу проблемы предупреждение. Значение в поле seller_account_payments_taxes_edit_main_tax_account1 является числом (number).
+• undernaming:
+- tenor: Анализ на недостижение лимита допустимой длины number (недостижение норматива).
+- condition: Работает в active_state.
+- result: При вводе number, в ситуации если цифр < 14, под seller_account_payments_taxes_edit_main_tax_account1 всплывает seller_account_payments_taxes_edit_main_tax_account1_alert_undernaming.
+• overnaming:
+- tenor: Анализ на превышение лимита допустимой длины number (превышение норматива).
+- condition: Работает в active_state.
+- result: При вводе number, в ситуации если цифр > 14, дальнейшие нажатия игнорируются.
+• stopsymbol:
+- tenor: Анализ на нажатие запрещенных клавиш базирующийся на превентивной блокировке ввода со всех клавиш кроме отвечающих за цифры.
+- condition: Работает в active_state. 
+- result: При вводе number, в ситуации если совершается нажатие на запрещенные символы, такие нажатия игнорируются.
+• omission:
+- tenor: Реакция на факт отсутствия введенных данных.
+- condition: Работает в inactive_state.
+- result: В ситуации если поле пустое, а юзер нажимает на seller_account_payments_taxes_edit_main_btn_ok, под seller_account_payments_taxes_edit_main_tax_account1 всплывает seller_account_payments_taxes_edit_main_tax_account1_alert_omission.
+• emptiness:
+- tenor: Анализ на пустотность.
+- condition: Работает в active_state и inactive_state.
+- result: Работает в любой ситуации делая проверку на предмет отсутствия данных в seller_account_payments_taxes_edit_main_tax_account1.  
+
+✠ alert_states
+• seller_account_payments_taxes_edit_main_tax_account1_alert_prompt:
+- focusing: да;
+- location: появляется над seller_account_payments_taxes_edit_main_tax_account1;
+- occasion: в процессе ввода данных в seller_account_payments_taxes_edit_main_tax_account1;
+- content:  "ВВЕДИТЕ НОМЕР СЧЕТА СОГЛАСНО РЕКВИЗИТАМ НАЛОГОВОГО ОРГАНА".
+• seller_account_payments_taxes_edit_main_tax_account1_alert_undernaming:
+- focusing: да;
+- location: появляется под seller_account_payments_taxes_edit_main_tax_account1;
+- occasion: невалидность по факту проверки на undernaming;
+- content:  "ПОЖАЛУЙСТА, ВВЕДИТЕ 14 ЦИФР".
+• seller_account_payments_taxes_edit_main_tax_account1_alert_omission:
+- focusing: нет;
+- location: появляется под seller_account_payments_taxes_edit_main_tax_account1;
+- occasion: 
+------ && - нажатие на seller_account_payments_taxes_edit_main_btn_ok;
+------ && - seller_account_payments_taxes_edit_main_tax_account1 пустой;
+------ && - seller_account_payments_taxes_edit_main_tax_account2 пустой;
+------ && - seller_account_payments_taxes_edit_main_tax_account3 пустой;
+------ && - seller_account_payments_taxes_edit_main_tax_account4 пустой;
+- content:  "ПОЖАЛУЙСТА, УКАЖИТЕ НОМЕР СЧЕТА НАЛОГОВОГО ОРГАНА".
+
+
+▬▬▬ seller_account_payments_taxes_edit_main_tax_account2
+
+✠ actions
+• seller_account_payments_taxes_edit_main_tax_account2:
+╠ valid / invalid
+║ • tap
+║ occasion: нажатие seller_account_payments_taxes_edit_main_tax_account2;
+║ condition: в любой ситуации;
+║ result: 
+║ && - seller_account_payments_taxes_edit_main_tax_account2 переходит в active_state;
+╙ && - происходит открытие клавиатуры.
+
+✠ input_checks
+Фильтры проверяющие на соответствие нормативам содержание seller_account_payments_taxes_edit_main_tax_account2. Если в ходе проверки фиксируется несоответствие, тогда состояние seller_account_payments_taxes_edit_main_tax_account2 позиционируется как invalid, в соответствии с чем отображается соответствующее типу проблемы предупреждение. Значение в поле seller_account_payments_taxes_edit_main_tax_account2 является числом (number).
+• undernaming:
+- tenor: Анализ на недостижение лимита допустимой длины number (недостижение норматива).
+- condition: Работает в active_state.
+- result: При вводе number, в ситуации если цифр < 10, под seller_account_payments_taxes_edit_main_tax_account2 всплывает seller_account_payments_taxes_edit_main_tax_account2_alert_undernaming.
+• overnaming:
+- tenor: Анализ на превышение лимита допустимой длины number (превышение норматива).
+- condition: Работает в active_state.
+- result: При вводе number, в ситуации если цифр > 10, дальнейшие нажатия игнорируются.
+• stopsymbol:
+- tenor: Анализ на нажатие запрещенных клавиш базирующийся на превентивной блокировке ввода со всех клавиш кроме отвечающих за цифры.
+- condition: Работает в active_state. 
+- result: При вводе number, в ситуации если совершается нажатие на запрещенные символы, такие нажатия игнорируются.
+• omission:
+- tenor: Реакция на факт отсутствия введенных данных.
+- condition: Работает в inactive_state.
+- result: В ситуации если поле пустое, а юзер нажимает на seller_account_payments_taxes_edit_main_btn_ok, под seller_account_payments_taxes_edit_main_tax_account2 всплывает seller_account_payments_taxes_edit_main_tax_account2_alert_omission.
+• emptiness:
+- tenor: Анализ на пустотность.
+- condition: Работает в active_state и inactive_state.
+- result: Работает в любой ситуации делая проверку на предмет отсутствия данных в seller_account_payments_taxes_edit_main_tax_account2.  
+
+✠ alert_states
+• seller_account_payments_taxes_edit_main_tax_account2_alert_prompt:
+- focusing: да;
+- location: появляется над seller_account_payments_taxes_edit_main_tax_account2;
+- occasion: в процессе ввода данных в seller_account_payments_taxes_edit_main_tax_account2;
+- content:  "ВВЕДИТЕ НОМЕР СЧЕТА СОГЛАСНО РЕКВИЗИТАМ НАЛОГОВОГО ОРГАНА".
+• seller_account_payments_taxes_edit_main_tax_account2_alert_undernaming:
+- focusing: да;
+- location: появляется под seller_account_payments_taxes_edit_main_tax_account2;
+- occasion: невалидность по факту проверки на undernaming;
+- content:  "ПОЖАЛУЙСТА, ВВЕДИТЕ 10 ЦИФР".
+• seller_account_payments_taxes_edit_main_tax_account2_alert_omission:
+- focusing: нет;
+- location: появляется под seller_account_payments_taxes_edit_main_tax_account2;
+- occasion: 
+------ && - нажатие на seller_account_payments_taxes_edit_main_btn_ok;
+------ && - seller_account_payments_taxes_edit_main_tax_account2 пустой;
+------ && - seller_account_payments_taxes_edit_main_tax_account2 пустой;
+------ && - seller_account_payments_taxes_edit_main_tax_account3 пустой;
+------ && - seller_account_payments_taxes_edit_main_tax_account4 пустой;
+- content:  "ПОЖАЛУЙСТА, УКАЖИТЕ НОМЕР СЧЕТА НАЛОГОВОГО ОРГАНА".
+
+
+▬▬▬ seller_account_payments_taxes_edit_main_tax_account3
+
+✠ actions
+• seller_account_payments_taxes_edit_main_tax_account3:
+╠ valid / invalid
+║ • tap
+║ occasion: нажатие seller_account_payments_taxes_edit_main_tax_account3;
+║ condition: в любой ситуации;
+║ result: 
+║ && - seller_account_payments_taxes_edit_main_tax_account3 переходит в active_state;
+╙ && - происходит открытие клавиатуры.
+
+✠ input_checks
+Фильтры проверяющие на соответствие нормативам содержание seller_account_payments_taxes_edit_main_tax_account3. Если в ходе проверки фиксируется несоответствие, тогда состояние seller_account_payments_taxes_edit_main_tax_account3 позиционируется как invalid, в соответствии с чем отображается соответствующее типу проблемы предупреждение. Значение в поле seller_account_payments_taxes_edit_main_tax_account3 является числом (number).
+• undernaming:
+- tenor: Анализ на недостижение лимита допустимой длины number (недостижение норматива).
+- condition: Работает в active_state.
+- result: При вводе number, в ситуации если цифр < 16, под seller_account_payments_taxes_edit_main_tax_account3 всплывает seller_account_payments_taxes_edit_main_tax_account3_alert_undernaming.
+• overnaming:
+- tenor: Анализ на превышение лимита допустимой длины number (превышение норматива).
+- condition: Работает в active_state.
+- result: При вводе number, в ситуации если цифр > 16, дальнейшие нажатия игнорируются.
+• stopsymbol:
+- tenor: Анализ на нажатие запрещенных клавиш базирующийся на превентивной блокировке ввода со всех клавиш кроме отвечающих за цифры.
+- condition: Работает в active_state. 
+- result: При вводе number, в ситуации если совершается нажатие на запрещенные символы, такие нажатия игнорируются.
+• omission:
+- tenor: Реакция на факт отсутствия введенных данных.
+- condition: Работает в inactive_state.
+- result: В ситуации если поле пустое, а юзер нажимает на seller_account_payments_taxes_edit_main_btn_ok, под seller_account_payments_taxes_edit_main_tax_account3 всплывает seller_account_payments_taxes_edit_main_tax_account3_alert_omission.
+• emptiness:
+- tenor: Анализ на пустотность.
+- condition: Работает в active_state и inactive_state.
+- result: Работает в любой ситуации делая проверку на предмет отсутствия данных в seller_account_payments_taxes_edit_main_tax_account3.  
+
+✠ alert_states
+• seller_account_payments_taxes_edit_main_tax_account3_alert_prompt:
+- focusing: да;
+- location: появляется над seller_account_payments_taxes_edit_main_tax_account3;
+- occasion: в процессе ввода данных в seller_account_payments_taxes_edit_main_tax_account3;
+- content:  "ВВЕДИТЕ НОМЕР СЧЕТА СОГЛАСНО РЕКВИЗИТАМ НАЛОГОВОГО ОРГАНА".
+• seller_account_payments_taxes_edit_main_tax_account3_alert_undernaming:
+- focusing: да;
+- location: появляется под seller_account_payments_taxes_edit_main_tax_account3;
+- occasion: невалидность по факту проверки на undernaming;
+- content:  "ПОЖАЛУЙСТА, ВВЕДИТЕ 16 ЦИФР".
+• seller_account_payments_taxes_edit_main_tax_account3_alert_omission:
+- focusing: нет;
+- location: появляется под seller_account_payments_taxes_edit_main_tax_account3;
+- occasion: 
+------ && - нажатие на seller_account_payments_taxes_edit_main_btn_ok;
+------ && - seller_account_payments_taxes_edit_main_tax_account3 пустой;
+------ && - seller_account_payments_taxes_edit_main_tax_account2 пустой;
+------ && - seller_account_payments_taxes_edit_main_tax_account3 пустой;
+------ && - seller_account_payments_taxes_edit_main_tax_account4 пустой;
+- content:  "ПОЖАЛУЙСТА, УКАЖИТЕ НОМЕР СЧЕТА НАЛОГОВОГО ОРГАНА".
+
+
+▬▬▬ seller_account_payments_taxes_edit_main_tax_account4
+
+✠ actions
+• seller_account_payments_taxes_edit_main_tax_account4:
+╠ valid / invalid
+║ • tap
+║ occasion: нажатие seller_account_payments_taxes_edit_main_tax_account4;
+║ condition: в любой ситуации;
+║ result: 
+║ && - seller_account_payments_taxes_edit_main_tax_account4 переходит в active_state;
+╙ && - происходит открытие клавиатуры.
+
+✠ input_checks
+Фильтры проверяющие на соответствие нормативам содержание seller_account_payments_taxes_edit_main_tax_account4. Если в ходе проверки фиксируется несоответствие, тогда состояние seller_account_payments_taxes_edit_main_tax_account4 позиционируется как invalid, в соответствии с чем отображается соответствующее типу проблемы предупреждение. Значение в поле seller_account_payments_taxes_edit_main_tax_account4 является числом (number).
+• undernaming:
+- tenor: Анализ на недостижение лимита допустимой длины number (недостижение норматива).
+- condition: Работает в active_state.
+- result: При вводе number, в ситуации если цифр < 16, под seller_account_payments_taxes_edit_main_tax_account4 всплывает seller_account_payments_taxes_edit_main_tax_account4_alert_undernaming.
+• overnaming:
+- tenor: Анализ на превышение лимита допустимой длины number (превышение норматива).
+- condition: Работает в active_state.
+- result: При вводе number, в ситуации если цифр > 16, дальнейшие нажатия игнорируются.
+• stopsymbol:
+- tenor: Анализ на нажатие запрещенных клавиш базирующийся на превентивной блокировке ввода со всех клавиш кроме отвечающих за цифры.
+- condition: Работает в active_state. 
+- result: При вводе number, в ситуации если совершается нажатие на запрещенные символы, такие нажатия игнорируются.
+• omission:
+- tenor: Реакция на факт отсутствия введенных данных.
+- condition: Работает в inactive_state.
+- result: В ситуации если поле пустое, а юзер нажимает на seller_account_payments_taxes_edit_main_btn_ok, под seller_account_payments_taxes_edit_main_tax_account4 всплывает seller_account_payments_taxes_edit_main_tax_account4_alert_omission.
+• emptiness:
+- tenor: Анализ на пустотность.
+- condition: Работает в active_state и inactive_state.
+- result: Работает в любой ситуации делая проверку на предмет отсутствия данных в seller_account_payments_taxes_edit_main_tax_account4.  
+
+✠ alert_states
+• seller_account_payments_taxes_edit_main_tax_account4_alert_prompt:
+- focusing: да;
+- location: появляется над seller_account_payments_taxes_edit_main_tax_account4;
+- occasion: в процессе ввода данных в seller_account_payments_taxes_edit_main_tax_account4;
+- content:  "ВВЕДИТЕ НОМЕР СЧЕТА СОГЛАСНО РЕКВИЗИТАМ НАЛОГОВОГО ОРГАНА".
+• seller_account_payments_taxes_edit_main_tax_account4_alert_undernaming:
+- focusing: да;
+- location: появляется под seller_account_payments_taxes_edit_main_tax_account4;
+- occasion: невалидность по факту проверки на undernaming;
+- content:  "ПОЖАЛУЙСТА, ВВЕДИТЕ 16 ЦИФР".
+• seller_account_payments_taxes_edit_main_tax_account4_alert_omission:
+- focusing: нет;
+- location: появляется под seller_account_payments_taxes_edit_main_tax_account4;
+- occasion: 
+------ && - нажатие на seller_account_payments_taxes_edit_main_btn_ok;
+------ && - seller_account_payments_taxes_edit_main_tax_account4 пустой;
+------ && - seller_account_payments_taxes_edit_main_tax_account2 пустой;
+------ && - seller_account_payments_taxes_edit_main_tax_account4 пустой;
+------ && - seller_account_payments_taxes_edit_main_tax_account4 пустой;
+- content:  "ПОЖАЛУЙСТА, УКАЖИТЕ НОМЕР СЧЕТА НАЛОГОВОГО ОРГАНА".
+
+
+▬▬▬ seller_account_payments_taxes_edit_main_btn_cancel
+
+✠ actions
+• seller_account_payments_taxes_edit_main_btn_cancel:
+╠ valid / invalid
+║ • tap
+║ occasion: нажатие seller_account_payments_taxes_edit_main_btn_cancel;
+╠═condition: в ситуации если ни один из счетов не был сохранен прежде (ни одного поля не заполнено);
+║ result: делается переход к seller_account_payments_main_screen.
+╠═condition: в ситуации если как минимум один счет был сохранен прежде;
+╙ result: делается переход к seller_account_payments_taxes_screen.
+
+
+▬▬▬ seller_account_payments_taxes_edit_main_btn_ok
+
+✠ actions
+• seller_account_payments_taxes_edit_main_btn_ok:
+╠ valid
+║ • tap
+║ occasion: нажатие seller_account_payments_taxes_edit_main_btn_ok;
+║ condition:
+║ || - seller_account_payments_taxes_edit_main_tax_account1 = valid;
+║ || - seller_account_payments_taxes_edit_main_tax_account2 = valid;
+║ || - seller_account_payments_taxes_edit_main_tax_account3 = valid;
+║ || - seller_account_payments_taxes_edit_main_tax_account4 = valid;
+║ result: делается переход к seller_account_payments_taxes_screen.
+╠ invalid
+║ • tap
+║ occasion: нажатие seller_account_payments_taxes_edit_main_btn_ok;
+║ condition:
+║ || - seller_account_payments_taxes_edit_main_tax_account1 = invalid;
+║ || - seller_account_payments_taxes_edit_main_tax_account2 = invalid;
+║ || - seller_account_payments_taxes_edit_main_tax_account3 = invalid;
+║ || - seller_account_payments_taxes_edit_main_tax_account4 = invalid;
+╙ result: seller_account_payments_taxes_edit_main_btn_ok не реагирует на нажатие.
+
+
+▬▬▬ seller_account_payments_taxes_edit_main_protip
+
+✠ actions
+• seller_account_payments_taxes_edit_main_protip:
+╠ valid / invalid
+║ • tap
+║ occasion: нажатие seller_account_payments_taxes_edit_main_protip;
+║ condition: в любой ситуации;
+║ result: 
+║ && - seller_account_payments_taxes_edit_screen темнеет на 50%;
+╙ && - всплывает seller_account_payments_taxes_edit_protip_popover.
+
+
+■ seller_nav
+
+✠ details
+Секция seller_nav является навигационной панелью seller_mode и как сквозная часть интерфейса присутствует на всех экранах в нижней области. Секция состоит из 5 компонентов каждый из которых выполняет роль кнопки:
+1) seller_nav_demand_button - кнопка с наименованием и бейджем, предназначена для перехода к seller_demand_screen;
+-- seller_nav_demand_header - представлен заголовком "СПРОС";
+-- seller_nav_demand_badge - отображает количество hunt_screen_demand_message в seller_demand_screen.
+2) seller_nav_chat_button - кнопка с наименованием и бейджем, предназначена для перехода к seller_chat_screen (в seller_chat_screen активирована по умолчанию);
+-- seller_nav_chat_header - представлен заголовком "ЧАТ";
+-- seller_nav_chat_badge - отображает количество непросмотренных chat_screen_chat_message_node.
+3) seller_nav_shop_button - кнопка с наименованием и бейджем, предназначена для перехода к seller_shop_screen;
+-- seller_nav_shop_header - представлен заголовком "МАГАЗИН";
+-- seller_nav_shop_badge - отображает количество посетителей находящихся в магазине в текущий момент.
+4) seller_nav_goods_button - кнопка с наименованием и бейджем, предназначена для перехода к seller_goods_screen;
+-- seller_nav_goods_header - представлен заголовком "ТОВАРЫ";
+-- seller_nav_goods_badge - отображает число лотов по которым заканчивается товар.
+5) seller_nav_account_button - кнопка с наименованием и бейджем, предназначена для перехода к seller_account_screen;
+-- seller_nav_account_header - представлен заголовком "КАБИНЕТ";
+-- seller_nav_account_badge - отображает количество непросмотренных денежных транзакций.
+
+✠ actions
+• seller_nav_demand_button:
+╠ valid / invalid
+║ • tap 
+║ occasion: нажатие seller_nav_demand_button;
+║ condition: в ситуации нахождения в seller_account;
+╙ result: открывается seller_demand_screen.
+• seller_nav_chat_button:
+║ • tap 
+╠ valid / invalid
+║ occasion: нажатие seller_nav_chat_button;
+║ condition: в ситуации нахождения в seller_account;
+╙ result: открывается seller_chat_screen.
+• seller_nav_shop_button:
+╠ valid / invalid
+║ • tap 
+║ occasion: нажатие seller_nav_shop_button;
+║ condition: в ситуации нахождения в seller_account;
+╙ result: открывается seller_shop_screen.
+• seller_nav_goods_button:
+╠ valid / invalid
+║ • tap 
+║ occasion: нажатие seller_nav_goods_button;
+║ condition: в ситуации нахождения в seller_account;
+╙ result: открывается seller_goods_screen.
+• seller_nav_account_button:
+╠ valid / invalid
+║ • tap 
+║ occasion: нажатие seller_nav_account_button;
+║ condition: в ситуации нахождения в seller_account;
+╙ result: не реагирует на нажатие.
+
+✠ color_states
+┌─
+│seller_nav_demand_button  (inactive_state по умолчанию в seller_account)
+│seller_nav_chat_button  (inactive_state по умолчанию в seller_account)
+│seller_nav_shop_button  (inactive_state по умолчанию в seller_account)
+│seller_nav_goods_button  (inactive_state по умолчанию в seller_account)
+│seller_nav_account_button  (actived_state по умолчанию в seller_account)
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ в inactive_state
+├────────
+│• color7
+│------ в actived_state
+└─
+┌─
+│seller_nav_demand_badge  (inactive_state по умолчанию в seller_account) 
+│seller_nav_chat_badge  (inactive_state по умолчанию в seller_account)  
+│seller_nav_shop_badge  (inactive_state по умолчанию в seller_account)  
+│seller_nav_goods_badge  (inactive_state по умолчанию в seller_account)   
+│seller_nav_account_badge  (actived_state по умолчанию в seller_account)
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color9
+│------ в inactive_state
+├────────
+│• color2
+│------ в actived_state 
+└─
+
+
+
+🡆🡆🡆🡆 seller_account_payments_taxes_edit_protip_popover
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+seller_account_payments_taxes_edit_protip_popover - всплывающее окно по центру экрана с кратким текстом описания функциональности текущего интерфейса.
+
+✠ details
+seller_account_payments_taxes_edit_protip_popover - занимает порядка 70-80% ширины экрана и имеет адаптивный размер по вертикали зависящий от объема текста и включает в себя элемент:
+- seller_account_payments_taxes_edit_protip_popover_text - представляющий собой текст выравненный по центру следующего содержания: "Данная настройка предназначена для указания реквизитов налоговых служб. Нажмите на требуемое поле и введите соответствующие данные". 
+
+✠ actions
+• seller_account_payments_taxes_edit_protip_popover:
+╠ valid / invalid
+║ • tap
+║ occasion: нажатие в любом месте seller_account_payments_taxes_edit_screen;
+║ condition: в любой ситуации;
+╙ result: seller_account_payments_taxes_edit_protip_popover исчезает.
+
+✠ color_states
+┌─
+│seller_account_payments_taxes_edit_protip_popover_text  
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color8
+│------ в любой ситуации
+└─
+
 
