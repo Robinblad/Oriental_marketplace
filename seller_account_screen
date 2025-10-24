@@ -6,7 +6,7 @@ color3 - warning;
 color4 - accentual;
 color5 - pressing;
 color6 - middle;
-color7 - actived;
+color7 - activated;
 color8 - font;
 color9 - attention;
 
@@ -17,16 +17,15 @@ color9 - attention;
 
 
 
-
 🡆 seller_account
 ■■■■■■■■■■■■■■■■
 
-seller_account - личный кабинет пользователя представленный в пяти подразделах навигацией по которым служит панель в верхней части экрана содержащая 5 кнопок расположенных слева-направо в следующем порядке:
-- archive  - seller_account_nav_archive, при нажатии на которую открывается seller_account_archive_screen;
+seller_account - личный кабинет пользователя представленный в пяти подразделах навигацией по которым служит панель в верхней части экрана содержащая 4 кнопки расположенных слева-направо в следующем порядке:
+
 - payments - seller_account_nav_payments, при нажатии на которую открывается seller_account_payments_screen;
 - orders   - seller_account_nav_orders, при нажатии на которую открывается seller_account_orders_screen;
-- analysis - seller_account_nav_analysis, при нажатии на которую открывается seller_account_analysis_screen;
 - history  - seller_account_nav_history, при нажатии на которую открывается seller_account_history_screen.
+- analysis - seller_account_nav_analysis, при нажатии на которую открывается seller_account_analysis_screen;
 
 При открытии seller_account логика допускает активность одной из вкладок в каждый момент времени.
 seller_account_orders_screen является экраном по умолчанию.
@@ -88,12 +87,12 @@ s5)  ┌──[seller_nav                                   ]  [section_lev1    
 ---- ├┬ [seller_nav_shop_button                       ]  [button             ]                                   [color7/color4]     [ ✜ ✜ ]      [ yes ]   
 ---- │├ [seller_nav_shop_header                       ]  [header             ] [ "МАГАЗИН"                     ] [color8/color8]     [ ✜ ✜ ]      [ no  ] 
 ---- │└ [seller_nav_shop_badge                        ]  [badge              ] [ { number }                    ] [color4/color4]     [ 🡅 🡆 ]      [ no  ]   
----- ├┬ [seller_nav_lot_button                        ]  [button             ]                                   [color7/color4]     [ ✜ 🡆 ]      [ yes ]   
----- │├ [seller_nav_lot_header                        ]  [header             ] [ "ТОВАРЫ"                      ] [color8/color8]     [ ✜ ✜ ]      [ no  ] 
----- │└ [seller_nav_lot_badge                         ]  [badge              ] [ { number }                    ] [color4/color4]     [ 🡅 🡆 ]      [ no  ]     
----- └┬ [seller_nav_finance_button                    ]  [button             ]                                   [color7/color4]     [ ✜ 🡆 ]      [ yes ]   
-----  ├ [seller_nav_finance_header                    ]  [header             ] [ "КАБИНЕТ"                     ] [color8/color8]     [ ✜ ✜ ]      [ no  ] 
-----  └ [seller_nav_finance_badge                     ]  [badge              ] [ { number }                    ] [color4/color4]     [ 🡅 🡆 ]      [ no  ] 
+---- ├┬ [seller_nav_goods_button                      ]  [button             ]                                   [color7/color4]     [ ✜ 🡆 ]      [ yes ]   
+---- │├ [seller_nav_goods_header                      ]  [header             ] [ "ТОВАРЫ"                      ] [color8/color8]     [ ✜ ✜ ]      [ no  ] 
+---- │└ [seller_nav_goods_badge                       ]  [badge              ] [ { number }                    ] [color4/color4]     [ 🡅 🡆 ]      [ no  ]     
+---- └┬ [seller_nav_account_button                    ]  [button             ]                                   [color7/color4]     [ ✜ 🡆 ]      [ yes ]   
+----  ├ [seller_nav_account_header                    ]  [header             ] [ "КАБИНЕТ"                     ] [color8/color8]     [ ✜ ✜ ]      [ no  ] 
+----  └ [seller_nav_account_badge                     ]  [badge              ] [ { number }                    ] [color4/color4]     [ 🡅 🡆 ]      [ no  ] 
 
 
 ■ seller_account_nav
@@ -103,8 +102,8 @@ s5)  ┌──[seller_nav                                   ]  [section_lev1    
 
 1) seller_account_nav_payments - кнопка с наименованием "ПЛАТЕЖИ", предназначена для перехода к seller_account_payments;
 2) seller_account_nav_orders - кнопка с наименованием "ОРДЕРА", предназначена для перехода к seller_account_orders (активирована по умолчанию);
-3) seller_account_nav_analysis - кнопка с наименованием "АНАЛИЗ", предназначена для перехода к seller_account_analysis;
-4) seller_account_nav_history - кнопка с наименованием "ИСТОРИЯ", предназначена для перехода к seller_account_history.
+3) seller_account_nav_history - кнопка с наименованием "ИСТОРИЯ", предназначена для перехода к seller_account_history;
+4) seller_account_nav_analysis - кнопка с наименованием "АНАЛИЗ", предназначена для перехода к seller_account_analysis.
 
 ✠ actions
 • seller_account_nav_payments: 
@@ -112,32 +111,32 @@ s5)  ┌──[seller_nav                                   ]  [section_lev1    
 ║ • tap
 ║ occasion: нажатие seller_account_nav_payments;
 ║ condition: в любой ситуации;
-╙ result: не реагирует на нажатие.
+╙ result: открывается seller_account_payments_screen.
 • seller_account_nav_orders:
 ╠ valid / invalid
 ║ • tap 
 ║ occasion: нажатие seller_account_nav_orders;
 ║ condition: в любой ситуации;
-╙ result: открывается seller_account_orders_screen.
-• seller_account_nav_analysis:
-╠ valid / invalid
-║ • tap 
-║ occasion: нажатие seller_account_nav_analysis;
-║ condition: в любой ситуации;
-╙ result: открывается seller_account_analysis_screen.
+╙ result: не реагирует на нажатие.
 • seller_account_nav_history:
 ╠ valid / invalid
 ║ • tap 
 ║ occasion: нажатие seller_account_nav_history;
 ║ condition: в любой ситуации;
 ╙ result: открывается seller_account_history_screen.
+• seller_account_nav_analysis:
+╠ valid / invalid
+║ • tap 
+║ occasion: нажатие seller_account_nav_analysis;
+║ condition: в любой ситуации;
+╙ result: открывается seller_account_analysis_screen.
 
 ✠ color_states
 ┌─ 
 │seller_account_nav_payments  (inactive_state по умолчанию в seller_account_payments)
-│seller_account_nav_orders  (actived_state по умолчанию в seller_account_payments)
-│seller_account_nav_analysis  (inactive_state по умолчанию в seller_account_payments)
+│seller_account_nav_orders  (activated_state по умолчанию в seller_account_payments)
 │seller_account_nav_history  (inactive_state по умолчанию в seller_account_payments)
+│seller_account_nav_analysis  (inactive_state по умолчанию в seller_account_payments)
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -145,7 +144,7 @@ s5)  ┌──[seller_nav                                   ]  [section_lev1    
 │------ в inactive_state
 ├────────
 │• color7
-│------ в actived_state
+│------ в activated_state
 └─
 
 
@@ -523,7 +522,7 @@ s5)  ┌──[seller_nav                                   ]  [section_lev1    
 │seller_nav_chat_button  (inactive_state по умолчанию в seller_account)
 │seller_nav_shop_button  (inactive_state по умолчанию в seller_account)
 │seller_nav_goods_button  (inactive_state по умолчанию в seller_account)
-│seller_nav_account_button  (actived_state по умолчанию в seller_account)
+│seller_nav_account_button  (activated_state по умолчанию в seller_account)
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -531,14 +530,14 @@ s5)  ┌──[seller_nav                                   ]  [section_lev1    
 │------ в inactive_state
 ├────────
 │• color7
-│------ в actived_state
+│------ в activated_state
 └─
 ┌─
 │seller_nav_demand_badge  (inactive_state по умолчанию в seller_account) 
 │seller_nav_chat_badge  (inactive_state по умолчанию в seller_account)  
 │seller_nav_shop_badge  (inactive_state по умолчанию в seller_account)  
 │seller_nav_goods_badge  (inactive_state по умолчанию в seller_account)   
-│seller_nav_account_badge  (actived_state по умолчанию в seller_account)
+│seller_nav_account_badge  (activated_state по умолчанию в seller_account)
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -546,7 +545,7 @@ s5)  ┌──[seller_nav                                   ]  [section_lev1    
 │------ в inactive_state
 ├────────
 │• color2
-│------ в actived_state 
+│------ в activated_state 
 └─
 
 
@@ -747,7 +746,7 @@ seller_account_orders_modal_bulletin_part3_ship_off - отображает 2 б�
       └ [seller_account_nav_analysis                       ]  [button        ] [ "АНАЛИЗ"                      ] [color7/color4]     [ ✜ 🡆 ]      [ yes ] 
  ┌┬──┬──[seller_account_payments                           ]  [section_lev1  ]                                   [color0/color0]     [ ✜ ✜ ]      [ no  ] 
  ││  └┬─[seller_account_payments_top                       ]  [section_lev2  ]                                   [color2/color2]     [ 🡅 ✜ ]      [ no  ] 
- ││   └ [seller_account_payments_top_text                  ]  [text          ] ["Выберите платежный инструмент"] [color8/color8]     [ ✜ ✜ ]      [ no  ] 
+ ││   └ [seller_account_payments_top_title                 ]  [text          ] ["Выберите платежный инструмент"] [color8/color8]     [ ✜ ✜ ]      [ no  ] 
  │├┬┬───[seller_account_payments                           ]  [section_lev2  ]                                   [color2/color2]     [ ✜ ✜ ]      [ no  ]
  │││└┬┬─[seller_account_payments_types                     ]  [dropdown      ]                                   [color7/color4]     [ 🡅 ✜ ]      [ yes ] 
  │││ │├ [seller_account_payments_types_header              ]  [header        ] [ "Прием платежей"              ] [color8/color8]     [ ✜ 🡆 ]      [ yes ]
@@ -775,12 +774,12 @@ seller_account_orders_modal_bulletin_part3_ship_off - отображает 2 б�
      ├┬ [seller_nav_shop_button                            ]  [button        ]                                   [color7/color4]     [ ✜ ✜ ]      [ yes ]   
      │├ [seller_nav_shop_header                            ]  [header        ] [ "МАГАЗИН"                     ] [color8/color8]     [ ✜ ✜ ]      [ no  ] 
      │└ [seller_nav_shop_badge                             ]  [badge         ] [ { number }                    ] [color4/color4]     [ 🡅 🡆 ]      [ no  ]   
-     ├┬ [seller_nav_lot_button                             ]  [button        ]                                   [color7/color4]     [ ✜ 🡆 ]      [ yes ]   
-     │├ [seller_nav_lot_header                             ]  [header        ] [ "ТОВАРЫ"                      ] [color8/color8]     [ ✜ ✜ ]      [ no  ] 
-     │└ [seller_nav_lot_badge                              ]  [badge         ] [ { number }                    ] [color4/color4]     [ 🡅 🡆 ]      [ no  ]
-     └┬ [seller_nav_finance_button                         ]  [button        ]                                   [color7/color4]     [ ✜ 🡆 ]      [ yes ]   
-      ├ [seller_nav_finance_header                         ]  [header        ] [ "КАБИНЕТ"                     ] [color8/color8]     [ ✜ ✜ ]      [ no  ] 
-      └ [seller_nav_finance_badge                          ]  [badge         ] [ { number }                    ] [color4/color4]     [ 🡅 🡆 ]      [ no  ] 
+     ├┬ [seller_nav_goods_button                           ]  [button        ]                                   [color7/color4]     [ ✜ 🡆 ]      [ yes ]   
+     │├ [seller_nav_goods_header                           ]  [header        ] [ "ТОВАРЫ"                      ] [color8/color8]     [ ✜ ✜ ]      [ no  ] 
+     │└ [seller_nav_goods_badge                            ]  [badge         ] [ { number }                    ] [color4/color4]     [ 🡅 🡆 ]      [ no  ]
+     └┬ [seller_nav_account_button                         ]  [button        ]                                   [color7/color4]     [ ✜ 🡆 ]      [ yes ]   
+      ├ [seller_nav_account_header                         ]  [header        ] [ "КАБИНЕТ"                     ] [color8/color8]     [ ✜ ✜ ]      [ no  ] 
+      └ [seller_nav_account_badge                          ]  [badge         ] [ { number }                    ] [color4/color4]     [ 🡅 🡆 ]      [ no  ] 
 
 
 ■ seller_account_nav
@@ -788,10 +787,10 @@ seller_account_orders_modal_bulletin_part3_ship_off - отображает 2 б�
 ✠ details
 Секция seller_account_nav является навигационной панелью seller_account и как сквозная часть интерфейса присутствует на всех экранах seller_account в верхней области. Секция состоит из 4 компонентов каждый из которых выполняет роль кнопки расположенные слева-направо в следующем порядке:
 
-1) seller_account_nav_payments - кнопка с наименованием "ПЛАТЕЖИ", предназначена для перехода к seller_account_payments;
-2) seller_account_nav_orders - кнопка с наименованием "ОРДЕРА", предназначена для перехода к seller_account_orders (активирована по умолчанию);
-3) seller_account_nav_analysis - кнопка с наименованием "АНАЛИЗ", предназначена для перехода к seller_account_analysis;
-4) seller_account_nav_history - кнопка с наименованием "ИСТОРИЯ", предназначена для перехода к seller_account_history.
+1) seller_account_nav_payments - кнопка с наименованием "ПЛАТЕЖИ", предназначена для перехода к seller_account_payments (активирована по умолчанию);
+2) seller_account_nav_orders - кнопка с наименованием "ОРДЕРА", предназначена для перехода к seller_account_orders;
+3) seller_account_nav_history - кнопка с наименованием "ИСТОРИЯ", предназначена для перехода к seller_account_history;
+4) seller_account_nav_analysis - кнопка с наименованием "АНАЛИЗ", предназначена для перехода к seller_account_analysis.
 
 ✠ actions
 • seller_account_nav_payments: 
@@ -806,25 +805,25 @@ seller_account_orders_modal_bulletin_part3_ship_off - отображает 2 б�
 ║ occasion: нажатие seller_account_nav_orders;
 ║ condition: в любой ситуации;
 ╙ result: открывается seller_account_orders_screen.
-• seller_account_nav_analysis:
-╠ valid / invalid
-║ • tap 
-║ occasion: нажатие seller_account_nav_analysis;
-║ condition: в любой ситуации;
-╙ result: открывается seller_account_analysis_screen.
 • seller_account_nav_history:
 ╠ valid / invalid
 ║ • tap 
 ║ occasion: нажатие seller_account_nav_history;
 ║ condition: в любой ситуации;
 ╙ result: открывается seller_account_history_screen.
+• seller_account_nav_analysis:
+╠ valid / invalid
+║ • tap 
+║ occasion: нажатие seller_account_nav_analysis;
+║ condition: в любой ситуации;
+╙ result: открывается seller_account_analysis_screen.
 
 ✠ color_states
 ┌─ 
-│seller_account_nav_payments  (actived_state по умолчанию в seller_account_payments)
+│seller_account_nav_payments  (activated_state по умолчанию в seller_account_payments)
 │seller_account_nav_orders  (inactive_state по умолчанию в seller_account_payments)
-│seller_account_nav_analysis  (inactive_state по умолчанию в seller_account_payments)
 │seller_account_nav_history  (inactive_state по умолчанию в seller_account_payments)
+│seller_account_nav_analysis  (inactive_state по умолчанию в seller_account_payments)
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -832,7 +831,7 @@ seller_account_orders_modal_bulletin_part3_ship_off - отображает 2 б�
 │------ в inactive_state
 ├────────
 │• color7
-│------ в actived_state
+│------ в activated_state
 └─
 
 
@@ -957,7 +956,7 @@ seller_account_payments_taxes
 │seller_nav_chat_button  (inactive_state по умолчанию в seller_account)
 │seller_nav_shop_button  (inactive_state по умолчанию в seller_account)
 │seller_nav_goods_button  (inactive_state по умолчанию в seller_account)
-│seller_nav_account_button  (actived_state по умолчанию в seller_account)
+│seller_nav_account_button  (activated_state по умолчанию в seller_account)
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -965,14 +964,14 @@ seller_account_payments_taxes
 │------ в inactive_state
 ├────────
 │• color7
-│------ в actived_state
+│------ в activated_state
 └─
 ┌─
 │seller_nav_demand_badge  (inactive_state по умолчанию в seller_account) 
 │seller_nav_chat_badge  (inactive_state по умолчанию в seller_account)  
 │seller_nav_shop_badge  (inactive_state по умолчанию в seller_account)  
 │seller_nav_goods_badge  (inactive_state по умолчанию в seller_account)   
-│seller_nav_account_badge  (actived_state по умолчанию в seller_account)
+│seller_nav_account_badge  (activated_state по умолчанию в seller_account)
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -980,7 +979,7 @@ seller_account_payments_taxes
 │------ в inactive_state
 ├────────
 │• color2
-│------ в actived_state 
+│------ в activated_state 
 └─
 
 
@@ -1029,7 +1028,7 @@ seller_account_payments_cards_screen отвечает за управление 
        └ [seller_account_nav_analysis                       ]  [button             ] [ "АНАЛИЗ"                      ] [color7/color4]     [ ✜ 🡆 ]      [ yes ] 
 ┌┬────┬──[seller_account_payments_cards                     ]  [section_lev1       ]                                   [color0/color0]     [ ✜ ✜ ]      [ no  ] 
 ││    └┬─[seller_account_payments_cards_top                 ]  [section_lev2       ]                                   [color2/color2]     [ 🡅 ✜ ]      [ no  ] 
-││     └ [seller_account_payments_cards_top_text            ]  [text               ] ["Ваши карты"                   ] [color8/color8]     [ ✜ ✜ ]      [ no  ] 
+││     └ [seller_account_payments_cards_top_title           ]  [text               ] ["Ваши карты"                   ] [color8/color8]     [ ✜ ✜ ]      [ no  ] 
 │└┬┬┬┬───[seller_account_payments_cards_main                ]  [section_lev2       ]                                   [color2/color2]     [ ✜ ✜ ]      [ no  ]
 │ │││├┬┬─[seller_account_payments_cards_main_card           ]  [section_lev3       ]                                   [color2/color2]     [ 🡅 ✜ ]      [ no  ] 
 │ │││││└─[seller_account_payments_cards_main_card_header    ]  [header             ] ["Активная карта"               ] [color8/color8]     [ 🡅 ✜ ]      [ no  ]
@@ -1055,12 +1054,12 @@ seller_account_payments_cards_screen отвечает за управление 
       ├┬ [seller_nav_shop_button                            ]  [button             ]                                   [color7/color4]     [ ✜ ✜ ]      [ yes ]   
       │├ [seller_nav_shop_header                            ]  [header             ] [ "МАГАЗИН"                     ] [color8/color8]     [ ✜ ✜ ]      [ no  ] 
       │└ [seller_nav_shop_badge                             ]  [badge              ] [ { number }                    ] [color4/color4]     [ 🡅 🡆 ]      [ no  ]   
-      ├┬ [seller_nav_lot_button                             ]  [button             ]                                   [color7/color4]     [ ✜ 🡆 ]      [ yes ]   
-      │├ [seller_nav_lot_header                             ]  [header             ] [ "ТОВАРЫ"                      ] [color8/color8]     [ ✜ ✜ ]      [ no  ] 
-      │└ [seller_nav_lot_badge                              ]  [badge              ] [ { number }                    ] [color4/color4]     [ 🡅 🡆 ]      [ no  ]
-      └┬ [seller_nav_finance_button                         ]  [button             ]                                   [color7/color4]     [ ✜ 🡆 ]      [ yes ]   
-       ├ [seller_nav_finance_header                         ]  [header             ] [ "КАБИНЕТ"                     ] [color8/color8]     [ ✜ ✜ ]      [ no  ] 
-       └ [seller_nav_finance_badge                          ]  [badge              ] [ { number }                    ] [color4/color4]     [ 🡅 🡆 ]      [ no  ] 
+      ├┬ [seller_nav_goods_button                           ]  [button             ]                                   [color7/color4]     [ ✜ 🡆 ]      [ yes ]   
+      │├ [seller_nav_goods_header                           ]  [header             ] [ "ТОВАРЫ"                      ] [color8/color8]     [ ✜ ✜ ]      [ no  ] 
+      │└ [seller_nav_goods_badge                            ]  [badge              ] [ { number }                    ] [color4/color4]     [ 🡅 🡆 ]      [ no  ]
+      └┬ [seller_nav_account_button                         ]  [button             ]                                   [color7/color4]     [ ✜ 🡆 ]      [ yes ]   
+       ├ [seller_nav_account_header                         ]  [header             ] [ "КАБИНЕТ"                     ] [color8/color8]     [ ✜ ✜ ]      [ no  ] 
+       └ [seller_nav_account_badge                          ]  [badge              ] [ { number }                    ] [color4/color4]     [ 🡅 🡆 ]      [ no  ] 
 
 
 ■ seller_account_nav
@@ -1068,10 +1067,10 @@ seller_account_payments_cards_screen отвечает за управление 
 ✠ details
 Секция seller_account_nav является навигационной панелью seller_account и как сквозная часть интерфейса присутствует на всех экранах seller_account в верхней области. Секция состоит из 4 компонентов каждый из которых выполняет роль кнопки расположенные слева-направо в следующем порядке:
 
-1) seller_account_nav_payments - кнопка с наименованием "ПЛАТЕЖИ", предназначена для перехода к seller_account_payments;
-2) seller_account_nav_orders - кнопка с наименованием "ОРДЕРА", предназначена для перехода к seller_account_orders (активирована по умолчанию);
-3) seller_account_nav_analysis - кнопка с наименованием "АНАЛИЗ", предназначена для перехода к seller_account_analysis;
-4) seller_account_nav_history - кнопка с наименованием "ИСТОРИЯ", предназначена для перехода к seller_account_history.
+1) seller_account_nav_payments - кнопка с наименованием "ПЛАТЕЖИ", предназначена для перехода к seller_account_payments (активирована по умолчанию);
+2) seller_account_nav_orders - кнопка с наименованием "ОРДЕРА", предназначена для перехода к seller_account_orders;
+3) seller_account_nav_history - кнопка с наименованием "ИСТОРИЯ", предназначена для перехода к seller_account_history;
+4) seller_account_nav_analysis - кнопка с наименованием "АНАЛИЗ", предназначена для перехода к seller_account_analysis.
 
 ✠ actions
 • seller_account_nav_payments: 
@@ -1086,25 +1085,25 @@ seller_account_payments_cards_screen отвечает за управление 
 ║ occasion: нажатие seller_account_nav_orders;
 ║ condition: в любой ситуации;
 ╙ result: открывается seller_account_orders_screen.
-• seller_account_nav_analysis:
-╠ valid / invalid
-║ • tap 
-║ occasion: нажатие seller_account_nav_analysis;
-║ condition: в любой ситуации;
-╙ result: открывается seller_account_analysis_screen.
 • seller_account_nav_history:
 ╠ valid / invalid
 ║ • tap 
 ║ occasion: нажатие seller_account_nav_history;
 ║ condition: в любой ситуации;
 ╙ result: открывается seller_account_history_screen.
+• seller_account_nav_analysis:
+╠ valid / invalid
+║ • tap 
+║ occasion: нажатие seller_account_nav_analysis;
+║ condition: в любой ситуации;
+╙ result: открывается seller_account_analysis_screen.
 
 ✠ color_states
 ┌─ 
-│seller_account_nav_payments  (actived_state по умолчанию в seller_account_payments)
+│seller_account_nav_payments  (activated_state по умолчанию в seller_account_payments)
 │seller_account_nav_orders  (inactive_state по умолчанию в seller_account_payments)
-│seller_account_nav_analysis  (inactive_state по умолчанию в seller_account_payments)
 │seller_account_nav_history  (inactive_state по умолчанию в seller_account_payments)
+│seller_account_nav_analysis  (inactive_state по умолчанию в seller_account_payments)
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -1112,7 +1111,7 @@ seller_account_payments_cards_screen отвечает за управление 
 │------ в inactive_state
 ├────────
 │• color7
-│------ в actived_state
+│------ в activated_state
 └─
 
 
@@ -1251,7 +1250,7 @@ seller_account_payments_cards_screen появляется в случае, ес�
 │seller_nav_chat_button  (inactive_state по умолчанию в seller_account)
 │seller_nav_shop_button  (inactive_state по умолчанию в seller_account)
 │seller_nav_goods_button  (inactive_state по умолчанию в seller_account)
-│seller_nav_account_button  (actived_state по умолчанию в seller_account)
+│seller_nav_account_button  (activated_state по умолчанию в seller_account)
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -1259,14 +1258,14 @@ seller_account_payments_cards_screen появляется в случае, ес�
 │------ в inactive_state
 ├────────
 │• color7
-│------ в actived_state
+│------ в activated_state
 └─
 ┌─
 │seller_nav_demand_badge  (inactive_state по умолчанию в seller_account) 
 │seller_nav_chat_badge  (inactive_state по умолчанию в seller_account)  
 │seller_nav_shop_badge  (inactive_state по умолчанию в seller_account)  
 │seller_nav_goods_badge  (inactive_state по умолчанию в seller_account)   
-│seller_nav_account_badge  (actived_state по умолчанию в seller_account)
+│seller_nav_account_badge  (activated_state по умолчанию в seller_account)
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -1274,7 +1273,7 @@ seller_account_payments_cards_screen появляется в случае, ес�
 │------ в inactive_state
 ├────────
 │• color2
-│------ в actived_state 
+│------ в activated_state 
 └─
 
 
@@ -1363,7 +1362,7 @@ seller_account_payments_cards_new_screen предназначается для �
        └ [seller_account_nav_analysis                       ]  [button      ] [ "АНАЛИЗ"                      ]       [ ✜ 🡆 ]      [ yes ] 
   ┌┬──┬──[seller_account_payments_cards_new                 ]  [section_lev1]                                         [ ✜ ✜ ]      [ no  ] 
   ││  └┬─[seller_account_payments_cards_new_top             ]  [section_lev2]                                         [ 🡅 ✜ ]      [ no  ] 
-  ││   └ [seller_account_payments_cards_new_top_text        ]  [text        ] [ "Заполнить все поля"          ]       [ ✜ ✜ ]      [ no  ] 
+  ││   └ [seller_account_payments_cards_new_top_title       ]  [text        ] [ "Заполнить все поля"          ]       [ ✜ ✜ ]      [ no  ] 
   │└┬┬┬──[seller_account_payments_cards_new_main            ]  [section_lev2]                                         [ ✜ ✜ ]      [ no  ]
   │ ││└┬─[seller_account_payments_cards_new_main_card       ]  [section_lev3]                                         [ 🡅 ✜ ]      [ no  ] 
   │ ││ ├ [seller_account_payments_cards_new_main_card_title ]  [header      ] [ "Данные карты"                ]       [ 🡅 ✜ ]      [ no  ]
@@ -1387,12 +1386,12 @@ seller_account_payments_cards_new_screen предназначается для �
       ├┬ [seller_nav_shop_button                            ]  [button      ]                                         [ ✜ ✜ ]      [ yes ]   
       │├ [seller_nav_shop_header                            ]  [header      ] [ "МАГАЗИН"                     ]       [ ✜ ✜ ]      [ no  ] 
       │└ [seller_nav_shop_badge                             ]  [badge       ] [ { number }                    ]       [ 🡅 🡆 ]      [ no  ]   
-      ├┬ [seller_nav_lot_button                             ]  [button      ]                                         [ ✜ 🡆 ]      [ yes ]   
-      │├ [seller_nav_lot_header                             ]  [header      ] [ "ТОВАРЫ"                      ]       [ ✜ ✜ ]      [ no  ] 
-      │└ [seller_nav_lot_badge                              ]  [badge       ] [ { number }                    ]       [ 🡅 🡆 ]      [ no  ]
-      └┬ [seller_nav_finance_button                         ]  [button      ]                                         [ ✜ 🡆 ]      [ yes ]   
-       ├ [seller_nav_finance_header                         ]  [header      ] [ "КАБИНЕТ"                     ]       [ ✜ ✜ ]      [ no  ] 
-       └ [seller_nav_finance_badge                          ]  [badge       ] [ { number }                    ]       [ 🡅 🡆 ]      [ no  ] 
+      ├┬ [seller_nav_goods_button                           ]  [button      ]                                         [ ✜ 🡆 ]      [ yes ]   
+      │├ [seller_nav_goods_header                           ]  [header      ] [ "ТОВАРЫ"                      ]       [ ✜ ✜ ]      [ no  ] 
+      │└ [seller_nav_goods_badge                            ]  [badge       ] [ { number }                    ]       [ 🡅 🡆 ]      [ no  ]
+      └┬ [seller_nav_account_button                         ]  [button      ]                                         [ ✜ 🡆 ]      [ yes ]   
+       ├ [seller_nav_account_header                         ]  [header      ] [ "КАБИНЕТ"                     ]       [ ✜ ✜ ]      [ no  ] 
+       └ [seller_nav_account_badge                          ]  [badge       ] [ { number }                    ]       [ 🡅 🡆 ]      [ no  ] 
 
 
 ■ seller_account_nav
@@ -1400,10 +1399,10 @@ seller_account_payments_cards_new_screen предназначается для �
 ✠ details
 Секция seller_account_nav является навигационной панелью seller_account и как сквозная часть интерфейса присутствует на всех экранах seller_account в верхней области. Секция состоит из 4 компонентов каждый из которых выполняет роль кнопки расположенные слева-направо в следующем порядке:
 
-1) seller_account_nav_payments - кнопка с наименованием "ПЛАТЕЖИ", предназначена для перехода к seller_account_payments;
-2) seller_account_nav_orders - кнопка с наименованием "ОРДЕРА", предназначена для перехода к seller_account_orders (активирована по умолчанию);
-3) seller_account_nav_analysis - кнопка с наименованием "АНАЛИЗ", предназначена для перехода к seller_account_analysis;
-4) seller_account_nav_history - кнопка с наименованием "ИСТОРИЯ", предназначена для перехода к seller_account_history.
+1) seller_account_nav_payments - кнопка с наименованием "ПЛАТЕЖИ", предназначена для перехода к seller_account_payments (активирована по умолчанию);
+2) seller_account_nav_orders - кнопка с наименованием "ОРДЕРА", предназначена для перехода к seller_account_orders;
+3) seller_account_nav_history - кнопка с наименованием "ИСТОРИЯ", предназначена для перехода к seller_account_history;
+4) seller_account_nav_analysis - кнопка с наименованием "АНАЛИЗ", предназначена для перехода к seller_account_analysis.
 
 ✠ actions
 • seller_account_nav_payments: 
@@ -1418,25 +1417,25 @@ seller_account_payments_cards_new_screen предназначается для �
 ║ occasion: нажатие seller_account_nav_orders;
 ║ condition: в любой ситуации;
 ╙ result: открывается seller_account_orders_screen.
-• seller_account_nav_analysis:
-╠ valid / invalid
-║ • tap 
-║ occasion: нажатие seller_account_nav_analysis;
-║ condition: в любой ситуации;
-╙ result: открывается seller_account_analysis_screen.
 • seller_account_nav_history:
 ╠ valid / invalid
 ║ • tap 
 ║ occasion: нажатие seller_account_nav_history;
 ║ condition: в любой ситуации;
 ╙ result: открывается seller_account_history_screen.
+• seller_account_nav_analysis:
+╠ valid / invalid
+║ • tap 
+║ occasion: нажатие seller_account_nav_analysis;
+║ condition: в любой ситуации;
+╙ result: открывается seller_account_analysis_screen.
 
 ✠ color_states
 ┌─ 
-│seller_account_nav_payments  (actived_state по умолчанию в seller_account_payments)
+│seller_account_nav_payments  (activated_state по умолчанию в seller_account_payments)
 │seller_account_nav_orders  (inactive_state по умолчанию в seller_account_payments)
-│seller_account_nav_analysis  (inactive_state по умолчанию в seller_account_payments)
 │seller_account_nav_history  (inactive_state по умолчанию в seller_account_payments)
+│seller_account_nav_analysis  (inactive_state по умолчанию в seller_account_payments)
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -1444,7 +1443,7 @@ seller_account_payments_cards_new_screen предназначается для �
 │------ в inactive_state
 ├────────
 │• color7
-│------ в actived_state
+│------ в activated_state
 └─
 
 
@@ -1475,7 +1474,7 @@ seller_account_payments_cards_new_main является основной раб�
 │------ в inactive_state
 ├────────
 │• color7
-│------ в actived_state
+│------ в activated_state
 ├────────
 │• color3
 │- || - invalid по факту проверки на undernaming
@@ -1492,7 +1491,7 @@ seller_account_payments_cards_new_main является основной раб�
 │- && - valid по факту проверки на emptiness
 └─
 ┌─
-│seller_account_payments_cards_new_top_text
+│seller_account_payments_cards_new_top_title
 │seller_account_payments_cards_new_main_card_title
 │seller_account_payments_cards_new_bottom_text 
 │---------------------------
@@ -1867,7 +1866,7 @@ seller_account_payments_cards_new_main является основной раб�
 │seller_nav_chat_button  (inactive_state по умолчанию в seller_account)
 │seller_nav_shop_button  (inactive_state по умолчанию в seller_account)
 │seller_nav_goods_button  (inactive_state по умолчанию в seller_account)
-│seller_nav_account_button  (actived_state по умолчанию в seller_account)
+│seller_nav_account_button  (activated_state по умолчанию в seller_account)
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -1875,14 +1874,14 @@ seller_account_payments_cards_new_main является основной раб�
 │------ в inactive_state
 ├────────
 │• color7
-│------ в actived_state
+│------ в activated_state
 └─
 ┌─
 │seller_nav_demand_badge  (inactive_state по умолчанию в seller_account) 
 │seller_nav_chat_badge  (inactive_state по умолчанию в seller_account)  
 │seller_nav_shop_badge  (inactive_state по умолчанию в seller_account)  
 │seller_nav_goods_badge  (inactive_state по умолчанию в seller_account)   
-│seller_nav_account_badge  (actived_state по умолчанию в seller_account)
+│seller_nav_account_badge  (activated_state по умолчанию в seller_account)
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -1890,7 +1889,7 @@ seller_account_payments_cards_new_main является основной раб�
 │------ в inactive_state
 ├────────
 │• color2
-│------ в actived_state 
+│------ в activated_state 
 └─
 
 
@@ -1939,7 +1938,7 @@ seller_account_payments_taxes_screen предназначается для вв�
 --      └ [seller_account_nav_analysis                              ]  [button      ] [ "АНАЛИЗ"                             ]       [ ✜ 🡆 ]      [ yes ] 
 2)┌┬───┬──[seller_account_payments_taxes                            ]  [section_lev1]                                                [ ✜ ✜ ]      [ no  ] 
 --││   └┬─[seller_account_payments_taxes_top                        ]  [section_lev2]                                                [ 🡅 ✜ ]      [ no  ] 
---││    └ [seller_account_payments_taxes_top_text                   ]  [text        ] [ "Счета налоговых служб"              ]       [ ✜ ✜ ]      [ no  ] 
+--││    └ [seller_account_payments_taxes_top_title                  ]  [text        ] [ "Счета налоговых служб"              ]       [ ✜ ✜ ]      [ no  ] 
 --│└┬┬┬───[seller_account_payments_taxes_main                       ]  [section_lev2]                                                [ ✜ ✜ ]      [ no  ]
 --│ ││└┬┬─[seller_account_payments_taxes_main_accounts              ]  [section_lev3]                                                [ 🡅 ✜ ]      [ no  ] 
 --│ ││ │└ [seller_account_payments_taxes_main_accounts_title        ]  [header      ] [ "Реквизиты по уплате НДС и НСП"      ]       [ 🡅 ✜ ]      [ no  ]
@@ -1967,12 +1966,12 @@ seller_account_payments_taxes_screen предназначается для вв�
 --     ├┬ [seller_nav_shop_button                                   ]  [button      ]                                                [ ✜ ✜ ]      [ yes ]   
 --     │├ [seller_nav_shop_header                                   ]  [header      ] [ "МАГАЗИН"                            ]       [ ✜ ✜ ]      [ no  ] 
 --     │└ [seller_nav_shop_badge                                    ]  [badge       ] [ { number }                           ]       [ 🡅 🡆 ]      [ no  ]   
---     ├┬ [seller_nav_lot_button                                    ]  [button      ]                                                [ ✜ 🡆 ]      [ yes ]   
---     │├ [seller_nav_lot_header                                    ]  [header      ] [ "ТОВАРЫ"                             ]       [ ✜ ✜ ]      [ no  ] 
---     │└ [seller_nav_lot_badge                                     ]  [badge       ] [ { number }                           ]       [ 🡅 🡆 ]      [ no  ]
---     └┬ [seller_nav_finance_button                                ]  [button      ]                                                [ ✜ 🡆 ]      [ yes ]   
---      ├ [seller_nav_finance_header                                ]  [header      ] [ "КАБИНЕТ"                            ]       [ ✜ ✜ ]      [ no  ] 
---      └ [seller_nav_finance_badge                                 ]  [badge       ] [ { number }                           ]       [ 🡅 🡆 ]      [ no  ] 
+--     ├┬ [seller_nav_goods_button                                  ]  [button      ]                                                [ ✜ 🡆 ]      [ yes ]   
+--     │├ [seller_nav_goods_header                                  ]  [header      ] [ "ТОВАРЫ"                             ]       [ ✜ ✜ ]      [ no  ] 
+--     │└ [seller_nav_goods_badge                                   ]  [badge       ] [ { number }                           ]       [ 🡅 🡆 ]      [ no  ]
+--     └┬ [seller_nav_account_button                                ]  [button      ]                                                [ ✜ 🡆 ]      [ yes ]   
+--      ├ [seller_nav_account_header                                ]  [header      ] [ "КАБИНЕТ"                            ]       [ ✜ ✜ ]      [ no  ] 
+--      └ [seller_nav_account_badge                                 ]  [badge       ] [ { number }                           ]       [ 🡅 🡆 ]      [ no  ] 
 
 
 ■ seller_account_nav
@@ -1980,10 +1979,10 @@ seller_account_payments_taxes_screen предназначается для вв�
 ✠ details
 Секция seller_account_nav является навигационной панелью seller_account и как сквозная часть интерфейса присутствует на всех экранах seller_account в верхней области. Секция состоит из 4 компонентов каждый из которых выполняет роль кнопки расположенные слева-направо в следующем порядке:
 
-1) seller_account_nav_payments - кнопка с наименованием "ПЛАТЕЖИ", предназначена для перехода к seller_account_payments;
-2) seller_account_nav_orders - кнопка с наименованием "ОРДЕРА", предназначена для перехода к seller_account_orders (активирована по умолчанию);
-3) seller_account_nav_analysis - кнопка с наименованием "АНАЛИЗ", предназначена для перехода к seller_account_analysis;
-4) seller_account_nav_history - кнопка с наименованием "ИСТОРИЯ", предназначена для перехода к seller_account_history.
+1) seller_account_nav_payments - кнопка с наименованием "ПЛАТЕЖИ", предназначена для перехода к seller_account_payments (активирована по умолчанию);
+2) seller_account_nav_orders - кнопка с наименованием "ОРДЕРА", предназначена для перехода к seller_account_orders;
+3) seller_account_nav_history - кнопка с наименованием "ИСТОРИЯ", предназначена для перехода к seller_account_history;
+4) seller_account_nav_analysis - кнопка с наименованием "АНАЛИЗ", предназначена для перехода к seller_account_analysis.
 
 ✠ actions
 • seller_account_nav_payments: 
@@ -1998,25 +1997,25 @@ seller_account_payments_taxes_screen предназначается для вв�
 ║ occasion: нажатие seller_account_nav_orders;
 ║ condition: в любой ситуации;
 ╙ result: открывается seller_account_orders_screen.
-• seller_account_nav_analysis:
-╠ valid / invalid
-║ • tap 
-║ occasion: нажатие seller_account_nav_analysis;
-║ condition: в любой ситуации;
-╙ result: открывается seller_account_analysis_screen.
 • seller_account_nav_history:
 ╠ valid / invalid
 ║ • tap 
 ║ occasion: нажатие seller_account_nav_history;
 ║ condition: в любой ситуации;
 ╙ result: открывается seller_account_history_screen.
+• seller_account_nav_analysis:
+╠ valid / invalid
+║ • tap 
+║ occasion: нажатие seller_account_nav_analysis;
+║ condition: в любой ситуации;
+╙ result: открывается seller_account_analysis_screen.
 
 ✠ color_states
 ┌─ 
-│seller_account_nav_payments  (actived_state по умолчанию в seller_account_payments)
+│seller_account_nav_payments  (activated_state по умолчанию в seller_account_payments)
 │seller_account_nav_orders  (inactive_state по умолчанию в seller_account_payments)
-│seller_account_nav_analysis  (inactive_state по умолчанию в seller_account_payments)
 │seller_account_nav_history  (inactive_state по умолчанию в seller_account_payments)
+│seller_account_nav_analysis  (inactive_state по умолчанию в seller_account_payments)
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -2024,7 +2023,7 @@ seller_account_payments_taxes_screen предназначается для вв�
 │------ в inactive_state
 ├────────
 │• color7
-│------ в actived_state
+│------ в activated_state
 └─
 
 
@@ -2070,7 +2069,7 @@ seller_account_payments_taxes_screen предназначается для вв�
 
 ✠ color_states
 ┌─
-│seller_account_payments_taxes_top_text
+│seller_account_payments_taxes_top_title
 │seller_account_payments_taxes_main_accounts_title
 │seller_account_payments_taxes_main_accounts_value1_digits
 │seller_account_payments_taxes_main_accounts_value2_digits
@@ -2156,7 +2155,7 @@ seller_account_payments_taxes_screen предназначается для вв�
 │seller_nav_chat_button  (inactive_state по умолчанию в seller_account)
 │seller_nav_shop_button  (inactive_state по умолчанию в seller_account)
 │seller_nav_goods_button  (inactive_state по умолчанию в seller_account)
-│seller_nav_account_button  (actived_state по умолчанию в seller_account)
+│seller_nav_account_button  (activated_state по умолчанию в seller_account)
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -2164,14 +2163,14 @@ seller_account_payments_taxes_screen предназначается для вв�
 │------ в inactive_state
 ├────────
 │• color7
-│------ в actived_state
+│------ в activated_state
 └─
 ┌─
 │seller_nav_demand_badge  (inactive_state по умолчанию в seller_account) 
 │seller_nav_chat_badge  (inactive_state по умолчанию в seller_account)  
 │seller_nav_shop_badge  (inactive_state по умолчанию в seller_account)  
 │seller_nav_goods_badge  (inactive_state по умолчанию в seller_account)   
-│seller_nav_account_badge  (actived_state по умолчанию в seller_account)
+│seller_nav_account_badge  (activated_state по умолчанию в seller_account)
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -2179,7 +2178,7 @@ seller_account_payments_taxes_screen предназначается для вв�
 │------ в inactive_state
 ├────────
 │• color2
-│------ в actived_state 
+│------ в activated_state 
 └─
 
 
@@ -2228,7 +2227,7 @@ seller_account_payments_taxes_edit_screen предназначается для 
        └ [seller_account_nav_analysis                         ]  [button      ] [ "АНАЛИЗ"                        ]       [ ✜ 🡆 ]      [ yes ] 
   ┌┬──┬──[seller_account_payments_taxes_edit                  ]  [section_lev1]                                           [ ✜ ✜ ]      [ no  ] 
   ││  └┬─[seller_account_payments_taxes_edit_top              ]  [section_lev2]                                           [ 🡅 ✜ ]      [ no  ] 
-  ││   └ [seller_account_payments_taxes_edit_top_text         ]  [text        ] [ "Заполнить выбранные поля"      ]       [ ✜ ✜ ]      [ no  ] 
+  ││   └ [seller_account_payments_taxes_edit_top_title        ]  [text        ] [ "Заполнить выбранные поля"      ]       [ ✜ ✜ ]      [ no  ] 
   │└┬┬┬──[seller_account_payments_taxes_edit_main             ]  [section_lev2]                                           [ ✜ ✜ ]      [ no  ]
   │ ││└┬─[seller_account_payments_taxes_edit_main_tax         ]  [section_lev3]                                           [ ✜ ✜ ]      [ no  ]  
   │ ││ ├ [seller_account_payments_taxes_edit_main_tax_title   ]  [header      ] [ "Реквизиты по уплате НДС и НСП" ]       [ 🡅 ✜ ]      [ no  ]
@@ -2252,12 +2251,12 @@ seller_account_payments_taxes_edit_screen предназначается для 
       ├┬ [seller_nav_shop_button                              ]  [button      ]                                           [ ✜ ✜ ]      [ yes ]   
       │├ [seller_nav_shop_header                              ]  [header      ] [ "МАГАЗИН"                       ]       [ ✜ ✜ ]      [ no  ] 
       │└ [seller_nav_shop_badge                               ]  [badge       ] [ { number }                      ]       [ 🡅 🡆 ]      [ no  ]   
-      ├┬ [seller_nav_lot_button                               ]  [button      ]                                           [ ✜ 🡆 ]      [ yes ]   
-      │├ [seller_nav_lot_header                               ]  [header      ] [ "ТОВАРЫ"                        ]       [ ✜ ✜ ]      [ no  ] 
-      │└ [seller_nav_lot_badge                                ]  [badge       ] [ { number }                      ]       [ 🡅 🡆 ]      [ no  ]
-      └┬ [seller_nav_finance_button                           ]  [button      ]                                           [ ✜ 🡆 ]      [ yes ]   
-       ├ [seller_nav_finance_header                           ]  [header      ] [ "КАБИНЕТ"                       ]       [ ✜ ✜ ]      [ no  ] 
-       └ [seller_nav_finance_badge                            ]  [badge       ] [ { number }                      ]       [ 🡅 🡆 ]      [ no  ] 
+      ├┬ [seller_nav_goods_button                             ]  [button      ]                                           [ ✜ 🡆 ]      [ yes ]   
+      │├ [seller_nav_goods_header                             ]  [header      ] [ "ТОВАРЫ"                        ]       [ ✜ ✜ ]      [ no  ] 
+      │└ [seller_nav_goods_badge                              ]  [badge       ] [ { number }                      ]       [ 🡅 🡆 ]      [ no  ]
+      └┬ [seller_nav_account_button                           ]  [button      ]                                           [ ✜ 🡆 ]      [ yes ]   
+       ├ [seller_nav_account_header                           ]  [header      ] [ "КАБИНЕТ"                       ]       [ ✜ ✜ ]      [ no  ] 
+       └ [seller_nav_account_badge                            ]  [badge       ] [ { number }                      ]       [ 🡅 🡆 ]      [ no  ] 
 
 
 ■ seller_account_nav
@@ -2265,10 +2264,11 @@ seller_account_payments_taxes_edit_screen предназначается для 
 ✠ details
 Секция seller_account_nav является навигационной панелью seller_account и как сквозная часть интерфейса присутствует на всех экранах seller_account в верхней области. Секция состоит из 4 компонентов каждый из которых выполняет роль кнопки расположенные слева-направо в следующем порядке:
 
-1) seller_account_nav_payments - кнопка с наименованием "ПЛАТЕЖИ", предназначена для перехода к seller_account_payments;
-2) seller_account_nav_orders - кнопка с наименованием "ОРДЕРА", предназначена для перехода к seller_account_orders (активирована по умолчанию);
-3) seller_account_nav_analysis - кнопка с наименованием "АНАЛИЗ", предназначена для перехода к seller_account_analysis;
-4) seller_account_nav_history - кнопка с наименованием "ИСТОРИЯ", предназначена для перехода к seller_account_history.
+1) seller_account_nav_payments - кнопка с наименованием "ПЛАТЕЖИ", предназначена для перехода к seller_account_payments (активирована по умолчанию);
+2) seller_account_nav_orders - кнопка с наименованием "ОРДЕРА", предназначена для перехода к seller_account_orders;
+3) seller_account_nav_history - кнопка с наименованием "ИСТОРИЯ", предназначена для перехода к seller_account_history;
+4) seller_account_nav_analysis - кнопка с наименованием "АНАЛИЗ", предназначена для перехода к seller_account_analysis.
+
 
 ✠ actions
 • seller_account_nav_payments: 
@@ -2283,25 +2283,25 @@ seller_account_payments_taxes_edit_screen предназначается для 
 ║ occasion: нажатие seller_account_nav_orders;
 ║ condition: в любой ситуации;
 ╙ result: открывается seller_account_orders_screen.
-• seller_account_nav_analysis:
-╠ valid / invalid
-║ • tap 
-║ occasion: нажатие seller_account_nav_analysis;
-║ condition: в любой ситуации;
-╙ result: открывается seller_account_analysis_screen.
 • seller_account_nav_history:
 ╠ valid / invalid
 ║ • tap 
 ║ occasion: нажатие seller_account_nav_history;
 ║ condition: в любой ситуации;
 ╙ result: открывается seller_account_history_screen.
+• seller_account_nav_analysis:
+╠ valid / invalid
+║ • tap 
+║ occasion: нажатие seller_account_nav_analysis;
+║ condition: в любой ситуации;
+╙ result: открывается seller_account_analysis_screen.
 
 ✠ color_states
 ┌─ 
-│seller_account_nav_payments  (actived_state по умолчанию в seller_account_payments)
+│seller_account_nav_payments  (activated_state по умолчанию в seller_account_payments)
 │seller_account_nav_orders  (inactive_state по умолчанию в seller_account_payments)
-│seller_account_nav_analysis  (inactive_state по умолчанию в seller_account_payments)
 │seller_account_nav_history  (inactive_state по умолчанию в seller_account_payments)
+│seller_account_nav_analysis  (inactive_state по умолчанию в seller_account_payments)
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -2309,7 +2309,7 @@ seller_account_payments_taxes_edit_screen предназначается для 
 │------ в inactive_state
 ├────────
 │• color7
-│------ в actived_state
+│------ в activated_state
 └─
 
 
@@ -2318,7 +2318,7 @@ seller_account_payments_taxes_edit_screen предназначается для 
 ✠ details
 
 - seller_account_payments_taxes_edit_top - располагается в качестве компактного блока в верхней области seller_account_payments_taxes_edit и включает:
---- seller_account_payments_taxes_edit_top_text - текст следующего содержания: "Заполнить выбранные поля";
+--- seller_account_payments_taxes_edit_top_title - текст следующего содержания: "Заполнить выбранные поля";
 seller_account_payments_taxes_edit_main_tax является основной рабочей областью, которая расположена в центральной части и занимает: около 30% по высоте, около 80-90% по ширине. seller_account_payments_taxes_edit_main_tax состоит из 2 компонентов:  
 --- seller_account_payments_taxes_edit_main_tax - представленный заголовком и четырьмя полями для ввода:
 ----- seller_account_payments_taxes_edit_main_tax_title - отображает заголовок: "Реквизиты по уплате НДС и НСП";
@@ -2346,7 +2346,7 @@ seller_account_payments_taxes_edit_main_tax является основной р
 │------ в inactive_state
 ├────────
 │• color7
-│------ в actived_state
+│------ в activated_state
 ├────────
 │• color3
 │- || - invalid по факту проверки на undernaming
@@ -2363,7 +2363,7 @@ seller_account_payments_taxes_edit_main_tax является основной р
 │- && - valid по факту проверки на emptiness
 └─
 ┌─
-│seller_account_payments_taxes_edit_top_text
+│seller_account_payments_taxes_edit_top_title
 │seller_account_payments_taxes_edit_main_tax_title
 │seller_account_payments_taxes_edit_bottom_text 
 │---------------------------
@@ -2744,7 +2744,7 @@ seller_account_payments_taxes_edit_main_tax является основной р
 │seller_nav_chat_button  (inactive_state по умолчанию в seller_account)
 │seller_nav_shop_button  (inactive_state по умолчанию в seller_account)
 │seller_nav_goods_button  (inactive_state по умолчанию в seller_account)
-│seller_nav_account_button  (actived_state по умолчанию в seller_account)
+│seller_nav_account_button  (activated_state по умолчанию в seller_account)
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -2752,14 +2752,14 @@ seller_account_payments_taxes_edit_main_tax является основной р
 │------ в inactive_state
 ├────────
 │• color7
-│------ в actived_state
+│------ в activated_state
 └─
 ┌─
 │seller_nav_demand_badge  (inactive_state по умолчанию в seller_account) 
 │seller_nav_chat_badge  (inactive_state по умолчанию в seller_account)  
 │seller_nav_shop_badge  (inactive_state по умолчанию в seller_account)  
 │seller_nav_goods_badge  (inactive_state по умолчанию в seller_account)   
-│seller_nav_account_badge  (actived_state по умолчанию в seller_account)
+│seller_nav_account_badge  (activated_state по умолчанию в seller_account)
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -2767,7 +2767,7 @@ seller_account_payments_taxes_edit_main_tax является основной р
 │------ в inactive_state
 ├────────
 │• color2
-│------ в actived_state 
+│------ в activated_state 
 └─
 
 
@@ -2798,5 +2798,205 @@ seller_account_payments_taxes_edit_protip_popover - занимает поряд�
 │• color8
 │------ в любой ситуации
 └─
+
+
+
+🡆🡆 seller_account_history_screen
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+
+Подраздел в котором единым списком отображаются закрытые ордера работа по которым была завершена. 
+
+✠ tables
+
+                          codename:                              type:                   designation:           pressed/default:   location:   interaction:
+      ┌─[seller_account_nav                           ]  [section_lev1       ]                                   [color0/color0]     [ 🡅 ✜ ]      [ no  ]
+      ├ [seller_account_nav_payments                  ]  [button             ] [ "ПЛАТЕЖИ"                     ] [color7/color4]     [ ✜ 🡄 ]      [ yes ]
+      ├ [seller_account_nav_orders                    ]  [button             ] [ "ОРДЕРА"                      ] [color7/color4]     [ ✜ ✜ ]      [ yes ]
+      ├ [seller_account_nav_history                   ]  [button             ] [ "ИСТОРИЯ"                     ] [color7/color4]     [ ✜ 🡆 ]      [ yes ] 
+      └ [seller_account_nav_analysis                  ]  [button             ] [ "АНАЛИЗ"                      ] [color7/color4]     [ ✜ 🡆 ]      [ yes ] 
+  ┌┬─┬──[seller_account_history                       ]  [section_lev1       ]                                   [color0/color0]     [ ✜ ✜ ]      [ no  ] 
+  ││ └┬─[seller_account_history_top                   ]  [section_lev2       ]                                   [color2/color2]     [ 🡅 ✜ ]      [ no  ] 
+  ││  └ [seller_account_history_top_title             ]  [header             ] [ "История ордеров"             ] [color8/color8]     [ ✜ ✜ ]      [ no  ] 
+  │└┬┬──[seller_account_history_list                  ]  [section_lev2       ]                                   [color2/color2]     [ ✜ ✜ ]      [ no  ]
+  │ │└┬─[seller_account_history_list_top              ]  [section_lev3       ]                                   [color2/color2]     [ 🡅 ✜ ]      [ no  ]
+  │ │ ├ [seller_account_history_list_top_number       ]  [label              ] [ "номер ордера"                ] [color8/color8]     [ ✜ 🡄 ]      [ no  ]
+  │ │ ├ [seller_account_history_list_top_date         ]  [label              ] [ "дата"                        ] [color8/color8]     [ ✜ ✜ ]      [ no  ]
+  │ │ └ [seller_account_history_list_top_profit       ]  [label              ] [ "прибыль"                     ] [color8/color8]     [ ✜ 🡆 ]      [ no  ]
+  │ └─┬─[seller_account_history_list_order            ]  [section_lev3+button]                                 ] [color7/color2]     [ ✜ ✜ ]      [ yes ] 
+  │   ├ [seller_account_history_list_order_number     ]  [label+button       ] [ { number }                    ] [color2/color2]     [ ✜ 🡄 ]      [ yes ]
+  │   ├ [seller_account_history_list_order_date       ]  [label+button       ] [ { number }                    ] [color2/color2]     [ ✜ ✜ ]      [ yes ] 
+  │   └ [seller_account_history_list_order_profit     ]  [label+button       ] [ { number }                    ] [color2/color2]     [ ✜ 🡆 ]      [ yes ]
+  └──┬──[seller_account_history_bottom                ]  [section_lev2       ]                                   [color2/color2]     [ ✜ ✜ ]      [ no  ]
+     ├┬─[seller_account_history_bottom_calendar1      ]  [section_lev3+button]                                   [color7/color4]     [ ✜ 🡄 ]      [ yes ]
+     │└ [seller_account_history_bottom_calendar1_title]  [value              ] [ { number }                    ] [color8/color8]     [ ✜ ✜ ]      [ yes ]
+     ├──[seller_account_history_bottom_search         ]  [button             ] [ "ПОИСК"                       ] [color5/color4]     [ ✜ ✜ ]      [ yes ]
+     └┬─[seller_account_history_bottom_calendar2      ]  [section_lev3+button]                                   [color7/color4]     [ ✜ 🡆 ]      [ yes ]
+      └ [seller_account_history_bottom_calendar2_title]  [value              ] [ { number }                    ] [color8/color8]     [ ✜ ✜ ]      [ yes ]
+     ┌──[seller_nav                                   ]  [section_lev1       ]                                   [color0/color0]     [ ✜ ✜ ]      [ no  ]
+     ├┬ [seller_nav_demand_button                     ]  [button             ]                                   [color7/color4]     [ ✜ 🡄 ]      [ yes ]
+     │├ [seller_nav_demand_header                     ]  [header             ] [ "МОНИТОР"                     ] [color8/color8]     [ ✜ ✜ ]      [ no  ]  
+     │└ [seller_nav_demand_badge                      ]  [badge              ] [ { number }                    ] [color4/color4]     [ 🡅 🡆 ]      [ no  ] 	
+     ├┬ [seller_nav_chat_button                       ]  [button             ]                                   [color7/color4]     [ ✜ 🡄 ]      [ yes ]   
+     │├ [seller_nav_chat_header                       ]  [header             ] [ "ЧАТ"                         ] [color8/color8]     [ ✜ ✜ ]      [ no  ] 
+     │└ [seller_nav_chat_badge                        ]  [badge              ] [ { number }                    ] [color4/color4]     [ 🡅 🡆 ]      [ no  ] 
+     ├┬ [seller_nav_shop_button                       ]  [button             ]                                   [color7/color4]     [ ✜ ✜ ]      [ yes ]   
+     │├ [seller_nav_shop_header                       ]  [header             ] [ "МАГАЗИН"                     ] [color8/color8]     [ ✜ ✜ ]      [ no  ] 
+     │└ [seller_nav_shop_badge                        ]  [badge              ] [ { number }                    ] [color4/color4]     [ 🡅 🡆 ]      [ no  ]   
+     ├┬ [seller_nav_goods_button                      ]  [button             ]                                   [color7/color4]     [ ✜ 🡆 ]      [ yes ]   
+     │├ [seller_nav_goods_header                      ]  [header             ] [ "ТОВАРЫ"                      ] [color8/color8]     [ ✜ ✜ ]      [ no  ] 
+     │└ [seller_nav_goods_badge                       ]  [badge              ] [ { number }                    ] [color4/color4]     [ 🡅 🡆 ]      [ no  ]     
+     └┬ [seller_nav_account_button                    ]  [button             ]                                   [color7/color4]     [ ✜ 🡆 ]      [ yes ]   
+      ├ [seller_nav_account_header                    ]  [header             ] [ "КАБИНЕТ"                     ] [color8/color8]     [ ✜ ✜ ]      [ no  ] 
+      └ [seller_nav_account_badge                     ]  [badge              ] [ { number }                    ] [color4/color4]     [ 🡅 🡆 ]      [ no  ] 
+
+
+■ seller_account_nav
+
+✠ details
+Секция seller_account_nav является навигационной панелью seller_account и как сквозная часть интерфейса присутствует на всех экранах seller_account в верхней области. Секция состоит из 4 компонентов каждый из которых выполняет роль кнопки расположенные слева-направо в следующем порядке:
+
+1) seller_account_nav_payments - кнопка с наименованием "ПЛАТЕЖИ", предназначена для перехода к seller_account_payments;
+2) seller_account_nav_orders - кнопка с наименованием "ОРДЕРА", предназначена для перехода к seller_account_orders;
+3) seller_account_nav_history - кнопка с наименованием "ИСТОРИЯ", предназначена для перехода к seller_account_history (активирована по умолчанию);
+4) seller_account_nav_analysis - кнопка с наименованием "АНАЛИЗ", предназначена для перехода к seller_account_analysis.
+
+
+✠ actions
+• seller_account_nav_payments: 
+╠ valid / invalid
+║ • tap
+║ occasion: нажатие seller_account_nav_payments;
+║ condition: в любой ситуации;
+╙ result: открывается seller_account_payments_screen.
+• seller_account_nav_orders:
+╠ valid / invalid
+║ • tap 
+║ occasion: нажатие seller_account_nav_orders;
+║ condition: в любой ситуации;
+╙ result: открывается seller_account_orders_screen.
+• seller_account_nav_history:
+╠ valid / invalid
+║ • tap 
+║ occasion: нажатие seller_account_nav_history;
+║ condition: в любой ситуации;
+╙ result: не реагирует на нажатие.
+• seller_account_nav_analysis:
+╠ valid / invalid
+║ • tap 
+║ occasion: нажатие seller_account_nav_analysis;
+║ condition: в любой ситуации;
+╙ result: открывается seller_account_analysis_screen.
+
+✠ color_states
+┌─ 
+│seller_account_nav_payments  (inactive_state по умолчанию в seller_account_payments)
+│seller_account_nav_orders  (inactive_state по умолчанию в seller_account_payments)
+│seller_account_nav_history  (activated_state по умолчанию в seller_account_payments)
+│seller_account_nav_analysis  (inactive_state по умолчанию в seller_account_payments)
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ в inactive_state
+├────────
+│• color7
+│------ в activated_state
+└─
+
+
+■ seller_account_history
+
+✠ details
+
+- seller_account_history_top - располагается в качестве компактного блока высотой порядка 3% от вертикальной области экрана в верхней области seller_account_history и включает:
+--- seller_account_history_top_title - текст следующего содержания: "История ордеров";
+- seller_account_history_list является основной рабочей областью в виде таблицы из трех колонок, которая расположена в центральной части и занимает: около 75% по высоте, около 95% по ширине. seller_account_history_list состоит из 2 компонентов:  
+--- seller_account_history_list_top - представленный блоком занимающим всю ширину в верхней части seller_account_history_list который состоит из 3 заголовков столбцов:
+----- seller_account_history_list_top_number - отображает заголовок левого столбца: "номер ордера";
+----- seller_account_history_list_top_date - отображает заголовок центрального столбца: "дата";
+----- seller_account_history_list_top_profit - отображает заголовок правого столбца: "прибыль";
+--- seller_account_history_list_order - представленный тремя ячейками таблицы:
+----- seller_account_history_list_order_number - левая ячейка расположенная под seller_account_history_list_top_number;
+----- seller_account_history_list_order_date - центральная ячейка расположенная под seller_account_history_list_top_date;
+----- seller_account_history_list_order_profit - правая ячейка расположенная под seller_account_history_list_top_profit;
+- seller_account_history_bottom - располагается в нижней части seller_account_history высотой порядка 5-6% от вертикальной области экрана:
+--- seller_account_history_bottom_calendar1 - представляет собой кнопку в виде иконки календаря (с переменной указывающей день месяца);
+--- seller_account_history_bottom_search - кнопка инициализирующая поиск заданный в диапазоне между seller_account_history_bottom_calendar1 и seller_account_history_bottom_calendar2;
+--- seller_account_history_bottom_calendar2 - представляет собой кнопку в виде иконки календаря (с переменной указывающей день месяца).
+
+✠ actions
+• seller_account_history_list_order:
+║ • tap 
+╠ valid / invalid
+║ occasion: нажатие seller_account_history_list_order;
+║ condition: в любой ситуации;
+╙ result: открывается seller_account_order_bulletin_screen.
+• seller_account_history_bottom_calendar1:
+║ • tap 
+╠ valid / invalid
+║ occasion: нажатие seller_account_history_bottom_calendar1;
+║ condition: в любой ситуации;
+╙ result: всплывает seller_account_history_search_from_screen. 
+• seller_account_history_bottom_search:
+║ • tap 
+╠ valid / invalid
+║ occasion: нажатие seller_account_history_bottom_search;
+║ condition: в любой ситуации;
+╙ result: открывается seller_account_history_search_result_screen.
+• seller_account_history_bottom_calendar2:
+║ • tap 
+╠ valid / invalid
+║ occasion: нажатие seller_account_history_bottom_calendar2;
+║ condition: в любой ситуации;
+╙ result: открывается seller_account_history_search_to_screen.
+
+✠ color_states
+┌─ 
+│seller_account_history_list_order
+│seller_account_history_bottom_calendar1
+│seller_account_history_bottom_calendar2
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ в inactive_state
+├────────
+│• color7
+│------ в activated_state
+└─
+┌─ 
+│seller_account_history_bottom_search
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ в inactive_state
+├────────
+│• color5
+│------ в pressing_state
+└─
+┌─ 
+│seller_account_history_top_title
+│seller_account_history_list_top_number
+│seller_account_history_list_top_date
+│seller_account_history_list_top_profit
+│seller_account_history_bottom_calendar1_title
+│seller_account_history_bottom_calendar2_title
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color8
+│------ в любой ситуации
+└─
+
+✠ logics
+По умолчанию seller_account_history_bottom_calendar1_title и seller_account_history_bottom_calendar2_title отображают относительные значения согласно текущей дате, где:
+seller_account_history_bottom_calendar1_title - отображает число текущего дня;
+seller_account_history_bottom_calendar2_title - отображает число по формуле: X - 7 = Y;
+в которой X - это текущая дата, а Y - значение seller_account_history_bottom_calendar2_title.
+Таким образом, без предварительного указания целевого промежутка, при нажатии seller_account_history_bottom_search выводится сводка за последние 7 дней.
+
+
+
 
 
