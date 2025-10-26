@@ -2932,7 +2932,7 @@ seller_account_payments_taxes_edit_protip_popover - занимает поряд�
 ╠ valid / invalid
 ║ occasion: нажатие seller_account_history_list_order;
 ║ condition: в любой ситуации;
-╙ result: открывается seller_account_order_bulletin_screen.
+╙ result: открывается seller_account_order_modal.
 • seller_account_history_bottom_calendar1:
 ║ • tap 
 ╠ valid / invalid
@@ -3085,10 +3085,10 @@ seller_account_history_bottom_calendar2_title - отображает число 
 
 
 
-🡆🡆🡆 seller_account_order_screen
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+🡆🡆🡆 seller_account_order_modal
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 
-Подраздел в котором единым списком отображаются закрытые ордера работа по которым была завершена. 
+Модальное окно отображающее полную информацию по закрытому ордеру. 
 
 ✠ tables
 
@@ -3110,7 +3110,8 @@ seller_account_history_bottom_calendar2_title - отображает число 
 │ │ │││  └┬─[seller_account_order_main_list_date                     ]  [section_lev4       ]                                        [ 🡅 ✜ ]      [ no  ]
 │ │ │││   ├ [seller_account_order_main_list_date_param               ]  [label              ]  [ "дата ордера"                 ]     [ ✜ 🡄 ]      [ no  ]
 │ │ │││   └ [seller_account_order_main_list_date_value               ]  [value              ]  [ { number }                    ]     [ ✜ 🡆 ]      [ no  ] 
-│ │ ││└┬┬───[seller_account_order_main_list_cart                     ]  [section_lev4+label ]  [ "корзина"                     ]     [ ✜ ✜ ]      [ no  ]
+│ │ ││└┬┬─┬─[seller_account_order_main_list_cart                     ]  [section_lev4       ]                                        [ ✜ ✜ ]      [ no  ]
+│ │ ││ ││ └ [seller_account_order_main_list_cart_title               ]  [label              ]  [ "корзина"                     ]     [ ✜ 🡄 ]      [ no  ]
 │ │ ││ │└┬──[seller_account_order_main_list_cart_lot                 ]  [section_lev5       ]                                        [ ✜ ✜ ]      [ no  ]    
 │ │ ││ │ ├┬─[seller_account_order_main_list_cart_lot_number          ]  [section_lev6       ]                                        [ ✜ ✜ ]      [ no  ]
 │ │ ││ │ │├ [seller_account_order_main_list_cart_lot_number_param    ]  [label              ]  [ "# товара"                    ]     [ ✜ 🡄 ]      [ no  ]
@@ -3124,7 +3125,7 @@ seller_account_history_bottom_calendar2_title - отображает число 
 │ │ ││ │ └┬─[seller_account_order_main_list_cart_lot_price           ]  [section_lev6       ]                                        [ ✜ ✜ ]      [ no  ]
 │ │ ││ │  ├ [seller_account_order_main_list_cart_lot_price_param     ]  [label              ]  [ "цена"                        ]     [ ✜ 🡄 ]      [ no  ]
 │ │ ││ │  └ [seller_account_order_main_list_cart_lot_price_value     ]  [value              ]  [ { number }                    ]     [ ✜ 🡆 ]      [ no  ]
-│ │ ││ └──┬─[seller_account_order_main_list_cart_sum                 ]  [section_lev5+label ]                                        [ ✜ ✜ ]      [ no  ]
+│ │ ││ └──┬─[seller_account_order_main_list_cart_sum                 ]  [section_lev5       ]                                        [ ✜ ✜ ]      [ no  ]
 │ │ ││    ├ [seller_account_order_main_list_cart_sum_param           ]  [label              ]  [ "сумма оплаты"                ]     [ ✜ 🡄 ]      [ no  ]
 │ │ ││    └ [seller_account_order_main_list_cart_sum_value           ]  [value              ]  [ { number }                    ]     [ ✜ 🡆 ]      [ no  ]
 │ │ │├────┬─[seller_account_order_main_list_tax_nds                  ]  [section_lev4       ]                                        [ ✜ ✜ ]      [ no  ]
@@ -3171,11 +3172,11 @@ seller_account_history_bottom_calendar2_title - отображает число 
 │ │ │     └ [seller_account_order_main_list_operator_shift_value     ]  [value              ]  [ { number }                    ]     [ ✜ 🡆 ]      [ no  ]
 │ │ └─────┬─[seller_account_order_main_list_journal                  ]  [section_lev4+button]                                        [ 🡇 ✜ ]      [ yes ]
 │ │       └ [seller_account_order_main_list_journal_title            ]  [label              ]  [ "журнал"                      ]     [ ✜ ✜ ]      [ yes ]
-│ └─────┬┬──[seller_account_order_main_bottom_list_btn               ]  [section_lev3       ]                                        [ 🡇 ✜ ]      [ no  ] 
-│       │└┬─[seller_account_order_main_bottom_list_btn_pdf           ]  [button             ]                                        [ ✜ 🡄 ]      [ yes ]
-│       │ └ [seller_account_order_main_bottom_list_btn_pdf_title     ]  [label              ]  [ "PDF"                         ]     [ ✜ ✜ ]      [ yes ]
-│       └─┬─[seller_account_order_main_bottom_list_btn_close         ]  [button             ]                                        [ ✜ 🡆 ]      [ yes ]
-│         └ [seller_account_order_main_bottom_list_btn_close_title   ]  [label              ]  [ "закрыть"                     ]     [ ✜ ✜ ]      [ yes ]  
+│ └─────┬┬──[seller_account_order_main_bottom_btn                    ]  [section_lev3       ]                                        [ 🡇 ✜ ]      [ no  ] 
+│       │└┬─[seller_account_order_main_bottom_btn_pdf                ]  [button             ]                                        [ ✜ 🡄 ]      [ yes ]
+│       │ └ [seller_account_order_main_bottom_btn_pdf_title          ]  [label              ]  [ "PDF"                         ]     [ ✜ ✜ ]      [ yes ]
+│       └─┬─[seller_account_order_main_bottom_btn_close              ]  [button             ]                                        [ ✜ 🡆 ]      [ yes ]
+│         └ [seller_account_order_main_bottom_btn_close_title        ]  [label              ]  [ "закрыть"                     ]     [ ✜ ✜ ]      [ yes ]  
 └─────────┬─[seller_account_order_bottom                             ]  [section_lev2       ]                                        [ 🡇 ✜ ]      [ no  ]
           └ [seller_account_order_bottom_text                        ]  [text               ]  [ "Подробные сведения по вы..." ]     [ ✜ ✜ ]      [ no  ]
 
@@ -3184,9 +3185,9 @@ seller_account_history_bottom_calendar2_title - отображает число 
 
 ✠ details
 
-- seller_account_order_top - располагается в качестве компактного блока высотой порядка 3% от вертикальной области экрана в верхней области seller_account_history и включает:
+- seller_account_order_top - располагается в качестве компактного блока высотой порядка 3% от вертикальной области экрана в верхней области seller_account_order_modal и включает:
 --- seller_account_order_top_title - с заголовком: "Детали ордера";
-- seller_account_order_main является основной рабочей областью в виде скроллируемой таблицы из 2 колонок, которая расположена в центральной части и занимает: около 80% по высоте, около 95% по ширине видимой области экрана. seller_account_order_main состоит из 3 компонентов:  
+- seller_account_order_main является основной рабочей областью в виде скроллируемой таблицы из 2 колонок, которая расположена в центральной части и занимает около 95% по ширине видимой области экрана. seller_account_order_main состоит из 3 компонентов:  
 --- seller_account_order_main_header - представленный блоком занимающим всю ширину в верхней части seller_account_order_main который состоит из 2 заголовков столбцов:
 ----- seller_account_order_main_header_param - отображает заголовок левого столбца: "параметр";
 ----- seller_account_order_main_header_value - отображает заголовок правого столбца: "значение";
@@ -3200,7 +3201,8 @@ seller_account_history_bottom_calendar2_title - отображает число 
 ----- seller_account_order_main_list_date - находится под seller_account_order_main_list_alias, состоит из 2 ячеек:
 ------- seller_account_order_main_list_date_param - левая ячейка отображает наименование параметра: "дата ордера";
 ------- seller_account_order_main_list_date_value - правая ячейка с числовым значением, отображает дату создания ордера;
------ seller_account_order_main_list_cart - находится под seller_account_order_main_list_date, обладает наименованием "корзина", представляет собой сводку по товарным позициям (seller_account_order_main_list_cart_lot) входящим в корзину и состоит из количества seller_account_order_main_list_cart_lot:
+----- seller_account_order_main_list_cart - находится под seller_account_order_main_list_date, представляет собой сводку по товарным позициям (seller_account_order_main_list_cart_lot) входящим в корзину и состоит из количества seller_account_order_main_list_cart_lot:
+------- seller_account_order_main_list_cart_title - является наименованием "корзина";
 ------- seller_account_order_main_list_cart_lot - является подгруппой seller_account_order_main_list_cart включающей 4 компонента:
 --------- seller_account_order_main_list_cart_lot_number - состоит из 2 ячеек:
 ----------- seller_account_order_main_list_cart_lot_number_param - левая ячейка отображает наименование параметра: "# товара";
@@ -3261,13 +3263,293 @@ seller_account_history_bottom_calendar2_title - отображает число 
 ------- seller_account_order_main_list_operator_shift_value - правая ячейка с числовым значением, отображает номер смены оператора во время работы которого был обработан ордер;
 ----- seller_account_order_main_list_journal - располагается в нижней части seller_account_order_main_list, представляет собой кнопку с элементом:
 ------- seller_account_order_main_list_journal_title - наименование seller_account_order_main_list_journal "журнал";
---- seller_account_order_main_bottom_list_btn - подгруппа располагающаяся в нижней части seller_account_order_main которая состоит из 2 компонентов:
------ seller_account_order_main_bottom_list_btn_pdf - кнопка в левой области экрана содержащая элемент:
-------- seller_account_order_main_bottom_list_btn_pdf_title - наименование кнопки "PDF";
------ seller_account_order_main_bottom_list_btn_close - кнопка в правой области экрана содержащая элемент:
-------- seller_account_order_main_bottom_list_btn_close_title - наименование кнопки "закрыть";
+--- seller_account_order_main_bottom_btn - подгруппа располагающаяся в нижней части seller_account_order_main которая состоит из 2 компонентов:
+----- seller_account_order_main_bottom_btn_pdf - кнопка в левой области экрана содержащая элемент:
+------- seller_account_order_main_bottom_btn_pdf_title - наименование кнопки "PDF";
+----- seller_account_order_main_bottom_btn_close - кнопка в правой области экрана содержащая элемент:
+------- seller_account_order_main_bottom_btn_close_title - наименование кнопки "закрыть";
 - seller_account_order_bottom - располагается в качестве компактного блока высотой порядка 3% от вертикальной области экрана в нижней области seller_account_order и включает:
 --- seller_account_order_bottom_text - с текстом следующего содержания: "Подробные сведения по выбранному ордеру".
+
+✠ actions
+• seller_account_order_main_list_journal:
+║ • tap 
+╠ valid / invalid
+║ occasion: нажатие seller_account_order_main_list_journal;
+║ condition: в любой ситуации;
+╙ result: открывается seller_account_order_journal_screen.
+• seller_account_order_main_bottom_btn_pdf:
+║ • tap 
+╠ valid / invalid
+║ occasion: нажатие seller_account_order_main_bottom_btn_pdf;
+║ condition: в любой ситуации;
+╙ result: открывается seller_account_order_check_modal. 
+• seller_account_order_main_bottom_btn_close:
+║ • tap 
+╠ valid / invalid
+║ occasion: нажатие seller_account_order_main_bottom_btn_close;
+║ condition: в любой ситуации;
+║ result: 
+║ && - seller_account_order_modal закрывается;
+╙ && - происходит возврат к seller_account_history_screen.
+
+✠ color_states
+┌─ 
+│seller_account_order_main_list_journal
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color2
+│------ в inactive_state
+├────────
+│• color5
+│------ в pressing_state
+└─
+┌─ 
+│seller_account_order_main_bottom_btn_pdf
+│seller_account_order_main_bottom_btn_close
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ в inactive_state
+├────────
+│• color5
+│------ в pressing_state
+└─
+┌─ 
+│seller_account_order_top_title
+│seller_account_order_main_header_param
+│seller_account_order_main_header_value
+│seller_account_order_main_list_number_param
+│seller_account_order_main_list_number_value
+│seller_account_order_main_list_alias_param
+│seller_account_order_main_list_alias_value
+│seller_account_order_main_list_date_param
+│seller_account_order_main_list_date_value
+│seller_account_order_main_list_cart_title
+│seller_account_order_main_list_cart_lot_number_param
+│seller_account_order_main_list_cart_lot_number_value
+│seller_account_order_main_list_cart_lot_name_param
+│seller_account_order_main_list_cart_lot_name_value
+│seller_account_order_main_list_cart_lot_quantity_param
+│seller_account_order_main_list_cart_lot_quantity_value
+│seller_account_order_main_list_cart_lot_price_param
+│seller_account_order_main_list_cart_lot_price_value
+│seller_account_order_main_list_cart_sum_param
+│seller_account_order_main_list_cart_sum_value
+│seller_account_order_main_list_tax_nds_param
+│seller_account_order_main_list_tax_nds_value
+│seller_account_order_main_list_tax_nsp_param
+│seller_account_order_main_list_tax_nsp_value
+│seller_account_order_main_list_tax_sum_param
+│seller_account_order_main_list_tax_sum_value
+│seller_account_order_main_list_profit_param
+│seller_account_order_main_list_profit_value
+│seller_account_order_main_list_transaction_number_param
+│seller_account_order_main_list_transaction_number_value
+│seller_account_order_main_list_transaction_time_param
+│seller_account_order_main_list_transaction_time_value
+│seller_account_order_main_list_transaction_type_param
+│seller_account_order_main_list_transaction_type_value
+│seller_account_order_main_list_customer_name_param
+│seller_account_order_main_list_customer_name_value
+│seller_account_order_main_list_customer_phone_param
+│seller_account_order_main_list_customer_phone_value
+│seller_account_order_main_list_booking_param
+│seller_account_order_main_list_booking_value
+│seller_account_order_main_list_delivery_activation_param
+│seller_account_order_main_list_delivery_activation_value
+│seller_account_order_main_list_delivery_type_param
+│seller_account_order_main_list_delivery_type_value
+│seller_account_order_main_list_operator_number_param
+│seller_account_order_main_list_operator_number_value
+│seller_account_order_main_list_operator_shift_param
+│seller_account_order_main_list_operator_shift_value
+│seller_account_order_main_list_journal_title
+│seller_account_order_main_bottom_btn_pdf_title
+│seller_account_order_main_bottom_btn_close_title
+│seller_account_order_bottom_text
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color8
+│------ в любой ситуации
+└─
+
+
+
+🡆🡆🡆🡆 seller_account_order_check_modal
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+Модальное окно отображающее информацию отформатированную в виде чека для вывода на печать и доступную для отправки третьим лицам. 
+
+✠ tables
+
+                                     codename:                                       type:                    designation:              location:   interaction:
+  ┌┬─────┬──[seller_account_order_check                                    ]  [section_lev1       ]                                      [ ✜ ✜ ]      [ no  ] 
+  ││     └┬─[seller_account_order_check_top                                ]  [section_lev2       ]                                      [ 🡅 ✜ ]      [ no  ] 
+  ││      └ [seller_account_order_check_top_title                          ]  [label              ]  [ "ЧЕК"                         ]   [ ✜ ✜ ]      [ no  ] 
+  │└┬┬┬─────[seller_account_order_check_main                               ]  [section_lev2       ]                                      [ ✜ ✜ ]      [ no  ]
+  │ ││└┬┬┬──[seller_account_order_check_main_list                          ]  [section_lev3       ]                                      [ ✜ ✜ ]      [ no  ]
+  │ ││ ││├┬─[seller_account_order_check_main_list_number                   ]  [section_lev4       ]                                      [ 🡅 ✜ ]      [ no  ]
+  │ ││ │││├ [seller_account_order_check_main_list_number_param             ]  [label              ]  [ "номер ордера"                ]   [ ✜ 🡄 ]      [ no  ]
+  │ ││ │││└ [seller_account_order_check_main_list_number_value             ]  [value              ]  [ { number }                    ]   [ ✜ 🡆 ]      [ no  ]
+  │ ││ ││└┬─[seller_account_order_check_main_list_date                     ]  [section_lev4       ]                                      [ ✜ ✜ ]      [ no  ]
+  │ ││ ││ ├ [seller_account_order_check_main_list_date_param               ]  [label              ]  [ "дата ордера"                 ]   [ ✜ 🡄 ]      [ no  ]
+  │ ││ ││ └ [seller_account_order_check_main_list_date_value               ]  [value              ]  [ { number }                    ]   [ ✜ 🡆 ]      [ no  ] 
+  │ ││ │└┬──[seller_account_order_check_main_list_cart_lot                 ]  [section_lev4       ]                                      [ ✜ ✜ ]      [ no  ]
+  │ ││ │ ├┬─[seller_account_order_check_main_list_cart_lot_number          ]  [section_lev5       ]                                      [ ✜ ✜ ]      [ no  ]
+  │ ││ │ │├ [seller_account_order_check_main_list_cart_lot_number_param    ]  [label              ]  [ "# товара"                    ]   [ ✜ 🡄 ]      [ no  ]
+  │ ││ │ │└ [seller_account_order_check_main_list_cart_lot_number_value    ]  [value              ]  [ { number }                    ]   [ ✜ 🡆 ]      [ no  ]
+  │ ││ │ ├┬─[seller_account_order_check_main_list_cart_lot_name            ]  [section_lev5       ]                                      [ ✜ ✜ ]      [ no  ]
+  │ ││ │ │├ [seller_account_order_check_main_list_cart_lot_name_param      ]  [label              ]  [ "наименование"                ]   [ ✜ 🡄 ]      [ no  ]
+  │ ││ │ │└ [seller_account_order_check_main_list_cart_lot_name_value      ]  [value              ]  [ { string }                    ]   [ ✜ 🡆 ]      [ no  ]  
+  │ ││ │ ├┬─[seller_account_order_check_main_list_cart_lot_quantity        ]  [section_lev5       ]                                      [ ✜ ✜ ]      [ no  ]
+  │ ││ │ │├ [seller_account_order_check_main_list_cart_lot_quantity_param  ]  [label              ]  [ "количество"                  ]   [ ✜ 🡄 ]      [ no  ]
+  │ ││ │ │└ [seller_account_order_check_main_list_cart_lot_quantity_value  ]  [value              ]  [ { number }                    ]   [ ✜ 🡆 ]      [ no  ]
+  │ ││ │ └┬─[seller_account_order_check_main_list_cart_lot_price           ]  [section_lev5       ]                                      [ ✜ ✜ ]      [ no  ]
+  │ ││ │  ├ [seller_account_order_check_main_list_cart_lot_price_param     ]  [label              ]  [ "цена"                        ]   [ ✜ 🡄 ]      [ no  ]
+  │ ││ │  └ [seller_account_order_check_main_list_cart_lot_price_value     ]  [value              ]  [ { number }                    ]   [ ✜ 🡆 ]      [ no  ]
+  │ ││ ├──┬─[seller_account_order_check_main_list_cart_sum                 ]  [section_lev4       ]                                      [ ✜ ✜ ]      [ no  ]
+  │ ││ │  ├ [seller_account_order_check_main_list_cart_sum_param           ]  [label              ]  [ "сумма оплаты"                ]   [ ✜ 🡄 ]      [ no  ]
+  │ ││ │  └ [seller_account_order_check_main_list_cart_sum_value           ]  [value              ]  [ { number }                    ]   [ ✜ 🡆 ]      [ no  ]
+  │ ││ ├──┬─[seller_account_order_check_main_list_tax_nds                  ]  [section_lev4       ]                                      [ ✜ ✜ ]      [ no  ]
+  │ ││ │  ├ [seller_account_order_check_main_list_tax_nds_param            ]  [label              ]  [ "ндс"                         ]   [ ✜ 🡄 ]      [ no  ]
+  │ ││ │  └ [seller_account_order_check_main_list_tax_nds_value            ]  [value              ]  [ { number }                    ]   [ ✜ 🡆 ]      [ no  ]
+  │ ││ ├──┬─[seller_account_order_check_main_list_tax_nsp                  ]  [section_lev4       ]                                      [ ✜ ✜ ]      [ no  ]
+  │ ││ │  ├ [seller_account_order_check_main_list_tax_nsp_param            ]  [label              ]  [ "нсп"                         ]   [ ✜ 🡄 ]      [ no  ]
+  │ ││ │  └ [seller_account_order_check_main_list_tax_nsp_value            ]  [value              ]  [ { number }                    ]   [ ✜ 🡆 ]      [ no  ]
+  │ ││ ├──┬─[seller_account_order_check_main_list_tax_sum                  ]  [section_lev4       ]                                      [ ✜ ✜ ]      [ no  ]
+  │ ││ │  ├ [seller_account_order_check_main_list_tax_sum_param            ]  [label              ]  [ "сумма налога"                ]   [ ✜ 🡄 ]      [ no  ] 
+  │ ││ │  └ [seller_account_order_check_main_list_tax_sum_value            ]  [value              ]  [ { number }                    ]   [ ✜ 🡆 ]      [ no  ] 
+  │ ││ ├──┬─[seller_account_order_check_main_list_profit                   ]  [section_lev4       ]                                      [ ✜ ✜ ]      [ no  ]
+  │ ││ │  ├ [seller_account_order_check_main_list_profit_param             ]  [label              ]  [ "сумма прибыли"               ]   [ ✜ 🡄 ]      [ no  ]
+  │ ││ │  └ [seller_account_order_check_main_list_profit_value             ]  [value              ]  [ { number }                    ]   [ ✜ 🡆 ]      [ no  ]
+  │ ││ ├──┬─[seller_account_order_check_main_list_transaction_number       ]  [section_lev4       ]                                      [ ✜ ✜ ]      [ no  ]
+  │ ││ │  ├ [seller_account_order_check_main_list_transaction_number_param ]  [label              ]  [ "номер транзакции"            ]   [ ✜ 🡄 ]      [ no  ]
+  │ ││ │  └ [seller_account_order_check_main_list_transaction_number_value ]  [value              ]  [ { number }                    ]   [ ✜ 🡆 ]      [ no  ]
+  │ ││ ├──┬─[seller_account_order_check_main_list_transaction_time         ]  [section_lev4       ]                                      [ ✜ ✜ ]      [ no  ]
+  │ ││ │  ├ [seller_account_order_check_main_list_transaction_time_param   ]  [label              ]  [ "время транзакции"            ]   [ ✜ 🡄 ]      [ no  ]
+  │ ││ │  └ [seller_account_order_check_main_list_transaction_time_value   ]  [value              ]  [ { number }                    ]   [ ✜ 🡆 ]      [ no  ]
+  │ ││ ├──┬─[seller_account_order_check_main_list_transaction_type         ]  [section_lev4       ]                                      [ ✜ ✜ ]      [ no  ]
+  │ ││ │  ├ [seller_account_order_check_main_list_transaction_type_param   ]  [label              ]  [ "тип оплаты"                  ]   [ ✜ 🡄 ]      [ no  ]
+  │ ││ │  └ [seller_account_order_check_main_list_transaction_type_value   ]  [value              ]  [ { string }                    ]   [ ✜ 🡆 ]      [ no  ]
+  │ ││ ├──┬─[seller_account_order_check_main_list_customer_name            ]  [section_lev4       ]                                      [ ✜ ✜ ]      [ no  ]
+  │ ││ │  ├ [seller_account_order_check_main_list_customer_name_param      ]  [label              ]  [ "покупатель"                  ]   [ ✜ 🡄 ]      [ no  ]
+  │ ││ │  └ [seller_account_order_check_main_list_customer_name_value      ]  [value              ]  [ { string }                    ]   [ ✜ 🡆 ]      [ no  ]
+  │ ││ ├──┬─[seller_account_order_check_main_list_booking                  ]  [section_lev4       ]                                      [ ✜ ✜ ]      [ no  ]
+  │ ││ │  ├ [seller_account_order_check_main_list_booking_param            ]  [label              ]  [ "резервирование"              ]   [ ✜ 🡄 ]      [ no  ]
+  │ ││ │  └ [seller_account_order_check_main_list_booking_value            ]  [value              ]  [ { boolean }                   ]   [ ✜ 🡆 ]      [ no  ]
+  │ ││ ├──┬─[seller_account_order_check_main_list_delivery_activation      ]  [section_lev4       ]                                      [ ✜ ✜ ]      [ no  ]
+  │ ││ │  ├ [seller_account_order_check_main_list_delivery_activation_param]  [label              ]  [ "доставка"                    ]   [ ✜ 🡄 ]      [ no  ]
+  │ ││ │  └ [seller_account_order_check_main_list_delivery_activation_value]  [value              ]  [ { boolean }                   ]   [ ✜ 🡆 ]      [ no  ]
+  │ ││ ├──┬─[seller_account_order_check_main_list_operator_number          ]  [section_lev4       ]                                      [ ✜ ✜ ]      [ no  ]
+  │ ││ │  ├ [seller_account_order_check_main_list_operator_number_param    ]  [label              ]  [ "продавец"                    ]   [ ✜ 🡄 ]      [ no  ]
+  │ ││ │  └ [seller_account_order_check_main_list_operator_number_value    ]  [value              ]  [ { number }                    ]   [ ✜ 🡆 ]      [ no  ]
+  │ ││ └──┬─[seller_account_order_check_main_list_operator_shift           ]  [section_lev4       ]                                      [ ✜ ✜ ]      [ no  ]
+  │ ││    ├ [seller_account_order_check_main_list_operator_shift_param     ]  [label              ]  [ "смена"                       ]   [ ✜ 🡄 ]      [ no  ]
+  │ ││    └ [seller_account_order_check_main_list_operator_shift_value     ]  [value              ]  [ { number }                    ]   [ ✜ 🡆 ]      [ no  ]
+  │ │└──────[seller_account_order_check_main_stamp                         ]  [section_lev3       ]                                      [ 🡇 🡆 ]      [ no  ]
+  │ └───┬┬──[seller_account_order_check_main_bottom_btn                    ]  [section_lev3       ]                                      [ 🡇 ✜ ]      [ no  ] 
+  │     │└┬─[seller_account_order_check_main_bottom_btn_send               ]  [button             ]                                      [ ✜ 🡄 ]      [ yes ]
+  │     │ └ [seller_account_order_check_main_bottom_btn_send_title         ]  [label              ]  [ "отправить"                   ]   [ ✜ ✜ ]      [ yes ]
+  │     └─┬─[seller_account_order_check_main_bottom_btn_close              ]  [button             ]                                      [ ✜ 🡆 ]      [ yes ]
+  │       └ [seller_account_order_check_main_bottom_btn_close_title        ]  [label              ]  [ "закрыть"                     ]   [ ✜ ✜ ]      [ yes ]  
+  └───────┬─[seller_account_order_check_bottom                             ]  [section_lev2       ]                                      [ 🡇 ✜ ]      [ no  ]
+          └ [seller_account_order_check_bottom_text                        ]  [text               ]  [ "Вы можете отправить чек ..." ]   [ ✜ ✜ ]      [ no  ]
+
+
+■ seller_account_order_check
+
+✠ details
+
+- seller_account_order_check_top - располагается в качестве компактного блока высотой порядка 6-8% от вертикальной области экрана в верхней области seller_account_order_check_modal и включает:
+--- seller_account_order_check_top_title - с заголовком: "ЧЕК";
+- seller_account_order_check_main является основной рабочей областью в виде скроллируемой таблицы из 2 колонок представленной в одноцветном (сплошном) формате без видимых границ ячеек, которая расположена в центральной части и занимает около 100% по ширине видимой области экрана. seller_account_order_check_main состоит из 3 компонентов:  
+--- seller_account_order_check_main_list - является телом данных чека состоящим из 16 компонентов;
+----- seller_account_order_check_main_list_number - находится в самом верху seller_account_order_check_main_list и состоит из 2 ячеек:
+------- seller_account_order_check_main_list_number_param - левая ячейка отображает наименование параметра: "номер ордера";
+------- seller_account_order_check_main_list_number_value - правая ячейка с числовым значением из 20 цифр, отображает номер ордера;
+----- seller_account_order_check_main_list_date - находится под seller_account_order_check_main_list_number, состоит из 2 ячеек:
+------- seller_account_order_check_main_list_date_param - левая ячейка отображает наименование параметра: "дата ордера";
+------- seller_account_order_check_main_list_date_value - правая ячейка с числовым значением, отображает дату создания ордера;
+----- seller_account_order_check_main_list_cart_lot - является подгруппой включающей 4 компонента:
+------- seller_account_order_check_main_list_cart_lot_number - состоит из 2 ячеек:
+--------- seller_account_order_check_main_list_cart_lot_number_param - левая ячейка отображает наименование параметра: "# товара";
+--------- seller_account_order_check_main_list_cart_lot_number_value - правая ячейка с числовым значением, отображает номер товарной позиции в каталоге продавца;
+------- seller_account_order_check_main_list_cart_lot_name - находится под seller_account_order_check_main_list_cart_lot_number и состоит из 2 ячеек:
+--------- seller_account_order_check_main_list_cart_lot_name_param - левая ячейка отображает наименование параметра: "наименование";
+--------- seller_account_order_check_main_list_cart_lot_name_value - правая ячейка со строковым значением, отображает название товарной позиции в каталоге продавца;
+------- seller_account_order_check_main_list_cart_lot_quantity - находится под seller_account_order_check_main_list_cart_lot_name и состоит из 2 ячеек:
+--------- seller_account_order_check_main_list_cart_lot_quantity_param - левая ячейка отображает наименование параметра: "количество";
+--------- seller_account_order_check_main_list_cart_lot_quantity_value - правая ячейка с числовым значением, отображает количество товара в корзине по seller_account_order_check_main_list_cart_lot согласно единицам измерения данного лота;
+------- seller_account_order_check_main_list_cart_lot_price - находится под seller_account_order_check_main_list_cart_lot_quantity и состоит из 2 ячеек:
+--------- seller_account_order_check_main_list_cart_lot_price_param - левая ячейка отображает наименование параметра: "цена";
+--------- seller_account_order_check_main_list_cart_lot_price_value - правая ячейка с числовым значением, отображает цену товара согласно его количеству в корзине;
+----- seller_account_order_check_main_list_cart_sum - располагается под всеми seller_account_order_check_main_list_cart_lot подгруппами и состоит из 2 ячеек:
+------- seller_account_order_check_main_list_cart_sum_param - левая ячейка отображает наименование параметра: "сумма оплаты";
+------- seller_account_order_check_main_list_cart_sum_value - правая ячейка с числовым значением, отображает общую сумму по всем seller_account_order_check_main_list_cart_lot находящимся в корзине;
+----- seller_account_order_check_main_list_tax_nds - находится под seller_account_order_check_main_list_cart_sum, состоит из 2 ячеек:
+------- seller_account_order_check_main_list_tax_nds_param - левая ячейка отображает наименование параметра: "ндс";
+------- seller_account_order_check_main_list_tax_nds_value - правая ячейка с числовым значением, отображает величину налога ндс в процентном выражении;
+----- seller_account_order_check_main_list_tax_nsp - находится под seller_account_order_check_main_list_tax_nds, состоит из 2 ячеек:
+------- seller_account_order_check_main_list_tax_nsp_param - левая ячейка отображает наименование параметра: "нсп";
+------- seller_account_order_check_main_list_tax_nsp_value - правая ячейка с числовым значением, отображает величину налога нсп в процентном выражении;
+----- seller_account_order_check_main_list_tax_sum - находится под seller_account_order_check_main_list_tax_nsp, состоит из 2 ячеек:
+------- seller_account_order_check_main_list_tax_sum_param - левая ячейка отображает наименование параметра: "сумма налога";
+------- seller_account_order_check_main_list_tax_sum_value - правая ячейка с числовым значением, отображает сумму налога в денежном выражении соответствующего seller_account_order_check_main_list_cart_sum_value;
+----- seller_account_order_check_main_list_profit - находится под seller_account_order_check_main_list_tax_sum, состоит из 2 ячеек:
+------- seller_account_order_check_main_list_profit_param - левая ячейка отображает наименование параметра: "сумма прибыли";
+------- seller_account_order_check_main_list_profit_value - правая ячейка с числовым значением, отображает сумму прибыли в денежном выражении по seller_account_order_check_main_list_cart_sum_value за вычетом seller_account_order_check_main_list_tax_sum_value;
+----- seller_account_order_check_main_list_transaction_number - находится под seller_account_order_check_main_list_profit, состоит из 2 ячеек:
+------- seller_account_order_check_main_list_transaction_number_param - левая ячейка отображает наименование параметра: "номер транзакции";
+------- seller_account_order_check_main_list_transaction_number_value - правая ячейка с числовым значением, отображает номер транзакции оплаты ордера;
+----- seller_account_order_check_main_list_transaction_time - находится под seller_account_order_check_main_list_transaction_number, состоит из 2 ячеек:
+------- seller_account_order_check_main_list_transaction_time_param - левая ячейка отображает наименование параметра: "время транзакции";
+------- seller_account_order_check_main_list_transaction_time_value - правая ячейка с числовым значением, отображает время транзакции по ордеру по схеме: [число.месяц.год  (часы:минуты)];
+----- seller_account_order_check_main_list_transaction_type - находится под seller_account_order_check_main_list_transaction_time, состоит из 2 ячеек:
+------- seller_account_order_check_main_list_transaction_type_param - левая ячейка отображает наименование параметра: "тип оплаты";
+------- seller_account_order_check_main_list_transaction_type_value - правая ячейка со строковым значением, отображает тип (инструмент) с помощью которого была совершена транзакция;
+----- seller_account_order_check_main_list_customer_name - находится под seller_account_order_check_main_list_transaction_type, состоит из 2 ячеек:
+------- seller_account_order_check_main_list_customer_name_param - левая ячейка отображает наименование параметра: "покупатель";
+------- seller_account_order_check_main_list_customer_name_value - правая ячейка со строковым значением, отображает имя покупателя по схеме: [фамилия.имя (имя отображается в качестве первой буквы имени в uppercase)];
+----- seller_account_order_check_main_list_booking - находится под seller_account_order_check_main_list_customer_name, состоит из 2 ячеек:
+------- seller_account_order_check_main_list_booking_param - левая ячейка отображает наименование параметра: "резервирование";
+------- seller_account_order_check_main_list_booking_value - правая ячейка с булевым значением, отображает активирование настройки в виде "да/нет";
+----- seller_account_order_check_main_list_delivery_activation - находится под seller_account_order_check_main_list_booking, состоит из 2 ячеек:
+------- seller_account_order_check_main_list_delivery_activation_param - левая ячейка отображает наименование параметра: "доставка";
+------- seller_account_order_check_main_list_delivery_activation_value - правая ячейка с булевым значением, отображает активирование настройки в виде "да/нет";
+----- seller_account_order_check_main_list_operator_number - находится под seller_account_order_check_main_list_delivery_activation, состоит из 2 ячеек:
+------- seller_account_order_check_main_list_operator_number_param - левая ячейка отображает наименование параметра: "продавец";
+------- seller_account_order_check_main_list_operator_number_value - правая ячейка с числовым значением, отображает номер оператора во время работы которого был обработан ордер;
+----- seller_account_order_check_main_list_operator_shift - находится под seller_account_order_check_main_list_operator_number, состоит из 2 ячеек:
+------- seller_account_order_check_main_list_operator_shift_param - левая ячейка отображает наименование параметра: "смена";
+------- seller_account_order_check_main_list_operator_shift_value - правая ячейка с числовым значением, отображает номер смены оператора во время работы которого был обработан ордер;
+--- seller_account_order_check_main_stamp - располагается в нижней части seller_account_order_check_main, представляет собой изображение фирменного штампа.
+--- seller_account_order_check_main_bottom_btn - подгруппа располагающаяся в нижней части seller_account_order_check_main которая состоит из 2 компонентов:
+----- seller_account_order_check_main_bottom_btn_send - кнопка в левой области экрана содержащая элемент:
+------- seller_account_order_check_main_bottom_btn_send_title - наименование кнопки "отправить";
+----- seller_account_order_check_main_bottom_btn_close - кнопка в правой области экрана содержащая элемент:
+------- seller_account_order_check_main_bottom_btn_close_title - наименование кнопки "закрыть";
+- seller_account_order_check_bottom - располагается в качестве компактного блока высотой порядка 3% от вертикальной области экрана в нижней области seller_account_order_check и включает:
+--- seller_account_order_check_bottom_text - с текстом следующего содержания: "Вы можете отправить чек через кнопку “отправить”".
+
+✠ actions
+• seller_account_order_check_main_bottom_btn_send:
+║ • tap 
+╠ valid / invalid
+║ occasion: нажатие seller_account_order_check_main_bottom_btn_send;
+║ condition: в любой ситуации;
+╙ result: открывается системное модальное окно в котором предлагаются на выбор варианты отправки.
+• seller_account_order_check_main_bottom_btn_close:
+║ • tap 
+╠ valid / invalid
+║ occasion: нажатие seller_account_order_check_main_bottom_btn_close;
+║ condition: в любой ситуации;
+║ result: 
+║ && - seller_account_order_check_modal закрывается;
+╙ && - происходит возврат к seller_account_order_modal.
 
 
 
