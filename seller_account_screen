@@ -19,7 +19,6 @@ color9 - attention;
 
 
 
-
 🡆 seller_account
 ■■■■■■■■■■■■■■■■
 
@@ -3141,30 +3140,30 @@ seller_account_history_bottom_calendar2_title - отображает число 
 │ │ │├────┬─[seller_account_order_main_list_profit                   ]  [section_lev4       ]                                        [ ✜ ✜ ]      [ no  ]
 │ │ ││    ├ [seller_account_order_main_list_profit_param             ]  [label              ]  [ "сумма прибыли"               ]     [ ✜ 🡄 ]      [ no  ]
 │ │ ││    └ [seller_account_order_main_list_profit_value             ]  [value              ]  [ { number }                    ]     [ ✜ 🡆 ]      [ no  ]
-│ │ │├────┬─[seller_account_order_main_list_transaction_number       ]  [section_lev4       ]                                        [ ✜ ✜ ]      [ no  ]
-│ │ ││    ├ [seller_account_order_main_list_transaction_number_param ]  [label              ]  [ "номер транзакции"            ]     [ ✜ 🡄 ]      [ no  ]
-│ │ ││    └ [seller_account_order_main_list_transaction_number_value ]  [value              ]  [ { number }                    ]     [ ✜ 🡆 ]      [ no  ]
-│ │ │├────┬─[seller_account_order_main_list_transaction_time         ]  [section_lev4       ]                                        [ ✜ ✜ ]      [ no  ]
-│ │ ││    ├ [seller_account_order_main_list_transaction_time_param   ]  [label              ]  [ "время транзакции"            ]     [ ✜ 🡄 ]      [ no  ]
-│ │ ││    └ [seller_account_order_main_list_transaction_time_value   ]  [value              ]  [ { number }                    ]     [ ✜ 🡆 ]      [ no  ]
-│ │ │├────┬─[seller_account_order_main_list_transaction_type         ]  [section_lev4       ]                                        [ ✜ ✜ ]      [ no  ]
-│ │ ││    ├ [seller_account_order_main_list_transaction_type_param   ]  [label              ]  [ "тип оплаты"                  ]     [ ✜ 🡄 ]      [ no  ]
-│ │ ││    └ [seller_account_order_main_list_transaction_type_value   ]  [value              ]  [ { string }                    ]     [ ✜ 🡆 ]      [ no  ]
+│ │ │├────┬─[seller_account_order_main_list_transact_number          ]  [section_lev4       ]                                        [ ✜ ✜ ]      [ no  ]
+│ │ ││    ├ [seller_account_order_main_list_transact_number_param    ]  [label              ]  [ "номер транзакции"            ]     [ ✜ 🡄 ]      [ no  ]
+│ │ ││    └ [seller_account_order_main_list_transact_number_value    ]  [value              ]  [ { number }                    ]     [ ✜ 🡆 ]      [ no  ]
+│ │ │├────┬─[seller_account_order_main_list_transact_time            ]  [section_lev4       ]                                        [ ✜ ✜ ]      [ no  ]
+│ │ ││    ├ [seller_account_order_main_list_transact_time_param      ]  [label              ]  [ "время транзакции"            ]     [ ✜ 🡄 ]      [ no  ]
+│ │ ││    └ [seller_account_order_main_list_transact_time_value      ]  [value              ]  [ { number }                    ]     [ ✜ 🡆 ]      [ no  ]
+│ │ │├────┬─[seller_account_order_main_list_transact_type            ]  [section_lev4       ]                                        [ ✜ ✜ ]      [ no  ]
+│ │ ││    ├ [seller_account_order_main_list_transact_type_param      ]  [label              ]  [ "тип оплаты"                  ]     [ ✜ 🡄 ]      [ no  ]
+│ │ ││    └ [seller_account_order_main_list_transact_type_value      ]  [value              ]  [ { string }                    ]     [ ✜ 🡆 ]      [ no  ]
 │ │ │├────┬─[seller_account_order_main_list_customer_name            ]  [section_lev4       ]                                        [ ✜ ✜ ]      [ no  ]
 │ │ ││    ├ [seller_account_order_main_list_customer_name_param      ]  [label              ]  [ "покупатель"                  ]     [ ✜ 🡄 ]      [ no  ]
 │ │ ││    └ [seller_account_order_main_list_customer_name_value      ]  [value              ]  [ { string }                    ]     [ ✜ 🡆 ]      [ no  ]
 │ │ │├────┬─[seller_account_order_main_list_customer_phone           ]  [section_lev4       ]                                        [ ✜ ✜ ]      [ no  ]
 │ │ ││    ├ [seller_account_order_main_list_customer_phone_param     ]  [label              ]  [ "телефон"                     ]     [ ✜ 🡄 ]      [ no  ]
 │ │ ││    └ [seller_account_order_main_list_customer_phone_value     ]  [value              ]  [ { number }                    ]     [ ✜ 🡆 ]      [ no  ]
-│ │ │├────┬─[seller_account_order_main_list_booking                  ]  [section_lev4       ]                                        [ ✜ ✜ ]      [ no  ]
-│ │ ││    ├ [seller_account_order_main_list_booking_param            ]  [label              ]  [ "резервирование"              ]     [ ✜ 🡄 ]      [ no  ]
-│ │ ││    └ [seller_account_order_main_list_booking_value            ]  [value              ]  [ { boolean }                   ]     [ ✜ 🡆 ]      [ no  ]
-│ │ │├────┬─[seller_account_order_main_list_delivery_activation      ]  [section_lev4       ]                                        [ ✜ ✜ ]      [ no  ]
-│ │ ││    ├ [seller_account_order_main_list_delivery_activation_param]  [label              ]  [ "доставка"                    ]     [ ✜ 🡄 ]      [ no  ]
-│ │ ││    └ [seller_account_order_main_list_delivery_activation_value]  [value              ]  [ { boolean }                   ]     [ ✜ 🡆 ]      [ no  ]
-│ │ │├────┬─[seller_account_order_main_list_delivery_type            ]  [section_lev4       ]                                        [ ✜ ✜ ]      [ no  ]
-│ │ ││    ├ [seller_account_order_main_list_delivery_type_param      ]  [label              ]  [ "тип доставки"                ]     [ ✜ 🡄 ]      [ no  ]
-│ │ ││    └ [seller_account_order_main_list_delivery_type_value      ]  [value              ]  [ { string }                    ]     [ ✜ 🡆 ]      [ no  ]
+│ │ │├────┬─[seller_account_order_main_list_book                     ]  [section_lev4       ]                                        [ ✜ ✜ ]      [ no  ]
+│ │ ││    ├ [seller_account_order_main_list_book_param               ]  [label              ]  [ "резервирование"              ]     [ ✜ 🡄 ]      [ no  ]
+│ │ ││    └ [seller_account_order_main_list_book_value               ]  [value              ]  [ { boolean }                   ]     [ ✜ 🡆 ]      [ no  ]
+│ │ │├────┬─[seller_account_order_main_list_ship_activation          ]  [section_lev4       ]                                        [ ✜ ✜ ]      [ no  ]
+│ │ ││    ├ [seller_account_order_main_list_ship_activation_param    ]  [label              ]  [ "доставка"                    ]     [ ✜ 🡄 ]      [ no  ]
+│ │ ││    └ [seller_account_order_main_list_ship_activation_value    ]  [value              ]  [ { boolean }                   ]     [ ✜ 🡆 ]      [ no  ]
+│ │ │├────┬─[seller_account_order_main_list_ship_type                ]  [section_lev4       ]                                        [ ✜ ✜ ]      [ no  ]
+│ │ ││    ├ [seller_account_order_main_list_ship_type_param          ]  [label              ]  [ "тип доставки"                ]     [ ✜ 🡄 ]      [ no  ]
+│ │ ││    └ [seller_account_order_main_list_ship_type_value          ]  [value              ]  [ { string }                    ]     [ ✜ 🡆 ]      [ no  ]
 │ │ │├────┬─[seller_account_order_main_list_operator_number          ]  [section_lev4       ]                                        [ ✜ ✜ ]      [ no  ]
 │ │ ││    ├ [seller_account_order_main_list_operator_number_param    ]  [label              ]  [ "продавец"                    ]     [ ✜ 🡄 ]      [ no  ]
 │ │ ││    └ [seller_account_order_main_list_operator_number_value    ]  [value              ]  [ { number }                    ]     [ ✜ 🡆 ]      [ no  ]
@@ -3232,31 +3231,31 @@ seller_account_history_bottom_calendar2_title - отображает число 
 ----- seller_account_order_main_list_profit - находится под seller_account_order_main_list_tax_sum, состоит из 2 ячеек:
 ------- seller_account_order_main_list_profit_param - левая ячейка отображает наименование параметра: "сумма прибыли";
 ------- seller_account_order_main_list_profit_value - правая ячейка с числовым значением, отображает сумму прибыли в денежном выражении по seller_account_order_main_list_cart_sum_value за вычетом seller_account_order_main_list_tax_sum_value;
------ seller_account_order_main_list_transaction_number - находится под seller_account_order_main_list_profit, состоит из 2 ячеек:
-------- seller_account_order_main_list_transaction_number_param - левая ячейка отображает наименование параметра: "номер транзакции";
-------- seller_account_order_main_list_transaction_number_value - правая ячейка с числовым значением, отображает номер транзакции оплаты ордера;
------ seller_account_order_main_list_transaction_time - находится под seller_account_order_main_list_transaction_number, состоит из 2 ячеек:
-------- seller_account_order_main_list_transaction_time_param - левая ячейка отображает наименование параметра: "время транзакции";
-------- seller_account_order_main_list_transaction_time_value - правая ячейка с числовым значением, отображает время транзакции по ордеру по схеме: [число.месяц.год  (часы:минуты)];
------ seller_account_order_main_list_transaction_type - находится под seller_account_order_main_list_transaction_time, состоит из 2 ячеек:
-------- seller_account_order_main_list_transaction_type_param - левая ячейка отображает наименование параметра: "тип оплаты";
-------- seller_account_order_main_list_transaction_type_value - правая ячейка со строковым значением, отображает тип (инструмент) с помощью которого была совершена транзакция;
------ seller_account_order_main_list_customer_name - находится под seller_account_order_main_list_transaction_type, состоит из 2 ячеек:
+----- seller_account_order_main_list_transact_number - находится под seller_account_order_main_list_profit, состоит из 2 ячеек:
+------- seller_account_order_main_list_transact_number_param - левая ячейка отображает наименование параметра: "номер транзакции";
+------- seller_account_order_main_list_transact_number_value - правая ячейка с числовым значением, отображает номер транзакции оплаты ордера;
+----- seller_account_order_main_list_transact_time - находится под seller_account_order_main_list_transact_number, состоит из 2 ячеек:
+------- seller_account_order_main_list_transact_time_param - левая ячейка отображает наименование параметра: "время транзакции";
+------- seller_account_order_main_list_transact_time_value - правая ячейка с числовым значением, отображает время транзакции по ордеру по схеме: [число.месяц.год  (часы:минуты)];
+----- seller_account_order_main_list_transact_type - находится под seller_account_order_main_list_transact_time, состоит из 2 ячеек:
+------- seller_account_order_main_list_transact_type_param - левая ячейка отображает наименование параметра: "тип оплаты";
+------- seller_account_order_main_list_transact_type_value - правая ячейка со строковым значением, отображает тип (инструмент) с помощью которого была совершена транзакция;
+----- seller_account_order_main_list_customer_name - находится под seller_account_order_main_list_transact_type, состоит из 2 ячеек:
 ------- seller_account_order_main_list_customer_name_param - левая ячейка отображает наименование параметра: "покупатель";
 ------- seller_account_order_main_list_customer_name_value - правая ячейка со строковым значением, отображает имя покупателя по схеме: [фамилия.имя (имя отображается в качестве первой буквы имени в uppercase)];
 ----- seller_account_order_main_list_customer_phone - находится под seller_account_order_main_list_customer_name, состоит из 2 ячеек:
 ------- seller_account_order_main_list_customer_phone_param - левая ячейка отображает наименование параметра: "телефон";
 ------- seller_account_order_main_list_customer_phone_value - правая ячейка с числовым значением, отображает номер телефона покупателя;
------ seller_account_order_main_list_booking - находится под seller_account_order_main_list_customer_phone, состоит из 2 ячеек:
-------- seller_account_order_main_list_booking_param - левая ячейка отображает наименование параметра: "резервирование";
-------- seller_account_order_main_list_booking_value - правая ячейка с булевым значением, отображает активирование настройки в виде "да/нет";
------ seller_account_order_main_list_delivery_activation - находится под seller_account_order_main_list_booking, состоит из 2 ячеек:
-------- seller_account_order_main_list_delivery_activation_param - левая ячейка отображает наименование параметра: "доставка";
-------- seller_account_order_main_list_delivery_activation_value - правая ячейка с булевым значением, отображает активирование настройки в виде "да/нет";
------ seller_account_order_main_list_delivery_type - находится под seller_account_order_main_list_delivery_activation, состоит из 2 ячеек:
-------- seller_account_order_main_list_delivery_type_param - левая ячейка отображает наименование параметра: "тип доставки";
-------- seller_account_order_main_list_delivery_type_value - правая ячейка со строковым значением, отображает вариант доставки (если активирован);
------ seller_account_order_main_list_operator_number - находится под seller_account_order_main_list_delivery_type, состоит из 2 ячеек:
+----- seller_account_order_main_list_book - находится под seller_account_order_main_list_customer_phone, состоит из 2 ячеек:
+------- seller_account_order_main_list_book_param - левая ячейка отображает наименование параметра: "резервирование";
+------- seller_account_order_main_list_book_value - правая ячейка с булевым значением, отображает активирование настройки в виде "да/нет";
+----- seller_account_order_main_list_ship_activation - находится под seller_account_order_main_list_book, состоит из 2 ячеек:
+------- seller_account_order_main_list_ship_activation_param - левая ячейка отображает наименование параметра: "доставка";
+------- seller_account_order_main_list_ship_activation_value - правая ячейка с булевым значением, отображает активирование настройки в виде "да/нет";
+----- seller_account_order_main_list_ship_type - находится под seller_account_order_main_list_ship_activation, состоит из 2 ячеек:
+------- seller_account_order_main_list_ship_type_param - левая ячейка отображает наименование параметра: "тип доставки";
+------- seller_account_order_main_list_ship_type_value - правая ячейка со строковым значением, отображает вариант доставки (если активирован);
+----- seller_account_order_main_list_operator_number - находится под seller_account_order_main_list_ship_type, состоит из 2 ячеек:
 ------- seller_account_order_main_list_operator_number_param - левая ячейка отображает наименование параметра: "продавец";
 ------- seller_account_order_main_list_operator_number_value - правая ячейка с числовым значением, отображает номер оператора во время работы которого был обработан ордер;
 ----- seller_account_order_main_list_operator_shift - находится под seller_account_order_main_list_operator_number, состоит из 2 ячеек:
@@ -3347,22 +3346,22 @@ seller_account_history_bottom_calendar2_title - отображает число 
 │seller_account_order_main_list_tax_sum_value
 │seller_account_order_main_list_profit_param
 │seller_account_order_main_list_profit_value
-│seller_account_order_main_list_transaction_number_param
-│seller_account_order_main_list_transaction_number_value
-│seller_account_order_main_list_transaction_time_param
-│seller_account_order_main_list_transaction_time_value
-│seller_account_order_main_list_transaction_type_param
-│seller_account_order_main_list_transaction_type_value
+│seller_account_order_main_list_transact_number_param
+│seller_account_order_main_list_transact_number_value
+│seller_account_order_main_list_transact_time_param
+│seller_account_order_main_list_transact_time_value
+│seller_account_order_main_list_transact_type_param
+│seller_account_order_main_list_transact_type_value
 │seller_account_order_main_list_customer_name_param
 │seller_account_order_main_list_customer_name_value
 │seller_account_order_main_list_customer_phone_param
 │seller_account_order_main_list_customer_phone_value
-│seller_account_order_main_list_booking_param
-│seller_account_order_main_list_booking_value
-│seller_account_order_main_list_delivery_activation_param
-│seller_account_order_main_list_delivery_activation_value
-│seller_account_order_main_list_delivery_type_param
-│seller_account_order_main_list_delivery_type_value
+│seller_account_order_main_list_book_param
+│seller_account_order_main_list_book_value
+│seller_account_order_main_list_ship_activation_param
+│seller_account_order_main_list_ship_activation_value
+│seller_account_order_main_list_ship_type_param
+│seller_account_order_main_list_ship_type_value
 │seller_account_order_main_list_operator_number_param
 │seller_account_order_main_list_operator_number_value
 │seller_account_order_main_list_operator_shift_param
@@ -3427,24 +3426,24 @@ seller_account_history_bottom_calendar2_title - отображает число 
   │ ││ ├──┬─[seller_account_order_check_main_list_profit                   ]  [section_lev4       ]                                      [ ✜ ✜ ]      [ no  ]
   │ ││ │  ├ [seller_account_order_check_main_list_profit_param             ]  [label              ]  [ "сумма прибыли"               ]   [ ✜ 🡄 ]      [ no  ]
   │ ││ │  └ [seller_account_order_check_main_list_profit_value             ]  [value              ]  [ { number }                    ]   [ ✜ 🡆 ]      [ no  ]
-  │ ││ ├──┬─[seller_account_order_check_main_list_transaction_number       ]  [section_lev4       ]                                      [ ✜ ✜ ]      [ no  ]
-  │ ││ │  ├ [seller_account_order_check_main_list_transaction_number_param ]  [label              ]  [ "номер транзакции"            ]   [ ✜ 🡄 ]      [ no  ]
-  │ ││ │  └ [seller_account_order_check_main_list_transaction_number_value ]  [value              ]  [ { number }                    ]   [ ✜ 🡆 ]      [ no  ]
-  │ ││ ├──┬─[seller_account_order_check_main_list_transaction_time         ]  [section_lev4       ]                                      [ ✜ ✜ ]      [ no  ]
-  │ ││ │  ├ [seller_account_order_check_main_list_transaction_time_param   ]  [label              ]  [ "время транзакции"            ]   [ ✜ 🡄 ]      [ no  ]
-  │ ││ │  └ [seller_account_order_check_main_list_transaction_time_value   ]  [value              ]  [ { number }                    ]   [ ✜ 🡆 ]      [ no  ]
-  │ ││ ├──┬─[seller_account_order_check_main_list_transaction_type         ]  [section_lev4       ]                                      [ ✜ ✜ ]      [ no  ]
-  │ ││ │  ├ [seller_account_order_check_main_list_transaction_type_param   ]  [label              ]  [ "тип оплаты"                  ]   [ ✜ 🡄 ]      [ no  ]
-  │ ││ │  └ [seller_account_order_check_main_list_transaction_type_value   ]  [value              ]  [ { string }                    ]   [ ✜ 🡆 ]      [ no  ]
+  │ ││ ├──┬─[seller_account_order_check_main_list_transact_number          ]  [section_lev4       ]                                      [ ✜ ✜ ]      [ no  ]
+  │ ││ │  ├ [seller_account_order_check_main_list_transact_number_param    ]  [label              ]  [ "номер транзакции"            ]   [ ✜ 🡄 ]      [ no  ]
+  │ ││ │  └ [seller_account_order_check_main_list_transact_number_value    ]  [value              ]  [ { number }                    ]   [ ✜ 🡆 ]      [ no  ]
+  │ ││ ├──┬─[seller_account_order_check_main_list_transact_time            ]  [section_lev4       ]                                      [ ✜ ✜ ]      [ no  ]
+  │ ││ │  ├ [seller_account_order_check_main_list_transact_time_param      ]  [label              ]  [ "время транзакции"            ]   [ ✜ 🡄 ]      [ no  ]
+  │ ││ │  └ [seller_account_order_check_main_list_transact_time_value      ]  [value              ]  [ { number }                    ]   [ ✜ 🡆 ]      [ no  ]
+  │ ││ ├──┬─[seller_account_order_check_main_list_transact_type            ]  [section_lev4       ]                                      [ ✜ ✜ ]      [ no  ]
+  │ ││ │  ├ [seller_account_order_check_main_list_transact_type_param      ]  [label              ]  [ "тип оплаты"                  ]   [ ✜ 🡄 ]      [ no  ]
+  │ ││ │  └ [seller_account_order_check_main_list_transact_type_value      ]  [value              ]  [ { string }                    ]   [ ✜ 🡆 ]      [ no  ]
   │ ││ ├──┬─[seller_account_order_check_main_list_customer_name            ]  [section_lev4       ]                                      [ ✜ ✜ ]      [ no  ]
   │ ││ │  ├ [seller_account_order_check_main_list_customer_name_param      ]  [label              ]  [ "покупатель"                  ]   [ ✜ 🡄 ]      [ no  ]
   │ ││ │  └ [seller_account_order_check_main_list_customer_name_value      ]  [value              ]  [ { string }                    ]   [ ✜ 🡆 ]      [ no  ]
-  │ ││ ├──┬─[seller_account_order_check_main_list_booking                  ]  [section_lev4       ]                                      [ ✜ ✜ ]      [ no  ]
-  │ ││ │  ├ [seller_account_order_check_main_list_booking_param            ]  [label              ]  [ "резервирование"              ]   [ ✜ 🡄 ]      [ no  ]
-  │ ││ │  └ [seller_account_order_check_main_list_booking_value            ]  [value              ]  [ { boolean }                   ]   [ ✜ 🡆 ]      [ no  ]
-  │ ││ ├──┬─[seller_account_order_check_main_list_delivery_activation      ]  [section_lev4       ]                                      [ ✜ ✜ ]      [ no  ]
-  │ ││ │  ├ [seller_account_order_check_main_list_delivery_activation_param]  [label              ]  [ "доставка"                    ]   [ ✜ 🡄 ]      [ no  ]
-  │ ││ │  └ [seller_account_order_check_main_list_delivery_activation_value]  [value              ]  [ { boolean }                   ]   [ ✜ 🡆 ]      [ no  ]
+  │ ││ ├──┬─[seller_account_order_check_main_list_book                     ]  [section_lev4       ]                                      [ ✜ ✜ ]      [ no  ]
+  │ ││ │  ├ [seller_account_order_check_main_list_book_param               ]  [label              ]  [ "резервирование"              ]   [ ✜ 🡄 ]      [ no  ]
+  │ ││ │  └ [seller_account_order_check_main_list_book_value               ]  [value              ]  [ { boolean }                   ]   [ ✜ 🡆 ]      [ no  ]
+  │ ││ ├──┬─[seller_account_order_check_main_list_ship_activation          ]  [section_lev4       ]                                      [ ✜ ✜ ]      [ no  ]
+  │ ││ │  ├ [seller_account_order_check_main_list_ship_activation_param    ]  [label              ]  [ "доставка"                    ]   [ ✜ 🡄 ]      [ no  ]
+  │ ││ │  └ [seller_account_order_check_main_list_ship_activation_value    ]  [value              ]  [ { boolean }                   ]   [ ✜ 🡆 ]      [ no  ]
   │ ││ ├──┬─[seller_account_order_check_main_list_operator_number          ]  [section_lev4       ]                                      [ ✜ ✜ ]      [ no  ]
   │ ││ │  ├ [seller_account_order_check_main_list_operator_number_param    ]  [label              ]  [ "продавец"                    ]   [ ✜ 🡄 ]      [ no  ]
   │ ││ │  └ [seller_account_order_check_main_list_operator_number_value    ]  [value              ]  [ { number }                    ]   [ ✜ 🡆 ]      [ no  ]
@@ -3503,25 +3502,25 @@ seller_account_history_bottom_calendar2_title - отображает число 
 ----- seller_account_order_check_main_list_profit - находится под seller_account_order_check_main_list_tax_sum, состоит из 2 ячеек:
 ------- seller_account_order_check_main_list_profit_param - левая ячейка отображает наименование параметра: "сумма прибыли";
 ------- seller_account_order_check_main_list_profit_value - правая ячейка с числовым значением, отображает сумму прибыли в денежном выражении по seller_account_order_check_main_list_cart_sum_value за вычетом seller_account_order_check_main_list_tax_sum_value;
------ seller_account_order_check_main_list_transaction_number - находится под seller_account_order_check_main_list_profit, состоит из 2 ячеек:
-------- seller_account_order_check_main_list_transaction_number_param - левая ячейка отображает наименование параметра: "номер транзакции";
-------- seller_account_order_check_main_list_transaction_number_value - правая ячейка с числовым значением, отображает номер транзакции оплаты ордера;
------ seller_account_order_check_main_list_transaction_time - находится под seller_account_order_check_main_list_transaction_number, состоит из 2 ячеек:
-------- seller_account_order_check_main_list_transaction_time_param - левая ячейка отображает наименование параметра: "время транзакции";
-------- seller_account_order_check_main_list_transaction_time_value - правая ячейка с числовым значением, отображает время транзакции по ордеру по схеме: [число.месяц.год  (часы:минуты)];
------ seller_account_order_check_main_list_transaction_type - находится под seller_account_order_check_main_list_transaction_time, состоит из 2 ячеек:
-------- seller_account_order_check_main_list_transaction_type_param - левая ячейка отображает наименование параметра: "тип оплаты";
-------- seller_account_order_check_main_list_transaction_type_value - правая ячейка со строковым значением, отображает тип (инструмент) с помощью которого была совершена транзакция;
------ seller_account_order_check_main_list_customer_name - находится под seller_account_order_check_main_list_transaction_type, состоит из 2 ячеек:
+----- seller_account_order_check_main_list_transact_number - находится под seller_account_order_check_main_list_profit, состоит из 2 ячеек:
+------- seller_account_order_check_main_list_transact_number_param - левая ячейка отображает наименование параметра: "номер транзакции";
+------- seller_account_order_check_main_list_transact_number_value - правая ячейка с числовым значением, отображает номер транзакции оплаты ордера;
+----- seller_account_order_check_main_list_transact_time - находится под seller_account_order_check_main_list_transact_number, состоит из 2 ячеек:
+------- seller_account_order_check_main_list_transact_time_param - левая ячейка отображает наименование параметра: "время транзакции";
+------- seller_account_order_check_main_list_transact_time_value - правая ячейка с числовым значением, отображает время транзакции по ордеру по схеме: [число.месяц.год  (часы:минуты)];
+----- seller_account_order_check_main_list_transact_type - находится под seller_account_order_check_main_list_transact_time, состоит из 2 ячеек:
+------- seller_account_order_check_main_list_transact_type_param - левая ячейка отображает наименование параметра: "тип оплаты";
+------- seller_account_order_check_main_list_transact_type_value - правая ячейка со строковым значением, отображает тип (инструмент) с помощью которого была совершена транзакция;
+----- seller_account_order_check_main_list_customer_name - находится под seller_account_order_check_main_list_transact_type, состоит из 2 ячеек:
 ------- seller_account_order_check_main_list_customer_name_param - левая ячейка отображает наименование параметра: "покупатель";
 ------- seller_account_order_check_main_list_customer_name_value - правая ячейка со строковым значением, отображает имя покупателя по схеме: [фамилия.имя (имя отображается в качестве первой буквы имени в uppercase)];
------ seller_account_order_check_main_list_booking - находится под seller_account_order_check_main_list_customer_name, состоит из 2 ячеек:
-------- seller_account_order_check_main_list_booking_param - левая ячейка отображает наименование параметра: "резервирование";
-------- seller_account_order_check_main_list_booking_value - правая ячейка с булевым значением, отображает активирование настройки в виде "да/нет";
------ seller_account_order_check_main_list_delivery_activation - находится под seller_account_order_check_main_list_booking, состоит из 2 ячеек:
-------- seller_account_order_check_main_list_delivery_activation_param - левая ячейка отображает наименование параметра: "доставка";
-------- seller_account_order_check_main_list_delivery_activation_value - правая ячейка с булевым значением, отображает активирование настройки в виде "да/нет";
------ seller_account_order_check_main_list_operator_number - находится под seller_account_order_check_main_list_delivery_activation, состоит из 2 ячеек:
+----- seller_account_order_check_main_list_book - находится под seller_account_order_check_main_list_customer_name, состоит из 2 ячеек:
+------- seller_account_order_check_main_list_book_param - левая ячейка отображает наименование параметра: "резервирование";
+------- seller_account_order_check_main_list_book_value - правая ячейка с булевым значением, отображает активирование настройки в виде "да/нет";
+----- seller_account_order_check_main_list_ship_activation - находится под seller_account_order_check_main_list_book, состоит из 2 ячеек:
+------- seller_account_order_check_main_list_ship_activation_param - левая ячейка отображает наименование параметра: "доставка";
+------- seller_account_order_check_main_list_ship_activation_value - правая ячейка с булевым значением, отображает активирование настройки в виде "да/нет";
+----- seller_account_order_check_main_list_operator_number - находится под seller_account_order_check_main_list_ship_activation, состоит из 2 ячеек:
 ------- seller_account_order_check_main_list_operator_number_param - левая ячейка отображает наименование параметра: "продавец";
 ------- seller_account_order_check_main_list_operator_number_value - правая ячейка с числовым значением, отображает номер оператора во время работы которого был обработан ордер;
 ----- seller_account_order_check_main_list_operator_shift - находится под seller_account_order_check_main_list_operator_number, состоит из 2 ячеек:
@@ -3589,18 +3588,18 @@ seller_account_history_bottom_calendar2_title - отображает число 
 │seller_account_order_check_main_list_tax_sum_value
 │seller_account_order_check_main_list_profit_param
 │seller_account_order_check_main_list_profit_value
-│seller_account_order_check_main_list_transaction_number_param
-│seller_account_order_check_main_list_transaction_number_value
-│seller_account_order_check_main_list_transaction_time_param
-│seller_account_order_check_main_list_transaction_time_value
-│seller_account_order_check_main_list_transaction_type_param
-│seller_account_order_check_main_list_transaction_type_value
+│seller_account_order_check_main_list_transact_number_param
+│seller_account_order_check_main_list_transact_number_value
+│seller_account_order_check_main_list_transact_time_param
+│seller_account_order_check_main_list_transact_time_value
+│seller_account_order_check_main_list_transact_type_param
+│seller_account_order_check_main_list_transact_type_value
 │seller_account_order_check_main_list_customer_name_param
 │seller_account_order_check_main_list_customer_name_value
-│seller_account_order_check_main_list_booking_param
-│seller_account_order_check_main_list_booking_value
-│seller_account_order_check_main_list_delivery_activation_param
-│seller_account_order_check_main_list_delivery_activation_value
+│seller_account_order_check_main_list_book_param
+│seller_account_order_check_main_list_book_value
+│seller_account_order_check_main_list_ship_activation_param
+│seller_account_order_check_main_list_ship_activation_value
 │seller_account_order_check_main_list_operator_number_param
 │seller_account_order_check_main_list_operator_number_value
 │seller_account_order_check_main_list_operator_shift_param
@@ -3614,6 +3613,88 @@ seller_account_history_bottom_calendar2_title - отображает число 
 │• color8
 │------ в любой ситуации
 └─
+
+
+
+🡆🡆🡆🡆 seller_account_order_journal_modal
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+Модальное окно отображающее информацию по активности как со стороны покупателя, так и со стороны продавца, в рамках обработки ордера (с момента открытия до закрытия). 
+
+✠ tables
+
+                                        codename:                                   type:                    designation:              location:   interaction:
+ ┌┬─────────┬──[seller_account_order_journal                                ]  [section_lev1       ]                                      [ ✜ ✜ ]      [ no  ] 
+ ││         └┬─[seller_account_order_journal_top                            ]  [section_lev2       ]                                      [ 🡅 ✜ ]      [ no  ] 
+ ││          └ [seller_account_order_journal_top_title                      ]  [label              ]  [ "ЧЕК"                         ]   [ ✜ ✜ ]      [ no  ] 
+ │└┬┬─────┬────[seller_account_order_journal_main                           ]  [section_lev2       ]                                      [ ✜ ✜ ]      [ no  ]
+ │ ││     └┬┬──[seller_account_order_journal_main_header                    ]  [section_lev3       ]                                      [ ✜ ✜ ]      [ no  ]
+ │ ││      │└┬─[seller_account_order_journal_main_header_alias              ]  [section_lev4       ]                                      [ ✜ ✜ ]      [ no  ]
+ │ ││      │ └ [seller_account_order_journal_main_header_alias_title        ]  [label              ]                                      [ ✜ ✜ ]      [ no  ]
+ │ ││      └─┬─[seller_account_order_journal_main_header_date               ]  [section_lev4       ]                                      [ ✜ ✜ ]      [ no  ]
+ │ ││        └ [seller_account_order_journal_main_header_date_title         ]  [label              ]                                      [ ✜ ✜ ]      [ no  ]  
+ │ │└┬┬┬┬┬┬┬───[seller_account_order_journal_main_acts                      ]  [section_lev3       ]                                      [ ✜ ✜ ]      [ no  ]
+ │ │ ││││││├┬──[seller_account_order_journal_main_acts_book                 ]  [section_lev4       ]                                      [ ✜ ✜ ]      [ yes ]
+ │ │ │││││││└┬─[seller_account_order_journal_main_acts_book_type            ]  [section_lev5       ]                                      [ ✜ 🡄 ]      [ yes ]
+ │ │ │││││││ ├ [seller_account_order_journal_main_acts_book_type_title      ]  [label              ]  [ "Б"                           ]   [ ✜ 🡄 ]      [ yes ]
+ │ │ │││││││ └ [seller_account_order_journal_main_acts_book_type_who        ]  [value              ]  [ { string }                    ]   [ ✜ 🡆 ]      [ yes ]
+ │ │ ││││││└─┬─[seller_account_order_journal_main_acts_book_details         ]  [section_lev5       ]                                      [ ✜ 🡆 ]      [ yes ]
+ │ │ ││││││  ├ [seller_account_order_journal_main_acts_book_details_time    ]  [value              ]  [ { number }                    ]   [ ✜ 🡄 ]      [ yes ]
+ │ │ ││││││  ├ [seller_account_order_journal_main_acts_book_details_what    ]  [text               ]  [ "бронирование товарной по..." ]   [ ✜ ✜ ]      [ yes ]
+ │ │ ││││││  ├ [seller_account_order_journal_main_acts_book_details_lot     ]  [value              ]  [ { number }                    ]   [ ✜ ✜ ]      [ yes ]  
+ │ │ ││││││  └ [seller_account_order_journal_main_acts_book_details_number  ]  [value              ]  [ {( number )}                  ]   [ ✜ 🡆 ]      [ yes ]
+ │ │ │││││└┬┬──[seller_account_order_journal_main_acts_call                 ]  [section_lev4       ]                                      [ ✜ ✜ ]      [ yes ]
+ │ │ │││││ │└┬─[seller_account_order_journal_main_acts_call_type            ]  [section_lev5       ]                                      [ ✜ 🡄 ]      [ yes ]
+ │ │ │││││ │ ├ [seller_account_order_journal_main_acts_call_type_title      ]  [label              ]  [ "З"                           ]   [ ✜ 🡄 ]      [ yes ]
+ │ │ │││││ │ └ [seller_account_order_journal_main_acts_call_type_who        ]  [value              ]  [ { string }                    ]   [ ✜ 🡆 ]      [ yes ]
+ │ │ │││││ └─┬─[seller_account_order_journal_main_acts_call_details         ]  [section_lev5       ]                                      [ ✜ 🡆 ]      [ yes ]
+ │ │ │││││   ├ [seller_account_order_journal_main_acts_call_details_time    ]  [value              ]  [ { number }                    ]   [ ✜ 🡄 ]      [ yes ]
+ │ │ │││││   ├ [seller_account_order_journal_main_acts_call_details_what    ]  [text               ]  [ "звонок на номер"             ]   [ ✜ ✜ ]      [ yes ]  
+ │ │ │││││   └ [seller_account_order_journal_main_acts_call_details_number  ]  [value              ]  [ { number }                    ]   [ ✜ 🡆 ]      [ yes ]
+ │ │ ││││└─┬┬──[seller_account_order_journal_main_acts_chat                 ]  [section_lev4       ]                                      [ ✜ ✜ ]      [ yes ]
+ │ │ ││││  │└┬─[seller_account_order_journal_main_acts_chat_type            ]  [section_lev5       ]                                      [ ✜ 🡄 ]      [ yes ]
+ │ │ ││││  │ ├ [seller_account_order_journal_main_acts_chat_type_title      ]  [label              ]  [ "Ч"                           ]   [ ✜ 🡄 ]      [ yes ]
+ │ │ ││││  │ └ [seller_account_order_journal_main_acts_chat_type_who        ]  [value              ]  [ { string }                    ]   [ ✜ 🡆 ]      [ yes ]
+ │ │ ││││  └─┬─[seller_account_order_journal_main_acts_chat_details         ]  [section_lev5       ]                                      [ ✜ 🡆 ]      [ yes ]
+ │ │ ││││    ├ [seller_account_order_journal_main_acts_chat_details_time    ]  [value              ]  [ { number }                    ]   [ ✜ 🡄 ]      [ yes ]  
+ │ │ ││││    └ [seller_account_order_journal_main_acts_chat_details_text    ]  [value              ]  [ { string }                    ]   [ ✜ 🡆 ]      [ yes ]
+ │ │ │││└──┬┬──[seller_account_order_journal_main_acts_ship                 ]  [section_lev4       ]                                      [ ✜ ✜ ]      [ yes ]
+ │ │ │││   │└┬─[seller_account_order_journal_main_acts_ship_type            ]  [section_lev5       ]                                      [ ✜ 🡄 ]      [ yes ]
+ │ │ │││   │ ├ [seller_account_order_journal_main_acts_ship_type_title      ]  [label              ]  [ "Д"                           ]   [ ✜ 🡄 ]      [ yes ]
+ │ │ │││   │ └ [seller_account_order_journal_main_acts_ship_type_who        ]  [value              ]  [ { string }                    ]   [ ✜ 🡆 ]      [ yes ]
+ │ │ │││   └─┬─[seller_account_order_journal_main_acts_ship_details         ]  [section_lev5       ]                                      [ ✜ 🡆 ]      [ yes ]
+ │ │ │││     ├ [seller_account_order_journal_main_acts_ship_details_time    ]  [value              ]  [ { number }                    ]   [ ✜ 🡄 ]      [ yes ]  
+ │ │ │││     └ [seller_account_order_journal_main_acts_ship_details_text    ]  [value              ]  [ { string }                    ]   [ ✜ 🡆 ]      [ yes ]
+ │ │ ││└───┬┬──[seller_account_order_journal_main_acts_forum                ]  [section_lev4       ]                                      [ ✜ ✜ ]      [ yes ]
+ │ │ ││    │└┬─[seller_account_order_journal_main_acts_forum_type           ]  [section_lev5       ]                                      [ ✜ 🡄 ]      [ yes ]
+ │ │ ││    │ ├ [seller_account_order_journal_main_acts_forum_type_title     ]  [label              ]  [ "Ф"                           ]   [ ✜ 🡄 ]      [ yes ]
+ │ │ ││    │ └ [seller_account_order_journal_main_acts_forum_type_who       ]  [value              ]  [ { string }                    ]   [ ✜ 🡆 ]      [ yes ]
+ │ │ ││    └─┬─[seller_account_order_journal_main_acts_forum_details        ]  [section_lev5       ]                                      [ ✜ 🡆 ]      [ yes ]
+ │ │ ││      ├ [seller_account_order_journal_main_acts_forum_details_time   ]  [value              ]  [ { number }                    ]   [ ✜ 🡄 ]      [ yes ]  
+ │ │ ││      └ [seller_account_order_journal_main_acts_forum_details_text   ]  [value              ]  [ { string }                    ]   [ ✜ 🡆 ]      [ yes ]  
+ │ │ │└────┬┬──[seller_account_order_journal_main_acts_order                ]  [section_lev4       ]                                      [ ✜ ✜ ]      [ yes ]
+ │ │ │     │└┬─[seller_account_order_journal_main_acts_order_type           ]  [section_lev5       ]                                      [ ✜ 🡄 ]      [ yes ]
+ │ │ │     │ ├ [seller_account_order_journal_main_acts_order_type_title     ]  [label              ]  [ "О"                           ]   [ ✜ 🡄 ]      [ yes ]
+ │ │ │     │ └ [seller_account_order_journal_main_acts_order_type_who       ]  [value              ]  [ { string }                    ]   [ ✜ 🡆 ]      [ yes ]
+ │ │ │     └─┬─[seller_account_order_journal_main_acts_order_details        ]  [section_lev5       ]                                      [ ✜ 🡆 ]      [ yes ]
+ │ │ │       ├ [seller_account_order_journal_main_acts_order_details_time   ]  [value              ]  [ { number }                    ]   [ ✜ 🡄 ]      [ yes ]
+ │ │ │       ├ [seller_account_order_journal_main_acts_order_details_what   ]  [text               ]  [ "ордер"                       ]   [ ✜ ✜ ]      [ yes ]
+ │ │ │       ├ [seller_account_order_journal_main_acts_order_details_alias  ]  [value              ]  [ { string }                    ]   [ ✜ ✜ ]      [ yes ]  
+ │ │ │       └ [seller_account_order_journal_main_acts_order_details_number ]  [value              ]  [ { string }                    ]   [ ✜ 🡆 ]      [ yes ]
+ │ │ └─────┬┬──[seller_account_order_journal_main_acts_transact             ]  [section_lev4       ]                                      [ ✜ ✜ ]      [ yes ]
+ │ │       │└┬─[seller_account_order_journal_main_acts_transact_type        ]  [section_lev5       ]                                      [ ✜ 🡄 ]      [ yes ]
+ │ │       │ ├ [seller_account_order_journal_main_acts_transact_type_title  ]  [label              ]  [ "Т"                           ]   [ ✜ 🡄 ]      [ yes ]
+ │ │       │ └ [seller_account_order_journal_main_acts_transact_type_who    ]  [value              ]  [ { string }                    ]   [ ✜ 🡆 ]      [ yes ]
+ │ │       └─┬─[seller_account_order_journal_main_acts_transact_details     ]  [section_lev5       ]                                      [ ✜ 🡆 ]      [ yes ]
+ │ │         ├ [seller_account_order_journal_main_acts_transact_details_time]  [value              ]  [ { number }                    ]   [ ✜ 🡄 ]      [ yes ]
+ │ │         ├ [seller_account_order_journal_main_acts_transact_details_what]  [text               ]  [ "перевод"                     ]   [ ✜ ✜ ]      [ yes ]
+ │ │         ├ [seller_account_order_journal_main_acts_transact_details_tool]  [value              ]  [ { string }                    ]   [ ✜ ✜ ]      [ yes ]
+ │ │         ├ [seller_account_order_journal_main_acts_transact_details_text]  [value              ]  [ "сумма"                       ]   [ ✜ ✜ ]      [ yes ]
+ │ │         └ [seller_account_order_journal_main_acts_transact_details_sum ]  [value              ]  [ { number }                    ]   [ ✜ 🡆 ]      [ yes ]
+ │ └────────┬──[seller_account_order_journal_main_bottom_btn                ]  [section_lev3       ]                                      [ 🡇 ✜ ]      [ no  ] 
+ │          └┬─[seller_account_order_journal_main_bottom_btn_title          ]  [button             ]                                      [ ✜ 🡄 ]      [ yes ] 
+ └───────────┬─[seller_account_order_journal_bottom                         ]  [section_lev2       ]                                      [ 🡇 ✜ ]      [ no  ]
+             └ [seller_account_order_journal_bottom_text                    ]  [text               ]  [ "Вы можете отправить чек ..." ]   [ ✜ ✜ ]      [ no  ]
 
 
 
