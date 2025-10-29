@@ -18,7 +18,6 @@ color9 - attention;
 
 
 
-
 🡆 seller_account
 ■■■■■■■■■■■■■■■■
 
@@ -3026,9 +3025,9 @@ seller_account_history_bottom_calendar2_title - отображает число 
 ║ occasion: нажатие seller_nav_demand_button;
 ║ condition: в ситуации нахождения в seller_account;
 ╙ result: открывается seller_demand_screen.
-• seller_nav_chat_button:
-║ • tap 
+• seller_nav_chat_button: 
 ╠ valid / invalid
+║ • tap
 ║ occasion: нажатие seller_nav_chat_button;
 ║ condition: в ситуации нахождения в seller_account;
 ╙ result: открывается seller_chat_screen.
@@ -3272,21 +3271,21 @@ seller_account_history_bottom_calendar2_title - отображает число 
 --- seller_account_order_bottom_text - с текстом следующего содержания: "Подробные сведения по выбранному ордеру".
 
 ✠ actions
-• seller_account_order_main_list_journal:
-║ • tap 
+• seller_account_order_main_list_journal: 
 ╠ valid / invalid
+║ • tap 
 ║ occasion: нажатие seller_account_order_main_list_journal;
 ║ condition: в любой ситуации;
 ╙ result: открывается seller_account_order_journal_screen.
 • seller_account_order_main_bottom_btn_pdf:
-║ • tap 
 ╠ valid / invalid
+║ • tap 
 ║ occasion: нажатие seller_account_order_main_bottom_btn_pdf;
 ║ condition: в любой ситуации;
 ╙ result: открывается seller_account_order_check_modal. 
 • seller_account_order_main_bottom_btn_close:
-║ • tap 
 ╠ valid / invalid
+║ • tap 
 ║ occasion: нажатие seller_account_order_main_bottom_btn_close;
 ║ condition: в любой ситуации;
 ║ result: 
@@ -3537,14 +3536,14 @@ seller_account_history_bottom_calendar2_title - отображает число 
 
 ✠ actions
 • seller_account_order_check_main_bottom_btn_send:
-║ • tap 
 ╠ valid / invalid
+║ • tap 
 ║ occasion: нажатие seller_account_order_check_main_bottom_btn_send;
 ║ condition: в любой ситуации;
 ╙ result: открывается системное модальное окно в котором предлагаются на выбор варианты отправки.
 • seller_account_order_check_main_bottom_btn_close:
-║ • tap 
 ╠ valid / invalid
+║ • tap 
 ║ occasion: нажатие seller_account_order_check_main_bottom_btn_close;
 ║ condition: в любой ситуации;
 ║ result: 
@@ -3623,16 +3622,16 @@ seller_account_history_bottom_calendar2_title - отображает число 
 
 ✠ tables
 
-                                        codename:                                   type:                    designation:              location:   interaction:
+                                          codename:                                   type:                    designation:              location:   interaction:
  ┌┬─────────┬──[seller_account_order_journal                                ]  [section_lev1       ]                                      [ ✜ ✜ ]      [ no  ] 
  ││         └┬─[seller_account_order_journal_top                            ]  [section_lev2       ]                                      [ 🡅 ✜ ]      [ no  ] 
  ││          └ [seller_account_order_journal_top_title                      ]  [label              ]  [ "ЧЕК"                         ]   [ ✜ ✜ ]      [ no  ] 
  │└┬┬─────┬────[seller_account_order_journal_main                           ]  [section_lev2       ]                                      [ ✜ ✜ ]      [ no  ]
  │ ││     └┬┬──[seller_account_order_journal_main_header                    ]  [section_lev3       ]                                      [ ✜ ✜ ]      [ no  ]
  │ ││      │└┬─[seller_account_order_journal_main_header_alias              ]  [section_lev4       ]                                      [ ✜ ✜ ]      [ no  ]
- │ ││      │ └ [seller_account_order_journal_main_header_alias_title        ]  [label              ]                                      [ ✜ ✜ ]      [ no  ]
+ │ ││      │ └ [seller_account_order_journal_main_header_alias_title        ]  [value              ]  [ { string }                    ]   [ ✜ ✜ ]      [ no  ]
  │ ││      └─┬─[seller_account_order_journal_main_header_date               ]  [section_lev4       ]                                      [ ✜ ✜ ]      [ no  ]
- │ ││        └ [seller_account_order_journal_main_header_date_title         ]  [label              ]                                      [ ✜ ✜ ]      [ no  ]  
+ │ ││        └ [seller_account_order_journal_main_header_date_title         ]  [value              ]  [ { number }                    ]   [ ✜ ✜ ]      [ no  ]  
  │ │└┬┬┬┬┬┬┬───[seller_account_order_journal_main_acts                      ]  [section_lev3       ]                                      [ ✜ ✜ ]      [ no  ]
  │ │ ││││││├┬──[seller_account_order_journal_main_acts_book                 ]  [section_lev4       ]                                      [ ✜ ✜ ]      [ yes ]
  │ │ │││││││└┬─[seller_account_order_journal_main_acts_book_type            ]  [section_lev5       ]                                      [ ✜ 🡄 ]      [ yes ]
@@ -3640,7 +3639,7 @@ seller_account_history_bottom_calendar2_title - отображает число 
  │ │ │││││││ └ [seller_account_order_journal_main_acts_book_type_who        ]  [value              ]  [ { string }                    ]   [ ✜ 🡆 ]      [ yes ]
  │ │ ││││││└─┬─[seller_account_order_journal_main_acts_book_details         ]  [section_lev5       ]                                      [ ✜ 🡆 ]      [ yes ]
  │ │ ││││││  ├ [seller_account_order_journal_main_acts_book_details_time    ]  [value              ]  [ { number }                    ]   [ ✜ 🡄 ]      [ yes ]
- │ │ ││││││  ├ [seller_account_order_journal_main_acts_book_details_what    ]  [text               ]  [ "бронирование товарной по..." ]   [ ✜ ✜ ]      [ yes ]
+ │ │ ││││││  ├ [seller_account_order_journal_main_acts_book_details_what    ]  [text               ]  [ " бронирование товарной п..." ]   [ ✜ ✜ ]      [ yes ]
  │ │ ││││││  ├ [seller_account_order_journal_main_acts_book_details_lot     ]  [value              ]  [ { number }                    ]   [ ✜ ✜ ]      [ yes ]  
  │ │ ││││││  └ [seller_account_order_journal_main_acts_book_details_number  ]  [value              ]  [ {( number )}                  ]   [ ✜ 🡆 ]      [ yes ]
  │ │ │││││└┬┬──[seller_account_order_journal_main_acts_call                 ]  [section_lev4       ]                                      [ ✜ ✜ ]      [ yes ]
@@ -3649,7 +3648,7 @@ seller_account_history_bottom_calendar2_title - отображает число 
  │ │ │││││ │ └ [seller_account_order_journal_main_acts_call_type_who        ]  [value              ]  [ { string }                    ]   [ ✜ 🡆 ]      [ yes ]
  │ │ │││││ └─┬─[seller_account_order_journal_main_acts_call_details         ]  [section_lev5       ]                                      [ ✜ 🡆 ]      [ yes ]
  │ │ │││││   ├ [seller_account_order_journal_main_acts_call_details_time    ]  [value              ]  [ { number }                    ]   [ ✜ 🡄 ]      [ yes ]
- │ │ │││││   ├ [seller_account_order_journal_main_acts_call_details_what    ]  [text               ]  [ "звонок на номер"             ]   [ ✜ ✜ ]      [ yes ]  
+ │ │ │││││   ├ [seller_account_order_journal_main_acts_call_details_what    ]  [text               ]  [ " звонок на номер "           ]   [ ✜ ✜ ]      [ yes ]  
  │ │ │││││   └ [seller_account_order_journal_main_acts_call_details_number  ]  [value              ]  [ { number }                    ]   [ ✜ 🡆 ]      [ yes ]
  │ │ ││││└─┬┬──[seller_account_order_journal_main_acts_chat                 ]  [section_lev4       ]                                      [ ✜ ✜ ]      [ yes ]
  │ │ ││││  │└┬─[seller_account_order_journal_main_acts_chat_type            ]  [section_lev5       ]                                      [ ✜ 🡄 ]      [ yes ]
@@ -3658,44 +3657,255 @@ seller_account_history_bottom_calendar2_title - отображает число 
  │ │ ││││  └─┬─[seller_account_order_journal_main_acts_chat_details         ]  [section_lev5       ]                                      [ ✜ 🡆 ]      [ yes ]
  │ │ ││││    ├ [seller_account_order_journal_main_acts_chat_details_time    ]  [value              ]  [ { number }                    ]   [ ✜ 🡄 ]      [ yes ]  
  │ │ ││││    └ [seller_account_order_journal_main_acts_chat_details_text    ]  [value              ]  [ { string }                    ]   [ ✜ 🡆 ]      [ yes ]
- │ │ │││└──┬┬──[seller_account_order_journal_main_acts_ship                 ]  [section_lev4       ]                                      [ ✜ ✜ ]      [ yes ]
- │ │ │││   │└┬─[seller_account_order_journal_main_acts_ship_type            ]  [section_lev5       ]                                      [ ✜ 🡄 ]      [ yes ]
- │ │ │││   │ ├ [seller_account_order_journal_main_acts_ship_type_title      ]  [label              ]  [ "Д"                           ]   [ ✜ 🡄 ]      [ yes ]
- │ │ │││   │ └ [seller_account_order_journal_main_acts_ship_type_who        ]  [value              ]  [ { string }                    ]   [ ✜ 🡆 ]      [ yes ]
- │ │ │││   └─┬─[seller_account_order_journal_main_acts_ship_details         ]  [section_lev5       ]                                      [ ✜ 🡆 ]      [ yes ]
- │ │ │││     ├ [seller_account_order_journal_main_acts_ship_details_time    ]  [value              ]  [ { number }                    ]   [ ✜ 🡄 ]      [ yes ]  
- │ │ │││     └ [seller_account_order_journal_main_acts_ship_details_text    ]  [value              ]  [ { string }                    ]   [ ✜ 🡆 ]      [ yes ]
- │ │ ││└───┬┬──[seller_account_order_journal_main_acts_forum                ]  [section_lev4       ]                                      [ ✜ ✜ ]      [ yes ]
- │ │ ││    │└┬─[seller_account_order_journal_main_acts_forum_type           ]  [section_lev5       ]                                      [ ✜ 🡄 ]      [ yes ]
- │ │ ││    │ ├ [seller_account_order_journal_main_acts_forum_type_title     ]  [label              ]  [ "Ф"                           ]   [ ✜ 🡄 ]      [ yes ]
- │ │ ││    │ └ [seller_account_order_journal_main_acts_forum_type_who       ]  [value              ]  [ { string }                    ]   [ ✜ 🡆 ]      [ yes ]
- │ │ ││    └─┬─[seller_account_order_journal_main_acts_forum_details        ]  [section_lev5       ]                                      [ ✜ 🡆 ]      [ yes ]
- │ │ ││      ├ [seller_account_order_journal_main_acts_forum_details_time   ]  [value              ]  [ { number }                    ]   [ ✜ 🡄 ]      [ yes ]  
- │ │ ││      └ [seller_account_order_journal_main_acts_forum_details_text   ]  [value              ]  [ { string }                    ]   [ ✜ 🡆 ]      [ yes ]  
- │ │ │└────┬┬──[seller_account_order_journal_main_acts_order                ]  [section_lev4       ]                                      [ ✜ ✜ ]      [ yes ]
- │ │ │     │└┬─[seller_account_order_journal_main_acts_order_type           ]  [section_lev5       ]                                      [ ✜ 🡄 ]      [ yes ]
- │ │ │     │ ├ [seller_account_order_journal_main_acts_order_type_title     ]  [label              ]  [ "О"                           ]   [ ✜ 🡄 ]      [ yes ]
- │ │ │     │ └ [seller_account_order_journal_main_acts_order_type_who       ]  [value              ]  [ { string }                    ]   [ ✜ 🡆 ]      [ yes ]
- │ │ │     └─┬─[seller_account_order_journal_main_acts_order_details        ]  [section_lev5       ]                                      [ ✜ 🡆 ]      [ yes ]
- │ │ │       ├ [seller_account_order_journal_main_acts_order_details_time   ]  [value              ]  [ { number }                    ]   [ ✜ 🡄 ]      [ yes ]
- │ │ │       ├ [seller_account_order_journal_main_acts_order_details_what   ]  [text               ]  [ "ордер"                       ]   [ ✜ ✜ ]      [ yes ]
- │ │ │       ├ [seller_account_order_journal_main_acts_order_details_alias  ]  [value              ]  [ { string }                    ]   [ ✜ ✜ ]      [ yes ]  
- │ │ │       └ [seller_account_order_journal_main_acts_order_details_number ]  [value              ]  [ { string }                    ]   [ ✜ 🡆 ]      [ yes ]
+ │ │ │││└──┬┬──[seller_account_order_journal_main_acts_forum                ]  [section_lev4       ]                                      [ ✜ ✜ ]      [ yes ]
+ │ │ │││   │└┬─[seller_account_order_journal_main_acts_forum_type           ]  [section_lev5       ]                                      [ ✜ 🡄 ]      [ yes ]
+ │ │ │││   │ ├ [seller_account_order_journal_main_acts_forum_type_title     ]  [label              ]  [ "Ф"                           ]   [ ✜ 🡄 ]      [ yes ]
+ │ │ │││   │ └ [seller_account_order_journal_main_acts_forum_type_who       ]  [value              ]  [ { string }                    ]   [ ✜ 🡆 ]      [ yes ]
+ │ │ │││   └─┬─[seller_account_order_journal_main_acts_forum_details        ]  [section_lev5       ]                                      [ ✜ 🡆 ]      [ yes ]
+ │ │ │││     ├ [seller_account_order_journal_main_acts_forum_details_time   ]  [value              ]  [ { number }                    ]   [ ✜ 🡄 ]      [ yes ]
+ │ │ │││     └ [seller_account_order_journal_main_acts_forum_details_text   ]  [value              ]  [ { string }                    ]   [ ✜ 🡆 ]      [ yes ]
+ │ │ ││└───┬┬──[seller_account_order_journal_main_acts_order                ]  [section_lev4       ]                                      [ ✜ ✜ ]      [ yes ]
+ │ │ ││    │└┬─[seller_account_order_journal_main_acts_order_type           ]  [section_lev5       ]                                      [ ✜ 🡄 ]      [ yes ] 
+ │ │ ││    │ ├ [seller_account_order_journal_main_acts_order_type_title     ]  [label              ]  [ "О"                           ]   [ ✜ 🡄 ]      [ yes ]
+ │ │ ││    │ └ [seller_account_order_journal_main_acts_order_type_who       ]  [value              ]  [ { string }                    ]   [ ✜ 🡆 ]      [ yes ]
+ │ │ ││    └─┬─[seller_account_order_journal_main_acts_order_details        ]  [section_lev5       ]                                      [ ✜ 🡆 ]      [ yes ]
+ │ │ ││      ├ [seller_account_order_journal_main_acts_order_details_time   ]  [value              ]  [ { number }                    ]   [ ✜ 🡄 ]      [ yes ]
+ │ │ ││      ├ [seller_account_order_journal_main_acts_order_details_what   ]  [text               ]  [ " ордер "                     ]   [ ✜ ✜ ]      [ yes ]
+ │ │ ││      ├ [seller_account_order_journal_main_acts_order_details_alias  ]  [value              ]  [ { string }                    ]   [ ✜ ✜ ]      [ yes ]  
+ │ │ ││      └ [seller_account_order_journal_main_acts_order_details_number ]  [value              ]  [ { string }                    ]   [ ✜ 🡆 ]      [ yes ] 
+ │ │ │└────┬┬──[seller_account_order_journal_main_acts_ship                 ]  [section_lev4       ]                                      [ ✜ ✜ ]      [ yes ]
+ │ │ │     │└┬─[seller_account_order_journal_main_acts_ship_type            ]  [section_lev5       ]                                      [ ✜ 🡄 ]      [ yes ]
+ │ │ │     │ ├ [seller_account_order_journal_main_acts_ship_type_title      ]  [label              ]  [ "Д"                           ]   [ ✜ 🡄 ]      [ yes ]
+ │ │ │     │ └ [seller_account_order_journal_main_acts_ship_type_who        ]  [value              ]  [ { string }                    ]   [ ✜ 🡆 ]      [ yes ]
+ │ │ │     └─┬─[seller_account_order_journal_main_acts_ship_details         ]  [section_lev5       ]                                      [ ✜ 🡆 ]      [ yes ]
+ │ │ │       ├ [seller_account_order_journal_main_acts_ship_details_time    ]  [value              ]  [ { number }                    ]   [ ✜ 🡄 ]      [ yes ]  
+ │ │ │       ├ [seller_account_order_journal_main_acts_ship_details_what    ]  [text               ]  [ " доставка "                  ]   [ ✜ ✜ ]      [ yes ]  
+ │ │ │       ├ [seller_account_order_journal_main_acts_ship_details_step    ]  [value              ]  [ { string }                    ]   [ ✜ ✜ ]      [ yes ]
+ │ │ │       └ [seller_account_order_journal_main_acts_ship_details_text    ]  [value              ]  [ { string }                    ]   [ ✜ 🡆 ]      [ yes ] 
  │ │ └─────┬┬──[seller_account_order_journal_main_acts_transact             ]  [section_lev4       ]                                      [ ✜ ✜ ]      [ yes ]
  │ │       │└┬─[seller_account_order_journal_main_acts_transact_type        ]  [section_lev5       ]                                      [ ✜ 🡄 ]      [ yes ]
  │ │       │ ├ [seller_account_order_journal_main_acts_transact_type_title  ]  [label              ]  [ "Т"                           ]   [ ✜ 🡄 ]      [ yes ]
  │ │       │ └ [seller_account_order_journal_main_acts_transact_type_who    ]  [value              ]  [ { string }                    ]   [ ✜ 🡆 ]      [ yes ]
  │ │       └─┬─[seller_account_order_journal_main_acts_transact_details     ]  [section_lev5       ]                                      [ ✜ 🡆 ]      [ yes ]
  │ │         ├ [seller_account_order_journal_main_acts_transact_details_time]  [value              ]  [ { number }                    ]   [ ✜ 🡄 ]      [ yes ]
- │ │         ├ [seller_account_order_journal_main_acts_transact_details_what]  [text               ]  [ "перевод"                     ]   [ ✜ ✜ ]      [ yes ]
+ │ │         ├ [seller_account_order_journal_main_acts_transact_details_what]  [text               ]  [ " перевод "                   ]   [ ✜ ✜ ]      [ yes ]
  │ │         ├ [seller_account_order_journal_main_acts_transact_details_tool]  [value              ]  [ { string }                    ]   [ ✜ ✜ ]      [ yes ]
- │ │         ├ [seller_account_order_journal_main_acts_transact_details_text]  [value              ]  [ "сумма"                       ]   [ ✜ ✜ ]      [ yes ]
+ │ │         ├ [seller_account_order_journal_main_acts_transact_details_text]  [value              ]  [ " сумма: "                    ]   [ ✜ ✜ ]      [ yes ]
  │ │         └ [seller_account_order_journal_main_acts_transact_details_sum ]  [value              ]  [ { number }                    ]   [ ✜ 🡆 ]      [ yes ]
- │ └────────┬──[seller_account_order_journal_main_bottom_btn                ]  [section_lev3       ]                                      [ 🡇 ✜ ]      [ no  ] 
- │          └┬─[seller_account_order_journal_main_bottom_btn_title          ]  [button             ]                                      [ ✜ 🡄 ]      [ yes ] 
+ │ └────────┬──[seller_account_order_journal_main_bottom_btn                ]  [section_lev3       ]                                      [ 🡇 ✜ ]      [ yes ] 
+ │          └┬─[seller_account_order_journal_main_bottom_btn_title          ]  [button             ]  [ "OK"                          ]   [ ✜ ✜ ]      [ yes ] 
  └───────────┬─[seller_account_order_journal_bottom                         ]  [section_lev2       ]                                      [ 🡇 ✜ ]      [ no  ]
              └ [seller_account_order_journal_bottom_text                    ]  [text               ]  [ "Вы можете отправить чек ..." ]   [ ✜ ✜ ]      [ no  ]
+			 
 
+■ seller_account_order_journal
+
+✠ details
+
+- seller_account_order_journal_top - располагается в качестве компактного блока высотой порядка 3-4% от вертикальной области экрана в верхней области seller_account_order_journal_modal и включает:
+--- seller_account_order_journal_top_title - с заголовком: "Журнал";
+- seller_account_order_journal_main является центральной частью и занимает около 100% по ширине видимой области экрана. seller_account_order_journal_main состоит из 3 компонентов:  
+--- seller_account_order_journal_main_header - представляет собой заголовок из двух составляющих расположенных друг над другом:
+----- seller_account_order_journal_main_header_alias - находится в самом верху seller_account_order_journal_main и содержит элемент:
+------- seller_account_order_journal_main_header_alias_title - отображает псевдоним ордера с центрированием по горизонтали;
+----- seller_account_order_journal_main_header_date - находится под seller_account_order_journal_main_header_alias и содержит элемент:
+------- seller_account_order_journal_main_header_date_title - отображает дату открытия ордера; 
+--- seller_account_order_journal_main_acts - скроллируемая таблица состоящая из 2 столбцов и конфигурации актов зарегистрированных в рамках жизни ордера. Конфигурация актов специфична для каждого конкретного ордера. Рассматриваются 7 вариантов актов:
+----- seller_account_order_journal_main_acts_book - акт резервирования (бронирования) конкретного лота, включает 2 компонента:
+------- seller_account_order_journal_main_acts_book_type - данные левого столбца:
+--------- seller_account_order_journal_main_acts_book_type_title - выражается заглавной буквой "Р" описывающей активность (либо иконкой), находится слева;
+--------- seller_account_order_journal_main_acts_book_type_who - представляет собой переменную со строковым значением в качестве имени пользователя инициализирующего акт;
+------- seller_account_order_journal_main_acts_book_details - данные правого столбца расположенные друг за другом слева-направо в качестве единого предложения включающего 4 элемента:
+--------- seller_account_order_journal_main_acts_book_details_time - переменная с числовым значением, отображает время акта, находится слева, используется тонкий шрифт;
+--------- seller_account_order_journal_main_acts_book_details_what - отображает текст следующего содержания: " бронирование товарной позиции ";
+--------- seller_account_order_journal_main_acts_book_details_lot - переменная с числовым значением, отображает номер товарной позиции в каталоге продавца;
+--------- seller_account_order_journal_main_acts_book_details_number - переменная с числовым значением в круглых скобках, отображает количество приобретаемого товара в единицах измерения присвоенных целевому лоту, используется жирный шрифт;
+----- seller_account_order_journal_main_acts_call - акт телефонного звонка, включает 2 компонента:
+------- seller_account_order_journal_main_acts_call_type - данные левого столбца:
+--------- seller_account_order_journal_main_acts_call_type_title - выражается заглавной буквой "З" описывающей активность (либо иконкой), находится слева;
+--------- seller_account_order_journal_main_acts_call_type_who - представляет собой переменную со строковым значением в качестве имени пользователя инициализирующего акт;
+------- seller_account_order_journal_main_acts_call_details - данные правого столбца расположенные друг за другом слева-направо в качестве единого предложения включающего 3 элемента:
+--------- seller_account_order_journal_main_acts_call_details_time - переменная с числовым значением, отображает время акта, находится слева, используется тонкий шрифт;
+--------- seller_account_order_journal_main_acts_call_details_what - отображает текст следующего содержания: " звонок на номер ";
+--------- seller_account_order_journal_main_acts_call_details_number - переменная с числовым значением, отображает телефонный номер, используется жирный шрифт;
+----- seller_account_order_journal_main_acts_chat - акт переписки в чате, включает 2 компонента:
+------- seller_account_order_journal_main_acts_chat_type - данные левого столбца:
+--------- seller_account_order_journal_main_acts_chat_type_title - выражается заглавной буквой "Ч" описывающей активность (либо иконкой), находится слева;
+--------- seller_account_order_journal_main_acts_chat_type_who - представляет собой переменную со строковым значением в качестве имени пользователя инициализирующего акт;
+------- seller_account_order_journal_main_acts_chat_details - данные правого столбца расположенные друг за другом слева-направо в качестве единого предложения включающего 2 элемента:
+--------- seller_account_order_journal_main_acts_chat_details_time - переменная с числовым значением, отображает время акта, находится слева, используется тонкий шрифт;
+--------- seller_account_order_journal_main_acts_chat_details_text - переменная со строковым значением, отображает содержание сообщения из чата, используется жирный шрифт;
+----- seller_account_order_journal_main_acts_forum - акт переписки в чате, включает 2 компонента:
+------- seller_account_order_journal_main_acts_forum_type - данные левого столбца:
+--------- seller_account_order_journal_main_acts_forum_type_title - выражается заглавной буквой "Ф" описывающей активность (либо иконкой), находится слева;
+--------- seller_account_order_journal_main_acts_forum_type_who - представляет собой переменную со строковым значением в качестве имени пользователя инициализирующего акт;
+------- seller_account_order_journal_main_acts_forum_details - данные правого столбца расположенные друг за другом слева-направо в качестве единого предложения включающего 2 элемента:
+--------- seller_account_order_journal_main_acts_forum_details_time - переменная с числовым значением, отображает время акта, находится слева, используется тонкий шрифт;
+--------- seller_account_order_journal_main_acts_forum_details_text - переменная со строковым значением, отображает содержание сообщения из форума, используется жирный шрифт;
+----- seller_account_order_journal_main_acts_order - акт создания ордера, включает 2 компонента:
+------- seller_account_order_journal_main_acts_order_type - данные левого столбца:
+--------- seller_account_order_journal_main_acts_order_type_title - выражается заглавной буквой "О" описывающей активность (либо иконкой), находится слева;
+--------- seller_account_order_journal_main_acts_order_type_who - представляет собой переменную со строковым значением в качестве имени пользователя инициализирующего акт;
+------- seller_account_order_journal_main_acts_order_details - данные правого столбца расположенные друг за другом слева-направо в качестве единого предложения включающего 4 элемента:
+--------- seller_account_order_journal_main_acts_order_details_time - переменная с числовым значением, отображает время акта, находится слева, используется тонкий шрифт;
+--------- seller_account_order_journal_main_acts_order_details_what - отображает текст следующего содержания: " ордер ";
+--------- seller_account_order_journal_main_acts_order_details_alias - переменная со строковым значением, отображает псевдоним ордера, используется жирный шрифт;
+--------- seller_account_order_journal_main_acts_order_details_number - представляет собой переменную со строковым значением в качестве глагола описывающего операцию ("открыт/закрыт/отменен");
+----- seller_account_order_journal_main_acts_ship - акт переписки в чате, включает 2 компонента:
+------- seller_account_order_journal_main_acts_ship_type - данные левого столбца:
+--------- seller_account_order_journal_main_acts_ship_type_title - выражается заглавной буквой "Д" описывающей активность (либо иконкой), находится слева;
+--------- seller_account_order_journal_main_acts_ship_type_who - представляет собой переменную со строковым значением в качестве имени пользователя инициализирующего акт;
+------- seller_account_order_journal_main_acts_ship_details - данные правого столбца расположенные друг за другом слева-направо в качестве единого предложения включающего 4 элемента:
+--------- seller_account_order_journal_main_acts_ship_details_time - переменная с числовым значением, отображает время акта, находится слева, используется тонкий шрифт;
+--------- seller_account_order_journal_main_acts_ship_details_what - отображает текст следующего содержания: " доставка ";
+--------- seller_account_order_journal_main_acts_ship_details_step - представляет собой переменную со строковым значением в качестве глагола описывающего операцию ("активирована/дезактивирована/выполнена");
+--------- seller_account_order_journal_main_acts_ship_details_text - переменная со строковым значением, отображает адрес доставки, используется жирный шрифт;
+----- seller_account_order_journal_main_acts_transact - акт создания ордера, включает 2 компонента:
+------- seller_account_order_journal_main_acts_transact_type - данные левого столбца:
+--------- seller_account_order_journal_main_acts_transact_type_title - выражается заглавной буквой "Т" описывающей активность (либо иконкой), находится слева;
+--------- seller_account_order_journal_main_acts_transact_type_who - представляет собой переменную со строковым значением в качестве имени пользователя инициализирующего акт;
+------- seller_account_order_journal_main_acts_transact_details - данные правого столбца расположенные друг за другом слева-направо в качестве единого предложения включающего 5 элементов:
+--------- seller_account_order_journal_main_acts_transact_details_time - переменная с числовым значением, отображает время акта, находится слева, используется тонкий шрифт;
+--------- seller_account_order_journal_main_acts_transact_details_what - отображает текст следующего содержания: " перевод ";
+--------- seller_account_order_journal_main_acts_transact_details_tool - переменная со строковым значением, отображает название платежного инструмента с помощью которого была сделана транзакция, используется жирный шрифт;
+--------- seller_account_order_journal_main_acts_transact_details_text - отображает текст следующего содержания: " сумма: ";
+--------- seller_account_order_journal_main_acts_transact_details_sum - представляет собой переменную с числовым значением, которая показывает сумму транзакции;
+--- seller_account_order_journal_main_bottom_btn - кнопка расположенная в самом низу seller_account_order_journal_main и центрированная по горизонтали:
+----- seller_account_order_journal_main_bottom_btn_title - отображает наименование: "OK";
+- seller_account_order_journal_bottom - располагается в качестве компактного блока высотой порядка 3% от вертикальной области экрана в нижней области seller_account_order_journal и включает:
+--- seller_account_order_journal_bottom_text - с текстом следующего содержания: "Здесь отображается активность в рамках ордера".
+
+✠ actions
+• seller_account_order_journal_main_acts_book:
+╠ valid / invalid
+║ • tap 
+║ occasion: нажатие seller_account_order_journal_main_acts_book;
+║ condition: в ситуации наличия минимум одного seller_account_order_journal_main_acts_book в seller_account_order_journal;
+╙ result: открывается seller_actions_screen.
+• seller_account_order_journal_main_acts_call:
+╠ valid / invalid
+║ • tap 
+║ occasion: нажатие seller_account_order_journal_main_acts_call;
+║ condition: в ситуации наличия минимум одного seller_account_order_journal_main_acts_call в seller_account_order_journal;
+╙ result: открывается seller_actions_screen.
+• seller_account_order_journal_main_acts_chat:
+╠ valid / invalid
+║ • tap 
+║ occasion: нажатие seller_account_order_journal_main_acts_chat;
+║ condition: в ситуации наличия минимум одного seller_account_order_journal_main_acts_chat в seller_account_order_journal;
+╙ result: не реагирует на нажатие.
+• seller_account_order_journal_main_acts_forum:
+╠ valid / invalid
+║ • tap 
+║ occasion: нажатие seller_account_order_journal_main_acts_forum;
+║ condition: в ситуации наличия минимум одного seller_account_order_journal_main_acts_forum в seller_account_order_journal;
+╙ result: не реагирует на нажатие.
+• seller_account_order_journal_main_acts_order:
+╠ valid / invalid
+║ • tap 
+║ occasion: нажатие seller_account_order_journal_main_acts_order;
+║ condition: в ситуации наличия минимум одного seller_account_order_journal_main_acts_order в seller_account_order_journal;
+╙ result: не реагирует на нажатие.
+• seller_account_order_journal_main_acts_ship:
+╠ valid / invalid
+║ • tap 
+║ occasion: нажатие seller_account_order_journal_main_acts_ship;
+║ condition: в ситуации наличия минимум одного seller_account_order_journal_main_acts_ship в seller_account_order_journal;
+╙ result: не реагирует на нажатие.
+• seller_account_order_journal_main_acts_transact:
+╠ valid / invalid
+║ • tap 
+║ occasion: нажатие seller_account_order_journal_main_acts_transact;
+║ condition: в ситуации наличия минимум одного seller_account_order_journal_main_acts_transact в seller_account_order_journal;
+╙ result: не реагирует на нажатие.
+• seller_account_order_journal_main_bottom_btn:
+╠ valid / invalid
+║ • tap 
+║ occasion: нажатие seller_account_order_journal_main_bottom_btn;
+║ condition: в любой ситуации;
+║ result: 
+║ && - seller_account_order_journal_modal закрывается;
+╙ && - происходит возврат к seller_account_order_modal.
+
+✠ color_states
+┌─ 
+│seller_account_order_journal_main_acts_book
+│seller_account_order_journal_main_acts_call
+│seller_account_order_journal_main_acts_chat
+│seller_account_order_journal_main_acts_forum
+│seller_account_order_journal_main_acts_order
+│seller_account_order_journal_main_acts_ship
+│seller_account_order_journal_main_acts_transact
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color2
+│------ в inactive_state
+├────────
+│• color5
+│------ в pressing_state
+└─
+┌─ 
+│seller_account_order_journal_top_title
+│seller_account_order_journal_main_header_alias_title
+│seller_account_order_journal_main_header_date_title
+│seller_account_order_journal_main_acts_book_type_title
+│seller_account_order_journal_main_acts_book_type_who
+│seller_account_order_journal_main_acts_book_details_time
+│seller_account_order_journal_main_acts_book_details_what
+│seller_account_order_journal_main_acts_book_details_lot
+│seller_account_order_journal_main_acts_book_details_number
+│seller_account_order_journal_main_acts_call_type_title
+│seller_account_order_journal_main_acts_call_type_who
+│seller_account_order_journal_main_acts_call_details_time
+│seller_account_order_journal_main_acts_call_details_what
+│seller_account_order_journal_main_acts_call_details_number
+│seller_account_order_journal_main_acts_chat_type_title
+│seller_account_order_journal_main_acts_chat_type_who
+│seller_account_order_journal_main_acts_chat_details_time
+│seller_account_order_journal_main_acts_chat_details_text
+│seller_account_order_journal_main_acts_forum_type_title
+│seller_account_order_journal_main_acts_forum_type_who
+│seller_account_order_journal_main_acts_forum_details_time
+│seller_account_order_journal_main_acts_forum_details_text
+│seller_account_order_journal_main_acts_order_type_title
+│seller_account_order_journal_main_acts_order_type_who
+│seller_account_order_journal_main_acts_order_details_time
+│seller_account_order_journal_main_acts_order_details_what
+│seller_account_order_journal_main_acts_order_details_alias
+│seller_account_order_journal_main_acts_order_details_number
+│seller_account_order_journal_main_acts_ship_type_title
+│seller_account_order_journal_main_acts_ship_type_who
+│seller_account_order_journal_main_acts_ship_details_time
+│seller_account_order_journal_main_acts_ship_details_what
+│seller_account_order_journal_main_acts_ship_details_step
+│seller_account_order_journal_main_acts_ship_details_text
+│seller_account_order_journal_main_acts_transact_type_title
+│seller_account_order_journal_main_acts_transact_type_who
+│seller_account_order_journal_main_acts_transact_details_time
+│seller_account_order_journal_main_acts_transact_details_what
+│seller_account_order_journal_main_acts_transact_details_tool
+│seller_account_order_journal_main_acts_transact_details_text
+│seller_account_order_journal_main_acts_transact_details_sum
+│seller_account_order_journal_main_bottom_btn_title
+│seller_account_order_journal_bottom_text
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color8
+│------ в любой ситуации
+└─
+┌─ 
+│seller_account_order_journal_main_bottom_btn
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ в inactive_state
+├────────
+│• color5
+│------ в pressing_state
+└─
 
 
 
