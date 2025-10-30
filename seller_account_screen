@@ -558,78 +558,93 @@ seller_account_order_mix_modal отображает информационную
 
 ✠ tables
 
-                               codename:                           type:         designation:     pressed/default:  location:   interaction:
-┌┬──────[seller_account_order_mix                          ]  [section_lev1]                      [color0/color0]    [ ✜ ✜ ]      [ no  ]
-│└┬┬┬───[seller_account_order_mix_list                     ]  [section_lev2]                      [color0/color0]    [ 🡅 ✜ ]      [ no  ]
-│ ││└┬──[seller_account_order_mix_list_part1               ]  [section_lev3]                      [color0/color0]    [ 🡅 ✜ ]      [ no  ]
-│ ││ ├┬─[seller_account_order_mix_list_part1_number        ]  [section_lev4]                      [color2/color2]    [ 🡅 ✜ ]      [ no  ]
-│ ││ │├ [seller_account_order_mix_list_part1_number_name   ]  [label       ] [ "ОРДЕР"          ] [color8/color8]    [ ✜ 🡄 ]      [ no  ]
-│ ││ │└ [seller_account_order_mix_list_part1_number_value  ]  [value       ] [ { string }       ] [color8/color8]    [ ✜ 🡆 ]      [ no  ]
-│ ││ ├┬─[seller_account_order_mix_list_part1_data          ]  [section_lev4]                      [color2/color2]    [ ✜ ✜ ]      [ no  ]
-│ ││ │├ [seller_account_order_mix_list_part1_data_name     ]  [label       ] [ "ДАТА"           ] [color8/color8]    [ ✜ 🡄 ]      [ no  ]
-│ ││ │└ [seller_account_order_mix_list_part1_data_value    ]  [value       ] [ { string }       ] [color8/color8]    [ ✜ 🡆 ]      [ no  ]
-│ ││ ├┬─[seller_account_order_mix_list_part1_client        ]  [section_lev4]                      [color2/color2]    [ ✜ ✜ ]      [ no  ]
-│ ││ │├ [seller_account_order_mix_list_part1_client_name   ]  [label       ] [ "КЛИЕНТ"         ] [color8/color8]    [ ✜ 🡄 ]      [ no  ]
-│ ││ │└ [seller_account_order_mix_list_part1_client_value  ]  [value       ] [ { string }       ] [color8/color8]    [ ✜ 🡆 ]      [ no  ]
-│ ││ ├┬─[seller_account_order_mix_list_part1_phone         ]  [section_lev4]                      [color2/color2]    [ ✜ ✜ ]      [ no  ]
-│ ││ │├ [seller_account_order_mix_list_part1_phone_name    ]  [label       ] [ "ТЕЛЕФОН"        ] [color8/color8]    [ ✜ 🡄 ]      [ no  ]
-│ ││ │└ [seller_account_order_mix_list_part1_phone_value   ]  [value       ] [ { number }       ] [color8/color8]    [ ✜ 🡆 ]      [ no  ]
-│ ││ ├┬─[seller_account_order_mix_list_part1_quantity      ]  [section_lev4]                      [color2/color2]    [ ✜ ✜ ]      [ no  ]
-│ ││ │├ [seller_account_order_mix_list_part1_quantity_name ]  [label       ] [ "ТОВАРОВ"        ] [color8/color8]    [ ✜ 🡄 ]      [ no  ]
-│ ││ │└ [seller_account_order_mix_list_part1_quantity_value]  [value       ] [ { number }       ] [color8/color8]    [ ✜ 🡆 ]      [ no  ]
-│ ││ └┬─[seller_account_order_mix_list_part1_sum           ]  [section_lev4]                      [color2/color2]    [ ✜ ✜ ]      [ no  ]
-│ ││  ├ [seller_account_order_mix_list_part1_sum_name      ]  [label       ] [ "СУММА"          ] [color8/color8]    [ ✜ 🡄 ]      [ no  ]
-│ ││  └ [seller_account_order_mix_list_part1_sum_value     ]  [value       ] [ { number }       ] [color8/color8]    [ ✜ 🡆 ]      [ no  ]
-│ │└─┬┬─[seller_account_order_mix_list_part2               ]  [section_lev3]                      [color0/color0]    [ ✜ ✜ ]      [ no  ] 
-│ │  │├─[seller_account_order_mix_list_part2_top           ]  [section_lev4]                      [color2/color2]    [ 🡅 ✜ ]      [ no  ] 
-│ │  │├ [seller_account_order_mix_list_part2_top_number    ]  [label       ] [ "# ТОВАРА"       ] [color8/color8]    [ ✜ 🡄 ]      [ no  ] 
-│ │  │├ [seller_account_order_mix_list_part2_top_name      ]  [label       ] [ "ТОВАР"          ] [color8/color8]    [ ✜ ✜ ]      [ no  ] 
-│ │  │├ [seller_account_order_mix_list_part2_top_quantity  ]  [label       ] [ "КОЛИЧ"          ] [color8/color8]    [ ✜ ✜ ]      [ no  ] 
-│ │  │├ [seller_account_order_mix_list_part2_top_book      ]  [label       ] [ "БРОН"           ] [color8/color8]    [ ✜ ✜ ]      [ no  ] 
-│ │  │└ [seller_account_order_mix_list_part2_top_ready     ]  [label       ] [ "ГОТОВ"          ] [color8/color8]    [ ✜ 🡆 ]      [ no  ] 
-│ │  └┬─[seller_account_order_mix_list_part2_good          ]  [section_lev4]                      [color2/color2]    [ 🡇 ✜ ]      [ no  ] 
-│ │   ├ [seller_account_order_mix_list_part2_good_#        ]  [value       ] [ { number }       ] [color8/color8]    [ ✜ 🡄 ]      [ no  ] 
-│ │   ├ [seller_account_order_mix_list_part2_good_name     ]  [value       ] [ { string }       ] [color8/color8]    [ ✜ ✜ ]      [ no  ] 
-│ │   ├ [seller_account_order_mix_list_part2_good_quantity ]  [value       ] [ { number }       ] [color8/color8]    [ ✜ ✜ ]      [ no  ] 
-│ │   ├ [seller_account_order_mix_list_part2_good_book     ]  [value       ] [ { string }       ] [color8/color8]    [ ✜ ✜ ]      [ no  ] 
-│ │   └ [seller_account_order_mix_list_part2_good_ready    ]  [checkbox    ]                      [color7/color4]    [ ✜ 🡆 ]      [ yes ] 
-│ └─┬┬──[seller_account_order_mix_list_part3               ]  [section_lev3]                      [color0/color0]    [ 🡇 ✜ ]      [ no  ]
-│   │└┬─[seller_account_order_mix_list_part3_ship          ]  [section_lev4]                      [color2/color2]    [ 🡅 ✜ ]      [ no  ]
-│   │ ├ [seller_account_order_mix_list_part3_ship_name     ]  [label       ] [ "ДОСТАВКА"       ] [color8/color8]    [ ✜ 🡄 ]      [ no  ]
-│   │ ├ [seller_account_order_mix_list_part3_ship_value    ]  [value       ] [ { string }       ] [color8/color8]    [ ✜ ✜ ]      [ no  ]
-│   │ └ [seller_account_order_mix_list_part3_ship_ready    ]  [checkbox    ]                      [color7/color4]    [ ✜ 🡆 ]      [ yes ]
-│   └─┬─[seller_account_order_mix_list_part3_done          ]  [section_lev4]                      [color2/color2]    [ 🡇 ✜ ]      [ no  ]
-│     ├ [seller_account_order_mix_list_part3_done_name     ]  [label       ] [ "ВЫПОЛНЕН"       ] [color8/color8]    [ ✜ 🡄 ]      [ no  ]
-│     ├ [seller_account_order_mix_list_part3_done_value    ]  [value       ] [ { string }       ] [color8/color8]    [ ✜ ✜ ]      [ no  ]
-│     └ [seller_account_order_mix_list_part3_done_ready    ]  [checkbox    ]                      [color7/color4]    [ ✜ 🡆 ]      [ yes ]
-└───────[seller_account_order_journal                      ]  [section_lev2]                      [color0/color0]    [ 🡇 ✜ ]      [ no  ]
+                                  codename:                           type:         designation:        location:   interaction:
+  ┌┬┬──────[seller_account_order_mix                          ]  [section_lev1]                          [ ✜ ✜ ]      [ no  ]
+  ││└┬┬┬───[seller_account_order_mix_list                     ]  [section_lev2]                          [ 🡅 ✜ ]      [ no  ]
+  ││ ││└┬──[seller_account_order_mix_list_part1               ]  [section_lev3]                          [ 🡅 ✜ ]      [ no  ]
+  ││ ││ ├┬─[seller_account_order_mix_list_part1_number        ]  [section_lev4]                          [ 🡅 ✜ ]      [ no  ]
+  ││ ││ │├ [seller_account_order_mix_list_part1_number_name   ]  [label       ] [ "ОРДЕР"          ]     [ ✜ 🡄 ]      [ no  ]
+  ││ ││ │└ [seller_account_order_mix_list_part1_number_value  ]  [value       ] [ { string }       ]     [ ✜ 🡆 ]      [ no  ]
+  ││ ││ ├┬─[seller_account_order_mix_list_part1_data          ]  [section_lev4]                          [ ✜ ✜ ]      [ no  ]
+  ││ ││ │├ [seller_account_order_mix_list_part1_data_name     ]  [label       ] [ "ДАТА"           ]     [ ✜ 🡄 ]      [ no  ]
+  ││ ││ │└ [seller_account_order_mix_list_part1_data_value    ]  [value       ] [ { string }       ]     [ ✜ 🡆 ]      [ no  ]
+  ││ ││ ├┬─[seller_account_order_mix_list_part1_client        ]  [section_lev4]                          [ ✜ ✜ ]      [ no  ]
+  ││ ││ │├ [seller_account_order_mix_list_part1_client_name   ]  [label       ] [ "КЛИЕНТ"         ]     [ ✜ 🡄 ]      [ no  ]
+  ││ ││ │└ [seller_account_order_mix_list_part1_client_value  ]  [value       ] [ { string }       ]     [ ✜ 🡆 ]      [ no  ]
+  ││ ││ ├┬─[seller_account_order_mix_list_part1_phone         ]  [section_lev4]                          [ ✜ ✜ ]      [ no  ]
+  ││ ││ │├ [seller_account_order_mix_list_part1_phone_name    ]  [label       ] [ "ТЕЛЕФОН"        ]     [ ✜ 🡄 ]      [ no  ]
+  ││ ││ │└ [seller_account_order_mix_list_part1_phone_value   ]  [value       ] [ { number }       ]     [ ✜ 🡆 ]      [ no  ]
+  ││ ││ ├┬─[seller_account_order_mix_list_part1_quantity      ]  [section_lev4]                          [ ✜ ✜ ]      [ no  ]
+  ││ ││ │├ [seller_account_order_mix_list_part1_quantity_name ]  [label       ] [ "ТОВАРОВ"        ]     [ ✜ 🡄 ]      [ no  ]
+  ││ ││ │└ [seller_account_order_mix_list_part1_quantity_value]  [value       ] [ { number }       ]     [ ✜ 🡆 ]      [ no  ]
+  ││ ││ └┬─[seller_account_order_mix_list_part1_sum           ]  [section_lev4]                          [ ✜ ✜ ]      [ no  ]
+  ││ ││  ├ [seller_account_order_mix_list_part1_sum_name      ]  [label       ] [ "СУММА"          ]     [ ✜ 🡄 ]      [ no  ]
+  ││ ││  └ [seller_account_order_mix_list_part1_sum_value     ]  [value       ] [ { number }       ]     [ ✜ 🡆 ]      [ no  ]
+  ││ │└─┬┬─[seller_account_order_mix_list_part2               ]  [section_lev3]                          [ ✜ ✜ ]      [ no  ] 
+  ││ │  │├─[seller_account_order_mix_list_part2_top           ]  [section_lev4]                          [ 🡅 ✜ ]      [ no  ] 
+  ││ │  │├ [seller_account_order_mix_list_part2_top_number    ]  [label       ] [ "# ТОВАРА"       ]     [ ✜ 🡄 ]      [ no  ] 
+  ││ │  │├ [seller_account_order_mix_list_part2_top_name      ]  [label       ] [ "ТОВАР"          ]     [ ✜ ✜ ]      [ no  ] 
+  ││ │  │├ [seller_account_order_mix_list_part2_top_quantity  ]  [label       ] [ "КОЛИЧ"          ]     [ ✜ ✜ ]      [ no  ] 
+  ││ │  │├ [seller_account_order_mix_list_part2_top_book      ]  [label       ] [ "БРОН"           ]     [ ✜ ✜ ]      [ no  ] 
+  ││ │  │└ [seller_account_order_mix_list_part2_top_ready     ]  [label       ] [ "ГОТОВ"          ]     [ ✜ 🡆 ]      [ no  ] 
+  ││ │  └┬─[seller_account_order_mix_list_part2_good          ]  [section_lev4]                          [ 🡇 ✜ ]      [ no  ] 
+  ││ │   ├ [seller_account_order_mix_list_part2_good_#        ]  [value       ] [ { number }       ]     [ ✜ 🡄 ]      [ no  ] 
+  ││ │   ├ [seller_account_order_mix_list_part2_good_name     ]  [value       ] [ { string }       ]     [ ✜ ✜ ]      [ no  ] 
+  ││ │   ├ [seller_account_order_mix_list_part2_good_quantity ]  [value       ] [ { number }       ]     [ ✜ ✜ ]      [ no  ] 
+  ││ │   ├ [seller_account_order_mix_list_part2_good_book     ]  [value       ] [ { string }       ]     [ ✜ ✜ ]      [ no  ] 
+  ││ │   └ [seller_account_order_mix_list_part2_good_ready    ]  [checkbox    ]                          [ ✜ 🡆 ]      [ yes ] 
+  ││ └─┬┬──[seller_account_order_mix_list_part3               ]  [section_lev3]                          [ 🡇 ✜ ]      [ no  ]
+  ││   │└┬─[seller_account_order_mix_list_part3_ship          ]  [section_lev4]                          [ 🡅 ✜ ]      [ no  ]
+  ││   │ ├ [seller_account_order_mix_list_part3_ship_name     ]  [label       ] [ "ДОСТАВКА"       ]     [ ✜ 🡄 ]      [ no  ]
+  ││   │ ├ [seller_account_order_mix_list_part3_ship_value    ]  [value       ] [ { string }       ]     [ ✜ ✜ ]      [ no  ]
+  ││   │ └ [seller_account_order_mix_list_part3_ship_ready    ]  [checkbox    ]                          [ ✜ 🡆 ]      [ yes ]
+  ││   └─┬─[seller_account_order_mix_list_part3_done          ]  [section_lev4]                          [ 🡇 ✜ ]      [ no  ]
+  ││     ├ [seller_account_order_mix_list_part3_done_name     ]  [label       ] [ "ВЫПОЛНЕН"       ]     [ ✜ 🡄 ]      [ no  ]
+  ││     ├ [seller_account_order_mix_list_part3_done_value    ]  [value       ] [ { string }       ]     [ ✜ ✜ ]      [ no  ]
+  ││     └ [seller_account_order_mix_list_part3_done_ready    ]  [checkbox    ]                          [ ✜ 🡆 ]      [ yes ]
+  │└───┬┬──[seller_account_order_mix_btn                      ]  [section_lev2]                          [ 🡇 ✜ ]      [ no  ]
+  │    │└┬─[seller_account_order_mix_btn_return               ]  [button      ]                          [ 🡅 ✜ ]      [ yes ]
+  │    │ └ [seller_account_order_mix_btn_return_title         ]  [label       ] [ "НАЗАД"          ]     [ ✜ ✜ ]      [ yes ]
+  │    │└┬─[seller_account_order_mix_btn_chat                 ]  [button      ]                          [ 🡇 🡄 ]      [ yes ]
+  │    │ └ [seller_account_order_mix_btn_chat_title           ]  [label       ] [ "НАПИСАТЬ"       ]     [ ✜ ✜ ]      [ yes ]
+  │    └─┬─[seller_account_order_mix_btn_call                 ]  [button      ]                          [ 🡇 🡆 ]      [ yes ]
+  │      └ [seller_account_order_mix_btn_call_title           ]  [label       ] [ "ПОЗВОНИТЬ"      ]     [ ✜ ✜ ]      [ yes ]
+  └────────[seller_account_order_mix_journal                  ]  [section_lev2]                          [ 🡇 ✜ ]      [ no  ]
 
 
 ✠ details
-seller_account_order_mix_modal разделен на 2 части seller_account_order_mix_list и seller_account_order_mix_journal (поскольку seller_account_order_mix_journal формируется независимо, его описание приведено отдельно). seller_account_order_mix_list подразделяется на 3 компонента следующих друг за другом сверху-вниз:
+seller_account_order_mix_modal разделен на 3 части seller_account_order_mix_list, seller_account_order_mix_btn и seller_account_order_mix_journal (поскольку seller_account_order_mix_journal формируется независимо, его описание приведено отдельно). seller_account_order_mix_list подразделяется на 3 компонента следующих друг за другом сверху-вниз:
 
-seller_account_order_mix_list_part1 - выводит 6 пар параметр/значение, где пара параметр/значение размещаются на одной строке согласно шаблону: параметр - позиция слева, значение - позиция справа. В seller_account_order_mix_list_part1 блоки параметров расположены сверху-вниз в следующем порядке:
-- seller_account_order_mix_list_part1_number - отображает значение псевдонима ордера;
-- seller_account_order_mix_list_part1_data - отображает значение времени создания ордера по шаблону: "hh:mm:ss";
-- seller_account_order_mix_list_part1_client - отображает фамилию и имя buyer по шаблону: "Second name.First name" (First name в виде его первой буквы);
-- seller_account_order_mix_list_part1_phone - отображает в качестве значения телефон buyer;
-- seller_account_order_mix_list_part1_quantity - отображает значение количества товарных позиций по ордеру;
-- seller_account_order_mix_list_part1_sum - отображает в качестве значения сумму ордера в денежном выражении.
-seller_account_order_mix_list_part2 - подразделяется на seller_account_order_mix_list_part2_top выполняющего роль шапки состоящего из 5 компонентов представляющих собой заголовки столбцов и seller_account_order_mix_list_part2_good состоящий из блоков данных seller_account_orders_list_order в виде 5 значений размещенных в 5 столбцах расположенных слева-направо в следующем порядке:
-- seller_account_order_mix_list_part2_good_# - отображает номер товарной позиции конкретного товара в ордере;
-- seller_account_order_mix_list_part2_good_name - отображает наименование товарной позиции;
-- seller_account_order_mix_list_part2_good_quantity - отображает количество товарных позиций в ордере;
-- seller_account_order_mix_list_part2_good_book - отображает значение "да/нет" (активировано/дезактивировано) функции бронирования в ордере;
-- seller_account_order_mix_list_part2_good_ready - отображает готовность ордера в виде чекбокса.
-seller_account_order_mix_list_part3 - частично повторяя шаблон seller_account_order_mix_list_part1 может быть в двух состояниях:
-- seller_account_order_mix_list_part3_ship_on - с активированной функцией доставки;
-- seller_account_order_mix_list_part3_ship_off - с неактивированной функцией доставки.
+--- seller_account_order_mix_list_part1 - выводит 6 пар параметр/значение, где пара параметр/значение размещаются на одной строке согласно шаблону: параметр - позиция слева, значение - позиция справа. В seller_account_order_mix_list_part1 блоки параметров расположены сверху-вниз в следующем порядке:
+----- seller_account_order_mix_list_part1_number - отображает значение псевдонима ордера;
+----- seller_account_order_mix_list_part1_data - отображает значение времени создания ордера по шаблону: "hh:mm:ss";
+----- seller_account_order_mix_list_part1_client - отображает фамилию и имя buyer по шаблону: "Second name.First name" (First name в виде его первой буквы);
+----- seller_account_order_mix_list_part1_phone - отображает в качестве значения телефон buyer;
+----- seller_account_order_mix_list_part1_quantity - отображает значение количества товарных позиций по ордеру;
+----- seller_account_order_mix_list_part1_sum - отображает в качестве значения сумму ордера в денежном выражении.
+--- seller_account_order_mix_list_part2 - подразделяется на seller_account_order_mix_list_part2_top выполняющего роль шапки состоящего из 5 компонентов представляющих собой заголовки столбцов и seller_account_order_mix_list_part2_good состоящий из блоков данных seller_account_orders_list_order в виде 5 значений размещенных в 5 столбцах расположенных слева-направо в следующем порядке:
+----- seller_account_order_mix_list_part2_good_# - отображает номер товарной позиции конкретного товара в ордере;
+----- seller_account_order_mix_list_part2_good_name - отображает наименование товарной позиции;
+----- seller_account_order_mix_list_part2_good_quantity - отображает количество товарных позиций в ордере;
+----- seller_account_order_mix_list_part2_good_book - отображает значение "да/нет" (активировано/дезактивировано) функции бронирования в ордере;
+----- seller_account_order_mix_list_part2_good_ready - отображает готовность ордера в виде чекбокса.
+--- seller_account_order_mix_list_part3 - частично повторяя шаблон seller_account_order_mix_list_part1 может быть в двух состояниях:
+----- seller_account_order_mix_list_part3_ship_on - с активированной функцией доставки;
+----- seller_account_order_mix_list_part3_ship_off - с неактивированной функцией доставки.
 seller_account_order_mix_list_part3_ship_on - отображает 2 блока параметров расположенных сверху-вниз в следующем порядке:
-- seller_account_order_mix_list_part3_ship - выводит в трех столбцах параметр/значение/чекбокс, где они размещаются на одной строке согласно шаблону: параметр - позиция слева, значение - позиция в центре, чекбокс - позиция справа. отображает В качестве значения отображается адрес buyer.
-- seller_account_order_mix_list_part3_done - отображает строковое значение "да" (переменная допукает бинарное выражение "да/нет").
+----- seller_account_order_mix_list_part3_ship - выводит в трех столбцах параметр/значение/чекбокс, где они размещаются на одной строке согласно шаблону: параметр - позиция слева, значение - позиция в центре, чекбокс - позиция справа. отображает В качестве значения отображается адрес buyer.
+----- seller_account_order_mix_list_part3_done - отображает строковое значение "да" (переменная допукает бинарное выражение "да/нет").
 seller_account_order_mix_list_part3_ship_off - отображает 2 блока параметров расположенных сверху-вниз в следующем порядке:
-- seller_account_order_mix_list_part3_ship - выводит параметр без значения (без адреса), где второй столбец остается пустым, а чекбокс отсутствует;
-- seller_account_order_mix_list_part3_done - выводит параметр/значение/чекбокс, где они размещаются на одной строке согласно шаблону: параметр - позиция слева, значение - позиция в центре, чекбокс - позиция справа. В качестве значения отображается: либо "да", если seller_account_order_mix_list_part3_done_ready проставлен (активирован); либо "нет", если seller_account_order_mix_list_part3_done_ready не проставлен (дезактивирован).
+----- seller_account_order_mix_list_part3_ship - выводит параметр без значения (без адреса), где второй столбец остается пустым, а чекбокс отсутствует;
+----- seller_account_order_mix_list_part3_done - выводит параметр/значение/чекбокс, где они размещаются на одной строке согласно шаблону: параметр - позиция слева, значение - позиция в центре, чекбокс - позиция справа. В качестве значения отображается: либо "да", если seller_account_order_mix_list_part3_done_ready проставлен (активирован); либо "нет", если seller_account_order_mix_list_part3_done_ready не проставлен (дезактивирован).
+- seller_account_order_mix_btn - группа из 3 кнопок расположенных в нижней части seller_account_order_mix:
+--- seller_account_order_mix_btn_return - кнопка размещенная над seller_account_order_mix_btn_chat и seller_account_order_mix_btn_call, занимает всю ширину экрана, предназначена для действия возвращения к предыдущему экрану;
+----- seller_account_order_mix_btn_return_title - наименование кнопки "НАПИСАТЬ";
+--- seller_account_order_mix_btn_chat - кнопка размещенная слева предназначенная для открытия чата;
+----- seller_account_order_mix_btn_chat_title - наименование кнопки "НАПИСАТЬ";
+--- seller_account_order_mix_btn_call - кнопка размещенная справа предназначенная для звонка покупателю;
+----- seller_account_order_mix_btn_call_title - наименование кнопки "НАПИСАТЬ";
+- seller_account_order_mix_journal - отображает данные seller_account_order_journal_modal.
 
 ✠ actions
 • seller_account_order_mix_list_part2_good_ready:
@@ -650,11 +665,28 @@ seller_account_order_mix_list_part3_ship_off - отображает 2 блока
 ║ occasion: нажатие seller_account_order_mix_list_part3_done_ready;
 ║ condition: в любой ситуации;
 ╙ result: галочка появляется в чекбоксе/галочка исчезает в чекбоксе.
+• seller_account_order_mix_btn_return:
+╠ valid / invalid
+║ • tap 
+║ occasion: нажатие seller_account_order_mix_btn_return;
+║ condition: в любой ситуации;
+╙ result: происходит возвращение к предыдущему экрану из которого был осуществлен вход в seller_account_order_mix_modal.
+• seller_account_order_mix_btn_chat:
+╠ valid / invalid
+║ • tap 
+║ occasion: нажатие seller_account_order_mix_btn_chat;
+║ condition: в любой ситуации;
+╙ result: открывается ветка диалога с целевым buyer в seller_chat_chat_screen.
+• seller_account_order_mix_btn_call:
+╠ valid / invalid
+║ • tap 
+║ occasion: нажатие seller_account_order_mix_btn_call;
+║ condition: в любой ситуации;
+╙ result: открывается seller_account_call_screen.
 
 ✠ logics
 При проставлении чекбокса в seller_account_order_mix_list_part3_done_ready в ситуации, если для seller_account_order_mix_list_part2_good_ready и/или seller_account_order_mix_list_part3_ship_ready не были проставлены чекбоксы, - эти пустые чекбоксы проставляются.
 При нажатии на проставленный чекбокс seller_account_order_mix_list_part3_done_ready, вне зависимости от состояния seller_account_order_mix_list_part2_good_ready и seller_account_order_mix_list_part3_ship_ready, их чекбоксы остаются проставленными.
-
 
 ✠ color_states
 ┌─
@@ -719,6 +751,18 @@ seller_account_order_mix_list_part3_ship_off - отображает 2 блока
 │• color4
 │------ в inactive_state
 │• color7
+│------ в active_state
+└─
+✠ color_states
+┌─
+│seller_account_order_mix_btn_chat
+│seller_account_order_mix_btn_call
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color4
+│------ в inactive_state
+│• color5
 │------ в active_state
 └─
 
@@ -3906,7 +3950,5 @@ seller_account_history_bottom_calendar2_title - отображает число 
 │• color5
 │------ в pressing_state
 └─
-
-
 
 
