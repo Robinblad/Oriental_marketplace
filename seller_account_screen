@@ -18,6 +18,7 @@ color9 - attention;
 
 
 
+
 🡆 seller_account
 ■■■■■■■■■■■■■■■■
 
@@ -43,58 +44,58 @@ seller_account_orders_screen является экраном по умолчан
 
 ✠ tables
 
-                          codename:                              type:                   designation:           pressed/default:   location:   interaction:
-s1)   ┌─[seller_account_nav                           ]  [section_lev1       ]                                   [color0/color0]     [ 🡅 ✜ ]      [ no  ]
----   ├ [seller_account_nav_payments                  ]  [button             ] [ "ПЛАТЕЖИ"                     ] [color7/color4]     [ ✜ 🡄 ]      [ yes ]
----   ├ [seller_account_nav_orders                    ]  [button             ] [ "ОРДЕРА"                      ] [color7/color4]     [ ✜ ✜ ]      [ yes ]
----   ├ [seller_account_nav_history                   ]  [button             ] [ "ИСТОРИЯ"                     ] [color7/color4]     [ ✜ 🡆 ]      [ yes ] 
----   └ [seller_account_nav_analysis                  ]  [button             ] [ "АНАЛИЗ"                      ] [color7/color4]     [ ✜ 🡆 ]      [ yes ] 
----┌┬───[seller_account_orders                        ]  [section_lev1       ]                                   [color0/color0]     [ ✜ ✜ ]      [ no  ] 
-s2)│└┬┬─[seller_account_orders_top                    ]  [section_lev2       ]                                   [color2/color2]     [ 🡅 ✜ ]      [ yes ] 
----│ │└ [seller_account_orders_top_title              ]  [header             ] [ {{number} 'открытых ордеров'} ] [color8/color8]     [ ✜ ✜ ]      [ yes ] 
----│ └┬ [seller_account_orders_top_options            ]  [section_lev3       ]                                   [color2/color2]     [ ✜ 🡆 ]      [ yes ]
----│  ├ [seller_account_orders_top_options_title      ]  [header             ] [ "НАСТРОЙКИ"                   ] [color8/color8]     [ ✜ 🡆 ]      [ yes ]
----│  ├ [seller_account_orders_top_options_icon       ]  [icon               ] [ стрелка вниз                  ] [color8/color8]     [ ✜ 🡄 ]      [ yes ]
----│  └ [seller_account_orders_top_options_button     ]  [button             ]                                   [color7/color4]     [ ✜ ✜ ]      [ yes ]
-s3)├┬┬──[seller_account_orders_list                   ]  [section_lev2       ]                                   [color2/color2]     [ ✜ ✜ ]      [ no  ]
----││└┬ [seller_account_orders_list_top               ]  [section_lev3       ]                                   [color2/color2]     [ 🡅 ✜ ]      [ no  ]
----││ ├ [seller_account_orders_list_top_time          ]  [label              ] [ "ВРЕМЯ"                       ] [color8/color8]     [ ✜ 🡄 ]      [ no  ]
----││ ├ [seller_account_orders_list_top_client        ]  [label              ] [ "КЛИЕНТ"                      ] [color8/color8]     [ ✜ 🡄 ]      [ no  ]
----││ ├ [seller_account_orders_list_top_quantity      ]  [label              ] [ "КОЛИЧЕСТВО"                  ] [color8/color8]     [ ✜ ✜ ]      [ no  ]
----││ ├ [seller_account_orders_list_top_book          ]  [label              ] [ "БРОНИРОВАНИЕ"                ] [color8/color8]     [ ✜ ✜ ]      [ no  ]
----││ ├ [seller_account_orders_list_top_ship          ]  [label              ] [ "ДОСТАВКА"                    ] [color8/color8]     [ ✜ ✜ ]      [ no  ]
----││ ├ [seller_account_orders_list_top_payment       ]  [label              ] [ "ОПЛАТА"                      ] [color8/color8]     [ ✜ 🡆 ]      [ no  ] 
----││ └ [seller_account_orders_list_top_ready         ]  [label              ] [ "ГОТОВ"                       ] [color8/color8]     [ ✜ 🡆 ]      [ no  ]
----│└─┬─[seller_account_orders_list_order             ]  [section_lev3+button]                                 ] [color7/color2]     [ ✜ ✜ ]      [ yes ] 
----│  ├ [seller_account_orders_list_order_time        ]  [label+button       ] [ { string }                    ] [color2/color2]     [ ✜ 🡄 ]      [ yes ]
----│  ├ [seller_account_orders_list_order_client      ]  [label+button       ] [ { string }                    ] [color2/color2]     [ ✜ 🡄 ]      [ yes ] 
----│  ├ [seller_account_orders_list_order_quantity    ]  [label+button       ] [ { number }                    ] [color2/color2]     [ ✜ ✜ ]      [ yes ]
----│  ├ [seller_account_orders_list_order_book        ]  [label+button       ] [ { string }                    ] [color2/color2]     [ ✜ ✜ ]      [ yes ]
----│  ├ [seller_account_orders_list_order_ship        ]  [label+button       ] [ { string }                    ] [color2/color2]     [ ✜ ✜ ]      [ yes ]
----│  ├ [seller_account_orders_list_order_payment     ]  [label+button       ] [ { number }                    ] [color2/color2]     [ ✜ 🡆 ]      [ yes ]
----│  └ [seller_account_orders_list_order_ready       ]  [checkbox+button    ]                                   [color2/color2]     [ ✜ 🡆 ]      [ yes ]
-s4)└──┬─[seller_account_orders_bottom                 ]  [section_lev2       ]                                   [color2/color2]     [ ✜ ✜ ]      [ no  ]
----   ├ [seller_account_orders_bottom_profit          ]  [button             ] [ "ДОХОД"                       ] [color5/color2]     [ ✜ 🡄 ]      [ yes ]
----   ├ [seller_account_orders_bottom_quantity        ]  [button             ] [ "КОЛИЧЕСТВО"                  ] [color5/color2]     [ ✜ ✜ ]      [ yes ]
----   ├ [seller_account_orders_bottom_alphabit        ]  [button             ] [ "АЛФАВИТ"                     ] [color5/color2]     [ ✜ ✜ ]      [ yes ]
----   └ [seller_account_orders_bottom_time            ]  [button             ] [ "ВРЕМЯ"                       ] [color5/color2]     [ ✜ 🡆 ]      [ yes ]
-s5)  ┌──[seller_nav                                   ]  [section_lev1       ]                                   [color0/color0]     [ ✜ ✜ ]      [ no  ]
----- ├┬ [seller_nav_demand_button                     ]  [button             ]                                   [color7/color4]     [ ✜ 🡄 ]      [ yes ]
----- │├ [seller_nav_demand_header                     ]  [header             ] [ "МОНИТОР"                     ] [color8/color8]     [ ✜ ✜ ]      [ no  ]  
----- │└ [seller_nav_demand_badge                      ]  [badge              ] [ { number }                    ] [color4/color4]     [ 🡅 🡆 ]      [ no  ] 	
----- ├┬ [seller_nav_chat_button                       ]  [button             ]                                   [color7/color4]     [ ✜ 🡄 ]      [ yes ]   
----- │├ [seller_nav_chat_header                       ]  [header             ] [ "ЧАТ"                         ] [color8/color8]     [ ✜ ✜ ]      [ no  ] 
----- │└ [seller_nav_chat_badge                        ]  [badge              ] [ { number }                    ] [color4/color4]     [ 🡅 🡆 ]      [ no  ] 
----- ├┬ [seller_nav_shop_button                       ]  [button             ]                                   [color7/color4]     [ ✜ ✜ ]      [ yes ]   
----- │├ [seller_nav_shop_header                       ]  [header             ] [ "МАГАЗИН"                     ] [color8/color8]     [ ✜ ✜ ]      [ no  ] 
----- │└ [seller_nav_shop_badge                        ]  [badge              ] [ { number }                    ] [color4/color4]     [ 🡅 🡆 ]      [ no  ]   
----- ├┬ [seller_nav_goods_button                      ]  [button             ]                                   [color7/color4]     [ ✜ 🡆 ]      [ yes ]   
----- │├ [seller_nav_goods_header                      ]  [header             ] [ "ТОВАРЫ"                      ] [color8/color8]     [ ✜ ✜ ]      [ no  ] 
----- │└ [seller_nav_goods_badge                       ]  [badge              ] [ { number }                    ] [color4/color4]     [ 🡅 🡆 ]      [ no  ]     
----- └┬ [seller_nav_account_button                    ]  [button             ]                                   [color7/color4]     [ ✜ 🡆 ]      [ yes ]   
-----  ├ [seller_nav_account_header                    ]  [header             ] [ "КАБИНЕТ"                     ] [color8/color8]     [ ✜ ✜ ]      [ no  ] 
-----  └ [seller_nav_account_badge                     ]  [badge              ] [ { number }                    ] [color4/color4]     [ 🡅 🡆 ]      [ no  ] 
-
+                            codename:                              type:                    designation:                location:   interaction:
+s1)     ┌─[seller_account_nav                           ]  [section_lev1       ]                                         [ 🡅 ✜ ]      [ no  ]
+---     ├ [seller_account_nav_payments                  ]  [button             ]  [ "ПЛАТЕЖИ"                     ]      [ ✜ 🡄 ]      [ yes ]
+---     ├ [seller_account_nav_orders                    ]  [button             ]  [ "ОРДЕРА"                      ]      [ ✜ ✜ ]      [ yes ]
+---     ├ [seller_account_nav_history                   ]  [button             ]  [ "ИСТОРИЯ"                     ]      [ ✜ 🡆 ]      [ yes ] 
+---     └ [seller_account_nav_analysis                  ]  [button             ]  [ "АНАЛИЗ"                      ]      [ ✜ 🡆 ]      [ yes ] 
+---  ┌┬───[seller_account_orders                        ]  [section_lev1       ]                                         [ ✜ ✜ ]      [ no  ] 
+s2)  │└┬┬─[seller_account_orders_top                    ]  [section_lev2       ]                                         [ 🡅 ✜ ]      [ yes ] 
+---  │ │└ [seller_account_orders_top_title              ]  [header             ]  [ {{number} 'открытых ордеров'} ]      [ ✜ ✜ ]      [ yes ] 
+---  │ └┬ [seller_account_orders_top_options            ]  [section_lev3       ]                                         [ ✜ 🡆 ]      [ yes ]
+---  │  ├ [seller_account_orders_top_options_title      ]  [header             ]  [ "НАСТРОЙКИ"                   ]      [ ✜ 🡆 ]      [ yes ]
+---  │  ├ [seller_account_orders_top_options_icon       ]  [icon               ]  [ стрелка вниз                  ]      [ ✜ 🡄 ]      [ yes ]
+---  │  └ [seller_account_orders_top_options_button     ]  [button             ]                                         [ ✜ ✜ ]      [ yes ]
+s3)  ├┬┬──[seller_account_orders_list                   ]  [section_lev2       ]                                         [ ✜ ✜ ]      [ no  ]
+---  ││└┬ [seller_account_orders_list_top               ]  [section_lev3       ]                                         [ 🡅 ✜ ]      [ no  ]
+---  ││ ├ [seller_account_orders_list_top_time          ]  [label              ]  [ "ВРЕМЯ"                       ]      [ ✜ 🡄 ]      [ no  ]
+---  ││ ├ [seller_account_orders_list_top_client        ]  [label              ]  [ "КЛИЕНТ"                      ]      [ ✜ 🡄 ]      [ no  ]
+---  ││ ├ [seller_account_orders_list_top_quantity      ]  [label              ]  [ "КОЛИЧЕСТВО"                  ]      [ ✜ ✜ ]      [ no  ]
+---  ││ ├ [seller_account_orders_list_top_book          ]  [label              ]  [ "БРОНИРОВАНИЕ"                ]      [ ✜ ✜ ]      [ no  ]
+---  ││ ├ [seller_account_orders_list_top_ship          ]  [label              ]  [ "ДОСТАВКА"                    ]      [ ✜ ✜ ]      [ no  ]
+---  ││ ├ [seller_account_orders_list_top_payment       ]  [label              ]  [ "ОПЛАТА"                      ]      [ ✜ 🡆 ]      [ no  ] 
+---  ││ └ [seller_account_orders_list_top_ready         ]  [label              ]  [ "ГОТОВ"                       ]      [ ✜ 🡆 ]      [ no  ]
+---  │└─┬─[seller_account_orders_list_order             ]  [section_lev3+button]                                  ]      [ ✜ ✜ ]      [ yes ] 
+---  │  ├ [seller_account_orders_list_order_time        ]  [label+button       ]  [ { string }                    ]      [ ✜ 🡄 ]      [ yes ]
+---  │  ├ [seller_account_orders_list_order_client      ]  [label+button       ]  [ { string }                    ]      [ ✜ 🡄 ]      [ yes ] 
+---  │  ├ [seller_account_orders_list_order_quantity    ]  [label+button       ]  [ { number }                    ]      [ ✜ ✜ ]      [ yes ]
+---  │  ├ [seller_account_orders_list_order_book        ]  [label+button       ]  [ { string }                    ]      [ ✜ ✜ ]      [ yes ]
+---  │  ├ [seller_account_orders_list_order_ship        ]  [label+button       ]  [ { string }                    ]      [ ✜ ✜ ]      [ yes ]
+---  │  ├ [seller_account_orders_list_order_payment     ]  [label+button       ]  [ { number }                    ]      [ ✜ 🡆 ]      [ yes ]
+---  │  └ [seller_account_orders_list_order_ready       ]  [checkbox+button    ]                                         [ ✜ 🡆 ]      [ yes ]
+s4)  └──┬─[seller_account_orders_bottom                 ]  [section_lev2       ]                                         [ ✜ ✜ ]      [ no  ]
+---     ├ [seller_account_orders_bottom_profit          ]  [button             ]  [ "ДОХОД"                       ]      [ ✜ 🡄 ]      [ yes ]
+---     ├ [seller_account_orders_bottom_quantity        ]  [button             ]  [ "КОЛИЧЕСТВО"                  ]      [ ✜ ✜ ]      [ yes ]
+---     ├ [seller_account_orders_bottom_alphabit        ]  [button             ]  [ "АЛФАВИТ"                     ]      [ ✜ ✜ ]      [ yes ]
+---     └ [seller_account_orders_bottom_time            ]  [button             ]  [ "ВРЕМЯ"                       ]      [ ✜ 🡆 ]      [ yes ]
+s5)┌┬┬┬┬──[seller_nav                                  ]  [section_lev1       ]                                         [ ✜ ✜ ]      [ no  ]
+---││││└┬─[seller_nav_demand_button                    ]  [button             ]                                         [ ✜ 🡄 ]      [ yes ]
+---││││ ├ [seller_nav_demand_header                    ]  [header             ]  [ "МОНИТОР"                     ]      [ ✜ ✜ ]      [ no  ]  
+---││││ └ [seller_nav_demand_badge                     ]  [badge              ]  [ { number }                    ]      [ 🡅 🡆 ]      [ no  ] 	
+---│││└─┬─[seller_nav_chat_button                      ]  [button             ]                                         [ ✜ 🡄 ]      [ yes ]   
+---│││  ├ [seller_nav_chat_header                      ]  [header             ]  [ "ЧАТ"                         ]      [ ✜ ✜ ]      [ no  ] 
+---│││  └ [seller_nav_chat_badge                       ]  [badge              ]  [ { number }                    ]      [ 🡅 🡆 ]      [ no  ] 
+---││└──┬─[seller_nav_shop_button                      ]  [button             ]                                         [ ✜ ✜ ]      [ yes ]   
+---││   ├ [seller_nav_shop_header                      ]  [header             ]  [ "МАГАЗИН"                     ]      [ ✜ ✜ ]      [ no  ] 
+---││   └ [seller_nav_shop_badge                       ]  [badge              ]  [ { number }                    ]      [ 🡅 🡆 ]      [ no  ]   
+---│└───┬─[seller_nav_goods_button                     ]  [button             ]                                         [ ✜ 🡆 ]      [ yes ]   
+---│    ├ [seller_nav_goods_header                     ]  [header             ]  [ "ТОВАРЫ"                      ]      [ ✜ ✜ ]      [ no  ] 
+---│    └ [seller_nav_goods_badge                      ]  [badge              ]  [ { number }                    ]      [ 🡅 🡆 ]      [ no  ]     
+---└────┬─[seller_nav_account_button                   ]  [button             ]                                         [ ✜ 🡆 ]      [ yes ]   
+---     ├ [seller_nav_account_header                   ]  [header             ]  [ "КАБИНЕТ"                     ]      [ ✜ ✜ ]      [ no  ] 
+---     └ [seller_nav_account_badge                    ]  [badge              ]  [ { number }                    ]      [ 🡅 🡆 ]      [ no  ] 
+   
 
 ■ seller_account_nav
 
@@ -783,48 +784,48 @@ seller_account_order_mix_list_part3_ship_off - отображает 2 блока
 
 ✠ tables
 
-                          codename:                                 type:                  designation:          pressed/default:   location:   interaction:
-      ┌─[seller_account_nav                                ]  [section_lev1  ]                                   [color0/color0]     [ 🡅 ✜ ]      [ no  ]
-      ├ [seller_account_nav_payments                       ]  [button        ] [ "ПЛАТЕЖИ"                     ] [color7/color4]     [ ✜ 🡄 ]      [ yes ]
-      ├ [seller_account_nav_orders                         ]  [button        ] [ "ОРДЕРА"                      ] [color7/color4]     [ ✜ ✜ ]      [ yes ]
-      ├ [seller_account_nav_history                        ]  [button        ] [ "ИСТОРИЯ"                     ] [color7/color4]     [ ✜ 🡆 ]      [ yes ] 
-      └ [seller_account_nav_analysis                       ]  [button        ] [ "АНАЛИЗ"                      ] [color7/color4]     [ ✜ 🡆 ]      [ yes ] 
- ┌┬──┬──[seller_account_payments                           ]  [section_lev1  ]                                   [color0/color0]     [ ✜ ✜ ]      [ no  ] 
- ││  └┬─[seller_account_payments_top                       ]  [section_lev2  ]                                   [color2/color2]     [ 🡅 ✜ ]      [ no  ] 
- ││   └ [seller_account_payments_top_title                 ]  [text          ] ["Выберите платежный инструмент"] [color8/color8]     [ ✜ ✜ ]      [ no  ] 
- │├┬┬───[seller_account_payments                           ]  [section_lev2  ]                                   [color2/color2]     [ ✜ ✜ ]      [ no  ]
- │││└┬┬─[seller_account_payments_types                     ]  [dropdown      ]                                   [color7/color4]     [ 🡅 ✜ ]      [ yes ] 
- │││ │├ [seller_account_payments_types_header              ]  [header        ] [ "Прием платежей"              ] [color8/color8]     [ ✜ 🡆 ]      [ yes ]
- │││ │└ [seller_account_payments_types_icon                ]  [icon          ] [ стрелка вниз                  ] [color8/color8]     [ ✜ 🡄 ]      [ yes ]
- │││ └┬─[seller_account_payments_types_dropdown            ]  [section_lev3  ]                                   [color2/color2]     [ ✜ ✜ ]      [ no  ]
- │││  ├ [seller_account_payments_types_dropdown_cards      ]  [button        ] [ "Карты"                       ] [color7/color4]     [ 🡅 ✜ ]      [ yes ]
- │││  ├ [seller_account_payments_types_dropdown_bank       ]  [button        ] [ "Банковский счет"             ] [color7/color4]     [ ✜ ✜ ]      [ yes ]
- │││  ├ [seller_account_payments_types_dropdown_mbank      ]  [button        ] [ "MBank"                       ] [color7/color4]     [ ✜ ✜ ]      [ yes ]
- │││  ├ [seller_account_payments_types_dropdown_paypal     ]  [button        ] [ "PayPal"                      ] [color7/color4]     [ ✜ ✜ ]      [ yes ]
- │││  ├ [seller_account_payments_types_dropdown_unipay     ]  [button        ] [ "Unipay"                      ] [color7/color4]     [ ✜ ✜ ]      [ yes ]
- │││  └ [seller_account_payments_types_dropdown_alipay     ]  [button        ] [ "Alipay"                      ] [color7/color4]     [ 🡇 ✜ ]      [ yes ]
- ││└──┬─[seller_account_payments_taxes                     ]  [button        ] [                                 [color7/color4]     [ 🡇 ✜ ]      [ yes ]
- ││   ├ [seller_account_payments_taxes_header              ]  [header        ] [ "Уплата налогов"              ] [color8/color8]     [ ✜ 🡆 ]      [ yes ]
- ││   └ [seller_account_payments_taxes_icon                ]  [icon          ] [ знак процента                 ] [color8/color8]     [ ✜ 🡄 ]      [ yes ]
- │└─────[seller_account_payments_protip                    ]  [button        ] [ "?"                           ] [color7/color4]     [ 🡇 ✜ ]      [ yes ]
- └────┬─[seller_account_payments_bottom                    ]  [section_lev2  ]                                   [color2/color2]     [ 🡇 ✜ ]      [ no  ]
-      └ [seller_account_payments_bottom_text               ]  [text          ] [ "Подключить платежное сред..."] [color8/color8]     [ ✜ ✜ ]      [ no  ]
-     ┌──[seller_nav                                        ]  [section_lev1  ]                                   [color0/color0]     [ ✜ ✜ ]      [ no  ]
-     ├┬ [seller_nav_demand_button                          ]  [button        ]                                   [color7/color4]     [ ✜ 🡄 ]      [ yes ]
-     │├ [seller_nav_demand_header                          ]  [header        ] [ "МОНИТОР"                     ] [color8/color8]     [ ✜ ✜ ]      [ no  ]  
-     │└ [seller_nav_demand_badge                           ]  [badge         ] [ { number }                    ] [color4/color4]     [ 🡅 🡆 ]      [ no  ]
-     ├┬ [seller_nav_chat_button                            ]  [button        ]                                   [color7/color4]     [ ✜ 🡄 ]      [ yes ]   
-     │├ [seller_nav_chat_header                            ]  [header        ] [ "ЧАТ"                         ] [color8/color8]     [ ✜ ✜ ]      [ no  ] 
-     │└ [seller_nav_chat_badge                             ]  [badge         ] [ { number }                    ] [color4/color4]     [ 🡅 🡆 ]      [ no  ] 
-     ├┬ [seller_nav_shop_button                            ]  [button        ]                                   [color7/color4]     [ ✜ ✜ ]      [ yes ]   
-     │├ [seller_nav_shop_header                            ]  [header        ] [ "МАГАЗИН"                     ] [color8/color8]     [ ✜ ✜ ]      [ no  ] 
-     │└ [seller_nav_shop_badge                             ]  [badge         ] [ { number }                    ] [color4/color4]     [ 🡅 🡆 ]      [ no  ]   
-     ├┬ [seller_nav_goods_button                           ]  [button        ]                                   [color7/color4]     [ ✜ 🡆 ]      [ yes ]   
-     │├ [seller_nav_goods_header                           ]  [header        ] [ "ТОВАРЫ"                      ] [color8/color8]     [ ✜ ✜ ]      [ no  ] 
-     │└ [seller_nav_goods_badge                            ]  [badge         ] [ { number }                    ] [color4/color4]     [ 🡅 🡆 ]      [ no  ]
-     └┬ [seller_nav_account_button                         ]  [button        ]                                   [color7/color4]     [ ✜ 🡆 ]      [ yes ]   
-      ├ [seller_nav_account_header                         ]  [header        ] [ "КАБИНЕТ"                     ] [color8/color8]     [ ✜ ✜ ]      [ no  ] 
-      └ [seller_nav_account_badge                          ]  [badge         ] [ { number }                    ] [color4/color4]     [ 🡅 🡆 ]      [ no  ] 
+                          codename:                                 type:                   designation:              location:   interaction:
+      ┌─[seller_account_nav                                ]  [section_lev1  ]                                         [ 🡅 ✜ ]      [ no  ]
+      ├ [seller_account_nav_payments                       ]  [button        ]  [ "ПЛАТЕЖИ"                     ]      [ ✜ 🡄 ]      [ yes ]
+      ├ [seller_account_nav_orders                         ]  [button        ]  [ "ОРДЕРА"                      ]      [ ✜ ✜ ]      [ yes ]
+      ├ [seller_account_nav_history                        ]  [button        ]  [ "ИСТОРИЯ"                     ]      [ ✜ 🡆 ]      [ yes ] 
+      └ [seller_account_nav_analysis                       ]  [button        ]  [ "АНАЛИЗ"                      ]      [ ✜ 🡆 ]      [ yes ] 
+ ┌┬──┬──[seller_account_payments                           ]  [section_lev1  ]                                         [ ✜ ✜ ]      [ no  ] 
+ ││  └┬─[seller_account_payments_top                       ]  [section_lev2  ]                                         [ 🡅 ✜ ]      [ no  ] 
+ ││   └ [seller_account_payments_top_title                 ]  [text          ]  ["Выберите платежный инструмент"]      [ ✜ ✜ ]      [ no  ] 
+ │├┬┬───[seller_account_payments                           ]  [section_lev2  ]                                         [ ✜ ✜ ]      [ no  ]
+ │││└┬┬─[seller_account_payments_types                     ]  [dropdown      ]                                         [ 🡅 ✜ ]      [ yes ] 
+ │││ │├ [seller_account_payments_types_header              ]  [header        ]  [ "Прием платежей"              ]      [ ✜ 🡆 ]      [ yes ]
+ │││ │└ [seller_account_payments_types_icon                ]  [icon          ]  [ стрелка вниз                  ]      [ ✜ 🡄 ]      [ yes ]
+ │││ └┬─[seller_account_payments_types_dropdown            ]  [section_lev3  ]                                         [ ✜ ✜ ]      [ no  ]
+ │││  ├ [seller_account_payments_types_dropdown_cards      ]  [button        ]  [ "Карты"                       ]      [ 🡅 ✜ ]      [ yes ]
+ │││  ├ [seller_account_payments_types_dropdown_bank       ]  [button        ]  [ "Банковский счет"             ]      [ ✜ ✜ ]      [ yes ]
+ │││  ├ [seller_account_payments_types_dropdown_mbank      ]  [button        ]  [ "MBank"                       ]      [ ✜ ✜ ]      [ yes ]
+ │││  ├ [seller_account_payments_types_dropdown_paypal     ]  [button        ]  [ "PayPal"                      ]      [ ✜ ✜ ]      [ yes ]
+ │││  ├ [seller_account_payments_types_dropdown_unipay     ]  [button        ]  [ "Unipay"                      ]      [ ✜ ✜ ]      [ yes ]
+ │││  └ [seller_account_payments_types_dropdown_alipay     ]  [button        ]  [ "Alipay"                      ]      [ 🡇 ✜ ]      [ yes ]
+ ││└──┬─[seller_account_payments_taxes                     ]  [button        ]  [                                      [ 🡇 ✜ ]      [ yes ]
+ ││   ├ [seller_account_payments_taxes_header              ]  [header        ]  [ "Уплата налогов"              ]      [ ✜ 🡆 ]      [ yes ]
+ ││   └ [seller_account_payments_taxes_icon                ]  [icon          ]  [ знак процента                 ]      [ ✜ 🡄 ]      [ yes ]
+ │└─────[seller_account_payments_protip                    ]  [button        ]  [ "?"                           ]      [ 🡇 ✜ ]      [ yes ]
+ └────┬─[seller_account_payments_bottom                    ]  [section_lev2  ]                                         [ 🡇 ✜ ]      [ no  ]
+      └ [seller_account_payments_bottom_text               ]  [text          ]  [ "Подключить платежное сред..."]      [ ✜ ✜ ]      [ no  ]
+ ┌┬┬┬┬──[seller_nav                                        ]  [section_lev1  ]                                         [ ✜ ✜ ]      [ no  ]
+ ││││└┬─[seller_nav_demand_button                          ]  [button        ]                                         [ ✜ 🡄 ]      [ yes ]
+ ││││ ├ [seller_nav_demand_header                          ]  [header        ]  [ "МОНИТОР"                     ]      [ ✜ ✜ ]      [ no  ]  
+ ││││ └ [seller_nav_demand_badge                           ]  [badge         ]  [ { number }                    ]      [ 🡅 🡆 ]      [ no  ] 	
+ │││└─┬─[seller_nav_chat_button                            ]  [button        ]                                         [ ✜ 🡄 ]      [ yes ]   
+ │││  ├ [seller_nav_chat_header                            ]  [header        ]  [ "ЧАТ"                         ]      [ ✜ ✜ ]      [ no  ] 
+ │││  └ [seller_nav_chat_badge                             ]  [badge         ]  [ { number }                    ]      [ 🡅 🡆 ]      [ no  ] 
+ ││└──┬─[seller_nav_shop_button                            ]  [button        ]                                         [ ✜ ✜ ]      [ yes ]   
+ ││   ├ [seller_nav_shop_header                            ]  [header        ]  [ "МАГАЗИН"                     ]      [ ✜ ✜ ]      [ no  ] 
+ ││   └ [seller_nav_shop_badge                             ]  [badge         ]  [ { number }                    ]      [ 🡅 🡆 ]      [ no  ]   
+ │└───┬─[seller_nav_goods_button                           ]  [button        ]                                         [ ✜ 🡆 ]      [ yes ]   
+ │    ├ [seller_nav_goods_header                           ]  [header        ]  [ "ТОВАРЫ"                      ]      [ ✜ ✜ ]      [ no  ] 
+ │    └ [seller_nav_goods_badge                            ]  [badge         ]  [ { number }                    ]      [ 🡅 🡆 ]      [ no  ]     
+ └────┬─[seller_nav_account_button                         ]  [button        ]                                         [ ✜ 🡆 ]      [ yes ]   
+      ├ [seller_nav_account_header                         ]  [header        ]  [ "КАБИНЕТ"                     ]      [ ✜ ✜ ]      [ no  ] 
+      └ [seller_nav_account_badge                          ]  [badge         ]  [ { number }                    ]      [ 🡅 🡆 ]      [ no  ] 
 
 
 ■ seller_account_nav
@@ -1065,46 +1066,46 @@ seller_account_payments_cards_screen отвечает за управление 
 
 ✠ tables
 
-                           codename:                                   type:                   designation:           pressed/default:   location:   interaction:
-       ┌─[seller_account_nav                                ]  [section_lev1       ]                                   [color0/color0]     [ 🡅 ✜ ]      [ no  ]
-       ├ [seller_account_nav_payments                       ]  [button             ] [ "ПЛАТЕЖИ"                     ] [color7/color4]     [ ✜ 🡄 ]      [ yes ]
-       ├ [seller_account_nav_orders                         ]  [button             ] [ "ОРДЕРА"                      ] [color7/color4]     [ ✜ ✜ ]      [ yes ]
-       ├ [seller_account_nav_history                        ]  [button             ] [ "ИСТОРИЯ"                     ] [color7/color4]     [ ✜ 🡆 ]      [ yes ] 
-       └ [seller_account_nav_analysis                       ]  [button             ] [ "АНАЛИЗ"                      ] [color7/color4]     [ ✜ 🡆 ]      [ yes ] 
-┌┬────┬──[seller_account_payments_cards                     ]  [section_lev1       ]                                   [color0/color0]     [ ✜ ✜ ]      [ no  ] 
-││    └┬─[seller_account_payments_cards_top                 ]  [section_lev2       ]                                   [color2/color2]     [ 🡅 ✜ ]      [ no  ] 
-││     └ [seller_account_payments_cards_top_title           ]  [text               ] ["Ваши карты"                   ] [color8/color8]     [ ✜ ✜ ]      [ no  ] 
-│└┬┬┬┬───[seller_account_payments_cards_main                ]  [section_lev2       ]                                   [color2/color2]     [ ✜ ✜ ]      [ no  ]
-│ │││├┬┬─[seller_account_payments_cards_main_card           ]  [section_lev3       ]                                   [color2/color2]     [ 🡅 ✜ ]      [ no  ] 
-│ │││││└─[seller_account_payments_cards_main_card_header    ]  [header             ] ["Активная карта"               ] [color8/color8]     [ 🡅 ✜ ]      [ no  ]
-│ ││││└──[seller_account_payments_cards_main_card_number    ]  [value+button       ] [ { number }                    ] [color8/color8]     [ ✜ ✜ ]      [ yes ]
-│ │││└─┬─[seller_account_payments_cards_main_card_btn       ]  [section_lev3       ]                                   [color2/color2]     [ 🡇 ✜ ]      [ no  ]
-│ │││  ├ [seller_account_payments_cards_main_card_btn_delete]  [button             ] [ "удалить"                     ] [color7/color4]     [ ✜ 🡄 ]      [ yes ]
-│ │││  └ [seller_account_payments_cards_main_card_btn_editor]  [button             ] [ "редактор"                    ] [color7/color4]     [ ✜ 🡆 ]      [ yes ]
-│ ││└──┬─[seller_account_payments_cards_main_add            ]  [section_lev3       ]                                   [color7/color4]     [ ✜ ✜ ]      [ yes ]
-│ ││   ├ [seller_account_payments_cards_main_add_icon       ]  [header             ] [ знак плюс                     ] [color8/color8]     [ ✜ 🡄 ]      [ yes ]
-│ ││   └ [seller_account_payments_cards_main_add_header     ]  [header             ] [ "Добавить новую карту"        ] [color8/color8]     [ ✜ 🡆 ]      [ yes ]
-│ │└─────[seller_account_payments_cards_main_protip         ]  [button             ] [ "?"                           ] [color7/color4]     [ 🡇 ✜ ]      [ yes ]
-│ └────┬─[seller_account_payments_cards_main_ok             ]  [section_lev3+button]                                   [color7/color4]     [ 🡇 ✜ ]      [ yes ]
-│      └ [seller_account_payments_cards_main_ok_header      ]  [text               ] [ "ОК"                          ] [color8/color8]     [ ✜ ✜ ]      [ yes ]
-└──────┬─[seller_account_payments_cards_bottom              ]  [section_lev2       ]                                   [color2/color2]     [ 🡇 ✜ ]      [ no  ]
-       └ [seller_account_payments_cards_bottom_text         ]  [text               ] ["Управление банковскими кар..."] [color8/color8]     [ ✜ ✜ ]      [ no  ]
-      ┌──[seller_nav                                        ]  [section_lev1       ]                                   [color0/color0]     [ ✜ ✜ ]      [ no  ]
-      ├┬ [seller_nav_demand_button                          ]  [button             ]                                   [color7/color4]     [ ✜ 🡄 ]      [ yes ]
-      │├ [seller_nav_demand_header                          ]  [header             ] [ "МОНИТОР"                     ] [color8/color8]     [ ✜ ✜ ]      [ no  ]  
-      │└ [seller_nav_demand_badge                           ]  [badge              ] [ { number }                    ] [color4/color4]     [ 🡅 🡆 ]      [ no  ]
-      ├┬ [seller_nav_chat_button                            ]  [button             ]                                   [color7/color4]     [ ✜ 🡄 ]      [ yes ]   
-      │├ [seller_nav_chat_header                            ]  [header             ] [ "ЧАТ"                         ] [color8/color8]     [ ✜ ✜ ]      [ no  ] 
-      │└ [seller_nav_chat_badge                             ]  [badge              ] [ { number }                    ] [color4/color4]     [ 🡅 🡆 ]      [ no  ] 
-      ├┬ [seller_nav_shop_button                            ]  [button             ]                                   [color7/color4]     [ ✜ ✜ ]      [ yes ]   
-      │├ [seller_nav_shop_header                            ]  [header             ] [ "МАГАЗИН"                     ] [color8/color8]     [ ✜ ✜ ]      [ no  ] 
-      │└ [seller_nav_shop_badge                             ]  [badge              ] [ { number }                    ] [color4/color4]     [ 🡅 🡆 ]      [ no  ]   
-      ├┬ [seller_nav_goods_button                           ]  [button             ]                                   [color7/color4]     [ ✜ 🡆 ]      [ yes ]   
-      │├ [seller_nav_goods_header                           ]  [header             ] [ "ТОВАРЫ"                      ] [color8/color8]     [ ✜ ✜ ]      [ no  ] 
-      │└ [seller_nav_goods_badge                            ]  [badge              ] [ { number }                    ] [color4/color4]     [ 🡅 🡆 ]      [ no  ]
-      └┬ [seller_nav_account_button                         ]  [button             ]                                   [color7/color4]     [ ✜ 🡆 ]      [ yes ]   
-       ├ [seller_nav_account_header                         ]  [header             ] [ "КАБИНЕТ"                     ] [color8/color8]     [ ✜ ✜ ]      [ no  ] 
-       └ [seller_nav_account_badge                          ]  [badge              ] [ { number }                    ] [color4/color4]     [ 🡅 🡆 ]      [ no  ] 
+                           codename:                                   type:                    designation:                 location:   interaction:
+       ┌─[seller_account_nav                                ]  [section_lev1       ]                                          [ 🡅 ✜ ]      [ no  ]
+       ├ [seller_account_nav_payments                       ]  [button             ]  [ "ПЛАТЕЖИ"                     ]       [ ✜ 🡄 ]      [ yes ]
+       ├ [seller_account_nav_orders                         ]  [button             ]  [ "ОРДЕРА"                      ]       [ ✜ ✜ ]      [ yes ]
+       ├ [seller_account_nav_history                        ]  [button             ]  [ "ИСТОРИЯ"                     ]       [ ✜ 🡆 ]      [ yes ] 
+       └ [seller_account_nav_analysis                       ]  [button             ]  [ "АНАЛИЗ"                      ]       [ ✜ 🡆 ]      [ yes ] 
+┌┬────┬──[seller_account_payments_cards                     ]  [section_lev1       ]                                          [ ✜ ✜ ]      [ no  ] 
+││    └┬─[seller_account_payments_cards_top                 ]  [section_lev2       ]                                          [ 🡅 ✜ ]      [ no  ] 
+││     └ [seller_account_payments_cards_top_title           ]  [text               ]  ["Ваши карты"                   ]       [ ✜ ✜ ]      [ no  ] 
+│└┬┬┬┬───[seller_account_payments_cards_main                ]  [section_lev2       ]                                          [ ✜ ✜ ]      [ no  ]
+│ │││├┬┬─[seller_account_payments_cards_main_card           ]  [section_lev3       ]                                          [ 🡅 ✜ ]      [ no  ] 
+│ │││││└─[seller_account_payments_cards_main_card_header    ]  [header             ]  ["Активная карта"               ]       [ 🡅 ✜ ]      [ no  ]
+│ ││││└──[seller_account_payments_cards_main_card_number    ]  [value+button       ]  [ { number }                    ]       [ ✜ ✜ ]      [ yes ]
+│ │││└─┬─[seller_account_payments_cards_main_card_btn       ]  [section_lev3       ]                                          [ 🡇 ✜ ]      [ no  ]
+│ │││  ├ [seller_account_payments_cards_main_card_btn_delete]  [button             ]  [ "удалить"                     ]       [ ✜ 🡄 ]      [ yes ]
+│ │││  └ [seller_account_payments_cards_main_card_btn_editor]  [button             ]  [ "редактор"                    ]       [ ✜ 🡆 ]      [ yes ]
+│ ││└──┬─[seller_account_payments_cards_main_add            ]  [section_lev3       ]                                          [ ✜ ✜ ]      [ yes ]
+│ ││   ├ [seller_account_payments_cards_main_add_icon       ]  [header             ]  [ знак плюс                     ]       [ ✜ 🡄 ]      [ yes ]
+│ ││   └ [seller_account_payments_cards_main_add_header     ]  [header             ]  [ "Добавить новую карту"        ]       [ ✜ 🡆 ]      [ yes ]
+│ │└─────[seller_account_payments_cards_main_protip         ]  [button             ]  [ "?"                           ]       [ 🡇 ✜ ]      [ yes ]
+│ └────┬─[seller_account_payments_cards_main_ok             ]  [section_lev3+button]                                          [ 🡇 ✜ ]      [ yes ]
+│      └ [seller_account_payments_cards_main_ok_header      ]  [text               ]  [ "ОК"                          ]       [ ✜ ✜ ]      [ yes ]
+└──────┬─[seller_account_payments_cards_bottom              ]  [section_lev2       ]                                          [ 🡇 ✜ ]      [ no  ]
+       └ [seller_account_payments_cards_bottom_text         ]  [text               ]  ["Управление банковскими кар..."]       [ ✜ ✜ ]      [ no  ]
+  ┌┬┬┬┬──[seller_nav                                        ]  [section_lev1       ]                                          [ ✜ ✜ ]      [ no  ]
+  ││││└┬─[seller_nav_demand_button                          ]  [button             ]                                          [ ✜ 🡄 ]      [ yes ]
+  ││││ ├ [seller_nav_demand_header                          ]  [header             ]  [ "МОНИТОР"                     ]       [ ✜ ✜ ]      [ no  ]  
+  ││││ └ [seller_nav_demand_badge                           ]  [badge              ]  [ { number }                    ]       [ 🡅 🡆 ]      [ no  ] 	
+  │││└─┬─[seller_nav_chat_button                            ]  [button             ]                                          [ ✜ 🡄 ]      [ yes ]   
+  │││  ├ [seller_nav_chat_header                            ]  [header             ]  [ "ЧАТ"                         ]       [ ✜ ✜ ]      [ no  ] 
+  │││  └ [seller_nav_chat_badge                             ]  [badge              ]  [ { number }                    ]       [ 🡅 🡆 ]      [ no  ] 
+  ││└──┬─[seller_nav_shop_button                            ]  [button             ]                                          [ ✜ ✜ ]      [ yes ]   
+  ││   ├ [seller_nav_shop_header                            ]  [header             ]  [ "МАГАЗИН"                     ]       [ ✜ ✜ ]      [ no  ] 
+  ││   └ [seller_nav_shop_badge                             ]  [badge              ]  [ { number }                    ]       [ 🡅 🡆 ]      [ no  ]   
+  │└───┬─[seller_nav_goods_button                           ]  [button             ]                                          [ ✜ 🡆 ]      [ yes ]   
+  │    ├ [seller_nav_goods_header                           ]  [header             ]  [ "ТОВАРЫ"                      ]       [ ✜ ✜ ]      [ no  ] 
+  │    └ [seller_nav_goods_badge                            ]  [badge              ]  [ { number }                    ]       [ 🡅 🡆 ]      [ no  ]     
+  └────┬─[seller_nav_account_button                         ]  [button             ]                                          [ ✜ 🡆 ]      [ yes ]   
+       ├ [seller_nav_account_header                         ]  [header             ]  [ "КАБИНЕТ"                     ]       [ ✜ ✜ ]      [ no  ] 
+       └ [seller_nav_account_badge                          ]  [badge              ]  [ { number }                    ]       [ 🡅 🡆 ]      [ no  ] 
 
 
 ■ seller_account_nav
@@ -1329,10 +1330,10 @@ seller_account_payments_cards_screen появляется в случае, ес�
 
 ✠ tables
 
-                                codename:                                     type:            designation:        pressed/default:  location:  interaction:
-[seller_account_payments_cards_main_card_btn_delete_popover_text         ]  [text      ]  [ "Вы действительно..." ]  [color8/color8]    [ 🡅 ✜ ]     [ no  ]
-[seller_account_payments_cards_main_card_btn_delete_popover_button       ]  [button    ]  [                       ]  [color7/color4]    [ 🡇 ✜ ]     [ yes ]
-[seller_account_payments_cards_main_card_btn_delete_popover_button_header]  [header    ]  [ "OK"                  ]  [color8/color8]    [ ✜ ✜ ]     [ yes ]
+                                codename:                                     type:            designation:            location:  interaction:
+[seller_account_payments_cards_main_card_btn_delete_popover_text         ]  [text      ]  [ "Вы действительно..." ]      [ 🡅 ✜ ]     [ no  ]
+[seller_account_payments_cards_main_card_btn_delete_popover_button       ]  [button    ]  [                       ]      [ 🡇 ✜ ]     [ yes ]
+[seller_account_payments_cards_main_card_btn_delete_popover_button_header]  [header    ]  [ "OK"                  ]      [ ✜ ✜ ]     [ yes ]
 
 ✠ details
 seller_account_payments_cards_main_card_btn_delete_popover_text - представляет собой параграф текста следующего содержания: "Вы действительно хотите удалить карту?" Элемент расположен в верхней части модального окна с выравниванием по горизонтали.
@@ -1421,22 +1422,22 @@ seller_account_payments_cards_new_screen предназначается для �
   │ └────[seller_account_payments_cards_new_main_protip     ]  [button      ] [ "?"                           ]       [ 🡇 ✜ ]      [ yes ]
   └────┬─[seller_account_payments_cards_new_bottom          ]  [section_lev2]                                         [ 🡇 ✜ ]      [ no  ]
        └ [seller_account_payments_cards_new_bottom_text     ]  [text        ] ["Подключение банковской кар..."]       [ ✜ ✜ ]      [ no  ]
-      ┌──[seller_nav                                        ]  [section_lev1]                                         [ ✜ ✜ ]      [ no  ]
-      ├┬ [seller_nav_demand_button                          ]  [button      ]                                         [ ✜ 🡄 ]      [ yes ]
-      │├ [seller_nav_demand_header                          ]  [header      ] [ "МОНИТОР"                     ]       [ ✜ ✜ ]      [ no  ]  
-      │└ [seller_nav_demand_badge                           ]  [badge       ] [ { number }                    ]       [ 🡅 🡆 ]      [ no  ]
-      ├┬ [seller_nav_chat_button                            ]  [button      ]                                         [ ✜ 🡄 ]      [ yes ]   
-      │├ [seller_nav_chat_header                            ]  [header      ] [ "ЧАТ"                         ]       [ ✜ ✜ ]      [ no  ] 
-      │└ [seller_nav_chat_badge                             ]  [badge       ] [ { number }                    ]       [ 🡅 🡆 ]      [ no  ] 
-      ├┬ [seller_nav_shop_button                            ]  [button      ]                                         [ ✜ ✜ ]      [ yes ]   
-      │├ [seller_nav_shop_header                            ]  [header      ] [ "МАГАЗИН"                     ]       [ ✜ ✜ ]      [ no  ] 
-      │└ [seller_nav_shop_badge                             ]  [badge       ] [ { number }                    ]       [ 🡅 🡆 ]      [ no  ]   
-      ├┬ [seller_nav_goods_button                           ]  [button      ]                                         [ ✜ 🡆 ]      [ yes ]   
-      │├ [seller_nav_goods_header                           ]  [header      ] [ "ТОВАРЫ"                      ]       [ ✜ ✜ ]      [ no  ] 
-      │└ [seller_nav_goods_badge                            ]  [badge       ] [ { number }                    ]       [ 🡅 🡆 ]      [ no  ]
-      └┬ [seller_nav_account_button                         ]  [button      ]                                         [ ✜ 🡆 ]      [ yes ]   
-       ├ [seller_nav_account_header                         ]  [header      ] [ "КАБИНЕТ"                     ]       [ ✜ ✜ ]      [ no  ] 
-       └ [seller_nav_account_badge                          ]  [badge       ] [ { number }                    ]       [ 🡅 🡆 ]      [ no  ] 
+  ┌┬┬┬┬──[seller_nav                                        ]  [section_lev1]                                         [ ✜ ✜ ]      [ no  ]
+  ││││└┬─[seller_nav_demand_button                          ]  [button      ]                                         [ ✜ 🡄 ]      [ yes ]
+  ││││ ├ [seller_nav_demand_header                          ]  [header      ]  [ "МОНИТОР"                    ]       [ ✜ ✜ ]      [ no  ]  
+  ││││ └ [seller_nav_demand_badge                           ]  [badge       ]  [ { number }                   ]       [ 🡅 🡆 ]      [ no  ] 	
+  │││└─┬─[seller_nav_chat_button                            ]  [button      ]                                         [ ✜ 🡄 ]      [ yes ]   
+  │││  ├ [seller_nav_chat_header                            ]  [header      ]  [ "ЧАТ"                        ]       [ ✜ ✜ ]      [ no  ] 
+  │││  └ [seller_nav_chat_badge                             ]  [badge       ]  [ { number }                   ]       [ 🡅 🡆 ]      [ no  ] 
+  ││└──┬─[seller_nav_shop_button                            ]  [button      ]                                         [ ✜ ✜ ]      [ yes ]   
+  ││   ├ [seller_nav_shop_header                            ]  [header      ]  [ "МАГАЗИН"                    ]       [ ✜ ✜ ]      [ no  ] 
+  ││   └ [seller_nav_shop_badge                             ]  [badge       ]  [ { number }                   ]       [ 🡅 🡆 ]      [ no  ]   
+  │└───┬─[seller_nav_goods_button                           ]  [button      ]                                         [ ✜ 🡆 ]      [ yes ]   
+  │    ├ [seller_nav_goods_header                           ]  [header      ]  [ "ТОВАРЫ"                     ]       [ ✜ ✜ ]      [ no  ] 
+  │    └ [seller_nav_goods_badge                            ]  [badge       ]  [ { number }                   ]       [ 🡅 🡆 ]      [ no  ]     
+  └────┬─[seller_nav_account_button                         ]  [button      ]                                         [ ✜ 🡆 ]      [ yes ]   
+       ├ [seller_nav_account_header                         ]  [header      ]  [ "КАБИНЕТ"                    ]       [ ✜ ✜ ]      [ no  ] 
+       └ [seller_nav_account_badge                          ]  [badge       ]  [ { number }                   ]       [ 🡅 🡆 ]      [ no  ] 
 
 
 ■ seller_account_nav
@@ -1612,7 +1613,7 @@ seller_account_payments_cards_new_main является основной раб�
 - condition: Работает в active_state и inactive_state.
 - result: Работает в любой ситуации делая проверку на предмет отсутствия данных в seller_account_payments_cards_new_main_card_number.  
 
-✠ alert_states
+✠ alerts
 • seller_account_payments_cards_new_main_card_number_alert_prompt:
 - focusing: да;
 - location: появляется над seller_account_payments_cards_new_main_card_number;
@@ -1669,7 +1670,7 @@ seller_account_payments_cards_new_main является основной раб�
 - condition: Работает в active_state и inactive_state.
 - result: Работает в любой ситуации делая проверку на предмет отсутствия данных в seller_account_payments_cards_new_main_card_name.  
 
-✠ alert_states
+✠ alerts
 • seller_account_payments_cards_new_main_card_name_alert_prompt:
 - focusing: да;
 - location: появляется над seller_account_payments_cards_new_main_card_name;
@@ -1732,7 +1733,7 @@ seller_account_payments_cards_new_main является основной раб�
 - condition: Работает в active_state и inactive_state.
 - result: Работает в любой ситуации делая проверку на предмет отсутствия данных в seller_account_payments_cards_new_main_card_date.  
 
-✠ alert_states
+✠ alerts
 • seller_account_payments_cards_new_main_card_date_alert_prompt:
 - focusing: да;
 - location: появляется над seller_account_payments_cards_new_main_card_date;
@@ -1785,7 +1786,7 @@ seller_account_payments_cards_new_main является основной раб�
 - condition: Работает в active_state и inactive_state.
 - result: Работает в любой ситуации делая проверку на предмет отсутствия данных в seller_account_payments_cards_new_main_card_code.  
 
-✠ alert_states
+✠ alerts
 • seller_account_payments_cards_new_main_card_code_alert_prompt:
 - focusing: да;
 - location: появляется над seller_account_payments_cards_new_main_card_code;
@@ -2001,23 +2002,22 @@ seller_account_payments_taxes_screen предназначается для вв�
 --│ └─────[seller_account_payments_taxes_main_protip                ]  [button      ] [ "?"                                  ]       [ 🡇 ✜ ]      [ yes ]
 --└─────┬─[seller_account_payments_taxes_bottom                     ]  [section_lev2]                                                [ 🡇 ✜ ]      [ no  ]
 --      └ [seller_account_payments_taxes_bottom_text                ]  [text        ] [ "Текущие реквизиты налоговых сл ..." ]       [ ✜ ✜ ]      [ no  ]
-3)     ┌──[seller_nav                                               ]  [section_lev1]                                                [ ✜ ✜ ]      [ no  ]
---     ├┬ [seller_nav_demand_button                                 ]  [button      ]                                                [ ✜ 🡄 ]      [ yes ]
---     │├ [seller_nav_demand_header                                 ]  [header      ] [ "МОНИТОР"                            ]       [ ✜ ✜ ]      [ no  ]  
---     │└ [seller_nav_demand_badge                                  ]  [badge       ] [ { number }                           ]       [ 🡅 🡆 ]      [ no  ]
---     ├┬ [seller_nav_chat_button                                   ]  [button      ]                                                [ ✜ 🡄 ]      [ yes ]   
---     │├ [seller_nav_chat_header                                   ]  [header      ] [ "ЧАТ"                                ]       [ ✜ ✜ ]      [ no  ] 
---     │└ [seller_nav_chat_badge                                    ]  [badge       ] [ { number }                           ]       [ 🡅 🡆 ]      [ no  ] 
---     ├┬ [seller_nav_shop_button                                   ]  [button      ]                                                [ ✜ ✜ ]      [ yes ]   
---     │├ [seller_nav_shop_header                                   ]  [header      ] [ "МАГАЗИН"                            ]       [ ✜ ✜ ]      [ no  ] 
---     │└ [seller_nav_shop_badge                                    ]  [badge       ] [ { number }                           ]       [ 🡅 🡆 ]      [ no  ]   
---     ├┬ [seller_nav_goods_button                                  ]  [button      ]                                                [ ✜ 🡆 ]      [ yes ]   
---     │├ [seller_nav_goods_header                                  ]  [header      ] [ "ТОВАРЫ"                             ]       [ ✜ ✜ ]      [ no  ] 
---     │└ [seller_nav_goods_badge                                   ]  [badge       ] [ { number }                           ]       [ 🡅 🡆 ]      [ no  ]
---     └┬ [seller_nav_account_button                                ]  [button      ]                                                [ ✜ 🡆 ]      [ yes ]   
---      ├ [seller_nav_account_header                                ]  [header      ] [ "КАБИНЕТ"                            ]       [ ✜ ✜ ]      [ no  ] 
---      └ [seller_nav_account_badge                                 ]  [badge       ] [ { number }                           ]       [ 🡅 🡆 ]      [ no  ] 
-
+3) ┌┬┬┬┬──[seller_nav                                               ]  [section_lev1]                                                [ ✜ ✜ ]      [ no  ]
+-- ││││└┬─[seller_nav_demand_button                                 ]  [button      ]                                                [ ✜ 🡄 ]      [ yes ]
+-- ││││ ├ [seller_nav_demand_header                                 ]  [header      ]  [ "МОНИТОР"                           ]       [ ✜ ✜ ]      [ no  ]  
+-- ││││ └ [seller_nav_demand_badge                                  ]  [badge       ]  [ { number }                          ]       [ 🡅 🡆 ]      [ no  ] 	
+-- │││└─┬─[seller_nav_chat_button                                   ]  [button      ]                                                [ ✜ 🡄 ]      [ yes ]   
+-- │││  ├ [seller_nav_chat_header                                   ]  [header      ]  [ "ЧАТ"                               ]       [ ✜ ✜ ]      [ no  ] 
+-- │││  └ [seller_nav_chat_badge                                    ]  [badge       ]  [ { number }                          ]       [ 🡅 🡆 ]      [ no  ] 
+-- ││└──┬─[seller_nav_shop_button                                   ]  [button      ]                                                [ ✜ ✜ ]      [ yes ]   
+-- ││   ├ [seller_nav_shop_header                                   ]  [header      ]  [ "МАГАЗИН"                           ]       [ ✜ ✜ ]      [ no  ] 
+-- ││   └ [seller_nav_shop_badge                                    ]  [badge       ]  [ { number }                          ]       [ 🡅 🡆 ]      [ no  ]   
+-- │└───┬─[seller_nav_goods_button                                  ]  [button      ]                                                [ ✜ 🡆 ]      [ yes ]   
+-- │    ├ [seller_nav_goods_header                                  ]  [header      ]  [ "ТОВАРЫ"                            ]       [ ✜ ✜ ]      [ no  ] 
+-- │    └ [seller_nav_goods_badge                                   ]  [badge       ]  [ { number }                          ]       [ 🡅 🡆 ]      [ no  ]     
+-- └────┬─[seller_nav_account_button                                ]  [button      ]                                                [ ✜ 🡆 ]      [ yes ]   
+--      ├ [seller_nav_account_header                                ]  [header      ]  [ "КАБИНЕТ"                           ]       [ ✜ ✜ ]      [ no  ] 
+--      └ [seller_nav_account_badge                                 ]  [badge       ]  [ { number }                          ]       [ 🡅 🡆 ]      [ no  ] 
 
 ■ seller_account_nav
 
@@ -2286,22 +2286,22 @@ seller_account_payments_taxes_edit_screen предназначается для 
   │ └────[seller_account_payments_taxes_edit_main_protip      ]  [button      ] [ "?"                             ]       [ 🡇 ✜ ]      [ yes ]
   └────┬─[seller_account_payments_taxes_edit_bottom           ]  [section_lev2]                                           [ 🡇 ✜ ]      [ no  ]
        └ [seller_account_payments_taxes_edit_bottom_text      ]  [text        ] [ "Указать банковские реквизи..." ]       [ ✜ ✜ ]      [ no  ]
-      ┌──[seller_nav                                          ]  [section_lev1]                                           [ ✜ ✜ ]      [ no  ]
-      ├┬ [seller_nav_demand_button                            ]  [button      ]                                           [ ✜ 🡄 ]      [ yes ]
-      │├ [seller_nav_demand_header                            ]  [header      ] [ "МОНИТОР"                       ]       [ ✜ ✜ ]      [ no  ]  
-      │└ [seller_nav_demand_badge                             ]  [badge       ] [ { number }                      ]       [ 🡅 🡆 ]      [ no  ]
-      ├┬ [seller_nav_chat_button                              ]  [button      ]                                           [ ✜ 🡄 ]      [ yes ]   
-      │├ [seller_nav_chat_header                              ]  [header      ] [ "ЧАТ"                           ]       [ ✜ ✜ ]      [ no  ] 
-      │└ [seller_nav_chat_badge                               ]  [badge       ] [ { number }                      ]       [ 🡅 🡆 ]      [ no  ] 
-      ├┬ [seller_nav_shop_button                              ]  [button      ]                                           [ ✜ ✜ ]      [ yes ]   
-      │├ [seller_nav_shop_header                              ]  [header      ] [ "МАГАЗИН"                       ]       [ ✜ ✜ ]      [ no  ] 
-      │└ [seller_nav_shop_badge                               ]  [badge       ] [ { number }                      ]       [ 🡅 🡆 ]      [ no  ]   
-      ├┬ [seller_nav_goods_button                             ]  [button      ]                                           [ ✜ 🡆 ]      [ yes ]   
-      │├ [seller_nav_goods_header                             ]  [header      ] [ "ТОВАРЫ"                        ]       [ ✜ ✜ ]      [ no  ] 
-      │└ [seller_nav_goods_badge                              ]  [badge       ] [ { number }                      ]       [ 🡅 🡆 ]      [ no  ]
-      └┬ [seller_nav_account_button                           ]  [button      ]                                           [ ✜ 🡆 ]      [ yes ]   
-       ├ [seller_nav_account_header                           ]  [header      ] [ "КАБИНЕТ"                       ]       [ ✜ ✜ ]      [ no  ] 
-       └ [seller_nav_account_badge                            ]  [badge       ] [ { number }                      ]       [ 🡅 🡆 ]      [ no  ] 
+  ┌┬┬┬┬──[seller_nav                                          ]  [section_lev1]                                           [ ✜ ✜ ]      [ no  ]
+  ││││└┬─[seller_nav_demand_button                            ]  [button      ]                                           [ ✜ 🡄 ]      [ yes ]
+  ││││ ├ [seller_nav_demand_header                            ]  [header      ]  [ "МОНИТОР"                      ]       [ ✜ ✜ ]      [ no  ]  
+  ││││ └ [seller_nav_demand_badge                             ]  [badge       ]  [ { number }                     ]       [ 🡅 🡆 ]      [ no  ] 	
+  │││└─┬─[seller_nav_chat_button                              ]  [button      ]                                           [ ✜ 🡄 ]      [ yes ]   
+  │││  ├ [seller_nav_chat_header                              ]  [header      ]  [ "ЧАТ"                          ]       [ ✜ ✜ ]      [ no  ] 
+  │││  └ [seller_nav_chat_badge                               ]  [badge       ]  [ { number }                     ]       [ 🡅 🡆 ]      [ no  ] 
+  ││└──┬─[seller_nav_shop_button                              ]  [button      ]                                           [ ✜ ✜ ]      [ yes ]   
+  ││   ├ [seller_nav_shop_header                              ]  [header      ]  [ "МАГАЗИН"                      ]       [ ✜ ✜ ]      [ no  ] 
+  ││   └ [seller_nav_shop_badge                               ]  [badge       ]  [ { number }                     ]       [ 🡅 🡆 ]      [ no  ]   
+  │└───┬─[seller_nav_goods_button                             ]  [button      ]                                           [ ✜ 🡆 ]      [ yes ]   
+  │    ├ [seller_nav_goods_header                             ]  [header      ]  [ "ТОВАРЫ"                       ]       [ ✜ ✜ ]      [ no  ] 
+  │    └ [seller_nav_goods_badge                              ]  [badge       ]  [ { number }                     ]       [ 🡅 🡆 ]      [ no  ]     
+  └────┬─[seller_nav_account_button                           ]  [button      ]                                           [ ✜ 🡆 ]      [ yes ]   
+       ├ [seller_nav_account_header                           ]  [header      ]  [ "КАБИНЕТ"                      ]       [ ✜ ✜ ]      [ no  ] 
+       └ [seller_nav_account_badge                            ]  [badge       ]  [ { number }                     ]       [ 🡅 🡆 ]      [ no  ] 
 
 
 ■ seller_account_nav
@@ -2361,7 +2361,6 @@ seller_account_payments_taxes_edit_screen предназначается для 
 ■ seller_account_payments_taxes_edit
 
 ✠ details
-
 - seller_account_payments_taxes_edit_top - располагается в качестве компактного блока в верхней области seller_account_payments_taxes_edit и включает:
 --- seller_account_payments_taxes_edit_top_title - текст следующего содержания: "Заполнить выбранные поля";
 seller_account_payments_taxes_edit_main_tax является основной рабочей областью, которая расположена в центральной части и занимает: около 30% по высоте, около 80-90% по ширине. seller_account_payments_taxes_edit_main_tax состоит из 2 компонентов:  
@@ -2484,7 +2483,7 @@ seller_account_payments_taxes_edit_main_tax является основной р
 - condition: Работает в active_state и inactive_state.
 - result: Работает в любой ситуации делая проверку на предмет отсутствия данных в seller_account_payments_taxes_edit_main_tax_account1.  
 
-✠ alert_states
+✠ alerts
 • seller_account_payments_taxes_edit_main_tax_account1_alert_prompt:
 - focusing: да;
 - location: появляется над seller_account_payments_taxes_edit_main_tax_account1;
@@ -2542,7 +2541,7 @@ seller_account_payments_taxes_edit_main_tax является основной р
 - condition: Работает в active_state и inactive_state.
 - result: Работает в любой ситуации делая проверку на предмет отсутствия данных в seller_account_payments_taxes_edit_main_tax_account2.  
 
-✠ alert_states
+✠ alerts
 • seller_account_payments_taxes_edit_main_tax_account2_alert_prompt:
 - focusing: да;
 - location: появляется над seller_account_payments_taxes_edit_main_tax_account2;
@@ -2600,7 +2599,7 @@ seller_account_payments_taxes_edit_main_tax является основной р
 - condition: Работает в active_state и inactive_state.
 - result: Работает в любой ситуации делая проверку на предмет отсутствия данных в seller_account_payments_taxes_edit_main_tax_account3.  
 
-✠ alert_states
+✠ alerts
 • seller_account_payments_taxes_edit_main_tax_account3_alert_prompt:
 - focusing: да;
 - location: появляется над seller_account_payments_taxes_edit_main_tax_account3;
@@ -2658,7 +2657,7 @@ seller_account_payments_taxes_edit_main_tax является основной р
 - condition: Работает в active_state и inactive_state.
 - result: Работает в любой ситуации делая проверку на предмет отсутствия данных в seller_account_payments_taxes_edit_main_tax_account4.  
 
-✠ alert_states
+✠ alerts
 • seller_account_payments_taxes_edit_main_tax_account4_alert_prompt:
 - focusing: да;
 - location: появляется над seller_account_payments_taxes_edit_main_tax_account4;
@@ -2877,22 +2876,22 @@ seller_account_payments_taxes_edit_protip_popover - занимает поряд�
      ├──[seller_account_history_bottom_search         ]  [button             ] [ "ПОИСК"                       ]       [ ✜ ✜ ]      [ yes ]
      └┬─[seller_account_history_bottom_calendar2      ]  [section_lev3+button]                                         [ ✜ 🡆 ]      [ yes ]
       └ [seller_account_history_bottom_calendar2_title]  [value              ] [ { number }                    ]       [ ✜ ✜ ]      [ yes ]
-     ┌──[seller_nav                                   ]  [section_lev1       ]                                         [ ✜ ✜ ]      [ no  ]
-     ├┬ [seller_nav_demand_button                     ]  [button             ]                                         [ ✜ 🡄 ]      [ yes ]
-     │├ [seller_nav_demand_header                     ]  [header             ] [ "МОНИТОР"                     ]       [ ✜ ✜ ]      [ no  ]  
-     │└ [seller_nav_demand_badge                      ]  [badge              ] [ { number }                    ]       [ 🡅 🡆 ]      [ no  ] 	
-     ├┬ [seller_nav_chat_button                       ]  [button             ]                                         [ ✜ 🡄 ]      [ yes ]   
-     │├ [seller_nav_chat_header                       ]  [header             ] [ "ЧАТ"                         ]       [ ✜ ✜ ]      [ no  ] 
-     │└ [seller_nav_chat_badge                        ]  [badge              ] [ { number }                    ]       [ 🡅 🡆 ]      [ no  ] 
-     ├┬ [seller_nav_shop_button                       ]  [button             ]                                         [ ✜ ✜ ]      [ yes ]   
-     │├ [seller_nav_shop_header                       ]  [header             ] [ "МАГАЗИН"                     ]       [ ✜ ✜ ]      [ no  ] 
-     │└ [seller_nav_shop_badge                        ]  [badge              ] [ { number }                    ]       [ 🡅 🡆 ]      [ no  ]   
-     ├┬ [seller_nav_goods_button                      ]  [button             ]                                         [ ✜ 🡆 ]      [ yes ]   
-     │├ [seller_nav_goods_header                      ]  [header             ] [ "ТОВАРЫ"                      ]       [ ✜ ✜ ]      [ no  ] 
-     │└ [seller_nav_goods_badge                       ]  [badge              ] [ { number }                    ]       [ 🡅 🡆 ]      [ no  ]     
-     └┬ [seller_nav_account_button                    ]  [button             ]                                         [ ✜ 🡆 ]      [ yes ]   
-      ├ [seller_nav_account_header                    ]  [header             ] [ "КАБИНЕТ"                     ]       [ ✜ ✜ ]      [ no  ] 
-      └ [seller_nav_account_badge                     ]  [badge              ] [ { number }                    ]       [ 🡅 🡆 ]      [ no  ] 
+ ┌┬┬┬┬──[seller_nav                                   ]  [section_lev1       ]                                         [ ✜ ✜ ]      [ no  ]
+ ││││└┬─[seller_nav_demand_button                     ]  [button             ]                                         [ ✜ 🡄 ]      [ yes ]
+ ││││ ├ [seller_nav_demand_header                     ]  [header             ]  [ "МОНИТОР"                    ]       [ ✜ ✜ ]      [ no  ]  
+ ││││ └ [seller_nav_demand_badge                      ]  [badge              ]  [ { number }                   ]       [ 🡅 🡆 ]      [ no  ] 	
+ │││└─┬─[seller_nav_chat_button                       ]  [button             ]                                         [ ✜ 🡄 ]      [ yes ]   
+ │││  ├ [seller_nav_chat_header                       ]  [header             ]  [ "ЧАТ"                        ]       [ ✜ ✜ ]      [ no  ] 
+ │││  └ [seller_nav_chat_badge                        ]  [badge              ]  [ { number }                   ]       [ 🡅 🡆 ]      [ no  ] 
+ ││└──┬─[seller_nav_shop_button                       ]  [button             ]                                         [ ✜ ✜ ]      [ yes ]   
+ ││   ├ [seller_nav_shop_header                       ]  [header             ]  [ "МАГАЗИН"                    ]       [ ✜ ✜ ]      [ no  ] 
+ ││   └ [seller_nav_shop_badge                        ]  [badge              ]  [ { number }                   ]       [ 🡅 🡆 ]      [ no  ]   
+ │└───┬─[seller_nav_goods_button                      ]  [button             ]                                         [ ✜ 🡆 ]      [ yes ]   
+ │    ├ [seller_nav_goods_header                      ]  [header             ]  [ "ТОВАРЫ"                     ]       [ ✜ ✜ ]      [ no  ] 
+ │    └ [seller_nav_goods_badge                       ]  [badge              ]  [ { number }                   ]       [ 🡅 🡆 ]      [ no  ]     
+ └────┬─[seller_nav_account_button                    ]  [button             ]                                         [ ✜ 🡆 ]      [ yes ]   
+      ├ [seller_nav_account_header                    ]  [header             ]  [ "КАБИНЕТ"                    ]       [ ✜ ✜ ]      [ no  ] 
+      └ [seller_nav_account_badge                     ]  [badge              ]  [ { number }                   ]       [ 🡅 🡆 ]      [ no  ] 
 
 
 ■ seller_account_nav
@@ -2952,7 +2951,6 @@ seller_account_payments_taxes_edit_protip_popover - занимает поряд�
 ■ seller_account_history
 
 ✠ details
-
 - seller_account_history_top - располагается в качестве компактного блока высотой порядка 3% от вертикальной области экрана в верхней области seller_account_history и включает:
 --- seller_account_history_top_title - текст следующего содержания: "История ордеров";
 - seller_account_history_list является основной рабочей областью в виде таблицы из трех колонок, которая расположена в центральной части и занимает: около 75% по высоте, около 95% по ширине. seller_account_history_list состоит из 2 компонентов:  
@@ -3227,7 +3225,6 @@ seller_account_history_bottom_calendar2_title - отображает число 
 ■ seller_account_order
 
 ✠ details
-
 - seller_account_order_top - располагается в качестве компактного блока высотой порядка 3% от вертикальной области экрана в верхней области seller_account_order_modal и включает:
 --- seller_account_order_top_title - с заголовком: "Детали ордера";
 - seller_account_order_main является основной рабочей областью в виде скроллируемой таблицы из 2 колонок, которая расположена в центральной части и занимает около 95% по ширине видимой области экрана. seller_account_order_main состоит из 3 компонентов:  
@@ -3506,7 +3503,6 @@ seller_account_history_bottom_calendar2_title - отображает число 
 ■ seller_account_order_check
 
 ✠ details
-
 - seller_account_order_check_top - располагается в качестве компактного блока высотой порядка 6-8% от вертикальной области экрана в верхней области seller_account_order_check_modal и включает:
 --- seller_account_order_check_top_title - с заголовком: "ЧЕК";
 - seller_account_order_check_main является основной рабочей областью в виде скроллируемой таблицы из 2 колонок представленной в одноцветном (сплошном) формате без видимых границ ячеек, которая расположена в центральной части и занимает около 100% по ширине видимой области экрана. seller_account_order_check_main состоит из 3 компонентов:  
@@ -3736,8 +3732,8 @@ seller_account_history_bottom_calendar2_title - отображает число 
  │ │         ├ [seller_account_order_journal_main_acts_transact_details_tool]  [value              ]  [ { string }                    ]   [ ✜ ✜ ]      [ yes ]
  │ │         ├ [seller_account_order_journal_main_acts_transact_details_text]  [value              ]  [ " сумма: "                    ]   [ ✜ ✜ ]      [ yes ]
  │ │         └ [seller_account_order_journal_main_acts_transact_details_sum ]  [value              ]  [ { number }                    ]   [ ✜ 🡆 ]      [ yes ]
- │ └────────┬──[seller_account_order_journal_main_bottom_btn                ]  [section_lev3       ]                                      [ 🡇 ✜ ]      [ yes ] 
- │          └┬─[seller_account_order_journal_main_bottom_btn_title          ]  [button             ]  [ "OK"                          ]   [ ✜ ✜ ]      [ yes ] 
+ │ └────────┬──[seller_account_order_journal_main_bottom_btn                ]  [section_lev3+button]                                      [ 🡇 ✜ ]      [ yes ] 
+ │          └┬─[seller_account_order_journal_main_bottom_btn_title          ]  [label              ]  [ "OK"                          ]   [ ✜ ✜ ]      [ yes ] 
  └───────────┬─[seller_account_order_journal_bottom                         ]  [section_lev2       ]                                      [ 🡇 ✜ ]      [ no  ]
              └ [seller_account_order_journal_bottom_text                    ]  [text               ]  [ "Вы можете отправить чек ..." ]   [ ✜ ✜ ]      [ no  ]
 			 
@@ -3745,7 +3741,6 @@ seller_account_history_bottom_calendar2_title - отображает число 
 ■ seller_account_order_journal
 
 ✠ details
-
 - seller_account_order_journal_top - располагается в качестве компактного блока высотой порядка 3-4% от вертикальной области экрана в верхней области seller_account_order_journal_modal и включает:
 --- seller_account_order_journal_top_title - с заголовком: "Журнал";
 - seller_account_order_journal_main является центральной частью и занимает около 100% по ширине видимой области экрана. seller_account_order_journal_main состоит из 3 компонентов:  
@@ -3951,4 +3946,509 @@ seller_account_history_bottom_calendar2_title - отображает число 
 │------ в pressing_state
 └─
 
+
+
+🡆🡆 seller_account_analysis_screen
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+
+Подраздел в котором отображаются статистические данные выраженные в графиках. 
+
+✠ tables
+
+                                        codename:                                 type:                     designation:             location:   interaction:
+             ┌─[seller_account_nav                                     ]  [section_lev1       ]                                       [ 🡅 ✜ ]      [ no  ]
+             ├ [seller_account_nav_payments                            ]  [button             ]  [ "ПЛАТЕЖИ"                     ]    [ ✜ 🡄 ]      [ yes ]
+             ├ [seller_account_nav_orders                              ]  [button             ]  [ "ОРДЕРА"                      ]    [ ✜ ✜ ]      [ yes ]
+             ├ [seller_account_nav_history                             ]  [button             ]  [ "ИСТОРИЯ"                     ]    [ ✜ 🡆 ]      [ yes ] 
+             └ [seller_account_nav_analysis                            ]  [button             ]  [ "АНАЛИЗ"                      ]    [ ✜ 🡆 ]      [ yes ] 
+ ┌┬─────────┬──[seller_account_analysis                                ]  [section_lev1       ]                                       [ ✜ ✜ ]      [ no  ] 
+ ││         └┬─[seller_account_analysis_top                            ]  [section_lev2       ]                                       [ 🡅 ✜ ]      [ no  ] 
+ ││          └ [seller_account_analysis_top_title                      ]  [header             ]  [ "Прибыль по всем лотам"       ]    [ ✜ ✜ ]      [ no  ] 
+ │└┬─┬───┬─────[seller_account_analysis_main                           ]  [section_lev2       ]                                       [ ✜ ✜ ]      [ no  ]
+ │ │ │   └┬┬┬┬─[seller_account_analysis_main_graph                     ]  [section_lev3       ]                                       [ 🡅 ✜ ]      [ no  ] 
+ │ │ │    │││└ [seller_account_analysis_main_graph_protip              ]  [section_lev4+text  ]  [ "Диапазон между двумя точ..." ]    [ 🡅 ✜ ]      [ no  ]  
+ │ │ │    ││└┬─[seller_account_analysis_main_graph_curve               ]  [section_lev4+scroll]                                       [ ✜ ✜ ]      [ yes ]
+ │ │ │    ││ ├ [seller_account_analysis_main_graph_curve_profit_point0 ]  [label              ]  [ { number }                    ]    [ ✜ 🡆 ]      [ yes ]
+ │ │ │    ││ ├ [seller_account_analysis_main_graph_curve_profit_point1 ]  [label              ]  [ { number }                    ]    [ ✜ ✜ ]      [ yes ]
+ │ │ │    ││ ├ [seller_account_analysis_main_graph_curve_profit_point2 ]  [label              ]  [ { number }                    ]    [ ✜ ✜ ]      [ yes ]  
+ │ │ │    ││ ├ [seller_account_analysis_main_graph_curve_profit_point3 ]  [label              ]  [ { number }                    ]    [ ✜ ✜ ]      [ yes ]
+ │ │ │    ││ ├ [seller_account_analysis_main_graph_curve_profit_point4 ]  [label              ]  [ { number }                    ]    [ ✜ ✜ ]      [ yes ]
+ │ │ │    ││ ├ [seller_account_analysis_main_graph_curve_profit_point5 ]  [label              ]  [ { number }                    ]    [ ✜ ✜ ]      [ yes ]
+ │ │ │    ││ ├ [seller_account_analysis_main_graph_curve_profit_point6 ]  [label              ]  [ { number }                    ]    [ ✜ ✜ ]      [ yes ]
+ │ │ │    ││ ├ [seller_account_analysis_main_graph_curve_profit_point7 ]  [label              ]  [ { number }                    ]    [ ✜ ✜ ]      [ yes ]
+ │ │ │    ││ ├ [seller_account_analysis_main_graph_curve_profit_point8 ]  [label              ]  [ { number }                    ]    [ ✜ ✜ ]      [ yes ]
+ │ │ │    ││ ├ [seller_account_analysis_main_graph_curve_profit_point9 ]  [label              ]  [ { number }                    ]    [ ✜ ✜ ]      [ yes ]
+ │ │ │    ││ ├ [seller_account_analysis_main_graph_curve_profit_point10]  [label              ]  [ { number }                    ]    [ ✜ ✜ ]      [ yes ]
+ │ │ │    ││ └ [seller_account_analysis_main_graph_curve_profit_point11]  [label              ]  [ { number }                    ]    [ ✜ 🡄 ]      [ yes ]  
+ │ │ │    │└─┬─[seller_account_analysis_main_graph_measureline         ]  [section_lev4       ]                                       [ ✜ 🡆 ]      [ no  ]
+ │ │ │    │  ├ [seller_account_analysis_main_graph_measureline_tick0   ]  [label              ]  [ { number }                    ]    [ 🡅 ✜ ]      [ no  ]
+ │ │ │    │  ├ [seller_account_analysis_main_graph_measureline_tick1   ]  [label              ]  [ { number }                    ]    [ ✜ ✜ ]      [ no  ]
+ │ │ │    │  ├ [seller_account_analysis_main_graph_measureline_tick2   ]  [label              ]  [ { number }                    ]    [ ✜ ✜ ]      [ no  ]
+ │ │ │    │  ├ [seller_account_analysis_main_graph_measureline_tick3   ]  [label              ]  [ { number }                    ]    [ ✜ ✜ ]      [ no  ] 
+ │ │ │    │  ├ [seller_account_analysis_main_graph_measureline_tick4   ]  [label              ]  [ { number }                    ]    [ ✜ ✜ ]      [ no  ]
+ │ │ │    │  ├ [seller_account_analysis_main_graph_measureline_tick5   ]  [label              ]  [ { number }                    ]    [ ✜ ✜ ]      [ no  ]
+ │ │ │    │  ├ [seller_account_analysis_main_graph_measureline_tick6   ]  [label              ]  [ { number }                    ]    [ ✜ ✜ ]      [ no  ]
+ │ │ │    │  ├ [seller_account_analysis_main_graph_measureline_tick7   ]  [label              ]  [ { number }                    ]    [ ✜ ✜ ]      [ no  ]
+ │ │ │    │  ├ [seller_account_analysis_main_graph_measureline_tick8   ]  [label              ]  [ { number }                    ]    [ ✜ ✜ ]      [ no  ]
+ │ │ │    │  ├ [seller_account_analysis_main_graph_measureline_tick9   ]  [label              ]  [ { number }                    ]    [ ✜ ✜ ]      [ no  ]
+ │ │ │    │  ├ [seller_account_analysis_main_graph_measureline_tick10  ]  [label              ]  [ { number }                    ]    [ ✜ ✜ ]      [ no  ]
+ │ │ │    │  └ [seller_account_analysis_main_graph_measureline_tick11  ]  [label              ]  [ { number }                    ]    [ 🡇 ✜ ]      [ no  ] 
+ │ │ │    └──┬─[seller_account_analysis_main_graph_timeline            ]  [section_lev4       ]                                       [ 🡇 ✜ ]      [ no  ]
+ │ │ │       ├ [seller_account_analysis_main_graph_timeline_tick0      ]  [label              ]  [ { number }                    ]    [ ✜ 🡄 ]      [ no  ]
+ │ │ │       ├ [seller_account_analysis_main_graph_timeline_tick1      ]  [label              ]  [ { number }                    ]    [ ✜ ✜ ]      [ no  ]
+ │ │ │       ├ [seller_account_analysis_main_graph_timeline_tick2      ]  [label              ]  [ { number }                    ]    [ ✜ ✜ ]      [ no  ]
+ │ │ │       ├ [seller_account_analysis_main_graph_timeline_tick3      ]  [label              ]  [ { number }                    ]    [ ✜ ✜ ]      [ no  ]
+ │ │ │       ├ [seller_account_analysis_main_graph_timeline_tick4      ]  [label              ]  [ { number }                    ]    [ ✜ ✜ ]      [ no  ]
+ │ │ │       ├ [seller_account_analysis_main_graph_timeline_tick5      ]  [label              ]  [ { number }                    ]    [ ✜ ✜ ]      [ no  ]
+ │ │ │       ├ [seller_account_analysis_main_graph_timeline_tick6      ]  [label              ]  [ { number }                    ]    [ ✜ ✜ ]      [ no  ]
+ │ │ │       ├ [seller_account_analysis_main_graph_timeline_tick7      ]  [label              ]  [ { number }                    ]    [ ✜ ✜ ]      [ no  ]
+ │ │ │       ├ [seller_account_analysis_main_graph_timeline_tick8      ]  [label              ]  [ { number }                    ]    [ ✜ ✜ ]      [ no  ]
+ │ │ │       ├ [seller_account_analysis_main_graph_timeline_tick9      ]  [label              ]  [ { number }                    ]    [ ✜ ✜ ]      [ no  ]
+ │ │ │       ├ [seller_account_analysis_main_graph_timeline_tick10     ]  [label              ]  [ { number }                    ]    [ ✜ ✜ ]      [ no  ]
+ │ │ │       └ [seller_account_analysis_main_graph_timeline_tick11     ]  [label              ]  [ { number }                    ]    [ ✜ 🡆 ]      [ no  ] 
+ │ │ └┬┬───────[seller_account_analysis_main_slider                    ]  [section_lev3       ]                                       [ 🡇 ✜ ]      [ no  ] 
+ │ │  │└┬┬┬┬┬──[seller_account_analysis_main_slider_line               ]  [section_lev4       ]                                       [ ✜ ✜ ]      [ no  ]
+ │ │  │ ││││└┬─[seller_account_analysis_main_slider_line_step0         ]  [section_lev5+step  ]                                       [ ✜ 🡄 ]      [ no  ]
+ │ │  │ ││││ ├ [seller_account_analysis_main_slider_line_step0_index   ]  [index              ]                                       [ ✜ ✜ ]      [ no  ] 
+ │ │  │ ││││ └ [seller_account_analysis_main_slider_line_step0_label   ]  [label              ]  [ "1 час"                       ]    [ ✜ ✜ ]      [ no  ]
+ │ │  │ │││└─┬─[seller_account_analysis_main_slider_line_step1         ]  [section_lev5+step  ]                                       [ ✜ ✜ ]      [ no  ]
+ │ │  │ │││  ├ [seller_account_analysis_main_slider_line_step1_index   ]  [index              ]                                       [ ✜ ✜ ]      [ no  ] 
+ │ │  │ │││  └ [seller_account_analysis_main_slider_line_step1_label   ]  [label              ]  [ "6 часов"                     ]    [ ✜ ✜ ]      [ no  ]
+ │ │  │ ││└──┬─[seller_account_analysis_main_slider_line_step2         ]  [section_lev5+step  ]                                       [ ✜ ✜ ]      [ no  ]
+ │ │  │ ││   ├ [seller_account_analysis_main_slider_line_step2_index   ]  [index              ]                                       [ ✜ ✜ ]      [ no  ] 
+ │ │  │ ││   └ [seller_account_analysis_main_slider_line_step2_label   ]  [label              ]  [ "1 день"                      ]    [ ✜ ✜ ]      [ no  ]
+ │ │  │ │└───┬─[seller_account_analysis_main_slider_line_step3         ]  [section_lev5+step  ]                                       [ ✜ ✜ ]      [ no  ]
+ │ │  │ │    ├ [seller_account_analysis_main_slider_line_step3_index   ]  [index              ]                                       [ ✜ ✜ ]      [ no  ] 
+ │ │  │ │    └ [seller_account_analysis_main_slider_line_step3_label   ]  [label              ]  [ "1 неделя"                    ]    [ ✜ ✜ ]      [ no  ]
+ │ │  │ └────┬─[seller_account_analysis_main_slider_line_step4         ]  [section_lev5+step  ]                                       [ ✜ 🡆 ]      [ no  ]
+ │ │  │      ├ [seller_account_analysis_main_slider_line_step4_index   ]  [index              ]                                       [ ✜ ✜ ]      [ no  ] 
+ │ │  │      └ [seller_account_analysis_main_slider_line_step4_label   ]  [label              ]  [ "1 месяц"                     ]    [ ✜ ✜ ]      [ no  ]
+ │ │  └────────[seller_account_analysis_main_slider_knob               ]  [knob               ]                                       [ ✜ ✜ ]      [ yes ] 
+ │ └┬┬┬┬┬┬┬┬───[seller_account_analysis_main_btn                       ]  [section_lev3+scroll]                                       [ ✜ ✜ ]      [ no  ] 
+ │  │││││││└─┬─[seller_account_analysis_main_btn_profit                ]  [section_lev4+button]                                       [ ✜ 🡄 ]      [ yes ]
+ │  │││││││  └ [seller_account_analysis_main_btn_profit_label          ]  [label              ]  [ "Прибыль по всем лотам"       ]    [ ✜ ✜ ]      [ yes ]
+ │  ││││││└──┬─[seller_account_analysis_main_btn_orders_all            ]  [section_lev4+button]                                       [ ✜ ✜ ]      [ yes ]
+ │  ││││││   └ [seller_account_analysis_main_btn_orders_all_label      ]  [label              ]  [ "Количество ордеров по вс..." ]    [ ✜ ✜ ]      [ yes ]
+ │  │││││└───┬─[seller_account_analysis_main_btn_orders_top            ]  [section_lev4+button]                                       [ ✜ ✜ ]      [ yes ]
+ │  │││││    └ [seller_account_analysis_main_btn_orders_top_label      ]  [label              ]  [ "Количество ордеров по 10..." ]    [ ✜ ✜ ]      [ yes ]  
+ │  ││││└────┬─[seller_account_analysis_main_btn_orders_top%           ]  [section_lev4+button]                                       [ ✜ ✜ ]      [ yes ]
+ │  ││││     └ [seller_account_analysis_main_btn_orders_top%_label     ]  [label              ]  [ "Количество ордеров в % п..." ]    [ ✜ ✜ ]      [ yes ]  
+ │  │││└─────┬─[seller_account_analysis_main_btn_profit_top$           ]  [section_lev4+button]                                       [ ✜ ✜ ]      [ yes ]
+ │  │││      └ [seller_account_analysis_main_btn_profit_top$_label     ]  [label              ]  [ "Прибыль по 10 топовым лотам" ]    [ ✜ ✜ ]      [ yes ]  
+ │  ││└──────┬─[seller_account_analysis_main_btn_profit_top%           ]  [section_lev4+button]                                       [ ✜ ✜ ]      [ yes ]
+ │  ││       └ [seller_account_analysis_main_btn_profit_top%_label     ]  [label              ]  [ "Прибыль в % по 10 топовы..." ]    [ ✜ ✜ ]      [ yes ]  
+ │  │└───────┬─[seller_account_analysis_main_btn_viewers               ]  [section_lev4+button]                                       [ ✜ ✜ ]      [ yes ]
+ │  │        └ [seller_account_analysis_main_btn_viewers_label         ]  [label              ]  [ "Количество посетителей м..." ]    [ ✜ ✜ ]      [ yes ]  
+ │  └────────┬─[seller_account_analysis_main_btn_conversion            ]  [section_lev4+button]                                       [ ✜ 🡆 ]      [ yes ]
+ │           └ [seller_account_analysis_main_btn_conversion_label      ]  [label              ]  [ "Конверсия посетителей ма..." ]    [ ✜ ✜ ]      [ yes ]  	 
+ └───────────┬─[seller_account_analysis_bottom                         ]  [section_lev2       ]                                       [ 🡇 ✜ ]      [ no  ]
+             └ [seller_account_analysis_bottom_text                    ]  [text               ]  [ "Кнопки для переключения ..." ]    [ ✜ ✜ ]      [ no  ]
+        ┌┬┬┬┬──[seller_nav                                             ]  [section_lev1       ]                                       [ ✜ ✜ ]      [ no  ]
+        ││││└┬─[seller_nav_demand_button                               ]  [button             ]                                       [ ✜ 🡄 ]      [ yes ]
+        ││││ ├ [seller_nav_demand_header                               ]  [header             ]  [ "МОНИТОР"                     ]    [ ✜ ✜ ]      [ no  ]  
+        ││││ └ [seller_nav_demand_badge                                ]  [badge              ]  [ { number }                    ]    [ 🡅 🡆 ]      [ no  ] 	
+        │││└─┬─[seller_nav_chat_button                                 ]  [button             ]                                       [ ✜ 🡄 ]      [ yes ]   
+        │││  ├ [seller_nav_chat_header                                 ]  [header             ]  [ "ЧАТ"                         ]    [ ✜ ✜ ]      [ no  ] 
+        │││  └ [seller_nav_chat_badge                                  ]  [badge              ]  [ { number }                    ]    [ 🡅 🡆 ]      [ no  ] 
+        ││└──┬─[seller_nav_shop_button                                 ]  [button             ]                                       [ ✜ ✜ ]      [ yes ]   
+        ││   ├ [seller_nav_shop_header                                 ]  [header             ]  [ "МАГАЗИН"                     ]    [ ✜ ✜ ]      [ no  ] 
+        ││   └ [seller_nav_shop_badge                                  ]  [badge              ]  [ { number }                    ]    [ 🡅 🡆 ]      [ no  ]   
+        │└───┬─[seller_nav_goods_button                                ]  [button             ]                                       [ ✜ 🡆 ]      [ yes ]   
+        │    ├ [seller_nav_goods_header                                ]  [header             ]  [ "ТОВАРЫ"                      ]    [ ✜ ✜ ]      [ no  ] 
+        │    └ [seller_nav_goods_badge                                 ]  [badge              ]  [ { number }                    ]    [ 🡅 🡆 ]      [ no  ]     
+        └────┬─[seller_nav_account_button                              ]  [button             ]                                       [ ✜ 🡆 ]      [ yes ]   
+             ├ [seller_nav_account_header                              ]  [header             ]  [ "КАБИНЕТ"                     ]    [ ✜ ✜ ]      [ no  ] 
+             └ [seller_nav_account_badge                               ]  [badge              ]  [ { number }                    ]    [ 🡅 🡆 ]      [ no  ] 
+
+
+■ seller_account_analysis
+
+✠ details
+- seller_account_analysis_top - располагается в качестве компактного блока высотой порядка 3-4% от вертикальной области экрана в верхней области seller_account_analysis и включает:
+--- seller_account_analysis_top_title - с заголовком: "Прибыль по всем лотам";
+- seller_account_analysis_main является центральной частью и занимает около 100% по ширине и 85% по высоте видимой области экрана. seller_account_analysis_main состоит из 3 компонентов:  
+--- seller_account_analysis_main_graph - компонент отвечающий за вывод графика на экран состоящий из 4 компонентов:
+----- seller_account_analysis_main_graph_protip - текст расположенный в верхней части seller_account_analysis_main_graph: "диапазон между двумя точками = данным по одному дню";
+----- seller_account_analysis_main_graph_curve - является непосредственно центральной частью данных экрана, представляя собой кривую - линию проведенную через точки seller_account_analysis_main_graph_curve_profit_point, которая скроллится по горизонтали и строится на базе следующих 12 точек:
+------- seller_account_analysis_main_graph_curve_profit_point0 - точка #1, находится в правом краю экрана, выводит сумму профита согласно выбранному таймфрейму, так если выбран seller_account_analysis_main_slider_line_step0, тогда точка показывает сумму профита в рамках 1 часа исходя из положения данной точки на seller_account_analysis_main_graph_timeline;
+------- seller_account_analysis_main_graph_curve_profit_point1 - точка #2, находится слева от seller_account_analysis_main_graph_curve_profit_point0, выводит сумму профита согласно выбранному таймфрейму, так если выбран seller_account_analysis_main_slider_line_step1, тогда точка показывает сумму профита в рамках 6 часов исходя из положения данной точки на seller_account_analysis_main_graph_timeline;
+------- seller_account_analysis_main_graph_curve_profit_point2 - точка #3, находится слева от seller_account_analysis_main_graph_curve_profit_point1, выводит сумму профита согласно выбранному таймфрейму, так если выбран seller_account_analysis_main_slider_line_step2, тогда точка показывает сумму профита в рамках 24 часов исходя из положения данной точки на seller_account_analysis_main_graph_timeline;
+------- seller_account_analysis_main_graph_curve_profit_point3 - точка #4, находится слева от seller_account_analysis_main_graph_curve_profit_point2, выводит сумму профита согласно выбранному таймфрейму, так если выбран seller_account_analysis_main_slider_line_step3, тогда точка показывает сумму профита в рамках 7 дней исходя из положения данной точки на seller_account_analysis_main_graph_timeline;
+------- seller_account_analysis_main_graph_curve_profit_point4 - точка #5, находится слева от seller_account_analysis_main_graph_curve_profit_point3, выводит сумму профита согласно выбранному таймфрейму, так если выбран seller_account_analysis_main_slider_line_step4, тогда точка показывает сумму профита в рамках 30 дней исходя из положения данной точки на seller_account_analysis_main_graph_timeline;
+------- seller_account_analysis_main_graph_curve_profit_point5 - точка #6, находится слева от seller_account_analysis_main_graph_curve_profit_point4, выводит сумму профита согласно выбранному таймфрейму, так если выбран seller_account_analysis_main_slider_line_step0, тогда точка показывает сумму профита в рамках 1 часа исходя из положения данной точки на seller_account_analysis_main_graph_timeline;
+------- seller_account_analysis_main_graph_curve_profit_point6 - точка #7, находится слева от seller_account_analysis_main_graph_curve_profit_point5, выводит сумму профита согласно выбранному таймфрейму, так если выбран seller_account_analysis_main_slider_line_step1, тогда точка показывает сумму профита в рамках 6 часов исходя из положения данной точки на seller_account_analysis_main_graph_timeline;
+------- seller_account_analysis_main_graph_curve_profit_point7 - точка #8, находится слева от seller_account_analysis_main_graph_curve_profit_point6, выводит сумму профита согласно выбранному таймфрейму, так если выбран seller_account_analysis_main_slider_line_step2, тогда точка показывает сумму профита в рамках 24 часов исходя из положения данной точки на seller_account_analysis_main_graph_timeline;
+------- seller_account_analysis_main_graph_curve_profit_point8 - точка #9, находится слева от seller_account_analysis_main_graph_curve_profit_point7, выводит сумму профита согласно выбранному таймфрейму, так если выбран seller_account_analysis_main_slider_line_step3, тогда точка показывает сумму профита в рамках 7 дней исходя из положения данной точки на seller_account_analysis_main_graph_timeline;
+------- seller_account_analysis_main_graph_curve_profit_point9 - точка #10, находится слева от seller_account_analysis_main_graph_curve_profit_point8, выводит сумму профита согласно выбранному таймфрейму, так если выбран seller_account_analysis_main_slider_line_step4, тогда точка показывает сумму профита в рамках 30 дней исходя из положения данной точки на seller_account_analysis_main_graph_timeline;
+------- seller_account_analysis_main_graph_curve_profit_point10 - точка #11, находится слева от seller_account_analysis_main_graph_curve_profit_point9, выводит сумму профита согласно выбранному таймфрейму, так если выбран seller_account_analysis_main_slider_line_step0, тогда точка показывает сумму профита в рамках 1 часа исходя из положения данной точки на seller_account_analysis_main_graph_timeline;
+------- seller_account_analysis_main_graph_curve_profit_point11 - точка #12, находится слева от seller_account_analysis_main_graph_curve_profit_point10, выводит сумму профита согласно выбранному таймфрейму, так если выбран seller_account_analysis_main_slider_line_step1, тогда точка показывает сумму профита в рамках 6 часов исходя из положения данной точки на seller_account_analysis_main_graph_timeline;
+----- seller_account_analysis_main_graph_measureline - располагается в правой части seller_account_analysis_main_graph по краю экрана в виде градуированной линейки из 12-ти равноудаленных друг от друга позиций seller_account_analysis_main_graph_measureline_tick, которые отображаются как горизонтальные риски - короткие линии на seller_account_analysis_main_graph_measureline, каждая из которых имеет числовое значение в текущей валюте: 
+------- seller_account_analysis_main_graph_measureline_tick0 - верхняя позиция на seller_account_analysis_main_graph_measureline;
+------- seller_account_analysis_main_graph_measureline_tick1 - позиция находящаяся под seller_account_analysis_main_graph_measureline_tick0;
+------- seller_account_analysis_main_graph_measureline_tick2 - позиция находящаяся под seller_account_analysis_main_graph_measureline_tick1;
+------- seller_account_analysis_main_graph_measureline_tick3 - позиция находящаяся под seller_account_analysis_main_graph_measureline_tick2;
+------- seller_account_analysis_main_graph_measureline_tick4 - позиция находящаяся под seller_account_analysis_main_graph_measureline_tick3;
+------- seller_account_analysis_main_graph_measureline_tick5 - позиция находящаяся под seller_account_analysis_main_graph_measureline_tick4;
+------- seller_account_analysis_main_graph_measureline_tick6 - позиция находящаяся под seller_account_analysis_main_graph_measureline_tick5;
+------- seller_account_analysis_main_graph_measureline_tick7 - позиция находящаяся под seller_account_analysis_main_graph_measureline_tick6;
+------- seller_account_analysis_main_graph_measureline_tick8 - позиция находящаяся под seller_account_analysis_main_graph_measureline_tick7;
+------- seller_account_analysis_main_graph_measureline_tick9 - позиция находящаяся под seller_account_analysis_main_graph_measureline_tick8;
+------- seller_account_analysis_main_graph_measureline_tick10 - позиция находящаяся под seller_account_analysis_main_graph_measureline_tick9;
+------- seller_account_analysis_main_graph_measureline_tick11 - позиция находящаяся под seller_account_analysis_main_graph_measureline_tick10;
+----- seller_account_analysis_main_graph_timeline - располагается в нижней части seller_account_analysis_main_graph в виде градуированной линейки из 12-ти равноудаленных друг от друга позиций seller_account_analysis_main_graph_timeline_tick, которые отображаются как вертикальные риски - короткие линии на seller_account_analysis_main_graph_timeline, каждая из которых имеет числовое значение в единицах соответствующих заданного посредством seller_account_analysis_main_slider_knob позиции seller_account_analysis_main_slider_line_step: 
+------- seller_account_analysis_main_graph_timeline_tick0 - левая позиция на seller_account_analysis_main_graph_timeline;
+------- seller_account_analysis_main_graph_timeline_tick1 - позиция находящаяся справа от seller_account_analysis_main_graph_timeline_tick0;
+------- seller_account_analysis_main_graph_timeline_tick2 - позиция находящаяся справа от seller_account_analysis_main_graph_timeline_tick1;
+------- seller_account_analysis_main_graph_timeline_tick3 - позиция находящаяся справа от seller_account_analysis_main_graph_timeline_tick2;
+------- seller_account_analysis_main_graph_timeline_tick4 - позиция находящаяся справа от seller_account_analysis_main_graph_timeline_tick3;
+------- seller_account_analysis_main_graph_timeline_tick5 - позиция находящаяся справа от seller_account_analysis_main_graph_timeline_tick4;
+------- seller_account_analysis_main_graph_timeline_tick6 - позиция находящаяся справа от seller_account_analysis_main_graph_timeline_tick5;
+------- seller_account_analysis_main_graph_timeline_tick7 - позиция находящаяся справа от seller_account_analysis_main_graph_timeline_tick6;
+------- seller_account_analysis_main_graph_timeline_tick8 - позиция находящаяся справа от seller_account_analysis_main_graph_timeline_tick7;
+------- seller_account_analysis_main_graph_timeline_tick9 - позиция находящаяся справа от seller_account_analysis_main_graph_timeline_tick8;
+------- seller_account_analysis_main_graph_timeline_tick10 - позиция находящаяся справа от seller_account_analysis_main_graph_timeline_tick9;
+------- seller_account_analysis_main_graph_timeline_tick11 - позиция находящаяся справа от seller_account_analysis_main_graph_timeline_tick10;
+--- seller_account_analysis_main_slider - орган управления в виде горизонтального слайдера предназначенный для настройки таймфрейма отображаемых данных состоящий из 2 компонентов:
+----- seller_account_analysis_main_slider_line - часть seller_account_analysis_main_slider представленная горизонтальной полосой с равноудаленными позициями фиксации вариантов переключения настройки включающая 5 компонентов:
+------- seller_account_analysis_main_slider_line_step0 - крайняя левая позиция на seller_account_analysis_main_slider_line, содержит 2 элемента:
+--------- seller_account_analysis_main_slider_line_step0_index - точка на seller_account_analysis_main_slider_line_step0;
+--------- seller_account_analysis_main_slider_line_step0_label - отображает наименование позиции: "1 час";
+------- seller_account_analysis_main_slider_line_step1 - находится справа от seller_account_analysis_main_slider_line_step0, содержит 2 элемента:
+--------- seller_account_analysis_main_slider_line_step1_index - точка на seller_account_analysis_main_slider_line_step0;
+--------- seller_account_analysis_main_slider_line_step1_label - отображает наименование позиции: "6 часов";
+------- seller_account_analysis_main_slider_line_step2 - находится справа от seller_account_analysis_main_slider_line_step1, содержит 2 элемента:
+--------- seller_account_analysis_main_slider_line_step2_index - точка на seller_account_analysis_main_slider_line_step0;
+--------- seller_account_analysis_main_slider_line_step2_label - отображает наименование позиции: "1 день";
+------- seller_account_analysis_main_slider_line_step3 - находится справа от seller_account_analysis_main_slider_line_step2, содержит 2 элемента:
+--------- seller_account_analysis_main_slider_line_step3_index - точка на seller_account_analysis_main_slider_line_step0;
+--------- seller_account_analysis_main_slider_line_step3_label - отображает наименование позиции: "1 неделя";
+------- seller_account_analysis_main_slider_line_step4 - находится справа от seller_account_analysis_main_slider_line_step3, содержит 2 элемента:
+--------- seller_account_analysis_main_slider_line_step4_index - точка на seller_account_analysis_main_slider_line_step0;
+--------- seller_account_analysis_main_slider_line_step4_label - отображает наименование позиции: "1 месяц";
+----- seller_account_analysis_main_slider_knob - представляет собой ручку с помощью которой переключаются позиции на seller_account_analysis_main_slider_line;
+--- seller_account_analysis_main_btn - группа кнопок расположенных в нижней части seller_account_analysis_main, обладает горизонтальным скроллом, состоит из 8 компонентов:
+----- seller_account_analysis_main_btn_profit - кнопка расположенная в левой части seller_account_analysis_main_btn;
+------- seller_account_analysis_main_btn_profit_label - отображает наименование кнопки: "Прибыль по всем лотам";
+----- seller_account_analysis_main_btn_orders_all - кнопка расположенная справа от seller_account_analysis_main_btn_profit;
+------- seller_account_analysis_main_btn_orders_all_label - отображает наименование кнопки: "Количество ордеров по всем лотам";
+----- seller_account_analysis_main_btn_orders_top - кнопка расположенная справа от seller_account_analysis_main_btn_orders_all;
+------- seller_account_analysis_main_btn_orders_top_label - отображает наименование кнопки: "Количество ордеров по 10-ти топовым лотам";
+----- seller_account_analysis_main_btn_orders_top% - кнопка расположенная справа от seller_account_analysis_main_btn_orders_top;
+------- seller_account_analysis_main_btn_orders_top%_label - отображает наименование кнопки: "Количество ордеров в % по 10-ти топовым лотам";
+----- seller_account_analysis_main_btn_profit_top$ - кнопка расположенная справа от seller_account_analysis_main_btn_orders_top%;
+------- seller_account_analysis_main_btn_profit_top$_label - отображает наименование кнопки: "Прибыль по 10 топовым лотам";
+----- seller_account_analysis_main_btn_profit_top% - кнопка расположенная справа от seller_account_analysis_main_btn_profit_top$;
+------- seller_account_analysis_main_btn_profit_top%_label - отображает наименование кнопки: "Прибыль в % по 10 топовым лотам";
+----- seller_account_analysis_main_btn_viewers - кнопка расположенная справа от seller_account_analysis_main_btn_profit_top%;
+------- seller_account_analysis_main_btn_viewers_label - отображает наименование кнопки: "Количество посетителей магазина";
+----- seller_account_analysis_main_btn_conversion - кнопка расположенная справа от seller_account_analysis_main_btn_viewers;
+------- seller_account_analysis_main_btn_conversion_label - отображает наименование кнопки: "Конверсия посетителей магазина";
+--- seller_account_analysis_bottom - размещается в нижней части seller_account_analysis;
+----- seller_account_analysis_bottom_text - представляет собой текст: "Кнопки для переключения вариантов визуализации";
+
+✠ actions
+• seller_account_analysis_main_graph_curve:
+╠ valid
+║ • gesture: press-and-move right
+║ occasion: жест движения одним пальцем вправо в области seller_account_analysis_main_graph;
+║ condition: в ситуации наличия данных более чем за период отображаемый в 12-ти точках (зависит от выбранного таймфрейма);
+║ result:
+║ && - данные seller_account_analysis_main_graph_curve_profit_point0 смещается (исчезает из видимой области) за правую границу экрана;
+║ && - данные seller_account_analysis_main_graph_curve_profit_point1 заменяются данными seller_account_analysis_main_graph_curve_profit_point2;
+║ && - данные seller_account_analysis_main_graph_curve_profit_point2 заменяются данными seller_account_analysis_main_graph_curve_profit_point3;
+║ && - данные seller_account_analysis_main_graph_curve_profit_point3 заменяются данными seller_account_analysis_main_graph_curve_profit_point4;
+║ && - данные seller_account_analysis_main_graph_curve_profit_point4 заменяются данными seller_account_analysis_main_graph_curve_profit_point5;
+║ && - данные seller_account_analysis_main_graph_curve_profit_point5 заменяются данными seller_account_analysis_main_graph_curve_profit_point6;
+║ && - данные seller_account_analysis_main_graph_curve_profit_point6 заменяются данными seller_account_analysis_main_graph_curve_profit_point7;
+║ && - данные seller_account_analysis_main_graph_curve_profit_point7 заменяются данными seller_account_analysis_main_graph_curve_profit_point8;
+║ && - данные seller_account_analysis_main_graph_curve_profit_point8 заменяются данными seller_account_analysis_main_graph_curve_profit_point9;
+║ && - данные seller_account_analysis_main_graph_curve_profit_point9 заменяются данными seller_account_analysis_main_graph_curve_profit_point10;
+║ && - данные seller_account_analysis_main_graph_curve_profit_point10 заменяются данными seller_account_analysis_main_graph_curve_profit_point11;
+║ && - данные seller_account_analysis_main_graph_curve_profit_point11 заменяются данными точки появившейся слева из-за границы экрана;
+║ • gesture: press-and-move left
+║ occasion: жест движения одним пальцем влево в области seller_account_analysis_main_graph;
+║ condition: 
+║ && - в ситуации наличия данных более чем за период отображаемый в 12-ти точках (зависит от выбранного таймфрейма);
+║ && - в ситуации когда seller_account_analysis_main_graph_curve был прежде смещен минимум на 1 seller_account_analysis_main_graph_curve_profit_point вправо;
+║ result: 
+║ && - seller_account_analysis_main_graph_curve_profit_point11 смещается (исчезает из видимой области) за левую границу экрана;
+║ && - данные seller_account_analysis_main_graph_curve_profit_point11 заменяются данными seller_account_analysis_main_graph_curve_profit_point10;
+║ && - данные seller_account_analysis_main_graph_curve_profit_point10 заменяются данными seller_account_analysis_main_graph_curve_profit_point9;
+║ && - данные seller_account_analysis_main_graph_curve_profit_point9 заменяются данными seller_account_analysis_main_graph_curve_profit_point8;
+║ && - данные seller_account_analysis_main_graph_curve_profit_point8 заменяются данными seller_account_analysis_main_graph_curve_profit_point7;
+║ && - данные seller_account_analysis_main_graph_curve_profit_point7 заменяются данными seller_account_analysis_main_graph_curve_profit_point6;
+║ && - данные seller_account_analysis_main_graph_curve_profit_point6 заменяются данными seller_account_analysis_main_graph_curve_profit_point5;
+║ && - данные seller_account_analysis_main_graph_curve_profit_point5 заменяются данными seller_account_analysis_main_graph_curve_profit_point4;
+║ && - данные seller_account_analysis_main_graph_curve_profit_point4 заменяются данными seller_account_analysis_main_graph_curve_profit_point3;
+║ && - данные seller_account_analysis_main_graph_curve_profit_point3 заменяются данными seller_account_analysis_main_graph_curve_profit_point2;
+║ && - данные seller_account_analysis_main_graph_curve_profit_point2 заменяются данными seller_account_analysis_main_graph_curve_profit_point1;
+║ && - данные seller_account_analysis_main_graph_curve_profit_point1 заменяются данными seller_account_analysis_main_graph_curve_profit_point0;
+║ && - данные seller_account_analysis_main_graph_curve_profit_point0 заменяются данными точки появившейся справа из-за границы экрана;
+╠ invalid
+║ • gesture: press-and-move right
+║ occasion: жест движения одним пальцем вправо в области seller_account_analysis_main_graph;
+║ condition: в ситуации отсутствия данных более чем за период отображаемый в 12-ти точках (зависит от выбранного таймфрейма);
+║ result: ничего не происходит.
+║ • gesture: press-and-move left
+║ occasion: жест движения одним пальцем влево в области seller_account_analysis_main_graph;
+║ condition: в ситуации отсутствия данных более чем за период отображаемый в 12-ти точках (зависит от выбранного таймфрейма);
+╙ result: ничего не происходит.
+• seller_account_analysis_main_slider_knob:
+╠ valid
+║ • gesture: drag left 
+║ occasion: передвижение ползунка seller_account_analysis_main_slider_knob влево;
+║ condition: если seller_account_analysis_main_slider_knob находится на любой позиции кроме seller_account_analysis_main_slider_line_step0;
+║ result: 
+║ && - позиция seller_account_analysis_main_slider_knob смещается влево;
+║ && - seller_account_analysis_main_graph_curve перестраивается в соответствии с выбранным seller_account_analysis_main_slider_line_step;
+║ • gesture: drag right
+║ occasion: передвижение ползунка seller_account_analysis_main_slider_knob вправо;
+║ condition: если seller_account_analysis_main_slider_knob находится на любой позиции кроме seller_account_analysis_main_slider_line_step4;
+║ result: 
+║ && - позиция seller_account_analysis_main_slider_knob смещается вправо;
+║ && - seller_account_analysis_main_graph_curve перестраивается в соответствии с выбранным seller_account_analysis_main_slider_line_step;
+╠ invalid
+║ • gesture: drag left 
+║ occasion: передвижение ползунка seller_account_analysis_main_slider_knob влево;
+║ condition: если seller_account_analysis_main_slider_knob находится в позиции seller_account_analysis_main_slider_line_step0;
+║ result: ничего не происходит;
+║ • gesture: drag right
+║ occasion: передвижение ползунка seller_account_analysis_main_slider_knob вправо;
+║ condition: если seller_account_analysis_main_slider_knob находится в позиции seller_account_analysis_main_slider_line_step4;
+╙ result: ничего не происходит.
+• seller_account_analysis_main_btn:
+╠ valid
+║ • gesture: press-and-move left
+║ occasion: горизонтальный скролл seller_account_analysis_main_btn влево;
+║ condition: в любой ситуации кроме, когда seller_account_analysis_main_btn_conversion находится в правой части viewport;
+║ result: происходит скроллирование списка seller_account_analysis_main_btn влево;
+║ • gesture: press-and-move right
+║ occasion: горизонтальный скролл seller_account_analysis_main_btn вправо;
+║ condition: в любой ситуации кроме, когда seller_account_analysis_main_btn_profit находится в левой части viewport;
+║ result: происходит скроллирование списка seller_account_analysis_main_btn вправо;
+╠ invalid
+║ • gesture: press-and-move left
+║ occasion: горизонтальный скролл seller_account_analysis_main_btn влево;
+║ condition: в ситуации когда seller_account_analysis_main_btn_conversion находится в правой части viewport;
+║ result: ничего не происходит;
+║ • gesture: press-and-move right
+║ occasion: горизонтальный скролл seller_account_analysis_main_btn вправо;
+║ condition: в ситуации когда seller_account_analysis_main_btn_profit находится в левой части viewport;
+╙ result: ничего не происходит.
+• seller_account_analysis_main_btn_profit:
+╠ valid
+║ • gesture: tap 
+║ occasion: нажатие seller_account_analysis_main_btn_profit;
+║ condition: в ситуации наличия данных для отрисовки минимум 2 seller_account_analysis_main_graph_curve_profit_point при текущей настройке
+║ seller_account_analysis_main_slider;
+║ result: seller_account_analysis_main_graph отображает seller_account_analysis_main_graph_curve_profit.
+╠ invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_account_analysis_main_btn_profit;
+║ condition: в ситуации отсутствия данных для отрисовки как минимум 2 seller_account_analysis_main_graph_curve_profit_point при текущей настройке
+║ seller_account_analysis_main_slider;
+╙ result: на месте seller_account_analysis_main_graph_curve_profit всплывает seller_account_analysis_main_graph_curve_profit_alert.
+• seller_account_analysis_main_btn_orders_all:
+╠ valid
+║ • gesture: tap 
+║ occasion: нажатие seller_account_analysis_main_btn_orders_all;
+║ condition: в ситуации наличия данных для отрисовки минимум 2 seller_account_analysis_main_graph_curve_orders_all_point при текущей настройке
+║ seller_account_analysis_main_slider;
+║ result: seller_account_analysis_main_graph отображает seller_account_analysis_main_graph_curve_orders_all.
+╠ invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_account_analysis_main_btn_orders_all;
+║ condition: в ситуации отсутствия данных для отрисовки как минимум 2 seller_account_analysis_main_graph_curve_orders_all_point при текущей настройке
+║ seller_account_analysis_main_slider;
+╙ result: на месте seller_account_analysis_main_graph_curve_orders_all всплывает seller_account_analysis_main_graph_curve_orders_all_alert.
+• seller_account_analysis_main_btn_orders_top:
+╠ valid
+║ • gesture: tap 
+║ occasion: нажатие seller_account_analysis_main_btn_orders_top;
+║ condition: в ситуации наличия данных для отрисовки минимум 2 seller_account_analysis_main_graph_curve_orders_top_point при текущей настройке
+║ seller_account_analysis_main_slider;
+║ result: seller_account_analysis_main_graph отображает seller_account_analysis_main_graph_curve_orders_top.
+╠ invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_account_analysis_main_btn_orders_top;
+║ condition: в ситуации отсутствия данных для отрисовки как минимум 2 seller_account_analysis_main_graph_curve_orders_top_point при текущей настройке
+║ seller_account_analysis_main_slider;
+╙ result: на месте seller_account_analysis_main_graph_curve_orders_top всплывает seller_account_analysis_main_graph_curve_orders_top_alert.
+• seller_account_analysis_main_btn_orders_top%:
+╠ valid
+║ • gesture: tap 
+║ occasion: нажатие seller_account_analysis_main_btn_orders_top%;
+║ condition: в ситуации наличия данных для отрисовки минимум 2 seller_account_analysis_main_graph_curve_orders_top%_point при текущей настройке
+║ seller_account_analysis_main_slider;
+║ result: seller_account_analysis_main_graph отображает seller_account_analysis_main_graph_curve_orders_top%.
+╠ invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_account_analysis_main_btn_orders_top%;
+║ condition: в ситуации отсутствия данных для отрисовки как минимум 2 seller_account_analysis_main_graph_curve_orders_top%_point при текущей настройке
+║ seller_account_analysis_main_slider;
+╙ result: на месте seller_account_analysis_main_graph_curve_orders_top% всплывает seller_account_analysis_main_graph_curve_orders_top%_alert.
+• seller_account_analysis_main_btn_profit_top$:
+╠ valid
+║ • gesture: tap 
+║ occasion: нажатие seller_account_analysis_main_btn_profit_top$;
+║ condition: в ситуации наличия данных для отрисовки минимум 2 seller_account_analysis_main_graph_curve_profit_top$_point при текущей настройке
+║ seller_account_analysis_main_slider;
+║ result: seller_account_analysis_main_graph отображает seller_account_analysis_main_graph_curve_profit_top$.
+╠ invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_account_analysis_main_btn_profit_top$;
+║ condition: в ситуации отсутствия данных для отрисовки как минимум 2 seller_account_analysis_main_graph_curve_profit_top$_point при текущей настройке
+║ seller_account_analysis_main_slider;
+╙ result: на месте seller_account_analysis_main_graph_curve_profit_top$ всплывает seller_account_analysis_main_graph_curve_profit_top$_alert.
+• seller_account_analysis_main_btn_profit_top%:
+╠ valid
+║ • gesture: tap 
+║ occasion: нажатие seller_account_analysis_main_btn_profit_top%;
+║ condition: в ситуации наличия данных для отрисовки минимум 2 seller_account_analysis_main_graph_curve_profit_top%_point при текущей настройке
+║ seller_account_analysis_main_slider;
+║ result: seller_account_analysis_main_graph отображает seller_account_analysis_main_graph_curve_profit_top%.
+╠ invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_account_analysis_main_btn_profit_top%;
+║ condition: в ситуации отсутствия данных для отрисовки как минимум 2 seller_account_analysis_main_graph_curve_profit_top%_point при текущей настройке
+║ seller_account_analysis_main_slider;
+╙ result: на месте seller_account_analysis_main_graph_curve_profit_top% всплывает seller_account_analysis_main_graph_curve_profit_top%_alert.
+• seller_account_analysis_main_btn_viewers:
+╠ valid
+║ • gesture: tap 
+║ occasion: нажатие seller_account_analysis_main_btn_viewers;
+║ condition: в ситуации наличия данных для отрисовки минимум 2 seller_account_analysis_main_graph_curve_viewers_point при текущей настройке
+║ seller_account_analysis_main_slider;
+║ result: seller_account_analysis_main_graph отображает seller_account_analysis_main_graph_curve_viewers.
+╠ invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_account_analysis_main_btn_viewers;
+║ condition: в ситуации отсутствия данных для отрисовки как минимум 2 seller_account_analysis_main_graph_curve_viewers_point при текущей настройке
+║ seller_account_analysis_main_slider;
+╙ result: на месте seller_account_analysis_main_graph_curve_viewers всплывает seller_account_analysis_main_graph_curve_viewers_alert.
+• seller_account_analysis_main_btn_conversion:
+╠ valid
+║ • gesture: tap 
+║ occasion: нажатие seller_account_analysis_main_btn_conversion;
+║ condition: в ситуации наличия данных для отрисовки минимум 2 seller_account_analysis_main_graph_curve_conversion_point при текущей настройке
+║ seller_account_analysis_main_slider;
+║ result: seller_account_analysis_main_graph отображает seller_account_analysis_main_graph_curve_conversion.
+╠ invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_account_analysis_main_btn_conversion;
+║ condition: в ситуации отсутствия данных для отрисовки как минимум 2 seller_account_analysis_main_graph_curve_conversion_point при текущей настройке
+║ seller_account_analysis_main_slider;
+╙ result: на месте seller_account_analysis_main_graph_curve_conversion всплывает seller_account_analysis_main_graph_curve_conversion_alert.
+
+✠ logics
+
+Stage 1
+-------
+Перед тем как отрисовывать seller_account_analysis_main_graph_curve, строится сетка координат:
+- seller_account_analysis_main_graph_timeline - по X координате;
+- seller_account_analysis_main_graph_measureline - по Y координате;
+которые привязываются к параметрам компонента seller_account_analysis_main_graph. Соответственно:
+- seller_account_analysis_main_graph_timeline строится по горизонтали исходя из размера ширины seller_account_analysis_main_graph;
+- seller_account_analysis_main_graph_measureline строится по вертикали исходя из размера высоты seller_account_analysis_main_graph;
+Ширина и высота seller_account_analysis_main_graph берутся в процентном выражении чтобы адаптивно отображаться на разных экранах.
+Ниже приводятся формулы в которых для seller_account_analysis_main_graph используются следующие параметры:
+- high=100%
+- margin_left=5%
+- margin_right=5%
+- margin_top=10%
+- margin_bottom=10%
+
+Для расчета позиций на seller_account_analysis_main_graph_timeline действуют нижеследующие формулы:
+seller_account_analysis_main_graph_timeline_tick0 = high - margin_left - margin_right - (high - margin_left - margin_right) / 11 * 11;
+seller_account_analysis_main_graph_timeline_tick1 = high - margin_left - margin_right - (high - margin_left - margin_right) / 11 * 10;
+seller_account_analysis_main_graph_timeline_tick2 = high - margin_left - margin_right - (high - margin_left - margin_right) / 11 * 9;
+seller_account_analysis_main_graph_timeline_tick3 = high - margin_left - margin_right - (high - margin_left - margin_right) / 11 * 8;
+seller_account_analysis_main_graph_timeline_tick4 = high - margin_left - margin_right - (high - margin_left - margin_right) / 11 * 7;
+seller_account_analysis_main_graph_timeline_tick5 = high - margin_left - margin_right - (high - margin_left - margin_right) / 11 * 6;
+seller_account_analysis_main_graph_timeline_tick6 = high - margin_left - margin_right - (high - margin_left - margin_right) / 11 * 5;
+seller_account_analysis_main_graph_timeline_tick7 = high - margin_left - margin_right - (high - margin_left - margin_right) / 11 * 4;
+seller_account_analysis_main_graph_timeline_tick8 = high - margin_left - margin_right - (high - margin_left - margin_right) / 11 * 3;
+seller_account_analysis_main_graph_timeline_tick9 = high - margin_left - margin_right - (high - margin_left - margin_right) / 11 * 2;
+seller_account_analysis_main_graph_timeline_tick10 = high - margin_left - margin_right - (high - margin_left - margin_right) / 11 * 1;
+seller_account_analysis_main_graph_timeline_tick11 = high - margin_left - margin_right - (high - margin_left - margin_right) / 11 * 0.
+
+Для расчета позиций на seller_account_analysis_main_graph_measureline действуют нижеследующие формулы:
+seller_account_analysis_main_graph_measureline_tick0 = high - margin_top - margin_bottom - (high - margin_top - margin_bottom) / 11 * 11;
+seller_account_analysis_main_graph_measureline_tick1 = high - margin_top - margin_bottom - (high - margin_top - margin_bottom) / 11 * 10;
+seller_account_analysis_main_graph_measureline_tick2 = high - margin_top - margin_bottom - (high - margin_top - margin_bottom) / 11 * 9;
+seller_account_analysis_main_graph_measureline_tick3 = high - margin_top - margin_bottom - (high - margin_top - margin_bottom) / 11 * 8;
+seller_account_analysis_main_graph_measureline_tick4 = high - margin_top - margin_bottom - (high - margin_top - margin_bottom) / 11 * 7;
+seller_account_analysis_main_graph_measureline_tick5 = high - margin_top - margin_bottom - (high - margin_top - margin_bottom) / 11 * 6;
+seller_account_analysis_main_graph_measureline_tick6 = high - margin_top - margin_bottom - (high - margin_top - margin_bottom) / 11 * 5;
+seller_account_analysis_main_graph_measureline_tick7 = high - margin_top - margin_bottom - (high - margin_top - margin_bottom) / 11 * 4;
+seller_account_analysis_main_graph_measureline_tick8 = high - margin_top - margin_bottom - (high - margin_top - margin_bottom) / 11 * 3;
+seller_account_analysis_main_graph_measureline_tick9 = high - margin_top - margin_bottom - (high - margin_top - margin_bottom) / 11 * 2;
+seller_account_analysis_main_graph_measureline_tick10 = high - margin_top - margin_bottom - (high - margin_top - margin_bottom) / 11 * 1;
+seller_account_analysis_main_graph_measureline_tick11 = high - margin_top - margin_bottom - (high - margin_top - margin_bottom) / 11 * 0.
+
+Stage 2
+-------
+На второй стадии рассчитываются относительные величины для seller_account_analysis_main_graph_measureline, которые привязываются к текущим (видимым на экране) seller_account_analysis_main_graph_curve_profit_point значениям, чтобы сохранять амплитуду между ними, придавая визуальную ясность графику.
+
+Значения группы seller_account_analysis_main_graph_measureline_tick рассчитываются динамично с ориентацией на экстремумы выражаемых в значениях seller_account_analysis_main_graph_measureline_tick0 и seller_account_analysis_main_graph_measureline_tick11 с предварительным их округлением. При (горизонтальном) скроллинге позиции seller_account_analysis_main_graph_measureline_tick0 и seller_account_analysis_main_graph_measureline_tick11, а вместе с тем и позиции между ними, постоянно перерасчитываются.
+
+seller_account_analysis_main_graph_measureline_tick0 рассчитывается согласно следующей формуле:
+ceil(seller_account_analysis_main_graph_measureline_tick0) = seller_account_analysis_main_graph_measureline_tick0;
+
+seller_account_analysis_main_graph_measureline_tick1 рассчитывается согласно следующей формуле:
+seller_account_analysis_main_graph_measureline_tick0 - (((ceil(seller_account_analysis_main_graph_measureline_tick0)) - (floor(seller_account_analysis_main_graph_measureline_tick11)) / 11 * 1) = seller_account_analysis_main_graph_measureline_tick1;
+
+seller_account_analysis_main_graph_measureline_tick2 рассчитывается согласно следующей формуле:
+seller_account_analysis_main_graph_measureline_tick0 - (((ceil(seller_account_analysis_main_graph_measureline_tick0)) - (floor(seller_account_analysis_main_graph_measureline_tick11)) / 11 * 2) = seller_account_analysis_main_graph_measureline_tick2;
+
+seller_account_analysis_main_graph_measureline_tick3 рассчитывается согласно следующей формуле:
+seller_account_analysis_main_graph_measureline_tick0 - (((ceil(seller_account_analysis_main_graph_measureline_tick0)) - (floor(seller_account_analysis_main_graph_measureline_tick11)) / 11 * 3) = seller_account_analysis_main_graph_measureline_tick3;
+
+seller_account_analysis_main_graph_measureline_tick4 рассчитывается согласно следующей формуле:
+seller_account_analysis_main_graph_measureline_tick0 - (((ceil(seller_account_analysis_main_graph_measureline_tick0)) - (floor(seller_account_analysis_main_graph_measureline_tick11)) / 11 * 4) = seller_account_analysis_main_graph_measureline_tick4;
+
+seller_account_analysis_main_graph_measureline_tick5 рассчитывается согласно следующей формуле:
+seller_account_analysis_main_graph_measureline_tick0 - (((ceil(seller_account_analysis_main_graph_measureline_tick0)) - (floor(seller_account_analysis_main_graph_measureline_tick11)) / 11 * 5) = seller_account_analysis_main_graph_measureline_tick5;
+
+seller_account_analysis_main_graph_measureline_tick6 рассчитывается согласно следующей формуле:
+seller_account_analysis_main_graph_measureline_tick0 - (((ceil(seller_account_analysis_main_graph_measureline_tick0)) - (floor(seller_account_analysis_main_graph_measureline_tick11)) / 11 * 6) = seller_account_analysis_main_graph_measureline_tick6;
+
+seller_account_analysis_main_graph_measureline_tick7 рассчитывается согласно следующей формуле:
+seller_account_analysis_main_graph_measureline_tick0 - (((ceil(seller_account_analysis_main_graph_measureline_tick0)) - (floor(seller_account_analysis_main_graph_measureline_tick11)) / 11 * 7) = seller_account_analysis_main_graph_measureline_tick7;
+
+seller_account_analysis_main_graph_measureline_tick8 рассчитывается согласно следующей формуле:
+seller_account_analysis_main_graph_measureline_tick0 - (((ceil(seller_account_analysis_main_graph_measureline_tick0)) - (floor(seller_account_analysis_main_graph_measureline_tick11)) / 11 * 8) = seller_account_analysis_main_graph_measureline_tick8;
+
+seller_account_analysis_main_graph_measureline_tick9 рассчитывается согласно следующей формуле:
+seller_account_analysis_main_graph_measureline_tick0 - (((ceil(seller_account_analysis_main_graph_measureline_tick0)) - (floor(seller_account_analysis_main_graph_measureline_tick11)) / 11 * 9) = seller_account_analysis_main_graph_measureline_tick9;
+
+seller_account_analysis_main_graph_measureline_tick10 рассчитывается согласно следующей формуле:
+seller_account_analysis_main_graph_measureline_tick0 - (((ceil(seller_account_analysis_main_graph_measureline_tick0)) - (floor(seller_account_analysis_main_graph_measureline_tick11)) / 11 * 10) = seller_account_analysis_main_graph_measureline_tick10;
+
+seller_account_analysis_main_graph_measureline_tick11 рассчитывается согласно следующей формуле:
+floor(seller_account_analysis_main_graph_measureline_tick11) = seller_account_analysis_main_graph_measureline_tick11;
+
+Stage 3
+-------
+На третьей стадии рисуется seller_account_analysis_main_graph_curve. 
+Для минимальной отрисовки seller_account_analysis_main_graph_curve требуется наличие данных за период по двум seller_account_analysis_main_graph_curve_profit_point в зависимости от выбранного таймфрейма посредством seller_account_analysis_main_slider. Так если выбран seller_account_analysis_main_slider_line_step2, тогда для отображения графика на базе 2 точек необходима история за последние 12 (6+6) часов. График начинает строиться с правой стороны с установки seller_account_analysis_main_graph_curve_profit_point0. Позиции для каждой seller_account_analysis_main_graph_curve_profit_point на шкале seller_account_analysis_main_graph_measureline базируются на данных по прибыли и выставляются согласно значениям seller_account_analysis_main_graph_measureline_tick для текущей конфигурации (из 12 или меньшего количества) seller_account_analysis_main_graph_curve_profit_point. Позиции seller_account_analysis_main_graph_curve_profit_point на шкале seller_account_analysis_main_graph_timeline детерминированы и располагаются согласно следующей схеме:
+- seller_account_analysis_main_graph_curve_profit_point0 устанавливается на уровне seller_account_analysis_main_graph_timeline_tick11;
+- seller_account_analysis_main_graph_curve_profit_point1 устанавливается на уровне seller_account_analysis_main_graph_timeline_tick10;
+- seller_account_analysis_main_graph_curve_profit_point2 устанавливается на уровне seller_account_analysis_main_graph_timeline_tick9;
+- seller_account_analysis_main_graph_curve_profit_point3 устанавливается на уровне seller_account_analysis_main_graph_timeline_tick8;
+- seller_account_analysis_main_graph_curve_profit_point4 устанавливается на уровне seller_account_analysis_main_graph_timeline_tick7;
+- seller_account_analysis_main_graph_curve_profit_point5 устанавливается на уровне seller_account_analysis_main_graph_timeline_tick6;
+- seller_account_analysis_main_graph_curve_profit_point6 устанавливается на уровне seller_account_analysis_main_graph_timeline_tick5;
+- seller_account_analysis_main_graph_curve_profit_point7 устанавливается на уровне seller_account_analysis_main_graph_timeline_tick4;
+- seller_account_analysis_main_graph_curve_profit_point8 устанавливается на уровне seller_account_analysis_main_graph_timeline_tick3;
+- seller_account_analysis_main_graph_curve_profit_point9 устанавливается на уровне seller_account_analysis_main_graph_timeline_tick2;
+- seller_account_analysis_main_graph_curve_profit_point10 устанавливается на уровне seller_account_analysis_main_graph_timeline_tick1;
+- seller_account_analysis_main_graph_curve_profit_point11 устанавливается на уровне seller_account_analysis_main_graph_timeline_tick0.
+После того как координаты на seller_account_analysis_main_graph_measureline и seller_account_analysis_main_graph_timeline для всех наличествующих seller_account_analysis_main_graph_curve_profit_point определены, через них проводится линия. 
+
+✠ alerts
+• seller_account_analysis_main_graph_curve_profit_alert:
+- focusing: нет;
+- location: появляется в центре seller_account_analysis_main_graph;
+- content:  "Недостаточно данных для отображения графика".
 
