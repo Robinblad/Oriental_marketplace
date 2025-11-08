@@ -103,6 +103,7 @@ s12) ┌─[setting_seller_button                 ]                             
 ✠ actions
 • setting_user_username_input:
 ╠ valid / invalid
+║ • gesture: tap
 ║ occasion: нажатие setting_user_username_input;
 ║ condition: в любой ситуации;
 ║ result: 
@@ -162,7 +163,7 @@ Username анализируется на предмет совпадения с 
 │- && - valid по факту проверки на emptiness.
 └─
 
-✠ alert_states
+✠ alerts
 • setting_user_username_alert_prompt:
 - focusing: да;
 - location: появляется над setting_user_username_input;
@@ -211,8 +212,8 @@ Username анализируется на предмет совпадения с 
 1)  [ setting_user_phone_header                ]   [ header   ]                                                               [ center  ]
 2)  [ setting_user_phone_form                  ]                                                                              [ center  ]
 --- [ setting_user_phone_form_button           ]   [ button   ]      [ color1 ]        [color1 / color3 ]       [ yes ]       [ left    ]
------- [ setting_user_phone_form_button_flag   ]   [ icon     ]                                                               [ left    ]
------- [ setting_user_phone_form_button_code   ]   [ number   ]                                                               [ right   ]
+--- [ setting_user_phone_form_button_flag      ]   [ icon     ]                                                               [ left    ]
+--- [ setting_user_phone_form_button_code      ]   [ number   ]                                                               [ right   ]
 3)  [ setting_user_phone_form_input            ]   [ input    ]      [ color2 ]        [color1 / color3 ]       [ yes ]       [ right   ]
 
 Сам выпадающий список представлен сущностью setting_user_phone_dropdown состоящий из элементов кнопок setting_user_phone_dropdown_item, которые ранжированы в столбце в алфавитном порядке согласно первой букве названия страны, где вверху списка находится Afghanistan, внизу - Zimbabwe:
@@ -230,11 +231,13 @@ Username анализируется на предмет совпадения с 
 ✠ actions
 • setting_user_phone_form_button:
 ╠ valid / invalid
+║ • gesture: tap
 ║ occasion: нажатие setting_user_phone_form_button;
 ║ condition: в любой ситуации;
 ╙ result: выпадает список setting_user_phone_dropdown.
 • setting_user_phone_form_input:
 ╠ valid
+║ • gesture: tap
 ║ occasion: нажатие setting_user_phone_form_input;
 ║ condition: если setting_user_phone_form_button = valid (код страны выбран);
 ║ result: setting_user_phone_form_input переходит в active_state.
@@ -244,6 +247,7 @@ Username анализируется на предмет совпадения с 
 ╙ result: setting_user_phone_form_input не реагирует на нажатие оставаясь в inactive_state.
 • setting_user_phone_dropdown_item:
 ╠ valid / invalid
+║ • gesture: tap
 ║ occasion: нажатие setting_user_phone_dropdown_item;
 ║ condition: в любой ситуации;
 ║ result: 
@@ -299,7 +303,7 @@ Username анализируется на предмет совпадения с 
 │- при любом состоянии.
 └─
 
-✠ alert_states
+✠ alerts
 • setting_user_phone_form_alert_prompt:
 - focusing: да;
 - location: появляется над setting_user_phone_form_input;
@@ -332,6 +336,7 @@ Username анализируется на предмет совпадения с 
 ✠ actions
 • setting_user_firstname_input:
 ╠ valid / invalid
+║ • gesture: tap
 ║ occasion: нажатие setting_user_firstname_input;
 ║ condition: в любой ситуации;
 ╙ result: setting_user_firstname_input переходит в active_state. 
@@ -377,7 +382,7 @@ Username анализируется на предмет совпадения с 
 │- && - valid по факту проверки на emptiness.
 └─
 
-✠ alert_states
+✠ alerts
 • setting_user_firstname_alert_prompt:
 - focusing: да;
 - location: появляется над setting_user_firstname_input;
@@ -415,6 +420,7 @@ Username анализируется на предмет совпадения с 
 ✠ actions
 • setting_user_secondname_input:
 ╠ valid / invalid
+║ • gesture: tap
 ║ occasion: нажатие setting_user_secondname_input;
 ║ condition: в любой ситуации;
 ╙ result: setting_user_secondname_input переходит в active_state. 
@@ -460,7 +466,7 @@ Username анализируется на предмет совпадения с 
 │- && - valid по факту проверки на emptiness.
 └─
 
-✠ alert_states
+✠ alerts
 • setting_user_secondname_alert_prompt:
 - focusing: да;
 - location: появляется над setting_user_secondname_input;
@@ -498,6 +504,7 @@ Username анализируется на предмет совпадения с 
 ✠ actions
 • setting_user_passport_input:
 ╠ valid / invalid
+║ • gesture: tap
 ║ occasion: нажатие setting_user_passport_input;
 ║ condition: в любой ситуации;
 ╙ result: setting_user_passport_input переходит в active_state. 
@@ -543,7 +550,7 @@ Username анализируется на предмет совпадения с 
 │- && - valid по факту проверки на emptiness.
 └─
 
-✠ alert_states
+✠ alerts
 • setting_user_passport_alert_prompt:
 - focusing: да;
 - location: появляется над setting_user_passport_input;
@@ -581,6 +588,7 @@ Username анализируется на предмет совпадения с 
 ✠ actions
 • setting_seller_geoposition_shop_button:
 ╠ valid / invalid
+║ • gesture: tap
 ║ occasion: нажатие setting_seller_geoposition_shop_button;
 ║ condition: в любой ситуации;
 ╙ result: открывается setting_seller_geoposition_shop_screen;
@@ -602,7 +610,7 @@ Username анализируется на предмет совпадения с 
 │------ фактор {seller_geoposition_shop_determine_function = success}.
 └─
 
-✠ alert_states
+✠ alerts
 • setting_seller_geoposition_shop_alert_omission:
 - focusing: нет;
 - location: появляется под setting_seller_geoposition_shop_button;
@@ -614,7 +622,7 @@ Username анализируется на предмет совпадения с 
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 Экран setting_seller_geoposition_shop_screen представлен 4 секциями расположенными сверху-вниз в следующем порядке:
 
-                   codename:                      type:       button_name:    default_color:        valid/invalid:         important:
+                   codename:                      type:       designation:    default_color:        valid/invalid:         important:
 s1) [ seller_geoposition_shop_header     ]    [ header    ]        		      
 s2) [ seller_geoposition_shop_protip     ]    [ paragraph ]  
 s3) [ seller_geoposition_shop_determine  ]    [ button    ]   "ОПРЕДЕЛИТЬ"      [ color2 ]         [ color1/color3 ]        [ yes ]
@@ -636,6 +644,7 @@ s4) секция из двух расположенных вряд кнопок:
 ✠ actions
 • seller_geoposition_shop_determine:
 ╠ valid
+║ • gesture: tap
 ║ occasion: нажатие seller_geoposition_shop_determine;
 ║ condition: фактор {seller_geoposition_shop_determine_function = success};
 ║ result: geoposition_shop_point сохраняется в памяти устройства;
@@ -645,11 +654,13 @@ s4) секция из двух расположенных вряд кнопок:
 ╙ result: действий не производится.
 • seller_geoposition_shop_button_no:
 ╠ valid / invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_geoposition_shop_button_no;
 ║ condition: в любой ситуации;
 ╙ result: setting_seller_geoposition_shop_screen закрывается без сохранения изменений.
 • seller_geoposition_shop_button_yes:
 ╠ valid
+║ • gesture: tap
 ║ occasion: нажатие seller_geoposition_shop_button_yes;
 ║ condition: фактор {seller_geoposition_shop_determine_function = success};
 ║ result: setting_seller_geoposition_shop_screen закрывается с сохранением изменений;
@@ -688,7 +699,7 @@ s4) секция из двух расположенных вряд кнопок:
 │------ valid по seller_geoposition_shop_determine_function;
 └─
 
-✠ alert_states
+✠ alerts
 • setting_seller_geoposition_shop_alert_success:
 - focusing: да;
 - location: появляется над seller_geoposition_shop_determine_button;
@@ -716,6 +727,7 @@ s4) секция из двух расположенных вряд кнопок:
 ✠ actions
 • setting_seller_active_button:
 ╠ valid / invalid
+║ • gesture: tap
 ║ occasion: нажатие setting_seller_active_button;
 ║ condition: в любой ситуации;
 ╙ result: открывается setting_seller_active_screen;
@@ -736,7 +748,7 @@ s4) секция из двух расположенных вряд кнопок:
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 Экран setting_seller_active_screen с настройками регулирования рабочим временем представлен 6 секциями расположенными сверху-вниз в следующем порядке:
 
-               codename:                                header:              type:     button_name:     widget:       valid/invalid:  default_color:  important:
+               codename:                                header:              type:     designation:     widget:       valid/invalid:  default_color:  important:
 
 s1) [seller_active_time_header           ] "РЕГУЛИРОВКА РАБОЧЕГО ВРЕМЕНИ" [header   ]                                                     
 s2) [seller_active_time_protip           ]                                [paragraph]        			   		   
@@ -769,41 +781,49 @@ seller_active_time_schedule_worktime
 ✠ actions
 • seller_active_time_schedule_widget:
 ╠ valid / invalid
+║ • gesture: tap
 ║ occasion: активация настроек для seller_active_time_schedule_worktime в seller_active_time_schedule_screen;
 ║ condition: в любой ситуации;
 ╙ result: отображение через seller_active_time_schedule_widget значений настроек seller_active_time_schedule_worktime (по умолчанию отображается "9:00 - 17:00"). 
 • seller_active_time_schedule_button:
 ╠ valid / invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_button;
 ║ condition: в любой ситуации;
 ╙ result: открытие seller_active_time_schedule_screen. 
 • seller_active_time_auto_widget:
 ╠ valid / invalid
+║ • gesture: tap
 ║ occasion: активация seller_active_time_auto_detection в seller_active_time_auto_screen;
 ║ condition: в любой ситуации;
 ╙ result: отображение через seller_active_time_auto_widget надписи "АКТИВИРОВАНО" (по умолчанию отображается "————————————"). 
 • seller_active_time_auto_button:
 ╠ valid / invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_auto_button;
 ║ condition: в любой ситуации;
 ╙ result: открытие seller_active_time_auto_screen.
 • seller_active_time_manual_widget:
 ╠ valid / invalid
+║ • gesture: tap
 ║ occasion: активация seller_active_time_manual_detection в seller_active_time_manual_screen;
 ║ condition: в любой ситуации;
 ╙ result: отображение через seller_active_time_manual_widget надписи "АКТИВИРОВАНО" (по умолчанию отображается "————————————"). 
 • seller_active_time_manual_button:
 ╠ valid / invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_manual_button;
 ║ condition: в любой ситуации;
 ╙ result: открытие seller_active_time_manual_screen.
 • seller_active_time_button_no:
 ╠ valid / invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_button_no;
 ║ condition: в любой ситуации;
 ╙ result: setting_seller_active_screen закрывается без сохранения изменений.
 • seller_active_time_button_yes:
 ╠ valid / invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_button_yes;
 ║ condition: в любой ситуации;
 ║ result:
@@ -860,7 +880,7 @@ seller_active_time_schedule_worktime
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 При тапе на кнопку seller_active_time_schedule_button всплывает seller_active_time_schedule_screen разделенный на 6 секций и размещенных сверху-вниз в следующем порядке:
 
-                    codename:                                         type:      button_name:    placeholder:   valid/invalid:    important:  default_color:
+                    codename:                                         type:      designation:    placeholder:   valid/invalid:    important:  default_color:
 s1) [ seller_active_time_schedule_header                          ] [ header ]        			  
 s2) секция из 12 кнопок и 4 виджетов:
 ┌   [ seller_active_time_schedule_worktime                        ]             
@@ -968,21 +988,21 @@ s6) представлена кнопками "ОТМЕНА" и "ОК";
 ✠ actions
 • seller_active_time_schedule_worktime_fixed_from_hour_plus:
 ╠ valid
-║ • tap
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_worktime_fixed_from_hour_plus_button;
 ║ condition: если seller_active_time_schedule_worktime_fixed_from_hour_value >= 0 || <= 22;
 ║ result: 
 ║ && - seller_active_time_schedule_worktime_fixed_from_hour_widget отображает увеличение значения на +1;
 ║ && - происходит дезактивация seller_active_time_schedule_worktime_float, если она была активирована;
 ║ && - происходит дезактивация seller_active_time_schedule_worktime_24, если она была активирована;
-║ • tap & hold 1
+║ • gesture: tap & hold 1
 ║ occasion: нажатие и удержание от 1 и более секунд seller_active_time_schedule_worktime_fixed_from_hour_plus_button;
 ║ condition: если seller_active_time_schedule_worktime_fixed_from_hour_value >= 0 || <= 22;
 ║ result: 
 ║ && - seller_active_time_schedule_worktime_fixed_from_hour_widget отображает увеличение значения на +2 в секунду времени;
 ║ && - происходит дезактивация seller_active_time_schedule_worktime_float, если она была активирована;
 ║ && - происходит дезактивация seller_active_time_schedule_worktime_24, если она была активирована;
-║ • tap & hold 2
+║ • gesture: tap & hold 2
 ║ occasion: нажатие и удержание от 3 и более секунд seller_active_time_schedule_worktime_fixed_from_hour_plus_button;
 ║ condition: если seller_active_time_schedule_worktime_fixed_from_hour_value >= 0 || <= 22;
 ║ result: 
@@ -997,21 +1017,21 @@ s6) представлена кнопками "ОТМЕНА" и "ОК";
 ╙ && - ничего не происходит.
 • seller_active_time_schedule_worktime_fixed_from_hour_minus:
 ╠ valid
-║ • tap
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_worktime_fixed_from_hour_minus_button;
 ║ condition: если seller_active_time_schedule_worktime_fixed_from_hour_value <= 23 || >= 1;
 ║ result: 
 ║ && - seller_active_time_schedule_worktime_fixed_from_hour_widget отображает уменьшение значения на -1;
 ║ && - происходит дезактивация seller_active_time_schedule_worktime_float, если она была активирована;
 ║ && - происходит дезактивация seller_active_time_schedule_worktime_24, если она была активирована;
-║ • tap & hold 1
+║ • gesture: tap & hold 1
 ║ occasion: нажатие и удержание от 1 и более секунд seller_active_time_schedule_worktime_fixed_from_hour_minus_button;
 ║ condition: если seller_active_time_schedule_worktime_fixed_from_hour_value <= 23 || >= 1;
 ║ result: 
 ║ && - seller_active_time_schedule_worktime_fixed_from_hour_widget отображает уменьшение значения на -2 в секунду времени;
 ║ && - происходит дезактивация seller_active_time_schedule_worktime_float, если она была активирована;
 ║ && - происходит дезактивация seller_active_time_schedule_worktime_24, если она была активирована;
-║ • tap & hold 2
+║ • gesture: tap & hold 2
 ║ occasion: нажатие и удержание от 3 и более секунд seller_active_time_schedule_worktime_fixed_from_hour_minus_button;
 ║ condition: если seller_active_time_schedule_worktime_fixed_from_hour_value <= 23 || >= 1;
 ║ result: 
@@ -1026,28 +1046,28 @@ s6) представлена кнопками "ОТМЕНА" и "ОК";
 ╙ && - ничего не происходит.
 • seller_active_time_schedule_worktime_fixed_from_min_plus:
 ╠ valid
-║ • tap
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_worktime_fixed_from_min_plus_button;
 ║ condition: если seller_active_time_schedule_worktime_fixed_from_min_value >= 0 || <= 58;
 ║ result: 
 ║ && - seller_active_time_schedule_worktime_fixed_from_min_widget отображает увеличение значения на +1;
 ║ && - происходит дезактивация seller_active_time_schedule_worktime_float, если она была активирована;
 ║ && - происходит дезактивация seller_active_time_schedule_worktime_24, если она была активирована;
-║ • tap & hold 1
+║ • gesture: tap & hold 1
 ║ occasion: нажатие и удержание от 1 и более секунд seller_active_time_schedule_worktime_fixed_from_min_plus_button;
 ║ condition: если seller_active_time_schedule_worktime_fixed_from_min_value >= 0 || <= 58;
 ║ result: 
 ║ && - seller_active_time_schedule_worktime_fixed_from_min_widget отображает увеличение значения на +2 в секунду времени;
 ║ && - происходит дезактивация seller_active_time_schedule_worktime_float, если она была активирована;
 ║ && - происходит дезактивация seller_active_time_schedule_worktime_24, если она была активирована;
-║ • tap & hold 2
+║ • gesture: tap & hold 2
 ║ occasion: нажатие и удержание от 2 и более секунд seller_active_time_schedule_worktime_fixed_from_min_plus_button;
 ║ condition: если seller_active_time_schedule_worktime_fixed_from_min_value >= 0 || <= 58;
 ║ result: 
 ║ && - seller_active_time_schedule_worktime_fixed_from_min_widget отображает увеличение значения на +4 в секунду времени;
 ║ && - происходит дезактивация seller_active_time_schedule_worktime_float, если она была активирована;
 ║ && - происходит дезактивация seller_active_time_schedule_worktime_24, если она была активирована;
-║ • tap & hold 3
+║ • gesture: tap & hold 3
 ║ occasion: нажатие и удержание от 3 и более секунд seller_active_time_schedule_worktime_fixed_from_min_plus_button;
 ║ condition: если seller_active_time_schedule_worktime_fixed_from_min_value >= 0 || <= 58;
 ║ result: 
@@ -1062,28 +1082,28 @@ s6) представлена кнопками "ОТМЕНА" и "ОК";
 ╙ && - ничего не происходит.
 • seller_active_time_schedule_worktime_fixed_from_min_minus:
 ╠ valid
-║ • tap
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_worktime_fixed_from_min_minus_button;
 ║ condition: если seller_active_time_schedule_worktime_fixed_from_min_value <= 59 || >= 1;
 ║ result: 
 ║ && - seller_active_time_schedule_worktime_fixed_from_min_widget отображает уменьшение значения на -1;
 ║ && - происходит дезактивация seller_active_time_schedule_worktime_float, если она была активирована;
 ║ && - происходит дезактивация seller_active_time_schedule_worktime_24, если она была активирована;
-║ • tap & hold 1
+║ • gesture: tap & hold 1
 ║ occasion: нажатие и удержание от 1 и более секунд seller_active_time_schedule_worktime_fixed_from_min_minus_button;
 ║ condition: если seller_active_time_schedule_worktime_fixed_from_min_value <= 59 || >= 1;
 ║ result: 
 ║ && - seller_active_time_schedule_worktime_fixed_from_min_widget отображает уменьшение значения на -2 в секунду времени;
 ║ && - происходит дезактивация seller_active_time_schedule_worktime_float, если она была активирована;
 ║ && - происходит дезактивация seller_active_time_schedule_worktime_24, если она была активирована;
-║ • tap & hold 2
+║ • gesture: tap & hold 2
 ║ occasion: нажатие и удержание от 2 и более секунд seller_active_time_schedule_worktime_fixed_from_min_minus_button;
 ║ condition: если seller_active_time_schedule_worktime_fixed_from_min_value <= 59 || >= 1;
 ║ result: 
 ║ && - seller_active_time_schedule_worktime_fixed_from_min_widget отображает уменьшение значения на -4 в секунду времени;
 ║ && - происходит дезактивация seller_active_time_schedule_worktime_float, если она была активирована;
 ║ && - происходит дезактивация seller_active_time_schedule_worktime_24, если она была активирована;
-║ • tap & hold 3
+║ • gesture: tap & hold 3
 ║ occasion: нажатие и удержание от 3 и более секунд seller_active_time_schedule_worktime_fixed_from_min_minus_button;
 ║ condition: если seller_active_time_schedule_worktime_fixed_from_min_value <= 59 || >= 1;
 ║ result: 
@@ -1098,21 +1118,21 @@ s6) представлена кнопками "ОТМЕНА" и "ОК";
 ╙ && - ничего не происходит.
 • seller_active_time_schedule_worktime_fixed_to_hour_plus:
 ╠ valid
-║ • tap
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_worktime_fixed_to_hour_plus_button;
 ║ condition: если seller_active_time_schedule_worktime_fixed_to_hour_value >= 0 || <= 22;
 ║ result: 
 ║ && - seller_active_time_schedule_worktime_fixed_to_hour_widget отображает увеличение значения на +1;
 ║ && - происходит дезактивация seller_active_time_schedule_worktime_float, если она была активирована;
 ║ && - происходит дезактивация seller_active_time_schedule_worktime_24, если она была активирована;
-║ • tap & hold 1
+║ • gesture: tap & hold 1
 ║ occasion: нажатие и удержание от 1 и более секунд seller_active_time_schedule_worktime_fixed_to_hour_plus_button;
 ║ condition: если seller_active_time_schedule_worktime_fixed_to_hour_value >= 0 || <= 22;
 ║ result: 
 ║ && - seller_active_time_schedule_worktime_fixed_to_hour_widget отображает увеличение значения на +2 в секунду времени;
 ║ && - происходит дезактивация seller_active_time_schedule_worktime_float, если она была активирована;
 ║ && - происходит дезактивация seller_active_time_schedule_worktime_24, если она была активирована;
-║ • tap & hold 2
+║ • gesture: tap & hold 2
 ║ occasion: нажатие и удержание от 3 и более секунд seller_active_time_schedule_worktime_fixed_to_hour_plus_button;
 ║ condition: если seller_active_time_schedule_worktime_fixed_to_hour_value >= 0 || <= 22;
 ║ result: 
@@ -1127,21 +1147,21 @@ s6) представлена кнопками "ОТМЕНА" и "ОК";
 ╙ && - ничего не происходит.
 • seller_active_time_schedule_worktime_fixed_to_hour_minus:
 ╠ valid
-║ • tap
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_worktime_fixed_to_hour_minus_button;
 ║ condition: если seller_active_time_schedule_worktime_fixed_to_hour_value <= 23 || >= 1;
 ║ result: 
 ║ && - seller_active_time_schedule_worktime_fixed_to_hour_widget отображает уменьшение значения на -1;
 ║ && - происходит дезактивация seller_active_time_schedule_worktime_float, если она была активирована;
 ║ && - происходит дезактивация seller_active_time_schedule_worktime_24, если она была активирована;
-║ • tap & hold 1
+║ • gesture: tap & hold 1
 ║ occasion: нажатие и удержание от 1 и более секунд seller_active_time_schedule_worktime_fixed_to_hour_minus_button;
 ║ condition: если seller_active_time_schedule_worktime_fixed_to_hour_value <= 23 || >= 1;
 ║ result: 
 ║ && - seller_active_time_schedule_worktime_fixed_to_hour_widget отображает уменьшение значения на -2 в секунду времени;
 ║ && - происходит дезактивация seller_active_time_schedule_worktime_float, если она была активирована;
 ║ && - происходит дезактивация seller_active_time_schedule_worktime_24, если она была активирована;
-║ • tap & hold 2
+║ • gesture: tap & hold 2
 ║ occasion: нажатие и удержание от 3 и более секунд seller_active_time_schedule_worktime_fixed_to_hour_minus_button;
 ║ condition: если seller_active_time_schedule_worktime_fixed_to_hour_value <= 23 || >= 1;
 ║ result: 
@@ -1156,28 +1176,28 @@ s6) представлена кнопками "ОТМЕНА" и "ОК";
 ╙ && - ничего не происходит.
 • seller_active_time_schedule_worktime_fixed_to_min_plus:
 ╠ valid
-║ • tap
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_worktime_fixed_to_min_plus_button;
 ║ condition: если seller_active_time_schedule_worktime_fixed_to_min_value >= 0 || <= 58;
 ║ result: 
 ║ && - seller_active_time_schedule_worktime_fixed_to_min_widget отображает увеличение значения на +1;
 ║ && - происходит дезактивация seller_active_time_schedule_worktime_float, если она была активирована;
 ║ && - происходит дезактивация seller_active_time_schedule_worktime_24, если она была активирована;
-║ • tap & hold 1
+║ • gesture: tap & hold 1
 ║ occasion: нажатие и удержание от 1 и более секунд seller_active_time_schedule_worktime_fixed_to_min_plus_button;
 ║ condition: если seller_active_time_schedule_worktime_fixed_to_min_value >= 0 || <= 58;
 ║ result: 
 ║ && - seller_active_time_schedule_worktime_fixed_to_min_widget отображает увеличение значения на +2 в секунду времени;
 ║ && - происходит дезактивация seller_active_time_schedule_worktime_float, если она была активирована;
 ║ && - происходит дезактивация seller_active_time_schedule_worktime_24, если она была активирована;
-║ • tap & hold 2
+║ • gesture: tap & hold 2
 ║ occasion: нажатие и удержание от 2 и более секунд seller_active_time_schedule_worktime_fixed_to_min_plus_button;
 ║ condition: если seller_active_time_schedule_worktime_fixed_to_min_value >= 0 || <= 58;
 ║ result: seller_active_time_schedule_worktime_fixed_to_min_widget отображает увеличение значения на +4 в секунду времени
 ║ && - seller_active_time_schedule_worktime_fixed_to_min_widget отображает увеличение значения на +2 в секунду времени;
 ║ && - происходит дезактивация seller_active_time_schedule_worktime_float, если она была активирована;
 ║ && - происходит дезактивация seller_active_time_schedule_worktime_24, если она была активирована;
-║ • tap & hold 3
+║ • gesture: tap & hold 3
 ║ occasion: нажатие и удержание от 3 и более секунд seller_active_time_schedule_worktime_fixed_to_min_plus_button;
 ║ condition: если seller_active_time_schedule_worktime_fixed_to_min_value >= 0 || <= 58;
 ║ result: 
@@ -1192,28 +1212,28 @@ s6) представлена кнопками "ОТМЕНА" и "ОК";
 ╙ && - ничего не происходит.
 • seller_active_time_schedule_worktime_fixed_to_min_minus:
 ╠ valid
-║ • tap
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_worktime_fixed_to_min_minus_button;
 ║ condition: если seller_active_time_schedule_worktime_fixed_to_min_value <= 59 || >= 1;
 ║ result: 
 ║ && - seller_active_time_schedule_worktime_fixed_to_min_widget отображает уменьшение значения на -1;
 ║ && - происходит дезактивация seller_active_time_schedule_worktime_float, если она была активирована;
 ║ && - происходит дезактивация seller_active_time_schedule_worktime_24, если она была активирована;
-║ • tap & hold 1
+║ • gesture: tap & hold 1
 ║ occasion: нажатие и удержание от 1 и более секунд seller_active_time_schedule_worktime_fixed_to_min_minus_button;
 ║ condition: если seller_active_time_schedule_worktime_fixed_to_min_value <= 59 || >= 1;
 ║ result: 
 ║ && - seller_active_time_schedule_worktime_fixed_to_min_widget отображает уменьшение значения на -2 в секунду времени;
 ║ && - происходит дезактивация seller_active_time_schedule_worktime_float, если она была активирована;
 ║ && - происходит дезактивация seller_active_time_schedule_worktime_24, если она была активирована;
-║ • tap & hold 2
+║ • gesture: tap & hold 2
 ║ occasion: нажатие и удержание от 2 и более секунд seller_active_time_schedule_worktime_fixed_to_min_minus_button;
 ║ condition: если seller_active_time_schedule_worktime_fixed_to_min_value <= 59 || >= 1;
 ║ result: 
 ║ && - seller_active_time_schedule_worktime_fixed_to_min_widget отображает уменьшение значения на -4 в секунду времени;
 ║ && - происходит дезактивация seller_active_time_schedule_worktime_float, если она была активирована;
 ║ && - происходит дезактивация seller_active_time_schedule_worktime_24, если она была активирована;
-║ • tap & hold 3
+║ • gesture: tap & hold 3
 ║ occasion: нажатие и удержание от 3 и более секунд seller_active_time_schedule_worktime_fixed_to_min_minus_button;
 ║ condition: если seller_active_time_schedule_worktime_fixed_to_min_value <= 59 || >= 1;
 ║ result: 
@@ -1221,6 +1241,7 @@ s6) представлена кнопками "ОТМЕНА" и "ОК";
 ║ && - происходит дезактивация seller_active_time_schedule_worktime_float, если она была активирована;
 ║ && - происходит дезактивация seller_active_time_schedule_worktime_24, если она была активирована;
 ╠ invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_worktime_fixed_to_min_minus_button;
 ║ condition: если seller_active_time_schedule_worktime_fixed_to_min_value > 59 || <= 0;
 ║ result: 
@@ -1228,6 +1249,7 @@ s6) представлена кнопками "ОТМЕНА" и "ОК";
 ╙ && - ничего не происходит.
 • seller_active_time_schedule_worktime_float:
 ╠ valid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_worktime_float_button;
 ║ condition:
 ║ || - активирована группа seller_active_time_schedule_worktime_fixed;
@@ -1240,6 +1262,7 @@ s6) представлена кнопками "ОТМЕНА" и "ОК";
 ║ && - дезактивация seller_active_time_schedule_worktime_fixed_to_min_widget (делается сброс) отображает значение "00";
 ║ && - дезактивация seller_active_time_schedule_worktime_24, если была активирована;
 ╠ invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_worktime_float_button;
 ║ condition: активирована seller_active_time_schedule_worktime_float;
 ║ result:
@@ -1247,11 +1270,13 @@ s6) представлена кнопками "ОТМЕНА" и "ОК";
 ╙ && - ничего не происходит.
 • seller_active_time_schedule_worktime_float_protip:
 ╠ valid / invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_worktime_float_protip_button;
 ║ condition: в любой ситуации;
 ╙ result: всплывает seller_active_time_schedule_worktime_float_protip_popover;
 • seller_active_time_schedule_worktime_24:
 ╠ valid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_worktime_24_button;
 ║ condition:
 ║ || - активирована группа seller_active_time_schedule_worktime_fixed;
@@ -1264,6 +1289,7 @@ s6) представлена кнопками "ОТМЕНА" и "ОК";
 ║ && - дезактивация seller_active_time_schedule_worktime_fixed_to_min_widget (делается сброс) отображает значение "00";
 ║ && - дезактивация seller_active_time_schedule_worktime_float, если была активирована;
 ╠ invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_worktime_24_button;
 ║ condition: активирована seller_active_time_schedule_worktime_24;
 ║ result:
@@ -1271,17 +1297,20 @@ s6) представлена кнопками "ОТМЕНА" и "ОК";
 ╙ && - ничего не происходит.
 • seller_active_time_schedule_worktime_24_protip:
 ╠ valid / invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_worktime_24_protip_button;
 ║ condition: в любой ситуации;
 ╙ result: всплывает seller_active_time_schedule_worktime_24_protip_popover;
 • seller_active_time_schedule_lunchtime_fixed_from_hour_plus:
 ╠ valid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_lunchtime_fixed_from_hour_plus_button;
 ║ condition: если seller_active_time_schedule_lunchtime_fixed_from_hour_value >= 0 || <= 22;
 ║ result: 
 ║ && - seller_active_time_schedule_lunchtime_fixed_from_hour_widget отображает увеличение значения на +1;
 ║ && - происходит дезактивация seller_active_time_schedule_lunchtime_nolunch, если она была активирована;
 ╠ invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_lunchtime_fixed_from_hour_plus_button;
 ║ condition: если seller_active_time_schedule_lunchtime_fixed_from_hour_value >= 23 || < 0;
 ║ result: 
@@ -1289,12 +1318,14 @@ s6) представлена кнопками "ОТМЕНА" и "ОК";
 ╙ && - ничего не происходит.
 • seller_active_time_schedule_lunchtime_fixed_from_hour_minus:
 ╠ valid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_lunchtime_fixed_from_hour_minus_button;
 ║ condition: если seller_active_time_schedule_lunchtime_fixed_from_hour_value <= 23 || >= 1;
 ║ result: 
 ║ && - seller_active_time_schedule_lunchtime_fixed_from_hour_widget отображает уменьшение значения на -1;
 ║ && - происходит дезактивация seller_active_time_schedule_lunchtime_nolunch, если она была активирована;
 ╠ invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_lunchtime_fixed_from_hour_minus_button;
 ║ condition: если seller_active_time_schedule_lunchtime_fixed_from_hour_value > 23 || <= 0;
 ║ result: 
@@ -1302,12 +1333,14 @@ s6) представлена кнопками "ОТМЕНА" и "ОК";
 ╙ && - ничего не происходит.
 • seller_active_time_schedule_lunchtime_fixed_from_min_plus:
 ╠ valid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_lunchtime_fixed_from_min_plus_button;
 ║ condition: если seller_active_time_schedule_lunchtime_fixed_from_min_value >= 0 || <= 58;
 ║ result: 
 ║ && - seller_active_time_schedule_lunchtime_fixed_from_min_widget отображает увеличение значения на +1;
 ║ && - происходит дезактивация seller_active_time_schedule_lunchtime_nolunch, если она была активирована;
 ╠ invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_lunchtime_fixed_from_min_plus_button;
 ║ condition: если seller_active_time_schedule_lunchtime_fixed_from_min_value >= 59 || < 0;
 ║ result: 
@@ -1315,12 +1348,14 @@ s6) представлена кнопками "ОТМЕНА" и "ОК";
 ╙ && - ничего не происходит.
 • seller_active_time_schedule_lunchtime_fixed_from_min_minus:
 ╠ valid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_lunchtime_fixed_from_min_minus_button;
 ║ condition: если seller_active_time_schedule_lunchtime_fixed_from_min_value <= 59 || >= 1;
 ║ result: 
 ║ && - seller_active_time_schedule_lunchtime_fixed_from_min_widget отображает уменьшение значения на -1;
 ║ && - происходит дезактивация seller_active_time_schedule_lunchtime_nolunch, если она была активирована;
 ╠ invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_lunchtime_fixed_from_min_minus_button;
 ║ condition: если seller_active_time_schedule_lunchtime_fixed_from_min_value > 59 || <= 0;
 ║ result: 
@@ -1328,12 +1363,14 @@ s6) представлена кнопками "ОТМЕНА" и "ОК";
 ╙ && - ничего не происходит.
 • seller_active_time_schedule_lunchtime_fixed_to_hour_plus:
 ╠ valid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_lunchtime_fixed_to_hour_plus_button;
 ║ condition: если seller_active_time_schedule_lunchtime_fixed_to_hour_value >= 0 || <= 22;
 ║ result: 
 ║ && - seller_active_time_schedule_lunchtime_fixed_to_hour_widget отображает увеличение значения на +1;
 ║ && - происходит дезактивация seller_active_time_schedule_lunchtime_nolunch, если она была активирована;
 ╠ invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_lunchtime_fixed_to_hour_plus_button;
 ║ condition: если seller_active_time_schedule_lunchtime_fixed_to_hour_value >= 23 || < 0;
 ║ result: 
@@ -1341,12 +1378,14 @@ s6) представлена кнопками "ОТМЕНА" и "ОК";
 ╙ && - ничего не происходит.
 • seller_active_time_schedule_lunchtime_fixed_to_hour_minus:
 ╠ valid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_lunchtime_fixed_to_hour_minus_button;
 ║ condition: если seller_active_time_schedule_lunchtime_fixed_to_hour_value <= 23 || >= 1;
 ║ result: 
 ║ && - seller_active_time_schedule_lunchtime_fixed_to_hour_widget отображает уменьшение значения на -1;
 ║ && - происходит дезактивация seller_active_time_schedule_lunchtime_nolunch, если она была активирована;
 ╠ invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_lunchtime_fixed_to_hour_minus_button;
 ║ condition: если seller_active_time_schedule_lunchtime_fixed_to_hour_value > 23 || <= 0;
 ║ result: 
@@ -1354,12 +1393,14 @@ s6) представлена кнопками "ОТМЕНА" и "ОК";
 ╙ && - ничего не происходит.
 • seller_active_time_schedule_lunchtime_fixed_to_min_plus:
 ╠ valid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_lunchtime_fixed_to_min_plus_button;
 ║ condition: если seller_active_time_schedule_lunchtime_fixed_to_min_value >= 0 || <= 58;
 ║ result: 
 ║ && - seller_active_time_schedule_lunchtime_fixed_to_min_widget отображает увеличение значения на +1;
 ║ && - происходит дезактивация seller_active_time_schedule_lunchtime_nolunch, если она была активирована;
 ╠ invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_lunchtime_fixed_to_min_plus_button;
 ║ condition: если seller_active_time_schedule_lunchtime_fixed_to_min_value >= 59 || < 0;
 ║ result: 
@@ -1367,12 +1408,14 @@ s6) представлена кнопками "ОТМЕНА" и "ОК";
 ╙ && - ничего не происходит.
 • seller_active_time_schedule_lunchtime_fixed_to_min_minus:
 ╠ valid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_lunchtime_fixed_to_min_minus_button;
 ║ condition: если seller_active_time_schedule_lunchtime_fixed_to_min_value <= 59 || >= 1;
 ║ result: 
 ║ && - seller_active_time_schedule_lunchtime_fixed_to_min_widget отображает уменьшение значения на -1;
 ║ && - происходит дезактивация seller_active_time_schedule_lunchtime_nolunch, если она была активирована;
 ╠ invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_lunchtime_fixed_to_min_minus_button;
 ║ condition: если seller_active_time_schedule_lunchtime_fixed_to_min_value > 59 || <= 0;
 ║ result: 
@@ -1380,6 +1423,7 @@ s6) представлена кнопками "ОТМЕНА" и "ОК";
 ╙ && - ничего не происходит.
 • seller_active_time_schedule_lunchtime_nolunch:
 ╠ valid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_lunchtime_nolunch_button;
 ║ condition: активирована группа seller_active_time_schedule_lunchtime_fixed;
 ║ result:
@@ -1389,6 +1433,7 @@ s6) представлена кнопками "ОТМЕНА" и "ОК";
 ║ && - дезактивация seller_active_time_schedule_lunchtime_fixed_to_hour_widget (делается сброс) отображает значение "00";
 ║ && - дезактивация seller_active_time_schedule_lunchtime_fixed_to_min_widget (делается сброс) отображает значение "00";
 ╠ invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_lunchtime_nolunch_button;
 ║ condition: активирована seller_active_time_schedule_lunchtime_nolunch;
 ║ result:
@@ -1396,47 +1441,57 @@ s6) представлена кнопками "ОТМЕНА" и "ОК";
 ╙ && - ничего не происходит.
 • seller_active_time_schedule_lunchtime_nolunch_protip:
 ╠ valid / invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_lunchtime_nolunch_protip_button;
 ║ condition: в любой ситуации;
 ╙ result: всплывает seller_active_time_schedule_lunchtime_nolunch_protip_popover;
 • seller_active_time_schedule_weekends_no:
 ╠ valid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_weekends_no_button;
 ║ condition: активирован seller_active_time_schedule_weekends_schedule;
 ║ result: активация режима seller_active_time_schedule_weekends_no;
 ╠ invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_weekends_no_button;
 ║ condition: активирован seller_active_time_schedule_weekends_no;
 ╙ result: seller_active_time_schedule_weekends_no_button не реагирует на нажатие;
 • seller_active_time_schedule_weekends_schedule:
 ╠ valid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_weekends_schedule_button;
 ║ condition: активирован seller_active_time_schedule_weekends_no;
 ║ result: активация режима seller_active_time_schedule_weekends_schedule;
 ╠ invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_weekends_schedule_button;
 ║ condition: активирован seller_active_time_schedule_weekends_schedule;
 ╙ result: seller_active_time_schedule_weekends_schedule_button не реагирует на нажатие;
 • seller_active_time_schedule_holidays_no:
 ╠ valid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_no_button;
 ║ condition: активирован seller_active_time_schedule_holidays_schedule;
 ║ result: активация режима seller_active_time_schedule_holidays_no;
 ╠ invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_no_button;
 ║ condition: активирован seller_active_time_schedule_holidays_no;
 ╙ result: seller_active_time_schedule_holidays_no_button не реагирует на нажатие;
 • seller_active_time_schedule_holidays_schedule:
 ╠ valid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_schedule_button;
 ║ condition: активирован seller_active_time_schedule_holidays_no;
 ║ result: активация режима seller_active_time_schedule_holidays_schedule;
 ╠ invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_schedule_button;
 ║ condition: активирован seller_active_time_schedule_holidays_schedule;
 ╙ result: seller_active_time_schedule_holidays_schedule_button не реагирует на нажатие;
 • seller_active_time_schedule_button_no:
 ╠ valid / invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_button_no;
 ║ condition: в любой ситуации;
 ║ result:
@@ -1444,6 +1499,7 @@ s6) представлена кнопками "ОТМЕНА" и "ОК";
 ╙ && - совершается переход к setting_seller_active_screen.
 • seller_active_time_schedule_button_yes:
 ╠ valid / invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_button_yes;
 ║ condition: в любой ситуации;
 ║ result:
@@ -1453,7 +1509,7 @@ s6) представлена кнопками "ОТМЕНА" и "ОК";
 ║ && - seller_active_time_schedule_screen закрывается с сохранением изменений;
 ╙ && - совершается переход к setting_seller_active_screen.
 
-✠ popover_states
+✠ popovers
 • seller_active_time_schedule_worktime_float_protip_popover:
 - focusing: да;
 - location: появляется справа над seller_active_time_schedule_worktime_float_protip_button;
@@ -1653,7 +1709,7 @@ s6) представлена кнопками "ОТМЕНА" и "ОК";
 🡆🡆🡆🡆 seller_active_time_schedule_weekends_screen
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 При тапе на кнопку seller_active_time_schedule_weekends всплывает seller_active_time_schedule_weekends_screen состоящий из 3 секторов расположенными сверху-вниз в следующем порядке: 
-                        codename:                          type:          button_name:         valid/invalid:       important:   default_color:
+                        codename:                          type:          designation:         valid/invalid:       important:   default_color:
 s1) [ seller_active_time_schedule_weekends_header     ]  [ header ]        			   
 s2) секция из 7 кнопок расположенных столбцом:
 --- [ seller_active_time_schedule_weekends_monday     ]  [ button ]    [ "ПОНЕДЕЛЬНИК" ]     [ color1 / color2 ]      [ no ]       [ color2 ]
@@ -1674,69 +1730,84 @@ s2) представлена столбцом из 7 кнопок комбина
 ✠ actions
 • seller_active_time_schedule_weekends_monday:
 ╠ valid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_weekends_monday_button;
 ║ condition: если seller_active_time_schedule_weekends_monday_button не нажата;
 ║ result: активация seller_active_time_schedule_weekends_monday. 
 ╠ invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_weekends_monday_button;
 ║ condition: если seller_active_time_schedule_weekends_monday_button уже нажата;
 ╙ result: дезактивация seller_active_time_schedule_weekends_monday.
 • seller_active_time_schedule_weekends_tuesday:
 ╠ valid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_weekends_tuesday_button;
 ║ condition: если seller_active_time_schedule_weekends_tuesday_button не нажата;
 ║ result: активация seller_active_time_schedule_weekends_tuesday. 
 ╠ invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_weekends_tuesday_button;
 ║ condition: если seller_active_time_schedule_weekends_tuesday_button уже нажата;
 ╙ result: дезактивация seller_active_time_schedule_weekends_tuesday.
 • seller_active_time_schedule_weekends_wednesday:
 ╠ valid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_weekends_wednesday_button;
 ║ condition: если seller_active_time_schedule_weekends_wednesday_button не нажата;
 ║ result: активация seller_active_time_schedule_weekends_wednesday. 
 ╠ invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_weekends_wednesday_button;
 ║ condition: если seller_active_time_schedule_weekends_wednesday_button уже нажата;
 ╙ result: дезактивация seller_active_time_schedule_weekends_wednesday.
 • seller_active_time_schedule_weekends_thursday:
 ╠ valid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_weekends_thursday_button;
 ║ condition: если seller_active_time_schedule_weekends_thursday_button не нажата;
 ║ result: активация seller_active_time_schedule_weekends_thursday. 
 ╠ invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_weekends_thursday_button;
 ║ condition: если seller_active_time_schedule_weekends_thursday_button уже нажата;
 ╙ result: дезактивация seller_active_time_schedule_weekends_thursday.
 • seller_active_time_schedule_weekends_friday:
 ╠ valid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_weekends_friday_button;
 ║ condition: если seller_active_time_schedule_weekends_friday_button не нажата;
 ║ result: активация seller_active_time_schedule_weekends_friday. 
 ╠ invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_weekends_friday_button;
 ║ condition: если seller_active_time_schedule_weekends_friday_button уже нажата;
 ╙ result: дезактивация seller_active_time_schedule_weekends_friday.
 • seller_active_time_schedule_weekends_sataday:
 ╠ valid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_weekends_sataday_button;
 ║ condition: если seller_active_time_schedule_weekends_sataday_button не нажата (по умолчанию активирована);
 ║ result: активация seller_active_time_schedule_weekends_sataday. 
 ╠ invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_weekends_sataday_button;
 ║ condition: если seller_active_time_schedule_weekends_sataday_button уже нажата;
 ╙ result: дезактивация seller_active_time_schedule_weekends_sataday.
 • seller_active_time_schedule_weekends_sunday:
 ╠ valid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_weekends_sunday_button;
 ║ condition: если seller_active_time_schedule_weekends_sunday_button не нажата (по умолчанию активирована);
 ║ result: активация seller_active_time_schedule_weekends_sunday. 
 ╠ invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_weekends_sunday_button;
 ║ condition: если seller_active_time_schedule_weekends_sunday_button уже нажата;
 ╙ result: дезактивация seller_active_time_schedule_weekends_sunday.
 • seller_active_time_schedule_weekends_button_no:
 ╠ valid / invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_weekends_button_no;
 ║ condition: в любой ситуации;
 ║ result:
@@ -1744,12 +1815,14 @@ s2) представлена столбцом из 7 кнопок комбина
 ╙ && - совершается переход к seller_active_time_schedule_screen.
 • seller_active_time_schedule_weekends_button_yes:
 ╠ valid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_weekends_button_yes;
 ║ condition: в любой ситуации кроме одновременной активации всех 7 кнопок группы seller_active_time_schedule_weekends;
 ║ result: 
 ║ && - seller_active_time_schedule_weekends_screen закрывается с сохранением изменений;
 ║ && - совершается переход к seller_active_time_schedule_screen.
 ╠ valid (weekends_no)
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_weekends_button_yes;
 ║ condition: в ситуации одновременной дезактивации всех 7 кнопок группы seller_active_time_schedule_weekends;
 ║ result: 
@@ -1757,6 +1830,7 @@ s2) представлена столбцом из 7 кнопок комбина
 ║ && - совершается переход к seller_active_time_schedule_screen;
 ║ && - активируется режим seller_active_time_schedule_weekends_no.
 ╠ invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_weekends_button_yes;
 ║ condition: в ситуации одновременной активации всех 7 кнопок группы seller_active_time_schedule_weekends;
 ║ result: 
@@ -1764,7 +1838,7 @@ s2) представлена столбцом из 7 кнопок комбина
 ║ && - не совершается сохранения изменений;
 ╙ && - не совершается перехода к seller_active_time_schedule_screen.
 
-✠ alert_states
+✠ alerts
 • seller_active_time_schedule_weekends_alert_error:
 - focusing: нет;
 - location: появляется в центре seller_active_time_schedule_weekends_screen;
@@ -1848,7 +1922,7 @@ s2) представлена столбцом из 7 кнопок комбина
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 При тапе на кнопку seller_active_time_schedule_holidays открывается seller_active_time_schedule_holidays_screen представленный 5 секциями включая кнопки для настройки года, месяца и дня:
 
-                        codename:                           type:               button_name:        valid/invalid:      default_color:   important:
+                        codename:                           type:               designation:        valid/invalid:      default_color:   important:
 s1) [ seller_active_time_schedule_holidays_header      ]  [ header          ]        			   
 s2) секция из 6 кнопок разной конфигурации:
 --- [ seller_active_time_schedule_holidays_year        ]  [ button + widget ]  [ { год   } ]      [ color1        ]       [ color1 ]       [ no ]
@@ -1878,61 +1952,74 @@ s3)	seller_active_time_schedule_holidays_day_ - является кнопкой 
 ✠ actions
 • seller_active_time_schedule_holidays_year:
 ╠ valid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_year_button;
 ║ condition: в любой ситуации;
 ╙  result: всплытие seller_active_time_schedule_holidays_year_modal. 
 • seller_active_time_schedule_holidays_year_plus:
 ╠ valid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_year_plus_button;
 ║ condition: если seller_active_time_schedule_holidays_year_value >= текущий год || >= текущий год + 9 лет;
 ║ result: seller_active_time_schedule_holidays_year_widget отображает увеличение значения на +1. 
 ╠ invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_year_plus_button;
 ║ condition: если seller_active_time_schedule_holidays_year_value < текущий год || > текущий год + 10 лет;
 ╙ result: seller_active_time_schedule_holidays_year_widget не реагирует на нажатие.
 • seller_active_time_schedule_holidays_year_minus
 ╠ valid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_year_minus_button;
 ║ condition: если seller_active_time_schedule_holidays_year_value >= текущий год + 1 год || =< текущий год + 10 лет;
 ║ result: seller_active_time_schedule_holidays_year_widget отображает уменьшение значения на -1. 
 ╠ invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_year_minus_button;
 ║ condition: если seller_active_time_schedule_holidays_year_value <= текущий год || > текущий год + 10 лет;
 ╙ result: seller_active_time_schedule_holidays_year_widget не реагирует на нажатие.
 • seller_active_time_schedule_holidays_month:
 ╠ valid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_month_button;
 ║ condition: в любой ситуации;
 ╙ result: всплытие seller_active_time_schedule_holidays_month_modal. 
 • seller_active_time_schedule_holidays_month_plus:
 ╠ valid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_month_plus_button;
 ║ condition: если seller_active_time_schedule_holidays_month_value >= январь текущего года || >= ноябрь текущего года;
 ║ result: seller_active_time_schedule_holidays_month_widget отображает наименование для +1 месяц. 
 ╠ invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_month_plus_button;
 ║ condition: если seller_active_time_schedule_holidays_month_value < январь текущего года || > ноябрь текущего года;
 ╙ result: seller_active_time_schedule_holidays_month_widget не реагирует на нажатие.
 • seller_active_time_schedule_holidays_month_minus
 ╠ valid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_month_minus_button;
 ║ condition: если seller_active_time_schedule_holidays_month_value >= февраль текущего года || <= декабрь текущего года;
 ║ result: seller_active_time_schedule_holidays_month_widget отображает наименование для -1 месяц. 
 ╠ invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_month_minus_button;
 ║ condition: если seller_active_time_schedule_holidays_month_value < февраль текущего года || > декабрь текущего года;
 ╙ result: seller_active_time_schedule_holidays_month_widget не реагирует на нажатие.
 • seller_active_time_schedule_holidays_day_
 ╠ valid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_day_{...}_button;
 ║ condition: если целевая seller_active_time_schedule_holidays_day_{...}_button не нажата;
 ║ result: seller_active_time_schedule_holidays_day_ активируется. 
 ╠ invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_day_{...}_button;
 ║ condition: если целевая seller_active_time_schedule_holidays_day_{...}_button нажата;
 ╙ result: seller_active_time_schedule_holidays_day_ не реагирует на нажатие.
 • seller_active_time_schedule_holidays_button_no:
 ╠ valid / invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_button_no;
 ║ condition: в любой ситуации;
 ║ result:
@@ -1940,6 +2027,7 @@ s3)	seller_active_time_schedule_holidays_day_ - является кнопкой 
 ╙ && - совершается переход к seller_active_time_schedule_screen.
 • seller_active_time_schedule_holidays_button_yes:
 ╠ valid / invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_button_yes;
 ║ condition: в любой ситуации;
 ║ result: 
@@ -2009,7 +2097,7 @@ s3)	seller_active_time_schedule_holidays_day_ - является кнопкой 
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 При тапе на кнопку seller_active_time_schedule_holidays_year_button всплывает seller_active_time_schedule_holidays_year_modal с 10 кнопками:
 
-                     codename:                               type:               button_name:           valid/invalid:      important:
+                     codename:                               type:               designation:           valid/invalid:      important:
 [ seller_active_time_schedule_holidays_year_modal_year0 ]  [ button ]   [ {current year         } ]   [ color1/color2 ]       [ no ]
 [ seller_active_time_schedule_holidays_year_modal_year1 ]  [ button ]   [ {current year + 1 year} ]   [ color1/color2 ]       [ no ]
 [ seller_active_time_schedule_holidays_year_modal_year2 ]  [ button ]   [ {current year + 2 year} ]   [ color1/color2 ]       [ no ]
@@ -2030,12 +2118,14 @@ seller_active_time_schedule_holidays_year_modal располагается по 
 ✠ actions
 • seller_active_time_schedule_holidays_year_modal_year0:
 ╠ valid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_year_modal_year0_button;
 ║ condition: seller_active_time_schedule_holidays_year_modal_year0_button не нажата;
 ║ result: 
 ║ && - seller_active_time_schedule_holidays_year_modal закрывается;
 ║ && - на seller_active_time_schedule_holidays_year (widget) отображается год в соответствии с нажатой кнопкой;
 ╠ invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_year_modal_year0_button;
 ║ condition: seller_active_time_schedule_holidays_year_modal_year0_button нажата;
 ║ result: 
@@ -2043,12 +2133,14 @@ seller_active_time_schedule_holidays_year_modal располагается по 
 ╙ && - seller_active_time_schedule_holidays_year_modal не закрывается.
 • seller_active_time_schedule_holidays_year_modal_year1:
 ╠ valid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_year_modal_year1_button;
 ║ condition: seller_active_time_schedule_holidays_year_modal_year1_button не нажата;
 ║ result: 
 ║ && - seller_active_time_schedule_holidays_year_modal закрывается;
 ║ && - на seller_active_time_schedule_holidays_year (widget) отображается год в соответствии с нажатой кнопкой;
 ╠ invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_year_modal_year1_button;
 ║ condition: seller_active_time_schedule_holidays_year_modal_year1_button нажата;
 ║ result: 
@@ -2056,12 +2148,14 @@ seller_active_time_schedule_holidays_year_modal располагается по 
 ╙ && - seller_active_time_schedule_holidays_year_modal не закрывается.
 • seller_active_time_schedule_holidays_year_modal_year2:
 ╠ valid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_year_modal_year2_button;
 ║ condition: seller_active_time_schedule_holidays_year_modal_year2_button не нажата;
 ║ result: 
 ║ && - seller_active_time_schedule_holidays_year_modal закрывается;
 ║ && - на seller_active_time_schedule_holidays_year (widget) отображается год в соответствии с нажатой кнопкой;
 ╠ invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_year_modal_year2_button;
 ║ condition: seller_active_time_schedule_holidays_year_modal_year2_button нажата;
 ║ result: 
@@ -2069,12 +2163,14 @@ seller_active_time_schedule_holidays_year_modal располагается по 
 ╙ && - seller_active_time_schedule_holidays_year_modal не закрывается.
 • seller_active_time_schedule_holidays_year_modal_year3:
 ╠ valid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_year_modal_year3_button;
 ║ condition: seller_active_time_schedule_holidays_year_modal_year3_button не нажата;
 ║ result: 
 ║ && - seller_active_time_schedule_holidays_year_modal закрывается;
 ║ && - на seller_active_time_schedule_holidays_year (widget) отображается год в соответствии с нажатой кнопкой;
 ╠ invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_year_modal_year3_button;
 ║ condition: seller_active_time_schedule_holidays_year_modal_year3_button нажата;
 ║ result: 
@@ -2082,12 +2178,14 @@ seller_active_time_schedule_holidays_year_modal располагается по 
 ╙ && - seller_active_time_schedule_holidays_year_modal не закрывается.
 • seller_active_time_schedule_holidays_year_modal_year4:
 ╠ valid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_year_modal_year4_button;
 ║ condition: seller_active_time_schedule_holidays_year_modal_year4_button не нажата;
 ║ result: 
 ║ && - seller_active_time_schedule_holidays_year_modal закрывается;
 ║ && - на seller_active_time_schedule_holidays_year (widget) отображается год в соответствии с нажатой кнопкой;
 ╠ invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_year_modal_year4_button;
 ║ condition: seller_active_time_schedule_holidays_year_modal_year4_button нажата;
 ║ result: 
@@ -2095,12 +2193,14 @@ seller_active_time_schedule_holidays_year_modal располагается по 
 ╙ && - seller_active_time_schedule_holidays_year_modal не закрывается.
 • seller_active_time_schedule_holidays_year_modal_year5:
 ╠ valid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_year_modal_year5_button;
 ║ condition: seller_active_time_schedule_holidays_year_modal_year5_button не нажата;
 ║ result: 
 ║ && - seller_active_time_schedule_holidays_year_modal закрывается;
 ║ && - на seller_active_time_schedule_holidays_year (widget) отображается год в соответствии с нажатой кнопкой;
 ╠ invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_year_modal_year5_button;
 ║ condition: seller_active_time_schedule_holidays_year_modal_year5_button нажата;
 ║ result: 
@@ -2108,12 +2208,14 @@ seller_active_time_schedule_holidays_year_modal располагается по 
 ╙ && - seller_active_time_schedule_holidays_year_modal не закрывается.
 • seller_active_time_schedule_holidays_year_modal_year6:
 ╠ valid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_year_modal_year6_button;
 ║ condition: seller_active_time_schedule_holidays_year_modal_year6_button не нажата;
 ║ result: 
 ║ && - seller_active_time_schedule_holidays_year_modal закрывается;
 ║ && - на seller_active_time_schedule_holidays_year (widget) отображается год в соответствии с нажатой кнопкой;
 ╠ invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_year_modal_year6_button;
 ║ condition: seller_active_time_schedule_holidays_year_modal_year6_button нажата;
 ║ result: 
@@ -2121,12 +2223,14 @@ seller_active_time_schedule_holidays_year_modal располагается по 
 ╙ && - seller_active_time_schedule_holidays_year_modal не закрывается.
 • seller_active_time_schedule_holidays_year_modal_year7:
 ╠ valid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_year_modal_year7_button;
 ║ condition: seller_active_time_schedule_holidays_year_modal_year7_button не нажата;
 ║ result: 
 ║ && - seller_active_time_schedule_holidays_year_modal закрывается;
 ║ && - на seller_active_time_schedule_holidays_year (widget) отображается год в соответствии с нажатой кнопкой;
 ╠ invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_year_modal_year7_button;
 ║ condition: seller_active_time_schedule_holidays_year_modal_year7_button нажата;
 ║ result: 
@@ -2134,12 +2238,14 @@ seller_active_time_schedule_holidays_year_modal располагается по 
 ╙ && - seller_active_time_schedule_holidays_year_modal не закрывается.
 • seller_active_time_schedule_holidays_year_modal_year8:
 ╠ valid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_year_modal_year8_button;
 ║ condition: seller_active_time_schedule_holidays_year_modal_year8_button не нажата;
 ║ result: 
 ║ && - seller_active_time_schedule_holidays_year_modal закрывается;
 ║ && - на seller_active_time_schedule_holidays_year (widget) отображается год в соответствии с нажатой кнопкой;
 ╠ invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_year_modal_year8_button;
 ║ condition: seller_active_time_schedule_holidays_year_modal_year8_button нажата;
 ║ result: 
@@ -2147,12 +2253,14 @@ seller_active_time_schedule_holidays_year_modal располагается по 
 ╙ && - seller_active_time_schedule_holidays_year_modal не закрывается.
 • seller_active_time_schedule_holidays_year_modal_year9:
 ╠ valid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_year_modal_year9_button;
 ║ condition: seller_active_time_schedule_holidays_year_modal_year9_button не нажата;
 ║ result: 
 ║ && - seller_active_time_schedule_holidays_year_modal закрывается;
 ║ && - на seller_active_time_schedule_holidays_year (widget) отображается год в соответствии с нажатой кнопкой;
 ╠ invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_year_modal_year9_button;
 ║ condition: seller_active_time_schedule_holidays_year_modal_year9_button нажата;
 ║ result: 
@@ -2183,7 +2291,7 @@ seller_active_time_schedule_holidays_year_modal располагается по 
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 При тапе на кнопку seller_active_time_schedule_holidays_month_button всплывает seller_active_time_schedule_holidays_month_modal с 12 кнопками:
 
-                     codename:                              type:     button_name:     valid/invalid:          default_color:        important:
+                     codename:                              type:     designation:     valid/invalid:          default_color:        important:
 [ seller_active_time_schedule_holidays_month_modal_jan ]  [ button ]   [ "Jan" ]      [ color1/color2 ] [ color1 for current month ]  [ no ]
 [ seller_active_time_schedule_holidays_month_modal_feb ]  [ button ]   [ "Feb" ]      [ color1/color2 ] [ color1 for current month ]  [ no ]
 [ seller_active_time_schedule_holidays_month_modal_mar ]  [ button ]   [ "Mar" ]      [ color1/color2 ] [ color1 for current month ]  [ no ]
@@ -2203,12 +2311,14 @@ seller_active_time_schedule_holidays_month_modal располагается по
 ✠ actions
 • seller_active_time_schedule_holidays_month_modal_jan:
 ╠ valid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_month_modal_jan_button;
 ║ condition: seller_active_time_schedule_holidays_month_modal_jan_button не нажата;
 ║ result: 
 ║ && - seller_active_time_schedule_holidays_month_modal закрывается;
 ║ && - на seller_active_time_schedule_holidays_month (widget) отображается название месяца в соответствии с нажатой кнопкой;
 ╠ invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_month_modal_jan_button;
 ║ condition: seller_active_time_schedule_holidays_month_modal_jan_button нажата;
 ║ result: 
@@ -2216,12 +2326,14 @@ seller_active_time_schedule_holidays_month_modal располагается по
 ╙ && - seller_active_time_schedule_holidays_month_modal не закрывается.
 • seller_active_time_schedule_holidays_month_modal_feb:
 ╠ valid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_month_modal_feb_button;
 ║ condition: seller_active_time_schedule_holidays_month_modal_feb_button не нажата;
 ║ result: 
 ║ && - seller_active_time_schedule_holidays_month_modal закрывается;
 ║ && - на seller_active_time_schedule_holidays_month (widget) отображается название месяца в соответствии с нажатой кнопкой;
 ╠ invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_month_modal_feb_button;
 ║ condition: seller_active_time_schedule_holidays_month_modal_feb_button нажата;
 ║ result: 
@@ -2229,12 +2341,14 @@ seller_active_time_schedule_holidays_month_modal располагается по
 ╙ && - seller_active_time_schedule_holidays_month_modal не закрывается.
 • seller_active_time_schedule_holidays_month_modal_mar:
 ╠ valid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_month_modal_mar_button;
 ║ condition: seller_active_time_schedule_holidays_month_modal_mar_button не нажата;
 ║ result: 
 ║ && - seller_active_time_schedule_holidays_month_modal закрывается;
 ║ && - на seller_active_time_schedule_holidays_month (widget) отображается название месяца в соответствии с нажатой кнопкой;
 ╠ invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_month_modal_mar_button;
 ║ condition: seller_active_time_schedule_holidays_month_modal_mar_button нажата;
 ║ result: 
@@ -2242,12 +2356,14 @@ seller_active_time_schedule_holidays_month_modal располагается по
 ╙ && - seller_active_time_schedule_holidays_month_modal не закрывается.
 • seller_active_time_schedule_holidays_month_modal_apr:
 ╠ valid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_month_modal_apr_button;
 ║ condition: seller_active_time_schedule_holidays_month_modal_apr_button не нажата;
 ║ result: 
 ║ && - seller_active_time_schedule_holidays_month_modal закрывается;
 ║ && - на seller_active_time_schedule_holidays_month (widget) отображается название месяца в соответствии с нажатой кнопкой;
 ╠ invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_month_modal_apr_button;
 ║ condition: seller_active_time_schedule_holidays_month_modal_apr_button нажата;
 ║ result: 
@@ -2255,12 +2371,14 @@ seller_active_time_schedule_holidays_month_modal располагается по
 ╙ && - seller_active_time_schedule_holidays_month_modal не закрывается.
 • seller_active_time_schedule_holidays_month_modal_may:
 ╠ valid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_month_modal_may_button;
 ║ condition: seller_active_time_schedule_holidays_month_modal_may_button не нажата;
 ║ result: 
 ║ && - seller_active_time_schedule_holidays_month_modal закрывается;
 ║ && - на seller_active_time_schedule_holidays_month (widget) отображается название месяца в соответствии с нажатой кнопкой;
 ╠ invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_month_modal_may_button;
 ║ condition: seller_active_time_schedule_holidays_month_modal_may_button нажата;
 ║ result: 
@@ -2268,12 +2386,14 @@ seller_active_time_schedule_holidays_month_modal располагается по
 ╙ && - seller_active_time_schedule_holidays_month_modal не закрывается.
 • seller_active_time_schedule_holidays_month_modal_jun:
 ╠ valid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_month_modal_jun_button;
 ║ condition: seller_active_time_schedule_holidays_month_modal_jun_button не нажата;
 ║ result: 
 ║ && - seller_active_time_schedule_holidays_month_modal закрывается;
 ║ && - на seller_active_time_schedule_holidays_month (widget) отображается название месяца в соответствии с нажатой кнопкой;
 ╠ invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_month_modal_jun_button;
 ║ condition: seller_active_time_schedule_holidays_month_modal_jun_button нажата;
 ║ result: 
@@ -2281,12 +2401,14 @@ seller_active_time_schedule_holidays_month_modal располагается по
 ╙ && - seller_active_time_schedule_holidays_month_modal не закрывается.
 • seller_active_time_schedule_holidays_month_modal_jul:
 ╠ valid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_month_modal_jul_button;
 ║ condition: seller_active_time_schedule_holidays_month_modal_jul_button не нажата;
 ║ result: 
 ║ && - seller_active_time_schedule_holidays_month_modal закрывается;
 ║ && - на seller_active_time_schedule_holidays_month (widget) отображается название месяца в соответствии с нажатой кнопкой;
 ╠ invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_month_modal_jul_button;
 ║ condition: seller_active_time_schedule_holidays_month_modal_jul_button нажата;
 ║ result: 
@@ -2294,12 +2416,14 @@ seller_active_time_schedule_holidays_month_modal располагается по
 ╙ && - seller_active_time_schedule_holidays_month_modal не закрывается.
 • seller_active_time_schedule_holidays_month_modal_aug:
 ╠ valid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_month_modal_aug_button;
 ║ condition: seller_active_time_schedule_holidays_month_modal_aug_button не нажата;
 ║ result: 
 ║ && - seller_active_time_schedule_holidays_month_modal закрывается;
 ║ && - на seller_active_time_schedule_holidays_month (widget) отображается название месяца в соответствии с нажатой кнопкой;
 ╠ invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_month_modal_aug_button;
 ║ condition: seller_active_time_schedule_holidays_month_modal_aug_button нажата;
 ║ result: 
@@ -2307,12 +2431,14 @@ seller_active_time_schedule_holidays_month_modal располагается по
 ╙ && - seller_active_time_schedule_holidays_month_modal не закрывается.
 • seller_active_time_schedule_holidays_month_modal_sep:
 ╠ valid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_month_modal_sep_button;
 ║ condition: seller_active_time_schedule_holidays_month_modal_sep_button не нажата;
 ║ result: 
 ║ && - seller_active_time_schedule_holidays_month_modal закрывается;
 ║ && - на seller_active_time_schedule_holidays_month (widget) отображается название месяца в соответствии с нажатой кнопкой;
 ╠ invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_month_modal_sep_button;
 ║ condition: seller_active_time_schedule_holidays_month_modal_sep_button нажата;
 ║ result: 
@@ -2320,12 +2446,14 @@ seller_active_time_schedule_holidays_month_modal располагается по
 ╙ && - seller_active_time_schedule_holidays_month_modal не закрывается.
 • seller_active_time_schedule_holidays_month_modal_oct:
 ╠ valid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_month_modal_oct_button;
 ║ condition: seller_active_time_schedule_holidays_month_modal_oct_button не нажата;
 ║ result: 
 ║ && - seller_active_time_schedule_holidays_month_modal закрывается;
 ║ && - на seller_active_time_schedule_holidays_month (widget) отображается название месяца в соответствии с нажатой кнопкой;
 ╠ invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_month_modal_oct_button;
 ║ condition: seller_active_time_schedule_holidays_month_modal_oct_button нажата;
 ║ result: 
@@ -2333,12 +2461,14 @@ seller_active_time_schedule_holidays_month_modal располагается по
 ╙ && - seller_active_time_schedule_holidays_month_modal не закрывается.
 • seller_active_time_schedule_holidays_month_modal_nov:
 ╠ valid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_month_modal_nov_button;
 ║ condition: seller_active_time_schedule_holidays_month_modal_nov_button не нажата;
 ║ result: 
 ║ && - seller_active_time_schedule_holidays_month_modal закрывается;
 ║ && - на seller_active_time_schedule_holidays_month (widget) отображается название месяца в соответствии с нажатой кнопкой;
 ╠ invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_month_modal_nov_button;
 ║ condition: seller_active_time_schedule_holidays_month_modal_nov_button нажата;
 ║ result: 
@@ -2346,12 +2476,14 @@ seller_active_time_schedule_holidays_month_modal располагается по
 ╙ && - seller_active_time_schedule_holidays_month_modal не закрывается.
 • seller_active_time_schedule_holidays_month_modal_dec:
 ╠ valid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_month_modal_dec_button;
 ║ condition: seller_active_time_schedule_holidays_month_modal_dec_button не нажата;
 ║ result: 
 ║ && - seller_active_time_schedule_holidays_month_modal закрывается;
 ║ && - на seller_active_time_schedule_holidays_month (widget) отображается название месяца в соответствии с нажатой кнопкой;
 ╠ invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_schedule_holidays_month_modal_dec_button;
 ║ condition: seller_active_time_schedule_holidays_month_modal_dec_button нажата;
 ║ result: 
@@ -2384,7 +2516,7 @@ seller_active_time_schedule_holidays_month_modal располагается по
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 При нажатии на seller_active_time_auto_button всплывает seller_active_time_auto_screen с заголовком "ЧЕРЕЗ GPS ПОЗИЦИОНИРОВАНИЕ". Всего в seller_active_time_auto_screen 4 секции: 
 
-                   codename:                     type:          button_name:   default_color:       valid/invalid:          important:
+                   codename:                     type:          designation:   default_color:       valid/invalid:          important:
 s1) [ seller_active_time_auto_header     ]     [ header    ]        		     
 s2) [ seller_active_time_auto_protip     ]     [ paragraph ]  
 s3) [ seller_active_time_auto_detection  ]     [ button    ]    "ОПРЕДЕЛИТЬ"    [ color2 ]        [ color1 / color2 ]         [ no ]
@@ -2401,11 +2533,13 @@ s3) Кнопка seller_active_time_auto_detection располагается п
 ✠ actions
 • seller_active_time_auto_detection:
 ╠ valid / invalid 
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_auto_detection_button;
 ║ condition: в любой ситуации;
 ╙ result: активируется seller_active_time_auto_detection_function.
 • seller_active_time_auto_button_no:
 ╠ valid / invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_auto_button_no;
 ║ condition: в любой ситуации;
 ║ result:
@@ -2413,6 +2547,7 @@ s3) Кнопка seller_active_time_auto_detection располагается п
 ╙ && - совершается переход к setting_seller_active_screen.
 • seller_active_time_auto_button_yes:
 ╠ valid / invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_auto_button_yes;
 ║ condition: в любой ситуации;
 ║ result:
@@ -2450,7 +2585,7 @@ s3) Кнопка seller_active_time_auto_detection располагается п
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 При нажатии на seller_active_time_manual_button всплывает seller_active_time_manual_screen с заголовком "ЧЕРЕЗ РУЧНОЕ УПРАВЛЕНИЕ". Всего в seller_active_time_manual_screen 4 секции: 
 
-                   codename:                        type:        button_name:     default_color:        valid/invalid:       important:
+                   codename:                        type:        designation:     default_color:        valid/invalid:       important:
 s1) [ seller_active_time_manual_header     ]    [ header    ]        		      
 s2) [ seller_active_time_manual_protip     ]    [ paragraph ]  
 s3) [ seller_active_time_manual_detection  ]    [ button    ]    "ВЫБРАТЬ"         [ color2 ]         [ color1 / color2 ]      [ no ]
@@ -2466,12 +2601,14 @@ s3) Кнопка seller_active_time_manual_detection располагается 
 
 ✠ actions
 • seller_active_time_manual_detection:
-╠ valid / invalid 
+╠ valid / invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_manual_detection_button;
 ║ condition: в любой ситуации;
 ╙ result: активируется seller_active_time_manual_detection_function.
 • seller_active_time_manual_button_no:
 ╠ valid / invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_manual_button_no;
 ║ condition: в любой ситуации;
 ║ result:
@@ -2479,6 +2616,7 @@ s3) Кнопка seller_active_time_manual_detection располагается 
 ╙ && - совершается переход к setting_seller_active_screen.
 • seller_active_time_manual_button_yes:
 ╠ valid / invalid
+║ • gesture: tap
 ║ occasion: нажатие seller_active_time_manual_button_yes;
 ║ condition: в любой ситуации;
 ║ result:
@@ -2522,6 +2660,7 @@ s3) Кнопка seller_active_time_manual_detection располагается 
 ✠ actions
 • setting_seller_img_button:
 ╠ valid / invalid
+║ • gesture: tap
 ║ occasion: нажатие setting_seller_img_button;
 ║ condition: в любой ситуации;
 ╙ result: открывается setting_seller_img_screen;
@@ -2538,7 +2677,7 @@ s3) Кнопка seller_active_time_manual_detection располагается 
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 Экран setting_seller_img_screen предназначенный для настройки аватара представлен 5 секциями расположенными сверху-вниз в следующем порядке:
 
-                codename:                         type:         button_name:     default_color:       valid/invalid:         important:
+                codename:                         type:         designation:     default_color:       valid/invalid:         important:
 s1) [ setting_seller_img_header       ]        [ header    ]        		      
 s2) [ setting_seller_img_protip       ]        [ paragraph ]  
 s3) [ setting_seller_img_frame        ] секция из редактируемой области и 2 расположенных вряд кнопок:
@@ -2596,35 +2735,42 @@ s4) Содержание заголовка setting_seller_img_add_header: "ДО
 ║ condition: если setting_seller_img_image вставлено в setting_seller_img_frame_edit;
 ║ result: setting_seller_img_image уменьшается (zoom out).
 ╠ invalid 
+║ • gesture: any
 ║ occasion: жест или касание любого типа в области setting_seller_img_frame_edit;
 ║ condition: если setting_seller_img_image не вставлено в setting_seller_img_frame_edit;
 ╙ result: setting_seller_img_frame_edit не реагирует.
 • setting_seller_img_frame_test:
 ╠ valid
+║ • gesture: tap
 ║ occasion: нажатие setting_seller_img_frame_test_button;
 ║ condition: если setting_seller_img_image вставлено в setting_seller_img_frame_edit;
 ║ result: к setting_seller_img_image, исключая область входящую в setting_seller_img_frame_zoom, применяется эффект blur=50%. 
 ╠ invalid
+║ • gesture: tap
 ║ occasion: нажатие setting_seller_img_frame_test_button;
 ║ condition: если setting_seller_img_image не вставлено в setting_seller_img_frame_edit;
 ╙ result: setting_seller_img_frame_test_button не реагирует на нажатие. 
 • setting_seller_img_frame_protip:
 ╠ valid / invalid
+║ • gesture: tap
 ║ occasion: нажатие setting_seller_img_frame_protip_button;
 ║ condition: в любой ситуации;
 ╙ result: всплытие setting_seller_img_frame_protip_popover. 
 • setting_seller_img_add_selfie:
 ╠ valid / invalid 
+║ • gesture: tap
 ║ occasion: нажатие setting_seller_img_add_selfie_button;
 ║ condition: в любой ситуации;
 ╙ result: открывается приложение для работы камеры устройства.
 • setting_seller_img_add_gallery:
 ╠ valid / invalid
+║ • gesture: tap
 ║ occasion: нажатие setting_seller_img_add_gallery_button;
 ║ condition: в любой ситуации;
 ║ result: открывается приложение галереи от куда можно взять изображение.
 • setting_seller_img_button_no:
 ╠ valid / invalid
+║ • gesture: tap
 ║ occasion: нажатие setting_seller_img_button_no;
 ║ condition: в любой ситуации;
 ║ result:
@@ -2632,6 +2778,7 @@ s4) Содержание заголовка setting_seller_img_add_header: "ДО
 ╙ && - совершается переход к init_usual_screen.
 • setting_seller_img_button_yes:
 ╠ valid / invalid
+║ • gesture: tap
 ║ occasion: нажатие setting_seller_img_button_yes;
 ║ condition: в любой ситуации;
 ║ result:
@@ -2700,6 +2847,7 @@ s4) Содержание заголовка setting_seller_img_add_header: "ДО
 ✠ actions
 • setting_seller_skin_button:
 ╠ valid / invalid
+║ • gesture: tap
 ║ occasion: нажатие setting_seller_skin_button;
 ║ condition: в любой ситуации;
 ╙ result: открывается setting_seller_skin_screen;
@@ -2720,7 +2868,7 @@ s4) Содержание заголовка setting_seller_img_add_header: "ДО
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 Экран setting_seller_skin_screen предназначенный для настройки фона и обоев интерфейса представлен 5 секциями расположенными сверху-вниз в следующем порядке:
  
-                codename:                          type:           button_name:    default_color:     valid/invalid:      important:     location:
+                codename:                          type:           designation:    default_color:     valid/invalid:      important:     location:
 s1) [ setting_seller_skin_header             ]   [ header    ]                                                                           [ center ]
 s2) [ setting_seller_skin_protip             ]   [ paragraph ]                                                                           [ center ] 
 s3) [ setting_seller_skin_theme              ]   секция из 4 элементов расположенных сверху-вниз в следующем порядке:
@@ -2757,6 +2905,7 @@ setting_seller_theme_store никогда не очищается.
 ✠ actions
 • setting_seller_skin_theme_light_button:
 ╠ valid 
+║ • gesture: tap
 ║ • theme: light
 ║ occasion: нажатие setting_seller_skin_theme_light_button;
 ║ condition:
@@ -2768,11 +2917,13 @@ setting_seller_theme_store никогда не очищается.
 ║ && - setting_seller_skin_theme_light помещается в setting_seller_theme_buffer;
 ║ && - активируется тема setting_seller_skin_theme_light;
 ╠ invalid
+║ • gesture: tap
 ║ occasion: нажатие setting_seller_skin_theme_light_button;
 ║ condition: активирована setting_seller_skin_theme_light;
 ╙ result: setting_seller_skin_theme_light_button не реагирует на нажатие.
 • setting_seller_skin_theme_gray_button:
 ╠ valid 
+║ • gesture: tap
 ║ occasion: нажатие setting_seller_skin_theme_gray_button;
 ║ condition:
 ║ || - активирована setting_seller_skin_theme_light;
@@ -2783,11 +2934,13 @@ setting_seller_theme_store никогда не очищается.
 ║ && - setting_seller_skin_theme_gray помещается в setting_seller_theme_buffer;
 ║ && - активируется тема setting_seller_skin_theme_gray.
 ╠ invalid
+║ • gesture: tap
 ║ occasion: нажатие setting_seller_skin_theme_gray_button;
 ║ condition: активирована setting_seller_skin_theme_gray;
 ╙ result: setting_seller_skin_theme_gray_button не реагирует на нажатие.
 • setting_seller_skin_theme_dark_button:
 ╠ valid 
+║ • gesture: tap
 ║ occasion: нажатие setting_seller_skin_theme_dark_button;
 ║ condition:
 ║ || - активирована setting_seller_skin_theme_light;
@@ -2798,16 +2951,19 @@ setting_seller_theme_store никогда не очищается.
 ║ && - setting_seller_skin_theme_dark помещается в setting_seller_theme_buffer;
 ║ && - активируется тема setting_seller_skin_theme_dark;
 ╠ invalid
+║ • gesture: tap
 ║ occasion: нажатие setting_seller_skin_theme_dark_button;
 ║ condition: активирована setting_seller_skin_theme_dark;
 ╙ result: setting_seller_skin_theme_dark_button не реагирует на нажатие.
 • setting_seller_skin_custom_button:
 ╠ valid / invalid
+║ • gesture: tap
 ║ occasion: нажатие setting_seller_skin_custom_button;
 ║ condition: в любой ситуации;
 ║ result: открывается gallery_app для выбора setting_seller_skin_image.
 • gallery_app_button (внешняя компонента)
 ╠ valid / invalid
+║ • gesture: tap
 ║ occasion: нажатие gallery_app_button;
 ║ condition: в любой ситуации;
 ║ result: 
@@ -2816,15 +2972,18 @@ setting_seller_theme_store никогда не очищается.
 ║ && - активируются обои на основе setting_seller_skin_image для setting_seller_skin_screen;
 • setting_seller_skin_custom_slider:
 ╠ valid
+║ • gesture: drag left / drag right
 ║ occasion: передвижение setting_seller_skin_custom_slider в позицию, при которой значение opacity < 1;
 ║ condition: если setting_seller_skin_image находится в setting_seller_skin_buffer;
 ║ result: применяется эффект opacity к обоям в пропорции соответствующей значению выводимому в setting_seller_skin_custom_widget.
 ╠ invalid
+║ • gesture: drag left / drag right
 ║ occasion: передвижение setting_seller_skin_custom_slider в позицию, при которой значение opacity < 1;
 ║ condition: если setting_seller_skin_image не находится в setting_seller_skin_buffer;
 ╙ result: ни setting_seller_skin_custom_slider ни setting_seller_skin_custom_widget не реагируют на попытку воздействия.
 • setting_seller_skin_button_no:
 ╠ valid / invalid
+║ • gesture: tap
 ║ occasion: нажатие setting_seller_skin_button_no;
 ║ condition: в любой ситуации;
 ║ result:
@@ -2832,6 +2991,7 @@ setting_seller_theme_store никогда не очищается.
 ╙ && - совершается переход к init_usual_screen.
 • setting_seller_skin_button_yes:
 ╠ valid / invalid
+║ • gesture: tap
 ║ occasion: нажатие setting_seller_skin_button_yes;
 ║ condition: в любой ситуации;
 ║ result:
@@ -2927,6 +3087,7 @@ setting_seller_theme_store никогда не очищается.
 ✠ actions
 • setting_seller_button_no:
 ╠ valid / invalid
+║ • gesture: tap
 ║ occasion: нажатие setting_seller_button_no;
 ║ condition: в любой ситуации;
 ║ result:
@@ -2934,6 +3095,7 @@ setting_seller_theme_store никогда не очищается.
 ╙ && - совершается переход к seller_shop_screen.
 • setting_seller_button_yes:
 ╠ valid
+║ • gesture: tap
 ║ occasion: нажатие setting_seller_button_yes;
 ║ condition: 
 ║ && - valid по setting_user_username;
@@ -2946,6 +3108,7 @@ setting_seller_theme_store никогда не очищается.
 ║ && - init_usual_screen закрывается с сохранением изменений в базу данных seller_db;
 ║ && - совершается переход к seller_shop_screen.
 ╠ invalid
+║ • gesture: tap
 ║ occasion: нажатие setting_seller_button_yes;
 ║ condition: 
 ║ || - invalid по setting_user_username;
@@ -2999,9 +3162,6 @@ s4) [ setting_seller_usual_popover_button ]  "ПОДТВЕРДИТЬ"
 
 На телефон юзера отправляется sms в виде четырехзначного init_usual_pincode, после вставки которого в setting_seller_usual_popover_input, происходит процесс подтверждения номера телефона аккаунта seller.
 После успешного прохождения процесса подтверждения, данные формы init_usual_screen отправляются с устройства юзера в базу данных seller_db.
-
-
-
 
 
 
