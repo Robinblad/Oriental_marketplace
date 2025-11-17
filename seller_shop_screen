@@ -23,7 +23,9 @@ color6 - middle;
 🡆 seller_shop_screen
 ■■■■■■■■■■■■■■■■■■■■
 seller_shop_screen является домашним экраном seller_mode (является первым экраном который отображается для seller после инициализации через init_trial_screen и init_usual_screen), вход в который осуществляется посредством кнопки "МАГАЗИН" на seller_shop_nav и представляет собой информационный экран с органами управления наиболее динамических настроек. seller_shop_screen разделен на 10 sections следующего содержания расположенных сверху-вниз:
- 
+
+✠ tables
+
                                           codename:                                     type:                    designation:           location:  interaction:
 s1)   ┌┬┬┬┬──[seller_shop_nav                                               ]  [section            ]                                     [ ✜ ✜ ]     [ no  ]
 ----  ││││└┬─[seller_shop_nav_calls                                         ]  [button             ]                                     [ ✜ 🡄 ]     [ yes ]
@@ -116,7 +118,7 @@ s7)    ┌┬────[seller_shop_searchscan                                
 ----       └ [seller_shop_searchscan_scan_right_label                       ]  [label              ]  [ "СКАН"                        ]  [ ✜ ✜ ]     [ yes ]
 s8)   ┌───┬──[seller_shop_stat                                              ]  [section_lev2       ]                                     [ 🡇 ✜ ]     [ no  ]
 ----  │   └┬─[seller_shop_stat_top                                          ]  [section_lev3       ]                                     [ 🡅 ✜ ]     [ no  ]
-----  │    └ [seller_shop_stat_top_label                                    ]  [label              ]                                     [ ✜ ✜ ]     [ no  ]
+----  │    └ [seller_shop_stat_top_label                                    ]  [label              ]  [ "за сегодня"                  ]  [ ✜ ✜ ]     [ no  ]
 ----  └┬┬────[seller_shop_stat_main                                         ]  [section_lev3       ]                                     [ 🡇 ✜ ]     [ no  ]
 ----   │└┬┬──[seller_shop_stat_main_sales                                   ]  [section_lev4+button]                                     [ ✜ 🡄 ]     [ yes ]
 ----   │ │└┬─[seller_shop_stat_main_sales_left                              ]  [section_lev5       ]                                     [ ✜ 🡄 ]     [ yes ]
@@ -824,128 +826,136 @@ s9)   ┌┬┬┬┬──[seller_nav                                          
 - content:  "НИЧЕГО НЕ НАЙДЕНО".
 
 
-
-
 🡆🡆 seller_shop_searcher_popover
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-Всплывающее окно seller_shop_searcher_popover отображает список лотов по релевантности поиска сверху-вниз, где вверху находится лот с наибольшей степенью релевантности. Релевантность рассчитывается на основании совпадения с seller_shop_searcher_popover_goods_name. Каждый лот представлен строкой lot_cover из 4 компонентов слева-направо: seller_shop_searcher_popover_goods_name, seller_shop_searcher_popover_goods_img, seller_shop_searcher_popover_goods_quantity_widget, seller_shop_searcher_popover_goods_status. Высота seller_shop_searcher_popover зависит от количества лотов в списке, по ширине занимает всю область экрана. Позиционирование seller_shop_searcher_popover делается по центру. Если высота seller_shop_searcher_popover выходит за границы экрана: 
-- у seller_shop_searcher_popover появляется скролл;
-- строка в топе списка прижимается к верхней границе экрана;
-- нижний край списка может выходить за видимую область экрана. 
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+Всплывающее окно seller_shop_searcher_popover локально расположенное над seller_shop_searchscan_searcher отображает список названий элементов/функций в качестве seller_shop_searcher_popover_list_object.
+
+✠ tables
+
+                           codename:                             type:                      designation:            location:    interaction:
+----   [seller_shop_searcher_popover_list             ]  [section_lev1       ]                                       [ ✜ ✜ ]       [ no  ]
+----   [seller_shop_searcher_popover_list_object      ]  [section_lev2+button]                                       [ ✜ ✜ ]       [ yes ]
+----   [seller_shop_searcher_popover_list_object_text ]  [label              ]  [ { string }                    ]    [ ✜ 🡄 ]       [ yes ]
+----   [seller_shop_searcher_popover_list_object_arrow]  [label              ]                                       [ ✜ 🡆 ]       [ yes ]
 
 ✠ details
-Что из себя представляет lot_cover:
-
-description:                         codename:                              type:           presentation:
-название лота     [ seller_shop_searcher_popover_goods_name            ]     [ data     ]     [ буквы + цифры  ]
-изображение лота  [ seller_shop_searcher_popover_goods_img             ]     [ picture  ]     [ изображение    ]
-количество        [ seller_shop_searcher_popover_goods_quantity_widget ]     [ widget   ]     [ цифры          ]
-статус лота       [ seller_shop_searcher_popover_goods_status          ]     [ picture  ]     [ иконка + буквы ]
- 
-1) seller_shop_searcher_popover_goods_name - наименование лота располагается в левой части lot_cover;
-2) seller_shop_searcher_popover_goods_img - изображение в качестве миниатюры представлено справа от seller_shop_searcher_popover_goods_name;
-3) seller_shop_searcher_popover_goods_quantity_widget - количественное выражение лота;
-4) seller_shop_searcher_popover_goods_status - в качестве иконки демонстрирует одно из 3 состояний: активно, распродано, в архиве.
+seller_shop_searcher_popover состоит из следующих составляющих:
+- seller_shop_searcher_popover_list - листинг seller_shop_searcher_popover_list_object величина которого обуславливается количеством seller_shop_searcher_popover_list_object. По размерам seller_shop_searcher_popover_list равен seller_shop_searcher_popover. Ширина seller_shop_searcher_popover_list равна seller_shop_searchscan_searcher. Если высота seller_shop_searcher_popover_list выходит за границы экрана: у seller_shop_searcher_popover_list появляется скролл; нижняя строка списка прижимается к seller_shop_searchscan_searcher; верхний край списка касается верхнего края экрана. 
+seller_shop_searcher_popover_list_object располагаются в seller_shop_searcher_popover_list по релевантности поиска снизу-вверх, где внизу находится наименование seller_shop_searcher_popover_list_object с наибольшей степенью релевантности. Релевантность рассчитывается на основании совпадения с объектом запроса. 
+--- seller_shop_searcher_popover_list_object - является отдельным вариантом результата поиска в виде одной строки данных состоящей из 2 элементов:
+----- seller_shop_searcher_popover_list_object_text - наименование результата поиска в качестве строгового значения расположенного в левой части seller_shop_searcher_popover_list_object;
+----- seller_shop_searcher_popover_list_object_arrow - иконка шиврона в правом направлении расположенного в правой части seller_shop_searcher_popover_list_object.
 
 ✠ actions
-• lot_cover:
+• seller_shop_searcher_popover_list_object:
 ╠ valid / invalid
 ║ • gesture: tap
-║ occasion: нажатие в любой области lot_cover;
-║ condition: in any situation;
-║ result: 
-║ || - если seller_shop_searcher_popover_goods_status = active, открывается seller_goods_screen с целевым лотом, lot_cover которого прижат к верхней границе экрана;
+║ occasion: нажатие любого seller_shop_searcher_popover_list_object;
+║ condition: при наличии минимум одного seller_shop_searcher_popover_list_object в seller_shop_searcher_popover_list;
+║ result:
+║ || - если seller_shop_searcher_popover_goods_status = active, открывается seller_goods_screen с целевым лотом, lot_cover которого прижат к верхней границе 
+║ экрана;
 ║ || - если seller_shop_searcher_popover_goods_status = sold, открывается seller_goods_screen с целевым лотом, lot_cover которого прижат к верхней границе экрана;
 ╙ || - если lot_cover имеет seller_shop_searcher_popover_goods_status = closed, открывается seller_goods_screen_closed с целевым лотом, lot_cover которого прижат к верхней границе экрана.
 
+✠ logics
+Результаты запроса перед выдачей сопоставляются с базой данных ссылок на различные части приложения, которым присвоены соответствующие теги. При наибольшей корреляции по тегам, когда объект запроса имеет больше тегов по которым коррелирует целевой запрос, - дается ссылка на данный объект в теле seller_shop_searcher_popover_list_object и тег с наивысшим коэффициентом корреляции выводится в качестве seller_shop_searcher_popover_list_object_text. Тегирование будет приложено в последующих версиях документа.
+
 ✠ color_states
 ┌─
-│lot_cover  
+│seller_shop_searcher_popover_list_object
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color0
+│------ in any situation
+└─
+┌─
+│seller_shop_searcher_popover_list_object
 │---------------------------
 │⟪⟪ border ⟫⟫ 
-│--------
-│• color2
-│------ in any situation.
+├────────
+│• color4
+│------ in any situation
 └─
- 
+┌─
+│seller_shop_searcher_popover_list_object_text
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+┌─
+│seller_shop_searcher_popover_list_object_arrow
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in any situation
+└─
+
 
 ■ seller_shop_stat
 
 ✠ details
-Секция seller_shop_stat состоит из компонента seller_shop_stat_sales выполняющего роль виджета демонстрирующего количество суточных продаж и рассчитываемого на основании количества покупателей, и компонента seller_shop_stat_profit выполняющего роль виджета демонстрирующего сумму дохода и рассчитываемого на основании проданных лотов: 
-1) seller_shop_stat_sales - выполняющий комбинированную функцию widget + button и включающий 2 основных элемента:
--- seller_shop_stat_sales_header - представлен заголовком "ПРОДАЖИ";
--- seller_shop_stat_sales_value - отображает количество покупателей за последние 24 часа.
-2) seller_shop_stat_profit - выполняющий комбинированную функцию widget + button и включающий 2 основных элемента:
--- seller_shop_stat_profit_header - представлен заголовком "ДОХОД";
--- seller_shop_stat_profit_value - отображает доход в указанной валюте за последние 24 часа.
- 
+Секция seller_shop_stat состоит из 3 компонентов: 
+1) --- seller_shop_stat_top - расположен вверху seller_shop_stat в качестве заголовка содержащий элемент seller_shop_stat_top_label:
+   ----- seller_shop_stat_top_label - текстовый элемент отображающий: "за сегодня";
+2) --- seller_shop_stat_main_sales - выполняет роль виджета демонстрирующего количество суточных продаж и рассчитываемого на основании количества ордеров включающий 2 основных элемента:
+   ----- seller_shop_stat_main_sales_left - прямоугольный блок расположен слева, включает текстовый элемент seller_shop_stat_main_sales_left_label; 
+   ------- seller_shop_stat_main_sales_left_label - представлен заголовком "ПРОДАЖИ:";
+   ----- seller_shop_stat_main_sales_right - прямоугольный блок расположен справа, включает текстовый элемент seller_shop_stat_main_sales_right_value; 
+   ------- seller_shop_stat_main_sales_right_value - в качестве числового значения отображает количество ордеров за последние 24 часа.
+3) --- seller_shop_stat_main_profit - выполняет роль виджета демонстрирующего сумму дохода рассчитываемого на основании проданных лотов и включающий 2 основных элемента:
+   ----- seller_shop_stat_main_profit_left - прямоугольный блок расположен слева, включает текстовый элемент seller_shop_stat_main_profit_left_label; 
+   ------- seller_shop_stat_main_profit_left_label - представлен заголовком "ДОХОД:";
+   ----- seller_shop_stat_main_profit_right - прямоугольный блок расположен справа, включает текстовый элемент seller_shop_stat_main_profit_right_value; 
+   ------- seller_shop_stat_main_profit_right_value - в качестве числового значения отображает доход в указанной валюте за последние 24 часа. 
+   
 ✠ actions
-• seller_shop_stat_sales:
+• seller_shop_stat_main_sales:
 ╠ valid / invalid
 ║ • gesture: tap
-║ occasion: нажатие в любой области seller_shop_stat_sales;
+║ occasion: нажатие в любой области seller_shop_stat_main_sales;
 ║ condition: in any situation;
-╙ result: открывается seller_order_screen.
-• seller_shop_stat_profit:
+║ result: 
+║ || - открывается seller_account_history_screen.
+╙ || - в seller_account_history_screen подсвечиваются ордера которые были обработаны за последние 24 часа (подсветка исчезает при закрытии seller_account_history_screen).
+• seller_shop_stat_main_profit:
 ╠ valid / invalid
 ║ • gesture: tap
-║ occasion: нажатие в любой области seller_shop_stat_profit;
+║ occasion: нажатие в любой области seller_shop_stat_main_profit;
 ║ condition: in any situation;
-╙ result: открывается seller_order_screen.
+║ result:
+║ || - открывается seller_account_history_screen.
+╙ || - в seller_account_history_screen подсвечиваются ордера которые были обработаны за последние 24 часа (подсветка исчезает при закрытии seller_account_history_screen).
 
 ✠ color_states
 ┌─
-│seller_shop_stat_sales  
+│seller_shop_stat_top_label
+│seller_shop_stat_main_sales_left_label
+│seller_shop_stat_main_sales_right_value
+│seller_shop_stat_main_profit_left_label
+│seller_shop_stat_main_profit_right_value
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+┌─
+│seller_shop_stat_main_sales  
+│seller_shop_stat_main_profit
 │---------------------------
 │⟪⟪ border ⟫⟫ 
-│--------
+├────────
 │• color2
-│------ в default_state;
+│------ в default_state
+├────────
 │• color5
-│------ в pressing_state.
-└─
-┌─
-│seller_shop_stat_sales_header  
-│---------------------------
-│⟪⟪ body ⟫⟫ 
-│--------
-│• color2
-│------ in any situation.
-└─
-┌─
-│seller_shop_stat_sales_value  
-│---------------------------
-│⟪⟪ body ⟫⟫ 
-│--------
-│• color2
-│------ in any situation.
-└─
-┌─
-│seller_shop_stat_profit  
-│---------------------------
-│⟪⟪ border ⟫⟫ 
-│--------
-│• color2
-│------ в default_state;
-│• color5
-│------ в pressing_state.
-└─
-┌─
-│seller_shop_stat_profit_header  
-│---------------------------
-│⟪⟪ body ⟫⟫ 
-│--------
-│• color2
-│------ in any situation.
-└─
-┌─
-│seller_shop_stat_profit_value  
-│---------------------------
-│⟪⟪ body ⟫⟫ 
-│--------
-│• color2
-│------ in any situation.
+│------ в pressing_state
 └─
 
 
@@ -1086,7 +1096,6 @@ description:                         codename:                              type
 │• color2
 │------ в activated_state 
 └─
-
 
 
 
