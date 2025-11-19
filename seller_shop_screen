@@ -87,24 +87,24 @@ s5)     ┌┬┬──[seller_shop_ship                                        
 ----       ├ [seller_shop_ship_toggle_label                                 ]  [label              ]  [ { boolean }                   ]  [ 🡅 ✜ ]     [ yes ]
 ----       ├ [seller_shop_ship_toggle_switcher                              ]  [toggle             ]                                     [ 🡇 🡄 ]     [ yes ]
 ----       └ [seller_shop_ship_toggle_indicator                             ]  [indicator          ]                                     [ 🡇 🡆 ]     [ yes ]
-s6) ┌─────┬──[seller_shop_actions                                           ]  [section_lev2       ]                                     [ ✜ ✜ ]     [ no  ]
-----│     └┬─[seller_shop_actions_top                                       ]  [section_lev3       ]                                     [ 🡅 ✜ ]     [ no  ]
-----│      └ [seller_shop_actions_top_label                                 ]  [label              ]  [ "последние события"           ]  [ ✜ ✜ ]     [ no  ]
-----└┬───────[seller_shop_actions_list                                      ]  [section_lev3       ]                                     [ ✜ ✜ ]     [ no  ]
----- └┬───┬──[seller_shop_actions_list_item                                 ]  [section_lev4       ]                                     [ ✜ ✜ ]     [ yes ]
-----  │   └┬─[seller_shop_actions_list_item_left                            ]  [section_lev5       ]                                     [ ✜ 🡄 ]     [ yes ]
-----  │    ├ [seller_shop_actions_list_item_left_icon                       ]  [icon               ]                                     [ ✜ 🡄 ]     [ yes ]
-----  │    └ [seller_shop_actions_list_item_left_name                       ]  [label              ]  [ { string }                    ]  [ ✜ 🡆 ]     [ yes ]
-----  └┬┬────[seller_shop_actions_list_item_right                           ]  [section_lev5       ]                                     [ ✜ 🡆 ]     [ yes ]
-----   │└┬─┬─[seller_shop_actions_list_item_right_header                    ]  [section_lev6       ]                                     [ 🡅 ✜ ]     [ yes ]
-----   │ │ └ [seller_shop_actions_list_item_right_header_time               ]  [value              ]  [ { number }                    ]  [ ✜ 🡄 ]     [ yes ]
-----   │ └┬┬─[seller_shop_actions_list_item_right_header_cause              ]  [section_lev7       ]                                     [ ✜ 🡆 ]     [ yes ]
-----   │  │└ [seller_shop_actions_list_item_right_header_cause_object       ]  [value              ]  [ { string }                    ]  [ ✜ 🡄 ]     [ yes ]
-----   │  └┬─[seller_shop_actions_list_item_right_header_cause_subject      ]  [section_lev8       ]  [ { string }                    ]  [ ✜ 🡆 ]     [ yes ]
-----   │   ├ [seller_shop_actions_list_item_right_header_cause_subject_value]  [value              ]  [ { number }                    ]  [ ✜ 🡄 ]     [ yes ]
-----   │   └ [seller_shop_actions_list_item_right_header_cause_subject_text ]  [text               ]  [ " ордеров"                    ]  [ ✜ 🡆 ]     [ yes ]
-----   └───┬─[seller_shop_actions_list_item_right_event                     ]  [section_lev6       ]                                     [ 🡇 ✜ ]     [ yes ]
-----       └ [seller_shop_actions_list_item_right_event_text                ]  [text               ]  [ { string }                    ]  [ ✜ ✜ ]     [ yes ]
+s6) ┌─────┬──[seller_shop_acts                                              ]  [section_lev2       ]                                     [ ✜ ✜ ]     [ no  ]
+----│     └┬─[seller_shop_acts_top                                          ]  [section_lev3       ]                                     [ 🡅 ✜ ]     [ no  ]
+----│      └ [seller_shop_acts_top_label                                    ]  [label              ]  [ "последние события"           ]  [ ✜ ✜ ]     [ no  ]
+----└┬───────[seller_shop_acts_list                                         ]  [section_lev3       ]                                     [ ✜ ✜ ]     [ no  ]
+---- └┬───┬──[seller_shop_acts_list_item                                    ]  [section_lev4       ]                                     [ ✜ ✜ ]     [ yes ]
+----  │   └┬─[seller_shop_acts_list_item_left                               ]  [section_lev5       ]                                     [ ✜ 🡄 ]     [ yes ]
+----  │    ├ [seller_shop_acts_list_item_left_icon                          ]  [icon               ]                                     [ ✜ 🡄 ]     [ yes ]
+----  │    └ [seller_shop_acts_list_item_left_name                          ]  [label              ]  [ { string }                    ]  [ ✜ 🡆 ]     [ yes ]
+----  └┬┬────[seller_shop_acts_list_item_right                              ]  [section_lev5       ]                                     [ ✜ 🡆 ]     [ yes ]
+----   │└┬─┬─[seller_shop_acts_list_item_right_header                       ]  [section_lev6       ]                                     [ 🡅 ✜ ]     [ yes ]
+----   │ │ └ [seller_shop_acts_list_item_right_header_time                  ]  [value              ]  [ { number }                    ]  [ ✜ 🡄 ]     [ yes ]
+----   │ └┬┬─[seller_shop_acts_list_item_right_header_cause                 ]  [section_lev7       ]                                     [ ✜ 🡆 ]     [ yes ]
+----   │  │└ [seller_shop_acts_list_item_right_header_cause_object          ]  [value              ]  [ { string }                    ]  [ ✜ 🡄 ]     [ yes ]
+----   │  └┬─[seller_shop_acts_list_item_right_header_cause_subject         ]  [section_lev8       ]  [ { string }                    ]  [ ✜ 🡆 ]     [ yes ]
+----   │   ├ [seller_shop_acts_list_item_right_header_cause_subject_value   ]  [value              ]  [ { number }                    ]  [ ✜ 🡄 ]     [ yes ]
+----   │   └ [seller_shop_acts_list_item_right_header_cause_subject_text    ]  [text               ]  [ " ордеров"                    ]  [ ✜ 🡆 ]     [ yes ]
+----   └───┬─[seller_shop_acts_list_item_right_event                        ]  [section_lev6       ]                                     [ 🡇 ✜ ]     [ yes ]
+----       └ [seller_shop_acts_list_item_right_event_text                   ]  [text               ]  [ { string }                    ]  [ ✜ ✜ ]     [ yes ]
 s7)    ┌┬────[seller_shop_searchscan                                        ]  [section_lev2       ]                                     [ ✜ ✜ ]     [ no  ]
 ----   │└┬───[seller_shop_searchscan_searcher                               ]  [section_lev3       ]                                     [ ✜ 🡄 ]     [ yes ]
 ----   │ └┬┬─[seller_shop_searchscan_searcher_input                         ]  [section_lev4+input ]                                     [ ✜ 🡄 ]     [ yes ]
@@ -130,7 +130,7 @@ s8)   ┌───┬──[seller_shop_stat                                    
 ----     │ └ [seller_shop_stat_main_profit_left_label                       ]  [label              ]  [ "Доход"                       ]  [ ✜ ✜ ]     [ yes ]
 ----     └─┬─[seller_shop_stat_main_profit_right                            ]  [section_lev5       ]                                     [ ✜ 🡆 ]     [ yes ]
 ----       └ [seller_shop_stat_main_profit_right_value                      ]  [widget             ]  [ { number + "c" }              ]  [ ✜ ✜ ]     [ yes ]
-s9)   ┌┬┬┬┬──[seller_nav                                                    ]  [section_lev1       ]                                     [ ✜ ✜ ]     [ no  ]
+s9)   ┌┬┬┬┬──[seller_nav                                                    ]  [section            ]                                     [ ✜ ✜ ]     [ no  ]
 ----  ││││└┬─[seller_nav_demand                                             ]  [button             ]                                     [ ✜ 🡄 ]     [ yes ]
 ----  ││││ ├ [seller_nav_demand_label                                       ]  [label              ]  [ "СПРОС"                       ]  [ ✜ ✜ ]     [ no  ]  
 ----  ││││ └ [seller_nav_demand_badge                                       ]  [badge              ]  [ { number }                    ]  [ 🡅 🡆 ]     [ no  ] 	
@@ -155,10 +155,10 @@ s9)   ┌┬┬┬┬──[seller_nav                                          
 
 1) seller_shop_nav_calls - кнопка с наименованием и бейджем, предназначена для перехода к seller_shop_call_screen;
 -- seller_shop_nav_calls_label - представлен наименованием "ЗВОНКИ";
--- seller_shop_nav_calls_badge - размещается в нижнем правом углу, отображает количество ????? hunt_screen_demand_message ????? в seller_shop_call_screen.
+-- seller_shop_nav_calls_badge - размещается в нижнем правом углу, отображает количество новых звонков с момента последнего посещения seller_shop_call_screen.
 2) seller_shop_nav_visitors - кнопка с наименованием и бейджем, предназначена для перехода к seller_visitors_screen;
 -- seller_shop_nav_visitors_label - представлен наименованием "КЛИЕНТЫ";
--- seller_shop_nav_visitors_badge - размещается в нижнем правом углу, отображает количество новых (с момента последнего открытия seller_shop_visitors_screen) посетителей за все время.
+-- seller_shop_nav_visitors_badge - размещается в нижнем правом углу, отображает количество новых (с момента последнего посещения seller_shop_visitors_screen) посетителей за все время.
 3) seller_shop_nav_shop - кнопка с наименованием и бейджем, предназначена для перехода к seller_shop_screen (в seller_shop_screen активирована по умолчанию);
 -- seller_shop_nav_shop_label - представлен наименованием "МАГАЗИН";
 -- seller_shop_nav_shop_badge - размещается в нижнем правом углу, отображает количество посетителей находящихся в магазине в текущий момент.
@@ -652,44 +652,47 @@ s9)   ┌┬┬┬┬──[seller_nav                                          
 └─
 
 
-■ seller_shop_actions
+■ seller_shop_acts
 
 ✠ details
-Является представлением данных из seller_shop_actions_screen, которые выводится в миниатюрном окне seller_shop_actions находящемся ниже центра экрана и занимающем порядка 20-25% пространства по вертикали. В seller_shop_actions выводятся самые последние данные (исключая события инициированные seller) в виде строк seller_shop_actions_list_item представляющих дискретные акты событий. seller_shop_actions имеет следующую структуру:
---- seller_shop_actions_top - панель находящаяся в верхней части seller_shop_actions;
------ seller_shop_actions_top_label - заголовок "ПОСЛЕДНИЕ СОБЫТИЯ";
---- seller_shop_actions_list - листинг seller_shop_actions_list_item ранжированный в хронологичестком порядке сверху-вниз, где seller_shop_actions_list_item находящийся в топе является последним событием;
------ seller_shop_actions_list_item - данные по одному событию размещающиеся в 2 строках, состоит из 2 компонентов:
-------- seller_shop_actions_list_item_left - находящийся в левой части, содержит информацию о типе события и его инициаторе, содержит 2 элемента;
---------- seller_shop_actions_list_item_left_icon - иконка символизирующая тип события, размещается слева;
---------- seller_shop_actions_list_item_left_name - имя инициатора события, размещается справа;
-------- seller_shop_actions_list_item_right - находящийся в правой части, содержит информацию о событии, содержит 2 компонента;
---------- seller_shop_actions_list_item_right_header - верхняя часть содержащая описательные данные события, содержит 2 компонента;
------------ seller_shop_actions_list_item_right_header_time - отображает время по шаблону HH:MM, расположен слева;
------------ seller_shop_actions_list_item_right_header_cause - отображает псевдоним ордера (если есть), либо количество ордеров buyer (инициатора события);
-------------- seller_shop_actions_list_item_right_header_cause_object - представляет собой бинарное строковое значение которое может быть либо: "ордер" (если текущее событие совершается в рамках открытого ордера), либо "клиент" (если текущее событие совершается вне рамок открытого ордера); 
-------------- seller_shop_actions_list_item_right_header_cause_subject - если текущее событие происходит в рамках открытого ордера, представляет собой строковое значение с псевдонимом ордера; если текущее событие совершается вне рамок открытого ордера, тогда seller_shop_actions_list_item_right_header_cause_subject содержит 2 элемента находящихся в круглых скобках расположенных друг за другом слева-направо:
---------------- seller_shop_actions_list_item_right_header_cause_subject_value - числовое значение отображающее количество ордеров сделанных инициатором события согласно истории ордеров;
---------------- seller_shop_actions_list_item_right_header_cause_subject_text - отображает слово: " ордеров", располагается справа от seller_shop_actions_list_item_right_header_cause_subject_value;
-------------- seller_shop_actions_list_item_right_event - расположен под seller_shop_actions_list_item_right_header, является телом события, представляя собой строковое значение, содержание которого зависит от типа события (например, если это событие чата, то приводится его отрывок в одну строку [truncate_text: max_lines=1]; если это событие по ордеру, то это может выражаться "открыт" или "закрыт" и т.д. (детальное изложение будет приложено в последующих версиях документа));
+Является представлением данных из seller_shop_actions_screen, которые выводится в миниатюрном окне seller_shop_acts находящемся ниже центра экрана и занимающем порядка 20-25% пространства по вертикали. В seller_shop_acts выводятся самые последние данные (исключая события инициированные seller) в виде строк seller_shop_acts_list_item представляющих дискретные акты событий. seller_shop_acts имеет следующую структуру:
+--- seller_shop_acts_top - панель находящаяся в верхней части seller_shop_acts;
+----- seller_shop_acts_top_label - заголовок "ПОСЛЕДНИЕ СОБЫТИЯ";
+--- seller_shop_acts_list - листинг seller_shop_acts_list_item ранжированный в хронологичестком порядке сверху-вниз, где seller_shop_acts_list_item находящийся в топе является последним событием;
+----- seller_shop_acts_list_item - данные по одному событию размещающиеся в 2 строках, состоит из 2 компонентов:
+------- seller_shop_acts_list_item_left - находящийся в левой части, содержит информацию о типе события и его инициаторе, содержит 2 элемента;
+--------- seller_shop_acts_list_item_left_icon - иконка символизирующая тип события, размещается слева;
+--------- seller_shop_acts_list_item_left_name - имя инициатора события, размещается справа;
+------- seller_shop_acts_list_item_right - находящийся в правой части, содержит информацию о событии, содержит 2 компонента;
+--------- seller_shop_acts_list_item_right_header - верхняя часть содержащая описательные данные события, содержит 2 компонента;
+----------- seller_shop_acts_list_item_right_header_time - отображает время по шаблону HH:MM, расположен слева;
+----------- seller_shop_acts_list_item_right_header_cause - отображает псевдоним ордера (если есть), либо количество ордеров buyer (инициатора события);
+------------- seller_shop_acts_list_item_right_header_cause_object - представляет собой бинарное строковое значение которое может быть либо: "ордер" (если текущее событие совершается в рамках открытого ордера), либо "клиент" (если текущее событие совершается вне рамок открытого ордера); 
+------------- seller_shop_acts_list_item_right_header_cause_subject - если текущее событие происходит в рамках открытого ордера, представляет собой строковое значение с псевдонимом ордера; если текущее событие совершается вне рамок открытого ордера, тогда seller_shop_acts_list_item_right_header_cause_subject содержит 2 элемента находящихся в круглых скобках расположенных друг за другом слева-направо:
+--------------- seller_shop_acts_list_item_right_header_cause_subject_value - числовое значение отображающее количество ордеров сделанных инициатором события согласно истории ордеров;
+--------------- seller_shop_acts_list_item_right_header_cause_subject_text - отображает слово: " ордеров", располагается справа от seller_shop_acts_list_item_right_header_cause_subject_value;
+------------- seller_shop_acts_list_item_right_event - расположен под seller_shop_acts_list_item_right_header, является телом события, представляя собой строковое значение, содержание которого зависит от типа события (например, если это событие чата, то приводится его отрывок в одну строку [truncate_text: max_lines=1]; если это событие по ордеру, то это может выражаться "открыт" или "закрыт" и т.д. (детальное изложение будет приложено в последующих версиях документа));
 
 ✠ actions
-• seller_shop_actions_list_item:
+• seller_shop_acts_list_item:
 ╠ valid / invalid
 ║ • gesture: tap
-║ occasion: нажатие на любой seller_shop_actions_list_item;
+║ occasion: нажатие на любой seller_shop_acts_list_item;
 ║ condition: in any situation;
-╙ result: открывается seller_shop_actions_screen.
+║ result: 
+║ && - открывается seller_shop_actions_screen;
+║ && - делается центрирование на целевой seller_shop_acts_list_item в seller_shop_actions_acts_list;
+╙ && - делается подсвечивание целевого seller_shop_acts_list_item в seller_shop_actions_acts_list.
 
 ✠ color_states
 ┌─
-│seller_shop_actions_top_label
-│seller_shop_actions_list_item_left_name
-│seller_shop_actions_list_item_right_header_time
-│seller_shop_actions_list_item_right_header_cause_object
-│seller_shop_actions_list_item_right_header_cause_subject_value
-│seller_shop_actions_list_item_right_header_cause_subject_text
-│seller_shop_actions_list_item_right_event_text
+│seller_shop_acts_top_label
+│seller_shop_acts_list_item_left_name
+│seller_shop_acts_list_item_right_header_time
+│seller_shop_acts_list_item_right_header_cause_object
+│seller_shop_acts_list_item_right_header_cause_subject_value
+│seller_shop_acts_list_item_right_header_cause_subject_text
+│seller_shop_acts_list_item_right_event_text
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -697,7 +700,7 @@ s9)   ┌┬┬┬┬──[seller_nav                                          
 │------ in any situation.
 └─
 ┌─
-│seller_shop_actions_list_item
+│seller_shop_acts_list_item
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -1096,6 +1099,420 @@ seller_shop_searcher_popover_list_object располагаются в seller_sh
 │• color2
 │------ в activated_state 
 └─
+
+
+
+
+
+
+
+
+
+🡆🡆 seller_shop_actions_screen
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+
+seller_shop_actions_screen - предназначен для отображения событий происходящих в магазине касающиеся как buyers так и действий seller. Основное содержание seller_shop_actions_screen представляется в виде единого списка seller_shop_actions_acts_list подразделяемого на суточные блоки, каждый из которых состоит из seller_shop_actions_acts_list_item. Общая структура seller_shop_actions_screen состоит из 3 основных sections следующего содержания расположенных сверху-вниз:
+
+✠ tables
+
+                                             codename:                                          type:                   designation:        location: interaction:
+s1)   ┌┬┬┬┬──[seller_shop_nav                                                        ]  [section            ]                                 [ ✜ ✜ ]    [ no  ]
+----  ││││└┬─[seller_shop_nav_calls                                                  ]  [button             ]                                 [ ✜ 🡄 ]    [ yes ]
+----  ││││ ├ [seller_shop_nav_calls_label                                            ]  [label              ]  [ "ЗВОНКИ"                  ]  [ ✜ ✜ ]    [ yes ]
+----  ││││ └ [seller_shop_nav_calls_badge                                            ]  [badge              ]  [ { number }                ]  [ 🡇 🡆 ]    [ yes ]
+----  │││└─┬─[seller_shop_nav_visitors                                               ]  [button             ]                                 [ ✜ ✜ ]    [ yes ]
+----  │││  ├ [seller_shop_nav_visitors_label                                         ]  [label              ]  [ "КЛИЕНТЫ"                 ]  [ ✜ ✜ ]    [ yes ]
+----  │││  └ [seller_shop_nav_visitors_badge                                         ]  [badge              ]  [ { number }                ]  [ 🡇 🡆 ]    [ yes ]
+----  ││└──┬─[seller_shop_nav_shop                                                   ]  [button             ]                                 [ ✜ ✜ ]    [ yes ]
+----  ││   ├ [seller_shop_nav_shop_label                                             ]  [label              ]  [ "МАГАЗИН"                 ]  [ ✜ ✜ ]    [ yes ]
+----  ││   └ [seller_shop_nav_shop_badge                                             ]  [badge              ]  [ { number }                ]  [ 🡅 🡆 ]    [ yes ]
+----  │└───┬─[seller_shop_nav_actions                                                ]  [button             ]                                 [ ✜ ✜ ]    [ yes ]
+----  │    ├ [seller_shop_nav_actions_label                                          ]  [label              ]  [ "СОБЫТИЯ"                 ]  [ ✜ ✜ ]    [ yes ]
+----  │    └ [seller_shop_nav_actions_badge                                          ]  [badge              ]  [ { number }                ]  [ 🡇 🡆 ]    [ yes ]
+----  └────┬─[seller_shop_nav_settings                                               ]  [button             ]                                 [ ✜ 🡆 ]    [ yes ]
+----       ├ [seller_shop_nav_settings_label                                         ]  [label              ]  [ "НАСТРОЙКИ"               ]  [ ✜ ✜ ]    [ yes ]
+----       └ [seller_shop_nav_settings_badge                                         ]  [badge              ]  [ { number }                ]  [ 🡇 🡆 ]    [ yes ] 
+s2)┌──────┬──[seller_shop_actions_acts                                               ]  [section_lev2       ]                                 [ ✜ ✜ ]    [ no  ]
+---│      └┬─[seller_shop_actions_acts_top                                           ]  [section_lev3       ]                                 [ 🡅 ✜ ]    [ no  ]
+---│       └ [seller_shop_actions_acts_top_label                                     ]  [label              ]  [ "Список недавних действи" ]  [ ✜ ✜ ]    [ no  ]
+---└┬────────[seller_shop_actions_acts_list                                          ]  [section_lev3       ]                                 [ ✜ ✜ ]    [ no  ]
+----└┬─────┬─[seller_shop_actions_acts_list_day                                      ]  [section_lev4       ]                                 [ ✜ ✜ ]    [ no  ]
+---- │     └ [seller_shop_actions_acts_list_day_label                                ]  [label              ]                                 [ ✜ ✜ ]    [ no  ]
+---- └┬───┬──[seller_shop_actions_acts_list_day_item                                 ]  [section_lev5       ]                                 [ ✜ ✜ ]    [ yes ]
+----  │   └┬─[seller_shop_actions_acts_list_day_item_left                            ]  [section_lev6       ]                                 [ ✜ 🡄 ]    [ yes ]
+----  │    ├ [seller_shop_actions_acts_list_day_item_left_icon                       ]  [icon               ]                                 [ ✜ 🡄 ]    [ yes ]
+----  │    └ [seller_shop_actions_acts_list_day_item_left_name                       ]  [label              ]  [ { string }                ]  [ ✜ 🡆 ]    [ yes ]
+----  └┬┬────[seller_shop_actions_acts_list_day_item_right                           ]  [section_lev6       ]                                 [ ✜ 🡆 ]    [ yes ]
+----   │└┬─┬─[seller_shop_actions_acts_list_day_item_right_header                    ]  [section_lev7       ]                                 [ 🡅 ✜ ]    [ yes ]
+----   │ │ └ [seller_shop_actions_acts_list_day_item_right_header_time               ]  [value              ]  [ { number }                ]  [ ✜ 🡄 ]    [ yes ]
+----   │ └┬┬─[seller_shop_actions_acts_list_day_item_right_header_cause              ]  [section_lev8       ]                                 [ ✜ 🡆 ]    [ yes ]
+----   │  │└ [seller_shop_actions_acts_list_day_item_right_header_cause_object       ]  [value              ]  [ { string }                ]  [ ✜ 🡄 ]    [ yes ]
+----   │  └┬─[seller_shop_actions_acts_list_day_item_right_header_cause_subject      ]  [section_lev9       ]  [ { string }                ]  [ ✜ 🡆 ]    [ yes ]
+----   │   ├ [seller_shop_actions_acts_list_day_item_right_header_cause_subject_value]  [value              ]  [ { number }                ]  [ ✜ 🡄 ]    [ yes ]
+----   │   └ [seller_shop_actions_acts_list_day_item_right_header_cause_subject_text ]  [text               ]  [ " ордеров"                ]  [ ✜ 🡆 ]    [ yes ]
+----   └───┬─[seller_shop_actions_acts_list_day_item_right_event                     ]  [section_lev7       ]                                 [ 🡇 ✜ ]    [ yes ]
+----       └ [seller_shop_actions_acts_list_day_item_right_event_text                ]  [text               ]  [ { string }                ]  [ ✜ ✜ ]    [ yes ]
+s3)   ┌┬┬┬┬──[seller_nav                                                             ]  [section            ]                                 [ ✜ ✜ ]    [ no  ]
+----  ││││└┬─[seller_nav_demand                                                      ]  [button             ]                                 [ ✜ 🡄 ]    [ yes ]
+----  ││││ ├ [seller_nav_demand_label                                                ]  [label              ]  [ "СПРОС"                   ]  [ ✜ ✜ ]    [ no  ]  
+----  ││││ └ [seller_nav_demand_badge                                                ]  [badge              ]  [ { number }                ]  [ 🡅 🡆 ]    [ no  ]
+----  │││└─┬─[seller_nav_chat                                                        ]  [button             ]                                 [ ✜ 🡄 ]    [ yes ]   
+----  │││  ├ [seller_nav_chat_label                                                  ]  [label              ]  [ "ЧАТ"                     ]  [ ✜ ✜ ]    [ no  ] 
+----  │││  └ [seller_nav_chat_badge                                                  ]  [badge              ]  [ { number }                ]  [ 🡅 🡆 ]    [ no  ] 
+----  ││└──┬─[seller_nav_shop                                                        ]  [button             ]                                 [ ✜ ✜ ]    [ yes ]   
+----  ││   ├ [seller_nav_shop_label                                                  ]  [label              ]  [ "МАГАЗИН"                 ]  [ ✜ ✜ ]    [ no  ] 
+----  ││   └ [seller_nav_shop_badge                                                  ]  [badge              ]  [ { number }                ]  [ 🡅 🡆 ]    [ no  ]   
+----  │└───┬─[seller_nav_goods                                                       ]  [button             ]                                 [ ✜ 🡆 ]    [ yes ]   
+----  │    ├ [seller_nav_goods_label                                                 ]  [label              ]  [ "ТОВАРЫ"                  ]  [ ✜ ✜ ]    [ no  ] 
+----  │    └ [seller_nav_goods_badge                                                 ]  [badge              ]  [ { number }                ]  [ 🡅 🡆 ]    [ no  ]
+----  └────┬─[seller_nav_account                                                     ]  [button             ]                                 [ ✜ 🡆 ]    [ yes ]   
+----       ├ [seller_nav_account_label                                               ]  [label              ]  [ "КАБИНЕТ"                 ]  [ ✜ ✜ ]    [ no  ] 
+----       └ [seller_nav_account_badge                                               ]  [badge              ]  [ { number }                ]  [ 🡅 🡆 ]    [ no  ]  
+
+
+■ seller_shop_nav
+
+✠ details
+Секция seller_shop_nav является навигационной панелью seller_shop_screen и как сквозная часть интерфейса присутствует на всех экранах seller_shop в верхней области. Секция состоит из 5 компонентов, каждый из которых выполняет роль кнопки расположенных слева-направо в следующем порядке:
+
+1) seller_shop_nav_calls - кнопка с наименованием и бейджем, предназначена для перехода к seller_shop_call_screen;
+-- seller_shop_nav_calls_label - представлен наименованием "ЗВОНКИ";
+-- seller_shop_nav_calls_badge - размещается в нижнем правом углу, отображает количество новых звонков с момента последнего посещения seller_shop_call_screen.
+2) seller_shop_nav_visitors - кнопка с наименованием и бейджем, предназначена для перехода к seller_visitors_screen;
+-- seller_shop_nav_visitors_label - представлен наименованием "КЛИЕНТЫ";
+-- seller_shop_nav_visitors_badge - размещается в нижнем правом углу, отображает количество новых (с момента последнего посещения seller_shop_visitors_screen) посетителей за все время.
+3) seller_shop_nav_shop - кнопка с наименованием и бейджем, предназначена для перехода к seller_shop_screen (в seller_shop_screen активирована по умолчанию);
+-- seller_shop_nav_shop_label - представлен наименованием "МАГАЗИН";
+-- seller_shop_nav_shop_badge - размещается в нижнем правом углу, отображает количество посетителей находящихся в магазине в текущий момент.
+4) seller_shop_nav_actions - кнопка с наименованием и бейджем, предназначена для перехода к seller_actions_screen;
+-- seller_shop_nav_actions_label - представлен наименованием "СОБЫТИЯ";
+-- seller_shop_nav_actions_badge - размещается в нижнем правом углу, отображает количество новых событий.
+5) seller_shop_nav_settings - кнопка с наименованием и бейджем, предназначена для перехода к seller_setting_usual_screen;
+-- seller_shop_nav_settings_label - представлен наименованием "НАСТРОЙКИ";
+-- seller_shop_nav_settings_badge - размещается в нижнем правом углу, отображает количество новых, или требуемых настройки опций.
+
+✠ actions
+• seller_shop_nav_calls:
+╠ valid
+║ • gesture: tap
+║ occasion: нажатие seller_shop_nav_calls;
+║ condition:
+║ || - в ситуации присутствия в seller_visitors_screen;
+║ || - в ситуации присутствия в seller_shop_screen;
+║ || - в ситуации присутствия в seller_actions_screen;
+║ || - в ситуации присутствия в seller_setting_usual_screen;
+║ result: открывается seller_shop_screen.
+╠ invalid
+║ • gesture: tap
+║ occasion: нажатие seller_shop_nav_calls;
+║ condition: в ситуации присутствия в seller_shop_screen;
+╙ result: не реагирует на нажатие.
+• seller_shop_nav_visitors:
+╠ valid
+║ • gesture: tap
+║ occasion: нажатие seller_shop_nav_visitors;
+║ condition:
+║ || - в ситуации присутствия в seller_shop_call_screen;
+║ || - в ситуации присутствия в seller_shop_screen;
+║ || - в ситуации присутствия в seller_actions_screen;
+║ || - в ситуации присутствия в seller_setting_usual_screen;
+║ result: открывается seller_visitors_screen.
+╠ invalid
+║ • gesture: tap
+║ occasion: нажатие seller_shop_nav_visitors;
+║ condition: в ситуации присутствия в seller_visitors_screen;
+╙ result: не реагирует на нажатие.
+• seller_shop_nav_shop:
+╠ valid
+║ • gesture: tap
+║ occasion: нажатие seller_shop_nav_shop;
+║ condition:
+║ || - в ситуации присутствия в seller_shop_call_screen;
+║ || - в ситуации присутствия в seller_visitors_screen;
+║ || - в ситуации присутствия в seller_actions_screen;
+║ || - в ситуации присутствия в seller_setting_usual_screen;
+║ result: открывается seller_shop_screen.
+╠ invalid
+║ • gesture: tap
+║ occasion: нажатие seller_shop_nav_shop;
+║ condition: в ситуации присутствия в seller_shop_screen;
+╙ result: не реагирует на нажатие.
+• seller_shop_nav_actions:
+╠ valid
+║ • gesture: tap
+║ occasion: нажатие seller_shop_nav_actions;
+║ condition:
+║ || - в ситуации присутствия в seller_shop_call_screen;
+║ || - в ситуации присутствия в seller_visitors_screen;
+║ || - в ситуации присутствия в seller_shop_screen;
+║ || - в ситуации присутствия в seller_setting_usual_screen;
+║ result: открывается seller_actions_screen.
+╠ invalid
+║ • gesture: tap
+║ occasion: нажатие seller_shop_nav_actions;
+║ condition: в ситуации присутствия в seller_actions_screen;
+╙ result: не реагирует на нажатие.
+• seller_shop_nav_settings:
+╠ valid
+║ • gesture: tap
+║ occasion: нажатие seller_shop_nav_settings;
+║ condition:
+║ || - в ситуации присутствия в seller_shop_call_screen;
+║ || - в ситуации присутствия в seller_visitors_screen;
+║ || - в ситуации присутствия в seller_shop_screen;
+║ || - в ситуации присутствия в seller_actions_screen;
+║ result: открывается seller_setting_usual_screen.
+╠ invalid
+║ • gesture: tap
+║ occasion: нажатие seller_shop_nav_settings;
+║ condition: в ситуации присутствия в seller_setting_usual_screen;
+╙ result: не реагирует на нажатие.
+
+✠ affections
+• seller_shop_nav_shop_badge
+╠ valid
+║ occasion: buyer заходит в магазин seller;
+║ condition: seller=online;
+║ result: отображение в seller_shop_nav_shop_badge цифрового значения равного количеству находящихся в магазине посетителей.
+╠ invalid
+║ occasion: buyer заходит в магазин seller;
+║ condition: seller=offline;
+╙ result: seller_shop_nav_shop_badge не отображается.
+
+
+✠ color_states
+┌─
+│seller_shop_nav_calls  (default_state по умолчанию в seller_shop_call_screen)
+│seller_shop_nav_visitors  (default_state по умолчанию в seller_visitors_screen)
+│seller_shop_nav_shop  (default_state по умолчанию в seller_shop_screen)
+│seller_shop_nav_actions  (default_state по умолчанию в seller_actions_screen)
+│seller_shop_nav_settings  (default_state по умолчанию в seller_setting_usual_screen)
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ в default_state
+├────────
+│• color7
+│------ в activated_state
+└─
+┌─
+│seller_shop_nav_calls_badge  (default_state по умолчанию в seller_shop_call_screen) 
+│seller_shop_nav_visitors_badge  (default_state по умолчанию в seller_visitors_screen)  
+│seller_shop_nav_shop_badge  (default_state по умолчанию в seller_shop_screen)  
+│seller_shop_nav_actions_badge  (default_state по умолчанию в seller_actions_screen)   
+│seller_shop_nav_settings_badge  (default_state по умолчанию в seller_setting_usual_screen)
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color9
+│------ в default_state
+├────────
+│• color2
+│------ в activated_state 
+└─
+
+
+■ seller_shop_acts
+
+✠ details
+- seller_shop_actions_acts - является основной частью seller_shop_actions_screen, размещается по центру (между seller_shop_actions_nav - сверху и seller_nav - снизу) занимая порядка 80-90% по вертикали, состоит из 2 составляющих:
+--- seller_shop_actions_acts_top - находится в верхней части seller_shop_actions_acts, содержит seller_shop_actions_acts_top_label;
+----- seller_shop_actions_acts_top_label - заголовок призванный отображать описание экрана: "Список недавних действий";
+--- seller_shop_actions_acts_list - листинг содержащий seller_shop_actions_acts_list_item ранжированный в хронологичестком порядке сверху-вниз, где seller_shop_actions_acts_list_item находящийся в топе является последним событием;
+----- seller_shop_actions_acts_list_day - выполняет роль суточного блока вмещаемого все события в рамках одного дня; 
+------- seller_shop_actions_acts_list_day_label - является заголовком суточного блока данных (если такой блок содержит минимум одно событие, в противном случаем seller_shop_actions_acts_list_day_label скрывается), который отображает дату по шаблону DD:MM.YY;
+------- seller_shop_actions_acts_list_day_item - данные по одному событию размещающиеся в 2 строках, состоит из 2 компонентов:
+--------- seller_shop_actions_acts_list_day_item_left - находящийся в левой части, содержит информацию о типе события и его инициаторе, содержит 2 элемента;
+----------- seller_shop_actions_acts_list_day_item_left_icon - иконка символизирующая тип события, размещается слева;
+----------- seller_shop_actions_acts_list_day_item_left_name - имя инициатора события, размещается справа;
+--------- seller_shop_actions_acts_list_day_item_right - находящийся в правой части, содержит информацию о событии, содержит 2 компонента;
+----------- seller_shop_actions_acts_list_day_item_right_header - верхняя часть содержащая описательные данные события, содержит 2 компонента;
+------------- seller_shop_actions_acts_list_day_item_right_header_time - отображает время по шаблону HH:MM, расположен слева;
+------------- seller_shop_actions_acts_list_day_item_right_header_cause - отображает псевдоним ордера (если есть), либо количество ордеров buyer (инициатора события);
+--------------- seller_shop_actions_acts_list_day_item_right_header_cause_object - представляет собой бинарное строковое значение которое может быть либо: "ордер" (если текущее событие совершается в рамках открытого ордера), либо "клиент" (если текущее событие совершается вне рамок открытого ордера); 
+--------------- seller_shop_actions_acts_list_day_item_right_header_cause_subject - если текущее событие происходит в рамках открытого ордера, представляет собой строковое значение с псевдонимом ордера; если текущее событие совершается вне рамок открытого ордера, тогда seller_shop_actions_acts_list_day_item_right_header_cause_subject содержит 2 элемента находящихся в круглых скобках расположенных друг за другом слева-направо:
+----------------- seller_shop_actions_acts_list_day_item_right_header_cause_subject_value - числовое значение отображающее количество ордеров сделанных инициатором события согласно истории ордеров;
+----------------- seller_shop_actions_acts_list_day_item_right_header_cause_subject_text - отображает слово: " ордеров", располагается справа от seller_shop_actions_acts_list_day_item_right_header_cause_subject_value;
+--------------- seller_shop_actions_acts_list_day_item_right_event - расположен под seller_shop_actions_acts_list_day_item_right_header, является телом события, представляя собой строковое значение, содержание которого зависит от типа события (например, если это событие чата, то приводится его отрывок в одну строку [truncate_text: max_lines=1]; если это событие по ордеру, то это может выражаться "открыт" или "закрыт" и т.д. (детальное изложение будет приложено в последующих версиях документа));
+
+✠ actions
+• seller_shop_actions_acts_list_day_item:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие на любой seller_shop_actions_acts_list_day_item;
+║ condition: in any situation;
+╙ result: открывается соотносимый с нажимаемым seller_shop_actions_acts_list_day_item раздел (например, если это событие чата, то совершается переход к ветке seller_chat_chat_screen с которой ассоциируется данный action и т.д. (детальное изложение будет приложено в последующих версиях документа)).
+
+✠ color_states
+┌─
+│seller_shop_actions_acts_top_label
+│seller_shop_actions_acts_list_day_label
+│seller_shop_actions_acts_list_day_item_left_name
+│seller_shop_actions_acts_list_day_item_right_header_time
+│seller_shop_actions_acts_list_day_item_right_header_cause_object
+│seller_shop_actions_acts_list_day_item_right_header_cause_subject_value
+│seller_shop_actions_acts_list_day_item_right_header_cause_subject_text
+│seller_shop_actions_acts_list_day_item_right_event_text
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation.
+└─
+┌─
+│seller_shop_actions_acts_list_day_item
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ в default_state
+├────────
+│• color5
+│------ в pressing_state
+└─
+
+
+■ seller_nav
+
+✠ details
+Секция seller_nav является навигационной панелью seller_mode и как сквозная часть интерфейса присутствует на всех экранах в нижней области. Секция состоит из 5 компонентов каждый из которых выполняет роль кнопки:
+1) seller_nav_demand - кнопка с наименованием и бейджем, предназначена для перехода к seller_demand_screen;
+-- seller_nav_demand_label - представлен заголовком "МОНИТОР";
+-- seller_nav_demand_badge - размещается в верхнем правом углу, отображает количество hunt_screen_demand_message в seller_demand_screen.
+2) seller_nav_chat - кнопка с наименованием и бейджем, предназначена для перехода к seller_chat_screen;
+-- seller_nav_chat_label - представлен заголовком "ЧАТ";
+-- seller_nav_chat_badge - размещается в верхнем правом углу, отображает количество непросмотренных chat_screen_chat_message_node.
+3) seller_nav_shop - кнопка с наименованием и бейджем, предназначена для перехода к seller_shop_screen (в seller_shop_screen активирована по умолчанию);
+-- seller_nav_shop_label - представлен логотипом в seller_shop_screen, либо наименованием "МАГАЗИН" в остальных экранах;
+-- seller_nav_shop_badge - размещается в верхнем правом углу, отображается только в seller_shop_screen, показывает доступные обновления приложения.
+4) seller_nav_goods - кнопка с наименованием и бейджем, предназначена для перехода к seller_goods_screen;
+-- seller_nav_goods_label - представлен заголовком "ТОВАРЫ";
+-- seller_nav_goods_badge - размещается в верхнем правом углу, отображает число лотов по которым заканчивается товар.
+5) seller_nav_account - кнопка с наименованием и бейджем, предназначена для перехода к seller_account_screen;
+-- seller_nav_account_label - представлен заголовком "КАБИНЕТ";
+-- seller_nav_account_badge - размещается в верхнем правом углу, отображает количество непросмотренных денежных транзакций.
+
+✠ actions
+• seller_nav_demand:
+╠ valid
+║ • gesture: tap
+║ occasion: нажатие seller_nav_demand;
+║ condition:
+║ || - в ситуации присутствия в seller_chat_screen;
+║ || - в ситуации присутствия в seller_shop_screen;
+║ || - в ситуации присутствия в seller_goods_screen;
+║ || - в ситуации присутствия в seller_account_screen;
+║ result: открывается seller_demand_screen.
+╠ invalid
+║ • gesture: tap
+║ occasion: нажатие seller_nav_demand;
+║ condition: в ситуации присутствия в seller_demand_screen;
+╙ result: не реагирует на нажатие.
+• seller_nav_chat:
+╠ valid
+║ • gesture: tap
+║ occasion: нажатие seller_nav_chat;
+║ condition:
+║ || - в ситуации присутствия в seller_demand_screen;
+║ || - в ситуации присутствия в seller_shop_screen;
+║ || - в ситуации присутствия в seller_goods_screen;
+║ || - в ситуации присутствия в seller_account_screen;
+║ result: открывается seller_chat_screen.
+╠ invalid
+║ • gesture: tap
+║ occasion: нажатие seller_nav_chat;
+║ condition: в ситуации присутствия в seller_chat_screen;
+╙ result: не реагирует на нажатие.
+• seller_nav_shop:
+╠ valid
+║ • gesture: tap 
+║ occasion: нажатие seller_nav_shop;
+║ condition: 
+║ && - в ситуации присутствия в seller_shop_screen;
+║ && - в ситуации если доступно обновление приложения;
+║ result: открывается seller_nav_shop_update_popover;
+╠ valid
+║ • gesture: tap 
+║ occasion: нажатие seller_nav_shop;
+║ condition: 
+║ || - в ситуации присутствия в seller_demand_screen;
+║ || - в ситуации присутствия в seller_chat_screen;
+║ || - в ситуации присутствия в seller_goods_screen;
+║ || - в ситуации присутствия в seller_account_screen;
+║ result: открывается seller_shop_screen;
+╠ invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_nav_shop;
+║ condition:
+║ && - в ситуации присутствия в seller_shop_screen;
+║ && - в ситуации отсутствия обновлений приложения;
+╙ result: не реагирует на нажатие.
+• seller_nav_goods:
+╠ valid
+║ • gesture: tap
+║ occasion: нажатие seller_nav_goods;
+║ condition:
+║ || - в ситуации присутствия в seller_demand_screen;
+║ || - в ситуации присутствия в seller_chat_screen;
+║ || - в ситуации присутствия в seller_shop_screen;
+║ || - в ситуации присутствия в seller_account_screen;
+║ result: открывается seller_goods_screen.
+╠ invalid
+║ • gesture: tap
+║ occasion: нажатие seller_nav_goods;
+║ condition: в ситуации присутствия в seller_goods_screen;
+╙ result: не реагирует на нажатие.
+• seller_nav_account:
+╠ valid
+║ • gesture: tap
+║ occasion: нажатие seller_nav_account;
+║ condition:
+║ || - в ситуации присутствия в seller_demand_screen;
+║ || - в ситуации присутствия в seller_chat_screen;
+║ || - в ситуации присутствия в seller_shop_screen;
+║ || - в ситуации присутствия в seller_goods_screen;
+║ result: открывается seller_account_screen.
+╠ invalid
+║ • gesture: tap
+║ occasion: нажатие seller_nav_account;
+║ condition: в ситуации присутствия в seller_account_screen;
+╙ result: не реагирует на нажатие.
+
+✠ color_states
+┌─
+│seller_nav_demand  (default_state по умолчанию в seller_demand_screen)
+│seller_nav_chat  (default_state по умолчанию в seller_chat_screen)
+│seller_nav_shop  (default_state по умолчанию в seller_shop_screen)
+│seller_nav_goods  (default_state по умолчанию в seller_goods_screen)
+│seller_nav_account  (default_state по умолчанию в seller_account_screen)
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ в default_state
+├────────
+│• color7
+│------ в activated_state
+└─
+┌─
+│seller_nav_demand_badge  (default_state по умолчанию в seller_demand_screen) 
+│seller_nav_chat_badge  (default_state по умолчанию в seller_chat_screen)  
+│seller_nav_shop_badge  (default_state по умолчанию в seller_shop_screen)  
+│seller_nav_goods_badge  (default_state по умолчанию в seller_goods_screen)   
+│seller_nav_account_badge  (default_state по умолчанию в seller_account_screen)
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color9
+│------ в default_state
+├────────
+│• color2
+│------ в activated_state 
+└─
+
+
+
 
 
 
