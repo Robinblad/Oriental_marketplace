@@ -3092,45 +3092,89 @@ s3)          ┌┬┬┬┬──[seller_nav                                   
 ----              └ [seller_nav_account_badge                             ]  [badge              ]  [ { number }                ]     [ 🡅 🡆 ]     [ no  ] 
 
 
+■ seller_shop_settings
+
+✠ details
+seller_shop_settings занимает центральную область seller_shop_settings_screen и состоит из 3 основных структурных единиц:
+- seller_shop_settings_top - находится в верхней части seller_shop_settings в виде прямоугольного блока занимая в высоту порядка 3-4% площади экрана и включает seller_shop_settings_top_label;
+--- seller_shop_settings_buttons_no_label - заголовок seller_shop_settings_screen следующего содержания: "* - Необходимо обязательно указать";  
+- seller_shop_settings_list - основная область seller_shop_settings в виде скроллируемого списка настроек 
+- seller_shop_settings_buttons - кнопки расположенные в нижней части seller_shop_settings:
+--- seller_shop_settings_buttons_no - кнопка находящаяся слева и отвечающая за закрытие seller_shop_settings_screen без применения изменений;
+----- seller_shop_settings_buttons_no_label - наименование кнопки seller_shop_settings_buttons_no "отмена";
+--- seller_shop_settings_buttons_yes - кнопка находящаяся справа и отвечающая за применение сделанных изменений;
+----- seller_shop_settings_buttons_yes_label - наименование кнопки seller_shop_settings_buttons_yes "ОК";
+
+✠ actions
+• seller_shop_settings_buttons_no:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_shop_settings_buttons_no;
+║ condition: in any situation;
+╙ result: seller_shop_settings_screen закрывается.
+• seller_shop_settings_buttons_yes:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_shop_activity_toggle;
+║ condition: in any situation;
+║ result: 
+║ if (seller_shop_activity_toggle_switcher = off): 
+║ {
+║ && - переключается в режим seller_shop_activity_toggle_switcher = on; 
+║ && - opacity=1 для seller_shop_activity_widget;
+║ }
+║ if (seller_shop_activity_toggle_switcher = on):
+║ {
+║ && - переключается в режим seller_shop_activity_toggle_switcher = off; 
+║ && - opacity=0.2 для seller_shop_activity_widget.
+╙ }
+
+✠ color_states
+┌─
+│seller_shop_settings_buttons_no
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ в default_state
+├────────
+│• color5
+│------ в pressing_state
+└─
+┌─
+│seller_shop_settings_buttons_yes
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ в default_state
+├────────
+│• color0
+│------ в inactive_state
+├────────
+│• color5
+│------ в pressing_state
+└─
+┌─
+│seller_shop_settings_top_label
+│seller_shop_settings_buttons_no_label
+│seller_shop_settings_buttons_yes_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
 
 
+■ seller_shop_settings_list_personal
 
-
-
-
-                                       codename:                                     type:                  designation:            location:  interaction:
-----    │ └┬─[seller_shop_settings_list_personal                          ]  [section_lev4       ]                                    [ ✜ ✜ ]     [ no  ]
-----    │ └┬─[seller_shop_settings_list_personal_username                 ]  [section_lev5       ]                                    [ ✜ ✜ ]     [ no  ]
-----    │ └┬─[seller_shop_settings_list_personal_username_panel           ]  [section_lev6       ]                                    [ 🡅 ✜ ]     [ no  ]
-----    │ └┬─[seller_shop_settings_list_personal_username_panel_label     ]  [label              ]  [ " Имя или название к... " ]     [ ✜ ✜ ]     [ no  ]
-----    │ └┬─[seller_shop_settings_list_personal_username_input           ]  [input              ]                                    [ 🡇 ✜ ]     [ yes ]
-----    │ └┬─[seller_shop_settings_list_personal_username_protip          ]  [button             ]                                    [ ✜ 🡆 ]     [ yes ]
-----    │ └┬─[seller_shop_settings_list_personal_username_protip_label    ]  [label              ]  [ " ? "                     ]     [ ✜ ✜ ]     [ yes ]
-----    │ └┬─[seller_shop_settings_list_personal_phone                    ]  [section_lev5       ]                                    [ ✜ ✜ ]     [ no  ]
-----    │ └┬─[seller_shop_settings_list_personal_phone_panel              ]  [section_lev6       ]                                    [ 🡅 ✜ ]     [ no  ]
-----    │ └┬─[seller_shop_settings_list_personal_phone_panel_label        ]  [label              ]  [ " Номер телефона * "      ]     [ ✜ ✜ ]     [ no  ]
-----    │ └┬─[seller_shop_settings_list_personal_phone_number             ]  [section_lev7       ]                                    [ 🡇 ✜ ]     [ no  ]
-----    │ └┬─[seller_shop_settings_list_personal_phone_number_code        ]  [button             ]                                    [ ✜ 🡄 ]     [ yes ]
-----    │ └┬─[seller_shop_settings_list_personal_phone_number_code_icon   ]  [icon               ]                                    [ ✜ ✜ ]     [ yes ]
-----    │ └┬─[seller_shop_settings_list_personal_phone_number_code_label  ]  [label              ]  [ { number }                ]     [ ✜ ✜ ]     [ yes ]
-----    │ └┬─[seller_shop_settings_list_personal_phone_number_input       ]  [input              ]                                    [ ✜ ✜ ]     [ yes ]
-----    │ └┬─[seller_shop_settings_list_personal_phone_number_protip      ]  [button             ]                                    [ ✜ 🡆 ]     [ yes ]
-----    │ └┬─[seller_shop_settings_list_personal_phone_number_protip_label]  [label              ]  [ " ? "                     ]     [ ✜ ✜ ]     [ yes ]
-----    │ └┬─[seller_shop_settings_list_personal_firstname                ]  [section_lev5       ]                                    [ ✜ ✜ ]     [ no  ]
-----    │ └┬─[seller_shop_settings_list_personal_firstname_panel          ]  [section_lev6       ]                                    [ 🡅 ✜ ]     [ no  ]
-----    │ └┬─[seller_shop_settings_list_personal_firstname_label          ]  [label              ]  [ " Имя * "                 ]     [ ✜ ✜ ]     [ no  ]
-----    │ └┬─[seller_shop_settings_list_personal_firstname_input          ]  [input              ]                                    [ 🡇 ✜ ]     [ yes ]
-----    │ └┬─[seller_shop_settings_list_personal_firstname_protip         ]  [button             ]                                    [ ✜ 🡆 ]     [ yes ]
-----    │ └┬─[seller_shop_settings_list_personal_firstname_protip_label   ]  [label              ]  [ " ? "                     ]     [ ✜ ✜ ]     [ yes ]
-----    │ └┬─[seller_shop_settings_list_personal_secondname               ]  [section_lev5       ]                                    [ ✜ ✜ ]     [ no  ]
-----    │ └┬─[seller_shop_settings_list_personal_secondname_panel         ]  [section_lev6       ]                                    [ 🡅 ✜ ]     [ no  ]
-----    │ └┬─[seller_shop_settings_list_personal_secondname_label         ]  [label              ]  [ " Фамилия * "             ]     [ ✜ ✜ ]     [ no  ]
-----    │ └┬─[seller_shop_settings_list_personal_secondname_input         ]  [input              ]                                    [ 🡇 ✜ ]     [ yes ]
-----    │ └┬─[seller_shop_settings_list_personal_secondname_protip        ]  [button             ]                                    [ ✜ 🡆 ]     [ yes ]
-----    │ └┬─[seller_shop_settings_list_personal_secondname_protip_label  ]  [label              ]  [ " ? "                     ]     [ ✜ ✜ ]     [ yes ]
-----    │ └┬─[seller_shop_settings_list_personal_passport                 ]  [section_lev5       ]                                    [ ✜ ✜ ]     [ no  ]
-----    │ └┬─[seller_shop_settings_list_personal_passport_panel           ]  [section_lev6       ]                                    [ 🡅 ✜ ]     [ no  ]
-----    │ └┬─[seller_shop_settings_list_personal_passport_label           ]  [label              ]  [ " Номер паспорта * "      ]     [ ✜ ✜ ]     [ no  ]
-----    │ └┬─[seller_shop_settings_list_personal_passport_input           ]  [input              ]                                    [ 🡇 ✜ ]     [ yes ]
-----    │ └┬─[seller_shop_settings_list_personal_passport_protip          ]  [button             ]                                    [ ✜ 🡆 ]     [ yes ]
-----    │ └┬─[seller_shop_settings_list_personal_passport_protip_label    ]  [label              ]  [ " ? "                     ]     [ ✜ ✜ ]     [ yes ]
+✠ details
+--- seller_shop_settings_list_personal представляет собой блок данных прямоугольной формы расположенный в верхней части состоящий из 3 компонентов:
+1) ----- seller_shop_settings_list_personal_panel - информационная панель находящаяся в верхней части seller_shop_settings_list_personal в виде компактного прямоугольного блока напоминающего кнопку которая содержит seller_shop_settings_list_personal_panel_label;
+------- seller_shop_settings_list_personal_panel_label - наименование опции следующего содержания: "Личные данные";
+2) ----- seller_shop_settings_list_personal_dropdown - кнопка инициирующая выпадающий список, находится под seller_shop_settings_list_personal_panel, содержит seller_shop_settings_list_personal_dropdown_icon и seller_shop_settings_list_personal_dropdown_label:
+------- seller_shop_settings_list_personal_dropdown_icon - иконка в виде стрелки указывающей вниз, находится слева;
+------- seller_shop_settings_list_personal_dropdown_label - наименование кнопки "развернуть", находится в позиции с небольшим смещением вправо от центра;
+3) ----- seller_shop_settings_list_personal_protip - кнопка круглой формы выполняющая роль аффорданса, находится справа от seller_shop_settings_list_personal_dropdown и содержит seller_shop_settings_list_personal_protip_label;
+------- seller_shop_settings_list_personal_protip_label - наименование seller_shop_settings_list_personal_protip "развернуть",
