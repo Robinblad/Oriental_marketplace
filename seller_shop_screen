@@ -2977,6 +2977,8 @@ seller_shop_call_phone_context_new_state отображается при усл�
 
 
 
+
+
 🡆🡆 seller_shop_settings_screen 
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 
@@ -3006,11 +3008,11 @@ s2) ┌┬───────────┬──[seller_shop_settings       
 ----│ ││││││││└┬┬┬──[seller_shop_settings_list_personal                   ]  [section_lev3       ]                                    [ ✜ ✜ ]     [ no  ]
 ----│ ││││││││ ││└┬─[seller_shop_settings_list_personal_panel             ]  [section_lev4       ]                                    [ 🡅 ✜ ]     [ no  ]
 ----│ ││││││││ ││ └ [seller_shop_settings_list_personal_panel_label       ]  [label              ]  [ "Личные данные"           ]     [ ✜ ✜ ]     [ no  ]
-----│ ││││││││ │└─┬─[seller_shop_settings_list_personal_dropdown          ]  [dropdown           ]                                    [ 🡇 ✜ ]     [ yes ]
-----│ ││││││││ │  ├ [seller_shop_settings_list_personal_dropdown_icon     ]  [icon               ]                                    [ ✜ 🡄 ]     [ yes ]
-----│ ││││││││ │  └ [seller_shop_settings_list_personal_dropdown_label    ]  [label              ]  [ " развернуть "            ]     [ ✜ ✜ ]     [ yes ]
+----│ ││││││││ │└─┬─[seller_shop_settings_list_personal_drawer            ]  [drawer             ]                                    [ 🡇 ✜ ]     [ yes ]
+----│ ││││││││ │  ├ [seller_shop_settings_list_personal_drawer_icon       ]  [icon               ]                                    [ ✜ 🡄 ]     [ yes ]
+----│ ││││││││ │  └ [seller_shop_settings_list_personal_drawer_label      ]  [label              ]  [ " развернуть "            ]     [ ✜ ✜ ]     [ yes ]
 ----│ ││││││││ └──┬─[seller_shop_settings_list_personal_protip            ]  [button             ]                                    [ ✜ 🡆 ]     [ yes ]
-----│ ││││││││    └ [seller_shop_settings_list_personal_protip_label      ]  [label              ]  [ " ? "                     ]     [ ✜ ✜ ]     [ yes ]
+----│ ││││││││    └ [seller_shop_settings_list_personal_protip_label      ]  [label              ]  [ " ✓ / ! "                 ]     [ ✜ ✜ ]     [ yes ]
 ----│ │││││││└─┬┬┬──[seller_shop_settings_list_geoposition                ]  [section_lev3       ]                                    [ ✜ ✜ ]     [ no  ]
 ----│ │││││││  ││└┬─[seller_shop_settings_list_geoposition_panel          ]  [section_lev4       ]                                    [ 🡅 ✜ ]     [ no  ]
 ----│ │││││││  ││ └ [seller_shop_settings_list_geoposition_panel_label    ]  [label              ]  [ " Геолокация * "          ]     [ ✜ ✜ ]     [ no  ]
@@ -3091,9 +3093,6 @@ s3)          ┌┬┬┬┬──[seller_nav                                   
 ----              ├ [seller_nav_account_label                             ]  [label              ]  [ "КАБИНЕТ"                 ]     [ ✜ ✜ ]     [ no  ] 
 ----              └ [seller_nav_account_badge                             ]  [badge              ]  [ { number }                ]     [ 🡅 🡆 ]     [ no  ] 
 
-
-■ seller_shop_settings
-
 ✠ details
 seller_shop_settings занимает центральную область seller_shop_settings_screen и состоит из 3 основных структурных единиц:
 - seller_shop_settings_top - находится в верхней части seller_shop_settings в виде прямоугольного блока занимая в высоту порядка 3-4% площади экрана и включает seller_shop_settings_top_label;
@@ -3105,33 +3104,70 @@ seller_shop_settings занимает центральную область sell
 --- seller_shop_settings_buttons_yes - кнопка находящаяся справа и отвечающая за применение сделанных изменений;
 ----- seller_shop_settings_buttons_yes_label - наименование кнопки seller_shop_settings_buttons_yes "ОК";
 
+
+■ seller_shop_settings_list_personal
+
+✠ details
+--- seller_shop_settings_list_personal представляет собой блок данных прямоугольной формы расположенный в верхней части состоящий из 3 компонентов:
+1) ----- seller_shop_settings_list_personal_panel - информационная панель находящаяся в верхней части seller_shop_settings_list_personal в виде компактного прямоугольного блока напоминающего кнопку которая содержит seller_shop_settings_list_personal_panel_label;
+------- seller_shop_settings_list_personal_panel_label - наименование опции следующего содержания: "Личные данные";
+2) ----- seller_shop_settings_list_personal_drawer - кнопка инициирующая выпадающий список, находится под seller_shop_settings_list_personal_panel, содержит seller_shop_settings_list_personal_drawer_icon и seller_shop_settings_list_personal_drawer_label:
+------- seller_shop_settings_list_personal_drawer_icon - иконка в виде стрелки указывающей вниз, находится слева;
+------- seller_shop_settings_list_personal_drawer_label - наименование кнопки "развернуть", находится в позиции с небольшим смещением вправо от центра;
+3) ----- seller_shop_settings_list_personal_protip - кнопка круглой формы выполняющая роль аффорданса, находится справа от seller_shop_settings_list_personal_drawer и содержит seller_shop_settings_list_personal_protip_label;
+------- seller_shop_settings_list_personal_protip_label - представляется в виде иконки двух типов: seller_shop_settings_list_personal_protip_label_bad - с символом восклицательного знака, seller_shop_settings_list_personal_protip_label_good - с символом галочки.
+
 ✠ actions
-• seller_shop_settings_buttons_no:
+• seller_shop_settings_list_personal_drawer:
 ╠ valid / invalid
 ║ • gesture: tap
-║ occasion: нажатие seller_shop_settings_buttons_no;
+║ occasion: нажатие seller_shop_settings_list_personal_drawer;
 ║ condition: in any situation;
-╙ result: seller_shop_settings_screen закрывается.
-• seller_shop_settings_buttons_yes:
+╙ result: seller_shop_settings_list_personal_drawer разворачивается вниз раскрывая опции: seller_shop_settings_list_personal_username, seller_shop_settings_list_personal_phone, seller_shop_settings_list_personal_firstname, seller_shop_settings_list_personal_secondname, seller_shop_settings_list_personal_passport.
+• seller_shop_settings_list_personal_protip:
 ╠ valid / invalid
 ║ • gesture: tap
-║ occasion: нажатие seller_shop_activity_toggle;
+║ occasion: нажатие seller_shop_settings_list_personal_protip;
 ║ condition: in any situation;
-║ result: 
-║ if (seller_shop_activity_toggle_switcher = off): 
-║ {
-║ && - переключается в режим seller_shop_activity_toggle_switcher = on; 
-║ && - opacity=1 для seller_shop_activity_widget;
-║ }
-║ if (seller_shop_activity_toggle_switcher = on):
-║ {
-║ && - переключается в режим seller_shop_activity_toggle_switcher = off; 
-║ && - opacity=0.2 для seller_shop_activity_widget.
-╙ }
+╙ result: по центру экрана всплывает seller_shop_settings_list_personal_protip_popover.
+
+✠ logics
+seller_shop_settings_list_personal_protip_label_bad отображается в ситуации если:
+- || - invalid в рамках input_checks по одному или всем параметрам для seller_shop_settings_list_personal_username; 
+- || - invalid в рамках input_checks по одному или всем параметрам для seller_shop_settings_list_personal_phone;
+- || - invalid в рамках input_checks по одному или всем параметрам для seller_shop_settings_list_personal_firstname;
+- || - invalid в рамках input_checks по одному или всем параметрам для seller_shop_settings_list_personal_secondname; 
+- || - invalid в рамках input_checks по одному или всем параметрам для seller_shop_settings_list_personal_passport.
+
+seller_shop_settings_list_personal_protip_label_good отображается в ситуации если:
+- && - valid в рамках input_checks по всем параметрам для seller_shop_settings_list_personal_username; 
+- && - valid в рамках input_checks по всем параметрам для seller_shop_settings_list_personal_phone; 
+- && - valid в рамках input_checks по всем параметрам для seller_shop_settings_list_personal_firstname; 
+- && - valid в рамках input_checks по всем параметрам для seller_shop_settings_list_personal_secondname; 
+- && - valid в рамках input_checks по всем параметрам для seller_shop_settings_list_personal_passport.
 
 ✠ color_states
 ┌─
-│seller_shop_settings_buttons_no
+│seller_shop_settings_list_personal_protip
+│-------------------------------------------------
+│⟪⟪ border / body ⟫⟫ 
+├────────
+│• color3:
+│- || - invalid в рамках input_checks по одному или всем параметрам для seller_shop_settings_list_personal_username
+│- || - invalid в рамках input_checks по одному или всем параметрам для seller_shop_settings_list_personal_phone
+│- || - invalid в рамках input_checks по одному или всем параметрам для seller_shop_settings_list_personal_firstname
+│- || - invalid в рамках input_checks по одному или всем параметрам для seller_shop_settings_list_personal_secondname
+│- || - invalid в рамках input_checks по одному или всем параметрам для seller_shop_settings_list_personal_passport
+├────────
+│• color1:
+│- && - valid в рамках input_checks по одному или всем параметрам для seller_shop_settings_list_personal_username
+│- && - valid в рамках input_checks по одному или всем параметрам для seller_shop_settings_list_personal_phone
+│- && - valid в рамках input_checks по одному или всем параметрам для seller_shop_settings_list_personal_firstname
+│- && - valid в рамках input_checks по одному или всем параметрам для seller_shop_settings_list_personal_secondname
+│- && - valid в рамках input_checks по одному или всем параметрам для seller_shop_settings_list_personal_passport
+└─
+┌─
+│seller_shop_settings_list_personal_drawer
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -3142,23 +3178,8 @@ seller_shop_settings занимает центральную область sell
 │------ в pressing_state
 └─
 ┌─
-│seller_shop_settings_buttons_yes
-│---------------------------
-│⟪⟪ body ⟫⟫ 
-├────────
-│• color4
-│------ в default_state
-├────────
-│• color0
-│------ в inactive_state
-├────────
-│• color5
-│------ в pressing_state
-└─
-┌─
-│seller_shop_settings_top_label
-│seller_shop_settings_buttons_no_label
-│seller_shop_settings_buttons_yes_label
+│seller_shop_settings_list_personal_drawer_label
+│seller_shop_settings_list_personal_protip_label
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -3167,14 +3188,898 @@ seller_shop_settings занимает центральную область sell
 └─
 
 
-■ seller_shop_settings_list_personal
+■■ seller_shop_settings_list_personal_drawer
+
+                                       codename:                                     type:                  designation:            location:  interaction:
+---┌┬┬┬┬─────[seller_shop_settings_list_personal                          ]  [section_lev4       ]                                    [ ✜ ✜ ]     [ no  ]
+---││││└┬┬┬──[seller_shop_settings_list_personal_username                 ]  [section_lev5       ]                                    [ ✜ ✜ ]     [ no  ]
+---││││ ││└┬─[seller_shop_settings_list_personal_username_panel           ]  [section_lev6       ]                                    [ 🡅 ✜ ]     [ no  ]
+---││││ ││ └ [seller_shop_settings_list_personal_username_panel_label     ]  [label              ]  [ " Имя или название к... " ]     [ ✜ ✜ ]     [ no  ]
+---││││ │└── [seller_shop_settings_list_personal_username_input           ]  [input              ]                                    [ 🡇 ✜ ]     [ yes ]
+---││││ └──┬─[seller_shop_settings_list_personal_username_protip          ]  [button             ]                                    [ ✜ 🡆 ]     [ yes ]
+---││││    └ [seller_shop_settings_list_personal_username_protip_label    ]  [label              ]  [ " ✓ / ! "                 ]     [ ✜ ✜ ]     [ yes ]
+---│││└┬┬─┬──[seller_shop_settings_list_personal_phone                    ]  [section_lev5       ]                                    [ ✜ ✜ ]     [ no  ]
+---│││ ││ └┬─[seller_shop_settings_list_personal_phone_panel              ]  [section_lev6       ]                                    [ 🡅 ✜ ]     [ no  ]
+---│││ ││  └ [seller_shop_settings_list_personal_phone_panel_label        ]  [label              ]  [ " Номер телефона * "      ]     [ ✜ ✜ ]     [ no  ]
+---│││ │└┬┬──[seller_shop_settings_list_personal_phone_number             ]  [section_lev6       ]                                    [ 🡇 ✜ ]     [ no  ]
+---│││ │ │└┬─[seller_shop_settings_list_personal_phone_number_code        ]  [dropdown           ]                                    [ ✜ 🡄 ]     [ yes ]
+---│││ │ │ ├ [seller_shop_settings_list_personal_phone_number_code_icon   ]  [icon               ]                                    [ ✜ ✜ ]     [ yes ]
+---│││ │ │ └ [seller_shop_settings_list_personal_phone_number_code_label  ]  [label              ]  [ { number }                ]     [ ✜ ✜ ]     [ yes ]
+---│││ │ └── [seller_shop_settings_list_personal_phone_number_input       ]  [input              ]                                    [ ✜ ✜ ]     [ yes ]
+---│││ └───┬─[seller_shop_settings_list_personal_phone_protip             ]  [button             ]                                    [ ✜ 🡆 ]     [ yes ]
+---│││     └ [seller_shop_settings_list_personal_phone_protip_label       ]  [label              ]  [ " ✓ / ! "                 ]     [ ✜ ✜ ]     [ yes ]
+---││└──┬┬┬──[seller_shop_settings_list_personal_firstname                ]  [section_lev5       ]                                    [ ✜ ✜ ]     [ no  ]
+---││   ││└┬─[seller_shop_settings_list_personal_firstname_panel          ]  [section_lev6       ]                                    [ 🡅 ✜ ]     [ no  ]
+---││   ││ └ [seller_shop_settings_list_personal_firstname_label          ]  [label              ]  [ " Ваше имя * "            ]     [ ✜ ✜ ]     [ no  ]
+---││   │└── [seller_shop_settings_list_personal_firstname_input          ]  [input              ]                                    [ 🡇 ✜ ]     [ yes ]
+---││   └──┬─[seller_shop_settings_list_personal_firstname_protip         ]  [button             ]                                    [ ✜ 🡆 ]     [ yes ]
+---││      └ [seller_shop_settings_list_personal_firstname_protip_label   ]  [label              ]  [ " ✓ / ! "                 ]     [ ✜ ✜ ]     [ yes ]
+---│└───┬┬┬──[seller_shop_settings_list_personal_secondname               ]  [section_lev5       ]                                    [ ✜ ✜ ]     [ no  ]
+---│    ││└┬─[seller_shop_settings_list_personal_secondname_panel         ]  [section_lev6       ]                                    [ 🡅 ✜ ]     [ no  ]
+---│    ││ └ [seller_shop_settings_list_personal_secondname_label         ]  [label              ]  [ " Ваша фамилия * "        ]     [ ✜ ✜ ]     [ no  ]
+---│    │└── [seller_shop_settings_list_personal_secondname_input         ]  [input              ]                                    [ 🡇 ✜ ]     [ yes ]
+---│    └──┬─[seller_shop_settings_list_personal_secondname_protip        ]  [button             ]                                    [ ✜ 🡆 ]     [ yes ]
+---│       └ [seller_shop_settings_list_personal_secondname_protip_label  ]  [label              ]  [ " ✓ / ! "                 ]     [ ✜ ✜ ]     [ yes ]
+---└────┬┬┬──[seller_shop_settings_list_personal_passport                 ]  [section_lev5       ]                                    [ ✜ ✜ ]     [ no  ]
+----    ││└┬─[seller_shop_settings_list_personal_passport_panel           ]  [section_lev6       ]                                    [ 🡅 ✜ ]     [ no  ]
+----    ││ └ [seller_shop_settings_list_personal_passport_label           ]  [label              ]  [ " Номер паспорта * "      ]     [ ✜ ✜ ]     [ no  ]
+----    │└── [seller_shop_settings_list_personal_passport_input           ]  [input              ]                                    [ 🡇 ✜ ]     [ yes ]
+----    └──┬─[seller_shop_settings_list_personal_passport_protip          ]  [button             ]                                    [ ✜ 🡆 ]     [ yes ]
+----       └ [seller_shop_settings_list_personal_passport_protip_label    ]  [label              ]  [ " ✓ / ! "                 ]     [ ✜ ✜ ]     [ yes ]
+
+
+■ seller_shop_settings_list_personal_username
 
 ✠ details
---- seller_shop_settings_list_personal представляет собой блок данных прямоугольной формы расположенный в верхней части состоящий из 3 компонентов:
-1) ----- seller_shop_settings_list_personal_panel - информационная панель находящаяся в верхней части seller_shop_settings_list_personal в виде компактного прямоугольного блока напоминающего кнопку которая содержит seller_shop_settings_list_personal_panel_label;
-------- seller_shop_settings_list_personal_panel_label - наименование опции следующего содержания: "Личные данные";
-2) ----- seller_shop_settings_list_personal_dropdown - кнопка инициирующая выпадающий список, находится под seller_shop_settings_list_personal_panel, содержит seller_shop_settings_list_personal_dropdown_icon и seller_shop_settings_list_personal_dropdown_label:
-------- seller_shop_settings_list_personal_dropdown_icon - иконка в виде стрелки указывающей вниз, находится слева;
-------- seller_shop_settings_list_personal_dropdown_label - наименование кнопки "развернуть", находится в позиции с небольшим смещением вправо от центра;
-3) ----- seller_shop_settings_list_personal_protip - кнопка круглой формы выполняющая роль аффорданса, находится справа от seller_shop_settings_list_personal_dropdown и содержит seller_shop_settings_list_personal_protip_label;
-------- seller_shop_settings_list_personal_protip_label - наименование seller_shop_settings_list_personal_protip "развернуть",
+------- seller_shop_settings_list_personal_username - опция отвечающая за ввод наименования компании или прозвища пользователя;
+--------- seller_shop_settings_list_personal_username_panel - информационная панель находящаяся в верхней части seller_shop_settings_list_personal_username в виде компактного прямоугольного блока напоминающего кнопку которая содержит seller_shop_settings_list_personal_username_panel_label;
+----------- seller_shop_settings_list_personal_username_panel_label - наименование опции следующего содержания: "Имя или название компании *";
+--------- seller_shop_settings_list_personal_username_input - поле для ввода, по умолчанию содержит данные введенные ранее;
+--------- seller_shop_settings_list_personal_username_protip - кнопка круглой формы выполняющая роль аффорданса, находится справа от seller_shop_settings_list_personal_username_input и содержит seller_shop_settings_list_personal_username_protip_label;
+----------- seller_shop_settings_list_personal_username_protip_label - представляется в виде иконки двух типов: seller_shop_settings_list_personal_username_protip_label_bad - с символом восклицательного знака, seller_shop_settings_list_personal_username_protip_label_good - с символом галочки.
+
+✠ actions
+• seller_shop_settings_list_personal_username_input:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_shop_settings_list_personal_username_input;
+║ condition: in any situation;
+║ result:
+║ && - появляется клавиатура для ввода (если она была закрыта);
+╙ && - карет устанавливается в конце текста (если текст наличествует).
+• seller_shop_settings_list_personal_username_protip:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_shop_settings_list_personal_username_protip;
+║ condition: in any situation;
+╙ result: по центру экрана всплывает seller_shop_settings_list_personal_username_protip_popover.
+
+✠ input_checks
+
+• seller_shop_settings_list_personal_username_input
+Фильтры проверяющие на соответствие нормативам содержание seller_shop_settings_list_personal_username_input. Если в ходе проверки фиксируется несоответствие, тогда состояние seller_shop_settings_list_personal_username_input позиционируется как invalid, в соответствии с чем отображается соответствующее типу проблемы предупреждение.
+• duplicity:
+Username анализируется на предмет совпадения с дубликатами.
+Работает в active_state.
+При вводе username, в ситуации если имя уже существует, под seller_shop_settings_list_personal_username_input всплывает seller_shop_settings_list_personal_username_alert_duplicity.
+• undernaming:
+Анализ на недостижение лимита допустимой длины username (недостижение норматива).
+Работает в active_state.
+При вводе username, в ситуации если букв < 5, под seller_shop_settings_list_personal_username_input всплывает seller_shop_settings_list_personal_username_alert_undernaming.
+• overnaming:
+Анализ на превышение лимита допустимой длины username (превышение норматива).
+Работает в active_state.
+При вводе username, в ситуации если букв > 50, под seller_shop_settings_list_personal_username_input всплывает seller_shop_settings_list_personal_username_alert_overnaming.
+• stopsymbol:
+Анализ на нажатие запрещенных клавиш базирующийся на превентивной блокировке ввода со всех клавиш кроме отвечающих за буквы и цифры.
+Работает в active_state. 
+При вводе username, в ситуации если использованы запрещенные символы, под seller_shop_settings_list_personal_username_input всплывает seller_shop_settings_list_personal_username_alert_stopsymbol.
+• stopword:
+Анализ на запрещенные слова, базирующийся на тезариусе содержащем надлежащий материал.
+Работает в active_state.
+При вводе username, в ситуации если использованы запрещенные слова, под seller_shop_settings_list_personal_username_input всплывает seller_shop_settings_list_personal_username_alert_stopword.
+• omission:
+Реакция на факт отсутствия введенных данных.
+Работает в inactive_state.
+В ситуации если поле пустое, а юзер нажимает на seller_shop_settings_buttons_yes, под seller_shop_settings_list_personal_username_input всплывает seller_shop_settings_list_personal_username_alert_omission.
+• emptiness:
+Анализ на пустотность.
+Работает в active_state и inactive_state.
+Работает in any situation делая проверку на предмет отсутствия данных в seller_shop_settings_list_personal_username_input.  
+
+✠ alerts
+• seller_shop_settings_list_personal_username_alert_prompt:
+- focusing: да;
+- location: появляется над seller_shop_settings_list_personal_username_input;
+- occasion: в процессе ввода данных в seller_shop_settings_list_personal_username_input;
+- content:  "ИМЯ, ПСЕВДОНИМ ИЛИ НАЗВАНИЕ КОМПАНИИ МОЖЕТ СОСТОЯТЬ ОТ 5 ДО 50 СИМВОЛОВ ВКЛЮЧАЯ БУКВЫ И ЦИФРЫ (МИНИМУМ 5 СИМВОЛОВ), ПРОБЕЛЫ И ДЕФИС. НЕ ИСПОЛЬЗУЙТЕ НЕНОРМАТИВНУЮ ЛЕКСИКУ В НАИМЕНОВАНИИ, В ПРОТИВНОМ СЛУЧАЕ ВАШ АККАУНТ БУДЕТ ЗАБЛОКИРОВАН".
+• setting_user_username_alert_duplicity:
+- focusing: да;
+- location: появляется под seller_shop_settings_list_personal_username_input;
+- occasion: невалидность по факту проверки на duplicity;
+- content:  "ЭТО ИМЯ УЖЕ ИСПОЛЬЗУЕТСЯ, ВЫБЕРИТЕ ДРУГОЙ ВАРИАНТ".
+• setting_user_username_alert_undernaming:
+- focusing: да;
+- location: появляется под seller_shop_settings_list_personal_username_input;
+- occasion: невалидность по факту проверки на undernaming;
+- content:  "ИМЯ СЛИШКОМ КОРОТКОЕ, ПОЖАЛУЙСТА ИСПОЛЬЗУЙТЕ БОЛЬШЕ СИМВОЛОВ".
+• setting_user_username_alert_overnaming:
+- focusing: да;
+- location: появляется под seller_shop_settings_list_personal_username_input;
+- occasion: невалидность по факту проверки на overnaming;
+- content:  "ИМЯ СЛИШКОМ ДЛИННОЕ, ПОЖАЛУЙСТА ИСПОЛЬЗУЙТЕ МЕНЬШЕ СИМВОЛОВ".
+• setting_user_username_alert_stopsymbol:
+- focusing: да;
+- location: появляется под seller_shop_settings_list_personal_username_input;
+- occasion: невалидность по факту проверки на stopsymbol;
+- content:  "ИСПОЛЬЗОВАН ЗАПРЕЩЕННЫЙ СИМВОЛ: {указывается запрещенный символ жирным шрифтом белого цвета на color3 фоне}".
+• setting_user_username_alert_stopword:
+- focusing: да;
+- location: появляется под seller_shop_settings_list_personal_username_input;
+- occasion: невалидность по факту проверки на stopword;
+- content:  "ИСПОЛЬЗОВАНО ЗАПРЕЩЕННОЕ СЛОВО {указывается запрещенное слово жирным шрифтом белого цвета на color3 фоне}".
+• setting_user_username_alert_omission:
+- focusing: нет;
+- location: появляется под seller_shop_settings_list_personal_username_input;
+- occasion: нажатие на seller_shop_settings_buttons_yes, если seller_shop_settings_list_personal_username_input пустой;
+- content:  "ПОЖАЛУЙСТА ВВЕДИТЕ ЗДЕСЬ ВАШЕ ИМЯ".
+
+✠ logics
+seller_shop_settings_list_personal_username_protip_label_bad отображается в ситуации если:
+- || - invalid по факту проверки на duplicity; 
+- || - invalid по факту проверки на undernaming; 
+- || - invalid по факту проверки на overnaming; 
+- || - invalid по факту проверки на stopsymbol; 
+- || - invalid по факту проверки на stopword; 
+- || - invalid по факту проверки на omission;
+- || - invalid по факту проверки на emptiness.
+
+seller_shop_settings_list_personal_username_protip_label_good отображается в ситуации если:
+- && - valid по факту проверки на duplicity;
+- && - valid по факту проверки на undernaming;
+- && - valid по факту проверки на overnaming.
+- && - valid по факту проверки на stopsymbol;
+- && - valid по факту проверки на stopword;
+- && - valid по факту проверки на omission;
+- && - valid по факту проверки на emptiness.
+
+✠ color_states
+┌─
+│seller_shop_settings_list_personal_username_input
+│seller_shop_settings_list_personal_username_protip
+│-------------------------------------------------
+│⟪⟪ border ⟫⟫ 
+├────────
+│• color3:
+│- || - invalid по факту проверки на duplicity
+│- || - invalid по факту проверки на undernaming
+│- || - invalid по факту проверки на overnaming
+│- || - invalid по факту проверки на stopsymbol
+│- || - invalid по факту проверки на stopword
+│- || - invalid по факту проверки на omission
+│- || - invalid по факту проверки на emptiness
+├────────
+│• color1:
+│- && - valid по факту проверки на duplicity
+│- && - valid по факту проверки на undernaming
+│- && - valid по факту проверки на overnaming
+│- && - valid по факту проверки на stopsymbol
+│- && - valid по факту проверки на stopword
+│- && - valid по факту проверки на omission
+│- && - valid по факту проверки на emptiness
+└─
+┌─
+│seller_shop_settings_list_personal_username_protip_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color3:
+│- || - invalid по факту проверки на duplicity
+│- || - invalid по факту проверки на undernaming
+│- || - invalid по факту проверки на overnaming
+│- || - invalid по факту проверки на stopsymbol
+│- || - invalid по факту проверки на stopword
+│- || - invalid по факту проверки на omission
+│- || - invalid по факту проверки на emptiness
+├────────
+│• color1:
+│- && - valid по факту проверки на duplicity
+│- && - valid по факту проверки на undernaming
+│- && - valid по факту проверки на overnaming
+│- && - valid по факту проверки на stopsymbol
+│- && - valid по факту проверки на stopword
+│- && - valid по факту проверки на omission
+│- && - valid по факту проверки на emptiness
+└─
+┌─
+│seller_shop_settings_list_personal_username_panel_label
+│seller_shop_settings_list_personal_username_protip_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
+
+■ seller_shop_settings_list_personal_phone
+
+✠ details
+------- seller_shop_settings_list_personal_phone - опция отвечающая за ввод номера сотового телефона пользователя;
+--------- seller_shop_settings_list_personal_phone_panel - информационная панель находящаяся в верхней части seller_shop_settings_list_personal_phone в виде компактного прямоугольного блока напоминающего кнопку которая содержит seller_shop_settings_list_personal_phone_panel_label;
+----------- seller_shop_settings_list_personal_phone_panel_label - наименование опции следующего содержания: "Номер телефона *";
+--------- seller_shop_settings_list_personal_phone_number - блок отвечающий за ввод телефона, находится под seller_shop_settings_list_personal_phone_panel;
+----------- seller_shop_settings_list_personal_phone_number_code - кнопка отвечающая за выбор кода страны, находится слева от seller_shop_settings_list_personal_phone_number_input, состоит из seller_shop_settings_list_personal_phone_number_code_icon и seller_shop_settings_list_personal_phone_number_code_label, при нажатии появляется выпадающий список со списком кодов стран и иконок ассоциирующихся с этими странами;
+------------- seller_shop_settings_list_personal_phone_number_code_icon - иконка ассоциирующаяся с присвоенным кодом страны, находится слева;
+------------- seller_shop_settings_list_personal_phone_number_code_label - аббревиатура названия страны состоящая из 3 букв, находится справа;
+----------- seller_shop_settings_list_personal_phone_number_input - поле для ввода номера телефона, по умолчанию содержит данные введенные ранее;
+----------- seller_shop_settings_list_personal_phone_protip - кнопка круглой формы выполняющая роль аффорданса, находится справа от seller_shop_settings_list_personal_phone_number_input и содержит seller_shop_settings_list_personal_phone_protip_label;
+------------- seller_shop_settings_list_personal_phone_protip_label - представляется в виде иконки двух типов: seller_shop_settings_list_personal_phone_protip_label_bad - с символом восклицательного знака, seller_shop_settings_list_personal_phone_protip_label_good - с символом галочки.
+
+✠ actions
+• seller_shop_settings_list_personal_phone_number_code:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_shop_settings_list_personal_phone_number_code;
+║ condition: in any situation;
+╙ result: происходит развертывание seller_shop_settings_list_personal_phone_number_code_dropdown.
+• seller_shop_settings_list_personal_phone_number_input:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_shop_settings_list_personal_phone_number_input;
+║ condition: in any situation;
+║ result:
+║ && - появляется клавиатура для ввода (если она была закрыта);
+╙ && - карет устанавливается в конце текста (если текст наличествует).
+• seller_shop_settings_list_personal_phone_protip:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_shop_settings_list_personal_phone_protip;
+║ condition: in any situation;
+╙ result: по центру экрана всплывает seller_shop_settings_list_personal_phone_protip_popover.
+
+✠ input_checks
+Фильтры проверяющие на соответствие нормативам содержание seller_shop_settings_list_personal_phone_number_input. Если в ходе проверки фиксируется несоответствие, тогда состояние seller_shop_settings_list_personal_phone_number_input позиционируется как invalid, в соответствии с чем отображается соответствующее типу проблемы предупреждение.
+• integrity: 
+Делается анализ на предмет длины (целостности) номера в соответствии с шаблоном страны.
+Работает в active_state.
+При вводе phone, в ситуации если цифр меньше чем предназначенных для них ячеек, под seller_shop_settings_list_personal_phone_number_input всплывает seller_shop_settings_list_personal_phone_number_alert_integrity.
+• stopsymbol:
+Анализ на нажатие запрещенных клавиш базирующийся на превентивной блокировке ввода со всех клавиш кроме отвечающих за цифры. 
+Работает в active_state.
+При вводе phone, в ситуации если использованы любые символы кроме цифр, под seller_shop_settings_list_personal_phone_number_input всплывает seller_shop_settings_list_personal_phone_number_alert_stopsymbol.
+• omission:
+Реакция на факт отсутствия введенных данных.
+Работает в inactive_state.
+В ситуации если поле пустое, а юзер нажимает на seller_shop_settings_buttons_yes, под seller_shop_settings_list_personal_phone_number_input всплывает seller_shop_settings_list_personal_phone_number_alert_omission.
+• emptiness:
+Анализ на пустотность.
+Работает в active_state и inactive_state.
+Работает in any situation делая проверку на предмет отсутствия данных в seller_shop_settings_list_personal_phone_number_input.  
+
+✠ alerts
+• seller_shop_settings_list_personal_phone_alert_prompt:
+- focusing: да;
+- location: появляется над seller_shop_settings_list_personal_phone_number_input;
+- occasion: в процессе ввода данных в seller_shop_settings_list_personal_phone_number_input;
+- content:  "УКАЖИТЕ ТЕЛЕФОННЫЙ КОД СТРАНЫ ИСПОЛЬЗУЯ КНОПКУ ПЕРЕД СТРОКОЙ. ДАЛЕЕ ВВЕДИТЕ ВСЕ ЦИФРЫ ВАШЕГО ТЕЛЕФОННОГО НОМЕРА".
+• seller_shop_settings_list_personal_phone_number_alert_integrity:
+- focusing: да;
+- location: появляется под seller_shop_settings_list_personal_phone_number_input;
+- occasion: если в seller_shop_settings_list_personal_phone_number_input введено цифр < ячеек;
+- content:  "ПОЖАЛУЙСТА ПРАВИЛЬНО ВВОДИТЕ ВСЕ ЦИФРЫ".
+• seller_shop_settings_list_personal_phone_number_alert_stopsymbol:
+- focusing: да;
+- location: появляется под seller_shop_settings_list_personal_phone_number_input;
+- occasion: если использованы запрещенные символы;
+- content:  "ИСПОЛЬЗОВАН ЗАПРЕЩЕННЫЙ СИМВОЛ: {указывается запрещенный символ жирным шрифтом белого цвета на color3 фоне}. ПОЖАЛУЙСТА ИСПОЛЬЗУЙТЕ ТОЛЬКО ЦИФРЫ".
+• seller_shop_settings_list_personal_phone_number_alert_omission:
+- focusing: нет;
+- location: появляется под seller_shop_settings_list_personal_phone_number_input;
+- occasion: нажатие на seller_shop_settings_buttons_yes, если seller_shop_settings_list_personal_phone_number_input пустой;
+- content:  "ПОЖАЛУЙСТА ВВЕДИТЕ ЗДЕСЬ ВАШ ТЕЛЕФОН".
+
+✠ logics
+seller_shop_settings_list_personal_phone_protip_label_bad отображается в ситуации если:
+- || - invalid по факту проверки на integrity
+- || - invalid по факту проверки на stopsymbol
+- || - invalid по факту проверки на omission
+- || - invalid по факту проверки на emptiness
+
+seller_shop_settings_list_personal_phone_protip_label_good отображается в ситуации если:
+- && - valid по факту проверки на integrity
+- && - valid по факту проверки на stopsymbol
+- && - valid по факту проверки на omission
+- && - valid по факту проверки на emptiness
+
+✠ color_states
+┌─
+│seller_shop_settings_list_personal_phone_number_input
+│seller_shop_settings_list_personal_phone_protip
+│-------------------------------------------------
+│⟪⟪ border ⟫⟫ 
+├────────
+│• color3:
+│- || - invalid по факту проверки на integrity
+│- || - invalid по факту проверки на stopsymbol
+│- || - invalid по факту проверки на omission
+│- || - invalid по факту проверки на emptiness
+├────────
+│• color1:
+│- && - valid по факту проверки на integrity
+│- && - valid по факту проверки на stopsymbol
+│- && - valid по факту проверки на omission
+│- && - valid по факту проверки на emptiness
+└─
+┌─
+│seller_shop_settings_list_personal_phone_protip_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color3:
+│- || - invalid по факту проверки на integrity
+│- || - invalid по факту проверки на stopsymbol
+│- || - invalid по факту проверки на omission
+│- || - invalid по факту проверки на emptiness
+├────────
+│• color1:
+│- && - valid по факту проверки на integrity
+│- && - valid по факту проверки на stopsymbol
+│- && - valid по факту проверки на omission
+│- && - valid по факту проверки на emptiness
+└─
+┌─
+│seller_shop_settings_list_personal_phone_number_code
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ в default_state
+├────────
+│• color5
+│------ в pressing_state
+└─
+┌─
+│seller_shop_settings_list_personal_phone_panel_label
+│seller_shop_settings_list_personal_phone_number_code_label
+│seller_shop_settings_list_personal_phone_protip_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
+
+■ seller_shop_settings_list_personal_firstname
+
+✠ details
+------- seller_shop_settings_list_personal_firstname - опция отвечающая за ввод имени пользователя;
+--------- seller_shop_settings_list_personal_firstname_panel - информационная панель находящаяся в верхней части seller_shop_settings_list_personal_firstname в виде компактного прямоугольного блока напоминающего кнопку которая содержит seller_shop_settings_list_personal_firstname_panel_label;
+----------- seller_shop_settings_list_personal_firstname_panel_label - наименование опции следующего содержания: "Ваше имя *";
+--------- seller_shop_settings_list_personal_firstname_input - поле для ввода, по умолчанию содержит данные введенные ранее;
+--------- seller_shop_settings_list_personal_firstname_protip - кнопка круглой формы выполняющая роль аффорданса, находится справа от seller_shop_settings_list_personal_firstname_input и содержит seller_shop_settings_list_personal_firstname_protip_label;
+----------- seller_shop_settings_list_personal_firstname_protip_label - представляется в виде иконки двух типов: seller_shop_settings_list_personal_firstname_protip_label_bad - с символом восклицательного знака, seller_shop_settings_list_personal_firstname_protip_label_good - с символом галочки.
+
+✠ actions
+• seller_shop_settings_list_personal_firstname_input:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_shop_settings_list_personal_firstname_input;
+║ condition: in any situation;
+║ result:
+║ && - появляется клавиатура для ввода (если она была закрыта);
+╙ && - карет устанавливается в конце текста (если текст наличествует).
+• seller_shop_settings_list_personal_firstname_protip:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_shop_settings_list_personal_firstname_protip;
+║ condition: in any situation;
+╙ result: по центру экрана всплывает seller_shop_settings_list_personal_firstname_protip_popover.
+
+✠ input_checks
+• seller_shop_settings_list_personal_firstname_input
+Фильтры проверяющие на соответствие нормативам содержание seller_shop_settings_list_personal_firstname_input. Если в ходе проверки фиксируется несоответствие, тогда состояние seller_shop_settings_list_personal_firstname_input позиционируется как invalid, в соответствии с чем отображается соответствующее типу проблемы предупреждение.
+• overnaming:
+Анализ на превышение лимита допустимой длины firstname.
+Работает в active_state.
+При вводе firstname, в ситуации если букв > 50, под seller_shop_settings_list_personal_firstname_input всплывает seller_shop_settings_list_personal_firstname_alert_overnaming.
+• stopsymbol:
+Анализ на нажатие запрещенных клавиш базирующийся на превентивной блокировке ввода со всех клавиш кроме отвечающих за буквы, дефис и пробел. 
+Работает в active_state.
+При вводе firstname, в ситуации если использованы запрещенные символы, под seller_shop_settings_list_personal_firstname_input всплывает seller_shop_settings_list_personal_firstname_alert_stopsymbol.
+• stopword:
+Анализ на запрещенные слова, базирующийся на тезариусе содержащем надлежащий материал.
+Работает в active_state.
+При вводе firstname, в ситуации если использованы запрещенные слова, под seller_shop_settings_list_personal_firstname_input всплывает seller_shop_settings_list_personal_firstname_alert_stopword.
+• omission:
+Реакция на факт отсутствия введенных данных.
+Работает в inactive_state.
+В ситуации если поле пустое, а юзер нажимает на seller_shop_settings_buttons_yes, под seller_shop_settings_list_personal_firstname_input всплывает seller_shop_settings_list_perso_firstname_alert_omission.
+• emptiness:
+Анализ на пустотность.
+Работает в active_state и inactive_state.
+Работает in any situation делая проверку на предмет отсутствия данных в seller_shop_settings_list_personal_firstname_input. 
+
+✠ alerts
+• seller_shop_settings_list_personal_firstname_alert_prompt:
+- focusing: да;
+- location: появляется над seller_shop_settings_list_personal_firstname_input;
+- occasion: в процессе ввода данных в seller_shop_settings_list_personal_firstname_input;
+- content:  "ИМЯ МОЖЕТ СОСТОЯТЬ ОТ 1 ДО 50 СИМВОЛОВ ВКЛЮЧАЯ БУКВЫ, ДЕФИСЫ И ПРОБЕЛЫ".
+• seller_shop_settings_list_personal_firstname_alert_overnaming:
+- focusing: да;
+- location: появляется под seller_shop_settings_list_personal_firstname_input;
+- occasion: если в seller_shop_settings_list_personal_firstname_input введено букв > 50;
+- content:  "ИМЯ СЛИШКОМ ДЛИННОЕ, ПОЖАЛУЙСТА ИСПОЛЬЗУЙТЕ МЕНЬШЕ СИМВОЛОВ".
+• seller_shop_settings_list_personal_firstname_alert_stopsymbol:
+- focusing: да;
+- location: появляется под seller_shop_settings_list_personal_firstname_input;
+- occasion: если использованы запрещенные символы;
+- content:  "ИСПОЛЬЗОВАН ЗАПРЕЩЕННЫЙ СИМВОЛ: {указывается запрещенный символ жирным шрифтом белого цвета на color3 фоне}".
+• seller_shop_settings_list_personal_firstname_alert_stopword:
+- focusing: да;
+- location: появляется под seller_shop_settings_list_personal_firstname_input;
+- occasion: если использованы запрещенные слова;
+- content:  "ИСПОЛЬЗОВАНО ЗАПРЕЩЕННОЕ СЛОВО {указывается запрещенное слово жирным шрифтом белого цвета на color3 фоне}".
+• seller_shop_settings_list_personal_firstname_alert_omission:
+- focusing: нет;
+- location: появляется под seller_shop_settings_list_personal_firstname_input;
+- occasion: нажатие на seller_shop_settings_buttons_yes, если seller_shop_settings_list_personal_firstname_input пустой;
+- content:  "ПОЖАЛУЙСТА ВВЕДИТЕ ЗДЕСЬ ВАШЕ ИМЯ".
+
+✠ logics
+seller_shop_settings_list_personal_firstname_protip_label_bad отображается в ситуации если:
+- || - invalid по факту проверки на overnaming
+- || - invalid по факту проверки на stopsymbol
+- || - invalid по факту проверки на stopword
+- || - invalid по факту проверки на omission
+- || - invalid по факту проверки на emptiness
+
+seller_shop_settings_list_personal_firstname_protip_label_good отображается в ситуации если:
+- && - valid по факту проверки на overnaming
+- && - valid по факту проверки на stopsymbol
+- && - valid по факту проверки на stopword
+- && - valid по факту проверки на omission
+- && - valid по факту проверки на emptiness
+
+✠ color_states
+┌─
+│seller_shop_settings_list_personal_firstname_input
+│seller_shop_settings_list_personal_firstname_protip
+│-------------------------------------------------
+│⟪⟪ border ⟫⟫ 
+├────────
+│• color3:
+│- || - invalid по факту проверки на overnaming
+│- || - invalid по факту проверки на stopsymbol
+│- || - invalid по факту проверки на stopword
+│- || - invalid по факту проверки на omission
+│- || - invalid по факту проверки на emptiness
+├────────
+│• color1:
+│- && - valid по факту проверки на overnaming
+│- && - valid по факту проверки на stopsymbol
+│- && - valid по факту проверки на stopword
+│- && - valid по факту проверки на omission
+│- && - valid по факту проверки на emptiness
+└─
+┌─
+│seller_shop_settings_list_personal_firstname_protip_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color3:
+│- || - invalid по факту проверки на overnaming
+│- || - invalid по факту проверки на stopsymbol
+│- || - invalid по факту проверки на stopword
+│- || - invalid по факту проверки на omission
+│- || - invalid по факту проверки на emptiness
+├────────
+│• color1:
+│- && - valid по факту проверки на overnaming
+│- && - valid по факту проверки на stopsymbol
+│- && - valid по факту проверки на stopword
+│- && - valid по факту проверки на omission
+│- && - valid по факту проверки на emptiness
+└─
+┌─
+│seller_shop_settings_list_personal_firstname_panel
+│seller_shop_settings_list_personal_firstname_protip_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
+
+■ seller_shop_settings_list_personal_secondname
+
+✠ details
+------- seller_shop_settings_list_personal_secondname - опция отвечающая за ввод фамилии пользователя;
+--------- seller_shop_settings_list_personal_secondname_panel - информационная панель находящаяся в верхней части seller_shop_settings_list_personal_secondname в виде компактного прямоугольного блока напоминающего кнопку которая содержит seller_shop_settings_list_personal_secondname_panel_label;
+----------- seller_shop_settings_list_personal_secondname_panel_label - наименование опции следующего содержания: "Ваша фамилия *";
+--------- seller_shop_settings_list_personal_secondname_input - поле для ввода, по умолчанию содержит данные введенные ранее;
+--------- seller_shop_settings_list_personal_secondname_protip - кнопка круглой формы выполняющая роль аффорданса, находится справа от seller_shop_settings_list_personal_secondname_input и содержит seller_shop_settings_list_personal_secondname_protip_label;
+----------- seller_shop_settings_list_personal_secondname_protip_label - представляется в виде иконки двух типов: seller_shop_settings_list_personal_secondname_protip_label_bad - с символом восклицательного знака, seller_shop_settings_list_personal_secondname_protip_label_good - с символом галочки.
+
+✠ actions
+• seller_shop_settings_list_personal_secondname_input:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_shop_settings_list_personal_secondname_input;
+║ condition: in any situation;
+║ result:
+║ && - появляется клавиатура для ввода (если она была закрыта);
+╙ && - карет устанавливается в конце текста (если текст наличествует).
+• seller_shop_settings_list_personal_secondname_protip:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_shop_settings_list_personal_secondname_protip;
+║ condition: in any situation;
+╙ result: по центру экрана всплывает seller_shop_settings_list_personal_secondname_protip_popover.
+
+✠ input_checks
+• seller_shop_settings_list_personal_secondname_input
+Фильтры проверяющие на соответствие нормативам содержание seller_shop_settings_list_personal_secondname_input. Если в ходе проверки фиксируется несоответствие, тогда состояние seller_shop_settings_list_personal_secondname_input позиционируется как invalid, в соответствии с чем отображается соответствующее типу проблемы предупреждение.
+• overnaming:
+Анализ на превышение лимита допустимой длины secondname.
+Работает в active_state.
+При вводе secondname, в ситуации если букв > 99, под seller_shop_settings_list_personal_secondname_input всплывает seller_shop_settings_list_personal_secondname_alert_overnaming со следующим содержанием.
+• stopsymbol:
+Анализ на нажатие запрещенных клавиш базирующийся на превентивной блокировке ввода со всех клавиш кроме отвечающих за буквы, дефис и пробел. 
+Работает в active_state.
+При вводе secondname, в ситуации если использованы запрещенные символы, под seller_shop_settings_list_personal_secondname_input всплывает seller_shop_settings_list_personal_secondname_alert_stopsymbol.
+• stopword:
+Анализ на запрещенные слова, базирующийся на тезариусе содержащем надлежащий материал.
+Работает в active_state.
+При вводе secondname, в ситуации если использованы запрещенные слова, под seller_shop_settings_list_personal_secondname_input всплывает seller_shop_settings_list_personal_secondname_alert_stopword.
+• omission:
+Реакция на факт отсутствия введенных данных.
+Работает в inactive_state.
+В ситуации если поле пустое, а юзер нажимает на seller_shop_settings_buttons_yes, под seller_shop_settings_list_personal_secondname_input всплывает seller_shop_settings_list_personal_secondname_alert_omission.
+• emptiness:
+Анализ на пустотность.
+Работает в active_state и inactive_state.
+Работает in any situation делая проверку на предмет отсутствия данных в seller_shop_settings_list_personal_secondname_input. 
+
+✠ alerts
+
+• seller_shop_settings_list_personal_secondname_alert_prompt:
+- focusing: да;
+- location: появляется над seller_shop_settings_list_personal_secondname_input;
+- occasion: в процессе ввода данных в seller_shop_settings_list_personal_secondname_input;
+- content:  "ФАМИЛИЯ МОЖЕТ СОСТОЯТЬ ОТ 1 ДО 99 СИМВОЛОВ ВКЛЮЧАЯ БУКВЫ, ДЕФИСЫ И ПРОБЕЛЫ".
+• seller_shop_settings_list_personal_secondname_alert_overnaming:
+- focusing: да;
+- location: появляется под seller_shop_settings_list_personal_secondname_input;
+- occasion: если в seller_shop_settings_list_personal_secondname_input введено букв > 99;
+- content:  "ФАМИЛИЯ СЛИШКОМ ДЛИННАЯ, ПОЖАЛУЙСТА ИСПОЛЬЗУЙТЕ МЕНЬШЕ СИМВОЛОВ".
+• seller_shop_settings_list_personal_secondname_alert_stopsymbol:
+- focusing: да;
+- location: появляется под seller_shop_settings_list_personal_secondname_input;
+- occasion: если использованы запрещенные символы;
+- content:  "ИСПОЛЬЗОВАН ЗАПРЕЩЕННЫЙ СИМВОЛ: {указывается запрещенный символ жирным шрифтом белого цвета на color3 фоне}".
+• seller_shop_settings_list_personal_secondname_alert_stopword:
+- focusing: да;
+- location: появляется под seller_shop_settings_list_personal_secondname_input;
+- occasion: если использованы запрещенные слова;
+- content:  "ИСПОЛЬЗОВАНО ЗАПРЕЩЕННОЕ СЛОВО {указывается запрещенное слово жирным шрифтом белого цвета на color3 фоне}".
+• seller_shop_settings_list_personal_secondname_alert_omission:
+- focusing: нет;
+- location: появляется под seller_shop_settings_list_personal_secondname_input;
+- occasion: нажатие на seller_shop_settings_buttons_yes, если seller_shop_settings_list_personal_secondname_input пустой;
+- content:  "ПОЖАЛУЙСТА ВВЕДИТЕ ЗДЕСЬ ВАШУ ФАМИЛИЮ".
+
+✠ logics
+seller_shop_settings_list_personal_secondname_protip_label_bad отображается в ситуации если:
+- || - invalid по факту проверки на overnaming
+- || - invalid по факту проверки на stopsymbol
+- || - invalid по факту проверки на stopword
+- || - invalid по факту проверки на omission
+- || - invalid по факту проверки на emptiness
+
+seller_shop_settings_list_personal_secondname_protip_label_good отображается в ситуации если:
+- && - valid по факту проверки на overnaming
+- && - valid по факту проверки на stopsymbol
+- && - valid по факту проверки на stopword
+- && - valid по факту проверки на omission
+- && - valid по факту проверки на emptiness
+
+✠ color_states
+┌─
+│seller_shop_settings_list_personal_secondname_input
+│seller_shop_settings_list_personal_secondname_protip
+│-------------------------------------------------
+│⟪⟪ border ⟫⟫ 
+├────────
+│• color3:
+│- || - invalid по факту проверки на overnaming
+│- || - invalid по факту проверки на stopsymbol
+│- || - invalid по факту проверки на stopword
+│- || - invalid по факту проверки на omission
+│- || - invalid по факту проверки на emptiness
+├────────
+│• color1:
+│- && - valid по факту проверки на overnaming
+│- && - valid по факту проверки на stopsymbol
+│- && - valid по факту проверки на stopword
+│- && - valid по факту проверки на omission
+│- && - valid по факту проверки на emptiness
+└─
+┌─
+│seller_shop_settings_list_personal_secondname_protip_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color3:
+│- || - invalid по факту проверки на overnaming
+│- || - invalid по факту проверки на stopsymbol
+│- || - invalid по факту проверки на stopword
+│- || - invalid по факту проверки на omission
+│- || - invalid по факту проверки на emptiness
+├────────
+│• color1:
+│- && - valid по факту проверки на overnaming
+│- && - valid по факту проверки на stopsymbol
+│- && - valid по факту проверки на stopword
+│- && - valid по факту проверки на omission
+│- && - valid по факту проверки на emptiness
+└─
+┌─
+│seller_shop_settings_list_personal_secondname_panel
+│seller_shop_settings_list_personal_secondname_protip_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
+
+■ seller_shop_settings_list_personal_passport
+
+✠ details
+------- seller_shop_settings_list_personal_passport - опция отвечающая за ввод номера паспорта пользователя;
+--------- seller_shop_settings_list_personal_passport_panel - информационная панель находящаяся в верхней части seller_shop_settings_list_personal_passport в виде компактного прямоугольного блока напоминающего кнопку которая содержит seller_shop_settings_list_personal_passport_panel_label;
+----------- seller_shop_settings_list_personal_passport_panel_label - наименование опции следующего содержания: "Номер паспорта *";
+--------- seller_shop_settings_list_personal_passport_input - поле для ввода, по умолчанию содержит данные введенные ранее;
+--------- seller_shop_settings_list_personal_passport_protip - кнопка круглой формы выполняющая роль аффорданса, находится справа от seller_shop_settings_list_personal_passport_input и содержит seller_shop_settings_list_personal_passport_protip_label;
+----------- seller_shop_settings_list_personal_passport_protip_label - представляется в виде иконки двух типов: seller_shop_settings_list_personal_passport_protip_label_bad - с символом восклицательного знака, seller_shop_settings_list_personal_passport_protip_label_good - с символом галочки.
+
+✠ actions
+• seller_shop_settings_list_personal_passport_input:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_shop_settings_list_personal_passport_input;
+║ condition: in any situation;
+║ result:
+║ && - появляется клавиатура для ввода (если она была закрыта);
+╙ && - карет устанавливается в конце текста (если текст наличествует).
+• seller_shop_settings_list_personal_passport_protip:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_shop_settings_list_personal_passport_protip;
+║ condition: in any situation;
+╙ result: по центру экрана всплывает seller_shop_settings_list_personal_passport_protip_popover.
+
+✠ input_checks
+• seller_shop_settings_list_personal_passport_input
+Фильтры проверяющие на соответствие нормативам содержание seller_shop_settings_list_personal_passport_input. Если в ходе проверки фиксируется несоответствие, тогда состояние seller_shop_settings_list_personal_passport_input позиционируется как invalid, в соответствии с чем отображается соответствующее типу проблемы предупреждение.
+• integrity: 
+Делается анализ на предмет длины (целостности) номера в соответствии со страной, которой принадлежит паспорт.
+Работает в active_state.
+В процессе ввода passport (с момента фокусировки на seller_shop_settings_list_personal_passport_input), в ситуации если/пока все ячейки не заполнены, seller_shop_settings_list_personal_passport_input имеет color3, а под seller_shop_settings_list_personal_passport_input всплывает seller_shop_settings_list_personal_passport_alert_integrity.
+• duplicity: 
+Номер паспорта анализируется на предмет совпадения с дубликатами.
+Работает в active_state.
+Если в результате проверки на duplicity обнаруживается дубликат, под seller_shop_settings_list_personal_passport_input всплывает seller_shop_settings_list_personal_passport_alert_duplicity.
+• stopsymbol: 
+Анализ на нажатие запрещенных клавиш базирующийся на превентивной блокировке ввода со всех клавиш кроме отвечающих за буквы и цифры.
+Работает в active_state. 
+При вводе passport, в ситуации если использованы запрещенные символы, под seller_shop_settings_list_personal_passport_input всплывает seller_shop_settings_list_personal_passport_alert_stopsymbol.
+• omission:
+Реакция на факт отсутствия введенных данных.
+Работает в inactive_state.
+В ситуации если поле пустое, а юзер нажимает на seller_shop_settings_buttons_yes, под seller_shop_settings_list_personal_passport_input всплывает seller_shop_settings_list_personal_passport_alert_omission.
+• emptiness:
+Анализ на пустотность.
+Работает в active_state и inactive_state.
+Работает in any situation делая проверку на предмет отсутствия данных в seller_shop_settings_list_personal_passport_input. 
+
+✠ alerts
+• seller_shop_settings_list_personal_passport_alert_prompt:
+- focusing: да;
+- location: появляется над seller_shop_settings_list_personal_passport_input;
+- occasion: в процессе ввода данных в seller_shop_settings_list_personal_passport_input;
+- content:  "ТРЕБУЕТСЯ ВВЕСТИ ПОЛНЫЙ НОМЕР ПАСПОРТА, ВКЛЮЧАЯ СЕРИЮ (ЕСЛИ ЕСТЬ). В ЗАВИСИМОСТИ ОТ СТРАНЫ НОМЕР МОЖЕТ СОДЕРЖАТЬ ТОЛЬКО ЦИФРЫ, ЛИБО ЦИФРЫ И БУКВЫ".
+• seller_shop_settings_list_personal_passport_alert_stopsymbol:
+- focusing: да;
+- location: появляется под seller_shop_settings_list_personal_passport_input;
+- occasion: если использованы запрещенные символы;
+- content:  "ИСПОЛЬЗОВАН ЗАПРЕЩЕННЫЙ СИМВОЛ: {указывается запрещенный символ жирным шрифтом белого цвета на color3 фоне}".
+• seller_shop_settings_list_personal_passport_alert_integrity:
+- focusing: да;
+- location: появляется под seller_shop_settings_list_personal_passport_input;
+- occasion: невалидность по факту проверки на integrity;
+- content:  "ПОЖАЛУЙСТА ПРАВИЛЬНО ВВОДИТЕ НОМЕР".
+• seller_shop_settings_list_personal_passport_alert_duplicity:
+- focusing: да;
+- location: появляется под seller_shop_settings_list_personal_passport_input;
+- occasion: невалидность по факту проверки на duplicity;
+- content:  "НОМЕР ВАШЕГО ПАСПОРТА УЖЕ КТО-ТО ИСПОЛЬЗУЕТ. ПОЖАЛУЙСТА ОБРАТИТЕСЬ В СЛУЖБУ ПОДДЕРЖКИ { соответствующая ссылка }".
+• seller_shop_settings_list_personal_passport_alert_omission:
+- focusing: нет;
+- location: появляется под seller_shop_settings_list_personal_passport_input;
+- occasion: нажатие на setting_seller_button_yes, если seller_shop_settings_list_personal_passport_input пустой;
+- content:  "ПОЖАЛУЙСТА ВВЕДИТЕ ЗДЕСЬ НОМЕР ВАШЕГО ПАСПОРТА".
+
+✠ logics
+seller_shop_settings_list_personal_passport_protip_label_bad отображается в ситуации если:
+- || - invalid по факту проверки на stopsymbol
+- || - invalid по факту проверки на integrity
+- || - invalid по факту проверки на duplicity
+- || - invalid по факту проверки на omission
+- || - invalid по факту проверки на emptiness
+
+seller_shop_settings_list_personal_passport_protip_label_good отображается в ситуации если:
+- && - valid по факту проверки на stopsymbol
+- && - valid по факту проверки на integrity
+- && - valid по факту проверки на duplicity
+- && - valid по факту проверки на omission
+- && - valid по факту проверки на emptiness
+
+✠ color_states
+┌─
+│seller_shop_settings_list_personal_passport_input
+│seller_shop_settings_list_personal_passport_protip
+│-------------------------------------------------
+│⟪⟪ border ⟫⟫ 
+├────────
+│• color3:
+│- || - invalid по факту проверки на stopsymbol
+│- || - invalid по факту проверки на integrity
+│- || - invalid по факту проверки на duplicity
+│- || - invalid по факту проверки на omission
+│- || - invalid по факту проверки на emptiness
+├────────
+│• color1:
+│- && - valid по факту проверки на stopsymbol
+│- && - valid по факту проверки на integrity
+│- && - valid по факту проверки на duplicity
+│- && - valid по факту проверки на omission
+│- && - valid по факту проверки на emptiness
+└─
+┌─
+│seller_shop_settings_list_personal_passport_protip_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color3:
+│- || - invalid по факту проверки на stopsymbol
+│- || - invalid по факту проверки на integrity
+│- || - invalid по факту проверки на duplicity
+│- || - invalid по факту проверки на omission
+│- || - invalid по факту проверки на emptiness
+├────────
+│• color1:
+│- && - valid по факту проверки на stopsymbol
+│- && - valid по факту проверки на integrity
+│- && - valid по факту проверки на duplicity
+│- && - valid по факту проверки на omission
+│- && - valid по факту проверки на emptiness
+└─
+┌─
+│seller_shop_settings_list_personal_passport_panel
+│seller_shop_settings_list_personal_passport_protip_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
+
+■ seller_shop_settings_list_geoposition
+
+✠ details
+------- seller_shop_settings_list_geoposition - опция отвечающая за ввод наименования компании или прозвища пользователя;
+--------- seller_shop_settings_list_geoposition_panel - информационная панель находящаяся в верхней части seller_shop_settings_list_geoposition в виде компактного прямоугольного блока напоминающего кнопку которая содержит seller_shop_settings_list_geoposition_panel_label;
+----------- seller_shop_settings_list_geoposition_panel_label - наименование опции следующего содержания: "Имя или название компании *";
+--------- seller_shop_settings_list_geoposition_input - поле для ввода, по умолчанию содержит данные введенные ранее;
+--------- seller_shop_settings_list_geoposition_protip - кнопка круглой формы выполняющая роль аффорданса, находится справа от seller_shop_settings_list_geoposition_input и содержит seller_shop_settings_list_geoposition_protip_label;
+----------- seller_shop_settings_list_geoposition_protip_label - представляется в виде иконки двух типов: seller_shop_settings_list_geoposition_protip_label_bad - с символом восклицательного знака, seller_shop_settings_list_geoposition_protip_label_good - с символом галочки.
+
+✠ actions
+• seller_shop_settings_list_geoposition_input:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_shop_settings_list_geoposition_input;
+║ condition: in any situation;
+║ result:
+║ && - появляется клавиатура для ввода (если она была закрыта);
+╙ && - карет устанавливается в конце текста (если текст наличествует).
+• seller_shop_settings_list_geoposition_protip:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_shop_settings_list_geoposition_protip;
+║ condition: in any situation;
+╙ result: по центру экрана всплывает seller_shop_settings_list_geoposition_protip_popover.
+
+✠ logics
+seller_shop_settings_list_geoposition_protip_label_bad отображается в ситуации если:
+- || - invalid по факту проверки на duplicity; 
+- || - invalid по факту проверки на undernaming; 
+- || - invalid по факту проверки на overnaming; 
+- || - invalid по факту проверки на stopsymbol; 
+- || - invalid по факту проверки на stopword; 
+- || - invalid по факту проверки на omission;
+- || - invalid по факту проверки на emptiness.
+
+seller_shop_settings_list_geoposition_protip_label_good отображается в ситуации если:
+- && - valid по факту проверки на duplicity;
+- && - valid по факту проверки на undernaming;
+- && - valid по факту проверки на overnaming.
+- && - valid по факту проверки на stopsymbol;
+- && - valid по факту проверки на stopword;
+- && - valid по факту проверки на omission;
+- && - valid по факту проверки на emptiness.
+
+✠ color_states
+┌─
+│seller_shop_settings_list_geoposition_input
+│seller_shop_settings_list_geoposition_protip
+│-------------------------------------------------
+│⟪⟪ border ⟫⟫ 
+├────────
+│• color3:
+│- || - invalid по факту проверки на duplicity
+│- || - invalid по факту проверки на undernaming
+│- || - invalid по факту проверки на overnaming
+│- || - invalid по факту проверки на stopsymbol
+│- || - invalid по факту проверки на stopword
+│- || - invalid по факту проверки на omission
+│- || - invalid по факту проверки на emptiness
+├────────
+│• color1:
+│- && - valid по факту проверки на duplicity
+│- && - valid по факту проверки на undernaming
+│- && - valid по факту проверки на overnaming
+│- && - valid по факту проверки на stopsymbol
+│- && - valid по факту проверки на stopword
+│- && - valid по факту проверки на omission
+│- && - valid по факту проверки на emptiness
+└─
+┌─
+│seller_shop_settings_list_geoposition_protip_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color3:
+│- || - invalid по факту проверки на duplicity
+│- || - invalid по факту проверки на undernaming
+│- || - invalid по факту проверки на overnaming
+│- || - invalid по факту проверки на stopsymbol
+│- || - invalid по факту проверки на stopword
+│- || - invalid по факту проверки на omission
+│- || - invalid по факту проверки на emptiness
+├────────
+│• color1:
+│- && - valid по факту проверки на duplicity
+│- && - valid по факту проверки на undernaming
+│- && - valid по факту проверки на overnaming
+│- && - valid по факту проверки на stopsymbol
+│- && - valid по факту проверки на stopword
+│- && - valid по факту проверки на omission
+│- && - valid по факту проверки на emptiness
+└─
+┌─
+│seller_shop_settings_list_geoposition_panel_label
+│seller_shop_settings_list_geoposition_protip_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
