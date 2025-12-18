@@ -14,6 +14,7 @@ color5 - actived;
 
 
 
+
 🡆🡆 seller_settings_goods_screen
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 Открытие seller_settings_goods_screen осуществляется через нажатие кнопки seller_goods_add_lot. При инициации каждого нового лота создается индивидуальная форма goods_data, где хранится весь перечень его данных. В seller_settings_goods_screen осуществляется ввод и корректировка данных товара. Конфигурация seller_settings_goods_screen состоит из 3 разделов: seller_settings_goods_panel, seller_settings_goods_list и seller_settings_goods_buttons, главный из которых (seller_settings_goods_list) представлен 11 секциями. Располагаясь в самом верху seller_settings_goods_panel отображает заголовок для seller_settings_goods_screen: "Данные товара". Каждая секция seller_settings_goods_list имеет свой заголовок, который размещается над содержанием. Обязательными для активации = публикации лота являются seller_settings_goods_list_name и seller_settings_goods_list_price. Перечень компонентов seller_settings_goods_screen приведенный в порядке их расположения в интерфейсе сверху-вниз:
@@ -88,8 +89,9 @@ color5 - actived;
 ---│ ││└──────┬┬┬┬──[seller_settings_goods_list_image                       ]  [section_lev3       ]                                   [ ✜ ✜ ]     [ no  ]
 ---│ ││       │││└┬─[seller_settings_goods_list_image_panel                 ]  [section_lev4       ]                                   [ 🡅 ✜ ]     [ no  ]
 ---│ ││       │││ └ [seller_settings_goods_list_image_panel_label           ]  [label              ]  [ " Изображение товара "    ]    [ ✜ ✜ ]     [ no  ]
----│ ││       ││└─┬─[seller_settings_goods_list_image_carousel              ]  [carousel           ]                                   [ ✜ ✜ ]     [ yes ]
----│ ││       ││  └ [seller_settings_goods_list_image_carousel_img          ]  [frame              ]                                   [ ✜ ✜ ]     [ yes ]
+---│ ││       ││└┬──[seller_settings_goods_list_image_carousel              ]  [carousel           ]                                   [ ✜ ✜ ]     [ yes ]
+---│ ││       ││ └┬─[seller_settings_goods_list_image_carousel_frame        ]  [frame              ]                                   [ ✜ ✜ ]     [ yes ]
+---│ ││       ││  └ [seller_settings_goods_list_image_carousel_frame_img    ]  [image              ]                                   [ ✜ ✜ ]     [ yes ]
 ---│ ││       │└──┬─[seller_settings_goods_list_image_button                ]  [button             ]                                   [ 🡇 ✜ ]     [ yes ]
 ---│ ││       │   └ [seller_settings_goods_list_image_button_label          ]  [label              ]  [ " добавить изображение "  ]    [ ✜ ✜ ]     [ yes ]
 ---│ ││       └───┬─[seller_settings_goods_list_image_protip                ]  [button             ]                                   [ 🡇 🡆 ]     [ yes ]
@@ -150,7 +152,7 @@ seller_settings_goods_list_name_protip_label_good - с символом гало
 ╙ result: по центру экрана всплывает seller_settings_goods_list_name_protip_popover.
 
 ✠ input_checks
-Фильтры проверяющие на соответствие нормативам содержание seller_settings_goods_list_name_input. Если в ходе проверки фиксируется несоответствие, тогда состояние seller_settings_goods_list_name_input позиционируется как invalid, в соответствии с чем отображается соответствующее типу проблемы предупреждение.
+Фильтры проверяющие на соответствие нормативам содержание seller_settings_goods_list_name_input. Если в ходе проверки фиксируется несоответствие, тогда состояние seller_settings_goods_list_name_input позиционируется как invalid, в связи с чем отображается соответствующее типу проблемы предупреждение.
 • undernaming:
 Анализ на недостижение лимита допустимой длины name (недостижение норматива).
 Работает в active_state.
@@ -582,7 +584,7 @@ seller_settings_goods_list_price_retail_protip_label_good - с символом 
 ╙ result: по центру экрана всплывает seller_settings_goods_list_price_retail_protip_popover.
 
 ✠ input_checks
-Фильтры проверяющие на соответствие нормативам содержание seller_settings_goods_list_price_retail_input. Если в ходе проверки фиксируется несоответствие, тогда состояние seller_settings_goods_list_price_retail_input позиционируется как invalid, в соответствии с чем отображается соответствующее типу проблемы предупреждение.
+Фильтры проверяющие на соответствие нормативам содержание seller_settings_goods_list_price_retail_input. Если в ходе проверки фиксируется несоответствие, тогда состояние seller_settings_goods_list_price_retail_input позиционируется как invalid, в связи с чем отображается соответствующее типу проблемы предупреждение.
 • overnaming:
 Анализ на превышение лимита допустимой длины price.
 Работает в active_state.
@@ -778,7 +780,7 @@ seller_settings_goods_list_price_retail_protip_popover является вспл
 ╙ && - карет устанавливается в конце текста (если текст наличествует).
 
 ✠ input_checks
-Фильтры проверяющие на соответствие нормативам содержание seller_settings_goods_list_price_wholesale_input. Если в ходе проверки фиксируется несоответствие, тогда состояние seller_settings_goods_list_price_wholesale_input позиционируется как invalid, в соответствии с чем отображается соответствующее типу проблемы предупреждение.
+Фильтры проверяющие на соответствие нормативам содержание seller_settings_goods_list_price_wholesale_input. Если в ходе проверки фиксируется несоответствие, тогда состояние seller_settings_goods_list_price_wholesale_input позиционируется как invalid, в связи с чем отображается соответствующее типу проблемы предупреждение.
 • overnaming:
 Анализ на превышение лимита допустимой длины price.
 Работает в active_state.
@@ -1425,7 +1427,7 @@ seller_settings_goods_list_quantity_ctrl_protip_popover является всп�
 ╙ result: по центру экрана всплывает seller_settings_goods_list_quantity_protip_popover.
 
 ✠ input_checks
-Фильтры проверяющие на соответствие нормативам содержание seller_settings_goods_list_quantity_input. Если в ходе проверки фиксируется несоответствие, тогда состояние seller_settings_goods_list_quantity_input позиционируется как invalid, в соответствии с чем отображается соответствующее типу проблемы предупреждение.
+Фильтры проверяющие на соответствие нормативам содержание seller_settings_goods_list_quantity_input. Если в ходе проверки фиксируется несоответствие, тогда состояние seller_settings_goods_list_quantity_input позиционируется как invalid, в связи с чем отображается соответствующее типу проблемы предупреждение.
 • overnaming:
 Анализ на превышение лимита допустимой длины quantity.
 Работает в active_state.
@@ -1672,6 +1674,363 @@ seller_settings_goods_list_depot_protip_popover является всплыва�
 └─
 
 
+■ seller_settings_goods_list_image
+
+Опция seller_settings_goods_list_image предназначена для настройки изображений товара.
+
+✠ details
+Секция seller_settings_goods_list_image состоит из 4 компонентов:  
+1)----- seller_settings_goods_list_image_panel - панель служащая целью вывода заголовка опции seller_settings_goods_list_image_panel_label; 
+------- seller_settings_goods_list_image_panel_label - заголовок для seller_settings_goods_list_image с содержанием: "Изображение товара";
+2)----- seller_settings_goods_list_image_carousel - представляет собой контейнер вытянутый по горизонтали за пределы видимости экрана, который вмещает до 10 кликабельных изображений seller_settings_goods_list_image_carousel_frame (каждое изображение обладает функцией кнопки, при нажатии на которую всплывает seller_settings_goods_list_image_carousel_modal) и обладает горизонтальным скроллингом;
+------- seller_settings_goods_list_image_carousel_frame - квадратный контейнер, занимающий порядка 10-15% по вертикали экрана и предназначенный для отдельного изображения как составляющая seller_settings_goods_list_image_carousel, в котором изображения выравниваются по горизонтали, по умолчанию при открытии seller_settings_goods_screen для создания нового лота отображаются 4 пустых seller_settings_goods_list_image_carousel_frame. seller_settings_goods_list_image_carousel_frame может находиться в 2 состояниях:
+seller_settings_goods_list_image_carousel_frame=mini - состояние по умолчанию в виде миниатюр в seller_settings_goods_list_image_carousel;
+seller_settings_goods_list_image_carousel_frame=max - состояние в котором seller_settings_goods_list_image_carousel_frame увеличивается до размеров лимитированных горизонтальными границами экрана устройства (width=100%, z-index=(max));
+--------- seller_settings_goods_list_image_carousel_frame_img - изображение встроенное в seller_settings_goods_list_image_carousel_frame в качестве миниатюры;
+3)----- seller_settings_goods_list_image_button - кнопка предназначенная для доступа к таким внешним приложениям/ресурсам устройства как камера, галерея, документы ...;
+------- seller_settings_goods_list_image_button_label - константный текстовый элемент следующего содержания: "добавить изображение";
+4)----- seller_settings_goods_list_image_protip - кнопка отвечающая за вызов подсказки seller_settings_goods_list_image_protip_popover;  
+------- seller_settings_goods_list_image_protip_label - наименование следующего содержания: "?".
+
+✠ actions
+• seller_settings_goods_list_image_carousel:
+╠ valid
+║ • gesture: drag left 
+║ occasion: жест движения одним пальцем влево в области seller_settings_goods_list_image_carousel;
+║ condition: если seller_settings_goods_list_image_carousel_frame > 4;
+║ result: группа seller_settings_goods_list_image_carousel_frame внутри seller_settings_goods_list_image_carousel скроллируется влево.
+╠ invalid
+║ • gesture: drag left 
+║ occasion: жест движения одним пальцем влево в области seller_settings_goods_list_image_carousel;
+║ condition: если seller_settings_goods_list_image_carousel_frame <= 4;
+║ result: seller_settings_goods_list_image_carousel не реагирует.
+╠ valid
+║ • gesture: drag right 
+║ occasion: жест движения одним пальцем вправо в области seller_settings_goods_list_image_carousel;
+║ condition: если seller_settings_goods_list_image_carousel_frame > 4;
+║ result: группа seller_settings_goods_list_image_carousel_frame внутри seller_settings_goods_list_image_carousel скроллируется вправо.
+╠ invalid
+║ • gesture: drag right 
+║ occasion: жест движения одним пальцем вправо в области seller_settings_goods_list_image_carousel;
+║ condition: если seller_settings_goods_list_image_carousel_frame <= 4;
+╙ result: seller_settings_goods_list_image_carousel не реагирует.
+• seller_settings_goods_list_image_carousel_frame:
+╠ valid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_list_image_carousel_frame=mini;
+║ condition: 
+║ - && - если seller_settings_goods_list_image_carousel_frame содержит seller_settings_goods_list_image_carousel_frame_img;
+║ - && - seller_settings_goods_list_image_carousel_frame=mini;
+║ result: seller_settings_goods_list_image_carousel_frame=mini переключается в seller_settings_goods_list_image_carousel_frame=max.
+╠ invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_list_image_carousel_frame=mini;
+║ condition: 
+║ - && - если seller_settings_goods_list_image_carousel_frame не содержит seller_settings_goods_list_image_carousel_frame_img;
+║ - && - seller_settings_goods_list_image_carousel_frame=mini;
+║ result: seller_settings_goods_list_image_carousel_frame не реагирует на нажатие.
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_list_image_carousel_frame=max;
+║ condition: 
+║ - && - если seller_settings_goods_list_image_carousel_frame содержит seller_settings_goods_list_image_carousel_frame_img;
+║ - && - seller_settings_goods_list_image_carousel_frame=max;
+║ result: seller_settings_goods_list_image_carousel_frame=max переключается в seller_settings_goods_list_image_carousel_frame=mini.
+╠ valid / invalid
+║ • gesture: tap & hold 
+║ occasion: нажатие и удержание от 1-1.5 и более секунд seller_settings_goods_list_image_carousel_frame;
+║ condition: если seller_settings_goods_list_image_carousel_frame содержит seller_settings_goods_list_image_carousel_frame_img;
+╙ result: по центру экрана всплывает seller_settings_goods_list_image_carousel_frame_popover.
+• seller_settings_goods_list_image_button:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_list_image_button;
+║ condition: если количество seller_settings_goods_list_image_carousel_frame < 10;
+╙ result: открывается модальное окно для доступа к внешним ресурсам (камера, галерея, документы ...).
+• seller_settings_goods_list_image_protip:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_list_image_protip;
+║ condition: in any situation;
+╙ result: по центру экрана всплывает seller_settings_goods_list_image_protip_popover.
+
+✠ logics
+В seller_db общее количество хранимых изображение выражается через seller_settings_goods_list_image_value. Например если лот содержит 10 фото, тогда seller_settings_goods_list_image_value = 10. Каждому конкретному лоту присваивается имя состоящее из: {строка seller_settings_goods_list_image} + {нижнее подчеркивание} + {последовательный номер согласно дате вставки в лот от 1 до 10} + {нижнее подчеркивание} + {уникальное имя изображения в системе пользователя}. Так если это фото вставленное в лот под номером 7 с именем 20273645_133514-0, тогда полное наименование в базе данного изображения будет: seller_settings_goods_list_image_7_20273645_133514-0.
+
+✠ color_states
+┌─
+│seller_settings_goods_list_image_button
+│seller_settings_goods_list_image_protip
+│---------------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color2
+│------ в default_state
+├────────
+│• color5
+│------ в pressing_state
+└─
+┌─
+│seller_settings_goods_list_image_panel_label
+│-------------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color2
+│------ in any situation
+└─
+┌─
+│seller_settings_goods_list_image_carousel_frame 
+│-------------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in any situation
+└─
+┌─
+│seller_settings_goods_list_image_panel_label
+│seller_settings_goods_list_image_button_label
+│seller_settings_goods_list_image_protip_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
+✠ outputs
+• seller_settings_goods_list_image_carousel_frame_img:
+║ occasion: нажатие seller_settings_goods_buttons_yes_button;
+║ condition: seller_settings_goods_list_image_carousel_frame_img > 0;
+║ result:  
+║ && - вывод seller_settings_goods_list_image_value;
+╙ && - вывод всех image согласно наименованию.
+
+
+🡆🡆🡆 seller_settings_goods_list_image_carousel_frame_popover
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+При нажатии и удержании от 1-1.5 и более секунд кнопки seller_settings_goods_list_image_carousel_frame, всплывает seller_settings_goods_list_image_carousel_frame_popover со следующим содержанием:
+
+✠ tables
+
+                                        codename:                                            type:                  designation:        location:  interaction:
+┌┬─┬─[seller_settings_goods_list_image_carousel_frame_popover                     ]  [section_lev1       ]                               [ ✜ ✜ ]     [ no  ]
+││ └ [seller_settings_goods_list_image_carousel_frame_popover_icon                ]  [icon               ]                               [ ✜ ✜ ]     [ no  ]
+│└┬──[seller_settings_goods_list_image_carousel_frame_popover_buttons             ]  [button             ]                               [ ✜ ✜ ]     [ no  ] 
+│ └┬─[seller_settings_goods_list_image_carousel_frame_popover_buttons_close       ]  [button             ]                               [ ✜ ✜ ]     [ yes ]
+│  └ [seller_settings_goods_list_image_carousel_frame_popover_buttons_close_label ]  [label              ]  [ "закрыть"               ]  [ ✜ ✜ ]     [ yes ]
+└──┬─[seller_settings_goods_list_image_carousel_frame_popover_buttons_delete      ]  [button             ]                               [ ✜ ✜ ]     [ yes ]
+   └ [seller_settings_goods_list_image_carousel_frame_popover_buttons_delete_label]  [label              ]  [ "удалить"               ]  [ ✜ ✜ ]     [ yes ]
+
+✠ details
+- seller_settings_goods_list_image_carousel_frame_popover - представляет собой popover, который всплывает по центру экрана и включает 2 компонента:
+--- seller_settings_goods_list_image_carousel_frame_popover_icon - иконка в виде мусорной корзины расположенная в верхней части seller_settings_goods_list_image_carousel_frame_popover с выравниванием по центру;
+--- seller_settings_goods_list_image_carousel_frame_popover_buttons - контейнер расположен в нижней части seller_settings_goods_list_image_carousel_frame_popover, содержащий 2 кнопки; 
+----- seller_settings_goods_list_image_carousel_frame_popover_buttons_close - кнопка расположенная слева, предназначена для закрытия seller_settings_goods_list_image_carousel_frame_popover без изменений;
+------- seller_settings_goods_list_image_carousel_frame_popover_buttons_close_label - наименование кнопки следующего содержания: "закрыть";
+----- seller_settings_goods_list_image_carousel_frame_popover_buttons_delete - кнопка расположенная справа, предназначена для инициализации операции удаления целевого seller_settings_goods_list_image_carousel_frame_img;
+------- seller_settings_goods_list_image_carousel_frame_popover_buttons_delete_label - наименование кнопки следующего содержания: "удалить".
+
+✠ actions
+• seller_settings_goods_list_image_carousel_frame_popover_buttons_close:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_settings_goods_list_image_carousel_frame_popover_buttons_close;
+║ condition: in any situation;
+╙ result: seller_settings_goods_list_image_carousel_frame_popover исчезает.
+• seller_settings_goods_list_image_carousel_frame_popover_buttons_delete:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_settings_goods_list_image_carousel_frame_popover_buttons_delete;
+║ condition: in any situation;
+║ result:  
+║ && - целевой seller_settings_goods_list_image_carousel_frame_img удаляется;
+╙ && - seller_settings_goods_list_image_carousel_frame_popover исчезает.
+
+✠ color_states
+┌─
+│seller_settings_goods_list_image_carousel_frame_popover_buttons_close
+│seller_settings_goods_list_image_carousel_frame_popover_buttons_delete
+│-------------------------------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ в default_state
+├────────
+│• color5
+│------ в pressing_state
+└─
+┌─
+│seller_settings_goods_list_image_carousel_frame_popover_buttons_close_label
+│seller_settings_goods_list_image_carousel_frame_popover_buttons_delete_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
+
+🡆🡆🡆 seller_settings_goods_list_image_protip_popover
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+seller_settings_goods_list_image_protip_popover является всплывающей подсказкой, которая появляется после нажатия seller_settings_goods_list_image_protip.
+
+✠ tables
+
+                                  codename:                                       type:                  designation:          location:  interaction:
+┌┬─[seller_settings_goods_list_image_protip_popover                    ]  [section_lev1       ]                                 [ ✜ ✜ ]     [ no  ]
+│└ [seller_settings_goods_list_image_protip_popover_text               ]  [text               ]  [ " Опция отвечает за ... " ]  [ ✜ ✜ ]     [ no  ]
+└┬─[seller_settings_goods_list_image_protip_popover_buttons_close      ]  [button             ]                                 [ ✜ ✜ ]     [ yes ]
+ └ [seller_settings_goods_list_image_protip_popover_buttons_close_label]  [label              ]  [ " закрыть "               ]  [ ✜ ✜ ]     [ yes ]
+
+✠ details
+- seller_settings_goods_list_image_protip_popover - представляет собой popover, который всплывает по центру экрана и включает 2 компонента:
+--- seller_settings_goods_list_image_protip_popover_text - параграф текста выровненный по центру находится в верхней части seller_settings_goods_list_image_protip_popover следующего содержания: "Настройка 'ИЗОБРАЖЕНИЕ ТОВАРА' позволяет добавить фотографию или любое другое изображение товара. При нажатии кнопки 'ДОБАВИТЬ ИЗОБРАЖЕНИЕ' открывается приложение камеры вашего устройства, с помощью которого вы можете как тут же сделать фото, либо добавить изображение из галереи. Всего может быть добавлено 10 изображений. Для удаления изображения требуется удерживать его более 1 сек, перетащить в корзину и отпустить. Данная настройка не является обязательной при публикации лота".
+----- seller_settings_goods_list_image_protip_popover_buttons_close - кнопка расположенная под seller_settings_goods_list_image_protip_popover_text;
+--- seller_settings_goods_list_image_protip_popover_buttons_close_label - наименование кнопки следующего содержания: "закрыть".
+
+✠ actions
+• seller_settings_goods_list_image_protip_popover_buttons_close:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_settings_goods_list_image_protip_popover_buttons_close;
+║ condition: in any situation;
+╙ result: seller_settings_goods_list_image_protip_popover исчезает.
+
+✠ color_states
+┌─
+│seller_settings_goods_list_image_protip_popover_buttons_close
+│-------------------------------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ в default_state
+├────────
+│• color5
+│------ в pressing_state
+└─
+┌─
+│seller_settings_goods_list_image_protip_popover_text
+│seller_settings_goods_list_image_protip_popover_buttons_close_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
+
+
+
+---│ │└─────────┬┬──[seller_settings_goods_list_description                 ]  [section_lev3       ]                                   [ ✜ ✜ ]     [ no  ]
+---│ │          │└┬─[seller_settings_goods_list_description_panel           ]  [section_lev4       ]                                   [ 🡅 ✜ ]     [ no  ]
+---│ │          │ └ [seller_settings_goods_list_description_panel_label     ]  [label              ]  [ " Описание товара "       ]    [ ✜ ✜ ]     [ no  ]
+---│ │          └─┬─[seller_settings_goods_list_description_textaria        ]  [textaria           ]  [ " опишите ваш товар "     ]    [ 🡇 ✜ ]     [ yes ]
+
+
+■ seller_settings_goods_list_description
+
+Опция seller_settings_goods_list_description предназначена для настройки изображений товара.
+
+
+
+■ setting_goods_edit_description
+
+Настройка предназначена для ввода описания (детальной информации) лота. Допускается присваивание одного из бинарных значениий:
+setting_goods_edit_description_value = false     - описание отсутствует для лота;
+setting_goods_edit_description_value = {text}    - описание присутствует для лота.
+
+✠ details
+Секция setting_goods_edit_description состоит из 2 компонентов:
+- заголовок setting_goods_edit_description_label с содержанием: "ОПИСАНИЕ ТОВАРА";
+- область для ввода данных setting_goods_edit_description_textaria.
+Нормативы для setting_goods_edit_description_textaria: 
+- минимум 0 символов;
+- максимум 9999 символов;
+- допускаются буквы алфавита выбранного языка (прописные и заглавные), цифры (0-9), пробел и символы (. , $ & @ # : ; – _);
+- чувствительность к регистру присутствует.
+
+✠ actions
+• setting_goods_edit_description_textaria:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие setting_goods_edit_description_textaria;
+║ condition: in any situation;
+║ && - setting_goods_edit_description_textaria переходит в active_state;
+║ && - появляется клавиатура для ввода (если она была скрыта);
+╙ && - карет устанавливается в конце текста (если текст наличествует).
+
+✠ input_checks
+Фильтры проверяющие на соответствие нормативам содержание setting_goods_edit_description_textaria. Если в ходе проверки фиксируется несоответствие, тогда состояние setting_goods_edit_description_textaria позиционируется как invalid, в связи с чем отображается соответствующее типу проблемы предупреждение.
+• overnaming:
+Анализ на превышение лимита допустимой длины description.
+Работает в active_state.
+При вводе description, в ситуации если символов > 9999, под setting_goods_edit_description_textaria всплывает setting_goods_edit_description_alert_overnaming.
+• stopsymbol:
+Анализ на нажатие запрещенных клавиш базирующийся на превентивной блокировке ввода неразрешенных символов.
+Работает в active_state. 
+При вводе description, в ситуации если использованы запрещенные символы, под setting_goods_edit_description_textaria всплывает setting_goods_edit_description_alert_stopsymbol.
+• stopword:
+Анализ на запрещенные слова, базирующийся на тезариусе содержащем надлежащий материал.
+Работает в active_state.
+При вводе description, в ситуации если использованы запрещенные слова, под setting_goods_edit_description_textaria всплывает setting_goods_edit_description_alert_stopword. 
+
+✠ color_states
+┌─
+│setting_goods_edit_description_textaria
+│-------------------------------------
+│⟪⟪ border ⟫⟫ 
+│--------
+│• color3:
+│- || - invalid по факту проверки на overnaming; 
+│- || - invalid по факту проверки на stopsymbol; 
+│- || - invalid по факту проверки на stopword.
+│• color1:
+│- && - valid по факту проверки на overnaming.
+│- && - valid по факту проверки на stopsymbol;
+│- && - valid по факту проверки на stopword.
+└─
+
+✠ alerts
+• setting_goods_edit_description_alert_prompt:
+- focusing: да;
+- location: появляется над setting_goods_edit_description_textaria;
+- occasion: в процессе ввода данных в setting_goods_edit_description_textaria;
+- context:  отображается для первого опубликованного лота в течении 30 секунд;
+- content:  "ОПИСАНИЕ ТОВАРА МОЖЕТ СОДЕРЖАТЬ МАКСИМУМ 9999 СИМВОЛОВ ВКЛЮЧАЯ БУКВЫ, ЦИФРЫ, ПРОБЕЛЫ И СЛЕДУЮЩИЕ СИМВОЛЫ (. , $ & @ # : ; – _)".
+• setting_goods_edit_description_alert_overnaming:
+- focusing: да;
+- location: появляется под setting_goods_edit_description_textaria;
+- occasion: невалидность по факту проверки на overnaming;
+- content:  "ОПИСАНИЕ СЛИШКОМ ДЛИННОЕ, ПОЖАЛУЙСТА ИСПОЛЬЗУЙТЕ МЕНЬШЕ СИМВОЛОВ".
+• setting_goods_edit_description_alert_stopsymbol:
+- focusing: да;
+- location: появляется под setting_goods_edit_description_textaria;
+- occasion: невалидность по факту проверки на stopsymbol;
+- content:  "ИСПОЛЬЗОВАН ЗАПРЕЩЕННЫЙ СИМВОЛ: {указывается запрещенный символ жирным шрифтом белого цвета на color3 фоне}".
+• setting_goods_edit_description_alert_stopword:
+- focusing: да;
+- location: появляется под setting_goods_edit_description_textaria;
+- occasion: невалидность по факту проверки на stopword;
+- content:  "ИСПОЛЬЗОВАНО ЗАПРЕЩЕННОЕ СЛОВО {указывается запрещенное слово жирным шрифтом белого цвета на color3 фоне}".
+
+✠ outputs
+• setting_goods_edit_description_textaria:
+║occasion: нажатие seller_settings_goods_buttons_yes_button;
+║condition: 
+║ && - valid по факту проверки на overnaming;
+║ && - valid по факту проверки на stopsymbol;
+║ && - valid по факту проверки на stopword;
+╙ result: cодержимое setting_goods_edit_description_textaria преобразуется в setting_goods_edit_description_value.
+
+
+
+
+
+
+
+
 🡆🡆🡆 seller_settings_goods_depot_screen
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 
@@ -1687,7 +2046,7 @@ seller_settings_goods_list_depot_protip_popover является всплыва�
 │ │└┬┬──[seller_settings_goods_depot_list_party             ]  [section_lev3       ]                                  [ ✜ ✜ ]     [ no  ]
 │ │ │└┬─[seller_settings_goods_depot_list_party_button      ]  [button             ]                                  [ ✜ ✜ ]     [ yes ]
 │ │ │ ├ [seller_settings_goods_depot_list_party_button_label]  [label              ]  [ "Партия товара # "        ]   [ ✜ ✜ ]     [ yes ]
-│ │ │ └ [seller_settings_goods_depot_list_party_button_value]  [value              ]  [ { number }                ]   [ ✜ 🡆 ]     [ yes ]
+│ │ │ └ [seller_settings_goods_depot_list_party_button_value]  [variable           ]  [ { number }                ]   [ ✜ 🡆 ]     [ yes ]
 │ │ └─┬─[seller_settings_goods_depot_list_party_delete      ]  [button             ]                                  [ ✜ 🡆 ]     [ yes ]
 │ │   └ [seller_settings_goods_depot_list_party_delete_label]  [label              ]  [ "X"                       ]   [ ✜ ✜ ]     [ yes ]
 │ └───┬─[seller_settings_goods_depot_list_adding            ]  [button             ]                                  [ ✜ ✜ ]     [ yes ]
@@ -1790,7 +2149,6 @@ seller_settings_goods_list_depot_protip_popover является всплыва�
 └─
 
 
-
 🡆🡆🡆 seller_settings_goods_depot_lot_screen
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 
@@ -1798,51 +2156,51 @@ seller_settings_goods_list_depot_protip_popover является всплыва�
 
 ✠ tables
 
-                                          codename:                                   type:                   designation:            location:  interaction:
-   ┌┬───────┬──[seller_settings_goods_depot_lot                             ]  [section_lev1       ]			                       [ ✜ ✜ ]     [ no  ]
-   ││       └┬─[seller_settings_goods_depot_lot_panel                       ]  [section_lev2       ]			                       [ 🡅 ✜ ]     [ no  ]
-   ││        └ [seller_settings_goods_depot_lot_panel_label                 ]  [label              ]  [ " Настройки партии т... " ]    [ ✜ ✜ ]     [ no  ]
-   │└┬┬┬┬┬─────[seller_settings_goods_depot_lot_list                        ]  [section_lev2       ]                                   [ ✜ ✜ ]     [ no  ]
-   │ ││││└┬┬┬──[seller_settings_goods_depot_lot_list_number                 ]  [section_lev3       ]                                   [ 🡅 ✜ ]     [ no  ]
-   │ ││││ ││└┬─[seller_settings_goods_depot_lot_list_number_panel           ]  [section_lev4       ]                                   [ 🡅 ✜ ]     [ no  ]
-   │ ││││ ││ └ [seller_settings_goods_depot_lot_list_number_panel_label     ]  [label              ]  [ " Номер партии * "        ]    [ ✜ ✜ ]     [ no  ]
-   │ ││││ │└─┬─[seller_settings_goods_depot_lot_list_number_input           ]  [input              ]                                   [ 🡇 ✜ ]     [ yes ]
-   │ ││││ │  └ [seller_settings_goods_depot_lot_list_number_input_label     ]  [placeholder+value  ]  [ { number }                ]    [ ✜ ✜ ]     [ yes ]
-   │ ││││ └──┬─[seller_settings_goods_depot_lot_list_number_protip          ]  [button             ]                                   [ 🡇 🡆 ]     [ yes ]
-   │ ││││    └ [seller_settings_goods_depot_lot_list_number_protip_label    ]  [label              ]  [ " ? "                     ]    [ ✜ ✜ ]     [ yes ]
-   │ │││└─┬┬┬──[seller_settings_goods_depot_lot_list_entry                  ]  [section_lev3       ]                                   [ ✜ ✜ ]     [ no  ]
-   │ │││  ││└┬─[seller_settings_goods_depot_lot_list_entry_panel            ]  [section_lev4       ]                                   [ 🡅 ✜ ]     [ no  ]
-   │ │││  ││ └ [seller_settings_goods_depot_lot_list_entry_panel_label      ]  [label              ]  [ " Дата поступления  "     ]    [ ✜ ✜ ]     [ no  ]
-   │ │││  │└─┬─[seller_settings_goods_depot_lot_list_entry_input            ]  [input              ]                                   [ 🡇 ✜ ]     [ yes ]
-   │ │││  │  └ [seller_settings_goods_depot_lot_list_entry_input_label      ]  [placeholder+value  ]  [ { number }                ]    [ ✜ ✜ ]     [ yes ]
-   │ │││  └──┬─[seller_settings_goods_depot_lot_list_entry_protip           ]  [button             ]                                   [ 🡇 🡆 ]     [ yes ]
-   │ │││     └ [seller_settings_goods_depot_lot_list_entry_protip_label     ]  [label              ]  [ " ? "                     ]    [ ✜ ✜ ]     [ yes ]
-   │ ││└──┬┬┬──[seller_settings_goods_depot_lot_list_quantity               ]  [section_lev3       ]                                   [ ✜ ✜ ]     [ no  ]
-   │ ││   ││└┬─[seller_settings_goods_depot_lot_list_quantity_panel         ]  [section_lev4       ]                                   [ 🡅 ✜ ]     [ no  ]
-   │ ││   ││ └ [seller_settings_goods_depot_lot_list_quantity_panel_label   ]  [label              ]  [ " Количество * "          ]    [ ✜ ✜ ]     [ no  ]
-   │ ││   │└─┬─[seller_settings_goods_depot_lot_list_quantity_input         ]  [input              ]                                   [ 🡇 ✜ ]     [ yes ]
-   │ ││   │  └ [seller_settings_goods_depot_lot_list_quantity_input_label   ]  [placeholder        ]  [ " 1 "                     ]    [ ✜ ✜ ]     [ yes ]
-   │ ││   └──┬─[seller_settings_goods_depot_lot_list_quantity_protip        ]  [button             ]                                   [ 🡇 🡆 ]     [ yes ]
-   │ ││      └ [seller_settings_goods_depot_lot_list_quantity_protip_label  ]  [label              ]  [ " ? "                     ]    [ ✜ ✜ ]     [ yes ]
-   │ │└───┬┬┬──[seller_settings_goods_depot_lot_list_balance                ]  [section_lev3       ]                                   [ ✜ ✜ ]     [ no  ]
-   │ │    ││└┬─[seller_settings_goods_depot_lot_list_balance_panel          ]  [section_lev4       ]                                   [ 🡅 ✜ ]     [ no  ]
-   │ │    ││ └ [seller_settings_goods_depot_lot_list_balance_panel_label    ]  [label              ]  [ " Остаток "               ]    [ ✜ ✜ ]     [ no  ]
-   │ │    │└─┬─[seller_settings_goods_depot_lot_list_balance_input          ]  [input              ]                                   [ 🡇 ✜ ]     [ yes ]
-   │ │    │  └ [seller_settings_goods_depot_lot_list_balance_input_label    ]  [placeholder+value  ]  [ { number }                ]    [ ✜ ✜ ]     [ yes ]
-   │ │    └──┬─[seller_settings_goods_depot_lot_list_balance_protip         ]  [button             ]                                   [ 🡇 🡆 ]     [ yes ]
-   │ │       └ [seller_settings_goods_depot_lot_list_balance_protip_label   ]  [label              ]  [ " введите цену "          ]    [ ✜ ✜ ]     [ yes ]
-   │ └────┬┬┬──[seller_settings_goods_depot_lot_list_expiration             ]  [section_lev3       ]                                   [ ✜ ✜ ]     [ no  ]
-   │      ││└┬─[seller_settings_goods_depot_lot_list_expiration_panel       ]  [section_lev4       ]                                   [ 🡅 ✜ ]     [ no  ]
-   │      ││ └ [seller_settings_goods_depot_lot_list_expiration_panel_label ]  [label              ]  [ " Срок годности до "      ]    [ ✜ ✜ ]     [ no  ]
-   │      │└─┬─[seller_settings_goods_depot_lot_list_expiration_input       ]  [input              ]                                   [ 🡇 ✜ ]     [ yes ]
-   │      │  └ [seller_settings_goods_depot_lot_list_expiration_input_label ]  [placeholder        ]  [ { number }                ]    [ ✜ ✜ ]     [ yes ]
-   │      └──┬─[seller_settings_goods_depot_lot_list_expiration_protip      ]  [button             ]                                   [ 🡇 🡆 ]     [ yes ]
-   │         └ [seller_settings_goods_depot_lot_list_expiration_protip_label]  [label              ]  [ " ? "                     ]    [ ✜ ✜ ]     [ yes ]
-   └───────┬┬──[seller_settings_goods_depot_lot_buttons                     ]  [section_lev2       ]                                   [ 🡇 ✜ ]     [ no  ]
-           │└┬─[seller_settings_goods_depot_lot_buttons_no_button           ]  [button             ]                                   [ ✜ 🡄 ]     [ yes ]
-           │ └ [seller_settings_goods_depot_lot_buttons_no_button_label     ]  [label              ]  [ " отмена "                ]    [ ✜ ✜ ]     [ yes ]
-           └─┬─[seller_settings_goods_depot_lot_buttons_yes_button          ]  [button             ]                                   [ ✜ 🡆 ]     [ yes ]
-             └ [seller_settings_goods_depot_lot_buttons_yes_button_label    ]  [label              ]  [ " ОК "                    ]    [ ✜ ✜ ]     [ yes ]
+                                          codename:                                    type:                   designation:            location:  interaction:
+   ┌┬───────┬──[seller_settings_goods_depot_lot                              ]  [section_lev1       ]			                        [ ✜ ✜ ]     [ no  ]
+   ││       └┬─[seller_settings_goods_depot_lot_panel                        ]  [section_lev2       ]			                        [ 🡅 ✜ ]     [ no  ]
+   ││        └ [seller_settings_goods_depot_lot_panel_label                  ]  [label              ]  [ " Настройки партии т... " ]    [ ✜ ✜ ]     [ no  ]
+   │└┬┬┬┬┬─────[seller_settings_goods_depot_lot_list                         ]  [section_lev2       ]                                   [ ✜ ✜ ]     [ no  ]
+   │ ││││└┬┬┬──[seller_settings_goods_depot_lot_list_number                  ]  [section_lev3       ]                                   [ 🡅 ✜ ]     [ no  ]
+   │ ││││ ││└┬─[seller_settings_goods_depot_lot_list_number_panel            ]  [section_lev4       ]                                   [ 🡅 ✜ ]     [ no  ]
+   │ ││││ ││ └ [seller_settings_goods_depot_lot_list_number_panel_label      ]  [label              ]  [ " Номер партии * "        ]    [ ✜ ✜ ]     [ no  ]
+   │ ││││ │└─┬─[seller_settings_goods_depot_lot_list_number_input            ]  [input              ]                                   [ 🡇 ✜ ]     [ yes ]
+   │ ││││ │  └ [seller_settings_goods_depot_lot_list_number_input_label      ]  [variable           ]  [ { number }                ]    [ ✜ ✜ ]     [ yes ]
+   │ ││││ └──┬─[seller_settings_goods_depot_lot_list_number_protip           ]  [button             ]                                   [ 🡇 🡆 ]     [ yes ]
+   │ ││││    └ [seller_settings_goods_depot_lot_list_number_protip_label     ]  [label              ]  [ " ? "                     ]    [ ✜ ✜ ]     [ yes ]
+   │ │││└─┬┬┬──[seller_settings_goods_depot_lot_list_entry                   ]  [section_lev3       ]                                   [ ✜ ✜ ]     [ no  ]
+   │ │││  ││└┬─[seller_settings_goods_depot_lot_list_entry_panel             ]  [section_lev4       ]                                   [ 🡅 ✜ ]     [ no  ]
+   │ │││  ││ └ [seller_settings_goods_depot_lot_list_entry_panel_label       ]  [label              ]  [ " Дата поступления  "     ]    [ ✜ ✜ ]     [ no  ]
+   │ │││  │└─┬─[seller_settings_goods_depot_lot_list_entry_button            ]  [button             ]                                   [ 🡇 ✜ ]     [ yes ]
+   │ │││  │  └ [seller_settings_goods_depot_lot_list_entry_button_widget     ]  [widget+variable    ]  [ { number }                ]    [ ✜ ✜ ]     [ yes ]
+   │ │││  └──┬─[seller_settings_goods_depot_lot_list_entry_protip            ]  [button             ]                                   [ 🡇 🡆 ]     [ yes ]
+   │ │││     └ [seller_settings_goods_depot_lot_list_entry_protip_label      ]  [label              ]  [ " ? "                     ]    [ ✜ ✜ ]     [ yes ]
+   │ ││└──┬┬┬──[seller_settings_goods_depot_lot_list_quantity                ]  [section_lev3       ]                                   [ ✜ ✜ ]     [ no  ]
+   │ ││   ││└┬─[seller_settings_goods_depot_lot_list_quantity_panel          ]  [section_lev4       ]                                   [ 🡅 ✜ ]     [ no  ]
+   │ ││   ││ └ [seller_settings_goods_depot_lot_list_quantity_panel_label    ]  [label              ]  [ " Количество * "          ]    [ ✜ ✜ ]     [ no  ]
+   │ ││   │└─┬─[seller_settings_goods_depot_lot_list_quantity_input          ]  [input              ]                                   [ 🡇 ✜ ]     [ yes ]
+   │ ││   │  └ [seller_settings_goods_depot_lot_list_quantity_input_label    ]  [placeholder        ]  [ " 1 "                     ]    [ ✜ ✜ ]     [ yes ]
+   │ ││   └──┬─[seller_settings_goods_depot_lot_list_quantity_protip         ]  [button             ]                                   [ 🡇 🡆 ]     [ yes ]
+   │ ││      └ [seller_settings_goods_depot_lot_list_quantity_protip_label   ]  [label              ]  [ " ? "                     ]    [ ✜ ✜ ]     [ yes ]
+   │ │└───┬┬┬──[seller_settings_goods_depot_lot_list_balance                 ]  [section_lev3       ]                                   [ ✜ ✜ ]     [ no  ]
+   │ │    ││└┬─[seller_settings_goods_depot_lot_list_balance_panel           ]  [section_lev4       ]                                   [ 🡅 ✜ ]     [ no  ]
+   │ │    ││ └ [seller_settings_goods_depot_lot_list_balance_panel_label     ]  [label              ]  [ " Остаток "               ]    [ ✜ ✜ ]     [ no  ]
+   │ │    │└─┬─[seller_settings_goods_depot_lot_list_balance_input           ]  [input              ]                                   [ 🡇 ✜ ]     [ yes ]
+   │ │    │  └ [seller_settings_goods_depot_lot_list_balance_input_label     ]  [variable           ]  [ { number }                ]    [ ✜ ✜ ]     [ yes ]
+   │ │    └──┬─[seller_settings_goods_depot_lot_list_balance_protip          ]  [button             ]                                   [ 🡇 🡆 ]     [ yes ]
+   │ │       └ [seller_settings_goods_depot_lot_list_balance_protip_label    ]  [label              ]  [ " ? "                     ]    [ ✜ ✜ ]     [ yes ]
+   │ └────┬┬┬──[seller_settings_goods_depot_lot_list_expiration              ]  [section_lev3       ]                                   [ ✜ ✜ ]     [ no  ]
+   │      ││└┬─[seller_settings_goods_depot_lot_list_expiration_panel        ]  [section_lev4       ]                                   [ 🡅 ✜ ]     [ no  ]
+   │      ││ └ [seller_settings_goods_depot_lot_list_expiration_panel_label  ]  [label              ]  [ " Срок годности до "      ]    [ ✜ ✜ ]     [ no  ]
+   │      │└─┬─[seller_settings_goods_depot_lot_list_expiration_button       ]  [button             ]                                   [ 🡇 ✜ ]     [ yes ]
+   │      │  └ [seller_settings_goods_depot_lot_list_expiration_button_widget]  [widget+variable    ]  [ { number }                ]    [ ✜ ✜ ]     [ yes ]
+   │      └──┬─[seller_settings_goods_depot_lot_list_expiration_protip       ]  [button             ]                                   [ 🡇 🡆 ]     [ yes ]
+   │         └ [seller_settings_goods_depot_lot_list_expiration_protip_label ]  [label              ]  [ " ? "                     ]    [ ✜ ✜ ]     [ yes ]
+   └───────┬┬──[seller_settings_goods_depot_lot_buttons                      ]  [section_lev2       ]                                   [ 🡇 ✜ ]     [ no  ]
+           │└┬─[seller_settings_goods_depot_lot_buttons_no_button            ]  [button             ]                                   [ ✜ 🡄 ]     [ yes ]
+           │ └ [seller_settings_goods_depot_lot_buttons_no_button_label      ]  [label              ]  [ " отмена "                ]    [ ✜ ✜ ]     [ yes ]
+           └─┬─[seller_settings_goods_depot_lot_buttons_yes_button           ]  [button             ]                                   [ ✜ 🡆 ]     [ yes ]
+             └ [seller_settings_goods_depot_lot_buttons_yes_button_label     ]  [label              ]  [ " ОК "                    ]    [ ✜ ✜ ]     [ yes ]
 
 ✠ details
 --- seller_settings_goods_depot_lot_panel - блок прямоугольной формы расположенный в самом верху seller_settings_goods_depot_lot_screen, выполняет функцию контейнера для seller_settings_goods_depot_lot_panel_label;
@@ -1858,8 +2216,8 @@ seller_settings_goods_list_depot_protip_popover является всплыва�
 2)----- seller_settings_goods_depot_lot_list_entry - опция позволяющая указать дату поступления товара;
 ------- seller_settings_goods_depot_lot_list_entry_panel - панель находящаяся в верхней части seller_settings_goods_depot_lot_list_entry и содержащая seller_settings_goods_depot_lot_list_entry_panel_label;
 --------- seller_settings_goods_depot_lot_list_entry_panel_label - константный текстовый элемент следующего содержания: "Дата поступления";
-------- seller_settings_goods_depot_lot_list_entry_input - поле для ввода данных, содержит seller_settings_goods_depot_lot_list_entry_input_label в качестве placeholder; 
---------- seller_settings_goods_depot_lot_list_entry_input_label - переменная с числовым значением отображающая номер партии выполняющая роль placeholder;
+------- seller_settings_goods_depot_lot_list_entry_button - кнопка посредством которой открывается календарь seller_settings_goods_depot_lot_list_entry_calendar_modal; 
+--------- seller_settings_goods_depot_lot_list_entry_button_widget - переменная с числовым значением по умолчанию отображающая текущую дату;
 ------- seller_settings_goods_depot_lot_list_entry_protip - кнопка отвечающая за вызов подсказки seller_settings_goods_depot_lot_list_entry_protip_popover; 
 --------- seller_settings_goods_depot_lot_list_entry_protip_label - наименование seller_settings_goods_depot_lot_list_entry_protip  в виде константного текстового элемента: "?";
 3)----- seller_settings_goods_depot_lot_list_quantity - опция позволяющая указать количество товара в партии, которая должна быть указана в обязательном порядке (без ее указания партия не будет зарегистрирована);
@@ -1879,8 +2237,8 @@ seller_settings_goods_list_depot_protip_popover является всплыва�
 5)----- seller_settings_goods_depot_lot_list_expiration - опция позволяющая указать срок годности товара по партии;
 ------- seller_settings_goods_depot_lot_list_expiration_panel - панель находящаяся в верхней части seller_settings_goods_depot_lot_list_expiration и содержащая seller_settings_goods_depot_lot_list_expiration_panel_label;
 --------- seller_settings_goods_depot_lot_list_expiration_panel_label - константный текстовый элемент следующего содержания: "Срок годности до";
-------- seller_settings_goods_depot_lot_list_expiration_input - поле для ввода данных, содержит seller_settings_goods_depot_lot_list_expiration_input_label в качестве placeholder; 
---------- seller_settings_goods_depot_lot_list_expiration_input_label - переменная с числовым значением отображающая текущую дату выполняющая роль placeholder;
+------- seller_settings_goods_depot_lot_list_expiration_button - кнопка посредством которой открывается календарь seller_settings_goods_depot_lot_list_expiration_calendar_modal; 
+--------- seller_settings_goods_depot_lot_list_expiration_button_widget - переменная с числовым значением по умолчанию отображающая текущую дату;
 ------- seller_settings_goods_depot_lot_list_expiration_protip - кнопка отвечающая за вызов подсказки seller_settings_goods_depot_lot_list_expiration_protip_popover; 
 --------- seller_settings_goods_depot_lot_list_expiration_protip_label - наименование seller_settings_goods_depot_lot_list_expiration_protip  в виде константного текстового элемента: "?";
 --- seller_settings_goods_depot_lot_buttons - блок из 2 кнопок расположенный в самом низу seller_settings_goods_depot_lot_screen;
@@ -1889,237 +2247,496 @@ seller_settings_goods_list_depot_protip_popover является всплыва�
 ----- seller_settings_goods_depot_lot_buttons_yes - кнопка отвечающая за выход из seller_settings_goods_depot_lot_screen с применением изменений;
 ------- seller_settings_goods_depot_lot_buttons_yes_label - наименование кнопки seller_settings_goods_depot_lot_buttons_yes: "ОК".
 
-
-
-
-■ setting_goods_edit_image
-
-Опция setting_goods_edit_image предназначена для настройки изображений товара.
-
-✠ details
-Секция setting_goods_edit_image состоит из 3 компонентов:  
-- setting_goods_edit_image_label - заголовок с содержанием: "ИЗОБРАЖЕНИЕ ТОВАРА";
-- setting_goods_edit_image_button - кнопка с наименованием "ДОБАВИТЬ ИЗОБРАЖЕНИЕ";
-- setting_goods_edit_image_protip - кнопка отвечающая за вызов подсказки setting_goods_edit_image_protip_modal;  
-
-При нажатии на setting_goods_edit_image_button открывается приложение камеры устройства. После добавления изображения, оно появляется в виде миниатюры setting_goods_edit_image_value = mini между setting_goods_edit_image_label и setting_goods_edit_image_button с выравниванием по левому краю. 
-
-             codename:                     type:           mode:          pressed/default:        interaction:        important:
-[setting_goods_edit_image_value]          [image]      [mini,macro]       [color5/color2]          [ yes ]             [ no  ]				  
-
-Допускается добавление до 12 изображений. Размеры setting_goods_edit_image_value адаптивны и зависят от величины экрана. В ширину могут быть размещаться до 4 setting_goods_edit_image_value_mini. При тапе на setting_goods_edit_image_value, оно увеличивается переключаясь в полноэкранный режим setting_goods_edit_image_value = macro. В seller_db общее количество хранимых изображение выражается через setting_goods_edit_image_value. Например если лот содержит 12 фото, тогда setting_goods_edit_image_value = 12. Каждому конкретному лоту присваивается имя состоящее из: {строка setting_goods_edit_image} + {нижнее подчеркивание} + {последовательный номер согласно дате вставки в лот от 1 до 12} + {нижнее подчеркивание} + {уникальное имя изображения в системе пользователя}. Так если это фото вставленное в лот под номером 7 с именем 20273645_133514-0, тогда полное наименование в базе данного изображения будет: setting_goods_edit_image_7_20273645_133514-0.
-
 ✠ actions
-• setting_goods_edit_image_button:
+• seller_settings_goods_depot_lot_list_number_input:
 ╠ valid / invalid
 ║ • gesture: tap 
-║ occasion: нажатие setting_goods_edit_image_button;
+║ occasion: нажатие seller_settings_goods_depot_lot_list_number_input;
 ║ condition: in any situation;
-╙ result: открывается setting_goods_edit_image_value_popover.
+║ result:
+║ && - seller_settings_goods_depot_lot_list_number_input переходит в active_state;
+║ && - появляется клавиатура для ввода (если она была скрыта);
+║ && - placeholder исчезает;
+╙ && - карет устанавливается в конце текста (если текст наличествует).
+• seller_settings_goods_depot_lot_list_number_protip:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_depot_lot_list_number_protip;
+║ condition: in any situation;
+╙ result: по центру экрана всплывает seller_settings_goods_depot_lot_list_number_protip_popover.
+• seller_settings_goods_depot_lot_list_entry_button:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_depot_lot_list_entry_button;
+║ condition: in any situation;
+╙ result: всплывает seller_settings_goods_depot_lot_list_entry_calendar_modal.
+• seller_settings_goods_depot_lot_list_entry_protip:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_depot_lot_list_entry_protip;
+║ condition: in any situation;
+╙ result: по центру экрана всплывает seller_settings_goods_depot_lot_list_entry_protip_popover.
+• seller_settings_goods_depot_lot_list_quantity_input:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_depot_lot_list_quantity_input;
+║ condition: in any situation;
+║ result:
+║ && - seller_settings_goods_depot_lot_list_quantity_input переходит в active_state;
+║ && - появляется клавиатура для ввода (если она была скрыта);
+║ && - placeholder исчезает;
+╙ && - карет устанавливается в конце текста (если текст наличествует).
+• seller_settings_goods_depot_lot_list_quantity_protip:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_depot_lot_list_quantity_protip;
+║ condition: in any situation;
+╙ result: по центру экрана всплывает seller_settings_goods_depot_lot_list_quantity_protip_popover.
+• seller_settings_goods_depot_lot_list_balance_input:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_depot_lot_list_balance_input;
+║ condition: in any situation;
+║ result:
+║ && - seller_settings_goods_depot_lot_list_balance_input переходит в active_state;
+║ && - появляется клавиатура для ввода (если она была скрыта);
+║ && - placeholder исчезает;
+╙ && - карет устанавливается в конце текста (если текст наличествует).
+• seller_settings_goods_depot_lot_list_balance_protip:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_depot_lot_list_balance_protip;
+║ condition: in any situation;
+╙ result: по центру экрана всплывает seller_settings_goods_depot_lot_list_balance_protip_popover.
+• seller_settings_goods_depot_lot_list_expiration_button:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_depot_lot_list_expiration_button;
+║ condition: in any situation;
+╙ result: всплывает seller_settings_goods_depot_lot_list_expiration_calendar_modal.
+• seller_settings_goods_depot_lot_list_expiration_protip:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_depot_lot_list_expiration_protip;
+║ condition: in any situation;
+╙ result: по центру экрана всплывает seller_settings_goods_depot_lot_list_expiration_protip_popover.
+• seller_settings_goods_depot_lot_buttons_no_button:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_depot_lot_buttons_no_button;
+║ condition: in any situation;
+╙ result: seller_settings_goods_depot_lot_screen закрывается без применения изменений.
+• seller_settings_goods_depot_lot_buttons_yes_button:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_depot_lot_buttons_yes_button;
+║ condition: in any situation;
+╙ result: seller_settings_goods_depot_lot_screen закрывается с применением изменений.
+
+✠ logics
+1) 
+seller_settings_goods_depot_lot_list_number_input_label (в качестве placeholder) автоматически рассчитывается исходя из количества массива существующих seller_settings_goods_depot_list_party ( let seller_settings_goods_depot_lot_list_number_input_label = [seller_settings_goods_depot_list_party] + 1 ). Так если уже существует 2 seller_settings_goods_depot_list_party, тогда при создании новой seller_settings_goods_depot_list_party значение seller_settings_goods_depot_lot_list_number_input_label = 3.
+2)
+Для seller_settings_goods_depot_lot_list_entry_button_widget автоматически проставляется текущая дата ( let seller_settings_goods_depot_lot_list_entry_button_widget = new Date() ).
+3)
+Для seller_settings_goods_depot_lot_list_balance_input_label (в качестве placeholder) используется текущее значение seller_settings_goods_depot_lot_list_quantity_input_label ( seller_settings_goods_depot_lot_list_balance_input_label = seller_settings_goods_depot_lot_list_quantity_input_label ).
+4)
+Для seller_settings_goods_depot_lot_list_expiration_button_widget автоматически проставляется текущая дата ( let seller_settings_goods_depot_lot_list_expiration_button_widget = new Date() ).
+
+Если юзер не вносит своих данных в перечень seller_settings_goods_depot_lot_list, тогда в качестве валидных значений используются текущие значения placeholders и widgets.
 
 ✠ color_states
 ┌─
-│setting_goods_edit_image_button
-│---------------------------------
-│⟪⟪ body ⟫⟫ 
-│--------
-│• color2
-│------ в default_state;
-│• color5
-│------ в pressing_state.
+│seller_settings_goods_depot_lot_list_number_input
+│seller_settings_goods_depot_lot_list_quantity_input
+│seller_settings_goods_depot_lot_list_balance_input
+│---------------------------
+│⟪⟪ border ⟫⟫ 
+├────────
+│• color3:
+│- || - invalid по факту проверки на overnaming
+│- || - invalid по факту проверки на stopsymbol
+├────────
+│• color1:
+│- && - valid по факту проверки на overnaming
+│- && - valid по факту проверки на stopsymbol
 └─
 ┌─
-│setting_goods_edit_image_protip
+│seller_settings_goods_depot_lot_list_number_protip
+│seller_settings_goods_depot_lot_list_entry_button
+│seller_settings_goods_depot_lot_list_entry_protip
+│seller_settings_goods_depot_lot_list_quantity_protip
+│seller_settings_goods_depot_lot_list_balance_protip
+│seller_settings_goods_depot_lot_list_expiration_button
+│seller_settings_goods_depot_lot_list_expiration_protip
+│seller_settings_goods_depot_lot_buttons_no_button
+│seller_settings_goods_depot_lot_buttons_yes_button
+│-------------------------------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ в default_state
+├────────
+│• color5
+│------ в pressing_state
+└─
+┌─
+│seller_settings_goods_depot_lot_panel
+│seller_settings_goods_depot_lot_list_number_panel
+│seller_settings_goods_depot_lot_list_entry_panel
+│seller_settings_goods_depot_lot_list_quantity_panel
+│seller_settings_goods_depot_lot_list_balance_panel
+│seller_settings_goods_depot_lot_list_expiration_panel
+│seller_settings_goods_depot_lot_list_entry_panel
+│seller_settings_goods_depot_lot_list_entry_panel
+│seller_settings_goods_depot_lot_list_entry_panel
 │-------------------------------
 │⟪⟪ body ⟫⟫ 
 │--------
 │• color2
-│------ in any situation.
+│------ in any situation
 └─
-
-✠ outputs
-• setting_goods_edit_image_button:
-║ occasion: нажатие seller_settings_goods_buttons_yes_button;
-║ condition: setting_goods_edit_image_value > 0;
-║ result:  
-║ && - вывод setting_goods_edit_image_value;
-╙ && - вывод всех image согласно наименованию.
-
-
-🡆🡆🡆 setting_goods_edit_image_value_popover
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-
-При тапе на кнопку setting_goods_edit_saletype_protip всплывает setting_goods_edit_image_value_popover со следующим содержанием:
-
-                     codename:                            type:        interaction:       location:        inactive/active:    		      
-[setting_goods_edit_image_value_popover_basket]         [icon  ]         [ yes ]          [ 🡅 ✜ ]          [color2/color3]
-[setting_goods_edit_image_value_popover_text  ]         [button]         [ no  ]          [ 🡇 ✜ ]          [color2/color1]
- 
-✠ details
-При нажатии и удержании setting_goods_edit_image_value, над setting_goods_edit_image_value появляется setting_goods_edit_image_value_popover_basket, под setting_goods_edit_image_value появляется setting_goods_edit_image_value_popover_text.
-
-✠ actions
-• setting_goods_edit_image_value:
-╠ valid / invalid
-║ • gesture: tap  (setting_goods_edit_image_value = mini)
-║ occasion: нажатие setting_goods_edit_image_value;
-║ condition: 
-║ && - наличие минимум одного setting_goods_edit_image_value;
-║ && - setting_goods_edit_image_value = mini;
-║ result: переход setting_goods_edit_image_value из setting_goods_edit_image_value = mini в setting_goods_edit_image_value = macro.
-║ • gesture: tap  (setting_goods_edit_image_value = macro)
-║ occasion: нажатие setting_goods_edit_image_value;
-║ condition: 
-║ && - наличие минимум одного setting_goods_edit_image_value;
-║ && - setting_goods_edit_image_value = macro;
-║ result: переход setting_goods_edit_image_value из setting_goods_edit_image_value = macro в setting_goods_edit_image_value = mini.
-║ • gesture: tap & hold 1
-║ occasion: нажатие и удержание от 1 и более секунд setting_goods_edit_image_value;
-║ condition:
-║ && - наличие минимум одного setting_goods_edit_image_value;
-║ && - setting_goods_edit_image_value = mini;
-║ result:
-║ && - происходит плавное вертикальное центрирование на целевом setting_goods_edit_image_value;
-║ && - над целевым setting_goods_edit_image_value появляется setting_goods_edit_image_value_popover_basket;
-╙ && - под целевым setting_goods_edit_image_value появляется setting_goods_edit_image_value_popover_text.
-
-✠ color_states
 ┌─
-│setting_goods_edit_image_value_popover_button
-│---------------------------------------------
+│seller_settings_goods_depot_lot_panel_label
+│seller_settings_goods_depot_lot_list_number_panel_label
+│seller_settings_goods_depot_lot_list_number_input_label
+│seller_settings_goods_depot_lot_list_number_protip_label
+│seller_settings_goods_depot_lot_list_entry_panel_label
+│seller_settings_goods_depot_lot_list_entry_button_widget
+│seller_settings_goods_depot_lot_list_entry_protip_label
+│seller_settings_goods_depot_lot_list_quantity_panel_label
+│seller_settings_goods_depot_lot_list_quantity_input_label
+│seller_settings_goods_depot_lot_list_quantity_protip_label
+│seller_settings_goods_depot_lot_list_balance_panel_label
+│seller_settings_goods_depot_lot_list_balance_input_label
+│seller_settings_goods_depot_lot_list_balance_protip_label
+│seller_settings_goods_depot_lot_list_expiration_panel_label
+│seller_settings_goods_depot_lot_list_expiration_button_widget
+│seller_settings_goods_depot_lot_list_expiration_protip_label
+│seller_settings_goods_depot_lot_buttons_no_button_label
+│seller_settings_goods_depot_lot_buttons_yes_button_label
+│---------------------------
 │⟪⟪ body ⟫⟫ 
-│--------
-│• color2
-│------ в default_state;
-│• color5
-│------ в pressing_state.
+├────────
+│• color8
+│------ in any situation
 └─
-
-
-🡆🡆🡆 setting_goods_edit_image_protip_modal
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-
-При тапе на кнопку setting_goods_edit_image_protip всплывает setting_goods_edit_image_protip_modal со следующим содержанием:
-
-                     codename:                          type:        designation:     location:      interaction:      inactive/pressed:    		      
-[setting_goods_edit_image_protip_modal_text  ]        [text  ]                        [ 🡅 ✜ ]          [ no  ]
-[setting_goods_edit_image_protip_modal_button]        [button]          "ОК"          [ 🡇 ✜ ]          [ yes ]         [color2/color5]
-
-✠ details
-setting_goods_edit_image_protip_modal располагается по центру, занимает порядка 50% в ширину и 70% в высоту экрана. На остальную область экрана (содержимое seller_settings_goods_screen) применяется эффект blur. Для закрытия setting_goods_edit_image_protip_modal необходимо нажатие setting_goods_edit_image_protip_modal_button. 
-Содержимое setting_goods_edit_image_protip_modal_text: "Настройка 'ИЗОБРАЖЕНИЕ ТОВАРА' позволяет добавить фотографию или любое другое изображение товара. При нажатии кнопки 'ДОБАВИТЬ ИЗОБРАЖЕНИЕ' открывается приложение камеры вашего устройства, с помощью которого вы можете как тут же сделать фото, либо добавить изображение из галереи. Всего может быть добавлено 12 изображений. Для удаления изображения требуется удерживать его более 1 сек, перетащить в корзину и отпустить. Данная настройка не является обязательной при публикации лота."
-
-✠ actions
-• setting_goods_edit_image_protip_modal_button:
-╠ valid / invalid
-║ • gesture: tap 
-║ occasion: нажатие setting_goods_edit_image_protip_modal_button;
-║ condition: in any situation;
-║ result: 
-║ && - setting_goods_edit_image_protip_modal закрывается;
-╙ && - делается возврат к seller_settings_goods_screen.
-
-✠ color_states
-┌─
-│setting_goods_edit_image_protip_modal_button
-│---------------------------------------------
-│⟪⟪ body ⟫⟫ 
-│--------
-│• color2
-│------ в default_state;
-│• color5
-│------ в pressing_state.
-└─
-
-
-■ setting_goods_edit_description
-
-Настройка предназначена для ввода описания (детальной информации) лота. Допускается присваивание одного из бинарных значениий:
-setting_goods_edit_description_value = false     - описание отсутствует для лота;
-setting_goods_edit_description_value = {text}    - описание присутствует для лота.
-
-✠ details
-Секция setting_goods_edit_description состоит из 2 компонентов:
-- заголовок setting_goods_edit_description_label с содержанием: "ОПИСАНИЕ ТОВАРА";
-- область для ввода данных setting_goods_edit_description_textaria.
-Нормативы для setting_goods_edit_description_textaria: 
-- минимум 0 символов;
-- максимум 9999 символов;
-- допускаются буквы алфавита выбранного языка (прописные и заглавные), цифры (0-9), пробел и символы (. , $ & @ # : ; – _);
-- чувствительность к регистру присутствует.
-
-✠ actions
-• setting_goods_edit_description_textaria:
-╠ valid / invalid
-║ • gesture: tap 
-║ occasion: нажатие setting_goods_edit_description_textaria;
-║ condition: in any situation;
-║ && - setting_goods_edit_description_textaria переходит в active_state;
-║ && - появляется клавиатура для ввода (если она была скрыта);
-╙ && - карет устанавливается в конце текста (если текст наличествует).
 
 ✠ input_checks
-Фильтры проверяющие на соответствие нормативам содержание setting_goods_edit_description_textaria. Если в ходе проверки фиксируется несоответствие, тогда состояние setting_goods_edit_description_textaria позиционируется как invalid, в соответствии с чем отображается соответствующее типу проблемы предупреждение.
+• seller_settings_goods_depot_lot_list_number_input
+Фильтры проверяющие на соответствие нормативам содержание seller_settings_goods_depot_lot_list_number_input. Если в ходе проверки фиксируется несоответствие, тогда состояние seller_settings_goods_depot_lot_list_number_input позиционируется как invalid, в связи с чем отображается соответствующее типу проблемы предупреждение.
 • overnaming:
-Анализ на превышение лимита допустимой длины description.
+Анализ на превышение лимита допустимой длины number.
 Работает в active_state.
-При вводе description, в ситуации если символов > 9999, под setting_goods_edit_description_textaria всплывает setting_goods_edit_description_alert_overnaming.
+При вводе number, в ситуации если символов > 50, под seller_settings_goods_depot_lot_list_number_input всплывает seller_settings_goods_depot_lot_list_number_alert_overnaming.
 • stopsymbol:
-Анализ на нажатие запрещенных клавиш базирующийся на превентивной блокировке ввода неразрешенных символов.
+Анализ на нажатие запрещенных клавиш базирующийся на превентивной блокировке ввода с любых клавиш кроме от 0 до 9.
 Работает в active_state. 
-При вводе description, в ситуации если использованы запрещенные символы, под setting_goods_edit_description_textaria всплывает setting_goods_edit_description_alert_stopsymbol.
-• stopword:
-Анализ на запрещенные слова, базирующийся на тезариусе содержащем надлежащий материал.
+При вводе number, в ситуации если использованы не цифры, под seller_settings_goods_depot_lot_list_number_input всплывает seller_settings_goods_depot_lot_list_number_alert_stopsymbol.
+
+• seller_settings_goods_depot_lot_list_quantity_input
+Фильтры проверяющие на соответствие нормативам содержание seller_settings_goods_depot_lot_list_quantity_input. Если в ходе проверки фиксируется несоответствие, тогда состояние seller_settings_goods_depot_lot_list_quantity_input позиционируется как invalid, в связи с чем отображается соответствующее типу проблемы предупреждение.
+• overnaming:
+Анализ на превышение лимита допустимой длины quantity.
 Работает в active_state.
-При вводе description, в ситуации если использованы запрещенные слова, под setting_goods_edit_description_textaria всплывает setting_goods_edit_description_alert_stopword. 
+При вводе quantity, в ситуации если символов > 50, под seller_settings_goods_depot_lot_list_quantity_input всплывает seller_settings_goods_depot_lot_list_quantity_alert_overnaming.
+• stopsymbol:
+Анализ на нажатие запрещенных клавиш базирующийся на превентивной блокировке ввода с любых клавиш кроме от 0 до 9.
+Работает в active_state. 
+При вводе quantity, в ситуации если использованы не цифры, под seller_settings_goods_depot_lot_list_quantity_input всплывает seller_settings_goods_depot_lot_list_quantity_alert_stopsymbol.
+
+• seller_settings_goods_depot_lot_list_balance_input
+Фильтры проверяющие на соответствие нормативам содержание seller_settings_goods_depot_lot_list_balance_input. Если в ходе проверки фиксируется несоответствие, тогда состояние seller_settings_goods_depot_lot_list_balance_input позиционируется как invalid, в связи с чем отображается соответствующее типу проблемы предупреждение.
+• overnaming:
+Анализ на превышение лимита допустимой длины balance.
+Работает в active_state.
+При вводе balance, в ситуации если символов > 50, под seller_settings_goods_depot_lot_list_balance_input всплывает seller_settings_goods_depot_lot_list_balance_alert_overnaming.
+• stopsymbol:
+Анализ на нажатие запрещенных клавиш базирующийся на превентивной блокировке ввода с любых клавиш кроме от 0 до 9.
+Работает в active_state. 
+При вводе balance, в ситуации если использованы не цифры, под seller_settings_goods_depot_lot_list_balance_input всплывает seller_settings_goods_depot_lot_list_balance_alert_stopsymbol.
+
+✠ outputs
+• seller_settings_goods_depot_lot_list_number_input_label:
+║ occasion: нажатие seller_settings_goods_depot_lot_buttons_yes_button;
+║ condition: in any situation;
+╙ result: cодержимое seller_settings_goods_depot_lot_list_number_input_label преобразуется в seller_settings_goods_depot_lot_list_number_value.
+• seller_settings_goods_depot_lot_list_entry_button_widget:
+║ occasion: нажатие seller_settings_goods_depot_lot_buttons_yes_button;
+║ condition: in any situation;
+╙ result: cодержимое seller_settings_goods_depot_lot_list_entry_button_widget преобразуется в seller_settings_goods_depot_lot_list_entry_value.
+• seller_settings_goods_depot_lot_list_quantity_input_label:
+║ occasion: нажатие seller_settings_goods_depot_lot_buttons_yes_button;
+║ condition: in any situation;
+╙ result: cодержимое seller_settings_goods_depot_lot_list_quantity_input_label преобразуется в seller_settings_goods_depot_lot_list_quantity_value.
+• seller_settings_goods_depot_lot_list_balance_input_label:
+║ occasion: нажатие seller_settings_goods_depot_lot_buttons_yes_button;
+║ condition: in any situation;
+╙ result: cодержимое seller_settings_goods_depot_lot_list_balance_input_label преобразуется в seller_settings_goods_depot_lot_list_balance_value.
+• seller_settings_goods_depot_lot_list_expiration_button_widget:
+║ occasion: нажатие seller_settings_goods_depot_lot_buttons_yes_button;
+║ condition: in any situation;
+╙ result: cодержимое seller_settings_goods_depot_lot_list_expiration_button_widget преобразуется в seller_settings_goods_depot_lot_list_expiration_value.
+
+
+🡆🡆🡆 seller_settings_goods_depot_lot_list_number_protip_popover
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+seller_settings_goods_depot_lot_list_number_protip_popover является всплывающей подсказкой, которая появляется после нажатия seller_settings_goods_depot_lot_list_number_protip.
+
+✠ tables
+
+                                    codename:                                        type:                  designation:           location:  interaction:
+┌┬─[seller_settings_goods_depot_lot_list_number_protip_popover                    ]  [section_lev1       ]                                  [ ✜ ✜ ]     [ no  ]
+│└ [seller_settings_goods_depot_lot_list_number_protip_popover_text               ]  [text               ]  [ " Данная опция отвеч... " ]   [ ✜ ✜ ]     [ no  ]
+└┬─[seller_settings_goods_depot_lot_list_number_protip_popover_buttons_close      ]  [button             ]                                  [ ✜ ✜ ]     [ yes ]
+ └ [seller_settings_goods_depot_lot_list_number_protip_popover_buttons_close_label]  [label              ]  [ " закрыть "               ]   [ ✜ ✜ ]     [ yes ]
+
+✠ details
+- seller_settings_goods_depot_lot_list_number_protip_popover - представляет собой popover, который всплывает по центру экрана и включает 2 компонента:
+--- seller_settings_goods_depot_lot_list_number_protip_popover_text - параграф текста выровненный по центру находится в верхней части seller_settings_goods_depot_lot_list_number_protip_popover следующего содержания: "Опция отвечает за номер партии товара. Допускается вводить только цифры. Если вы не указываете номер, тогда он проставляется автоматически";
+----- seller_settings_goods_depot_lot_list_number_protip_popover_buttons_close - кнопка расположенная под seller_settings_goods_depot_lot_list_number_protip_popover_text;
+--- seller_settings_goods_depot_lot_list_number_protip_popover_buttons_close_label - наименование кнопки следующего содержания: "закрыть".
+
+✠ actions
+• seller_settings_goods_depot_lot_list_number_protip_popover_buttons_close:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_settings_goods_depot_lot_list_number_protip_popover_buttons_close;
+║ condition: in any situation;
+╙ result: seller_settings_goods_depot_lot_list_number_protip_popover исчезает.
 
 ✠ color_states
 ┌─
-│setting_goods_edit_description_textaria
-│-------------------------------------
-│⟪⟪ border ⟫⟫ 
-│--------
-│• color3:
-│- || - invalid по факту проверки на overnaming; 
-│- || - invalid по факту проверки на stopsymbol; 
-│- || - invalid по факту проверки на stopword.
-│• color1:
-│- && - valid по факту проверки на overnaming.
-│- && - valid по факту проверки на stopsymbol;
-│- && - valid по факту проверки на stopword.
+│seller_settings_goods_depot_lot_list_number_protip_popover_buttons_close
+│-------------------------------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ в default_state
+├────────
+│• color5
+│------ в pressing_state
+└─
+┌─
+│seller_settings_goods_depot_lot_list_number_protip_popover_text
+│seller_settings_goods_depot_lot_list_number_protip_popover_buttons_close_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
 └─
 
-✠ alerts
-• setting_goods_edit_description_alert_prompt:
-- focusing: да;
-- location: появляется над setting_goods_edit_description_textaria;
-- occasion: в процессе ввода данных в setting_goods_edit_description_textaria;
-- context:  отображается для первого опубликованного лота в течении 30 секунд;
-- content:  "ОПИСАНИЕ ТОВАРА МОЖЕТ СОДЕРЖАТЬ МАКСИМУМ 9999 СИМВОЛОВ ВКЛЮЧАЯ БУКВЫ, ЦИФРЫ, ПРОБЕЛЫ И СЛЕДУЮЩИЕ СИМВОЛЫ (. , $ & @ # : ; – _)".
-• setting_goods_edit_description_alert_overnaming:
-- focusing: да;
-- location: появляется под setting_goods_edit_description_textaria;
-- occasion: невалидность по факту проверки на overnaming;
-- content:  "ОПИСАНИЕ СЛИШКОМ ДЛИННОЕ, ПОЖАЛУЙСТА ИСПОЛЬЗУЙТЕ МЕНЬШЕ СИМВОЛОВ".
-• setting_goods_edit_description_alert_stopsymbol:
-- focusing: да;
-- location: появляется под setting_goods_edit_description_textaria;
-- occasion: невалидность по факту проверки на stopsymbol;
-- content:  "ИСПОЛЬЗОВАН ЗАПРЕЩЕННЫЙ СИМВОЛ: {указывается запрещенный символ жирным шрифтом белого цвета на color3 фоне}".
-• setting_goods_edit_description_alert_stopword:
-- focusing: да;
-- location: появляется под setting_goods_edit_description_textaria;
-- occasion: невалидность по факту проверки на stopword;
-- content:  "ИСПОЛЬЗОВАНО ЗАПРЕЩЕННОЕ СЛОВО {указывается запрещенное слово жирным шрифтом белого цвета на color3 фоне}".
 
-✠ outputs
-• setting_goods_edit_description_textaria:
-║occasion: нажатие seller_settings_goods_buttons_yes_button;
-║condition: 
-║ && - valid по факту проверки на overnaming;
-║ && - valid по факту проверки на stopsymbol;
-║ && - valid по факту проверки на stopword;
-╙ result: cодержимое setting_goods_edit_description_textaria преобразуется в setting_goods_edit_description_value.
+🡆🡆🡆 seller_settings_goods_depot_lot_list_entry_protip_popover
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+seller_settings_goods_depot_lot_list_entry_protip_popover является всплывающей подсказкой, которая появляется после нажатия seller_settings_goods_depot_lot_list_entry_protip.
+
+✠ tables
+
+                                      codename:                                             type:                  designation:          location:  interaction:
+┌┬─[seller_settings_goods_depot_lot_list_entry_protip_popover                    ]  [section_lev1       ]                                 [ ✜ ✜ ]     [ no  ]
+│└ [seller_settings_goods_depot_lot_list_entry_protip_popover_text               ]  [text               ]  [ " Опция отвечает за ... " ]  [ ✜ ✜ ]     [ no  ]
+└┬─[seller_settings_goods_depot_lot_list_entry_protip_popover_buttons_close      ]  [button             ]                                 [ ✜ ✜ ]     [ yes ]
+ └ [seller_settings_goods_depot_lot_list_entry_protip_popover_buttons_close_label]  [label              ]  [ " закрыть "               ]  [ ✜ ✜ ]     [ yes ]
+
+✠ details
+- seller_settings_goods_depot_lot_list_entry_protip_popover - представляет собой popover, который всплывает по центру экрана и включает 2 компонента:
+--- seller_settings_goods_depot_lot_list_entry_protip_popover_text - параграф текста выровненный по центру находится в верхней части seller_settings_goods_depot_lot_list_entry_protip_popover следующего содержания: "Опция отвечает за дату поступления партии товара. Если вы не настраиваете опцию, тогда автоматически проставляется текущая дата";
+----- seller_settings_goods_depot_lot_list_entry_protip_popover_buttons_close - кнопка расположенная под seller_settings_goods_depot_lot_list_entry_protip_popover_text;
+--- seller_settings_goods_depot_lot_list_entry_protip_popover_buttons_close_label - наименование кнопки следующего содержания: "закрыть".
+
+✠ actions
+• seller_settings_goods_depot_lot_list_entry_protip_popover_buttons_close:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_settings_goods_depot_lot_list_entry_protip_popover_buttons_close;
+║ condition: in any situation;
+╙ result: seller_settings_goods_depot_lot_list_entry_protip_popover исчезает.
+
+✠ color_states
+┌─
+│seller_settings_goods_depot_lot_list_entry_protip_popover_buttons_close
+│-------------------------------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ в default_state
+├────────
+│• color5
+│------ в pressing_state
+└─
+┌─
+│seller_settings_goods_depot_lot_list_entry_protip_popover_text
+│seller_settings_goods_depot_lot_list_entry_protip_popover_buttons_close_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
+
+🡆🡆🡆 seller_settings_goods_depot_lot_list_quantity_protip_popover
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+seller_settings_goods_depot_lot_list_quantity_protip_popover является всплывающей подсказкой, которая появляется после нажатия seller_settings_goods_depot_lot_list_quantity_protip.
+
+✠ tables
+
+                                      codename:                                             type:                  designation:          location:  interaction:
+┌┬─[seller_settings_goods_depot_lot_list_quantity_protip_popover                    ]  [section_lev1       ]                                 [ ✜ ✜ ]     [ no  ]
+│└ [seller_settings_goods_depot_lot_list_quantity_protip_popover_text               ]  [text               ]  [ " Опция отвечает за ... " ]  [ ✜ ✜ ]     [ no  ]
+└┬─[seller_settings_goods_depot_lot_list_quantity_protip_popover_buttons_close      ]  [button             ]                                 [ ✜ ✜ ]     [ yes ]
+ └ [seller_settings_goods_depot_lot_list_quantity_protip_popover_buttons_close_label]  [label              ]  [ " закрыть "               ]  [ ✜ ✜ ]     [ yes ]
+
+✠ details
+- seller_settings_goods_depot_lot_list_quantity_protip_popover - представляет собой popover, который всплывает по центру экрана и включает 2 компонента:
+--- seller_settings_goods_depot_lot_list_quantity_protip_popover_text - параграф текста выровненный по центру находится в верхней части seller_settings_goods_depot_lot_list_quantity_protip_popover следующего содержания: "Опция отвечает за количество товара в партии. Если вы не настраиваете опцию, тогда автоматически проставляется '1'";
+----- seller_settings_goods_depot_lot_list_quantity_protip_popover_buttons_close - кнопка расположенная под seller_settings_goods_depot_lot_list_quantity_protip_popover_text;
+--- seller_settings_goods_depot_lot_list_quantity_protip_popover_buttons_close_label - наименование кнопки следующего содержания: "закрыть".
+
+✠ actions
+• seller_settings_goods_depot_lot_list_quantity_protip_popover_buttons_close:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_settings_goods_depot_lot_list_quantity_protip_popover_buttons_close;
+║ condition: in any situation;
+╙ result: seller_settings_goods_depot_lot_list_quantity_protip_popover исчезает.
+
+✠ color_states
+┌─
+│seller_settings_goods_depot_lot_list_quantity_protip_popover_buttons_close
+│-------------------------------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ в default_state
+├────────
+│• color5
+│------ в pressing_state
+└─
+┌─
+│seller_settings_goods_depot_lot_list_quantity_protip_popover_text
+│seller_settings_goods_depot_lot_list_quantity_protip_popover_buttons_close_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
+
+🡆🡆🡆 seller_settings_goods_depot_lot_list_balance_protip_popover
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+seller_settings_goods_depot_lot_list_balance_protip_popover является всплывающей подсказкой, которая появляется после нажатия seller_settings_goods_depot_lot_list_balance_protip.
+
+✠ tables
+
+                                      codename:                                             type:                  designation:          location:  interaction:
+┌┬─[seller_settings_goods_depot_lot_list_balance_protip_popover                    ]  [section_lev1       ]                                 [ ✜ ✜ ]     [ no  ]
+│└ [seller_settings_goods_depot_lot_list_balance_protip_popover_text               ]  [text               ]  [ " Опция отвечает за ... " ]  [ ✜ ✜ ]     [ no  ]
+└┬─[seller_settings_goods_depot_lot_list_balance_protip_popover_buttons_close      ]  [button             ]                                 [ ✜ ✜ ]     [ yes ]
+ └ [seller_settings_goods_depot_lot_list_balance_protip_popover_buttons_close_label]  [label              ]  [ " закрыть "               ]  [ ✜ ✜ ]     [ yes ]
+
+✠ details
+- seller_settings_goods_depot_lot_list_balance_protip_popover - представляет собой popover, который всплывает по центру экрана и включает 2 компонента:
+--- seller_settings_goods_depot_lot_list_balance_protip_popover_text - параграф текста выровненный по центру находится в верхней части seller_settings_goods_depot_lot_list_balance_protip_popover следующего содержания: "Опция отвечает за остаток количества товара в партии на текущий момент. В дальнейшем значение количества будет автоматически меняться согласно объему продаж. Если вы не настраиваете опцию, тогда автоматически проставляется количество товара в партии";
+----- seller_settings_goods_depot_lot_list_balance_protip_popover_buttons_close - кнопка расположенная под seller_settings_goods_depot_lot_list_balance_protip_popover_text;
+--- seller_settings_goods_depot_lot_list_balance_protip_popover_buttons_close_label - наименование кнопки следующего содержания: "закрыть".
+
+✠ actions
+• seller_settings_goods_depot_lot_list_balance_protip_popover_buttons_close:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_settings_goods_depot_lot_list_balance_protip_popover_buttons_close;
+║ condition: in any situation;
+╙ result: seller_settings_goods_depot_lot_list_balance_protip_popover исчезает.
+
+✠ color_states
+┌─
+│seller_settings_goods_depot_lot_list_balance_protip_popover_buttons_close
+│-------------------------------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ в default_state
+├────────
+│• color5
+│------ в pressing_state
+└─
+┌─
+│seller_settings_goods_depot_lot_list_balance_protip_popover_text
+│seller_settings_goods_depot_lot_list_balance_protip_popover_buttons_close_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
+
+🡆🡆🡆 seller_settings_goods_depot_lot_list_expiration_protip_popover
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+seller_settings_goods_depot_lot_list_expiration_protip_popover является всплывающей подсказкой, которая появляется после нажатия seller_settings_goods_depot_lot_list_expiration_protip.
+
+✠ tables
+
+                                        codename:                                               type:                  designation:        location: interaction:
+┌┬─[seller_settings_goods_depot_lot_list_expiration_protip_popover                    ] [section_lev1       ]                               [ ✜ ✜ ]    [ no  ]
+│└ [seller_settings_goods_depot_lot_list_expiration_protip_popover_text               ] [text               ] [ " Опция отвечает за ... " ] [ ✜ ✜ ]    [ no  ]
+└┬─[seller_settings_goods_depot_lot_list_expiration_protip_popover_buttons_close      ] [button             ]                               [ ✜ ✜ ]    [ yes ]
+ └ [seller_settings_goods_depot_lot_list_expiration_protip_popover_buttons_close_label] [label              ] [ " закрыть "               ] [ ✜ ✜ ]    [ yes ]
+
+✠ details
+- seller_settings_goods_depot_lot_list_expiration_protip_popover - представляет собой popover, который всплывает по центру экрана и включает 2 компонента:
+--- seller_settings_goods_depot_lot_list_expiration_protip_popover_text - параграф текста выровненный по центру находится в верхней части seller_settings_goods_depot_lot_list_expiration_protip_popover следующего содержания: "Опция отвечает за срок годности товара в партии, с помощью которой вы указываете конечную дату для его реализации. Если вы не настраиваете опцию, тогда автоматически проставляется текущая дата";
+----- seller_settings_goods_depot_lot_list_expiration_protip_popover_buttons_close - кнопка расположенная под seller_settings_goods_depot_lot_list_expiration_protip_popover_text;
+--- seller_settings_goods_depot_lot_list_expiration_protip_popover_buttons_close_label - наименование кнопки следующего содержания: "закрыть".
+
+✠ actions
+• seller_settings_goods_depot_lot_list_expiration_protip_popover_buttons_close:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_settings_goods_depot_lot_list_expiration_protip_popover_buttons_close;
+║ condition: in any situation;
+╙ result: seller_settings_goods_depot_lot_list_expiration_protip_popover исчезает.
+
+✠ color_states
+┌─
+│seller_settings_goods_depot_lot_list_expiration_protip_popover_buttons_close
+│-------------------------------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ в default_state
+├────────
+│• color5
+│------ в pressing_state
+└─
+┌─
+│seller_settings_goods_depot_lot_list_expiration_protip_popover_text
+│seller_settings_goods_depot_lot_list_expiration_protip_popover_buttons_close_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
+
+seller_settings_goods_depot_lot_list_number_input_label_d
+seller_settings_goods_depot_lot_list_number_input_label_m
+seller_settings_goods_depot_lot_list_number_input_label_y
+
+
+
+
+
 
 
 ■ setting_goods_edit_button
@@ -2149,8 +2766,8 @@ setting_goods_edit_description_value = {text}    - описание присут
 ║ && - seller_settings_goods_screen закрывается с сохранением изменений в базу данных seller_db по seller_settings_goods_list_quantity_value в секцию с присвоенным lot_id;
 ║ && - seller_settings_goods_screen закрывается с сохранением изменений в базу данных seller_db по seller_settings_goods_list_quantity_ctrl_value в секцию с присвоенным lot_id;
 ║ && - seller_settings_goods_screen закрывается с сохранением изменений в базу данных seller_db по setting_goods_edit_saletype_value в секцию с присвоенным lot_id;
-║ && - seller_settings_goods_screen закрывается с сохранением изменений в базу данных seller_db по setting_goods_edit_image_value в секцию с присвоенным lot_id;
-║ && - seller_settings_goods_screen закрывается с сохранением изменений в базу данных seller_db по setting_goods_edit_image (все изображения) в секцию с присвоенным lot_id;
+║ && - seller_settings_goods_screen закрывается с сохранением изменений в базу данных seller_db по seller_settings_goods_list_image_value в секцию с присвоенным lot_id;
+║ && - seller_settings_goods_screen закрывается с сохранением изменений в базу данных seller_db по seller_settings_goods_list_image (все изображения) в секцию с присвоенным lot_id;
 ║ && - seller_settings_goods_screen закрывается с сохранением изменений в базу данных seller_db по setting_goods_edit_description_value в секцию с присвоенным lot_id;
 ║ && - осуществляется публикация лота в качестве seller_goods_cover в топ seller_goods_list;
 ║ && - совершается переход к seller_goods_screen с фиксацией viewport, где верхний край экрана отображает верхнюю границу seller_goods_list.
@@ -2216,7 +2833,4 @@ lot_saletype
 lot_image
 lot_image_link
 lot_description
-
-
-
 
