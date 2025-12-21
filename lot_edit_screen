@@ -24,94 +24,97 @@ color5 - actived;
                                                 codename:                              type:                  designation:            location:  interaction:
 ---┌┬────────────┬──[seller_settings_goods                                  ]  [section_lev1       ]			                       [ ✜ ✜ ]     [ no  ]
 ---││            └┬─[seller_settings_goods_panel                            ]  [section_lev2       ]			                       [ 🡅 ✜ ]     [ no  ]
----││             └ [seller_settings_goods_panel_label                      ]  [label              ]  [ " Данные товара "         ]    [ ✜ ✜ ]     [ no  ]
+---││             └ [seller_settings_goods_panel_label                      ]  [label              ]  [ "Данные товара"         ]      [ ✜ ✜ ]     [ no  ]
 ---│└┬┬┬┬┬┬┬┬┬┬┬────[seller_settings_goods_list                             ]  [section_lev2       ]                                   [ ✜ ✜ ]     [ no  ]
 ---│ ││││││││││├┬┬──[seller_settings_goods_list_name                        ]  [section_lev3       ]                                   [ 🡅 ✜ ]     [ no  ]
 ---│ ││││││││││││└┬─[seller_settings_goods_list_name_panel                  ]  [section_lev4       ]                                   [ 🡅 ✜ ]     [ no  ]
----│ ││││││││││││ └ [seller_settings_goods_list_name_panel_label            ]  [label              ]  [ " Наименование товара * " ]    [ ✜ ✜ ]     [ no  ]
+---│ ││││││││││││ └ [seller_settings_goods_list_name_panel_label            ]  [label              ]  [ "Наименование товара *" ]      [ ✜ ✜ ]     [ no  ]
 ---│ │││││││││││└─┬─[seller_settings_goods_list_name_input                  ]  [button             ]                                   [ 🡇 ✜ ]     [ yes ]
----│ │││││││││││  └ [seller_settings_goods_list_name_input_label            ]  [placeholder        ]  [ " название "              ]    [ ✜ ✜ ]     [ yes ]
+---│ │││││││││││  └ [seller_settings_goods_list_name_input_label            ]  [placeholder        ]  [ "название"              ]      [ ✜ ✜ ]     [ yes ]
 ---│ ││││││││││└──┬─[seller_settings_goods_list_name_protip                 ]  [button             ]                                   [ 🡇 🡆 ]     [ yes ]
----│ ││││││││││   └ [seller_settings_goods_list_name_protip_label           ]  [label              ]  [ " ? "                     ]    [ ✜ ✜ ]     [ yes ]
+---│ ││││││││││   └ [seller_settings_goods_list_name_protip_label           ]  [label              ]  [ "?"                     ]      [ ✜ ✜ ]     [ yes ]
 ---│ │││││││││└┬┬┬──[seller_settings_goods_list_saletype                    ]  [section_lev3       ]                                   [ ✜ ✜ ]     [ no  ]
 ---│ │││││││││ ││└┬─[seller_settings_goods_list_saletype_panel              ]  [section_lev4       ]                                   [ 🡅 ✜ ]     [ no  ]
----│ │││││││││ ││ └ [seller_settings_goods_list_saletype_panel_label        ]  [label              ]  [ " Розница / опт "         ]    [ ✜ ✜ ]     [ no  ]
+---│ │││││││││ ││ └ [seller_settings_goods_list_saletype_panel_label        ]  [label              ]  [ "Розница / опт"         ]      [ ✜ ✜ ]     [ no  ]
 ---│ │││││││││ │└─┬─[seller_settings_goods_list_saletype_button             ]  [button             ]                                   [ 🡇 ✜ ]     [ yes ]
----│ │││││││││ │  ├ [seller_settings_goods_list_saletype_button_label       ]  [label              ]  [ " Розница "               ]    [ ✜ ✜ ]     [ yes ]
+---│ │││││││││ │  ├ [seller_settings_goods_list_saletype_button_label       ]  [label              ]  [ "Розница"               ]      [ ✜ ✜ ]     [ yes ]
 ---│ │││││││││ │  └ [seller_settings_goods_list_saletype_button_icon        ]  [icon               ]                                   [ ✜ 🡆 ]     [ yes ]
 ---│ │││││││││ └──┬─[seller_settings_goods_list_saletype_protip             ]  [button             ]                                   [ 🡇 🡆 ]     [ yes ]
----│ │││││││││    └ [seller_settings_goods_list_saletype_protip_label       ]  [label              ]  [ " ? "                     ]    [ ✜ ✜ ]     [ yes ]
+---│ │││││││││    └ [seller_settings_goods_list_saletype_protip_label       ]  [label              ]  [ "?"                     ]      [ ✜ ✜ ]     [ yes ]
 ---│ ││││││││└─┬┬┬──[seller_settings_goods_list_price_retail                ]  [section_lev3       ]                                   [ ✜ ✜ ]     [ no  ]
 ---│ ││││││││  ││└┬─[seller_settings_goods_list_price_retail_panel          ]  [section_lev4       ]                                   [ 🡅 ✜ ]     [ no  ]
----│ ││││││││  ││ └ [seller_settings_goods_list_price_retail_panel_label    ]  [label              ]  [ " Розничная цена товара " ]    [ ✜ ✜ ]     [ no  ]
+---│ ││││││││  ││ └ [seller_settings_goods_list_price_retail_panel_label    ]  [label              ]  [ "Розничная цена товара" ]      [ ✜ ✜ ]     [ no  ]
 ---│ ││││││││  │└─┬─[seller_settings_goods_list_price_retail_input          ]  [input              ]                                   [ 🡇 ✜ ]     [ yes ]
----│ ││││││││  │  └ [seller_settings_goods_list_price_retail_input_label    ]  [placeholder        ]  [ " введите цену "          ]    [ ✜ ✜ ]     [ yes ]
+---│ ││││││││  │  └ [seller_settings_goods_list_price_retail_input_label    ]  [placeholder        ]  [ "введите цену"          ]      [ ✜ ✜ ]     [ yes ]
 ---│ ││││││││  └──┬─[seller_settings_goods_list_price_retail_protip         ]  [button             ]                                   [ 🡇 🡆 ]     [ yes ]
----│ ││││││││     └ [seller_settings_goods_list_price_retail_protip_label   ]  [label              ]  [ " ? "                     ]    [ ✜ ✜ ]     [ yes ]
+---│ ││││││││     └ [seller_settings_goods_list_price_retail_protip_label   ]  [label              ]  [ "?"                     ]      [ ✜ ✜ ]     [ yes ]
 ---│ │││││││└───┬┬──[seller_settings_goods_list_price_wholesale             ]  [section_lev3       ]                                   [ ✜ ✜ ]     [ no  ]
 ---│ │││││││    │└┬─[seller_settings_goods_list_price_wholesale_panel       ]  [section_lev4       ]                                   [ 🡅 ✜ ]     [ no  ]
----│ │││││││    │ └ [seller_settings_goods_list_price_wholesale_panel_label ]  [label              ]  [ " Оптовая цена товара "   ]    [ ✜ ✜ ]     [ no  ]
+---│ │││││││    │ └ [seller_settings_goods_list_price_wholesale_panel_label ]  [label              ]  [ "Оптовая цена товара"   ]      [ ✜ ✜ ]     [ no  ]
 ---│ │││││││    └─┬─[seller_settings_goods_list_price_wholesale_input       ]  [input              ]                                   [ 🡇 ✜ ]     [ yes ]
----│ │││││││      └ [seller_settings_goods_list_price_wholesale_input_label ]  [placeholder        ]  [ " введите цену "          ]    [ ✜ ✜ ]     [ yes ]
+---│ │││││││      └ [seller_settings_goods_list_price_wholesale_input_label ]  [placeholder        ]  [ "введите цену"          ]      [ ✜ ✜ ]     [ yes ]
 ---│ ││││││└───┬┬┬──[seller_settings_goods_list_measure                     ]  [section_lev3       ]                                   [ ✜ ✜ ]     [ no  ]
 ---│ ││││││    ││└┬─[seller_settings_goods_list_measure_panel               ]  [section_lev4       ]                                   [ 🡅 ✜ ]     [ no  ]
----│ ││││││    ││ └ [seller_settings_goods_list_measure_panel_label         ]  [label              ]  [ " Единица измерения "     ]    [ ✜ ✜ ]     [ no  ]
+---│ ││││││    ││ └ [seller_settings_goods_list_measure_panel_label         ]  [label              ]  [ "Единица измерения"     ]      [ ✜ ✜ ]     [ no  ]
 ---│ ││││││    │└─┬─[seller_settings_goods_list_measure_button              ]  [button             ]                                   [ 🡇 ✜ ]     [ yes ]
----│ ││││││    │  ├ [seller_settings_goods_list_measure_button_label        ]  [label              ]  [ " штук "                  ]    [ ✜ ✜ ]     [ yes ]
+---│ ││││││    │  ├ [seller_settings_goods_list_measure_button_label        ]  [label              ]  [ "штук"                  ]      [ ✜ ✜ ]     [ yes ]
 ---│ ││││││    │  └ [seller_settings_goods_list_measure_button_icon         ]  [icon               ]                                   [ ✜ 🡆 ]     [ yes ]
 ---│ ││││││    └──┬─[seller_settings_goods_list_measure_protip              ]  [button             ]                                   [ 🡇 🡆 ]     [ yes ]
----│ ││││││       └ [seller_settings_goods_list_measure_protip_label        ]  [label              ]  [ " ? "                     ]    [ ✜ ✜ ]     [ yes ]
+---│ ││││││       └ [seller_settings_goods_list_measure_protip_label        ]  [label              ]  [ "?"                     ]      [ ✜ ✜ ]     [ yes ]
 ---│ │││││└───┬┬┬┬──[seller_settings_goods_list_quantity_ctrl               ]  [section_lev3       ]                                   [ ✜ ✜ ]     [ no  ]
 ---│ │││││    │││└┬─[seller_settings_goods_list_quantity_ctrl_panel         ]  [section_lev4       ]                                   [ 🡅 ✜ ]     [ no  ]
----│ │││││    │││ └ [seller_settings_goods_list_quantity_ctrl_panel_label   ]  [label              ]  [ " Индикатор количества "  ]    [ ✜ ✜ ]     [ no  ]
+---│ │││││    │││ └ [seller_settings_goods_list_quantity_ctrl_panel_label   ]  [label              ]  [ "Индикатор количества"  ]      [ ✜ ✜ ]     [ no  ]
 ---│ │││││    ││└─┬─[seller_settings_goods_list_quantity_ctrl_definite      ]  [button             ]                                   [ 🡇 🡄 ]     [ yes ]
----│ │││││    ││  ├ [seller_settings_goods_list_quantity_ctrl_definite_label]  [label              ]  [ " точный "                ]    [ ✜ ✜ ]     [ yes ]
+---│ │││││    ││  ├ [seller_settings_goods_list_quantity_ctrl_definite_label]  [label              ]  [ "точный"                ]      [ ✜ ✜ ]     [ yes ]
 ---│ │││││    ││  └ [seller_settings_goods_list_quantity_ctrl_definite_icon ]  [icon               ]                                   [ ✜ ✜ ]     [ yes ]
 ---│ │││││    │└──┬─[seller_settings_goods_list_quantity_ctrl_approx        ]  [button             ]                                   [ 🡇 ✜ ]     [ yes ] 
----│ │││││    │   ├ [seller_settings_goods_list_quantity_ctrl_approx_label  ]  [label              ]  [ " усредненный "           ]    [ ✜ ✜ ]     [ yes ]
+---│ │││││    │   ├ [seller_settings_goods_list_quantity_ctrl_approx_label  ]  [label              ]  [ "усредненный"           ]      [ ✜ ✜ ]     [ yes ]
 ---│ │││││    │   └ [seller_settings_goods_list_quantity_ctrl_approx_icon   ]  [icon               ]                                   [ ✜ ✜ ]     [ yes ]
 ---│ │││││    └───┬─[seller_settings_goods_list_quantity_ctrl_protip        ]  [button             ]                                   [ 🡇 🡆 ]     [ yes ]
----│ │││││        └ [seller_settings_goods_list_quantity_ctrl_protip_label  ]  [label              ]  [ " ? "                     ]    [ ✜ ✜ ]     [ yes ]
+---│ │││││        └ [seller_settings_goods_list_quantity_ctrl_protip_label  ]  [label              ]  [ "?"                     ]      [ ✜ ✜ ]     [ yes ]
 ---│ ││││└─────┬┬┬──[seller_settings_goods_list_quantity                    ]  [section_lev3       ]                                   [ ✜ ✜ ]     [ no  ]
 ---│ ││││      ││└┬─[seller_settings_goods_list_quantity_panel              ]  [section_lev4       ]                                   [ 🡅 ✜ ]     [ no  ]
----│ ││││      ││ └ [seller_settings_goods_list_quantity_panel_label        ]  [label              ]  [ " Количество "            ]    [ ✜ ✜ ]     [ no  ]
+---│ ││││      ││ └ [seller_settings_goods_list_quantity_panel_label        ]  [label              ]  [ "Количество"            ]      [ ✜ ✜ ]     [ no  ]
 ---│ ││││      │└─┬─[seller_settings_goods_list_quantity_input              ]  [input              ]                                   [ 🡇 ✜ ]     [ yes ]
----│ ││││      │  └ [seller_settings_goods_list_quantity_input_label        ]  [label              ]  [ " 1 "                     ]    [ ✜ ✜ ]     [ yes ]
+---│ ││││      │  └ [seller_settings_goods_list_quantity_input_label        ]  [label              ]  [ "1"                     ]      [ ✜ ✜ ]     [ yes ]
 ---│ ││││      └──┬─[seller_settings_goods_list_quantity_protip             ]  [button             ]                                   [ 🡇 🡆 ]     [ yes ]
----│ ││││         └ [seller_settings_goods_list_quantity_protip_label       ]  [label              ]  [ " ? "                     ]    [ ✜ ✜ ]     [ yes ]
+---│ ││││         └ [seller_settings_goods_list_quantity_protip_label       ]  [label              ]  [ "?"                     ]      [ ✜ ✜ ]     [ yes ]
 ---│ │││└──────┬┬┬──[seller_settings_goods_list_depot                       ]  [section_lev3       ]                                   [ ✜ ✜ ]     [ no  ]
 ---│ │││       ││└┬─[seller_settings_goods_list_depot_panel                 ]  [section_lev4       ]                                   [ 🡅 ✜ ]     [ no  ]
----│ │││       ││ └ [seller_settings_goods_list_depot_panel_label           ]  [label              ]  [ " Склад "                 ]    [ ✜ ✜ ]     [ no  ]
+---│ │││       ││ └ [seller_settings_goods_list_depot_panel_label           ]  [label              ]  [ "Склад"                 ]      [ ✜ ✜ ]     [ no  ]
 ---│ │││       │└─┬─[seller_settings_goods_list_depot_button                ]  [button             ]                                   [ 🡇 ✜ ]     [ yes ]
----│ │││       │  └ [seller_settings_goods_list_depot_button_label          ]  [label              ]  [ " открыть "               ]    [ ✜ ✜ ]     [ yes ]
+---│ │││       │  └ [seller_settings_goods_list_depot_button_label          ]  [label              ]  [ "открыть"               ]      [ ✜ ✜ ]     [ yes ]
 ---│ │││       └──┬─[seller_settings_goods_list_depot_protip                ]  [button             ]                                   [ 🡇 🡆 ]     [ yes ]
----│ │││          └ [seller_settings_goods_list_depot_protip_label          ]  [label              ]  [ " ? "                     ]    [ ✜ ✜ ]     [ yes ]
+---│ │││          └ [seller_settings_goods_list_depot_protip_label          ]  [label              ]  [ "?"                     ]      [ ✜ ✜ ]     [ yes ]
 ---│ ││└──────┬┬┬┬──[seller_settings_goods_list_image                       ]  [section_lev3       ]                                   [ ✜ ✜ ]     [ no  ]
 ---│ ││       │││└┬─[seller_settings_goods_list_image_panel                 ]  [section_lev4       ]                                   [ 🡅 ✜ ]     [ no  ]
----│ ││       │││ └ [seller_settings_goods_list_image_panel_label           ]  [label              ]  [ " Изображение товара "    ]    [ ✜ ✜ ]     [ no  ]
+---│ ││       │││ └ [seller_settings_goods_list_image_panel_label           ]  [label              ]  [ "Изображение товара"    ]      [ ✜ ✜ ]     [ no  ]
 ---│ ││       ││└┬──[seller_settings_goods_list_image_carousel              ]  [carousel           ]                                   [ ✜ ✜ ]     [ yes ]
 ---│ ││       ││ └┬─[seller_settings_goods_list_image_carousel_frame        ]  [frame              ]                                   [ ✜ ✜ ]     [ yes ]
 ---│ ││       ││  └ [seller_settings_goods_list_image_carousel_frame_img    ]  [image              ]                                   [ ✜ ✜ ]     [ yes ]
 ---│ ││       │└──┬─[seller_settings_goods_list_image_button                ]  [button             ]                                   [ 🡇 ✜ ]     [ yes ]
----│ ││       │   └ [seller_settings_goods_list_image_button_label          ]  [label              ]  [ " добавить изображение "  ]    [ ✜ ✜ ]     [ yes ]
+---│ ││       │   └ [seller_settings_goods_list_image_button_label          ]  [label              ]  [ "добавить изображение"  ]      [ ✜ ✜ ]     [ yes ]
 ---│ ││       └───┬─[seller_settings_goods_list_image_protip                ]  [button             ]                                   [ 🡇 🡆 ]     [ yes ]
----│ ││           └ [seller_settings_goods_list_image_protip_label          ]  [label              ]  [ " ? "                     ]    [ ✜ ✜ ]     [ yes ]
----│ │└─────────┬┬──[seller_settings_goods_list_description                 ]  [section_lev3       ]                                   [ ✜ ✜ ]     [ no  ]
----│ │          │└┬─[seller_settings_goods_list_description_panel           ]  [section_lev4       ]                                   [ 🡅 ✜ ]     [ no  ]
----│ │          │ └ [seller_settings_goods_list_description_panel_label     ]  [label              ]  [ " Описание товара "       ]    [ ✜ ✜ ]     [ no  ]
----│ │          └─┬─[seller_settings_goods_list_description_textaria        ]  [textaria           ]  [ " опишите ваш товар "     ]    [ 🡇 ✜ ]     [ yes ]
+---│ ││           └ [seller_settings_goods_list_image_protip_label          ]  [label              ]  [ "?"                     ]      [ ✜ ✜ ]     [ yes ]
+---│ │└────────┬┬┬──[seller_settings_goods_list_description                 ]  [section_lev3       ]                                   [ ✜ ✜ ]     [ no  ]
+---│ │         ││└┬─[seller_settings_goods_list_description_panel           ]  [section_lev4       ]                                   [ 🡅 ✜ ]     [ no  ]
+---│ │         ││ └ [seller_settings_goods_list_description_panel_label     ]  [label              ]  [ "Описание товара"       ]      [ ✜ ✜ ]     [ no  ]
+---│ │         │└─┬─[seller_settings_goods_list_description_protip          ]  [button             ]                                   [ 🡇 🡆 ]     [ yes ]
+---│ │         │  └ [seller_settings_goods_list_description_protip_label    ]  [label              ]  [ "?"                     ]      [ ✜ ✜ ]     [ yes ]
+---│ │         └──┬─[seller_settings_goods_list_description_textaria        ]  [textaria           ]                                   [ ✜ ✜ ]     [ yes ]
+---│ │            └ [seller_settings_goods_list_description_textaria_label  ]  [placeholder        ]  [ "опишите ваш товар"     ]      [ ✜ ✜ ]     [ yes ]
 ---│ └─────────┬┬┬──[seller_settings_goods_list_discount                    ]  [section_lev3       ]                                   [ ✜ ✜ ]     [ no  ]
 ---│           ││└┬─[seller_settings_goods_list_discount_panel              ]  [section_lev4       ]                                   [ 🡅 ✜ ]     [ no  ]
----│           ││ └ [seller_settings_goods_list_discount_panel_label        ]  [label              ]  [ " Скидки / Акции "        ]    [ ✜ ✜ ]     [ no  ]
+---│           ││ └ [seller_settings_goods_list_discount_panel_label        ]  [label              ]  [ "Скидки / Акции"        ]      [ ✜ ✜ ]     [ no  ]
 ---│           │└─┬─[seller_settings_goods_list_discount_button             ]  [button             ]                                   [ 🡇 ✜ ]     [ yes ]
----│           │  └ [seller_settings_goods_list_discount_button_label       ]  [label              ]  [ " открыть "               ]    [ ✜ ✜ ]     [ yes ]
+---│           │  └ [seller_settings_goods_list_discount_button_label       ]  [label              ]  [ "открыть"               ]      [ ✜ ✜ ]     [ yes ]
 ---│           └──┬─[seller_settings_goods_list_discount_protip             ]  [button             ]                                   [ 🡇 🡆 ]     [ yes ]
----│              └ [seller_settings_goods_list_discount_protip_label       ]  [label              ]  [ " ? "                     ]    [ ✜ ✜ ]     [ yes ]
+---│              └ [seller_settings_goods_list_discount_protip_label       ]  [label              ]  [ "?"                     ]      [ ✜ ✜ ]     [ yes ]
 ---└────────────┬┬──[seller_settings_goods_buttons                          ]  [section_lev2       ]                                   [ ✜ ✜ ]     [ no  ]
----             │└┬─[seller_settings_goods_buttons_no_button                ]  [button             ]                                   [ ✜ 🡄 ]     [ yes ]
----             │ └ [seller_settings_goods_buttons_no_button_label          ]  [label              ]  [ " отмена "                ]    [ ✜ ✜ ]     [ yes ]
----             └─┬─[seller_settings_goods_buttons_yes_button               ]  [button             ]                                   [ ✜ 🡆 ]     [ yes ]
----               └ [seller_settings_goods_buttons_yes_button_label         ]  [label              ]  [ " ОК "                    ]    [ ✜ ✜ ]     [ yes ]
+---             │└┬─[seller_settings_goods_buttons_no                       ]  [button             ]                                   [ ✜ 🡄 ]     [ yes ]
+---             │ └ [seller_settings_goods_buttons_no_label                 ]  [label              ]  [ "отмена"                ]      [ ✜ ✜ ]     [ yes ]
+---             └─┬─[seller_settings_goods_buttons_yes                      ]  [button             ]                                   [ ✜ 🡆 ]     [ yes ]
+---               └ [seller_settings_goods_buttons_yes_label                ]  [label              ]  [ "ОК"                    ]      [ ✜ ✜ ]     [ yes ]
 
 
 ■ seller_settings_goods_list_name
@@ -130,7 +133,7 @@ color5 - actived;
 - чувствительность к регистру присутствует;
 ------- seller_settings_goods_list_name_input_label - выполняет роль placeholder с содержанием: "название";
 3)----- seller_settings_goods_list_name_protip - кнопка круглой формы выполняющая роль аффорданса, находится справа от seller_settings_goods_list_name_input и содержит seller_settings_goods_list_name_protip_label;
-------- seller_settings_goods_list_name_protip_label - может находиться в трех состояниях каждый из которых выражается отдельным видом иконки: seller_settings_goods_list_name_protip_label_question - с символом вопросительного знака (отображается по умолчанию);
+------- seller_settings_goods_list_name_protip_label - может находиться в трех состояниях каждое из которых выражается отдельным видом иконки: seller_settings_goods_list_name_protip_label_question - с символом вопросительного знака (отображается по умолчанию);
 seller_settings_goods_list_name_protip_label_bad - с символом восклицательного знака;
 seller_settings_goods_list_name_protip_label_good - с символом галочки.
 
@@ -172,7 +175,7 @@ seller_settings_goods_list_name_protip_label_good - с символом гало
 • omission:
 Реакция на факт отсутствия введенных данных.
 Работает в inactive_state.
-В ситуации если поле пустое, а юзер нажимает на seller_settings_goods_buttons_yes_button, под seller_settings_goods_list_name_input всплывает seller_settings_goods_list_name_alert_omission.
+В ситуации если поле пустое, а юзер нажимает на seller_settings_goods_buttons_yes, под seller_settings_goods_list_name_input всплывает seller_settings_goods_list_name_alert_omission.
 • emptiness:
 Анализ на пустотность.
 Работает в active_state и inactive_state.
@@ -289,12 +292,12 @@ seller_settings_goods_list_name_protip_label_good - отображается в 
 • seller_settings_goods_list_name_alert_omission:
 - focusing: нет;
 - location: появляется под seller_settings_goods_list_name_input;
-- occasion: нажатие на seller_settings_goods_buttons_yes_button, если seller_settings_goods_list_name_input пустой;
+- occasion: нажатие на seller_settings_goods_buttons_yes, если seller_settings_goods_list_name_input пустой;
 - content:  "ПОЖАЛУЙСТА ВВЕДИТЕ ЗДЕСЬ НАЗВАНИЕ ТОВАРА".
 
 ✠ outputs
 • seller_settings_goods_list_name_input:
-║occasion: нажатие seller_settings_goods_buttons_yes_button;
+║occasion: нажатие seller_settings_goods_buttons_yes;
 ║condition: 
 ║- && - valid по факту проверки seller_settings_goods_list_name_input на undernaming;
 ║- && - valid по факту проверки seller_settings_goods_list_name_input на overnaming.
@@ -339,10 +342,10 @@ seller_settings_goods_list_name_protip_popover является всплываю
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color4
-│------ в default_state
+│------ in default_state
 ├────────
 │• color5
-│------ в pressing_state
+│------ in pressing_state
 └─
 ┌─
 │seller_settings_goods_list_name_protip_popover_text
@@ -391,10 +394,10 @@ seller_settings_goods_list_name_protip_popover является всплываю
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color4
-│------ в default_state
+│------ in default_state
 ├────────
 │• color5
-│------ в pressing_state
+│------ in pressing_state
 └─
 ┌─
 │seller_settings_goods_list_saletype_panel
@@ -424,11 +427,11 @@ seller_settings_goods_list_name_protip_popover является всплываю
                                     codename:                                   type:                   designation:            location:  interaction:
 ----  ┌┬─┬──[seller_settings_goods_list_saletype_dropdown            ]  [section_lev1       ]                                    [ ✜ ✜ ]     [ no  ]
 ----  ││ └┬─[seller_settings_goods_list_saletype_dropdown_item0      ]  [section_lev2       ]                                    [ ✜ ✜ ]     [ yes ]
-----  ││  └ [seller_settings_goods_list_saletype_dropdown_item0_label]  [label              ]  [ " в розницу "             ]     [ ✜ ✜ ]     [ yes ]
+----  ││  └ [seller_settings_goods_list_saletype_dropdown_item0_label]  [label              ]  [ "в розницу"               ]     [ ✜ ✜ ]     [ yes ]
 ----  │└──┬─[seller_settings_goods_list_saletype_dropdown_item1      ]  [section_lev2       ]                                    [ ✜ ✜ ]     [ yes ]
-----  │   └ [seller_settings_goods_list_saletype_dropdown_item1_label]  [label              ]  [ " оптом "                 ]     [ ✜ ✜ ]     [ yes ]
+----  │   └ [seller_settings_goods_list_saletype_dropdown_item1_label]  [label              ]  [ "оптом"                   ]     [ ✜ ✜ ]     [ yes ]
 ----  └───┬─[seller_settings_goods_list_saletype_dropdown_item2      ]  [section_lev2       ]                                    [ ✜ ✜ ]     [ yes ]
-----      └ [seller_settings_goods_list_saletype_dropdown_item2_label]  [label              ]  [ " розница и опт "         ]     [ ✜ ✜ ]     [ yes ]
+----      └ [seller_settings_goods_list_saletype_dropdown_item2_label]  [label              ]  [ "розница и опт"           ]     [ ✜ ✜ ]     [ yes ]
 
 ✠ details
 - seller_settings_goods_list_saletype_dropdown - листинг из 3 кнопок;
@@ -466,10 +469,10 @@ seller_settings_goods_list_name_protip_popover является всплываю
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color2
-│------ в default_state
+│------ in default_state
 ├────────
 │• color5
-│------ в pressing_state
+│------ in pressing_state
 └─
 ┌─
 │seller_settings_goods_list_saletype_dropdown_item0_label
@@ -503,9 +506,9 @@ seller_settings_goods_list_saletype_protip_popover является всплыв
 
                                     codename:                                         type:                   designation:            location:  interaction:
 ┌┬─[seller_settings_goods_list_saletype_protip_popover                     ]  [section_lev1       ]                                    [ ✜ ✜ ]     [ no  ]
-│└ [seller_settings_goods_list_saletype_protip_popover_text                ]  [text               ]  [ " Выберите вариант т... " ]     [ ✜ ✜ ]     [ no  ]
+│└ [seller_settings_goods_list_saletype_protip_popover_text                ]  [text               ]  [ "Выберите вариант т..." ]       [ ✜ ✜ ]     [ no  ]
 └┬─[seller_settings_goods_list_saletype_protip_popover_buttons_close       ]  [button             ]                                    [ ✜ ✜ ]     [ yes ]
- └ [seller_settings_goods_list_saletype_protip_popover_buttons_close_label ]  [label              ]  [ " закрыть "               ]     [ ✜ ✜ ]     [ yes ]
+ └ [seller_settings_goods_list_saletype_protip_popover_buttons_close_label ]  [label              ]  [ "закрыть"               ]       [ ✜ ✜ ]     [ yes ]
 
 ✠ details
 - seller_settings_goods_list_saletype_protip_popover - представляет собой popover, который всплывает по центру экрана и включает 2 компонента:
@@ -528,10 +531,10 @@ seller_settings_goods_list_saletype_protip_popover является всплыв
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color4
-│------ в default_state
+│------ in default_state
 ├────────
 │• color5
-│------ в pressing_state
+│------ in pressing_state
 └─
 ┌─
 │seller_settings_goods_list_saletype_protip_popover_text
@@ -563,7 +566,7 @@ seller_settings_goods_list_saletype_protip_popover является всплыв
 - чувствительность к регистру отсутствует.
 ------- seller_settings_goods_list_price_retail_input_label - выполняет роль placeholder с содержанием: "введите цену";
 3)----- seller_settings_goods_list_price_retail_protip - кнопка круглой формы выполняющая роль аффорданса, находится справа от seller_settings_goods_list_price_retail_input и содержит seller_settings_goods_list_price_retail_protip_label;
-------- seller_settings_goods_list_price_retail_protip_label - может находиться в трех состояниях каждый из которых выражается отдельным видом иконки: seller_settings_goods_list_price_retail_protip_label_question - с символом вопросительного знака (отображается по умолчанию);
+------- seller_settings_goods_list_price_retail_protip_label - может находиться в трех состояниях каждое из которых выражается отдельным видом иконки: seller_settings_goods_list_price_retail_protip_label_question - с символом вопросительного знака (отображается по умолчанию);
 seller_settings_goods_list_price_retail_protip_label_bad - с символом восклицательного знака;
 seller_settings_goods_list_price_retail_protip_label_good - с символом галочки.
 
@@ -596,7 +599,7 @@ seller_settings_goods_list_price_retail_protip_label_good - с символом 
 • omission:
 Реакция на факт отсутствия введенных данных.
 Работает в inactive_state.
-В ситуации если поле пустое, а юзер нажимает на seller_settings_goods_buttons_yes_button, под seller_settings_goods_list_price_retail_input всплывает seller_settings_goods_list_price_retail_alert_omission.
+В ситуации если поле пустое, а юзер нажимает на seller_settings_goods_buttons_yes, под seller_settings_goods_list_price_retail_input всплывает seller_settings_goods_list_price_retail_alert_omission.
 • emptiness:
 Анализ на пустотность.
 Работает в active_state и inactive_state.
@@ -691,12 +694,12 @@ seller_settings_goods_list_price_retail_protip_label_good - отображает
 • seller_settings_goods_list_price_retail_alert_omission:
 - focusing: нет;
 - location: появляется под seller_settings_goods_list_price_retail_input;
-- occasion: нажатие на seller_settings_goods_buttons_yes_button, если seller_settings_goods_list_price_retail_input пустой;
+- occasion: нажатие на seller_settings_goods_buttons_yes, если seller_settings_goods_list_price_retail_input пустой;
 - content:  "ПОЖАЛУЙСТА ВВЕДИТЕ ЦЕНУ ТОВАРА".
 
 ✠ outputs
 • seller_settings_goods_list_price_retail_input:
-║occasion: нажатие seller_settings_goods_buttons_yes_button;
+║occasion: нажатие seller_settings_goods_buttons_yes;
 ║condition: 
 ║- && - valid по факту проверки на overnaming
 ║- && - valid по факту проверки на stopsymbol
@@ -716,7 +719,7 @@ seller_settings_goods_list_price_retail_protip_popover является вспл
 ┌┬─[seller_settings_goods_list_price_retail_protip_popover                    ]  [section_lev1       ]                                  [ ✜ ✜ ]     [ no  ]
 │└ [seller_settings_goods_list_price_retail_protip_popover_text               ]  [text               ]  [ " Введите в поле наи... " ]   [ ✜ ✜ ]     [ no  ]
 └┬─[seller_settings_goods_list_price_retail_protip_popover_buttons_close      ]  [button             ]                                  [ ✜ ✜ ]     [ yes ]
- └ [seller_settings_goods_list_price_retail_protip_popover_buttons_close_label]  [label              ]  [ " закрыть "               ]   [ ✜ ✜ ]     [ yes ]
+ └ [seller_settings_goods_list_price_retail_protip_popover_buttons_close_label]  [placeholder        ]  [ " закрыть "               ]   [ ✜ ✜ ]     [ yes ]
 
 ✠ details
 - seller_settings_goods_list_price_retail_protip_popover - представляет собой popover, который всплывает по центру экрана и включает 2 компонента:
@@ -739,10 +742,10 @@ seller_settings_goods_list_price_retail_protip_popover является вспл
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color4
-│------ в default_state
+│------ in default_state
 ├────────
 │• color5
-│------ в pressing_state
+│------ in pressing_state
 └─
 ┌─
 │seller_settings_goods_list_price_retail_protip_popover_text
@@ -792,7 +795,7 @@ seller_settings_goods_list_price_retail_protip_popover является вспл
 • omission:
 Реакция на факт отсутствия введенных данных.
 Работает в inactive_state.
-В ситуации если поле пустое, а юзер нажимает на seller_settings_goods_buttons_yes_button, под seller_settings_goods_list_price_wholesale_input всплывает seller_settings_goods_list_price_wholesale_alert_omission.
+В ситуации если поле пустое, а юзер нажимает на seller_settings_goods_buttons_yes, под seller_settings_goods_list_price_wholesale_input всплывает seller_settings_goods_list_price_wholesale_alert_omission.
 • emptiness:
 Анализ на пустотность.
 Работает в active_state и inactive_state.
@@ -852,12 +855,12 @@ seller_settings_goods_list_price_retail_protip_popover является вспл
 • seller_settings_goods_list_price_wholesale_alert_omission:
 - focusing: нет;
 - location: появляется под seller_settings_goods_list_price_wholesale_input;
-- occasion: нажатие на seller_settings_goods_buttons_yes_button, если seller_settings_goods_list_price_wholesale_input пустой;
+- occasion: нажатие на seller_settings_goods_buttons_yes, если seller_settings_goods_list_price_wholesale_input пустой;
 - content:  "ПОЖАЛУЙСТА ВВЕДИТЕ ЦЕНУ ТОВАРА".
 
 ✠ outputs
 • seller_settings_goods_list_price_wholesale_input:
-║occasion: нажатие seller_settings_goods_buttons_yes_button;
+║occasion: нажатие seller_settings_goods_buttons_yes;
 ║condition: 
 ║- && - valid по факту проверки на overnaming
 ║- && - valid по факту проверки на stopsymbol
@@ -902,10 +905,10 @@ seller_settings_goods_list_price_retail_protip_popover является вспл
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color4
-│------ в default_state
+│------ in default_state
 ├────────
 │• color5
-│------ в pressing_state
+│------ in pressing_state
 └─
 ┌─
 │seller_settings_goods_list_measure_panel
@@ -936,9 +939,9 @@ seller_settings_goods_list_measure_protip_popover является всплыв�
 
                                     codename:                                         type:                   designation:            location:  interaction:
 ┌┬─[seller_settings_goods_list_measure_protip_popover                     ]  [section_lev1       ]                                    [ ✜ ✜ ]     [ no  ]
-│└ [seller_settings_goods_list_measure_protip_popover_text                ]  [text               ]  [ " Выберите вариант т... " ]     [ ✜ ✜ ]     [ no  ]
+│└ [seller_settings_goods_list_measure_protip_popover_text                ]  [text               ]  [ "Выберите вариант т..." ]       [ ✜ ✜ ]     [ no  ]
 └┬─[seller_settings_goods_list_measure_protip_popover_buttons_close       ]  [button             ]                                    [ ✜ ✜ ]     [ yes ]
- └ [seller_settings_goods_list_measure_protip_popover_buttons_close_label ]  [label              ]  [ " закрыть "               ]     [ ✜ ✜ ]     [ yes ]
+ └ [seller_settings_goods_list_measure_protip_popover_buttons_close_label ]  [label              ]  [ "закрыть"               ]       [ ✜ ✜ ]     [ yes ]
 
 ✠ details
 - seller_settings_goods_list_measure_protip_popover - представляет собой popover, который всплывает по центру экрана и включает 2 компонента:
@@ -961,10 +964,10 @@ seller_settings_goods_list_measure_protip_popover является всплыв�
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color4
-│------ в default_state
+│------ in default_state
 ├────────
 │• color5
-│------ в pressing_state
+│------ in pressing_state
 └─
 ┌─
 │seller_settings_goods_list_measure_protip_popover_text
@@ -1181,9 +1184,9 @@ seller_settings_goods_list_measure_dropdown появляется при нажа
 │⟪⟪ body ⟫⟫ 
 │--------
 │• color2
-│------ в default_state;
+│------ in default_state;
 │• color5
-│------ в pressing_state.
+│------ in pressing_state.
 └─
 ┌─
 │seller_settings_goods_list_measure_dropdown_list_items_label
@@ -1214,7 +1217,7 @@ seller_settings_goods_list_measure_dropdown появляется при нажа
 
 ✠ outputs
 • seller_settings_goods_list_measure_dropdown:
-║ occasion: нажатие seller_settings_goods_buttons_yes_button;
+║ occasion: нажатие seller_settings_goods_buttons_yes;
 ║ condition: 
 ║ || - активация seller_settings_goods_list_measure_dropdown_list_items;
 ║ || - активация seller_settings_goods_list_measure_dropdown_list_grams;
@@ -1301,10 +1304,10 @@ seller_settings_goods_list_measure_dropdown появляется при нажа
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color4
-│------ в default_state
+│------ in default_state
 ├────────
 │• color5
-│------ в pressing_state
+│------ in pressing_state
 └─
 ┌─
 │seller_settings_goods_list_quantity_ctrl_panel
@@ -1328,7 +1331,7 @@ seller_settings_goods_list_measure_dropdown появляется при нажа
 
 ✠ outputs
 • seller_settings_goods_list_quantity_ctrl:
-║ occasion: нажатие seller_settings_goods_buttons_yes_button;
+║ occasion: нажатие seller_settings_goods_buttons_yes;
 ║ condition:  
 ║ || - активация seller_settings_goods_list_quantity_ctrl_definite;
 ║ || - активация seller_settings_goods_list_quantity_ctrl_approx;
@@ -1375,10 +1378,10 @@ seller_settings_goods_list_quantity_ctrl_protip_popover является всп�
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color4
-│------ в default_state
+│------ in default_state
 ├────────
 │• color5
-│------ в pressing_state
+│------ in pressing_state
 └─
 ┌─
 │seller_settings_goods_list_quantity_ctrl_protip_popover_text
@@ -1439,7 +1442,7 @@ seller_settings_goods_list_quantity_ctrl_protip_popover является всп�
 • omission:
 Реакция на факт отсутствия введенных данных.
 Работает в inactive_state.
-В ситуации если поле пустое, а юзер нажимает на seller_settings_goods_buttons_yes_button, под seller_settings_goods_list_quantity_input всплывает seller_settings_goods_list_quantity_alert_omission.
+В ситуации если поле пустое, а юзер нажимает на seller_settings_goods_buttons_yes, под seller_settings_goods_list_quantity_input всплывает seller_settings_goods_list_quantity_alert_omission.
 • emptiness:
 Анализ на пустотность.
 Работает в active_state и inactive_state.
@@ -1501,12 +1504,12 @@ seller_settings_goods_list_quantity_ctrl_protip_popover является всп�
 • seller_settings_goods_list_quantity_alert_omission:
 - focusing: нет;
 - location: появляется под seller_settings_goods_list_quantity_input;
-- occasion: нажатие на seller_settings_goods_buttons_yes_button, если seller_settings_goods_list_quantity_input пустой;
+- occasion: нажатие на seller_settings_goods_buttons_yes, если seller_settings_goods_list_quantity_input пустой;
 - content:  "ПОЖАЛУЙСТА ВВЕДИТЕ КОЛИЧЕСТВО ТОВАРА".
 
 ✠ outputs
 • seller_settings_goods_list_quantity_input:
-║occasion: нажатие seller_settings_goods_buttons_yes_button;
+║occasion: нажатие seller_settings_goods_buttons_yes;
 ║condition: 
 ║- && - valid по факту проверки на overnaming.
 ║- && - valid по факту проверки на stopsymbol;
@@ -1549,10 +1552,10 @@ seller_settings_goods_list_quantity_protip_popover является всплыв
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color4
-│------ в default_state
+│------ in default_state
 ├────────
 │• color5
-│------ в pressing_state
+│------ in pressing_state
 └─
 ┌─
 │seller_settings_goods_list_quantity_protip_popover_text
@@ -1599,10 +1602,10 @@ seller_settings_goods_list_quantity_protip_popover является всплыв
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color4
-│------ в default_state
+│------ in default_state
 ├────────
 │• color5
-│------ в pressing_state
+│------ in pressing_state
 └─
 ┌─
 │seller_settings_goods_list_depot_panel
@@ -1658,10 +1661,10 @@ seller_settings_goods_list_depot_protip_popover является всплыва�
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color4
-│------ в default_state
+│------ in default_state
 ├────────
 │• color5
-│------ в pressing_state
+│------ in pressing_state
 └─
 ┌─
 │seller_settings_goods_list_depot_protip_popover_text
@@ -1765,10 +1768,10 @@ seller_settings_goods_list_image_carousel_frame=max - состояние в ко
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color2
-│------ в default_state
+│------ in default_state
 ├────────
 │• color5
-│------ в pressing_state
+│------ in pressing_state
 └─
 ┌─
 │seller_settings_goods_list_image_panel_label
@@ -1799,7 +1802,7 @@ seller_settings_goods_list_image_carousel_frame=max - состояние в ко
 
 ✠ outputs
 • seller_settings_goods_list_image_carousel_frame_img:
-║ occasion: нажатие seller_settings_goods_buttons_yes_button;
+║ occasion: нажатие seller_settings_goods_buttons_yes;
 ║ condition: seller_settings_goods_list_image_carousel_frame_img > 0;
 ║ result:  
 ║ && - вывод seller_settings_goods_list_image_value;
@@ -1855,10 +1858,10 @@ seller_settings_goods_list_image_carousel_frame=max - состояние в ко
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color4
-│------ в default_state
+│------ in default_state
 ├────────
 │• color5
-│------ в pressing_state
+│------ in pressing_state
 └─
 ┌─
 │seller_settings_goods_list_image_carousel_frame_popover_buttons_close_label
@@ -1905,10 +1908,10 @@ seller_settings_goods_list_image_protip_popover является всплыва�
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color4
-│------ в default_state
+│------ in default_state
 ├────────
 │• color5
-│------ в pressing_state
+│------ in pressing_state
 └─
 ┌─
 │seller_settings_goods_list_image_protip_popover_text
@@ -1921,113 +1924,384 @@ seller_settings_goods_list_image_protip_popover является всплыва�
 └─
 
 
-
-
----│ │└─────────┬┬──[seller_settings_goods_list_description                 ]  [section_lev3       ]                                   [ ✜ ✜ ]     [ no  ]
----│ │          │└┬─[seller_settings_goods_list_description_panel           ]  [section_lev4       ]                                   [ 🡅 ✜ ]     [ no  ]
----│ │          │ └ [seller_settings_goods_list_description_panel_label     ]  [label              ]  [ " Описание товара "       ]    [ ✜ ✜ ]     [ no  ]
----│ │          └─┬─[seller_settings_goods_list_description_textaria        ]  [textaria           ]  [ " опишите ваш товар "     ]    [ 🡇 ✜ ]     [ yes ]
-
-
 ■ seller_settings_goods_list_description
 
-Опция seller_settings_goods_list_description предназначена для настройки изображений товара.
-
-
-
-■ setting_goods_edit_description
-
-Настройка предназначена для ввода описания (детальной информации) лота. Допускается присваивание одного из бинарных значениий:
-setting_goods_edit_description_value = false     - описание отсутствует для лота;
-setting_goods_edit_description_value = {text}    - описание присутствует для лота.
+Настройка предназначена для ввода описания (детальной информации) лота. 
 
 ✠ details
-Секция setting_goods_edit_description состоит из 2 компонентов:
-- заголовок setting_goods_edit_description_label с содержанием: "ОПИСАНИЕ ТОВАРА";
-- область для ввода данных setting_goods_edit_description_textaria.
-Нормативы для setting_goods_edit_description_textaria: 
+Секция seller_settings_goods_list_description состоит из 3 компонентов:  
+1)--- seller_settings_goods_list_description_panel - панель служащая целью вывода заголовка опции seller_settings_goods_list_description_panel_label;
+----- seller_settings_goods_list_description_panel_label - заголовок seller_settings_goods_list_description с содержанием: "Количество";
+2)--- seller_settings_goods_list_description_protip - кнопка отвечающая за вызов подсказки seller_settings_goods_list_description_protip_popover;
+----- seller_settings_goods_list_description_protip_label - имеет наименование: "?", может находиться в трех состояниях каждое из которых выражается отдельным видом иконки:
+seller_settings_goods_list_description_protip_label_question - с символом вопросительного знака (отображается по умолчанию);
+seller_settings_goods_list_description_protip_label_bad - с символом восклицательного знака;
+seller_settings_goods_list_description_protip_label_good - с символом галочки;
+3)--- seller_settings_goods_list_description_textaria - поле для ввода текста, содержит seller_settings_goods_list_description_textaria_label в качестве placeholder;
+Нормативы для seller_settings_goods_list_description_textaria:
 - минимум 0 символов;
 - максимум 9999 символов;
 - допускаются буквы алфавита выбранного языка (прописные и заглавные), цифры (0-9), пробел и символы (. , $ & @ # : ; – _);
 - чувствительность к регистру присутствует.
+----- seller_settings_goods_list_description_textaria_label - выполняет роль placeholder с содержанием: "опишите ваш товар".
 
 ✠ actions
-• setting_goods_edit_description_textaria:
+• seller_settings_goods_list_description_textaria:
 ╠ valid / invalid
 ║ • gesture: tap 
-║ occasion: нажатие setting_goods_edit_description_textaria;
+║ occasion: нажатие seller_settings_goods_list_description_textaria;
 ║ condition: in any situation;
-║ && - setting_goods_edit_description_textaria переходит в active_state;
+║ result: 
+║ && - seller_settings_goods_list_description_textaria переходит в active_state;
 ║ && - появляется клавиатура для ввода (если она была скрыта);
 ╙ && - карет устанавливается в конце текста (если текст наличествует).
+• seller_settings_goods_list_description_protip:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_list_description_protip;
+║ condition: in any situation;
+╙ result: по центру экрана всплывает seller_settings_goods_list_description_protip_popover.
 
 ✠ input_checks
-Фильтры проверяющие на соответствие нормативам содержание setting_goods_edit_description_textaria. Если в ходе проверки фиксируется несоответствие, тогда состояние setting_goods_edit_description_textaria позиционируется как invalid, в связи с чем отображается соответствующее типу проблемы предупреждение.
+Фильтры проверяющие на соответствие нормативам содержание seller_settings_goods_list_description_textaria. Если в ходе проверки фиксируется несоответствие, тогда состояние seller_settings_goods_list_description_textaria позиционируется как invalid, в связи с чем отображается соответствующее типу проблемы предупреждение.
 • overnaming:
 Анализ на превышение лимита допустимой длины description.
 Работает в active_state.
-При вводе description, в ситуации если символов > 9999, под setting_goods_edit_description_textaria всплывает setting_goods_edit_description_alert_overnaming.
+При вводе description, в ситуации если символов > 9999, под seller_settings_goods_list_description_textaria всплывает seller_settings_goods_list_description_alert_overnaming.
 • stopsymbol:
 Анализ на нажатие запрещенных клавиш базирующийся на превентивной блокировке ввода неразрешенных символов.
 Работает в active_state. 
-При вводе description, в ситуации если использованы запрещенные символы, под setting_goods_edit_description_textaria всплывает setting_goods_edit_description_alert_stopsymbol.
+При вводе description, в ситуации если использованы запрещенные символы, под seller_settings_goods_list_description_textaria всплывает seller_settings_goods_list_description_alert_stopsymbol.
 • stopword:
 Анализ на запрещенные слова, базирующийся на тезариусе содержащем надлежащий материал.
 Работает в active_state.
-При вводе description, в ситуации если использованы запрещенные слова, под setting_goods_edit_description_textaria всплывает setting_goods_edit_description_alert_stopword. 
+При вводе description, в ситуации если использованы запрещенные слова, под seller_settings_goods_list_description_textaria всплывает seller_settings_goods_list_description_alert_stopword. 
+
+✠ logics
+seller_settings_goods_list_description_protip_label_question - отображается по умолчанию (seller_settings_goods_list_description_textaria не была нажата);
+seller_settings_goods_list_description_protip_label_bad - отображается в ситуации если:
+- || - invalid по факту проверки seller_settings_goods_list_description_textaria на overnaming
+- || - invalid по факту проверки seller_settings_goods_list_description_textaria на stopsymbol
+- || - invalid по факту проверки seller_settings_goods_list_description_textaria на stopword;
+seller_settings_goods_list_description_protip_label_good - отображается в ситуации если:
+- && - valid по факту проверки seller_settings_goods_list_description_textaria на overnaming
+- && - valid по факту проверки seller_settings_goods_list_description_textaria на stopsymbol
+- && - valid по факту проверки seller_settings_goods_list_description_textaria на stopword.
 
 ✠ color_states
 ┌─
-│setting_goods_edit_description_textaria
-│-------------------------------------
+│seller_settings_goods_list_description_textaria
+│---------------------------
 │⟪⟪ border ⟫⟫ 
-│--------
+├────────
 │• color3:
-│- || - invalid по факту проверки на overnaming; 
-│- || - invalid по факту проверки на stopsymbol; 
-│- || - invalid по факту проверки на stopword.
+│- || - invalid по факту проверки seller_settings_goods_list_description_textaria на overnaming
+│- || - invalid по факту проверки seller_settings_goods_list_description_textaria на stopsymbol
+│- || - invalid по факту проверки seller_settings_goods_list_description_textaria на stopword
+├────────
 │• color1:
-│- && - valid по факту проверки на overnaming.
-│- && - valid по факту проверки на stopsymbol;
-│- && - valid по факту проверки на stopword.
+│- && - valid по факту проверки seller_settings_goods_list_description_textaria на overnaming
+│- && - valid по факту проверки seller_settings_goods_list_description_textaria на stopsymbol
+│- && - valid по факту проверки seller_settings_goods_list_description_textaria на stopword
+└─
+┌─
+│seller_settings_goods_list_description_protip_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8:
+│------ by default
+├────────
+│• color3:
+│- || - invalid по факту проверки seller_settings_goods_list_description_textaria на overnaming
+│- || - invalid по факту проверки seller_settings_goods_list_description_textaria на stopsymbol
+│- || - invalid по факту проверки seller_settings_goods_list_description_textaria на stopword
+├────────
+│• color1:
+│- && - valid по факту проверки seller_settings_goods_list_description_textaria на overnaming
+│- && - valid по факту проверки seller_settings_goods_list_description_textaria на stopsymbol
+│- && - valid по факту проверки seller_settings_goods_list_description_textaria на stopword
+└─
+┌─
+│seller_settings_goods_list_description_panel
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color2
+│------ in any situation
+└─
+┌─
+│seller_settings_goods_list_description_panel_label
+│seller_settings_goods_list_description_textaria_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
 └─
 
 ✠ alerts
-• setting_goods_edit_description_alert_prompt:
+• seller_settings_goods_list_description_prompt:
 - focusing: да;
-- location: появляется над setting_goods_edit_description_textaria;
-- occasion: в процессе ввода данных в setting_goods_edit_description_textaria;
+- location: появляется над seller_settings_goods_list_description_textaria;
+- occasion: в процессе ввода данных в seller_settings_goods_list_description_textaria;
 - context:  отображается для первого опубликованного лота в течении 30 секунд;
 - content:  "ОПИСАНИЕ ТОВАРА МОЖЕТ СОДЕРЖАТЬ МАКСИМУМ 9999 СИМВОЛОВ ВКЛЮЧАЯ БУКВЫ, ЦИФРЫ, ПРОБЕЛЫ И СЛЕДУЮЩИЕ СИМВОЛЫ (. , $ & @ # : ; – _)".
-• setting_goods_edit_description_alert_overnaming:
+• seller_settings_goods_list_description_alert_overnaming:
 - focusing: да;
-- location: появляется под setting_goods_edit_description_textaria;
+- location: появляется под seller_settings_goods_list_description_textaria;
 - occasion: невалидность по факту проверки на overnaming;
 - content:  "ОПИСАНИЕ СЛИШКОМ ДЛИННОЕ, ПОЖАЛУЙСТА ИСПОЛЬЗУЙТЕ МЕНЬШЕ СИМВОЛОВ".
-• setting_goods_edit_description_alert_stopsymbol:
+• seller_settings_goods_list_description_alert_stopsymbol:
 - focusing: да;
-- location: появляется под setting_goods_edit_description_textaria;
+- location: появляется под seller_settings_goods_list_description_textaria;
 - occasion: невалидность по факту проверки на stopsymbol;
 - content:  "ИСПОЛЬЗОВАН ЗАПРЕЩЕННЫЙ СИМВОЛ: {указывается запрещенный символ жирным шрифтом белого цвета на color3 фоне}".
-• setting_goods_edit_description_alert_stopword:
+• seller_settings_goods_list_description_alert_stopword:
 - focusing: да;
-- location: появляется под setting_goods_edit_description_textaria;
+- location: появляется под seller_settings_goods_list_description_textaria;
 - occasion: невалидность по факту проверки на stopword;
 - content:  "ИСПОЛЬЗОВАНО ЗАПРЕЩЕННОЕ СЛОВО {указывается запрещенное слово жирным шрифтом белого цвета на color3 фоне}".
 
 ✠ outputs
-• setting_goods_edit_description_textaria:
-║occasion: нажатие seller_settings_goods_buttons_yes_button;
+• seller_settings_goods_list_description_textaria:
+║occasion: нажатие seller_settings_goods_buttons_yes;
 ║condition: 
 ║ && - valid по факту проверки на overnaming;
 ║ && - valid по факту проверки на stopsymbol;
 ║ && - valid по факту проверки на stopword;
-╙ result: cодержимое setting_goods_edit_description_textaria преобразуется в setting_goods_edit_description_value.
+╙ result: cодержимое seller_settings_goods_list_description_textaria преобразуется в seller_settings_goods_list_description_value.
 
 
+■ seller_settings_goods_list_discount
+
+Опция seller_settings_goods_list_discount предназначена для настройки скидок и акций.
+
+✠ details
+Секция seller_settings_goods_list_discount состоит из 3 компонентов:  
+1)----- seller_settings_goods_list_discount_panel - панель служащая целью вывода заголовка опции seller_settings_goods_list_discount_panel_label; 
+------- seller_settings_goods_list_discount_panel_label - заголовок для seller_settings_goods_list_discount с содержанием: "Скидки / Акции";
+2)----- seller_settings_goods_list_discount_button - кнопка предназначенная для перехода к соответствующим настройкам;
+------- seller_settings_goods_list_discount_button_label - наименование кнопки по умолчанию: "открыть";
+3)----- seller_settings_goods_list_discount_protip - кнопка отвечающая за вызов подсказки seller_settings_goods_list_discount_protip_popover;  
+------- seller_settings_goods_list_discount_protip_label - наименование следующего содержания: "?".
+
+✠ actions
+• seller_settings_goods_list_discount_button:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_list_discount_button;
+║ condition: in any situation;
+╙ result: делается переход к seller_settings_goods_discount_screen.
+• seller_settings_goods_list_discount_protip:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_list_discount_protip;
+║ condition: in any situation;
+╙ result: по центру экрана всплывает seller_settings_goods_list_discount_protip_popover.
+
+✠ color_states
+┌─
+│seller_settings_goods_list_discount_button
+│-------------------------------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color5
+│------ in pressing_state
+└─
+┌─
+│seller_settings_goods_list_discount_panel
+│-------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color2
+│------ in any situation.
+└─
+┌─
+│seller_settings_goods_list_discount_panel_label
+│seller_settings_goods_list_discount_button_label
+│seller_settings_goods_list_discount_protip_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
 
 
+🡆🡆🡆 seller_settings_goods_list_discount_protip_popover
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 
+seller_settings_goods_list_discount_protip_popover является всплывающей подсказкой, которая появляется после нажатия seller_settings_goods_list_discount_protip.
+
+✠ tables
+
+                                  codename:                                       type:                  designation:           location:  interaction:
+┌┬─[seller_settings_goods_list_discount_protip_popover                    ]  [section_lev1       ]                                [ ✜ ✜ ]     [ no  ]
+│└ [seller_settings_goods_list_discount_protip_popover_text               ]  [text               ]  [ "Данная настройка п..." ]   [ ✜ ✜ ]     [ no  ]
+└┬─[seller_settings_goods_list_discount_protip_popover_buttons_close      ]  [button             ]                                [ ✜ ✜ ]     [ yes ]
+ └ [seller_settings_goods_list_discount_protip_popover_buttons_close_label]  [label              ]  [ "закрыть"               ]   [ ✜ ✜ ]     [ yes ]
+
+✠ details
+- seller_settings_goods_list_discount_protip_popover - представляет собой popover, который всплывает по центру экрана и включает 2 компонента:
+--- seller_settings_goods_list_discount_protip_popover_text - параграф текста выровненный по центру находится в верхней части seller_settings_goods_list_discount_protip_popover следующего содержания: "Данная опция позволяет настроить скидки и акции для ваших товаров. При настройке вы сможете увидеть как будет выглядеть ваш маркетинговый ход на карточке товара";
+----- seller_settings_goods_list_discount_protip_popover_buttons_close - кнопка расположенная под seller_settings_goods_list_discount_protip_popover_text;
+--- seller_settings_goods_list_discount_protip_popover_buttons_close_label - наименование кнопки следующего содержания: "закрыть".
+
+✠ actions
+• seller_settings_goods_list_discount_protip_popover_buttons_close:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_settings_goods_list_discount_protip_popover_buttons_close;
+║ condition: in any situation;
+╙ result: seller_settings_goods_list_discount_protip_popover исчезает.
+
+✠ color_states
+┌─
+│seller_settings_goods_list_discount_protip_popover_buttons_close
+│-------------------------------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color5
+│------ in pressing_state
+└─
+┌─
+│seller_settings_goods_list_discount_protip_popover_text
+│seller_settings_goods_list_discount_protip_popover_buttons_close_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
+
+■ seller_settings_goods_buttons
+
+✠ details
+- seller_settings_goods_buttons - представляет собой блок расположенный в самом низу seller_settings_goods_screen и включает 2 компонента:
+1)--- seller_settings_goods_buttons_no - кнопка расположенная слева, содержит seller_settings_goods_buttons_no_label;
+----- seller_settings_goods_buttons_no_label - наименование кнопки следующего содержания: "отмена";
+2)--- seller_settings_goods_buttons_yes - кнопка расположенная справа, содержит seller_settings_goods_buttons_yes_label;
+----- seller_settings_goods_buttons_yes_label - наименование кнопки следующего содержания: "ОК".
+
+✠ actions
+• seller_settings_goods_buttons_no:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_buttons_no;
+║ condition: in any situation;
+║ result:
+║ && - seller_settings_goods_screen закрывается без сохранения изменений;
+╙ && - совершается переход к seller_goods_screen с фиксацией viewport, где верхний край экрана отображает верхнюю границу seller_goods_list.
+• seller_settings_goods_buttons_yes:
+╠ valid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_buttons_yes;
+║ condition: 
+║ && - valid по seller_settings_goods_list_name;
+║ && - valid по seller_settings_goods_list_price;
+║ result:
+║ && - в seller_db создается lot_id;
+║ && - данному lot_id присваивается дата его создания;
+║ && - seller_settings_goods_screen закрывается с сохранением в seller_db по seller_settings_goods_list_name_value в секцию с присвоенным lot_id;
+║ && - seller_settings_goods_screen закрывается с сохранением в seller_db по seller_settings_goods_list_saletype_value в секцию с присвоенным lot_id;
+║ && - seller_settings_goods_screen закрывается с сохранением в seller_db по seller_settings_goods_list_price_value в секцию с присвоенным lot_id;
+║ && - seller_settings_goods_screen закрывается с сохранением в seller_db по seller_settings_goods_list_measure_value в секцию с присвоенным lot_id;
+║ && - seller_settings_goods_screen закрывается с сохранением в seller_db по seller_settings_goods_list_quantity_ctrl_value в секцию с присвоенным lot_id;
+║ && - seller_settings_goods_screen закрывается с сохранением в seller_db по seller_settings_goods_list_quantity_value в секцию с присвоенным lot_id;
+║ && - seller_settings_goods_screen закрывается с сохранением в seller_db по seller_settings_goods_list_depot_value в секцию с присвоенным lot_id;
+║ && - seller_settings_goods_screen закрывается с сохранением в seller_db по seller_settings_goods_list_image_value в секцию с присвоенным lot_id;
+║ && - seller_settings_goods_screen закрывается с сохранением в seller_db по seller_settings_goods_list_description_value в секцию с присвоенным lot_id;
+║ && - seller_settings_goods_screen закрывается с сохранением в seller_db по seller_settings_goods_list_discount_value в секцию с присвоенным lot_id;
+║ && - осуществляется публикация лота в качестве seller_goods_cover в топ seller_goods_list;
+║ && - совершается переход к seller_goods_screen с фиксацией viewport, где верхний край экрана отображает верхнюю границу seller_goods_list.
+╠ invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_buttons_yes;
+║ condition: 
+║ || - invalid по seller_settings_goods_list_name;
+║ || - invalid по seller_settings_goods_list_price;
+╙ result: seller_settings_goods_buttons_yes не реагирует на нажатие.
+
+✠ color_states  
+┌─
+│seller_settings_goods_buttons_no
+│-------------------------------- 
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color5
+│------ in pressing_state
+└─
+┌─
+│seller_settings_goods_buttons_yes
+│------------------------- 
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+│ - && - valid по seller_settings_goods_list_name
+│ - && - valid по seller_settings_goods_list_price
+├────────
+│• color5
+│------ in pressing_state
+│ - && - valid по seller_settings_goods_list_name
+│ - && - valid по seller_settings_goods_list_price
+├────────
+│• color0
+│------ in any situation
+│ - || - invalid по seller_settings_goods_list_name
+│ - || - invalid по seller_settings_goods_list_price
+└─
+┌─
+│seller_settings_goods_buttons_no_label
+│seller_settings_goods_buttons_yes_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
+
+При публикации лота создается lot_id, который включает следующий перечень данных: 
+ - unix_time (milliseconds); 
+ - user_settings_phone.
+ 
+Запись делается по схеме:
+{unix_time} + '_' + {user_settings_phone};
+
+Пример полной длины lot_id при наличии следующих исходных данных: 
+ - unix_time код = 1739818921072662; 
+ - user_settings_phone = 996550698598;
+
+Результирующее значение lot_id:
+1739818921072662_996550698598.
+
+
+goods_data
+лот содержит следующий перечень данных:
+
+lot_id
+lot_date
+lot_name
+lot_price
+lot_measure
+lot_quantity
+lot_quantity_manager
+lot_saletype
+lot_image
+lot_image_link
+lot_description
 
 
 
@@ -2118,10 +2392,10 @@ setting_goods_edit_description_value = {text}    - описание присут
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color4
-│------ в default_state
+│------ in default_state
 ├────────
 │• color5
-│------ в pressing_state
+│------ in pressing_state
 └─
 ┌─
 │seller_settings_goods_depot_top
@@ -2149,8 +2423,8 @@ setting_goods_edit_description_value = {text}    - описание присут
 └─
 
 
-🡆🡆🡆 seller_settings_goods_depot_lot_screen
-■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+🡆🡆🡆🡆 seller_settings_goods_depot_lot_screen
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 
 Представляет собой экран опций партии. 
 
@@ -2375,10 +2649,10 @@ seller_settings_goods_depot_lot_list_number_input_label (в качестве pla
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color4
-│------ в default_state
+│------ in default_state
 ├────────
 │• color5
-│------ в pressing_state
+│------ in pressing_state
 └─
 ┌─
 │seller_settings_goods_depot_lot_panel
@@ -2479,8 +2753,8 @@ seller_settings_goods_depot_lot_list_number_input_label (в качестве pla
 ╙ result: cодержимое seller_settings_goods_depot_lot_list_expiration_button_widget преобразуется в seller_settings_goods_depot_lot_list_expiration_value.
 
 
-🡆🡆🡆 seller_settings_goods_depot_lot_list_number_protip_popover
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+🡆🡆🡆🡆🡆 seller_settings_goods_depot_lot_list_number_protip_popover
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 
 seller_settings_goods_depot_lot_list_number_protip_popover является всплывающей подсказкой, которая появляется после нажатия seller_settings_goods_depot_lot_list_number_protip.
 
@@ -2513,10 +2787,10 @@ seller_settings_goods_depot_lot_list_number_protip_popover является вс
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color4
-│------ в default_state
+│------ in default_state
 ├────────
 │• color5
-│------ в pressing_state
+│------ in pressing_state
 └─
 ┌─
 │seller_settings_goods_depot_lot_list_number_protip_popover_text
@@ -2529,7 +2803,7 @@ seller_settings_goods_depot_lot_list_number_protip_popover является вс
 └─
 
 
-🡆🡆🡆 seller_settings_goods_depot_lot_list_entry_protip_popover
+🡆🡆🡆🡆🡆 seller_settings_goods_depot_lot_list_entry_protip_popover
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 
 seller_settings_goods_depot_lot_list_entry_protip_popover является всплывающей подсказкой, которая появляется после нажатия seller_settings_goods_depot_lot_list_entry_protip.
@@ -2563,10 +2837,10 @@ seller_settings_goods_depot_lot_list_entry_protip_popover является вс�
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color4
-│------ в default_state
+│------ in default_state
 ├────────
 │• color5
-│------ в pressing_state
+│------ in pressing_state
 └─
 ┌─
 │seller_settings_goods_depot_lot_list_entry_protip_popover_text
@@ -2579,7 +2853,7 @@ seller_settings_goods_depot_lot_list_entry_protip_popover является вс�
 └─
 
 
-🡆🡆🡆 seller_settings_goods_depot_lot_list_quantity_protip_popover
+🡆🡆🡆🡆🡆 seller_settings_goods_depot_lot_list_quantity_protip_popover
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 
 seller_settings_goods_depot_lot_list_quantity_protip_popover является всплывающей подсказкой, которая появляется после нажатия seller_settings_goods_depot_lot_list_quantity_protip.
@@ -2613,10 +2887,10 @@ seller_settings_goods_depot_lot_list_quantity_protip_popover является в
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color4
-│------ в default_state
+│------ in default_state
 ├────────
 │• color5
-│------ в pressing_state
+│------ in pressing_state
 └─
 ┌─
 │seller_settings_goods_depot_lot_list_quantity_protip_popover_text
@@ -2629,7 +2903,7 @@ seller_settings_goods_depot_lot_list_quantity_protip_popover является в
 └─
 
 
-🡆🡆🡆 seller_settings_goods_depot_lot_list_balance_protip_popover
+🡆🡆🡆🡆🡆 seller_settings_goods_depot_lot_list_balance_protip_popover
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 
 seller_settings_goods_depot_lot_list_balance_protip_popover является всплывающей подсказкой, которая появляется после нажатия seller_settings_goods_depot_lot_list_balance_protip.
@@ -2663,10 +2937,10 @@ seller_settings_goods_depot_lot_list_balance_protip_popover является в�
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color4
-│------ в default_state
+│------ in default_state
 ├────────
 │• color5
-│------ в pressing_state
+│------ in pressing_state
 └─
 ┌─
 │seller_settings_goods_depot_lot_list_balance_protip_popover_text
@@ -2679,7 +2953,7 @@ seller_settings_goods_depot_lot_list_balance_protip_popover является в�
 └─
 
 
-🡆🡆🡆 seller_settings_goods_depot_lot_list_expiration_protip_popover
+🡆🡆🡆🡆🡆 seller_settings_goods_depot_lot_list_expiration_protip_popover
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 
 seller_settings_goods_depot_lot_list_expiration_protip_popover является всплывающей подсказкой, которая появляется после нажатия seller_settings_goods_depot_lot_list_expiration_protip.
@@ -2713,10 +2987,10 @@ seller_settings_goods_depot_lot_list_expiration_protip_popover является 
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color4
-│------ в default_state
+│------ in default_state
 ├────────
 │• color5
-│------ в pressing_state
+│------ in pressing_state
 └─
 ┌─
 │seller_settings_goods_depot_lot_list_expiration_protip_popover_text
@@ -2735,102 +3009,826 @@ seller_settings_goods_depot_lot_list_number_input_label_y
 
 
 
+🡆🡆🡆 seller_settings_goods_discount_screen
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 
+Представляет собой экран из ряда кнопок отвечающих за выбор варианта маркетинговой акции. Перечень компонентов seller_settings_goods_discount_screen приведенный в порядке их расположения в интерфейсе сверху-вниз:
 
+✠ tables
 
+                                          codename:                               type:                   designation:           location:  interaction:
+  ┌┬───────────┬──[seller_settings_goods_discount                       ]  [section_lev1       ]                                  [ ✜ ✜ ]     [ no  ]
+  ││           └┬─[seller_settings_goods_discount_top                   ]  [section_lev2       ]  [ "Скидки / Акции"          ]   [ 🡅 ✜ ]     [ no  ]
+  ││            └ [seller_settings_goods_discount_top_label             ]  [label              ]                                  [ ✜ ✜ ]     [ no  ]
+  │└┬┬┬┬┬┬┬┬┬┬────[seller_settings_goods_discount_list                  ]  [section_lev2       ]                                  [ ✜ ✜ ]     [ no  ]
+  │ │││││││││└┬┬──[seller_settings_goods_discount_list_act0             ]  [section_lev3       ]                                  [ 🡅 ✜ ]     [ no  ]
+  │ │││││││││ │└┬─[seller_settings_goods_discount_list_act0_button      ]  [button             ]                                  [ ✜ ✜ ]     [ yes ]
+  │ │││││││││ │ └ [seller_settings_goods_discount_list_act0_button_label]  [label              ]  [ "Горячая цена"            ]   [ ✜ ✜ ]     [ yes ]
+  │ │││││││││ └─┬─[seller_settings_goods_discount_list_act0_protip      ]  [button             ]                                  [ ✜ 🡆 ]     [ yes ]
+  │ │││││││││   └ [seller_settings_goods_discount_list_act0_protip_label]  [label              ]  [ "?"                       ]   [ ✜ ✜ ]     [ yes ]
+  │ ││││││││└─┬┬──[seller_settings_goods_discount_list_act1             ]  [section_lev3       ]                                  [ ✜ ✜ ]     [ no  ]
+  │ ││││││││  │└┬─[seller_settings_goods_discount_list_act1_button      ]  [button             ]                                  [ ✜ ✜ ]     [ yes ]
+  │ ││││││││  │ └ [seller_settings_goods_discount_list_act1_button_label]  [label              ]  [ "Сниженная цена"          ]   [ ✜ ✜ ]     [ yes ]
+  │ ││││││││  └─┬─[seller_settings_goods_discount_list_act1_protip      ]  [button             ]                                  [ ✜ 🡆 ]     [ yes ]
+  │ ││││││││    └ [seller_settings_goods_discount_list_act1_protip_label]  [label              ]  [ "?"                       ]   [ ✜ ✜ ]     [ yes ]
+  │ │││││││└──┬┬──[seller_settings_goods_discount_list_act2             ]  [section_lev3       ]                                  [ ✜ ✜ ]     [ no  ]
+  │ │││││││   │└┬─[seller_settings_goods_discount_list_act2_button      ]  [button             ]                                  [ ✜ ✜ ]     [ yes ]
+  │ │││││││   │ └ [seller_settings_goods_discount_list_act2_button_label]  [label              ]  [ "Специальное предложение" ]   [ ✜ ✜ ]     [ yes ]
+  │ │││││││   └─┬─[seller_settings_goods_discount_list_act2_protip      ]  [button             ]                                  [ ✜ 🡆 ]     [ yes ]
+  │ │││││││     └ [seller_settings_goods_discount_list_act2_protip_label]  [label              ]  [ "?"                       ]   [ ✜ ✜ ]     [ yes ]
+  │ ││││││└───┬┬──[seller_settings_goods_discount_list_act3             ]  [section_lev3       ]                                  [ ✜ ✜ ]     [ no  ]
+  │ ││││││    │└┬─[seller_settings_goods_discount_list_act3_button      ]  [label              ]                                  [ ✜ ✜ ]     [ yes ]
+  │ ││││││    │ └ [seller_settings_goods_discount_list_act3_button_label]  [label              ]  [ "Только сегодня"          ]   [ ✜ ✜ ]     [ yes ]
+  │ ││││││    └─┬─[seller_settings_goods_discount_list_act3_protip      ]  [button             ]                                  [ ✜ 🡆 ]     [ yes ]
+  │ ││││││      └ [seller_settings_goods_discount_list_act3_protip_label]  [label              ]  [ "?"                       ]   [ ✜ ✜ ]     [ yes ]
+  │ │││││└────┬┬──[seller_settings_goods_discount_list_act4             ]  [section_lev3       ]                                  [ ✜ ✜ ]     [ no  ]
+  │ │││││     │└┬─[seller_settings_goods_discount_list_act4_button      ]  [label              ]                                  [ ✜ ✜ ]     [ yes ]
+  │ │││││     │ └ [seller_settings_goods_discount_list_act4_button_label]  [label              ]  [ "Обратный отсчет"         ]   [ ✜ ✜ ]     [ yes ]
+  │ │││││     └─┬─[seller_settings_goods_discount_list_act4_protip      ]  [button             ]                                  [ ✜ 🡆 ]     [ yes ]
+  │ │││││       └ [seller_settings_goods_discount_list_act4_protip_label]  [label              ]  [ "?"                       ]   [ ✜ ✜ ]     [ yes ]
+  │ ││││└─────┬┬──[seller_settings_goods_discount_list_act5             ]  [section_lev3       ]                                  [ ✜ ✜ ]     [ no  ]
+  │ ││││      │└┬─[seller_settings_goods_discount_list_act5_button      ]  [label              ]                                  [ ✜ ✜ ]     [ yes ]
+  │ ││││      │ └ [seller_settings_goods_discount_list_act5_button_label]  [label              ]  [ "Бесплатная доставка"     ]   [ ✜ ✜ ]     [ yes ]
+  │ ││││      └─┬─[seller_settings_goods_discount_list_act5_protip      ]  [button             ]                                  [ ✜ 🡆 ]     [ yes ]
+  │ ││││        └ [seller_settings_goods_discount_list_act5_protip_label]  [label              ]  [ "?"                       ]   [ ✜ ✜ ]     [ yes ]
+  │ │││└──────┬┬──[seller_settings_goods_discount_list_act6             ]  [section_lev3       ]                                  [ ✜ ✜ ]     [ no  ]
+  │ │││       │└┬─[seller_settings_goods_discount_list_act6_button      ]  [label              ]                                  [ ✜ ✜ ]     [ yes ]
+  │ │││       │ └ [seller_settings_goods_discount_list_act6_button_label]  [label              ]  [ "Накопительная скидка"    ]   [ ✜ ✜ ]     [ yes ]
+  │ │││       └─┬─[seller_settings_goods_discount_list_act6_protip      ]  [button             ]                                  [ ✜ 🡆 ]     [ yes ]
+  │ │││         └ [seller_settings_goods_discount_list_act6_protip_label]  [label              ]  [ "?"                       ]   [ ✜ ✜ ]     [ yes ]
+  │ ││└───────┬┬──[seller_settings_goods_discount_list_act7             ]  [section_lev3       ]                                  [ ✜ ✜ ]     [ no  ]
+  │ ││        │└┬─[seller_settings_goods_discount_list_act7_button      ]  [label              ]                                  [ ✜ ✜ ]     [ yes ]
+  │ ││        │ └ [seller_settings_goods_discount_list_act7_button_label]  [label              ]  [ "Скидка пенсионерам"      ]   [ ✜ ✜ ]     [ yes ]
+  │ ││        └─┬─[seller_settings_goods_discount_list_act7_protip      ]  [button             ]                                  [ ✜ 🡆 ]     [ yes ]
+  │ ││          └ [seller_settings_goods_discount_list_act7_protip_label]  [label              ]  [ "?"                       ]   [ ✜ ✜ ]     [ yes ]
+  │ │└────────┬┬──[seller_settings_goods_discount_list_act8             ]  [section_lev3       ]                                  [ ✜ ✜ ]     [ no  ]
+  │ │         │└┬─[seller_settings_goods_discount_list_act8_button      ]  [label              ]                                  [ ✜ ✜ ]     [ yes ]
+  │ │         │ └ [seller_settings_goods_discount_list_act8_button_label]  [label              ]  [ "Скидка студентам"        ]   [ ✜ ✜ ]     [ yes ]
+  │ │         └─┬─[seller_settings_goods_discount_list_act8_protip      ]  [button             ]                                  [ ✜ 🡆 ]     [ yes ]
+  │ │           └ [seller_settings_goods_discount_list_act8_protip_label]  [label              ]  [ "?"                       ]   [ ✜ ✜ ]     [ yes ]
+  │ └─────────┬┬──[seller_settings_goods_discount_list_act9             ]  [section_lev3       ]                                  [ ✜ ✜ ]     [ no  ]
+  │           │└┬─[seller_settings_goods_discount_list_act9_button      ]  [label              ]                                  [ ✜ ✜ ]     [ yes ]
+  │           │ └ [seller_settings_goods_discount_list_act9_button_label]  [label              ]  [ "Скидка %"           ]   [ ✜ ✜ ]     [ yes ]
+  │           └─┬─[seller_settings_goods_discount_list_act9_protip      ]  [button             ]                                  [ ✜ 🡆 ]     [ yes ]
+  │             └ [seller_settings_goods_discount_list_act9_protip_label]  [label              ]  [ "?"                       ]   [ ✜ ✜ ]     [ yes ]
+  └─────────────┬─[seller_settings_goods_discount_button_ok             ]  [section_lev2+button]                                  [ ✜ ✜ ]     [ yes ]
+                └ [seller_settings_goods_discount_button_ok_label       ]  [label              ]  [ "ОК"                      ]   [ ✜ ✜ ]     [ yes ]
 
-■ setting_goods_edit_button
+✠ details
+--- seller_settings_goods_discount_top - блок прямоугольной формы расположенный в самом верху seller_settings_goods_discount_screen, выполняет функцию контейнера для seller_settings_goods_discount_top_label;
+----- seller_settings_goods_discount_top_label - заголовок следующего содержания: "Скидки / Акции";
+--- seller_settings_goods_discount_list - занимает порядка 80-85% пространства seller_settings_goods_discount_screen по вертикали, вмещает в себя 10 блоков, каждый из которых включает кнопку для перехода к настройке акции и кнопку для открытия подсказки;
+----- seller_settings_goods_discount_list_act0 - находится в самом верху seller_settings_goods_discount_list, содержит seller_settings_goods_discount_list_act0_button и seller_settings_goods_discount_list_act0_protip;
+------- seller_settings_goods_discount_list_act0_button - кнопка для перехода к настройке, содержит seller_settings_goods_discount_list_act0_button_label;
+--------- seller_settings_goods_discount_list_act0_button_label - константный текстовый элемент следующего содержания: "Горячая цена";
+------- seller_settings_goods_discount_list_act0_protip - кнопка отвечающая за вызов подсказки seller_settings_goods_discount_list_act0_protip_popover;  
+--------- seller_settings_goods_discount_list_act0_protip_label - наименование кнопки в виде константного текстового элемента: "?";
+----- seller_settings_goods_discount_list_act1 - находится под seller_settings_goods_discount_list_act0, содержит seller_settings_goods_discount_list_act1_button и seller_settings_goods_discount_list_act1_protip;
+------- seller_settings_goods_discount_list_act1_button - кнопка для перехода к настройке, содержит seller_settings_goods_discount_list_act1_button_label;
+--------- seller_settings_goods_discount_list_act1_button_label - константный текстовый элемент следующего содержания: "Сниженная цена";
+------- seller_settings_goods_discount_list_act1_protip - кнопка отвечающая за вызов подсказки seller_settings_goods_discount_list_act1_protip_popover;  
+--------- seller_settings_goods_discount_list_act1_protip_label - наименование кнопки в виде константного текстового элемента: "?";
+----- seller_settings_goods_discount_list_act2 - находится под seller_settings_goods_discount_list_act1, содержит seller_settings_goods_discount_list_act2_button и seller_settings_goods_discount_list_act2_protip;
+------- seller_settings_goods_discount_list_act2_button - кнопка для перехода к настройке, содержит seller_settings_goods_discount_list_act2_button_label;
+--------- seller_settings_goods_discount_list_act2_button_label - константный текстовый элемент следующего содержания: "Специальное предложение";
+------- seller_settings_goods_discount_list_act2_protip - кнопка отвечающая за вызов подсказки seller_settings_goods_discount_list_act2_protip_popover;  
+--------- seller_settings_goods_discount_list_act2_protip_label - наименование кнопки в виде константного текстового элемента: "?";
+----- seller_settings_goods_discount_list_act3 - находится под seller_settings_goods_discount_list_act2, содержит seller_settings_goods_discount_list_act3_button и seller_settings_goods_discount_list_act3_protip;
+------- seller_settings_goods_discount_list_act3_button - кнопка для перехода к настройке, содержит seller_settings_goods_discount_list_act3_button_label;
+--------- seller_settings_goods_discount_list_act3_button_label - константный текстовый элемент следующего содержания: "Только сегодня";
+------- seller_settings_goods_discount_list_act3_protip - кнопка отвечающая за вызов подсказки seller_settings_goods_discount_list_act3_protip_popover;  
+--------- seller_settings_goods_discount_list_act3_protip_label - наименование кнопки в виде константного текстового элемента: "?";
+----- seller_settings_goods_discount_list_act4 - находится под seller_settings_goods_discount_list_act3, содержит seller_settings_goods_discount_list_act4_button и seller_settings_goods_discount_list_act4_protip;
+------- seller_settings_goods_discount_list_act4_button - кнопка для перехода к настройке, содержит seller_settings_goods_discount_list_act4_button_label;
+--------- seller_settings_goods_discount_list_act4_button_label - константный текстовый элемент следующего содержания: "Обратный отсчет";
+------- seller_settings_goods_discount_list_act4_protip - кнопка отвечающая за вызов подсказки seller_settings_goods_discount_list_act4_protip_popover;  
+--------- seller_settings_goods_discount_list_act4_protip_label - наименование кнопки в виде константного текстового элемента: "?";
+----- seller_settings_goods_discount_list_act5 - находится под seller_settings_goods_discount_list_act4, содержит seller_settings_goods_discount_list_act5_button и seller_settings_goods_discount_list_act5_protip;
+------- seller_settings_goods_discount_list_act5_button - кнопка для перехода к настройке, содержит seller_settings_goods_discount_list_act5_button_label;
+--------- seller_settings_goods_discount_list_act5_button_label - константный текстовый элемент следующего содержания: "Бесплатная доставка";
+------- seller_settings_goods_discount_list_act5_protip - кнопка отвечающая за вызов подсказки seller_settings_goods_discount_list_act5_protip_popover;  
+--------- seller_settings_goods_discount_list_act5_protip_label - наименование кнопки в виде константного текстового элемента: "?";
+----- seller_settings_goods_discount_list_act6 - находится под seller_settings_goods_discount_list_act5, содержит seller_settings_goods_discount_list_act6_button и seller_settings_goods_discount_list_act6_protip;
+------- seller_settings_goods_discount_list_act6_button - кнопка для перехода к настройке, содержит seller_settings_goods_discount_list_act6_button_label;
+--------- seller_settings_goods_discount_list_act6_button_label - константный текстовый элемент следующего содержания: "Накопительная скидка";
+------- seller_settings_goods_discount_list_act6_protip - кнопка отвечающая за вызов подсказки seller_settings_goods_discount_list_act6_protip_popover;  
+--------- seller_settings_goods_discount_list_act6_protip_label - наименование кнопки в виде константного текстового элемента: "?";
+----- seller_settings_goods_discount_list_act7 - находится под seller_settings_goods_discount_list_act6, содержит seller_settings_goods_discount_list_act7_button и seller_settings_goods_discount_list_act7_protip;
+------- seller_settings_goods_discount_list_act7_button - кнопка для перехода к настройке, содержит seller_settings_goods_discount_list_act7_button_label;
+--------- seller_settings_goods_discount_list_act7_button_label - константный текстовый элемент следующего содержания: "Скидка пенсионерам";
+------- seller_settings_goods_discount_list_act7_protip - кнопка отвечающая за вызов подсказки seller_settings_goods_discount_list_act7_protip_popover;  
+--------- seller_settings_goods_discount_list_act7_protip_label - наименование кнопки в виде константного текстового элемента: "?";
+----- seller_settings_goods_discount_list_act8 - находится под seller_settings_goods_discount_list_act7, содержит seller_settings_goods_discount_list_act8_button и seller_settings_goods_discount_list_act8_protip;
+------- seller_settings_goods_discount_list_act8_button - кнопка для перехода к настройке, содержит seller_settings_goods_discount_list_act8_button_label;
+--------- seller_settings_goods_discount_list_act8_button_label - константный текстовый элемент следующего содержания: "Скидка студентам";
+------- seller_settings_goods_discount_list_act8_protip - кнопка отвечающая за вызов подсказки seller_settings_goods_discount_list_act8_protip_popover;  
+--------- seller_settings_goods_discount_list_act8_protip_label - наименование кнопки в виде константного текстового элемента: "?";
+----- seller_settings_goods_discount_list_act9 - находится под seller_settings_goods_discount_list_act8, содержит seller_settings_goods_discount_list_act9_button и seller_settings_goods_discount_list_act9_protip;
+------- seller_settings_goods_discount_list_act9_button - кнопка для перехода к настройке, содержит seller_settings_goods_discount_list_act9_button_label;
+--------- seller_settings_goods_discount_list_act9_button_label - константный текстовый элемент следующего содержания: "Скидка студентам";
+------- seller_settings_goods_discount_list_act9_protip - кнопка отвечающая за вызов подсказки seller_settings_goods_discount_list_act9_protip_popover;  
+--------- seller_settings_goods_discount_list_act9_protip_label - наименование кнопки в виде константного текстового элемента: "?";
+--- seller_settings_goods_discount_button_ok - кнопка отвечающая за выход из seller_settings_goods_discount_screen с применением изменений;
+----- seller_settings_goods_discount_button_ok_label - наименование кнопки seller_settings_goods_discount_button_ok: "ОК".
 
 ✠ actions
-• setting_goods_edit_button_no:
+• seller_settings_goods_discount_list_act0_button:
 ╠ valid / invalid
 ║ • gesture: tap 
-║ occasion: нажатие setting_goods_edit_button_no;
+║ occasion: нажатие seller_settings_goods_discount_list_act0_button;
 ║ condition: in any situation;
-║ result:
-║ && - seller_settings_goods_screen закрывается без сохранения изменений;
-╙ && - совершается переход к seller_goods_screen с фиксацией viewport, где верхний край экрана отображает верхнюю границу seller_goods_list.
-• seller_settings_goods_buttons_yes_button:
-╠ valid
+╙ result: делается переход к seller_settings_goods_discount_act0_screen.
+• seller_settings_goods_discount_list_act0_protip:
+╠ valid / invalid
 ║ • gesture: tap 
-║ occasion: нажатие seller_settings_goods_buttons_yes_button;
-║ condition: 
-║ && - valid по seller_settings_goods_list_name;
-║ && - valid по seller_settings_goods_list_price;
-║ result:
-║ && - в seller_db создается lot_id;
-║ && - данному lot_id присваивается дата его создания;
-║ && - seller_settings_goods_screen закрывается с сохранением изменений в базу данных seller_db по seller_settings_goods_list_name_value в секцию с присвоенным lot_id;
-║ && - seller_settings_goods_screen закрывается с сохранением изменений в базу данных seller_db по seller_settings_goods_list_price_value в секцию с присвоенным lot_id;
-║ && - seller_settings_goods_screen закрывается с сохранением изменений в базу данных seller_db по seller_settings_goods_list_measure_value в секцию с присвоенным lot_id;
-║ && - seller_settings_goods_screen закрывается с сохранением изменений в базу данных seller_db по seller_settings_goods_list_quantity_value в секцию с присвоенным lot_id;
-║ && - seller_settings_goods_screen закрывается с сохранением изменений в базу данных seller_db по seller_settings_goods_list_quantity_ctrl_value в секцию с присвоенным lot_id;
-║ && - seller_settings_goods_screen закрывается с сохранением изменений в базу данных seller_db по setting_goods_edit_saletype_value в секцию с присвоенным lot_id;
-║ && - seller_settings_goods_screen закрывается с сохранением изменений в базу данных seller_db по seller_settings_goods_list_image_value в секцию с присвоенным lot_id;
-║ && - seller_settings_goods_screen закрывается с сохранением изменений в базу данных seller_db по seller_settings_goods_list_image (все изображения) в секцию с присвоенным lot_id;
-║ && - seller_settings_goods_screen закрывается с сохранением изменений в базу данных seller_db по setting_goods_edit_description_value в секцию с присвоенным lot_id;
-║ && - осуществляется публикация лота в качестве seller_goods_cover в топ seller_goods_list;
-║ && - совершается переход к seller_goods_screen с фиксацией viewport, где верхний край экрана отображает верхнюю границу seller_goods_list.
-╠ invalid
+║ occasion: нажатие seller_settings_goods_discount_list_act0_protip;
+║ condition: in any situation;
+╙ result: по центру экрана всплывает seller_settings_goods_discount_list_act0_protip_popover.
+• seller_settings_goods_discount_list_act1_button:
+╠ valid / invalid
 ║ • gesture: tap 
-║ occasion: нажатие seller_settings_goods_buttons_yes_button;
-║ condition: 
-║ || - invalid по seller_settings_goods_list_name;
-║ || - invalid по seller_settings_goods_list_price;
-╙ result: seller_settings_goods_buttons_yes_button не реагирует на нажатие.
+║ occasion: нажатие seller_settings_goods_discount_list_act1_button;
+║ condition: in any situation;
+╙ result: делается переход к seller_settings_goods_discount_list_act1_screen.
+• seller_settings_goods_discount_list_act1_protip:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_discount_list_act1_protip;
+║ condition: in any situation;
+╙ result: по центру экрана всплывает seller_settings_goods_discount_list_act1_protip_popover.
+• seller_settings_goods_discount_list_act2_button:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_discount_list_act2_button;
+║ condition: in any situation;
+╙ result: делается переход к seller_settings_goods_discount_list_act2_screen.
+• seller_settings_goods_discount_list_act2_protip:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_discount_list_act2_protip;
+║ condition: in any situation;
+╙ result: по центру экрана всплывает seller_settings_goods_discount_list_act2_protip_popover.
+• seller_settings_goods_discount_list_act3_button:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_discount_list_act3_button;
+║ condition: in any situation;
+╙ result: делается переход к seller_settings_goods_discount_list_act3_screen.
+• seller_settings_goods_discount_list_act3_protip:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_discount_list_act3_protip;
+║ condition: in any situation;
+╙ result: по центру экрана всплывает seller_settings_goods_discount_list_act3_protip_popover.
+• seller_settings_goods_discount_list_act4_button:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_discount_list_act4_button;
+║ condition: in any situation;
+╙ result: делается переход к seller_settings_goods_discount_list_act4_screen.
+• seller_settings_goods_discount_list_act4_protip:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_discount_list_act4_protip;
+║ condition: in any situation;
+╙ result: по центру экрана всплывает seller_settings_goods_discount_list_act4_protip_popover.
+• seller_settings_goods_discount_list_act5_button:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_discount_list_act5_button;
+║ condition: in any situation;
+╙ result: делается переход к seller_settings_goods_discount_list_act5_screen.
+• seller_settings_goods_discount_list_act5_protip:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_discount_list_act5_protip;
+║ condition: in any situation;
+╙ result: по центру экрана всплывает seller_settings_goods_discount_list_act5_protip_popover.
+• seller_settings_goods_discount_list_act6_button:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_discount_list_act6_button;
+║ condition: in any situation;
+╙ result: делается переход к seller_settings_goods_discount_list_act6_screen.
+• seller_settings_goods_discount_list_act6_protip:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_discount_list_act6_protip;
+║ condition: in any situation;
+╙ result: по центру экрана всплывает seller_settings_goods_discount_list_act6_protip_popover.
+• seller_settings_goods_discount_list_act7_button:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_discount_list_act7_button;
+║ condition: in any situation;
+╙ result: делается переход к seller_settings_goods_discount_list_act7_screen.
+• seller_settings_goods_discount_list_act7_protip:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_discount_list_act7_protip;
+║ condition: in any situation;
+╙ result: по центру экрана всплывает seller_settings_goods_discount_list_act7_protip_popover.
+• seller_settings_goods_discount_list_act8_button:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_discount_list_act8_button;
+║ condition: in any situation;
+╙ result: делается переход к seller_settings_goods_discount_list_act8_screen.
+• seller_settings_goods_discount_list_act8_protip:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_discount_list_act8_protip;
+║ condition: in any situation;
+╙ result: по центру экрана всплывает seller_settings_goods_discount_list_act8_protip_popover.
+• seller_settings_goods_discount_list_act9_button:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_discount_list_act9_button;
+║ condition: in any situation;
+╙ result: делается переход к seller_settings_goods_discount_list_act9_screen.
+• seller_settings_goods_discount_list_act9_protip:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_discount_list_act9_protip;
+║ condition: in any situation;
+╙ result: по центру экрана всплывает seller_settings_goods_discount_list_act9_protip_popover.
+• seller_settings_goods_discount_button_ok:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_discount_button_ok;
+║ condition: in any situation;
+╙ result: seller_settings_goods_discount_screen закрывается.
 
-✠ color_states  
+✠ color_states
 ┌─
-│setting_goods_edit_button_no
-│------------------------ 
+│seller_settings_goods_discount_list_act0_button
+│seller_settings_goods_discount_list_act1_button
+│seller_settings_goods_discount_list_act2_button
+│seller_settings_goods_discount_list_act3_button
+│seller_settings_goods_discount_list_act4_button
+│seller_settings_goods_discount_list_act5_button
+│seller_settings_goods_discount_list_act6_button
+│seller_settings_goods_discount_list_act7_button
+│seller_settings_goods_discount_list_act8_button
+│seller_settings_goods_discount_list_act9_button
+│seller_settings_goods_discount_list_act0_protip
+│seller_settings_goods_discount_list_act1_protip
+│seller_settings_goods_discount_list_act2_protip
+│seller_settings_goods_discount_list_act3_protip
+│seller_settings_goods_discount_list_act4_protip
+│seller_settings_goods_discount_list_act5_protip
+│seller_settings_goods_discount_list_act6_protip
+│seller_settings_goods_discount_list_act7_protip
+│seller_settings_goods_discount_list_act8_protip
+│seller_settings_goods_discount_list_act9_protip
+│seller_settings_goods_discount_button_ok
+│-------------------------------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color5
+│------ in pressing_state
+└─
+┌─
+│seller_settings_goods_discount_top
+│-------------------------------
 │⟪⟪ body ⟫⟫ 
 │--------
 │• color2
-│------ in any situation.
+│------ in any situation
 └─
 ┌─
-│seller_settings_goods_buttons_yes_button
-│------------------------- 
+│seller_settings_goods_discount_top_label
+│seller_settings_goods_discount_list_act0_button_label
+│seller_settings_goods_discount_list_act1_button_label
+│seller_settings_goods_discount_list_act2_button_label
+│seller_settings_goods_discount_list_act3_button_label
+│seller_settings_goods_discount_list_act4_button_label
+│seller_settings_goods_discount_list_act5_button_label
+│seller_settings_goods_discount_list_act6_button_label
+│seller_settings_goods_discount_list_act7_button_label
+│seller_settings_goods_discount_list_act8_button_label
+│seller_settings_goods_discount_list_act9_button_label
+│seller_settings_goods_discount_list_act0_protip_label
+│seller_settings_goods_discount_list_act1_protip_label
+│seller_settings_goods_discount_list_act2_protip_label
+│seller_settings_goods_discount_list_act3_protip_label
+│seller_settings_goods_discount_list_act4_protip_label
+│seller_settings_goods_discount_list_act5_protip_label
+│seller_settings_goods_discount_list_act6_protip_label
+│seller_settings_goods_discount_list_act7_protip_label
+│seller_settings_goods_discount_list_act8_protip_label
+│seller_settings_goods_discount_list_act9_protip_label
+│seller_settings_goods_discount_button_ok_label
+│---------------------------
 │⟪⟪ body ⟫⟫ 
-│--------
-│• color1
-│- && - valid по seller_settings_goods_list_name;
-│- && - valid по seller_settings_goods_list_price.
-│• color3 (pressing_state)
-│- || - invalid по seller_settings_goods_list_name;
-│- || - invalid по seller_settings_goods_list_price.
-│• color2 (inactive_state)
-│- || - invalid по seller_settings_goods_list_name;
-│- || - invalid по seller_settings_goods_list_price.
+├────────
+│• color8
+│------ in any situation
 └─
 
-При публикации лота создается lot_id, который включает следующий перечень данных: 
- - unix_time (milliseconds); 
- - user_settings_phone.
- 
-Запись делается по схеме:
-{unix_time} + '_' + {user_settings_phone};
 
-Пример полной длины lot_id при наличии следующих исходных данных: 
- - unix_time код = 1739818921072662; 
- - user_settings_phone = 996550698598;
+🡆🡆🡆🡆 seller_settings_goods_discount_list_act0_protip_popover
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 
-Результирующее значение lot_id:
-1739818921072662_996550698598.
+seller_settings_goods_discount_list_act0_protip_popover является всплывающей подсказкой, которая появляется после нажатия seller_settings_goods_discount_list_act0_protip.
+
+✠ tables
+
+                                        codename:                                        type:                  designation:        location: interaction:
+┌┬─[seller_settings_goods_discount_list_act0_protip_popover                    ] [section_lev1       ]                               [ ✜ ✜ ]    [ no  ]
+│└ [seller_settings_goods_discount_list_act0_protip_popover_text               ] [text               ] [ "Как работает данная ..." ] [ ✜ ✜ ]    [ no  ]
+└┬─[seller_settings_goods_discount_list_act0_protip_popover_buttons_close      ] [button             ]                               [ ✜ ✜ ]    [ yes ]
+ └ [seller_settings_goods_discount_list_act0_protip_popover_buttons_close_label] [label              ] [ "закрыть"                 ] [ ✜ ✜ ]    [ yes ]
+
+✠ details
+- seller_settings_goods_discount_list_act0_protip_popover - представляет собой popover, который всплывает по центру экрана и включает 2 компонента:
+--- seller_settings_goods_discount_list_act0_protip_popover_text - параграф текста выровненный по центру находится в верхней части seller_settings_goods_discount_list_act0_protip_popover следующего содержания: "Как работает акция 'Горячая цена'. Цена товара выделяется цветом и рядом добавляется (🔥) соответствующая иконка. После удаления акции возвращается обычная цена";
+----- seller_settings_goods_discount_list_act0_protip_popover_buttons_close - кнопка расположенная под seller_settings_goods_discount_list_act0_protip_popover_text;
+--- seller_settings_goods_discount_list_act0_protip_popover_buttons_close_label - наименование кнопки следующего содержания: "закрыть".
+
+✠ actions
+• seller_settings_goods_discount_list_act0_protip_popover_buttons_close:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_settings_goods_discount_list_act0_protip_popover_buttons_close;
+║ condition: in any situation;
+╙ result: seller_settings_goods_discount_list_act0_protip_popover исчезает.
+
+✠ color_states
+┌─
+│seller_settings_goods_discount_list_act0_protip_popover_buttons_close
+│-------------------------------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color5
+│------ in pressing_state
+└─
+┌─
+│seller_settings_goods_discount_list_act0_protip_popover_text
+│seller_settings_goods_discount_list_act0_protip_popover_buttons_close_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
 
 
-goods_data
-лот содержит следующий перечень данных:
+🡆🡆🡆🡆 seller_settings_goods_discount_list_act1_protip_popover
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 
-lot_id
-lot_date
-lot_name
-lot_price
-lot_measure
-lot_quantity
-lot_quantity_manager
-lot_saletype
-lot_image
-lot_image_link
-lot_description
+seller_settings_goods_discount_list_act1_protip_popover является всплывающей подсказкой, которая появляется после нажатия seller_settings_goods_discount_list_act1_protip.
+
+✠ tables
+
+                                        codename:                                        type:                  designation:        location: interaction:
+┌┬─[seller_settings_goods_discount_list_act1_protip_popover                    ] [section_lev1       ]                               [ ✜ ✜ ]    [ no  ]
+│└ [seller_settings_goods_discount_list_act1_protip_popover_text               ] [text               ] [ "Как работает данная ..." ] [ ✜ ✜ ]    [ no  ]
+└┬─[seller_settings_goods_discount_list_act1_protip_popover_buttons_close      ] [button             ]                               [ ✜ ✜ ]    [ yes ]
+ └ [seller_settings_goods_discount_list_act1_protip_popover_buttons_close_label] [label              ] [ "закрыть"                 ] [ ✜ ✜ ]    [ yes ]
+
+✠ details
+- seller_settings_goods_discount_list_act1_protip_popover - представляет собой popover, который всплывает по центру экрана и включает 2 компонента:
+--- seller_settings_goods_discount_list_act1_protip_popover_text - параграф текста выровненный по центру находится в верхней части seller_settings_goods_discount_list_act1_protip_popover следующего содержания: "Как работает акция 'Сниженная цена'. Предыдущая цена остается видимой но перечеркивается, а рядом указывается новая цена. Новая и старая цена указываются с помощью данной настройки. После удаления акции возвращается обычная цена";
+----- seller_settings_goods_discount_list_act1_protip_popover_buttons_close - кнопка расположенная под seller_settings_goods_discount_list_act1_protip_popover_text;
+--- seller_settings_goods_discount_list_act1_protip_popover_buttons_close_label - наименование кнопки следующего содержания: "закрыть".
+
+✠ actions
+• seller_settings_goods_discount_list_act1_protip_popover_buttons_close:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_settings_goods_discount_list_act1_protip_popover_buttons_close;
+║ condition: in any situation;
+╙ result: seller_settings_goods_discount_list_act1_protip_popover исчезает.
+
+✠ color_states
+┌─
+│seller_settings_goods_discount_list_act1_protip_popover_buttons_close
+│-------------------------------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color5
+│------ in pressing_state
+└─
+┌─
+│seller_settings_goods_discount_list_act1_protip_popover_text
+│seller_settings_goods_discount_list_act1_protip_popover_buttons_close_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
+
+🡆🡆🡆🡆 seller_settings_goods_discount_list_act2_protip_popover
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+seller_settings_goods_discount_list_act2_protip_popover является всплывающей подсказкой, которая появляется после нажатия seller_settings_goods_discount_list_act2_protip.
+
+✠ tables
+
+                                        codename:                                        type:                  designation:        location: interaction:
+┌┬─[seller_settings_goods_discount_list_act2_protip_popover                    ] [section_lev1       ]                               [ ✜ ✜ ]    [ no  ]
+│└ [seller_settings_goods_discount_list_act2_protip_popover_text               ] [text               ] [ "Как работает данная ..." ] [ ✜ ✜ ]    [ no  ]
+└┬─[seller_settings_goods_discount_list_act2_protip_popover_buttons_close      ] [button             ]                               [ ✜ ✜ ]    [ yes ]
+ └ [seller_settings_goods_discount_list_act2_protip_popover_buttons_close_label] [label              ] [ "закрыть"                 ] [ ✜ ✜ ]    [ yes ]
+
+✠ details
+- seller_settings_goods_discount_list_act2_protip_popover - представляет собой popover, который всплывает по центру экрана и включает 2 компонента:
+--- seller_settings_goods_discount_list_act2_protip_popover_text - параграф текста выровненный по центру находится в верхней части seller_settings_goods_discount_list_act2_protip_popover следующего содержания: "Как работает акция 'Специальное предложение'. Рядом с ценой товара появляется табличка 'Специальное предложение'. Также опция позволяет указать стоимость лота по акции, которая будет заменять обычную цену. После удаления акции возвращается обычная цена";
+----- seller_settings_goods_discount_list_act2_protip_popover_buttons_close - кнопка расположенная под seller_settings_goods_discount_list_act2_protip_popover_text;
+--- seller_settings_goods_discount_list_act2_protip_popover_buttons_close_label - наименование кнопки следующего содержания: "закрыть".
+
+✠ actions
+• seller_settings_goods_discount_list_act2_protip_popover_buttons_close:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_settings_goods_discount_list_act2_protip_popover_buttons_close;
+║ condition: in any situation;
+╙ result: seller_settings_goods_discount_list_act2_protip_popover исчезает.
+
+✠ color_states
+┌─
+│seller_settings_goods_discount_list_act2_protip_popover_buttons_close
+│-------------------------------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color5
+│------ in pressing_state
+└─
+┌─
+│seller_settings_goods_discount_list_act2_protip_popover_text
+│seller_settings_goods_discount_list_act2_protip_popover_buttons_close_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
+
+🡆🡆🡆🡆 seller_settings_goods_discount_list_act3_protip_popover
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+seller_settings_goods_discount_list_act3_protip_popover является всплывающей подсказкой, которая появляется после нажатия seller_settings_goods_discount_list_act3_protip.
+
+✠ tables
+
+                                        codename:                                        type:                  designation:        location: interaction:
+┌┬─[seller_settings_goods_discount_list_act3_protip_popover                    ] [section_lev1       ]                               [ ✜ ✜ ]    [ no  ]
+│└ [seller_settings_goods_discount_list_act3_protip_popover_text               ] [text               ] [ "Как работает данная ..." ] [ ✜ ✜ ]    [ no  ]
+└┬─[seller_settings_goods_discount_list_act3_protip_popover_buttons_close      ] [button             ]                               [ ✜ ✜ ]    [ yes ]
+ └ [seller_settings_goods_discount_list_act3_protip_popover_buttons_close_label] [label              ] [ "закрыть"                 ] [ ✜ ✜ ]    [ yes ]
+
+✠ details
+- seller_settings_goods_discount_list_act3_protip_popover - представляет собой popover, который всплывает по центру экрана и включает 2 компонента:
+--- seller_settings_goods_discount_list_act3_protip_popover_text - параграф текста выровненный по центру находится в верхней части seller_settings_goods_discount_list_act3_protip_popover следующего содержания: "Как работает акция 'Только сегодня'. Рядом с ценой товара появляется табличка 'Только сегодня'. Также опция позволяет указать стоимость лота по акции, которая будет заменять обычную цену, а также время (в часах) в течении которого будет действовать акция. После истечения настроенного времени табличка 'Только сегодня' автоматически удаляется и происходит возвращение обычной цены";
+----- seller_settings_goods_discount_list_act3_protip_popover_buttons_close - кнопка расположенная под seller_settings_goods_discount_list_act3_protip_popover_text;
+--- seller_settings_goods_discount_list_act3_protip_popover_buttons_close_label - наименование кнопки следующего содержания: "закрыть".
+
+✠ actions
+• seller_settings_goods_discount_list_act3_protip_popover_buttons_close:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_settings_goods_discount_list_act3_protip_popover_buttons_close;
+║ condition: in any situation;
+╙ result: seller_settings_goods_discount_list_act3_protip_popover исчезает.
+
+✠ color_states
+┌─
+│seller_settings_goods_discount_list_act3_protip_popover_buttons_close
+│-------------------------------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color5
+│------ in pressing_state
+└─
+┌─
+│seller_settings_goods_discount_list_act3_protip_popover_text
+│seller_settings_goods_discount_list_act3_protip_popover_buttons_close_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
+
+🡆🡆🡆🡆 seller_settings_goods_discount_list_act4_protip_popover
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+seller_settings_goods_discount_list_act4_protip_popover является всплывающей подсказкой, которая появляется после нажатия seller_settings_goods_discount_list_act4_protip.
+
+✠ tables
+
+                                        codename:                                        type:                  designation:        location: interaction:
+┌┬─[seller_settings_goods_discount_list_act4_protip_popover                    ] [section_lev1       ]                               [ ✜ ✜ ]    [ no  ]
+│└ [seller_settings_goods_discount_list_act4_protip_popover_text               ] [text               ] [ "Как работает данная ..." ] [ ✜ ✜ ]    [ no  ]
+└┬─[seller_settings_goods_discount_list_act4_protip_popover_buttons_close      ] [button             ]                               [ ✜ ✜ ]    [ yes ]
+ └ [seller_settings_goods_discount_list_act4_protip_popover_buttons_close_label] [label              ] [ "закрыть"                 ] [ ✜ ✜ ]    [ yes ]
+
+✠ details
+- seller_settings_goods_discount_list_act4_protip_popover - представляет собой popover, который всплывает по центру экрана и включает 2 компонента:
+--- seller_settings_goods_discount_list_act4_protip_popover_text - параграф текста выровненный по центру находится в верхней части seller_settings_goods_discount_list_act4_protip_popover следующего содержания: "Как работает акция 'Обратный отсчет'. Рядом с ценой товара появляется цифровой циферблат по шаблону: 'DD.HH.MM.SS' (дни, часы, минуты, секунды). Опция позволяет указать стоимость лота по акции, которая будет заменять обычную цену, а также время (в днях, часах, минутах) в течении которого будет действовать акция (настроенное время отображается на циферблате с ежесекундным обратным отсчетом). После истечения настроенного времени (в момент когда на циферблате будет: '00.00.00.00'), циферблат автоматически удаляется и происходит возвращение обычной цены";
+----- seller_settings_goods_discount_list_act4_protip_popover_buttons_close - кнопка расположенная под seller_settings_goods_discount_list_act4_protip_popover_text;
+--- seller_settings_goods_discount_list_act4_protip_popover_buttons_close_label - наименование кнопки следующего содержания: "закрыть".
+
+✠ actions
+• seller_settings_goods_discount_list_act4_protip_popover_buttons_close:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_settings_goods_discount_list_act4_protip_popover_buttons_close;
+║ condition: in any situation;
+╙ result: seller_settings_goods_discount_list_act4_protip_popover исчезает.
+
+✠ color_states
+┌─
+│seller_settings_goods_discount_list_act4_protip_popover_buttons_close
+│-------------------------------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color5
+│------ in pressing_state
+└─
+┌─
+│seller_settings_goods_discount_list_act4_protip_popover_text
+│seller_settings_goods_discount_list_act4_protip_popover_buttons_close_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
+
+🡆🡆🡆🡆 seller_settings_goods_discount_list_act5_protip_popover
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+seller_settings_goods_discount_list_act5_protip_popover является всплывающей подсказкой, которая появляется после нажатия seller_settings_goods_discount_list_act5_protip.
+
+✠ tables
+
+                                        codename:                                        type:                  designation:        location: interaction:
+┌┬─[seller_settings_goods_discount_list_act5_protip_popover                    ] [section_lev1       ]                               [ ✜ ✜ ]    [ no  ]
+│└ [seller_settings_goods_discount_list_act5_protip_popover_text               ] [text               ] [ "Как работает данная ..." ] [ ✜ ✜ ]    [ no  ]
+└┬─[seller_settings_goods_discount_list_act5_protip_popover_buttons_close      ] [button             ]                               [ ✜ ✜ ]    [ yes ]
+ └ [seller_settings_goods_discount_list_act5_protip_popover_buttons_close_label] [label              ] [ "закрыть"                 ] [ ✜ ✜ ]    [ yes ]
+
+✠ details
+- seller_settings_goods_discount_list_act5_protip_popover - представляет собой popover, который всплывает по центру экрана и включает 2 компонента:
+--- seller_settings_goods_discount_list_act5_protip_popover_text - параграф текста выровненный по центру находится в верхней части seller_settings_goods_discount_list_act5_protip_popover следующего содержания: "Как работает акция 'Бесплатная доставка'. Рядом с ценой товара появляется табличка 'Бесплатная доставка'. Также опция позволяет указать условие акции, которое будет находиться на табличке, при соблюдении которого будет применяться условие акции. После удаления акции, табличка 'Бесплатная доставка' удаляется";
+----- seller_settings_goods_discount_list_act5_protip_popover_buttons_close - кнопка расположенная под seller_settings_goods_discount_list_act5_protip_popover_text;
+--- seller_settings_goods_discount_list_act5_protip_popover_buttons_close_label - наименование кнопки следующего содержания: "закрыть".
+
+✠ actions
+• seller_settings_goods_discount_list_act5_protip_popover_buttons_close:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_settings_goods_discount_list_act5_protip_popover_buttons_close;
+║ condition: in any situation;
+╙ result: seller_settings_goods_discount_list_act5_protip_popover исчезает.
+
+✠ color_states
+┌─
+│seller_settings_goods_discount_list_act5_protip_popover_buttons_close
+│-------------------------------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color5
+│------ in pressing_state
+└─
+┌─
+│seller_settings_goods_discount_list_act5_protip_popover_text
+│seller_settings_goods_discount_list_act5_protip_popover_buttons_close_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
+
+🡆🡆🡆🡆 seller_settings_goods_discount_list_act6_protip_popover
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+seller_settings_goods_discount_list_act6_protip_popover является всплывающей подсказкой, которая появляется после нажатия seller_settings_goods_discount_list_act6_protip.
+
+✠ tables
+
+                                        codename:                                        type:                  designation:        location: interaction:
+┌┬─[seller_settings_goods_discount_list_act6_protip_popover                    ] [section_lev1       ]                               [ ✜ ✜ ]    [ no  ]
+│└ [seller_settings_goods_discount_list_act6_protip_popover_text               ] [text               ] [ "Как работает данная ..." ] [ ✜ ✜ ]    [ no  ]
+└┬─[seller_settings_goods_discount_list_act6_protip_popover_buttons_close      ] [button             ]                               [ ✜ ✜ ]    [ yes ]
+ └ [seller_settings_goods_discount_list_act6_protip_popover_buttons_close_label] [label              ] [ "закрыть"                 ] [ ✜ ✜ ]    [ yes ]
+
+✠ details
+- seller_settings_goods_discount_list_act6_protip_popover - представляет собой popover, который всплывает по центру экрана и включает 2 компонента:
+--- seller_settings_goods_discount_list_act6_protip_popover_text - параграф текста выровненный по центру находится в верхней части seller_settings_goods_discount_list_act6_protip_popover следующего содержания: "Как работает акция 'Накопительная скидка'. Рядом с ценой товара появляется табличка 'Накопительная скидка'. Также опция позволяет указать условие акции, которое будет находиться на табличке, при соблюдении которого будет применяться условие акции. После удаления акции, табличка 'Накопительная скидка' удаляется";
+----- seller_settings_goods_discount_list_act6_protip_popover_buttons_close - кнопка расположенная под seller_settings_goods_discount_list_act6_protip_popover_text;
+--- seller_settings_goods_discount_list_act6_protip_popover_buttons_close_label - наименование кнопки следующего содержания: "закрыть".
+
+✠ actions
+• seller_settings_goods_discount_list_act6_protip_popover_buttons_close:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_settings_goods_discount_list_act6_protip_popover_buttons_close;
+║ condition: in any situation;
+╙ result: seller_settings_goods_discount_list_act6_protip_popover исчезает.
+
+✠ color_states
+┌─
+│seller_settings_goods_discount_list_act6_protip_popover_buttons_close
+│-------------------------------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color5
+│------ in pressing_state
+└─
+┌─
+│seller_settings_goods_discount_list_act6_protip_popover_text
+│seller_settings_goods_discount_list_act6_protip_popover_buttons_close_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
+
+🡆🡆🡆🡆 seller_settings_goods_discount_list_act7_protip_popover
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+seller_settings_goods_discount_list_act7_protip_popover является всплывающей подсказкой, которая появляется после нажатия seller_settings_goods_discount_list_act7_protip.
+
+✠ tables
+
+                                        codename:                                        type:                  designation:        location: interaction:
+┌┬─[seller_settings_goods_discount_list_act7_protip_popover                    ] [section_lev1       ]                               [ ✜ ✜ ]    [ no  ]
+│└ [seller_settings_goods_discount_list_act7_protip_popover_text               ] [text               ] [ "Как работает данная ..." ] [ ✜ ✜ ]    [ no  ]
+└┬─[seller_settings_goods_discount_list_act7_protip_popover_buttons_close      ] [button             ]                               [ ✜ ✜ ]    [ yes ]
+ └ [seller_settings_goods_discount_list_act7_protip_popover_buttons_close_label] [label              ] [ "закрыть"                 ] [ ✜ ✜ ]    [ yes ]
+
+✠ details
+- seller_settings_goods_discount_list_act7_protip_popover - представляет собой popover, который всплывает по центру экрана и включает 2 компонента:
+--- seller_settings_goods_discount_list_act7_protip_popover_text - параграф текста выровненный по центру находится в верхней части seller_settings_goods_discount_list_act7_protip_popover следующего содержания: "Как работает акция 'Скидка пенсионерам'. Рядом с ценой товара появляется табличка 'Скидка пенсионерам'. Также опция позволяет указать размер скидки, которая будет применяться автоматически при расчете товара для целевой возрастной категории. После удаления акции, табличка 'Скидка пенсионерам' удаляется вместе с алгоритмом добавляющим скидку";
+
+"Как работает акция 'Скидка пенсионерам'. Опция позволяет указать размер скидки, которая будет применяться автоматически при расчете товара для целевой социальной категории. В результате на карточке товара рядом с ценой появляется табличка 'Скидка студентам', где отображается указанная в опции скидка. После удаления акции, табличка 'Скидка студентам' удаляется вместе с алгоритмом добавляющим скидку";
+
+----- seller_settings_goods_discount_list_act7_protip_popover_buttons_close - кнопка расположенная под seller_settings_goods_discount_list_act7_protip_popover_text;
+--- seller_settings_goods_discount_list_act7_protip_popover_buttons_close_label - наименование кнопки следующего содержания: "закрыть".
+
+✠ actions
+• seller_settings_goods_discount_list_act7_protip_popover_buttons_close:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_settings_goods_discount_list_act7_protip_popover_buttons_close;
+║ condition: in any situation;
+╙ result: seller_settings_goods_discount_list_act7_protip_popover исчезает.
+
+✠ color_states
+┌─
+│seller_settings_goods_discount_list_act7_protip_popover_buttons_close
+│-------------------------------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color5
+│------ in pressing_state
+└─
+┌─
+│seller_settings_goods_discount_list_act7_protip_popover_text
+│seller_settings_goods_discount_list_act7_protip_popover_buttons_close_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
+
+🡆🡆🡆🡆 seller_settings_goods_discount_list_act8_protip_popover
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+seller_settings_goods_discount_list_act8_protip_popover является всплывающей подсказкой, которая появляется после нажатия seller_settings_goods_discount_list_act8_protip.
+
+✠ tables
+
+                                        codename:                                        type:                  designation:        location: interaction:
+┌┬─[seller_settings_goods_discount_list_act8_protip_popover                    ] [section_lev1       ]                               [ ✜ ✜ ]    [ no  ]
+│└ [seller_settings_goods_discount_list_act8_protip_popover_text               ] [text               ] [ "Как работает данная ..." ] [ ✜ ✜ ]    [ no  ]
+└┬─[seller_settings_goods_discount_list_act8_protip_popover_buttons_close      ] [button             ]                               [ ✜ ✜ ]    [ yes ]
+ └ [seller_settings_goods_discount_list_act8_protip_popover_buttons_close_label] [label              ] [ "закрыть"                 ] [ ✜ ✜ ]    [ yes ]
+
+✠ details
+- seller_settings_goods_discount_list_act8_protip_popover - представляет собой popover, который всплывает по центру экрана и включает 2 компонента:
+--- seller_settings_goods_discount_list_act8_protip_popover_text - параграф текста выровненный по центру находится в верхней части seller_settings_goods_discount_list_act8_protip_popover следующего содержания: "Как работает акция 'Скидка студентам'. Опция позволяет указать размер скидки, которая будет применяться автоматически при расчете товара для целевой социальной категории. В результате на карточке товара рядом с ценой появляется табличка 'Скидка студентам', где отображается указанная в опции скидка. После удаления акции, табличка 'Скидка студентам' удаляется вместе с алгоритмом добавляющим скидку";
+----- seller_settings_goods_discount_list_act8_protip_popover_buttons_close - кнопка расположенная под seller_settings_goods_discount_list_act8_protip_popover_text;
+--- seller_settings_goods_discount_list_act8_protip_popover_buttons_close_label - наименование кнопки следующего содержания: "закрыть".
+
+✠ actions
+• seller_settings_goods_discount_list_act8_protip_popover_buttons_close:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_settings_goods_discount_list_act8_protip_popover_buttons_close;
+║ condition: in any situation;
+╙ result: seller_settings_goods_discount_list_act8_protip_popover исчезает.
+
+✠ color_states
+┌─
+│seller_settings_goods_discount_list_act8_protip_popover_buttons_close
+│-------------------------------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color5
+│------ in pressing_state
+└─
+┌─
+│seller_settings_goods_discount_list_act8_protip_popover_text
+│seller_settings_goods_discount_list_act8_protip_popover_buttons_close_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
+
+🡆🡆🡆🡆 seller_settings_goods_discount_list_act9_protip_popover
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+seller_settings_goods_discount_list_act9_protip_popover является всплывающей подсказкой, которая появляется после нажатия seller_settings_goods_discount_list_act9_protip.
+
+✠ tables
+
+                                        codename:                                        type:                  designation:        location: interaction:
+┌┬─[seller_settings_goods_discount_list_act9_protip_popover                    ] [section_lev1       ]                               [ ✜ ✜ ]    [ no  ]
+│└ [seller_settings_goods_discount_list_act9_protip_popover_text               ] [text               ] [ "Как работает данная ..." ] [ ✜ ✜ ]    [ no  ]
+└┬─[seller_settings_goods_discount_list_act9_protip_popover_buttons_close      ] [button             ]                               [ ✜ ✜ ]    [ yes ]
+ └ [seller_settings_goods_discount_list_act9_protip_popover_buttons_close_label] [label              ] [ "закрыть"                 ] [ ✜ ✜ ]    [ yes ]
+
+✠ details
+- seller_settings_goods_discount_list_act9_protip_popover - представляет собой popover, который всплывает по центру экрана и включает 2 компонента:
+--- seller_settings_goods_discount_list_act9_protip_popover_text - параграф текста выровненный по центру находится в верхней части seller_settings_goods_discount_list_act9_protip_popover следующего содержания: "Как работает вариант акции 'Скидка %'. Опция позволяет указать размер скидки в процентах, которая будет применяться автоматически при расчете товара. В результате на карточке товара рядом с ценой появляется табличка, где отображается указанная в опции скидка. После удаления акции, табличка 'Скидка %' удаляется вместе с алгоритмом рассчитывающим скидку";
+----- seller_settings_goods_discount_list_act9_protip_popover_buttons_close - кнопка расположенная под seller_settings_goods_discount_list_act9_protip_popover_text;
+--- seller_settings_goods_discount_list_act9_protip_popover_buttons_close_label - наименование кнопки следующего содержания: "закрыть".
+
+✠ actions
+• seller_settings_goods_discount_list_act9_protip_popover_buttons_close:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_settings_goods_discount_list_act9_protip_popover_buttons_close;
+║ condition: in any situation;
+╙ result: seller_settings_goods_discount_list_act9_protip_popover исчезает.
+
+✠ color_states
+┌─
+│seller_settings_goods_discount_list_act9_protip_popover_buttons_close
+│-------------------------------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color5
+│------ in pressing_state
+└─
+┌─
+│seller_settings_goods_discount_list_act9_protip_popover_text
+│seller_settings_goods_discount_list_act9_protip_popover_buttons_close_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
 
