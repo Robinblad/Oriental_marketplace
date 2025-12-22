@@ -3832,3 +3832,38 @@ seller_settings_goods_discount_list_act9_protip_popover является всп�
 │------ in any situation
 └─
 
+
+
+
+🡆🡆🡆🡆 seller_settings_goods_discount_act0_screen
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+
+Представляет собой экран настройки акции "Горячая цена". 
+
+✠ tables
+
+                                   codename:                                       type:                   designation:           location:  interaction:
+ ┌┬────┬──[seller_settings_goods_discount_act0                          ]  [section_lev1       ]			                       [ ✜ ✜ ]     [ no  ]
+ ││    └┬─[seller_settings_goods_discount_act0_panel                    ]  [section_lev2       ]			                       [ 🡅 ✜ ]     [ no  ]
+ ││     └ [seller_settings_goods_discount_act0_panel_label              ]  [label              ]  [ "Горячая цена"            ]    [ ✜ ✜ ]     [ no  ]
+ │└┬┬┬─┬──[seller_settings_goods_discount_act0_main                     ]  [section_lev2       ]                                   [ ✜ ✜ ]     [ no  ]
+ │ │││ └┬─[seller_settings_goods_discount_act0_main_description         ]  [section_lev3       ]                                   [ 🡅 ✜ ]     [ no  ]
+ │ │││  └ [seller_settings_goods_discount_act0_main_description_text    ]  [text               ]                                   [ ✜ ✜ ]     [ no  ]
+ │ ││└┬┬──[seller_settings_goods_discount_act0_main_price               ]  [section_lev3       ]                                   [ ✜ ✜ ]     [ no  ]
+ │ ││ │└┬─[seller_settings_goods_discount_act0_main_price_input         ]  [input              ]                                   [ ✜ ✜ ]     [ yes ]
+ │ ││ │ └ [seller_settings_goods_discount_act0_main_price_input_label   ]  [placeholder        ]  [ "введите цену"            ]    [ ✜ ✜ ]     [ yes ]
+ │ ││ └─┬─[seller_settings_goods_discount_act0_main_price_protip        ]  [button             ]                                   [ ✜ 🡆 ]     [ yes ]
+ │ ││   └ [seller_settings_goods_discount_act0_main_price_protip_label  ]  [label              ]  [ "?"                       ]    [ ✜ ✜ ]     [ yes ]
+ │ │└─┬┬──[seller_settings_goods_discount_act0_main_preview             ]  [section_lev3+button]                                   [ ✜ ✜ ]     [ no  ]
+ │ │  │└┬─[seller_settings_goods_discount_act0_main_preview_button      ]  [button             ]                                   [ ✜ ✜ ]     [ yes ]
+ │ │  │ └ [seller_settings_goods_discount_act0_main_preview_button_label]  [label              ]  [ "Предпросмотр"            ]    [ ✜ ✜ ]     [ yes ]
+ │ │  └─┬─[seller_settings_goods_discount_act0_main_preview_protip      ]  [button             ]                                   [ ✜ 🡆 ]     [ yes ]
+ │ │    └ [seller_settings_goods_discount_act0_main_preview_protip_label]  [label              ]  [ "?"                       ]    [ ✜ ✜ ]     [ yes ]  
+ │ └──┬┬──[seller_settings_goods_discount_act0_main_active              ]  [section_lev3+button]                                   [ 🡇 ✜ ]     [ no  ]
+ │    │└┬─[seller_settings_goods_discount_act0_main_active_button       ]  [button             ]                                   [ ✜ ✜ ]     [ yes ]  
+ │    │ └ [seller_settings_goods_discount_act0_main_active_button_label ]  [label              ]  [ "Активировать"            ]    [ ✜ ✜ ]     [ yes ]
+ │    └─┬─[seller_settings_goods_discount_act0_main_active_protip       ]  [button             ]                                   [ ✜ 🡆 ]     [ yes ]
+ │      └ [seller_settings_goods_discount_act0_main_active_protip_label ]  [label              ]  [ "?"                       ]    [ ✜ ✜ ]     [ yes ]
+ └──────┬─[seller_settings_goods_discount_act0_button                   ]  [section_lev2+button]                                   [ 🡇 ✜ ]     [ yes ]
+        └ [seller_settings_goods_discount_act0_button_label             ]  [label              ]  [ "ОК"                      ]    [ ✜ ✜ ]     [ yes ]
+
