@@ -3867,3 +3867,194 @@ seller_settings_goods_discount_list_act9_protip_popover является всп�
  └──────┬─[seller_settings_goods_discount_act0_button                   ]  [section_lev2+button]                                   [ 🡇 ✜ ]     [ yes ]
         └ [seller_settings_goods_discount_act0_button_label             ]  [label              ]  [ "ОК"                      ]    [ ✜ ✜ ]     [ yes ]
 
+✠ details
+--- seller_settings_goods_discount_act0_panel - блок прямоугольной формы расположенный в самом верху seller_settings_goods_discount_act0_screen, выполняет функцию контейнера для seller_settings_goods_discount_act0_panel_label;
+----- seller_settings_goods_discount_act0_panel_label - заголовок следующего содержания: "Горячая цена";
+--- seller_settings_goods_discount_act0_main - занимает порядка 80-85% пространства seller_settings_goods_discount_act0_screen, содержит 4 компонентов;
+1)----- seller_settings_goods_discount_act0_main_description - находится в верхней части seller_settings_goods_discount_act0_main и выполняет роль контейнера для seller_settings_goods_discount_act0_main_description_text;
+------- seller_settings_goods_discount_act0_main_description_text - текст описания опции следующего содержания: "Как работает акция 'Горячая цена'. После активации настройки цена товара выделяется цветом, шрифт становится жирней и рядом добавляется (🔥) соответствующая иконка. После удаления акции возвращается обычный вид и цена.";
+2)----- seller_settings_goods_discount_act0_main_price - опция позволяющая ввести цену, которая на время действия акции будет заменять оригинальную (обычную) цену;
+------- seller_settings_goods_discount_act0_main_price_input - поле для ввода цены в виде числового значения, содержит seller_settings_goods_discount_act0_main_price_input_label в качестве placeholder; 
+--------- seller_settings_goods_discount_act0_main_price_input_label - константный текстовый элемент следующего содержания: "введите цену";
+------- seller_settings_goods_discount_act0_main_price_protip - кнопка круглой формы выполняющая роль аффорданса, находится справа от seller_settings_goods_discount_act0_main_price_input, содержит seller_settings_goods_discount_act0_main_price_protip_label и отвечает за вызов подсказки seller_settings_goods_discount_act0_main_price_protip_popover;
+--------- seller_settings_goods_discount_act0_main_price_protip_label - наименование следующего содержания: "?";
+3)----- seller_settings_goods_discount_act0_main_preview - компонент отвечающий за функцию предварительного просмотра акции на карточке товара;
+------- seller_settings_goods_discount_act0_main_preview_button - кнопка посредством которой открывается окно предпросмотра seller_settings_goods_discount_preview_screen; 
+--------- seller_settings_goods_discount_act0_main_preview_button_label - наименование кнопки seller_settings_goods_discount_act0_main_preview_button в виде константного текстового элемента следующего содержания: "Предпросмотр";
+------- seller_settings_goods_discount_act0_main_preview_protip - кнопка круглой формы выполняющая роль аффорданса, находится справа от seller_settings_goods_discount_act0_main_preview_button, содержит seller_settings_goods_discount_act0_main_preview_protip_label и отвечает за вызов подсказки seller_settings_goods_discount_act0_main_preview_protip_popover;
+--------- seller_settings_goods_discount_act0_main_preview_protip_label - наименование seller_settings_goods_discount_act0_main_preview_protip в виде константного текстового элемента: "?";
+4)----- seller_settings_goods_discount_act0_main_active - компонент отвечающий за функцию активации акции;
+------- seller_settings_goods_discount_act0_main_active_button - кнопка посредством которой совершается активация; 
+--------- seller_settings_goods_discount_act0_main_active_button_label - наименование кнопки seller_settings_goods_discount_act0_main_active_button в виде константного текстового элемента следующего содержания: "Активировать";
+------- seller_settings_goods_discount_act0_main_active_protip - кнопка круглой формы выполняющая роль аффорданса, находится справа от seller_settings_goods_discount_act0_main_active_button, содержит seller_settings_goods_discount_act0_main_active_protip_label и отвечает за вызов подсказки seller_settings_goods_discount_act0_main_active_protip_popover;
+--------- seller_settings_goods_discount_act0_main_active_protip_label - наименование seller_settings_goods_discount_act0_main_active_protip в виде константного текстового элемента: "?";
+--- seller_settings_goods_discount_act0_ok - кнопка отвечающая за закрытие seller_settings_goods_discount_act0_screen и расположенная в самом низу seller_settings_goods_discount_act0_screen;
+----- seller_settings_goods_discount_act0_ok_label - наименование кнопки seller_settings_goods_discount_act0_ok: "ОК".
+
+✠ actions
+• seller_settings_goods_discount_act0_main_price_input:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_discount_act0_main_price_input;
+║ condition: in any situation;
+║ result:
+║ && - seller_settings_goods_discount_act0_main_price_input переходит в active_state;
+║ && - появляется клавиатура для ввода (если она была скрыта);
+║ && - placeholder исчезает;
+╙ && - карет устанавливается в конце текста (если текст наличествует).
+• seller_settings_goods_discount_act0_main_price_protip:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_discount_act0_main_price_protip;
+║ condition: in any situation;
+╙ result: по центру экрана всплывает seller_settings_goods_discount_act0_main_price_protip_popover.
+• seller_settings_goods_discount_act0_main_preview_button:
+╠ valid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_discount_act0_main_preview_button;
+║ condition: если в поле seller_settings_goods_discount_act0_main_price_input введена минимум 1 цифра;
+║ result: открывается seller_settings_goods_discount_preview_screen;
+╠ invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_discount_act0_main_preview_button;
+║ condition: если поле seller_settings_goods_discount_act0_main_price_input пустое;
+╙ result: seller_settings_goods_discount_act0_main_preview_button не реагирует на нажатие.
+• seller_settings_goods_discount_act0_main_preview_protip:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_discount_act0_main_preview_protip;
+║ condition: in any situation;
+╙ result: по центру экрана всплывает seller_settings_goods_discount_act0_main_preview_protip_popover.
+• seller_settings_goods_discount_act0_main_active_button:
+╠ valid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_discount_act0_main_active_button;
+║ condition: если в поле seller_settings_goods_discount_act0_main_price_input введена минимум 1 цифра;
+║ result: производится активация акции;
+╠ invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_discount_act0_main_active_button;
+║ condition: если поле seller_settings_goods_discount_act0_main_price_input пустое;
+╙ result: seller_settings_goods_discount_act0_main_active_button не реагирует на нажатие.
+• seller_settings_goods_discount_act0_main_active_protip:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_discount_act0_main_active_protip;
+║ condition: in any situation;
+╙ result: по центру экрана всплывает seller_settings_goods_discount_act0_main_active_protip_popover.
+• seller_settings_goods_discount_act0_ok:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_discount_act0_ok;
+║ condition: in any situation;
+║ result: 
+║ - && - seller_settings_goods_discount_act0_screen закрывается;
+╙ - && - совершается переход к seller_settings_goods_discount_screen.
+
+✠ input_checks
+• seller_settings_goods_discount_act0_main_price_input
+Фильтры проверяющие на соответствие нормативам содержание seller_settings_goods_discount_act0_main_price_input. Если в ходе проверки фиксируется несоответствие, тогда состояние seller_settings_goods_discount_act0_main_price_input позиционируется как invalid, в связи с чем отображается соответствующее типу проблемы предупреждение.
+• overnaming:
+Анализ на превышение лимита допустимой длины price.
+Работает в active_state.
+При вводе price, в ситуации если символов > 50, под seller_settings_goods_discount_act0_main_price_input всплывает seller_settings_goods_discount_act0_main_price_alert_overnaming.
+• stopsymbol:
+Анализ на нажатие запрещенных клавиш базирующийся на превентивной блокировке ввода с любых клавиш кроме от 0 до 9.
+Работает в active_state. 
+При вводе price, в ситуации если использованы не цифры, под seller_settings_goods_discount_act0_main_price_input всплывает seller_settings_goods_discount_act0_main_price_alert_stopsymbol.
+
+✠ color_states
+┌─
+│seller_settings_goods_discount_act0_main_price_input
+│---------------------------
+│⟪⟪ border ⟫⟫ 
+├────────
+│• color4:
+│------ in default_state
+├────────
+│• color3:
+│- || - invalid по факту проверки на overnaming
+│- || - invalid по факту проверки на stopsymbol
+├────────
+│• color1:
+│- && - valid по факту проверки на overnaming
+│- && - valid по факту проверки на stopsymbol
+└─
+┌─
+│seller_settings_goods_discount_act0_main_preview_button
+│seller_settings_goods_discount_act0_main_active_button
+│-------------------------------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color0
+│------ если поле seller_settings_goods_discount_act0_main_price_input пустое
+├────────
+│• color4
+│- && - если в поле seller_settings_goods_discount_act0_main_price_input введена минимум 1 цифра
+│- && - in default_state
+├────────
+│• color5
+│- && - если в поле seller_settings_goods_discount_act0_main_price_input введена минимум 1 цифра
+│- && - in pressing_state
+└─
+┌─
+│seller_settings_goods_discount_act0_main_price_protip
+│seller_settings_goods_discount_act0_main_preview_protip
+│seller_settings_goods_discount_act0_main_active_protip
+│seller_settings_goods_discount_act0_ok
+│-------------------------------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color5
+│------ in pressing_state
+└─
+┌─
+│seller_settings_goods_discount_act0_panel
+│seller_settings_goods_discount_act0_main_description
+│-------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color2
+│------ in any situation
+└─
+┌─
+│seller_settings_goods_discount_act0_panel_label
+│seller_settings_goods_discount_act0_main_description_text
+│seller_settings_goods_discount_act0_main_price_input_label
+│seller_settings_goods_discount_act0_main_price_protip_label
+│seller_settings_goods_discount_act0_main_preview_button_label
+│seller_settings_goods_discount_act0_main_preview_protip_label
+│seller_settings_goods_discount_act0_main_active_button_label
+│seller_settings_goods_discount_act0_main_active_protip_label
+│seller_settings_goods_discount_act0_ok_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
+✠ alerts
+• seller_settings_goods_discount_act0_main_price_alert_overnaming:
+- focusing: да;
+- location: появляется под seller_settings_goods_discount_act0_main_price_input;
+- occasion: невалидность по факту проверки на overnaming;
+- content:  "ЧИСЛО СЛИШКОМ БОЛЬШОЕ, ПОЖАЛУЙСТА ИСПОЛЬЗУЙТЕ МЕНЬШЕ СИМВОЛОВ".
+• seller_settings_goods_discount_act0_main_price_alert_stopsymbol:
+- focusing: да;
+- location: появляется под seller_settings_goods_discount_act0_main_price_input;
+- occasion: невалидность по факту проверки на stopsymbol;
+- content:  "ИСПОЛЬЗОВАН ЗАПРЕЩЕННЫЙ СИМВОЛ: {указывается запрещенный символ жирным шрифтом белого цвета на color3 фоне}".
+
+✠ outputs
+• seller_settings_goods_discount_act0_main_price_input:
+║occasion: нажатие seller_settings_goods_discount_act0_main_active_button;
+║condition: 
+║ && - наличие в seller_settings_goods_discount_act0_main_price_input минимум 1 цифры;
+║ && - valid по факту проверки на overnaming;
+║ && - valid по факту проверки на stopsymbol;
+╙ result: cодержимое seller_settings_goods_discount_act0_main_price_input преобразуется в seller_settings_goods_discount_act0_price_value.
+seller_settings_goods_discount_act0_price_value подменяет текущую цену товара 
