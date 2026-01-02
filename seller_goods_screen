@@ -22,6 +22,7 @@ location:
 
 
 
+
 🡆 seller_goods_screen
 ■■■■■■■■■■■■■■■■■■■■■
 seller_goods_screen предназначен для отображения товаров seller в качестве так называемых (торговых) лотов, вход в который осуществляется посредством кнопки seller_nav_goods и представляет список товаров выполненных в виде блоков с краткой информацией. seller_goods_screen разделен на 4 sections следующего содержания расположенных сверху-вниз:
@@ -533,8 +534,8 @@ seller_goods_list_cover_front - это вид карточки товара со
      ││ └─┬┬┬──[seller_goods_list_cover_front_body_info_quantity              ]  [component_lev5]                                   [ 🡇 ✜ ]     [ no  ]
      ││   ││└┬─[seller_goods_list_cover_front_body_info_quantity_minus        ]  [button        ]                                   [ ✜ 🡄 ]     [ yes ]
      ││   ││ └ [seller_goods_list_cover_front_body_info_quantity_minus_icon   ]  [icon          ]                                   [ ✜ ✜ ]     [ yes ]
-     ││   │└─┬─[seller_goods_list_cover_front_body_info_quantity_value        ]  [widget        ]                                   [ ✜ ✜ ]     [ no  ]
-     ││   │  └ [seller_goods_list_cover_front_body_info_quantity_value_widget ]  [variable      ]  [ { number }                ]    [ ✜ ✜ ]     [ no  ]
+     ││   │└─┬─[seller_goods_list_cover_front_body_info_quantity_widget       ]  [widget        ]                                   [ ✜ ✜ ]     [ no  ]
+     ││   │  └ [seller_goods_list_cover_front_body_info_quantity_widget_value ]  [variable      ]  [ { number }                ]    [ ✜ ✜ ]     [ no  ]
      ││   └──┬─[seller_goods_list_cover_front_body_info_quantity_plus         ]  [button        ]                                   [ ✜ 🡆 ]     [ yes ]
      ││      └ [seller_goods_list_cover_front_body_info_quantity_plus_icon    ]  [icon          ]                                   [ ✜ ✜ ]     [ yes ]
      │└─────┬──[seller_goods_list_cover_front_body_img                        ]  [component_lev4]                                   [ ✜ ✜ ]     [ no  ]
@@ -579,10 +580,10 @@ seller_goods_list_cover_front состоит из 2 основных компо�
 ----- seller_goods_list_cover_front_body_info_quantity - представляет собой виджет количества товара и органами его управления, находится в нижней части seller_goods_list_cover_front_body_info занимая порядка 30% его пространства по вертикали и все доступное пространство по горизонтали; 
 ------- seller_goods_list_cover_front_body_info_quantity_minus - является кнопкой расположенной в левой части seller_goods_list_cover_front_body_info_quantity;
 --------- seller_goods_list_cover_front_body_info_quantity_minus_icon - иконка в виде символа старта проигрывателя с направлением налево и знаком "-" по центру;
-------- seller_goods_list_cover_front_body_info_quantity_value - является виджетом в виде прямоугольного фрейма расположенного в центре seller_goods_list_cover_front_body_info_quantity, который посредством seller_goods_list_cover_front_body_info_quantity_value_widget отображает значение количества товара;
---------- seller_goods_list_cover_front_body_info_quantity_value_widget - имеет 2 режима работы:
-1) seller_goods_list_cover_front_body_info_quantity_value_definite - если активирован seller_settings_goods_list_quantity_ctrl_definite, тогда seller_goods_list_cover_front_body_info_quantity_value_widget выводится в виде переменной с числовым значением;
-2) seller_goods_list_cover_front_body_info_quantity_value_approx - если активирован seller_settings_goods_list_quantity_ctrl_approx, тогда seller_goods_list_cover_front_body_info_quantity_value_widget отображается в качестве иконки с трехступенчатой композицией баров и вариативной цветовой окраской в зависимости от состояния;
+------- seller_goods_list_cover_front_body_info_quantity_widget - является виджетом в виде прямоугольного фрейма расположенного в центре seller_goods_list_cover_front_body_info_quantity, который посредством seller_goods_list_cover_front_body_info_quantity_widget_value отображает значение количества товара;
+--------- seller_goods_list_cover_front_body_info_quantity_widget_value - имеет 2 режима работы:
+1) seller_goods_list_cover_front_body_info_quantity_widget_definite - если активирован seller_settings_goods_list_quantity_ctrl_definite, тогда seller_goods_list_cover_front_body_info_quantity_widget_value выводится в виде переменной с числовым значением;
+2) seller_goods_list_cover_front_body_info_quantity_widget_approx - если активирован seller_settings_goods_list_quantity_ctrl_approx, тогда seller_goods_list_cover_front_body_info_quantity_widget_value отображается в качестве иконки с трехступенчатой композицией баров и вариативной цветовой окраской в зависимости от состояния;
 ------- seller_goods_list_cover_front_body_info_quantity_plus - является кнопкой расположенной в правой части seller_goods_list_cover_front_body_info_quantity;
 --------- seller_goods_list_cover_front_body_info_quantity_plus_icon - иконка в виде символа старта проигрывателя с направлением направо и знаком "+" по центру;
 2)--- seller_goods_list_cover_front_body_img - локализован в центральной части seller_goods_list_cover_front_body (между seller_goods_list_cover_front_body_info и seller_goods_list_cover_front_body_control), занимает ~30% ширины seller_goods_list_cover_front_body и включает seller_goods_list_cover_front_body_img_frame;
@@ -597,7 +598,7 @@ seller_goods_list_cover_front состоит из 2 основных компо�
 ------- seller_goods_list_cover_front_body_control_expo_label - константный текстовый элемент seller_goods_list_cover_front_body_control_book: "удалить".
 
 ✠ logics
-Нормативы отображения для seller_goods_list_cover_front_body_info_quantity_value_definite: 
+Нормативы отображения для seller_goods_list_cover_front_body_info_quantity_widget_definite: 
 - целые числа отображаются о 1 до 999;
 - числа > 999 отображаются с использовании аббревиатуры;
 - числа > 999 отображаются с округлением;
@@ -606,12 +607,12 @@ seller_goods_list_cover_front состоит из 2 основных компо�
 - число 1000000000 отображается как 1B;
 - числа > 1000000000 отображаются как 1B+.
 
-Нормативы отображения для seller_goods_list_cover_front_body_info_quantity_value_approx:
-seller_goods_list_cover_front_body_info_quantity_value_approx может находиться в трех состояниях визуально выражаемых через цветовую дифференциацию:
-seller_goods_list_cover_front_body_info_quantity_value_approx = sold;
-seller_goods_list_cover_front_body_info_quantity_value_approx = low;
-seller_goods_list_cover_front_body_info_quantity_value_approx = norm;
-seller_goods_list_cover_front_body_info_quantity_value_approx = high.
+Нормативы отображения для seller_goods_list_cover_front_body_info_quantity_widget_approx:
+seller_goods_list_cover_front_body_info_quantity_widget_approx может находиться в трех состояниях визуально выражаемых через цветовую дифференциацию:
+seller_goods_list_cover_front_body_info_quantity_widget_approx = sold;
+seller_goods_list_cover_front_body_info_quantity_widget_approx = low;
+seller_goods_list_cover_front_body_info_quantity_widget_approx = norm;
+seller_goods_list_cover_front_body_info_quantity_widget_approx = high.
 
 ✠ actions
 • seller_goods_list_cover:
@@ -663,69 +664,65 @@ seller_goods_list_cover_front_body_info_quantity_value_approx = high.
 • seller_goods_list_cover_front_body_info_quantity_plus
 ╠ valid
 ║ • gesture: tap
-║ : seller_goods_list_cover_front_body_info_quantity_value_definite
+║ : seller_goods_list_cover_front_body_info_quantity_widget_definite
 ║ occasion: нажатие seller_goods_list_cover_front_body_info_quantity_plus;
-║ condition: если seller_goods_list_cover_front_body_info_quantity_value_definite >= 0 || <= 999999999;
-║ result: seller_goods_list_cover_front_body_info_quantity_value_definite ++1.
-║ : seller_goods_list_cover_front_body_info_quantity_value_approx
+║ condition: если seller_goods_list_cover_front_body_info_quantity_widget_definite >= 0 || <= 999999999;
+║ result: seller_goods_list_cover_front_body_info_quantity_widget_definite++.
+║ : seller_goods_list_cover_front_body_info_quantity_widget_approx
 ║ occasion: нажатие seller_goods_list_cover_front_body_info_quantity_plus;
-║ condition: если seller_goods_list_cover_front_body_info_quantity_value_approx = low;
-║ result: seller_goods_list_cover_front_body_info_quantity_value_approx = norm.
-║ : seller_goods_list_cover_front_body_info_quantity_value_approx = norm
+║ condition: если seller_goods_list_cover_front_body_info_quantity_widget_approx = low;
+║ result: seller_goods_list_cover_front_body_info_quantity_widget_approx = norm.
+║ : seller_goods_list_cover_front_body_info_quantity_widget_approx = norm
 ║ occasion: нажатие seller_goods_list_cover_front_body_info_quantity_plus;
-║ condition: если seller_goods_list_cover_front_body_info_quantity_value_approx = norm;
-║ result: seller_goods_list_cover_front_body_info_quantity_value_approx = high.
+║ condition: если seller_goods_list_cover_front_body_info_quantity_widget_approx = norm;
+║ result: seller_goods_list_cover_front_body_info_quantity_widget_approx = high.
 ╠ invalid
 ║ • gesture: tap
-║ : seller_goods_list_cover_front_body_info_quantity_value_definite
+║ : seller_goods_list_cover_front_body_info_quantity_widget_definite
 ║ occasion: нажатие seller_goods_list_cover_front_body_info_quantity_plus;
-║ condition: если seller_goods_list_cover_front_body_info_quantity_value_definite < 0 || > 999999999;
+║ condition: если seller_goods_list_cover_front_body_info_quantity_widget_definite < 0 || > 999999999;
 ║ result: seller_goods_list_cover_front_body_info_quantity_plus не реагирует на нажатие.
-║ : seller_goods_list_cover_front_body_info_quantity_value_approx
+║ : seller_goods_list_cover_front_body_info_quantity_widget_approx
 ║ occasion: нажатие seller_goods_list_cover_front_body_info_quantity_plus;
-║ condition: если seller_goods_list_cover_front_body_info_quantity_value_approx = high;
+║ condition: если seller_goods_list_cover_front_body_info_quantity_widget_approx = high;
 ╙ result: seller_goods_list_cover_front_body_info_quantity_plus не реагирует на нажатие.
 • seller_goods_list_cover_front_body_info_quantity_minus:
 ╠ valid
 ║ • gesture: tap
-║ : seller_goods_list_cover_front_body_info_quantity_value_definite
+║ : seller_goods_list_cover_front_body_info_quantity_widget_definite
 ║ occasion: нажатие seller_goods_list_cover_front_body_info_quantity_minus;
-║ condition: если seller_goods_list_cover_front_body_info_quantity_value_definite >= 2 || <= 1000000000;
-║ result: seller_goods_list_cover_front_body_info_quantity_value_definite --1.
-║ : seller_goods_list_cover_front_body_info_quantity_value_definite
+║ condition: если seller_goods_list_cover_front_body_info_quantity_widget_definite >= 2 || <= 1000000000;
+║ result: seller_goods_list_cover_front_body_info_quantity_widget_definite-- (-1).
+║ : seller_goods_list_cover_front_body_info_quantity_widget_definite
 ║ occasion: нажатие seller_goods_list_cover_front_body_info_quantity_minus;
-║ condition: если seller_goods_list_cover_front_body_info_quantity_value_definite = 1;
+║ condition: если seller_goods_list_cover_front_body_info_quantity_widget_definite = 1;
 ║ result: 
-║ && - seller_goods_list_cover_front_body_info_quantity_value_definite --1;
+║ && - seller_goods_list_cover_front_body_info_quantity_widget_definite--;
 ║ && - по центру экрана всплывает seller_goods_list_cover_front_body_info_quantity_popover.
-║ : seller_goods_list_cover_front_body_info_quantity_value_approx = high
+║ : seller_goods_list_cover_front_body_info_quantity_widget_approx = high
 ║ occasion: нажатие seller_goods_list_cover_front_body_info_quantity_minus;
-║ condition: если seller_goods_list_cover_front_body_info_quantity_value_approx = high;
-║ result: seller_goods_list_cover_front_body_info_quantity_value_approx = norm.
-║ : seller_goods_list_cover_front_body_info_quantity_value_approx = norm
+║ condition: если seller_goods_list_cover_front_body_info_quantity_widget_approx = high;
+║ result: seller_goods_list_cover_front_body_info_quantity_widget_approx = norm.
+║ : seller_goods_list_cover_front_body_info_quantity_widget_approx = norm
 ║ occasion: нажатие seller_goods_list_cover_front_body_info_quantity_minus;
-║ condition: если seller_goods_list_cover_front_body_info_quantity_value_approx = norm;
-║ result: seller_goods_list_cover_front_body_info_quantity_value_approx = low.
-║ : seller_goods_list_cover_front_body_info_quantity_value_approx = low
+║ condition: если seller_goods_list_cover_front_body_info_quantity_widget_approx = norm;
+║ result: seller_goods_list_cover_front_body_info_quantity_widget_approx = low.
+║ : seller_goods_list_cover_front_body_info_quantity_widget_approx = low
 ║ occasion: нажатие seller_goods_list_cover_front_body_info_quantity_minus;
-║ condition: если seller_goods_list_cover_front_body_info_quantity_value_approx = low;
+║ condition: если seller_goods_list_cover_front_body_info_quantity_widget_approx = low;
 ║ result: 
-║ && - seller_goods_list_cover_front_body_info_quantity_value_approx = sold;
+║ && - seller_goods_list_cover_front_body_info_quantity_widget_approx = sold;
 ║ && - по центру экрана всплывает seller_goods_list_cover_front_body_info_quantity_popover.
 ╠ invalid
 ║ • gesture: tap
-║ : seller_goods_list_cover_front_body_info_quantity_value_definite
+║ : seller_goods_list_cover_front_body_info_quantity_widget_definite
 ║ occasion: нажатие seller_goods_list_cover_front_body_info_quantity_minus;
-║ condition: если seller_goods_list_cover_front_body_info_quantity_value_definite <= 0 || > 1000000000;
+║ condition: если seller_goods_list_cover_front_body_info_quantity_widget_definite <= 0 || > 1000000000;
 ║ result: seller_goods_list_cover_front_body_info_quantity_minus не реагирует на нажатие.
-║ : seller_goods_list_cover_front_body_info_quantity_value_approx
+║ : seller_goods_list_cover_front_body_info_quantity_widget_approx
 ║ occasion: нажатие seller_goods_list_cover_front_body_info_quantity_minus;
-║ condition: если seller_goods_list_cover_front_body_info_quantity_value_approx = sold;
+║ condition: если seller_goods_list_cover_front_body_info_quantity_widget_approx = sold;
 ╙ result: seller_goods_list_cover_front_body_info_quantity_minus не реагирует на нажатие.
-
-seller_goods_list_cover_front_top_header
-seller_goods_list_cover_front_body_info_date_left
-seller_goods_list_cover_front_body_info_price_left
 
 ✠ color_states
 ┌─
@@ -766,35 +763,34 @@ seller_goods_list_cover_front_body_info_price_left
 │------ in any situation
 └─
 ┌─
-│seller_goods_list_cover_front_body_info_quantity_value_approx  
-│seller_goods_list_cover_front_body_info_quantity_value_definite
+│seller_goods_list_cover_front_body_info_quantity_widget_approx  
+│seller_goods_list_cover_front_body_info_quantity_widget_definite
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color2
-│------ для seller_goods_list_cover_front_body_info_quantity_value_approx = sold
-│------ для seller_goods_list_cover_front_body_info_quantity_value_definite = 0
+│------ для seller_goods_list_cover_front_body_info_quantity_widget_approx = sold
+│------ для seller_goods_list_cover_front_body_info_quantity_widget_definite = 0
 ├────────
 │• color3
-│------ для seller_goods_list_cover_front_body_info_quantity_value_approx = low
-│------ для seller_goods_list_cover_front_body_info_quantity_value_definite: 
-│ если seller_goods_list_cover_front_body_info_quantity_value_definite > 0% || <= 10% значения seller_settings_goods_list_quantity_value
+│------ для seller_goods_list_cover_front_body_info_quantity_widget_approx = low
+│------ для seller_goods_list_cover_front_body_info_quantity_widget_definite: 
+│ если seller_goods_list_cover_front_body_info_quantity_widget_definite > 0% || <= 10% значения seller_settings_goods_list_quantity_value
 ├────────
 │• color6
-│------ для seller_goods_list_cover_front_body_info_quantity_value_approx = norm
-│------ для seller_goods_list_cover_front_body_info_quantity_value_definite: 
-│ если seller_goods_list_cover_front_body_info_quantity_value_definite > 10% || <= 50% значения seller_settings_goods_list_quantity_value
+│------ для seller_goods_list_cover_front_body_info_quantity_widget_approx = norm
+│------ для seller_goods_list_cover_front_body_info_quantity_widget_definite: 
+│ если seller_goods_list_cover_front_body_info_quantity_widget_definite > 10% || <= 50% значения seller_settings_goods_list_quantity_value
 ├────────
 │• color1
-│------ для seller_goods_list_cover_front_body_info_quantity_value_approx = high
-│------ для seller_goods_list_cover_front_body_info_quantity_value_definite: 
-│ если seller_goods_list_cover_front_body_info_quantity_value_definite > 50% || <= 100% значения seller_settings_goods_list_quantity_value
+│------ для seller_goods_list_cover_front_body_info_quantity_widget_approx = high
+│------ для seller_goods_list_cover_front_body_info_quantity_widget_definite: 
+│ если seller_goods_list_cover_front_body_info_quantity_widget_definite > 50% || <= 100% значения seller_settings_goods_list_quantity_value
 └─
 ┌─
 │seller_goods_list_cover_front_body_info_quantity_minus
 │seller_goods_list_cover_front_body_info_quantity_plus
 │seller_goods_list_cover_front_body_control_edit
-│seller_goods_list_cover_front_body_control_book
 │seller_goods_list_cover_front_body_control_expo
 │-------------------------------------------------
 │⟪⟪ body ⟫⟫ 
@@ -804,6 +800,17 @@ seller_goods_list_cover_front_body_info_price_left
 ├────────
 │• color5
 │------ in pressing_state
+└─
+┌─
+│seller_goods_list_cover_front_body_control_book
+│-------------------------------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state (seller_goods_book_function=off)
+├────────
+│• color7
+│------ in pressing_state (seller_goods_book_function=on)
 └─
 ┌─
 │seller_goods_list_cover_front_top_number_label
@@ -849,7 +856,6 @@ seller_goods_list_cover_lots представляет собой виджет п
       └──┬─[seller_goods_list_cover_lots_button             ]  [button        ]                                   [ 🡇 ✜ ]     [ yes ]
 	     └ [seller_goods_list_cover_lots_button_label       ]  [label         ]  [ "добавить партию"         ]    [ ✜ ✜ ]     [ yes ]
 
-
 ✠ details
 seller_goods_list_cover_lots состоит из 3 основных компонентов: 
 - seller_goods_list_cover_lots_top;
@@ -884,7 +890,6 @@ seller_goods_list_cover_lots состоит из 3 основных компон
 ║ occasion: делается свайп вправо;
 ║ condition: в рамках seller_goods_list_cover_lots;
 ╙ result: seller_goods_list_cover_lots сохраняет свое положение;
-
 • seller_goods_list_cover_lots_list_lot:
 ╠ valid / invalid
 ║ • gesture: tap
@@ -896,12 +901,219 @@ seller_goods_list_cover_lots состоит из 3 основных компон
 ║ • gesture: tap
 ║ occasion: нажатие seller_goods_list_cover_lots_button;
 ║ condition: in any situation;
-║ result: 
-║ - && - делается автоматическое нажатие seller_settings_goods_depot_list_adding;
-╙ - && - открывается seller_settings_goods_depot_lot_screen с пустыми полями.
+╙ result: открывается seller_settings_goods_depot_lot_screen с пустыми полями.
+
+✠ color_states
+┌─
+│seller_goods_list_cover_lots  
+│---------------------------
+│⟪⟪ border ⟫⟫ 
+│--------
+│• color0
+│------ in any situation
+└─
+┌─
+│seller_goods_list_cover_lots_top
+│---------------------------
+│⟪⟪ border ⟫⟫ 
+│--------
+│• color2
+│------ in any situation
+└─
+
+seller_goods_list_cover_lots_list_lot
+┌─
+│seller_goods_list_cover_front_top_number
+│seller_goods_list_cover_front_body_info_date_right
+│seller_goods_list_cover_front_body_info_price_right
+│seller_goods_list_cover_front_body_img_frame
+│---------------------------
+│⟪⟪ border ⟫⟫ 
+│--------
+│• color4
+│------ in any situation
+└─
+┌─
+│seller_goods_list_cover_lots_list_lot
+│-------------------------------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color2
+│------ in default_state
+├────────
+│• color5
+│------ in pressing_state
+└─
+┌─
+│seller_goods_list_cover_lots_button
+│-------------------------------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color5
+│------ in pressing_state
+└─
+┌─
+│seller_goods_list_cover_lots_top_number
+│seller_goods_list_cover_lots_top_entry
+│seller_goods_list_cover_lots_top_quantity
+│seller_goods_list_cover_lots_top_balance
+│seller_goods_list_cover_lots_top_expiration
+│seller_goods_list_cover_lots_list_lot_number
+│seller_goods_list_cover_lots_list_lot_entry
+│seller_goods_list_cover_lots_list_lot_quantity
+│seller_goods_list_cover_lots_list_lot_balance
+│seller_goods_list_cover_lots_list_lot_expiration
+│seller_goods_list_cover_lots_button_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
 
 
+■ ■ seller_goods_list_cover_stat
 
+seller_goods_list_cover_stat представляет собой виджет индивидуальной статистики товара касательно просмотров и покупок, является правой панелью seller_goods_list_cover, вид на которую открывается при свайпе налево.
+
+✠ tables
+
+                                  codename:                              type:                designation:           location:  interaction:
+   ┌───────[seller_goods_list_cover                             ]  [component_lev1]                                   [ ✜ ✜ ]     [ yes ]
+   └┬┬──┬──[seller_goods_list_cover_stat                        ]  [component_lev2]                                   [ ✜ ✜ ]     [ no  ]
+    ││  └┬─[seller_goods_list_cover_stat_top                    ]  [component_lev3]                                   [ 🡅 ✜ ]     [ no  ]
+    ││   └ [seller_goods_list_cover_stat_top_label              ]  [label         ]  [ "задать временной диа..." ]    [ ✜ ✜ ]     [ no  ]
+    │└┬┬┬──[seller_goods_list_cover_stat_control                ]  [component_lev3]                                   [ ✜ ✜ ]     [ no  ]
+    │ ││└┬─[seller_goods_list_cover_stat_control_minus          ]  [button        ]                                   [ ✜ 🡄 ]     [ yes ]
+    │ ││ └ [seller_goods_list_cover_stat_control_minus_icon     ]  [icon          ]                                   [ ✜ ✜ ]     [ yes ]
+    │ │└─┬─[seller_goods_list_cover_stat_control_widget         ]  [widget        ]                                   [ ✜ ✜ ]     [ no  ]
+    │ │  └ [seller_goods_list_cover_stat_control_widget_value   ]  [variable      ]  [ { number }                ]    [ ✜ ✜ ]     [ no  ]
+    │ └──┬─[seller_goods_list_cover_stat_control_plus           ]  [button        ]                                   [ ✜ 🡆 ]     [ yes ]
+    │    └ [seller_goods_list_cover_stat_control_plus_icon      ]  [icon          ]                                   [ ✜ 🡆 ]     [ yes ]
+    └┬┬────[seller_goods_list_cover_stat_table                  ]  [component_lev3]                                   [ 🡇 ✜ ]     [ no  ]
+     │└┬┬──[seller_goods_list_cover_stat_table_views            ]  [component_lev4]                                   [ 🡅 ✜ ]     [ no  ]
+     │ │└┬─[seller_goods_list_cover_stat_table_views_left       ]  [component_lev5]                                   [ ✜ 🡄 ]     [ no  ]
+     │ │ └ [seller_goods_list_cover_stat_table_views_left_label ]  [label         ]  [ "просмотры"               ]    [ ✜ ✜ ]     [ no  ]
+     │ └─┬─[seller_goods_list_cover_stat_table_views_right      ]  [component_lev5]                                   [ ✜ 🡆 ]     [ no  ]
+     │   └ [seller_goods_list_cover_stat_table_views_right_value]  [variable      ]  [ { number }                ]    [ ✜ ✜ ]     [ no  ]
+     └─┬┬──[seller_goods_list_cover_stat_table_buys             ]  [component_lev4]                                   [ 🡇 ✜ ]     [ no  ]
+       │└┬─[seller_goods_list_cover_stat_table_buys_left        ]  [component_lev5]                                   [ ✜ 🡄 ]     [ no  ]
+       │ └ [seller_goods_list_cover_stat_table_buys_left_label  ]  [label         ]  [ "покупки"                 ]    [ ✜ ✜ ]     [ no  ]
+       └─┬─[seller_goods_list_cover_stat_table_buys_right       ]  [component_lev5]                                   [ ✜ 🡆 ]     [ no  ]
+         └ [seller_goods_list_cover_stat_table_buys_right_value ]  [variable      ]  [ { number }                ]    [ ✜ ✜ ]     [ no  ]
+
+
+✠ details
+seller_goods_list_cover_stat состоит из 3 основных компонентов: 
+- seller_goods_list_cover_stat_top;
+- seller_goods_list_cover_stat_control;
+- seller_goods_list_cover_stat_table.
+
+--- seller_goods_list_cover_stat_top локализован в верхней части seller_goods_list_cover_stat в качестве панели для заголовка seller_goods_list_cover_stat_top_label, который по ширине = 100%, а по высоте порядка 15% seller_goods_list_cover_stat;
+----- seller_goods_list_cover_stat_top_label - константный центрированный текстовый элемент "задать временной диапазон"; 
+--- seller_goods_list_cover_stat_control - панель управления длительностью временного интервала, занимает 100% по ширине и порядка 40% seller_goods_list_cover_stat, содержит 3 компонента; 
+----- seller_goods_list_cover_stat_control_minus - кнопка отвечающая за уменьшение значения seller_goods_list_cover_stat_control_widget_value, расположена слева; 
+------- seller_goods_list_cover_stat_control_minus_icon - иконка в виде кнопки старта проигрывания с направлением налево;
+----- seller_goods_list_cover_stat_control_widget - прямоугольная рамка в которой выводится seller_goods_list_cover_stat_control_widget_value;
+------- seller_goods_list_cover_stat_control_widget_value - представляется в виде переменной с числовым значением временного интервала, которая выводится в диапазоне от 0 до 1000000000, для которой базовой единицей является 1 день;
+----- seller_goods_list_cover_stat_control_plus - кнопка отвечающая за увеличение значения seller_goods_list_cover_stat_control_widget_value, расположена справа;
+------- seller_goods_list_cover_stat_control_plus_icon - иконка в виде кнопки старта проигрывания с направлением направо; 
+--- seller_goods_list_cover_stat_table локализован в нижней части seller_goods_list_cover_stat в качестве условной таблицы подразделенной на 2 ячейки, располагающейся во всю ширину seller_goods_list_cover_stat, а по высоте занимающей порядка 50% seller_goods_list_cover_stat и разделенный на 2 равных блока: seller_goods_list_cover_stat_table_views, seller_goods_list_cover_stat_table_buys;
+----- seller_goods_list_cover_stat_table_views - состоит из двух ячеек и выводит количество просмотров по целевому товару в заданном диапазоне seller_goods_list_cover_stat_control_widget_value;
+------- seller_goods_list_cover_stat_table_views_left - является левой ячейкой seller_goods_list_cover_stat_table_views содержащей seller_goods_list_cover_stat_table_views_left_label; 
+--------- seller_goods_list_cover_stat_table_views_left_label - константный центрированный текстовый элемент "просмотры"; 
+------- seller_goods_list_cover_stat_table_views_right - является правой ячейкой seller_goods_list_cover_stat_table_views содержащей seller_goods_list_cover_stat_table_views_right_value;  
+--------- seller_goods_list_cover_stat_table_views_right_value - представляется в виде переменной с числовым значением отображающим количество просмотров посетителями магазина целевого товара;
+----- seller_goods_list_cover_stat_table_buys - состоит из двух ячеек и выводит количество покупок по целевому товару в заданном диапазоне seller_goods_list_cover_stat_control_widget_value;
+------- seller_goods_list_cover_stat_table_buys_left - является левой ячейкой seller_goods_list_cover_stat_table_buys содержащей seller_goods_list_cover_stat_table_buys_left_label; 
+--------- seller_goods_list_cover_stat_table_buys_left_label - константный центрированный текстовый элемент "покупки"; 
+------- seller_goods_list_cover_stat_table_buys_right - является правой ячейкой seller_goods_list_cover_stat_table_buys содержащей seller_goods_list_cover_stat_table_buys_right_value;  
+--------- seller_goods_list_cover_stat_table_buys_right_value - представляется в виде переменной с числовым значением отображающим количество покупок целевого товара.
+
+✠ actions
+• seller_goods_list_cover:
+╠ valid
+║ • gesture: swipe left
+║ occasion: делается свайп вправо;
+║ condition: в рамках seller_goods_list_cover_stat;
+║ result: seller_goods_list_cover_stat уходит направо и скрывается, а на его место помещается seller_goods_list_cover_front;
+╠ invalid
+║ • gesture: swipe left
+║ occasion: делается свайп влево;
+║ condition: в рамках seller_goods_list_cover_stat;
+║ result: seller_goods_list_cover_stat сохраняет свое положение;
+• seller_goods_list_cover_stat_control_minus:
+╠ valid
+║ • gesture: tap
+║ occasion: нажатие seller_goods_list_cover_stat_control_minus;
+║ condition: если seller_goods_list_cover_stat_control_widget_value >= 1 || <= 1000000000;
+║ result: seller_goods_list_cover_stat_control_widget_value-- (-1).
+╠ invalid
+║ • gesture: tap
+║ occasion: нажатие seller_goods_list_cover_stat_control_minus;
+║ condition: если seller_goods_list_cover_stat_control_widget_value < 1 || > 1000000000;
+╙ result: seller_goods_list_cover_stat_control_minus не реагирует на нажатие.
+• seller_goods_list_cover_stat_control_plus:
+╠ valid
+║ • gesture: tap
+║ occasion: нажатие seller_goods_list_cover_stat_control_plus;
+║ condition: если seller_goods_list_cover_stat_control_widget_value >= 0 || < 1000000000;
+║ result: seller_goods_list_cover_stat_control_widget_value++ (+1);
+╠ invalid
+║ • gesture: tap
+║ occasion: нажатие seller_goods_list_cover_stat_control_plus;
+║ condition: если seller_goods_list_cover_stat_control_widget_value < 0 || > 1000000000;
+╙ result: seller_goods_list_cover_stat_control_plus не реагирует на нажатие.
+
+✠ color_states
+┌─
+│seller_goods_list_cover_stat  
+│---------------------------
+│⟪⟪ border ⟫⟫ 
+│--------
+│• color0
+│------ in any situation
+└─
+┌─
+│seller_goods_list_cover_stat_top
+│seller_goods_list_cover_stat_table_views_left
+│seller_goods_list_cover_stat_table_views_right
+│seller_goods_list_cover_stat_table_buys_left
+│seller_goods_list_cover_stat_table_buys_right
+│---------------------------
+│⟪⟪ border ⟫⟫ 
+│--------
+│• color2
+│------ in any situation
+└─
+┌─
+│seller_goods_list_cover_stat_control_minus
+│seller_goods_list_cover_stat_control_plus
+│-------------------------------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color5
+│------ in pressing_state
+└─
+┌─
+│seller_goods_list_cover_stat_top_label
+│seller_goods_list_cover_stat_control_widget_value
+│seller_goods_list_cover_stat_table_views_left_label
+│seller_goods_list_cover_stat_table_views_right_value
+│seller_goods_list_cover_stat_table_buys_left_label
+│seller_goods_list_cover_stat_table_buys_right_value
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
 
 
 
@@ -1065,7 +1277,7 @@ lot_cover_archived_state:
 ║ • seller_goods_list_cover_info_quantity_value_definite
 ║ occasion: нажатие seller_goods_list_cover_info_quantity_plus;
 ║ condition: если seller_goods_list_cover_info_quantity_value_definite >= 0 || < 9e49;
-║ result: seller_goods_list_cover_info_quantity_value_definite ++1.
+║ result: seller_goods_list_cover_info_quantity_value_definite++ (+1).
 ║ • seller_goods_list_cover_info_quantity_value_approx = low
 ║ occasion: нажатие seller_goods_list_cover_info_quantity_plus;
 ║ condition: если seller_goods_list_cover_info_quantity_value_approx = low;
@@ -1088,7 +1300,7 @@ lot_cover_archived_state:
 ║ • seller_goods_list_cover_info_quantity_value_definite
 ║ occasion: нажатие seller_goods_list_cover_info_quantity_minus;
 ║ condition: если seller_goods_list_cover_info_quantity_value_definite >= 1 || <= 9e49;
-║ result: seller_goods_list_cover_info_quantity_value_definite --1.
+║ result: seller_goods_list_cover_info_quantity_value_definite-- (-1).
 ║ • seller_goods_list_cover_info_quantity_value_approx = high
 ║ occasion: нажатие seller_goods_list_cover_info_quantity_minus;
 ║ condition: если seller_goods_list_cover_info_quantity_value_approx = high;
