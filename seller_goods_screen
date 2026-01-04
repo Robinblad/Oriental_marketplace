@@ -22,7 +22,6 @@ location:
 
 
 
-
 🡆 seller_goods_screen
 ■■■■■■■■■■■■■■■■■■■■■
 seller_goods_screen предназначен для отображения товаров seller в качестве так называемых (торговых) лотов, вход в который осуществляется посредством кнопки seller_nav_goods и представляет список товаров выполненных в виде блоков с краткой информацией. seller_goods_screen разделен на 4 sections следующего содержания расположенных сверху-вниз:
@@ -360,10 +359,10 @@ s2) ┌┬──────[seller_goods_view                     ]  [section_l
 ✠ details
 - seller_goods_view - в seller_goods_view_unwrapped_state выполняет роль контейнера для seller_goods_view_panel, занимая в высоту около 10% экранного пространства;
 --- seller_goods_view_panel - по горизонтали заполянет все пространство seller_goods_view и содержит 4 компонента в виде кнопок:
------ seller_goods_view_panel_buttons_1 - кнопка при нажатии на которую seller_goods_list_cover переходят в seller_goods_list_cover_1_state;
------ seller_goods_view_panel_buttons_2 - кнопка при нажатии на которую seller_goods_list_cover переходят в seller_goods_list_cover_2_state;
------ seller_goods_view_panel_buttons_3 - кнопка при нажатии на которую seller_goods_list_cover переходят в seller_goods_list_cover_3_state;
------ seller_goods_view_panel_buttons_4 - кнопка при нажатии на которую seller_goods_list_cover переходят в seller_goods_list_cover_4_state;
+----- seller_goods_view_panel_buttons_1 - кнопка при нажатии на которую seller_goods_list_cover переходят в seller_goods_list_cover_state1;
+----- seller_goods_view_panel_buttons_2 - кнопка при нажатии на которую seller_goods_list_cover переходят в seller_goods_list_cover_state2;
+----- seller_goods_view_panel_buttons_3 - кнопка при нажатии на которую seller_goods_list_cover переходят в seller_goods_list_cover_state3;
+----- seller_goods_view_panel_buttons_4 - кнопка при нажатии на которую seller_goods_list_cover переходят в seller_goods_list_cover_state4;
 --- seller_goods_view_bottom - контейнер находящийся под seller_goods_view_panel, по горизонтали заполянет все пространство seller_goods_view;
 ----- seller_goods_view_bottom_icon - иконка в виде стрелки направленной вниз, располагается по центру seller_goods_view_bottom.
 
@@ -373,49 +372,49 @@ s2) ┌┬──────[seller_goods_view                     ]  [section_l
 ║ • gesture: tap
 ║ occasion: нажатие на seller_goods_view_panel_buttons_1;
 ║ condition:
-║ - || - в витуации активного seller_goods_list_cover_2_state;
-║ - || - в витуации активного seller_goods_list_cover_3_state;
-║ - || - в витуации активного seller_goods_list_cover_4_state;
+║ - || - в ситуации активного seller_goods_list_cover_state2;
+║ - || - в ситуации активного seller_goods_list_cover_state3;
+║ - || - в ситуации активного seller_goods_list_cover_state4;
 ║ result:
 ║ - && - seller_goods_view_panel_buttons_1 меняет default_state на activated_state;
 ║ - && - seller_goods_view сворачивается переходя к seller_goods_view_wrapped_state;
-╙ - && - делается переход к seller_goods_list_cover_1_state.
+╙ - && - делается переход к seller_goods_list_cover_state1.
 • seller_goods_view_panel_buttons_2:
 ╠ valid / invalid
 ║ • gesture: tap
 ║ occasion: нажатие на seller_goods_view_panel_buttons_2;
 ║ condition:
-║ - || - в витуации активного seller_goods_list_cover_1_state;
-║ - || - в витуации активного seller_goods_list_cover_3_state;
-║ - || - в витуации активного seller_goods_list_cover_4_state;
+║ - || - в ситуации активного seller_goods_list_cover_state1;
+║ - || - в ситуации активного seller_goods_list_cover_state3;
+║ - || - в ситуации активного seller_goods_list_cover_state4;
 ║ result:
 ║ - && - seller_goods_view_panel_buttons_2 меняет default_state на activated_state;
 ║ - && - seller_goods_view сворачивается переходя к seller_goods_view_wrapped_state;
-╙ - && - делается переход к seller_goods_list_cover_2_state.
+╙ - && - делается переход к seller_goods_list_cover_state2.
 • seller_goods_view_panel_buttons_3:
 ╠ valid / invalid
 ║ • gesture: tap
 ║ occasion: нажатие на seller_goods_view_panel_buttons_3;
 ║ condition:
-║ - || - в витуации активного seller_goods_list_cover_1_state;
-║ - || - в витуации активного seller_goods_list_cover_2_state;
-║ - || - в витуации активного seller_goods_list_cover_4_state;
+║ - || - в ситуации активного seller_goods_list_cover_state1;
+║ - || - в ситуации активного seller_goods_list_cover_state2;
+║ - || - в ситуации активного seller_goods_list_cover_state4;
 ║ result:
 ║ - && - seller_goods_view_panel_buttons_3 меняет default_state на activated_state;
 ║ - && - seller_goods_view сворачивается переходя к seller_goods_view_wrapped_state;
-╙ - && - делается переход к seller_goods_list_cover_3_state.
+╙ - && - делается переход к seller_goods_list_cover_state3.
 • seller_goods_view_panel_buttons_4:
 ╠ valid / invalid
 ║ • gesture: tap
 ║ occasion: нажатие на seller_goods_view_panel_buttons_4;
 ║ condition:
-║ - || - в витуации активного seller_goods_list_cover_1_state;
-║ - || - в витуации активного seller_goods_list_cover_2_state;
-║ - || - в витуации активного seller_goods_list_cover_3_state;
+║ - || - в ситуации активного seller_goods_list_cover_state1;
+║ - || - в ситуации активного seller_goods_list_cover_state2;
+║ - || - в ситуации активного seller_goods_list_cover_state3;
 ║ result:
 ║ - && - seller_goods_view_panel_buttons_4 меняет default_state на activated_state;
 ║ - && - seller_goods_view сворачивается переходя к seller_goods_view_wrapped_state;
-╙ - && - делается переход к seller_goods_list_cover_4_state.
+╙ - && - делается переход к seller_goods_list_cover_state4.
 
 ✠ logics
 • mutually exclusive rule •
@@ -490,115 +489,113 @@ seller_goods_list_archive_state отображается в ситуации п�
 ■■■ seller_goods_list_cover
 
 seller_goods_list_cover обладает 4 состояниями:
-seller_goods_list_cover_1_state (активен по умолчанию);
-seller_goods_list_cover_2_state;
-seller_goods_list_cover_3_state;
-seller_goods_list_cover_4_state.
+seller_goods_list_cover_state1 (активен по умолчанию);
+seller_goods_list_cover_state2;
+seller_goods_list_cover_state3;
+seller_goods_list_cover_state4.
 
 
-■ ■ seller_goods_list_cover_1_state ■ ■
+■ ■ seller_goods_list_cover_state1 ■ ■
 
-В seller_goods_list_cover_1_state seller_goods_list_cover имеют максимальный размер из 4 state занимая по горизонтали всю доступную область экрана и порядка 20% по вертикали, где они выстраиваются друг за другом сверху-вниз по одному в один столбец, а также структуру из 3 панелей:
-- seller_goods_list_cover_front;
-- seller_goods_list_cover_lots;
-- seller_goods_list_cover_stat.
+В seller_goods_list_cover_state1 seller_goods_list_cover имеют максимальный размер из 4 state занимая по горизонтали всю доступную область экрана и порядка 20% по вертикали, где они выстраиваются друг за другом сверху-вниз по одному в один столбец, а также структуру из 3 панелей:
+- seller_goods_list_cover_state1_front;
+- seller_goods_list_cover_state1_lots;
+- seller_goods_list_cover_state1_stat.
 
 
-■ ■ seller_goods_list_cover_front
+■ ■ seller_goods_list_cover_state1_front
 
-seller_goods_list_cover_front - это вид карточки товара со стороны seller, является центральной панелью seller_goods_list_cover, вид на которую открывается по умолчанию каждый раз при открытии/возвращении к seller_goods_screen.
+seller_goods_list_cover_state1_front - это вид карточки товара со стороны seller, является центральной панелью seller_goods_list_cover_state1, вид на которую открывается по умолчанию каждый раз при открытии/возвращении к seller_goods_screen.
 
 ✠ tables
 
-                                           codename:                                   type:                designation:           location:  interaction:
-   ┌───────────[seller_goods_list_cover                                       ]  [component_lev1]                                   [ ✜ ✜ ]     [ yes ]
-   └┬─────┬────[seller_goods_list_cover_front                                 ]  [component_lev2]                                   [ ✜ ✜ ]     [ no  ]
-    │     └┬┬──[seller_goods_list_cover_front_top                             ]  [component_lev3]                                   [ 🡅 ✜ ]     [ no  ]
-    │      │└┬─[seller_goods_list_cover_front_top_number                      ]  [component_lev4]                                   [ ✜ 🡄 ]     [ no  ]
-    │      │ └ [seller_goods_list_cover_front_top_number_label                ]  [variable      ]  [ { number }                ]    [ ✜ ✜ ]     [ no  ]
-    │      └─┬─[seller_goods_list_cover_front_top_header                      ]  [component_lev4]                                   [ ✜ 🡆 ]     [ no  ]
-    │        ├ [seller_goods_list_cover_front_top_header_name                 ]  [variable      ]  [ { string }                ]    [ ✜ 🡄 ]     [ no  ]
-    │        └ [seller_goods_list_cover_front_top_header_description          ]  [variable      ]  [ { string }                ]    [ ✜ 🡆 ]     [ no  ]
-    └┬┬┬───────[seller_goods_list_cover_front_body                            ]  [component_lev3]                                   [ ✜ ✜ ]     [ no  ]
-     ││└┬┬┬────[seller_goods_list_cover_front_body_info                       ]  [component_lev4]                                   [ ✜ 🡄 ]     [ no  ]
-     ││ ││└┬┬──[seller_goods_list_cover_front_body_info_date                  ]  [component_lev5]                                   [ 🡅 ✜ ]     [ no  ]
-     ││ ││ │└┬─[seller_goods_list_cover_front_body_info_date_left             ]  [component_lev6]                                   [ ✜ 🡄 ]     [ no  ]
-     ││ ││ │ └ [seller_goods_list_cover_front_body_info_date_left_value       ]  [widget        ]  [ { number }                ]    [ ✜ ✜ ]     [ no  ]
-     ││ ││ └─┬─[seller_goods_list_cover_front_body_info_date_right            ]  [component_lev6]                                   [ ✜ 🡆 ]     [ no  ]
-     ││ ││   └ [seller_goods_list_cover_front_body_info_date_right_label      ]  [label         ]  [ "дата"                    ]    [ ✜ ✜ ]     [ no  ]
-     ││ │└─┬┬──[seller_goods_list_cover_front_body_info_price                 ]  [component_lev5]                                   [ ✜ ✜ ]     [ no  ]
-     ││ │  │└┬─[seller_goods_list_cover_front_body_info_price_left            ]  [component_lev6]                                   [ ✜ 🡄 ]     [ no  ]	 
-     ││ │  │ └ [seller_goods_list_cover_front_body_info_price_left_value      ]  [widget        ]  [ { number }                ]    [ ✜ ✜ ]     [ no  ]
-     ││ │  └─┬─[seller_goods_list_cover_front_body_info_price_right           ]  [component_lev6]                                   [ ✜ 🡆 ]     [ no  ]
-     ││ │    └ [seller_goods_list_cover_front_body_info_price_right_label     ]  [label         ]  [ "кг"                      ]    [ ✜ ✜ ]     [ no  ]
-     ││ └─┬┬┬──[seller_goods_list_cover_front_body_info_quantity              ]  [component_lev5]                                   [ 🡇 ✜ ]     [ no  ]
-     ││   ││└┬─[seller_goods_list_cover_front_body_info_quantity_minus        ]  [button        ]                                   [ ✜ 🡄 ]     [ yes ]
-     ││   ││ └ [seller_goods_list_cover_front_body_info_quantity_minus_icon   ]  [icon          ]                                   [ ✜ ✜ ]     [ yes ]
-     ││   │└─┬─[seller_goods_list_cover_front_body_info_quantity_widget       ]  [widget        ]                                   [ ✜ ✜ ]     [ no  ]
-     ││   │  └ [seller_goods_list_cover_front_body_info_quantity_widget_value ]  [variable      ]  [ { number }                ]    [ ✜ ✜ ]     [ no  ]
-     ││   └──┬─[seller_goods_list_cover_front_body_info_quantity_plus         ]  [button        ]                                   [ ✜ 🡆 ]     [ yes ]
-     ││      └ [seller_goods_list_cover_front_body_info_quantity_plus_icon    ]  [icon          ]                                   [ ✜ ✜ ]     [ yes ]
-     │└─────┬──[seller_goods_list_cover_front_body_img                        ]  [component_lev4]                                   [ ✜ ✜ ]     [ no  ]
-     │      └┬─[seller_goods_list_cover_front_body_img_frame                  ]  [picture+button]  [ { img }                   ]    [ ✜ ✜ ]     [ yes ]
-     │       └ [seller_goods_list_cover_front_body_img_frame_widget           ]  [widget        ]                                   [ 🡅 🡆 ]     [ yes ]
-     └────┬┬┬──[seller_goods_list_cover_front_body_control                    ]  [component_lev4]                                   [ ✜ 🡆 ]     [ no  ]
-          ││└┬─[seller_goods_list_cover_front_body_control_edit               ]  [button        ]                                   [ 🡅 ✜ ]     [ yes ]
-          ││ └ [seller_goods_list_cover_front_body_control_edit_label         ]  [label         ]  [ "редактор"                ]    [ ✜ ✜ ]     [ yes ]
-          │└─┬─[seller_goods_list_cover_front_body_control_book               ]  [button        ]                                   [ ✜ ✜ ]     [ yes ]
-          │  └ [seller_goods_list_cover_front_body_control_book_label         ]  [label         ]  [ "резерв"                  ]    [ ✜ ✜ ]     [ yes ]
-          └──┬─[seller_goods_list_cover_front_body_control_expo               ]  [button        ]                                   [ 🡇 ✜ ]     [ yes ]
-             └ [seller_goods_list_cover_front_body_control_expo_label         ]  [label         ]  [ "удалить"                 ]    [ ✜ ✜ ]     [ yes ]
-
-
+                                             codename:                                    type:                designation:           location:  interaction:
+ ┌───────────[seller_goods_list_cover_state1                                      ]  [component_lev1]                                   [ ✜ ✜ ]     [ yes ]
+ └┬─────┬────[seller_goods_list_cover_state1_front                                ]  [component_lev2]                                   [ ✜ ✜ ]     [ no  ]
+  │     └┬┬──[seller_goods_list_cover_state1_front_top                            ]  [component_lev3]                                   [ 🡅 ✜ ]     [ no  ]
+  │      │└┬─[seller_goods_list_cover_state1_front_top_number                     ]  [component_lev4]                                   [ ✜ 🡄 ]     [ no  ]
+  │      │ └ [seller_goods_list_cover_state1_front_top_number_value               ]  [variable      ]  [ { number }                ]    [ ✜ ✜ ]     [ no  ]
+  │      └─┬─[seller_goods_list_cover_state1_front_top_name                       ]  [component_lev4]                                   [ ✜ 🡆 ]     [ no  ]
+  │        ├ [seller_goods_list_cover_state1_front_top_name_value                 ]  [variable      ]  [ { string }                ]    [ ✜ 🡄 ]     [ no  ]
+  │        └ [seller_goods_list_cover_state1_front_top_name_description           ]  [variable      ]  [ { string }                ]    [ ✜ 🡆 ]     [ no  ]
+  └┬┬┬───────[seller_goods_list_cover_state1_front_body                           ]  [component_lev3]                                   [ ✜ ✜ ]     [ no  ]
+   ││└┬┬┬────[seller_goods_list_cover_state1_front_body_info                      ]  [component_lev4]                                   [ ✜ 🡄 ]     [ no  ]
+   ││ ││└┬┬──[seller_goods_list_cover_state1_front_body_info_date                 ]  [component_lev5]                                   [ 🡅 ✜ ]     [ no  ]
+   ││ ││ │└┬─[seller_goods_list_cover_state1_front_body_info_date_left            ]  [component_lev6]                                   [ ✜ 🡄 ]     [ no  ]
+   ││ ││ │ └ [seller_goods_list_cover_state1_front_body_info_date_left_value      ]  [widget        ]  [ { number }                ]    [ ✜ ✜ ]     [ no  ]
+   ││ ││ └─┬─[seller_goods_list_cover_state1_front_body_info_date_right           ]  [component_lev6]                                   [ ✜ 🡆 ]     [ no  ]
+   ││ ││   └ [seller_goods_list_cover_state1_front_body_info_date_right_label     ]  [label         ]  [ "дата"                    ]    [ ✜ ✜ ]     [ no  ]
+   ││ │└─┬┬──[seller_goods_list_cover_state1_front_body_info_price                ]  [component_lev5]                                   [ ✜ ✜ ]     [ no  ]
+   ││ │  │└┬─[seller_goods_list_cover_state1_front_body_info_price_left           ]  [component_lev6]                                   [ ✜ 🡄 ]     [ no  ]	 
+   ││ │  │ └ [seller_goods_list_cover_state1_front_body_info_price_left_value     ]  [widget        ]  [ { number }                ]    [ ✜ ✜ ]     [ no  ]
+   ││ │  └─┬─[seller_goods_list_cover_state1_front_body_info_price_right          ]  [component_lev6]                                   [ ✜ 🡆 ]     [ no  ]
+   ││ │    └ [seller_goods_list_cover_state1_front_body_info_price_right_label    ]  [label         ]  [ "кг"                      ]    [ ✜ ✜ ]     [ no  ]
+   ││ └─┬┬┬──[seller_goods_list_cover_state1_front_body_info_quantity             ]  [component_lev5]                                   [ 🡇 ✜ ]     [ no  ]
+   ││   ││└┬─[seller_goods_list_cover_state1_front_body_info_quantity_minus       ]  [button        ]                                   [ ✜ 🡄 ]     [ yes ]
+   ││   ││ └ [seller_goods_list_cover_state1_front_body_info_quantity_minus_icon  ]  [icon          ]                                   [ ✜ ✜ ]     [ yes ]
+   ││   │└─┬─[seller_goods_list_cover_state1_front_body_info_quantity_widget      ]  [widget        ]                                   [ ✜ ✜ ]     [ no  ]
+   ││   │  └ [seller_goods_list_cover_state1_front_body_info_quantity_widget_value]  [variable      ]  [ { number }                ]    [ ✜ ✜ ]     [ no  ]
+   ││   └──┬─[seller_goods_list_cover_state1_front_body_info_quantity_plus        ]  [button        ]                                   [ ✜ 🡆 ]     [ yes ]
+   ││      └ [seller_goods_list_cover_state1_front_body_info_quantity_plus_icon   ]  [icon          ]                                   [ ✜ ✜ ]     [ yes ]
+   │└─────┬──[seller_goods_list_cover_state1_front_body_img                       ]  [component_lev4]                                   [ ✜ ✜ ]     [ no  ]
+   │      └┬─[seller_goods_list_cover_state1_front_body_img_frame                 ]  [picture+button]  [ { img }                   ]    [ ✜ ✜ ]     [ yes ]
+   │       └ [seller_goods_list_cover_state1_front_body_img_frame_widget          ]  [widget        ]                                   [ 🡅 🡆 ]     [ yes ]
+   └────┬┬┬──[seller_goods_list_cover_state1_front_body_control                   ]  [component_lev4]                                   [ ✜ 🡆 ]     [ no  ]
+        ││└┬─[seller_goods_list_cover_state1_front_body_control_edit              ]  [button        ]                                   [ 🡅 ✜ ]     [ yes ]
+        ││ └ [seller_goods_list_cover_state1_front_body_control_edit_label        ]  [label         ]  [ "редактор"                ]    [ ✜ ✜ ]     [ yes ]
+        │└─┬─[seller_goods_list_cover_state1_front_body_control_book              ]  [button        ]                                   [ ✜ ✜ ]     [ yes ]
+        │  └ [seller_goods_list_cover_state1_front_body_control_book_label        ]  [label         ]  [ "резерв"                  ]    [ ✜ ✜ ]     [ yes ]
+        └──┬─[seller_goods_list_cover_state1_front_body_control_expo              ]  [button        ]                                   [ 🡇 ✜ ]     [ yes ]
+           └ [seller_goods_list_cover_state1_front_body_control_expo_label        ]  [label         ]  [ "удалить"                 ]    [ ✜ ✜ ]     [ yes ]
 
 ✠ details
-seller_goods_list_cover_front состоит из 2 основных компонентов: 
-- seller_goods_list_cover_front_top;
-- seller_goods_list_cover_front_body.
+seller_goods_list_cover_state1_front состоит из 2 основных компонентов: 
+- seller_goods_list_cover_state1_front_top;
+- seller_goods_list_cover_state1_front_body.
 
-- seller_goods_list_cover_front_top локализован в верхней его части в качестве блока занимающего всю ширину seller_goods_list_cover_front, а по высоте порядка 20% seller_goods_list_cover_front. Состоит из 2 компонентов:
-1)--- seller_goods_list_cover_front_top_number - представляет собой контейнер расположенный слева от seller_goods_list_cover_front_top_header, который занимает порядка 5-10% пространства seller_goods_list_cover_front_top и содержит seller_goods_list_cover_front_top_number_label; 
------ seller_goods_list_cover_front_top_number_label - переменная с числовым значением отображающая номер товара; 
-2)--- seller_goods_list_cover_front_top_header - является заголовком карточки товара состоящим из 2 элементов:
------ seller_goods_list_cover_front_top_header_name - переменная со строковым значением отвечающая за отображение seller_settings_goods_list_description_value, располагается слева от seller_goods_list_cover_front_top_header_description, обладает font-weight:bold и в зависимости от длины может занимать всю ширину seller_goods_list_cover_front_top;
------ seller_goods_list_cover_front_top_header_description - переменная со строковым значением отвечающая за отображение seller_settings_goods_list_name_value, располагается справа от seller_goods_list_cover_front_top_header_name, обладает font-weight:normal. seller_goods_list_cover_front_top_header_description помещается в двойные кавычки, где отображается начало содержания seller_goods_list_cover_front_top_header_description и размещается с отступом справа от seller_goods_list_cover_front_top_header_name. 
+- seller_goods_list_cover_state1_front_top локализован в верхней его части в качестве блока занимающего всю ширину seller_goods_list_cover_state1_front, а по высоте порядка 20% seller_goods_list_cover_state1_front. Состоит из 2 компонентов:
+1)--- seller_goods_list_cover_state1_front_top_number - представляет собой контейнер расположенный слева от seller_goods_list_cover_state1_front_top_name, который занимает порядка 5-10% пространства seller_goods_list_cover_state1_front_top и содержит seller_goods_list_cover_state1_front_top_number_value; 
+----- seller_goods_list_cover_state1_front_top_number_value - переменная с числовым значением отображающая порядковый номер товара согласно дате и времени его публикации, где последний опубликованный лот имеет seller_goods_list_cover_state1_front_top_number_value = 1;  
+2)--- seller_goods_list_cover_state1_front_top_name - является заголовком карточки товара состоящим из 2 элементов:
+----- seller_goods_list_cover_state1_front_top_name_value - переменная со строковым значением отвечающая за отображение seller_settings_goods_list_description_value, располагается слева от seller_goods_list_cover_state1_front_top_name_description, обладает font-weight:bold и в зависимости от длины может занимать всю ширину seller_goods_list_cover_state1_front_top;
+----- seller_goods_list_cover_state1_front_top_name_description - переменная со строковым значением отвечающая за отображение seller_settings_goods_list_name_value, располагается справа от seller_goods_list_cover_state1_front_top_name_value, обладает font-weight:normal. seller_goods_list_cover_state1_front_top_name_description помещается в двойные кавычки, где отображается начало содержания seller_goods_list_cover_state1_front_top_name_description и размещается с отступом справа от seller_goods_list_cover_state1_front_top_name_value. 
 
-- seller_goods_list_cover_front_body локализован в нижней его части (под seller_goods_list_cover_front_top) в качестве блока занимающего всю ширину seller_goods_list_cover_front, а по высоте порядка 80% seller_goods_list_cover_front. Состоит из 3 компонентов расположенных по горизонтали слева-направо (flex-direction: row):
-1)--- seller_goods_list_cover_front_body_info - расположен в левой его части seller_goods_list_cover_front_body, занимает 30-40% ширины seller_goods_list_cover_front. Состоит из 3 компонентов:
------ seller_goods_list_cover_front_body_info_date - представляет собой панель на которой отображается дата, находится в верхней части seller_goods_list_cover_front_body_info занимая порядка 30% его пространства по вертикали и все доступное пространство по горизонтали; 
-------- seller_goods_list_cover_front_body_info_date_left - контейнер расположенный в левой части тела seller_goods_list_cover_front_body_info_date занимая около 60% его размера по горизонтали, который вмещает выровненный по центру компонент seller_goods_list_cover_front_body_info_date_left_value;
---------- seller_goods_list_cover_front_body_info_date_left_value - переменная с числовым значением отображающая дату публикации товара по шаблону "DD.MM.YY"; 
-------- seller_goods_list_cover_front_body_info_date_right - контейнер расположенный в правой части тела seller_goods_list_cover_front_body_info_date занимая около 40% его размера по горизонтали, который вмещает выровненный по центру компонент seller_goods_list_cover_front_body_info_date_right_label;
---------- seller_goods_list_cover_front_body_info_date_right_label - константный текстовый элемент следующего содержания: "дата";
------ seller_goods_list_cover_front_body_info_price - представляет собой панель на которой отображается цена, находится в центральной части seller_goods_list_cover_front_body_info занимая порядка 30% его пространства по вертикали и все доступное пространство по горизонтали; 
-------- seller_goods_list_cover_front_body_info_price_left - контейнер расположенный в левой части тела seller_goods_list_cover_front_body_info_price занимая около 60% его размера по горизонтали, который вмещает выровненный по центру компонент seller_goods_list_cover_front_body_info_price_left_value;
---------- seller_goods_list_cover_front_body_info_price_left_value - переменная с числовым значением отображающая цену товара по шаблону: "seller_settings_goods_list_price_retail_value/seller_settings_goods_list_price_wholesale_value" - если указана розничная и оптовая цена;
+- seller_goods_list_cover_state1_front_body локализован в нижней его части (под seller_goods_list_cover_state1_front_top) в качестве блока занимающего всю ширину seller_goods_list_cover_state1_front, а по высоте порядка 80% seller_goods_list_cover_state1_front. Состоит из 3 компонентов расположенных по горизонтали слева-направо (flex-direction: row):
+1)--- seller_goods_list_cover_state1_front_body_info - расположен в левой его части seller_goods_list_cover_state1_front_body, занимает 30-40% ширины seller_goods_list_cover_state1_front. Состоит из 3 компонентов:
+----- seller_goods_list_cover_state1_front_body_info_date - представляет собой панель на которой отображается дата, находится в верхней части seller_goods_list_cover_state1_front_body_info занимая порядка 30% его пространства по вертикали и все доступное пространство по горизонтали; 
+------- seller_goods_list_cover_state1_front_body_info_date_left - контейнер расположенный в левой части тела seller_goods_list_cover_state1_front_body_info_date занимая около 60% его размера по горизонтали, который вмещает выровненный по центру компонент seller_goods_list_cover_state1_front_body_info_date_left_value;
+--------- seller_goods_list_cover_state1_front_body_info_date_left_value - переменная с числовым значением отображающая дату публикации товара по шаблону "DD.MM.YY"; 
+------- seller_goods_list_cover_state1_front_body_info_date_right - контейнер расположенный в правой части тела seller_goods_list_cover_state1_front_body_info_date занимая около 40% его размера по горизонтали, который вмещает выровненный по центру компонент seller_goods_list_cover_state1_front_body_info_date_right_label;
+--------- seller_goods_list_cover_state1_front_body_info_date_right_label - константный текстовый элемент следующего содержания: "дата";
+----- seller_goods_list_cover_state1_front_body_info_price - представляет собой панель на которой отображается цена, находится в центральной части seller_goods_list_cover_state1_front_body_info занимая порядка 30% его пространства по вертикали и все доступное пространство по горизонтали; 
+------- seller_goods_list_cover_state1_front_body_info_price_left - контейнер расположенный в левой части тела seller_goods_list_cover_state1_front_body_info_price занимая около 60% его размера по горизонтали, который вмещает выровненный по центру компонент seller_goods_list_cover_state1_front_body_info_price_left_value;
+--------- seller_goods_list_cover_state1_front_body_info_price_left_value - переменная с числовым значением отображающая цену товара по шаблону: "seller_settings_goods_list_price_retail_value/seller_settings_goods_list_price_wholesale_value" - если указана розничная и оптовая цена;
 "seller_settings_goods_list_price_retail_value" - если указана розничная цена;
 "seller_settings_goods_list_price_wholesale_value" - если указана оптовая цена;
-------- seller_goods_list_cover_front_body_info_price_right - контейнер расположенный в правой части тела seller_goods_list_cover_front_body_info_price занимая около 40% его размера по горизонтали, который вмещает выровненный по центру компонент seller_goods_list_cover_front_body_info_price_right_label;
---------- seller_goods_list_cover_front_body_info_price_right_label - константный текстовый элемент следующего содержания: "кг";
------ seller_goods_list_cover_front_body_info_quantity - представляет собой виджет количества товара и органами его управления, находится в нижней части seller_goods_list_cover_front_body_info занимая порядка 30% его пространства по вертикали и все доступное пространство по горизонтали; 
-------- seller_goods_list_cover_front_body_info_quantity_minus - является кнопкой расположенной в левой части seller_goods_list_cover_front_body_info_quantity;
---------- seller_goods_list_cover_front_body_info_quantity_minus_icon - иконка в виде символа старта проигрывателя с направлением налево и знаком "-" по центру;
-------- seller_goods_list_cover_front_body_info_quantity_widget - является виджетом в виде прямоугольного фрейма расположенного в центре seller_goods_list_cover_front_body_info_quantity, который посредством seller_goods_list_cover_front_body_info_quantity_widget_value отображает значение количества товара;
---------- seller_goods_list_cover_front_body_info_quantity_widget_value - имеет 2 режима работы:
-1) seller_goods_list_cover_front_body_info_quantity_widget_definite - если активирован seller_settings_goods_list_quantity_ctrl_definite, тогда seller_goods_list_cover_front_body_info_quantity_widget_value выводится в виде переменной с числовым значением;
-2) seller_goods_list_cover_front_body_info_quantity_widget_approx - если активирован seller_settings_goods_list_quantity_ctrl_approx, тогда seller_goods_list_cover_front_body_info_quantity_widget_value отображается в качестве иконки с трехступенчатой композицией баров и вариативной цветовой окраской в зависимости от состояния;
-------- seller_goods_list_cover_front_body_info_quantity_plus - является кнопкой расположенной в правой части seller_goods_list_cover_front_body_info_quantity;
---------- seller_goods_list_cover_front_body_info_quantity_plus_icon - иконка в виде символа старта проигрывателя с направлением направо и знаком "+" по центру;
-2)--- seller_goods_list_cover_front_body_img - локализован в центральной части seller_goods_list_cover_front_body (между seller_goods_list_cover_front_body_info и seller_goods_list_cover_front_body_control), занимает ~30% ширины seller_goods_list_cover_front_body и включает seller_goods_list_cover_front_body_img_frame;
------ seller_goods_list_cover_front_body_img_frame - является областью отображения seller_settings_goods_list_image_0, имеет равное соотношение сторон;
-------- seller_goods_list_cover_front_body_img_frame_widget - представляется в виде геометрического (треугольник/прямоугольник) элемента выполняющего роль виджета отображающего состояние (активность) seller_goods_list_cover_front располагаясь в верхней правой области seller_goods_list_cover_front_body_img_frame;
-3)--- seller_goods_list_cover_front_body_control - локализован в правой части seller_goods_list_cover_front_body, занимает ~30% ширины seller_goods_list_cover_front_body и состоит из 3 компонентов:
------ seller_goods_list_cover_front_body_control_edit - кнопка отвечающая за открытие seller_settings_goods_screen, в рамках seller_goods_list_cover_front_body_control локализован в верхней области;
-------- seller_goods_list_cover_front_body_control_edit_label - константный текстовый элемент seller_goods_list_cover_front_body_control_edit: "редактор";
------ seller_goods_list_cover_front_body_control_book - кнопка отвечающая за включение/выключение функции дающей buyer возможность зарезервировать товар по лоту, в рамках seller_goods_list_cover_front_body_control локализован в центральной области;
-------- seller_goods_list_cover_front_body_control_book_label - константный текстовый элемент seller_goods_list_cover_front_body_control_book: "резерв";
------ seller_goods_list_cover_front_body_control_expo - кнопка отвечающая за функцию удаления seller_goods_list_cover из seller_goods_screen (может находиться либо в состоянии removed, либо в состоянии existed), в рамках seller_goods_list_cover_front_body_control локализован в нижней области;
-------- seller_goods_list_cover_front_body_control_expo_label - константный текстовый элемент seller_goods_list_cover_front_body_control_book: "удалить".
+------- seller_goods_list_cover_state1_front_body_info_price_right - контейнер расположенный в правой части тела seller_goods_list_cover_state1_front_body_info_price занимая около 40% его размера по горизонтали, который вмещает выровненный по центру компонент seller_goods_list_cover_state1_front_body_info_price_right_label;
+--------- seller_goods_list_cover_state1_front_body_info_price_right_label - константный текстовый элемент следующего содержания: "кг";
+----- seller_goods_list_cover_state1_front_body_info_quantity - представляет собой виджет количества товара и органами его управления, находится в нижней части seller_goods_list_cover_state1_front_body_info занимая порядка 30% его пространства по вертикали и все доступное пространство по горизонтали; 
+------- seller_goods_list_cover_state1_front_body_info_quantity_minus - является кнопкой расположенной в левой части seller_goods_list_cover_state1_front_body_info_quantity;
+--------- seller_goods_list_cover_state1_front_body_info_quantity_minus_icon - иконка в виде символа старта проигрывателя с направлением налево и знаком "-" по центру;
+------- seller_goods_list_cover_state1_front_body_info_quantity_widget - является виджетом в виде прямоугольного фрейма расположенного в центре seller_goods_list_cover_state1_front_body_info_quantity, который посредством seller_goods_list_cover_state1_front_body_info_quantity_widget_value отображает значение количества товара;
+--------- seller_goods_list_cover_state1_front_body_info_quantity_widget_value - имеет 2 режима работы:
+- seller_goods_list_cover_state1_front_body_info_quantity_widget_definite - если активирован seller_settings_goods_list_quantity_ctrl_definite, тогда seller_goods_list_cover_state1_front_body_info_quantity_widget_value выводится в виде переменной с числовым значением;
+- seller_goods_list_cover_state1_front_body_info_quantity_widget_approx - если активирован seller_settings_goods_list_quantity_ctrl_approx, тогда seller_goods_list_cover_state1_front_body_info_quantity_widget_value отображается в качестве иконки с трехступенчатой композицией баров и вариативной цветовой окраской в зависимости от состояния;
+------- seller_goods_list_cover_state1_front_body_info_quantity_plus - является кнопкой расположенной в правой части seller_goods_list_cover_state1_front_body_info_quantity;
+--------- seller_goods_list_cover_state1_front_body_info_quantity_plus_icon - иконка в виде символа старта проигрывателя с направлением направо и знаком "+" по центру;
+2)--- seller_goods_list_cover_state1_front_body_img - локализован в центральной части seller_goods_list_cover_state1_front_body (между seller_goods_list_cover_state1_front_body_info и seller_goods_list_cover_state1_front_body_control), занимает ~30% ширины seller_goods_list_cover_state1_front_body и включает seller_goods_list_cover_state1_front_body_img_frame;
+----- seller_goods_list_cover_state1_front_body_img_frame - является областью отображения seller_settings_goods_list_image_0, имеет равное соотношение сторон;
+------- seller_goods_list_cover_state1_front_body_img_frame_widget - представляется в виде геометрического (треугольник/прямоугольник) элемента выполняющего роль виджета отображающего состояние (активность) seller_goods_list_cover_state1_front располагаясь в верхней правой области seller_goods_list_cover_state1_front_body_img_frame;
+3)--- seller_goods_list_cover_state1_front_body_control - локализован в правой части seller_goods_list_cover_state1_front_body, занимает ~30% ширины seller_goods_list_cover_state1_front_body и состоит из 3 компонентов:
+----- seller_goods_list_cover_state1_front_body_control_edit - кнопка отвечающая за открытие seller_settings_goods_screen, в рамках seller_goods_list_cover_state1_front_body_control локализован в верхней области;
+------- seller_goods_list_cover_state1_front_body_control_edit_label - константный текстовый элемент seller_goods_list_cover_state1_front_body_control_edit: "редактор";
+----- seller_goods_list_cover_state1_front_body_control_book - кнопка отвечающая за включение/выключение функции дающей buyer возможность зарезервировать товар по лоту, в рамках seller_goods_list_cover_state1_front_body_control локализован в центральной области;
+------- seller_goods_list_cover_state1_front_body_control_book_label - константный текстовый элемент seller_goods_list_cover_state1_front_body_control_book: "резерв";
+----- seller_goods_list_cover_state1_front_body_control_expo - кнопка отвечающая за функцию удаления seller_goods_list_cover_state1 из seller_goods_screen (может находиться либо в состоянии removed, либо в состоянии existed), в рамках seller_goods_list_cover_state1_front_body_control локализован в нижней области;
+------- seller_goods_list_cover_state1_front_body_control_expo_label - константный текстовый элемент seller_goods_list_cover_state1_front_body_control_book: "удалить".
 
 ✠ logics
-Нормативы отображения для seller_goods_list_cover_front_body_info_quantity_widget_definite: 
+Нормативы отображения для seller_goods_list_cover_state1_front_body_info_quantity_widget_definite: 
 - целые числа отображаются о 1 до 999;
 - числа > 999 отображаются с использовании аббревиатуры;
 - числа > 999 отображаются с округлением;
@@ -607,155 +604,164 @@ seller_goods_list_cover_front состоит из 2 основных компо�
 - число 1000000000 отображается как 1B;
 - числа > 1000000000 отображаются как 1B+.
 
-Нормативы отображения для seller_goods_list_cover_front_body_info_quantity_widget_approx:
-seller_goods_list_cover_front_body_info_quantity_widget_approx может находиться в трех состояниях визуально выражаемых через цветовую дифференциацию:
-seller_goods_list_cover_front_body_info_quantity_widget_approx = sold;
-seller_goods_list_cover_front_body_info_quantity_widget_approx = low;
-seller_goods_list_cover_front_body_info_quantity_widget_approx = norm;
-seller_goods_list_cover_front_body_info_quantity_widget_approx = high.
+Нормативы отображения для seller_goods_list_cover_state1_front_body_info_quantity_widget_approx:
+seller_goods_list_cover_state1_front_body_info_quantity_widget_approx может находиться в трех состояниях визуально выражаемых через цветовую дифференциацию:
+seller_goods_list_cover_state1_front_body_info_quantity_widget_approx = sold;
+seller_goods_list_cover_state1_front_body_info_quantity_widget_approx = low;
+seller_goods_list_cover_state1_front_body_info_quantity_widget_approx = norm;
+seller_goods_list_cover_state1_front_body_info_quantity_widget_approx = high.
 
 ✠ actions
-• seller_goods_list_cover:
+• seller_goods_list_cover_state1:
 ╠ valid / invalid
 ║ • gesture: swipe right
 ║ occasion: делается свайп вправо;
-║ condition: в рамках seller_goods_list_cover_front;
-║ result: seller_goods_list_cover_front уходит направо и скрывается, а на его место помещается seller_goods_list_cover_lots;
+║ condition: в рамках seller_goods_list_cover_state1_front;
+║ result: seller_goods_list_cover_state1_front уходит направо и скрывается, а на его место помещается seller_goods_list_cover_state1_lots;
 ║ • gesture: swipe left  
 ║ occasion: делается свайп влево;
-║ condition: в рамках seller_goods_list_cover_front;
-╙ result: seller_goods_list_cover_front уходит налево и скрывается, а на его место помещается seller_goods_list_cover_stat.
-• seller_goods_list_cover_front_body_control_edit:
+║ condition: в рамках seller_goods_list_cover_state1_front;
+╙ result: seller_goods_list_cover_state1_front уходит налево и скрывается, а на его место помещается seller_goods_list_cover_state1_stat.
+• seller_goods_list_cover_state1_front_body_control_edit:
 ╠ valid / invalid
 ║ • gesture: tap
-║ occasion: нажатие seller_goods_list_cover_front_body_control_edit;
+║ occasion: нажатие seller_goods_list_cover_state1_front_body_control_edit;
 ║ condition: in any situation;
 ╙ result: открывается seller_settings_goods_screen целевого лота.
-• seller_goods_list_cover_front_body_control_book:
+• seller_goods_list_cover_state1_front_body_control_book:
 ╠ valid / invalid
 ║ • gesture: tap
-║ occasion: нажатие seller_goods_list_cover_front_body_control_book;
+║ occasion: нажатие seller_goods_list_cover_state1_front_body_control_book;
 ║ condition: seller_goods_book_function=off;
 ║ result: происходит переключение в режим seller_goods_book_function=on, при котором buyer может зарезервировать товар по целевому лоту.
 ║ • gesture: tap
-║ occasion: нажатие seller_goods_list_cover_front_body_control_book;
+║ occasion: нажатие seller_goods_list_cover_state1_front_body_control_book;
 ║ condition: seller_goods_book_function=on;
 ╙ result: происходит переключение в режим seller_goods_book_function=off, при котором buyer не может зарезервировать товар по целевому лоту.
-• seller_goods_list_cover_front_body_control_expo:
+• seller_goods_list_cover_state1_front_body_control_expo:
 ╠ valid / invalid
 ║ • gesture: tap 
-║ occasion: нажатие seller_goods_list_cover_front_body_control_expo;
+║ occasion: нажатие seller_goods_list_cover_state1_front_body_control_expo;
 ║ condition: in any situation;
 ║ result: 
 ║ - && - целевой лот удаляется из seller_goods_list_normal_state;
-║ - && - демонстрируется анимация, как seller_goods_list_cover уменьшаясь движется вверх и достигая seller_goods_searchlot_archive исчезает;
-╙ - && - целевой лот добавляется в seller_goods_list_archive_state.
-• seller_goods_list_cover_front_body_img_frame:
+║ - && - демонстрируется анимация, как seller_goods_list_cover_state1 уменьшаясь движется вверх и достигая seller_goods_searchlot_archive исчезает;
+║ - && - целевой лот добавляется в seller_goods_list_archive_state.
+╙ - && - seller_goods_list перестраивается, когда место и seller_goods_list_cover_state1_front_top_number_value удаленного лота занимает последующий лот (имеющий значение seller_goods_list_cover_state1_front_top_number_value + 1 относительно seller_goods_list_cover_state1_front_top_number_value удаленного лота);
+• seller_goods_list_cover_state1_front_body_img_frame:
 ╠ valid
 ║ • gesture: tap
-║ occasion: нажатие в область seller_goods_list_cover_front_body_img_frame;
-║ condition: если seller_settings_goods_list_image_value >= 1;
-║ result: seller_goods_list_cover_front_body_img_frame увеличивается на весь экран выравниваясь по горизонтали.
+║ occasion: нажатие в область seller_goods_list_cover_state1_front_body_img_frame;
+║ condition:
+║ - && - если seller_settings_goods_list_image_value >= 1;
+║ - && - если seller_goods_list_cover_state1_front_body_img_frame находится в режиме zoom=normal;
+║ result: seller_goods_list_cover_state1_front_body_img_frame увеличивается на весь экран выравниваясь по горизонтали (width: 100%).
+║ • gesture: tap
+║ occasion: нажатие в область seller_goods_list_cover_state1_front_body_img_frame;
+║ condition:
+║ - && - если seller_settings_goods_list_image_value >= 1;
+║ - && - если seller_goods_list_cover_state1_front_body_img_frame находится в режиме zoom=max (растянуто на весь экран);
+║ result: seller_goods_list_cover_state1_front_body_img_frame уменьшается до обычного размера zoom=normal.
 ╠ invalid
 ║ • gesture: tap
-║ occasion: нажатие в область seller_goods_list_cover_front_body_img_frame;
+║ occasion: нажатие в область seller_goods_list_cover_state1_front_body_img_frame;
 ║ condition: если seller_settings_goods_list_image_value < 1;
-╙ result: seller_goods_list_cover_front_body_img_frame не реагирует на нажатие.
-• seller_goods_list_cover_front_body_info_quantity_plus
+╙ result: seller_goods_list_cover_state1_front_body_img_frame не реагирует на нажатие.
+• seller_goods_list_cover_state1_front_body_info_quantity_plus
 ╠ valid
 ║ • gesture: tap
-║ : seller_goods_list_cover_front_body_info_quantity_widget_definite
-║ occasion: нажатие seller_goods_list_cover_front_body_info_quantity_plus;
-║ condition: если seller_goods_list_cover_front_body_info_quantity_widget_definite >= 0 || <= 999999999;
-║ result: seller_goods_list_cover_front_body_info_quantity_widget_definite++.
-║ : seller_goods_list_cover_front_body_info_quantity_widget_approx
-║ occasion: нажатие seller_goods_list_cover_front_body_info_quantity_plus;
-║ condition: если seller_goods_list_cover_front_body_info_quantity_widget_approx = low;
-║ result: seller_goods_list_cover_front_body_info_quantity_widget_approx = norm.
-║ : seller_goods_list_cover_front_body_info_quantity_widget_approx = norm
-║ occasion: нажатие seller_goods_list_cover_front_body_info_quantity_plus;
-║ condition: если seller_goods_list_cover_front_body_info_quantity_widget_approx = norm;
-║ result: seller_goods_list_cover_front_body_info_quantity_widget_approx = high.
+║ : seller_goods_list_cover_state1_front_body_info_quantity_widget_definite
+║ occasion: нажатие seller_goods_list_cover_state1_front_body_info_quantity_plus;
+║ condition: если seller_goods_list_cover_state1_front_body_info_quantity_widget_definite >= 0 || <= 999999999;
+║ result: seller_goods_list_cover_state1_front_body_info_quantity_widget_definite++.
+║ : seller_goods_list_cover_state1_front_body_info_quantity_widget_approx
+║ occasion: нажатие seller_goods_list_cover_state1_front_body_info_quantity_plus;
+║ condition: если seller_goods_list_cover_state1_front_body_info_quantity_widget_approx = low;
+║ result: seller_goods_list_cover_state1_front_body_info_quantity_widget_approx = norm.
+║ : seller_goods_list_cover_state1_front_body_info_quantity_widget_approx = norm
+║ occasion: нажатие seller_goods_list_cover_state1_front_body_info_quantity_plus;
+║ condition: если seller_goods_list_cover_state1_front_body_info_quantity_widget_approx = norm;
+║ result: seller_goods_list_cover_state1_front_body_info_quantity_widget_approx = high.
 ╠ invalid
 ║ • gesture: tap
-║ : seller_goods_list_cover_front_body_info_quantity_widget_definite
-║ occasion: нажатие seller_goods_list_cover_front_body_info_quantity_plus;
-║ condition: если seller_goods_list_cover_front_body_info_quantity_widget_definite < 0 || > 999999999;
-║ result: seller_goods_list_cover_front_body_info_quantity_plus не реагирует на нажатие.
-║ : seller_goods_list_cover_front_body_info_quantity_widget_approx
-║ occasion: нажатие seller_goods_list_cover_front_body_info_quantity_plus;
-║ condition: если seller_goods_list_cover_front_body_info_quantity_widget_approx = high;
-╙ result: seller_goods_list_cover_front_body_info_quantity_plus не реагирует на нажатие.
-• seller_goods_list_cover_front_body_info_quantity_minus:
+║ : seller_goods_list_cover_state1_front_body_info_quantity_widget_definite
+║ occasion: нажатие seller_goods_list_cover_state1_front_body_info_quantity_plus;
+║ condition: если seller_goods_list_cover_state1_front_body_info_quantity_widget_definite < 0 || > 999999999;
+║ result: seller_goods_list_cover_state1_front_body_info_quantity_plus не реагирует на нажатие.
+║ : seller_goods_list_cover_state1_front_body_info_quantity_widget_approx
+║ occasion: нажатие seller_goods_list_cover_state1_front_body_info_quantity_plus;
+║ condition: если seller_goods_list_cover_state1_front_body_info_quantity_widget_approx = high;
+╙ result: seller_goods_list_cover_state1_front_body_info_quantity_plus не реагирует на нажатие.
+• seller_goods_list_cover_state1_front_body_info_quantity_minus:
 ╠ valid
 ║ • gesture: tap
-║ : seller_goods_list_cover_front_body_info_quantity_widget_definite
-║ occasion: нажатие seller_goods_list_cover_front_body_info_quantity_minus;
-║ condition: если seller_goods_list_cover_front_body_info_quantity_widget_definite >= 2 || <= 1000000000;
-║ result: seller_goods_list_cover_front_body_info_quantity_widget_definite-- (-1).
-║ : seller_goods_list_cover_front_body_info_quantity_widget_definite
-║ occasion: нажатие seller_goods_list_cover_front_body_info_quantity_minus;
-║ condition: если seller_goods_list_cover_front_body_info_quantity_widget_definite = 1;
+║ : seller_goods_list_cover_state1_front_body_info_quantity_widget_definite
+║ occasion: нажатие seller_goods_list_cover_state1_front_body_info_quantity_minus;
+║ condition: если seller_goods_list_cover_state1_front_body_info_quantity_widget_definite >= 2 || <= 1000000000;
+║ result: seller_goods_list_cover_state1_front_body_info_quantity_widget_definite-- (-1).
+║ : seller_goods_list_cover_state1_front_body_info_quantity_widget_definite
+║ occasion: нажатие seller_goods_list_cover_state1_front_body_info_quantity_minus;
+║ condition: если seller_goods_list_cover_state1_front_body_info_quantity_widget_definite = 1;
 ║ result: 
-║ && - seller_goods_list_cover_front_body_info_quantity_widget_definite--;
-║ && - по центру экрана всплывает seller_goods_list_cover_front_body_info_quantity_popover.
-║ : seller_goods_list_cover_front_body_info_quantity_widget_approx = high
-║ occasion: нажатие seller_goods_list_cover_front_body_info_quantity_minus;
-║ condition: если seller_goods_list_cover_front_body_info_quantity_widget_approx = high;
-║ result: seller_goods_list_cover_front_body_info_quantity_widget_approx = norm.
-║ : seller_goods_list_cover_front_body_info_quantity_widget_approx = norm
-║ occasion: нажатие seller_goods_list_cover_front_body_info_quantity_minus;
-║ condition: если seller_goods_list_cover_front_body_info_quantity_widget_approx = norm;
-║ result: seller_goods_list_cover_front_body_info_quantity_widget_approx = low.
-║ : seller_goods_list_cover_front_body_info_quantity_widget_approx = low
-║ occasion: нажатие seller_goods_list_cover_front_body_info_quantity_minus;
-║ condition: если seller_goods_list_cover_front_body_info_quantity_widget_approx = low;
+║ && - seller_goods_list_cover_state1_front_body_info_quantity_widget_definite--;
+║ && - по центру экрана всплывает seller_goods_list_cover_state1_front_body_info_quantity_popover.
+║ : seller_goods_list_cover_state1_front_body_info_quantity_widget_approx = high
+║ occasion: нажатие seller_goods_list_cover_state1_front_body_info_quantity_minus;
+║ condition: если seller_goods_list_cover_state1_front_body_info_quantity_widget_approx = high;
+║ result: seller_goods_list_cover_state1_front_body_info_quantity_widget_approx = norm.
+║ : seller_goods_list_cover_state1_front_body_info_quantity_widget_approx = norm
+║ occasion: нажатие seller_goods_list_cover_state1_front_body_info_quantity_minus;
+║ condition: если seller_goods_list_cover_state1_front_body_info_quantity_widget_approx = norm;
+║ result: seller_goods_list_cover_state1_front_body_info_quantity_widget_approx = low.
+║ : seller_goods_list_cover_state1_front_body_info_quantity_widget_approx = low
+║ occasion: нажатие seller_goods_list_cover_state1_front_body_info_quantity_minus;
+║ condition: если seller_goods_list_cover_state1_front_body_info_quantity_widget_approx = low;
 ║ result: 
-║ && - seller_goods_list_cover_front_body_info_quantity_widget_approx = sold;
-║ && - по центру экрана всплывает seller_goods_list_cover_front_body_info_quantity_popover.
+║ && - seller_goods_list_cover_state1_front_body_info_quantity_widget_approx = sold;
+║ && - по центру экрана всплывает seller_goods_list_cover_state1_front_body_info_quantity_popover.
 ╠ invalid
 ║ • gesture: tap
-║ : seller_goods_list_cover_front_body_info_quantity_widget_definite
-║ occasion: нажатие seller_goods_list_cover_front_body_info_quantity_minus;
-║ condition: если seller_goods_list_cover_front_body_info_quantity_widget_definite <= 0 || > 1000000000;
-║ result: seller_goods_list_cover_front_body_info_quantity_minus не реагирует на нажатие.
-║ : seller_goods_list_cover_front_body_info_quantity_widget_approx
-║ occasion: нажатие seller_goods_list_cover_front_body_info_quantity_minus;
-║ condition: если seller_goods_list_cover_front_body_info_quantity_widget_approx = sold;
-╙ result: seller_goods_list_cover_front_body_info_quantity_minus не реагирует на нажатие.
+║ : seller_goods_list_cover_state1_front_body_info_quantity_widget_definite
+║ occasion: нажатие seller_goods_list_cover_state1_front_body_info_quantity_minus;
+║ condition: если seller_goods_list_cover_state1_front_body_info_quantity_widget_definite <= 0 || > 1000000000;
+║ result: seller_goods_list_cover_state1_front_body_info_quantity_minus не реагирует на нажатие.
+║ : seller_goods_list_cover_state1_front_body_info_quantity_widget_approx
+║ occasion: нажатие seller_goods_list_cover_state1_front_body_info_quantity_minus;
+║ condition: если seller_goods_list_cover_state1_front_body_info_quantity_widget_approx = sold;
+╙ result: seller_goods_list_cover_state1_front_body_info_quantity_minus не реагирует на нажатие.
 
 ✠ color_states
 ┌─
-│seller_goods_list_cover_front  
+│seller_goods_list_cover_state1_front  
 │---------------------------
-│⟪⟪ border ⟫⟫ 
+│⟪⟪ body ⟫⟫ 
 │--------
 │• color0
 │------ in any situation
 └─
 ┌─
-│seller_goods_list_cover_front_top_header
-│seller_goods_list_cover_front_body_info_date_left
-│seller_goods_list_cover_front_body_info_price_left
+│seller_goods_list_cover_state1_front_top_name
+│seller_goods_list_cover_state1_front_body_info_date_left
+│seller_goods_list_cover_state1_front_body_info_price_left
 │---------------------------
-│⟪⟪ border ⟫⟫ 
+│⟪⟪ body ⟫⟫ 
 │--------
 │• color2
 │------ in any situation
 └─
 ┌─
-│seller_goods_list_cover_front_top_number
-│seller_goods_list_cover_front_body_info_date_right
-│seller_goods_list_cover_front_body_info_price_right
-│seller_goods_list_cover_front_body_img_frame
+│seller_goods_list_cover_state1_front_top_number
+│seller_goods_list_cover_state1_front_body_info_date_right
+│seller_goods_list_cover_state1_front_body_info_price_right
+│seller_goods_list_cover_state1_front_body_img_frame
 │---------------------------
-│⟪⟪ border ⟫⟫ 
+│⟪⟪ body ⟫⟫ 
 │--------
 │• color4
 │------ in any situation
 └─
 ┌─
-│seller_goods_list_cover_front_body_img_frame_widget  
+│seller_goods_list_cover_state1_front_body_img_frame_widget  
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -763,35 +769,35 @@ seller_goods_list_cover_front_body_info_quantity_widget_approx = high.
 │------ in any situation
 └─
 ┌─
-│seller_goods_list_cover_front_body_info_quantity_widget_approx  
-│seller_goods_list_cover_front_body_info_quantity_widget_definite
+│seller_goods_list_cover_state1_front_body_info_quantity_widget_approx  
+│seller_goods_list_cover_state1_front_body_info_quantity_widget_definite
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color2
-│------ для seller_goods_list_cover_front_body_info_quantity_widget_approx = sold
-│------ для seller_goods_list_cover_front_body_info_quantity_widget_definite = 0
+│------ для seller_goods_list_cover_state1_front_body_info_quantity_widget_approx = sold
+│------ для seller_goods_list_cover_state1_front_body_info_quantity_widget_definite = 0
 ├────────
 │• color3
-│------ для seller_goods_list_cover_front_body_info_quantity_widget_approx = low
-│------ для seller_goods_list_cover_front_body_info_quantity_widget_definite: 
-│ если seller_goods_list_cover_front_body_info_quantity_widget_definite > 0% || <= 10% значения seller_settings_goods_list_quantity_value
+│------ для seller_goods_list_cover_state1_front_body_info_quantity_widget_approx = low
+│------ для seller_goods_list_cover_state1_front_body_info_quantity_widget_definite: 
+│ если seller_goods_list_cover_state1_front_body_info_quantity_widget_definite > 0% || <= 10% значения seller_settings_goods_list_quantity_value
 ├────────
 │• color6
-│------ для seller_goods_list_cover_front_body_info_quantity_widget_approx = norm
-│------ для seller_goods_list_cover_front_body_info_quantity_widget_definite: 
-│ если seller_goods_list_cover_front_body_info_quantity_widget_definite > 10% || <= 50% значения seller_settings_goods_list_quantity_value
+│------ для seller_goods_list_cover_state1_front_body_info_quantity_widget_approx = norm
+│------ для seller_goods_list_cover_state1_front_body_info_quantity_widget_definite: 
+│ если seller_goods_list_cover_state1_front_body_info_quantity_widget_definite > 10% || <= 50% значения seller_settings_goods_list_quantity_value
 ├────────
 │• color1
-│------ для seller_goods_list_cover_front_body_info_quantity_widget_approx = high
-│------ для seller_goods_list_cover_front_body_info_quantity_widget_definite: 
-│ если seller_goods_list_cover_front_body_info_quantity_widget_definite > 50% || <= 100% значения seller_settings_goods_list_quantity_value
+│------ для seller_goods_list_cover_state1_front_body_info_quantity_widget_approx = high
+│------ для seller_goods_list_cover_state1_front_body_info_quantity_widget_definite: 
+│ если seller_goods_list_cover_state1_front_body_info_quantity_widget_definite > 50% || <= 100% значения seller_settings_goods_list_quantity_value
 └─
 ┌─
-│seller_goods_list_cover_front_body_info_quantity_minus
-│seller_goods_list_cover_front_body_info_quantity_plus
-│seller_goods_list_cover_front_body_control_edit
-│seller_goods_list_cover_front_body_control_expo
+│seller_goods_list_cover_state1_front_body_info_quantity_minus
+│seller_goods_list_cover_state1_front_body_info_quantity_plus
+│seller_goods_list_cover_state1_front_body_control_edit
+│seller_goods_list_cover_state1_front_body_control_expo
 │-------------------------------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -802,7 +808,7 @@ seller_goods_list_cover_front_body_info_quantity_widget_approx = high.
 │------ in pressing_state
 └─
 ┌─
-│seller_goods_list_cover_front_body_control_book
+│seller_goods_list_cover_state1_front_body_control_book
 │-------------------------------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -813,16 +819,16 @@ seller_goods_list_cover_front_body_info_quantity_widget_approx = high.
 │------ in pressing_state (seller_goods_book_function=on)
 └─
 ┌─
-│seller_goods_list_cover_front_top_number_label
-│seller_goods_list_cover_front_top_header_name
-│seller_goods_list_cover_front_top_header_description
-│seller_goods_list_cover_front_body_info_date_left_value
-│seller_goods_list_cover_front_body_info_date_right_label
-│seller_goods_list_cover_front_body_info_price_left_value
-│seller_goods_list_cover_front_body_info_price_right_label
-│seller_goods_list_cover_front_body_control_edit_label
-│seller_goods_list_cover_front_body_control_book_label
-│seller_goods_list_cover_front_body_control_expo_label
+│seller_goods_list_cover_state1_front_top_number_value
+│seller_goods_list_cover_state1_front_top_name_value
+│seller_goods_list_cover_state1_front_top_name_description
+│seller_goods_list_cover_state1_front_body_info_date_left_value
+│seller_goods_list_cover_state1_front_body_info_date_right_label
+│seller_goods_list_cover_state1_front_body_info_price_left_value
+│seller_goods_list_cover_state1_front_body_info_price_right_label
+│seller_goods_list_cover_state1_front_body_control_edit_label
+│seller_goods_list_cover_state1_front_body_control_book_label
+│seller_goods_list_cover_state1_front_body_control_expo_label
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -831,110 +837,97 @@ seller_goods_list_cover_front_body_info_quantity_widget_approx = high.
 └─
 
 
-■ ■ seller_goods_list_cover_lots
+■ ■ seller_goods_list_cover_state1_lots
 
-seller_goods_list_cover_lots представляет собой виджет партий товара, является левой панелью seller_goods_list_cover, вид на которую открывается при свайпе вправо.
+seller_goods_list_cover_state1_lots представляет собой виджет партий товара, является левой панелью seller_goods_list_cover_state1, вид на которую открывается при свайпе вправо.
 
 ✠ tables
 
                                   codename:                          type:                designation:           location:  interaction:
-     ┌─────[seller_goods_list_cover                         ]  [component_lev1]                                   [ ✜ ✜ ]     [ yes ]
-     └┬┬┬──[seller_goods_list_cover_lots                    ]  [component_lev2]                                   [ ✜ ✜ ]     [ no  ]
-      ││└┬─[seller_goods_list_cover_lots_top                ]  [spreadsheet   ]                                   [ 🡅 ✜ ]     [ no  ]
-      ││ ├ [seller_goods_list_cover_lots_top_number         ]  [label         ]  [ "#"                       ]    [ ✜ 🡄 ]     [ no  ]
-      ││ ├ [seller_goods_list_cover_lots_top_entry          ]  [label         ]  [ "поступление"             ]    [ ✜ ✜ ]     [ no  ]
-      ││ ├ [seller_goods_list_cover_lots_top_quantity       ]  [label         ]  [ "количество"              ]    [ ✜ ✜ ]     [ no  ]
-      ││ ├ [seller_goods_list_cover_lots_top_balance        ]  [label         ]  [ "остаток"                 ]    [ ✜ ✜ ]     [ no  ]
-      ││ └ [seller_goods_list_cover_lots_top_expiration     ]  [label         ]  [ "годен до"                ]    [ ✜ 🡆 ]     [ no  ]
-      │└┬──[seller_goods_list_cover_lots_list               ]  [spreadsheet   ]                                   [ ✜ ✜ ]     [ no  ]
-      │ └┬─[seller_goods_list_cover_lots_list_lot           ]  [component_lev4]                                   [ ✜ ✜ ]     [ yes ]
-      │  ├ [seller_goods_list_cover_lots_list_lot_number    ]  [variable      ]  [ { number }                ]    [ ✜ 🡄 ]     [ yes ]
-      │  ├ [seller_goods_list_cover_lots_list_lot_entry     ]  [variable      ]  [ { number }                ]    [ ✜ ✜ ]     [ yes ]
-      │  ├ [seller_goods_list_cover_lots_list_lot_quantity  ]  [variable      ]  [ { string }                ]    [ ✜ ✜ ]     [ yes ]
-      │  ├ [seller_goods_list_cover_lots_list_lot_balance   ]  [variable      ]  [ { string }                ]    [ ✜ ✜ ]     [ yes ]
-      │  └ [seller_goods_list_cover_lots_list_lot_expiration]  [variable      ]  [ { number }                ]    [ ✜ 🡆 ]     [ yes ]
-      └──┬─[seller_goods_list_cover_lots_button             ]  [button        ]                                   [ 🡇 ✜ ]     [ yes ]
-	     └ [seller_goods_list_cover_lots_button_label       ]  [label         ]  [ "добавить партию"         ]    [ ✜ ✜ ]     [ yes ]
+     ┌─────[seller_goods_list_cover_state1                         ]  [component_lev1]                                   [ ✜ ✜ ]     [ yes ]
+     └┬┬┬──[seller_goods_list_cover_state1_lots                    ]  [component_lev2]                                   [ ✜ ✜ ]     [ no  ]
+      ││└┬─[seller_goods_list_cover_state1_lots_top                ]  [spreadsheet   ]                                   [ 🡅 ✜ ]     [ no  ]
+      ││ ├ [seller_goods_list_cover_state1_lots_top_number         ]  [label         ]  [ "#"                       ]    [ ✜ 🡄 ]     [ no  ]
+      ││ ├ [seller_goods_list_cover_state1_lots_top_entry          ]  [label         ]  [ "поступление"             ]    [ ✜ ✜ ]     [ no  ]
+      ││ ├ [seller_goods_list_cover_state1_lots_top_quantity       ]  [label         ]  [ "количество"              ]    [ ✜ ✜ ]     [ no  ]
+      ││ ├ [seller_goods_list_cover_state1_lots_top_balance        ]  [label         ]  [ "остаток"                 ]    [ ✜ ✜ ]     [ no  ]
+      ││ └ [seller_goods_list_cover_state1_lots_top_expiration     ]  [label         ]  [ "годен до"                ]    [ ✜ 🡆 ]     [ no  ]
+      │└┬──[seller_goods_list_cover_state1_lots_list               ]  [spreadsheet   ]                                   [ ✜ ✜ ]     [ no  ]
+      │ └┬─[seller_goods_list_cover_state1_lots_list_lot           ]  [component_lev4]                                   [ ✜ ✜ ]     [ yes ]
+      │  ├ [seller_goods_list_cover_state1_lots_list_lot_number    ]  [variable      ]  [ { number }                ]    [ ✜ 🡄 ]     [ yes ]
+      │  ├ [seller_goods_list_cover_state1_lots_list_lot_entry     ]  [variable      ]  [ { number }                ]    [ ✜ ✜ ]     [ yes ]
+      │  ├ [seller_goods_list_cover_state1_lots_list_lot_quantity  ]  [variable      ]  [ { string }                ]    [ ✜ ✜ ]     [ yes ]
+      │  ├ [seller_goods_list_cover_state1_lots_list_lot_balance   ]  [variable      ]  [ { string }                ]    [ ✜ ✜ ]     [ yes ]
+      │  └ [seller_goods_list_cover_state1_lots_list_lot_expiration]  [variable      ]  [ { number }                ]    [ ✜ 🡆 ]     [ yes ]
+      └──┬─[seller_goods_list_cover_state1_lots_button             ]  [button        ]                                   [ 🡇 ✜ ]     [ yes ]
+	     └ [seller_goods_list_cover_state1_lots_button_label       ]  [label         ]  [ "добавить партию"         ]    [ ✜ ✜ ]     [ yes ]
 
 ✠ details
-seller_goods_list_cover_lots состоит из 3 основных компонентов: 
-- seller_goods_list_cover_lots_top;
-- seller_goods_list_cover_lots_list;
-- seller_goods_list_cover_lots_button.
+seller_goods_list_cover_state1_lots состоит из 3 основных компонентов: 
+- seller_goods_list_cover_state1_lots_top;
+- seller_goods_list_cover_state1_lots_list;
+- seller_goods_list_cover_state1_lots_button.
 
---- seller_goods_list_cover_lots_top локализован в верхней части seller_goods_list_cover_lots в качестве таблицы подразделенной на 5 ячеек выполняющей роль заголовков для seller_goods_list_cover_lots_list_lot и занимающей всю ширину seller_goods_list_cover_lots, а по высоте порядка 15% seller_goods_list_cover_lots, содержит 5 компонентов:
------ seller_goods_list_cover_lots_top_number - константный текстовый элемент "#" расположенный в крайней левой ячейке, являющийся заголовком для первого столбца seller_goods_list_cover_lots_list_lot в котором выводится seller_goods_list_cover_lots_list_lot_number; 
------ seller_goods_list_cover_lots_top_entry - константный текстовый элемент "поступление" расположенный во второй ячейке являющийся заголовком для второго столбца seller_goods_list_cover_lots_list_lot в котором выводится seller_goods_list_cover_lots_list_lot_entry; 
------ seller_goods_list_cover_lots_top_quantity - константный текстовый элемент "количество" расположенный в третьей ячейке являющийся заголовком для третьего столбца seller_goods_list_cover_lots_list_lot в котором выводится seller_goods_list_cover_lots_list_lot_quantity; 
------ seller_goods_list_cover_lots_top_balance - константный текстовый элемент "остаток" расположенный в четвертой ячейке являющийся заголовком для четвертого столбца seller_goods_list_cover_lots_list_lot в котором выводится seller_goods_list_cover_lots_list_lot_balance; 
------ seller_goods_list_cover_lots_top_expiration - константный текстовый элемент "годен до" расположенный в пятой ячейке являющийся заголовком для пятого столбца seller_goods_list_cover_lots_list_lot в котором выводится seller_goods_list_cover_lots_list_lot_expiration;
---- seller_goods_list_cover_lots_list локализован в центральной части seller_goods_list_cover_lots в качестве таблицы подразделенной на 5 ячеек и состоящий из seller_goods_list_cover_lots_list_lot, располагающийся во всю ширину seller_goods_list_cover_lots, а по высоте занимающий порядка 85% seller_goods_list_cover_lots. Если количество seller_goods_list_cover_lots_list_lot не вмещается в видимом поле seller_goods_list_cover_lots, тогда у seller_goods_list_cover_lots_list появляется скроллинг (с правой стороны возникает полоса прокрутки);
------ seller_goods_list_cover_lots_list_lot - является типовым контейнером для отображения данных партии товара, состоящий из 5 ячеек со следующими компонентами:
-------- seller_goods_list_cover_lots_list_lot_number - представляется в виде переменной с числовым значением фигурируемом в первой ячейке (первый столбец), которая выводит текущий seller_settings_goods_depot_lot_list_number_value; 
-------- seller_goods_list_cover_lots_list_lot_entry - представляется в виде переменной с числовым значением фигурируемом во второй ячейке (второй столбец), который выводит текущий seller_settings_goods_depot_lot_list_entry_value; 
-------- seller_goods_list_cover_lots_list_lot_quantity - представляется в виде переменной со строковым значением фигурируемом в третьей ячейке (третий столбец), который выводит текущий seller_settings_goods_depot_lot_list_quantity_value; 
-------- seller_goods_list_cover_lots_list_lot_balance - представляется в виде переменной со строковым значением фигурируемом в четвертой ячейке (четвертый столбец), который выводит текущий seller_settings_goods_depot_lot_list_balance_value;
-------- seller_goods_list_cover_lots_list_lot_expiration - представляется в виде переменной с числовым значением фигурируемом в пятой ячейке (пятый столбец), который выводит текущий seller_settings_goods_depot_lot_list_expiration_value;
---- seller_goods_list_cover_lots_button локализован в нижней части seller_goods_list_cover_lots в качестве кнопки позволяющей инициализировать акт добавления новой партии, которая занимает всю ширину seller_goods_list_cover_lots, а по высоте порядка 20-25% seller_goods_list_cover_lots и содержит элемент seller_goods_list_cover_lots_button_label;
------ seller_goods_list_cover_lots_button_label - константный центрированный текстовый элемент следующего содержания: "добавить партию".
+--- seller_goods_list_cover_state1_lots_top локализован в верхней части seller_goods_list_cover_state1_lots в качестве таблицы подразделенной на 5 ячеек выполняющей роль заголовков для seller_goods_list_cover_state1_lots_list_lot и занимающей всю ширину seller_goods_list_cover_state1_lots, а по высоте порядка 15% seller_goods_list_cover_state1_lots, содержит 5 компонентов:
+----- seller_goods_list_cover_state1_lots_top_number - константный текстовый элемент "#" расположенный в крайней левой ячейке, являющийся заголовком для первого столбца seller_goods_list_cover_state1_lots_list_lot в котором выводится seller_goods_list_cover_state1_lots_list_lot_number; 
+----- seller_goods_list_cover_state1_lots_top_entry - константный текстовый элемент "поступление" расположенный во второй ячейке являющийся заголовком для второго столбца seller_goods_list_cover_state1_lots_list_lot в котором выводится seller_goods_list_cover_state1_lots_list_lot_entry; 
+----- seller_goods_list_cover_state1_lots_top_quantity - константный текстовый элемент "количество" расположенный в третьей ячейке являющийся заголовком для третьего столбца seller_goods_list_cover_state1_lots_list_lot в котором выводится seller_goods_list_cover_state1_lots_list_lot_quantity; 
+----- seller_goods_list_cover_state1_lots_top_balance - константный текстовый элемент "остаток" расположенный в четвертой ячейке являющийся заголовком для четвертого столбца seller_goods_list_cover_state1_lots_list_lot в котором выводится seller_goods_list_cover_state1_lots_list_lot_balance; 
+----- seller_goods_list_cover_state1_lots_top_expiration - константный текстовый элемент "годен до" расположенный в пятой ячейке являющийся заголовком для пятого столбца seller_goods_list_cover_state1_lots_list_lot в котором выводится seller_goods_list_cover_state1_lots_list_lot_expiration;
+--- seller_goods_list_cover_state1_lots_list локализован в центральной части seller_goods_list_cover_state1_lots в качестве таблицы подразделенной на 5 ячеек и состоящий из seller_goods_list_cover_state1_lots_list_lot, располагающийся во всю ширину seller_goods_list_cover_state1_lots, а по высоте занимающий порядка 85% seller_goods_list_cover_state1_lots. Если количество seller_goods_list_cover_state1_lots_list_lot не вмещается в видимом поле seller_goods_list_cover_state1_lots, тогда у seller_goods_list_cover_state1_lots_list появляется скроллинг (с правой стороны возникает полоса прокрутки);
+----- seller_goods_list_cover_state1_lots_list_lot - является типовым контейнером для отображения данных партии товара, состоящий из 5 ячеек со следующими компонентами:
+------- seller_goods_list_cover_state1_lots_list_lot_number - представляется в виде переменной с числовым значением фигурируемом в первой ячейке (первый столбец), которая выводит текущий seller_settings_goods_depot_lot_list_number_value; 
+------- seller_goods_list_cover_state1_lots_list_lot_entry - представляется в виде переменной с числовым значением фигурируемом во второй ячейке (второй столбец), который выводит текущий seller_settings_goods_depot_lot_list_entry_value; 
+------- seller_goods_list_cover_state1_lots_list_lot_quantity - представляется в виде переменной со строковым значением фигурируемом в третьей ячейке (третий столбец), который выводит текущий seller_settings_goods_depot_lot_list_quantity_value; 
+------- seller_goods_list_cover_state1_lots_list_lot_balance - представляется в виде переменной со строковым значением фигурируемом в четвертой ячейке (четвертый столбец), который выводит текущий seller_settings_goods_depot_lot_list_balance_value;
+------- seller_goods_list_cover_state1_lots_list_lot_expiration - представляется в виде переменной с числовым значением фигурируемом в пятой ячейке (пятый столбец), который выводит текущий seller_settings_goods_depot_lot_list_expiration_value;
+--- seller_goods_list_cover_state1_lots_button локализован в нижней части seller_goods_list_cover_state1_lots в качестве кнопки позволяющей инициализировать акт добавления новой партии, которая занимает всю ширину seller_goods_list_cover_state1_lots, а по высоте порядка 20-25% seller_goods_list_cover_state1_lots и содержит элемент seller_goods_list_cover_state1_lots_button_label;
+----- seller_goods_list_cover_state1_lots_button_label - константный центрированный текстовый элемент следующего содержания: "добавить партию".
 
 ✠ actions
-• seller_goods_list_cover:
+• seller_goods_list_cover_state1:
 ╠ valid
 ║ • gesture: swipe left
 ║ occasion: делается свайп влево;
-║ condition: в рамках seller_goods_list_cover_lots;
-║ result: seller_goods_list_cover_lots уходит налево и скрывается, а на его место помещается seller_goods_list_cover_front;
+║ condition: в рамках seller_goods_list_cover_state1_lots;
+║ result: seller_goods_list_cover_state1_lots уходит налево и скрывается, а на его место помещается seller_goods_list_cover_state1_front;
 ╠ invalid
 ║ • gesture: swipe right
 ║ occasion: делается свайп вправо;
-║ condition: в рамках seller_goods_list_cover_lots;
-╙ result: seller_goods_list_cover_lots сохраняет свое положение;
-• seller_goods_list_cover_lots_list_lot:
+║ condition: в рамках seller_goods_list_cover_state1_lots;
+╙ result: seller_goods_list_cover_state1_lots сохраняет свое положение;
+• seller_goods_list_cover_state1_lots_list_lot:
 ╠ valid / invalid
 ║ • gesture: tap
-║ occasion: нажатие в область seller_goods_list_cover_lots_list_lot;
+║ occasion: нажатие в область seller_goods_list_cover_state1_lots_list_lot;
 ║ condition: in any situation;
 ╙ result: открывается seller_settings_goods_depot_lot_screen целевой партии.
-• seller_goods_list_cover_lots_button:
+• seller_goods_list_cover_state1_lots_button:
 ╠ valid / invalid
 ║ • gesture: tap
-║ occasion: нажатие seller_goods_list_cover_lots_button;
+║ occasion: нажатие seller_goods_list_cover_state1_lots_button;
 ║ condition: in any situation;
 ╙ result: открывается seller_settings_goods_depot_lot_screen с пустыми полями.
 
 ✠ color_states
 ┌─
-│seller_goods_list_cover_lots  
+│seller_goods_list_cover_state1_lots  
 │---------------------------
-│⟪⟪ border ⟫⟫ 
+│⟪⟪ body ⟫⟫ 
 │--------
 │• color0
 │------ in any situation
 └─
 ┌─
-│seller_goods_list_cover_lots_top
+│seller_goods_list_cover_state1_lots_top
 │---------------------------
-│⟪⟪ border ⟫⟫ 
+│⟪⟪ body ⟫⟫ 
 │--------
 │• color2
 │------ in any situation
 └─
-
-seller_goods_list_cover_lots_list_lot
 ┌─
-│seller_goods_list_cover_front_top_number
-│seller_goods_list_cover_front_body_info_date_right
-│seller_goods_list_cover_front_body_info_price_right
-│seller_goods_list_cover_front_body_img_frame
-│---------------------------
-│⟪⟪ border ⟫⟫ 
-│--------
-│• color4
-│------ in any situation
-└─
-┌─
-│seller_goods_list_cover_lots_list_lot
+│seller_goods_list_cover_state1_lots_list_lot
 │-------------------------------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -945,7 +938,7 @@ seller_goods_list_cover_lots_list_lot
 │------ in pressing_state
 └─
 ┌─
-│seller_goods_list_cover_lots_button
+│seller_goods_list_cover_state1_lots_button
 │-------------------------------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -956,17 +949,17 @@ seller_goods_list_cover_lots_list_lot
 │------ in pressing_state
 └─
 ┌─
-│seller_goods_list_cover_lots_top_number
-│seller_goods_list_cover_lots_top_entry
-│seller_goods_list_cover_lots_top_quantity
-│seller_goods_list_cover_lots_top_balance
-│seller_goods_list_cover_lots_top_expiration
-│seller_goods_list_cover_lots_list_lot_number
-│seller_goods_list_cover_lots_list_lot_entry
-│seller_goods_list_cover_lots_list_lot_quantity
-│seller_goods_list_cover_lots_list_lot_balance
-│seller_goods_list_cover_lots_list_lot_expiration
-│seller_goods_list_cover_lots_button_label
+│seller_goods_list_cover_state1_lots_top_number
+│seller_goods_list_cover_state1_lots_top_entry
+│seller_goods_list_cover_state1_lots_top_quantity
+│seller_goods_list_cover_state1_lots_top_balance
+│seller_goods_list_cover_state1_lots_top_expiration
+│seller_goods_list_cover_state1_lots_list_lot_number
+│seller_goods_list_cover_state1_lots_list_lot_entry
+│seller_goods_list_cover_state1_lots_list_lot_quantity
+│seller_goods_list_cover_state1_lots_list_lot_balance
+│seller_goods_list_cover_state1_lots_list_lot_expiration
+│seller_goods_list_cover_state1_lots_button_label
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -975,123 +968,123 @@ seller_goods_list_cover_lots_list_lot
 └─
 
 
-■ ■ seller_goods_list_cover_stat
+■ ■ seller_goods_list_cover_state1_stat
 
-seller_goods_list_cover_stat представляет собой виджет индивидуальной статистики товара касательно просмотров и покупок, является правой панелью seller_goods_list_cover, вид на которую открывается при свайпе налево.
+seller_goods_list_cover_state1_stat представляет собой виджет индивидуальной статистики товара касательно просмотров и покупок, является правой панелью seller_goods_list_cover_state1, вид на которую открывается при свайпе налево.
 
 ✠ tables
 
                                   codename:                              type:                designation:           location:  interaction:
-   ┌───────[seller_goods_list_cover                             ]  [component_lev1]                                   [ ✜ ✜ ]     [ yes ]
-   └┬┬──┬──[seller_goods_list_cover_stat                        ]  [component_lev2]                                   [ ✜ ✜ ]     [ no  ]
-    ││  └┬─[seller_goods_list_cover_stat_top                    ]  [component_lev3]                                   [ 🡅 ✜ ]     [ no  ]
-    ││   └ [seller_goods_list_cover_stat_top_label              ]  [label         ]  [ "задать временной диа..." ]    [ ✜ ✜ ]     [ no  ]
-    │└┬┬┬──[seller_goods_list_cover_stat_control                ]  [component_lev3]                                   [ ✜ ✜ ]     [ no  ]
-    │ ││└┬─[seller_goods_list_cover_stat_control_minus          ]  [button        ]                                   [ ✜ 🡄 ]     [ yes ]
-    │ ││ └ [seller_goods_list_cover_stat_control_minus_icon     ]  [icon          ]                                   [ ✜ ✜ ]     [ yes ]
-    │ │└─┬─[seller_goods_list_cover_stat_control_widget         ]  [widget        ]                                   [ ✜ ✜ ]     [ no  ]
-    │ │  └ [seller_goods_list_cover_stat_control_widget_value   ]  [variable      ]  [ { number }                ]    [ ✜ ✜ ]     [ no  ]
-    │ └──┬─[seller_goods_list_cover_stat_control_plus           ]  [button        ]                                   [ ✜ 🡆 ]     [ yes ]
-    │    └ [seller_goods_list_cover_stat_control_plus_icon      ]  [icon          ]                                   [ ✜ 🡆 ]     [ yes ]
-    └┬┬────[seller_goods_list_cover_stat_table                  ]  [component_lev3]                                   [ 🡇 ✜ ]     [ no  ]
-     │└┬┬──[seller_goods_list_cover_stat_table_views            ]  [component_lev4]                                   [ 🡅 ✜ ]     [ no  ]
-     │ │└┬─[seller_goods_list_cover_stat_table_views_left       ]  [component_lev5]                                   [ ✜ 🡄 ]     [ no  ]
-     │ │ └ [seller_goods_list_cover_stat_table_views_left_label ]  [label         ]  [ "просмотры"               ]    [ ✜ ✜ ]     [ no  ]
-     │ └─┬─[seller_goods_list_cover_stat_table_views_right      ]  [component_lev5]                                   [ ✜ 🡆 ]     [ no  ]
-     │   └ [seller_goods_list_cover_stat_table_views_right_value]  [variable      ]  [ { number }                ]    [ ✜ ✜ ]     [ no  ]
-     └─┬┬──[seller_goods_list_cover_stat_table_buys             ]  [component_lev4]                                   [ 🡇 ✜ ]     [ no  ]
-       │└┬─[seller_goods_list_cover_stat_table_buys_left        ]  [component_lev5]                                   [ ✜ 🡄 ]     [ no  ]
-       │ └ [seller_goods_list_cover_stat_table_buys_left_label  ]  [label         ]  [ "покупки"                 ]    [ ✜ ✜ ]     [ no  ]
-       └─┬─[seller_goods_list_cover_stat_table_buys_right       ]  [component_lev5]                                   [ ✜ 🡆 ]     [ no  ]
-         └ [seller_goods_list_cover_stat_table_buys_right_value ]  [variable      ]  [ { number }                ]    [ ✜ ✜ ]     [ no  ]
+   ┌───────[seller_goods_list_cover_state1                             ]  [component_lev1]                                   [ ✜ ✜ ]     [ yes ]
+   └┬┬──┬──[seller_goods_list_cover_state1_stat                        ]  [component_lev2]                                   [ ✜ ✜ ]     [ no  ]
+    ││  └┬─[seller_goods_list_cover_state1_stat_top                    ]  [component_lev3]                                   [ 🡅 ✜ ]     [ no  ]
+    ││   └ [seller_goods_list_cover_state1_stat_top_label              ]  [label         ]  [ "задать временной диа..." ]    [ ✜ ✜ ]     [ no  ]
+    │└┬┬┬──[seller_goods_list_cover_state1_stat_control                ]  [component_lev3]                                   [ ✜ ✜ ]     [ no  ]
+    │ ││└┬─[seller_goods_list_cover_state1_stat_control_minus          ]  [button        ]                                   [ ✜ 🡄 ]     [ yes ]
+    │ ││ └ [seller_goods_list_cover_state1_stat_control_minus_icon     ]  [icon          ]                                   [ ✜ ✜ ]     [ yes ]
+    │ │└─┬─[seller_goods_list_cover_state1_stat_control_widget         ]  [widget        ]                                   [ ✜ ✜ ]     [ no  ]
+    │ │  └ [seller_goods_list_cover_state1_stat_control_widget_value   ]  [variable      ]  [ { number }                ]    [ ✜ ✜ ]     [ no  ]
+    │ └──┬─[seller_goods_list_cover_state1_stat_control_plus           ]  [button        ]                                   [ ✜ 🡆 ]     [ yes ]
+    │    └ [seller_goods_list_cover_state1_stat_control_plus_icon      ]  [icon          ]                                   [ ✜ 🡆 ]     [ yes ]
+    └┬┬────[seller_goods_list_cover_state1_stat_table                  ]  [component_lev3]                                   [ 🡇 ✜ ]     [ no  ]
+     │└┬┬──[seller_goods_list_cover_state1_stat_table_views            ]  [component_lev4]                                   [ 🡅 ✜ ]     [ no  ]
+     │ │└┬─[seller_goods_list_cover_state1_stat_table_views_left       ]  [component_lev5]                                   [ ✜ 🡄 ]     [ no  ]
+     │ │ └ [seller_goods_list_cover_state1_stat_table_views_left_label ]  [label         ]  [ "просмотры"               ]    [ ✜ ✜ ]     [ no  ]
+     │ └─┬─[seller_goods_list_cover_state1_stat_table_views_right      ]  [component_lev5]                                   [ ✜ 🡆 ]     [ no  ]
+     │   └ [seller_goods_list_cover_state1_stat_table_views_right_value]  [variable      ]  [ { number }                ]    [ ✜ ✜ ]     [ no  ]
+     └─┬┬──[seller_goods_list_cover_state1_stat_table_buys             ]  [component_lev4]                                   [ 🡇 ✜ ]     [ no  ]
+       │└┬─[seller_goods_list_cover_state1_stat_table_buys_left        ]  [component_lev5]                                   [ ✜ 🡄 ]     [ no  ]
+       │ └ [seller_goods_list_cover_state1_stat_table_buys_left_label  ]  [label         ]  [ "покупки"                 ]    [ ✜ ✜ ]     [ no  ]
+       └─┬─[seller_goods_list_cover_state1_stat_table_buys_right       ]  [component_lev5]                                   [ ✜ 🡆 ]     [ no  ]
+         └ [seller_goods_list_cover_state1_stat_table_buys_right_value ]  [variable      ]  [ { number }                ]    [ ✜ ✜ ]     [ no  ]
 
 
 ✠ details
-seller_goods_list_cover_stat состоит из 3 основных компонентов: 
-- seller_goods_list_cover_stat_top;
-- seller_goods_list_cover_stat_control;
-- seller_goods_list_cover_stat_table.
+seller_goods_list_cover_state1_stat состоит из 3 основных компонентов: 
+- seller_goods_list_cover_state1_stat_top;
+- seller_goods_list_cover_state1_stat_control;
+- seller_goods_list_cover_state1_stat_table.
 
---- seller_goods_list_cover_stat_top локализован в верхней части seller_goods_list_cover_stat в качестве панели для заголовка seller_goods_list_cover_stat_top_label, который по ширине = 100%, а по высоте порядка 15% seller_goods_list_cover_stat;
------ seller_goods_list_cover_stat_top_label - константный центрированный текстовый элемент "задать временной диапазон"; 
---- seller_goods_list_cover_stat_control - панель управления длительностью временного интервала, занимает 100% по ширине и порядка 40% seller_goods_list_cover_stat, содержит 3 компонента; 
------ seller_goods_list_cover_stat_control_minus - кнопка отвечающая за уменьшение значения seller_goods_list_cover_stat_control_widget_value, расположена слева; 
-------- seller_goods_list_cover_stat_control_minus_icon - иконка в виде кнопки старта проигрывания с направлением налево;
------ seller_goods_list_cover_stat_control_widget - прямоугольная рамка в которой выводится seller_goods_list_cover_stat_control_widget_value;
-------- seller_goods_list_cover_stat_control_widget_value - представляется в виде переменной с числовым значением временного интервала, которая выводится в диапазоне от 0 до 1000000000, для которой базовой единицей является 1 день;
------ seller_goods_list_cover_stat_control_plus - кнопка отвечающая за увеличение значения seller_goods_list_cover_stat_control_widget_value, расположена справа;
-------- seller_goods_list_cover_stat_control_plus_icon - иконка в виде кнопки старта проигрывания с направлением направо; 
---- seller_goods_list_cover_stat_table локализован в нижней части seller_goods_list_cover_stat в качестве условной таблицы подразделенной на 2 ячейки, располагающейся во всю ширину seller_goods_list_cover_stat, а по высоте занимающей порядка 50% seller_goods_list_cover_stat и разделенный на 2 равных блока: seller_goods_list_cover_stat_table_views, seller_goods_list_cover_stat_table_buys;
------ seller_goods_list_cover_stat_table_views - состоит из двух ячеек и выводит количество просмотров по целевому товару в заданном диапазоне seller_goods_list_cover_stat_control_widget_value;
-------- seller_goods_list_cover_stat_table_views_left - является левой ячейкой seller_goods_list_cover_stat_table_views содержащей seller_goods_list_cover_stat_table_views_left_label; 
---------- seller_goods_list_cover_stat_table_views_left_label - константный центрированный текстовый элемент "просмотры"; 
-------- seller_goods_list_cover_stat_table_views_right - является правой ячейкой seller_goods_list_cover_stat_table_views содержащей seller_goods_list_cover_stat_table_views_right_value;  
---------- seller_goods_list_cover_stat_table_views_right_value - представляется в виде переменной с числовым значением отображающим количество просмотров посетителями магазина целевого товара;
------ seller_goods_list_cover_stat_table_buys - состоит из двух ячеек и выводит количество покупок по целевому товару в заданном диапазоне seller_goods_list_cover_stat_control_widget_value;
-------- seller_goods_list_cover_stat_table_buys_left - является левой ячейкой seller_goods_list_cover_stat_table_buys содержащей seller_goods_list_cover_stat_table_buys_left_label; 
---------- seller_goods_list_cover_stat_table_buys_left_label - константный центрированный текстовый элемент "покупки"; 
-------- seller_goods_list_cover_stat_table_buys_right - является правой ячейкой seller_goods_list_cover_stat_table_buys содержащей seller_goods_list_cover_stat_table_buys_right_value;  
---------- seller_goods_list_cover_stat_table_buys_right_value - представляется в виде переменной с числовым значением отображающим количество покупок целевого товара.
+--- seller_goods_list_cover_state1_stat_top локализован в верхней части seller_goods_list_cover_state1_stat в качестве панели для заголовка seller_goods_list_cover_state1_stat_top_label, который по ширине = 100%, а по высоте порядка 15% seller_goods_list_cover_state1_stat;
+----- seller_goods_list_cover_state1_stat_top_label - константный центрированный текстовый элемент "задать временной диапазон"; 
+--- seller_goods_list_cover_state1_stat_control - панель управления длительностью временного интервала, занимает 100% по ширине и порядка 40% seller_goods_list_cover_state1_stat, содержит 3 компонента; 
+----- seller_goods_list_cover_state1_stat_control_minus - кнопка отвечающая за уменьшение значения seller_goods_list_cover_state1_stat_control_widget_value, расположена слева; 
+------- seller_goods_list_cover_state1_stat_control_minus_icon - иконка в виде кнопки старта проигрывания с направлением налево;
+----- seller_goods_list_cover_state1_stat_control_widget - прямоугольная рамка в которой выводится seller_goods_list_cover_state1_stat_control_widget_value;
+------- seller_goods_list_cover_state1_stat_control_widget_value - представляется в виде переменной с числовым значением временного интервала, которая выводится в диапазоне от 1 до 999, для которой базовой единицей является 1 день;
+----- seller_goods_list_cover_state1_stat_control_plus - кнопка отвечающая за увеличение значения seller_goods_list_cover_state1_stat_control_widget_value, расположена справа;
+------- seller_goods_list_cover_state1_stat_control_plus_icon - иконка в виде кнопки старта проигрывания с направлением направо; 
+--- seller_goods_list_cover_state1_stat_table локализован в нижней части seller_goods_list_cover_state1_stat в качестве условной таблицы подразделенной на 2 ячейки, располагающейся во всю ширину seller_goods_list_cover_state1_stat, а по высоте занимающей порядка 50% seller_goods_list_cover_state1_stat и разделенный на 2 равных блока: seller_goods_list_cover_state1_stat_table_views, seller_goods_list_cover_state1_stat_table_buys;
+----- seller_goods_list_cover_state1_stat_table_views - состоит из двух ячеек и выводит количество просмотров по целевому товару в заданном диапазоне seller_goods_list_cover_state1_stat_control_widget_value;
+------- seller_goods_list_cover_state1_stat_table_views_left - является левой ячейкой seller_goods_list_cover_state1_stat_table_views содержащей seller_goods_list_cover_state1_stat_table_views_left_label; 
+--------- seller_goods_list_cover_state1_stat_table_views_left_label - константный центрированный текстовый элемент "просмотры"; 
+------- seller_goods_list_cover_state1_stat_table_views_right - является правой ячейкой seller_goods_list_cover_state1_stat_table_views содержащей seller_goods_list_cover_state1_stat_table_views_right_value;  
+--------- seller_goods_list_cover_state1_stat_table_views_right_value - представляется в виде переменной с числовым значением отображающим количество просмотров посетителями магазина целевого товара;
+----- seller_goods_list_cover_state1_stat_table_buys - состоит из двух ячеек и выводит количество покупок по целевому товару в заданном диапазоне seller_goods_list_cover_state1_stat_control_widget_value;
+------- seller_goods_list_cover_state1_stat_table_buys_left - является левой ячейкой seller_goods_list_cover_state1_stat_table_buys содержащей seller_goods_list_cover_state1_stat_table_buys_left_label; 
+--------- seller_goods_list_cover_state1_stat_table_buys_left_label - константный центрированный текстовый элемент "покупки"; 
+------- seller_goods_list_cover_state1_stat_table_buys_right - является правой ячейкой seller_goods_list_cover_state1_stat_table_buys содержащей seller_goods_list_cover_state1_stat_table_buys_right_value;  
+--------- seller_goods_list_cover_state1_stat_table_buys_right_value - представляется в виде переменной с числовым значением отображающим количество покупок целевого товара.
 
 ✠ actions
-• seller_goods_list_cover:
+• seller_goods_list_cover_state1:
 ╠ valid
 ║ • gesture: swipe left
 ║ occasion: делается свайп вправо;
-║ condition: в рамках seller_goods_list_cover_stat;
-║ result: seller_goods_list_cover_stat уходит направо и скрывается, а на его место помещается seller_goods_list_cover_front;
+║ condition: в рамках seller_goods_list_cover_state1_stat;
+║ result: seller_goods_list_cover_state1_stat уходит направо и скрывается, а на его место помещается seller_goods_list_cover_state1_front;
 ╠ invalid
 ║ • gesture: swipe left
 ║ occasion: делается свайп влево;
-║ condition: в рамках seller_goods_list_cover_stat;
-║ result: seller_goods_list_cover_stat сохраняет свое положение;
-• seller_goods_list_cover_stat_control_minus:
+║ condition: в рамках seller_goods_list_cover_state1_stat;
+║ result: seller_goods_list_cover_state1_stat сохраняет свое положение;
+• seller_goods_list_cover_state1_stat_control_minus:
 ╠ valid
 ║ • gesture: tap
-║ occasion: нажатие seller_goods_list_cover_stat_control_minus;
-║ condition: если seller_goods_list_cover_stat_control_widget_value >= 1 || <= 1000000000;
-║ result: seller_goods_list_cover_stat_control_widget_value-- (-1).
+║ occasion: нажатие seller_goods_list_cover_state1_stat_control_minus;
+║ condition: если seller_goods_list_cover_state1_stat_control_widget_value >= 2 || <= 999;
+║ result: seller_goods_list_cover_state1_stat_control_widget_value-- (-1).
 ╠ invalid
 ║ • gesture: tap
-║ occasion: нажатие seller_goods_list_cover_stat_control_minus;
-║ condition: если seller_goods_list_cover_stat_control_widget_value < 1 || > 1000000000;
-╙ result: seller_goods_list_cover_stat_control_minus не реагирует на нажатие.
-• seller_goods_list_cover_stat_control_plus:
+║ occasion: нажатие seller_goods_list_cover_state1_stat_control_minus;
+║ condition: если seller_goods_list_cover_state1_stat_control_widget_value < 2 || > 999;
+╙ result: seller_goods_list_cover_state1_stat_control_minus не реагирует на нажатие.
+• seller_goods_list_cover_state1_stat_control_plus:
 ╠ valid
 ║ • gesture: tap
-║ occasion: нажатие seller_goods_list_cover_stat_control_plus;
-║ condition: если seller_goods_list_cover_stat_control_widget_value >= 0 || < 1000000000;
-║ result: seller_goods_list_cover_stat_control_widget_value++ (+1);
+║ occasion: нажатие seller_goods_list_cover_state1_stat_control_plus;
+║ condition: если seller_goods_list_cover_state1_stat_control_widget_value >= 1 || <= 998;
+║ result: seller_goods_list_cover_state1_stat_control_widget_value++ (+1);
 ╠ invalid
 ║ • gesture: tap
-║ occasion: нажатие seller_goods_list_cover_stat_control_plus;
-║ condition: если seller_goods_list_cover_stat_control_widget_value < 0 || > 1000000000;
-╙ result: seller_goods_list_cover_stat_control_plus не реагирует на нажатие.
+║ occasion: нажатие seller_goods_list_cover_state1_stat_control_plus;
+║ condition: если seller_goods_list_cover_state1_stat_control_widget_value < 1 || > 998;
+╙ result: seller_goods_list_cover_state1_stat_control_plus не реагирует на нажатие.
 
 ✠ color_states
 ┌─
-│seller_goods_list_cover_stat  
+│seller_goods_list_cover_state1_stat  
 │---------------------------
-│⟪⟪ border ⟫⟫ 
+│⟪⟪ body ⟫⟫ 
 │--------
 │• color0
 │------ in any situation
 └─
 ┌─
-│seller_goods_list_cover_stat_top
-│seller_goods_list_cover_stat_table_views_left
-│seller_goods_list_cover_stat_table_views_right
-│seller_goods_list_cover_stat_table_buys_left
-│seller_goods_list_cover_stat_table_buys_right
+│seller_goods_list_cover_state1_stat_top
+│seller_goods_list_cover_state1_stat_table_views_left
+│seller_goods_list_cover_state1_stat_table_views_right
+│seller_goods_list_cover_state1_stat_table_buys_left
+│seller_goods_list_cover_state1_stat_table_buys_right
 │---------------------------
-│⟪⟪ border ⟫⟫ 
+│⟪⟪ bodybody ⟫⟫ 
 │--------
 │• color2
 │------ in any situation
 └─
 ┌─
-│seller_goods_list_cover_stat_control_minus
-│seller_goods_list_cover_stat_control_plus
+│seller_goods_list_cover_state1_stat_control_minus
+│seller_goods_list_cover_state1_stat_control_plus
 │-------------------------------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -1102,12 +1095,12 @@ seller_goods_list_cover_stat состоит из 3 основных компон
 │------ in pressing_state
 └─
 ┌─
-│seller_goods_list_cover_stat_top_label
-│seller_goods_list_cover_stat_control_widget_value
-│seller_goods_list_cover_stat_table_views_left_label
-│seller_goods_list_cover_stat_table_views_right_value
-│seller_goods_list_cover_stat_table_buys_left_label
-│seller_goods_list_cover_stat_table_buys_right_value
+│seller_goods_list_cover_state1_stat_top_label
+│seller_goods_list_cover_state1_stat_control_widget_value
+│seller_goods_list_cover_state1_stat_table_views_left_label
+│seller_goods_list_cover_state1_stat_table_views_right_value
+│seller_goods_list_cover_state1_stat_table_buys_left_label
+│seller_goods_list_cover_state1_stat_table_buys_right_value
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -1115,6 +1108,443 @@ seller_goods_list_cover_stat состоит из 3 основных компон
 │------ in any situation
 └─
 
+
+■ ■ seller_goods_list_cover_state2 ■ ■
+
+В seller_goods_list_cover_state2 seller_goods_list_cover имеют средний размер, располагаясь в 2 столбца, занимая по горизонтали ~50% экрана и порядка 20% по вертикали, где они выстраиваются в порядке публикации слева-направо и сверху-вниз. В seller_goods_list_cover_state2 карточка товара не имеет функции переключения между дополнительными экранами (по умолчанию всегда работает в режиме seller_goods_list_cover_state2_front).  
+
+✠ tables
+
+                                       codename:                                  type:                designation:           location:  interaction:
+   ┌───────[seller_goods_list_cover_state2                               ]  [component_lev1]                                   [ ✜ ✜ ]     [ no  ]
+   └┬┬┬────[seller_goods_list_cover_state2_front                         ]  [component_lev2]                                   [ ✜ ✜ ]     [ no  ]
+    ││└┬┬──[seller_goods_list_cover_state2_front_top                     ]  [component_lev3]                                   [ 🡅 ✜ ]     [ no  ]
+    ││ │└┬─[seller_goods_list_cover_state2_front_top_number              ]  [component_lev4]                                   [ ✜ 🡄 ]     [ no  ]
+    ││ │ └ [seller_goods_list_cover_state2_front_top_number_value        ]  [variable      ]  [ { number }                ]    [ ✜ ✜ ]     [ no  ]
+    ││ └─┬─[seller_goods_list_cover_state2_front_top_name                ]  [component_lev4]                                   [ ✜ 🡆 ]     [ no  ]
+    ││   └ [seller_goods_list_cover_state2_front_top_name_value          ]  [variable      ]  [ { string }                ]    [ ✜ ✜ ]     [ no  ]  
+    │└─┬┬──[seller_goods_list_cover_state2_front_middle                  ]  [component_lev3]                                   [ ✜ ✜ ]     [ no  ]
+    │  │└┬─[seller_goods_list_cover_state2_front_middle_price            ]  [component_lev4]                                   [ ✜ 🡄 ]     [ no  ] 
+    │  │ └ [seller_goods_list_cover_state2_front_middle_price_value      ]  [widget        ]  [ { number }                ]    [ ✜ ✜ ]     [ no  ]
+    │  └─┬─[seller_goods_list_cover_state2_front_middle_quantity         ]  [component_lev4]                                   [ ✜ 🡆 ]     [ no  ]
+    │    └ [seller_goods_list_cover_state2_front_middle_quantity_value   ]  [variable      ]  [ { number }                ]    [ ✜ ✜ ]     [ no  ]	
+    └┬─┬───[seller_goods_list_cover_state2_front_lower                   ]  [component_lev3]                                   [ 🡇 ✜ ]     [ no  ]
+     │ └┬──[seller_goods_list_cover_state2_front_lower_img               ]  [component_lev4]                                   [ ✜ 🡄 ]     [ no  ]
+     │  └┬─[seller_goods_list_cover_state2_front_lower_img_frame         ]  [picture+button]  [ { img }                   ]    [ ✜ ✜ ]     [ yes ]
+     │   └ [seller_goods_list_cover_state2_front_lower_img_frame_widget  ]  [widget        ]                                   [ 🡅 🡆 ]     [ yes ]
+     └┬┬┬──[seller_goods_list_cover_state2_front_lower_control           ]  [component_lev4]                                   [ ✜ 🡆 ]     [ no  ]
+      ││└┬─[seller_goods_list_cover_state2_front_lower_control_edit      ]  [button        ]                                   [ 🡅 ✜ ]     [ yes ]
+      ││ └ [seller_goods_list_cover_state2_front_lower_control_edit_label]  [label         ]  [ "редактор"                ]    [ ✜ ✜ ]     [ yes ]
+      │└─┬─[seller_goods_list_cover_state2_front_lower_control_book      ]  [button        ]                                   [ ✜ ✜ ]     [ yes ]
+      │  └ [seller_goods_list_cover_state2_front_lower_control_book_label]  [label         ]  [ "резерв"                  ]    [ ✜ ✜ ]     [ yes ]
+      └──┬─[seller_goods_list_cover_state2_front_lower_control_expo      ]  [button        ]                                   [ 🡇 ✜ ]     [ yes ]
+         └ [seller_goods_list_cover_state2_front_lower_control_expo_label]  [label         ]  [ "удалить"                 ]    [ ✜ ✜ ]     [ yes ]
+
+✠ details
+seller_goods_list_cover_state2_front состоит из 3 основных компонентов: 
+- seller_goods_list_cover_state2_front_top;
+- seller_goods_list_cover_state2_front_middle;
+- seller_goods_list_cover_state2_front_lower.
+
+seller_goods_list_cover_state2_front_top
+--- seller_goods_list_cover_state2_front_top локализован в верхней его части в качестве блока занимающего всю ширину seller_goods_list_cover_state2_front, а по высоте порядка 20% seller_goods_list_cover_state2_front. Состоит из 2 компонентов:
+1)----- seller_goods_list_cover_state2_front_top_number - представляет собой контейнер расположенный слева от seller_goods_list_cover_state2_front_top_name, который занимает порядка 5-10% пространства seller_goods_list_cover_state2_front_top и содержит seller_goods_list_cover_state2_front_top_number_value; 
+------- seller_goods_list_cover_state2_front_top_number_value - переменная с числовым значением отображающая порядковый номер товара согласно дате и времени его публикации, где последний опубликованный лот имеет seller_goods_list_cover_state2_front_top_number_value = 1; 
+2)----- seller_goods_list_cover_state2_front_top_name - является заголовком карточки товара состоящим из 2 элементов:
+------- seller_goods_list_cover_state2_front_top_name_value - переменная со строковым значением отвечающая за отображение seller_settings_goods_list_name_value, обладает font-weight:bold и в ситуации нехватки места в seller_goods_list_cover_state2_front_top, seller_settings_goods_list_name_value сокращается путем отбрасывания последних букв и добавлением трехточия.
+
+seller_goods_list_cover_state2_front_middle
+--- seller_goods_list_cover_state2_front_middle локализован под seller_goods_list_cover_state2_front_top в качестве блока занимающего всю ширину seller_goods_list_cover_state2_front, а по высоте порядка 80% seller_goods_list_cover_state2_front. Состоит из 2 компонентов:
+1)----- seller_goods_list_cover_state2_front_middle_price - представляет собой панель на которой отображается цена, находится в левой части seller_goods_list_cover_state2_front_middle занимая порядка 50% его пространства по горизонтали; 
+------- seller_goods_list_cover_state2_front_middle_price_value - переменная с числовым значением отображающая цену товара по шаблону: "seller_settings_goods_list_price_retail_value/seller_settings_goods_list_price_wholesale_value" - если указана розничная и оптовая цена;
+"seller_settings_goods_list_price_retail_value" - если указана розничная цена;
+"seller_settings_goods_list_price_wholesale_value" - если указана оптовая цена;
+2)----- seller_goods_list_cover_state2_front_middle_quantity - представляет собой виджет количества товара расположенный в правой части seller_goods_list_cover_state2_front_middle занимая около 50% его размера по горизонтали, который вмещает выровненный по центру компонент seller_goods_list_cover_state2_front_middle_quantity_value;
+------- seller_goods_list_cover_state2_front_middle_quantity_value - переменная с числовым значением расположенная в центре seller_goods_list_cover_state2_front_middle_quantity и отображающая количество товара в режиме seller_goods_list_cover_state2_front_middle_quantity_definite (в виде числового значения).
+
+seller_goods_list_cover_state2_front_lower
+--- seller_goods_list_cover_state2_front_lower - контейнер локализован в нижней части seller_goods_list_cover_state2_front содержащий 2 компонента:
+1)----- seller_goods_list_cover_state2_front_lower_img - расположен в левой части seller_goods_list_cover_state2_front_lower занимая 50% его ширины и включая seller_goods_list_cover_state2_front_lower_img_frame;
+------- seller_goods_list_cover_state2_front_lower_img_frame - является областью отображения seller_settings_goods_list_image_0, имеет равное соотношение сторон, может находиться в zoom=normal (размер по умолчанию) и zoom=max (размер на весь экран);
+--------- seller_goods_list_cover_state2_front_lower_img_frame_widget - представляется в виде геометрического (треугольник/прямоугольник) элемента выполняющего роль виджета отображающего состояние (активность) seller_goods_list_cover_state2_front располагаясь в верхней правой области seller_goods_list_cover_state2_front_lower_img_frame;
+2)----- seller_goods_list_cover_state2_front_lower_control - расположен в правой части seller_goods_list_cover_state2_front_lower, занимает 50% его ширины и включает 3 компонента-кнопки расположенных друг над другом сверху-вниз в следующем порядке:
+----- seller_goods_list_cover_state2_front_lower_control_edit - кнопка отвечающая за открытие seller_settings_goods_screen, в рамках seller_goods_list_cover_state2_front_lower_control локализован в верхней области;
+------- seller_goods_list_cover_state2_front_lower_control_edit_label - константный текстовый элемент следующего содержания: "редактор";
+----- seller_goods_list_cover_state2_front_lower_control_book - кнопка отвечающая за включение/выключение функции дающей buyer возможность зарезервировать товар по лоту, в рамках seller_goods_list_cover_state2_front_lower_control локализован в центральной области;
+------- seller_goods_list_cover_state2_front_lower_control_book_label - константный текстовый элемент следующего содержания: "резерв";
+----- seller_goods_list_cover_state2_front_lower_control_expo - кнопка отвечающая за функцию удаления seller_goods_list_cover_state2 из seller_goods_screen (может находиться либо в состоянии removed, либо в состоянии existed), в рамках seller_goods_list_cover_state2_front_lower_control локализован в нижней области;
+------- seller_goods_list_cover_state2_front_lower_control_expo_label - константный текстовый элемент следующего содержания: "удалить".
+
+✠ logics
+Нормативы отображения для seller_goods_list_cover_state2_front_middle_price_value: 
+- числа от 1 до 999999999 отображаются в обычном режиме;
+- числа > 999999999 отображаются с использовании аббревиатур:
+- числа > 1000000000 отображаются как 1B+;
+- числа > 1000000000000 отображаются как 1T+.
+
+Нормативы отображения для seller_goods_list_cover_state2_front_middle_quantity_value: 
+- числа от 1 до 999999 отображаются в обычном режиме;
+- числа > 999999 отображаются с использовании аббревиатур:
+- число > 1000000 отображается как 1M+;
+- число > 1000000000 отображается как 1B+;
+- числа > 1000000000000 отображаются как 1T+.
+
+✠ actions
+• seller_goods_list_cover_state2_front_lower_img_frame:
+╠ valid
+║ • gesture: tap
+║ occasion: нажатие в область seller_goods_list_cover_state2_front_lower_img_frame;
+║ condition:
+║ - && - если seller_settings_goods_list_image_value >= 1;
+║ - && - если seller_goods_list_cover_state2_front_lower_img_frame находится в режиме zoom=normal;
+║ result: seller_goods_list_cover_state2_front_lower_img_frame увеличивается на весь экран выравниваясь по горизонтали;
+║ • gesture: tap
+║ occasion: нажатие seller_goods_list_cover_state1_front_body_img_frame;
+║ condition:
+║ - && - если seller_settings_goods_list_image_value >= 1;
+║ - && - если seller_goods_list_cover_state2_front_lower_img_frame находится в режиме zoom=max (растянуто на весь экран);
+║ result: seller_goods_list_cover_state2_front_lower_img_frame уменьшается до обычного размера zoom=normal;
+╠ invalid
+║ • gesture: tap
+║ occasion: нажатие в область seller_goods_list_cover_state2_front_lower_img_frame;
+║ condition: если seller_settings_goods_list_image_value < 1;
+╙ result: seller_goods_list_cover_state2_front_lower_img_frame не реагирует на нажатие.
+• seller_goods_list_cover_state2_front_lower_control_edit:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_goods_list_cover_state2_front_lower_control_edit;
+║ condition: in any situation;
+╙ result: открывается seller_settings_goods_screen целевого лота.
+• seller_goods_list_cover_state2_front_lower_control_book:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_goods_list_cover_state2_front_lower_control_book;
+║ condition: seller_goods_book_function=off;
+║ result: происходит переключение в режим seller_goods_book_function=on, при котором buyer может зарезервировать товар по целевому лоту.
+║ • gesture: tap
+║ occasion: нажатие seller_goods_list_cover_state2_front_lower_control_book;
+║ condition: seller_goods_book_function=on;
+╙ result: происходит переключение в режим seller_goods_book_function=off, при котором buyer не может зарезервировать товар по целевому лоту.
+• seller_goods_list_cover_state2_front_lower_control_expo:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_goods_list_cover_state2_front_lower_control_expo;
+║ condition: in any situation;
+║ result: 
+║ - && - целевой лот удаляется из seller_goods_list_normal_state;
+║ - && - демонстрируется анимация, как seller_goods_list_cover_state2 уменьшаясь движется вверх и достигая seller_goods_searchlot_archive исчезает;
+║ - && - целевой лот удаляется из seller_goods_list_normal_state;
+╙ - && - seller_goods_list перестраивается, когда место и seller_goods_list_cover_state2_front_top_number_value удаленного лота занимает последующий лот (имеющий значение seller_goods_list_cover_state2_front_top_number_value + 1 относительно seller_goods_list_cover_state2_front_top_number_value удаленного лота);
+
+✠ color_states
+┌─
+│seller_goods_list_cover_state2_front
+│seller_goods_list_cover_state2_front_middle_quantity
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color0
+│------ in any situation
+└─
+┌─
+│seller_goods_list_cover_state2_front_middle_quantity
+│---------------------------
+│⟪⟪ border ⟫⟫ 
+├────────
+│• color1
+│если seller_goods_list_cover_state2_front_middle_price_value > 0% || <= 10% значения seller_settings_goods_list_quantity_value
+├────────
+│• color6
+│если seller_goods_list_cover_state2_front_middle_price_value > 10% || <= 50% значения seller_settings_goods_list_quantity_value
+├────────
+│• color3
+│если seller_goods_list_cover_state2_front_middle_price_value > 50% || <= 100% значения seller_settings_goods_list_quantity_value
+└─
+┌─
+│seller_goods_list_cover_state2_front_middle_price_value
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color1
+│если seller_goods_list_cover_state2_front_middle_price_value > 0% || <= 10% значения seller_settings_goods_list_quantity_value
+├────────
+│• color6
+│если seller_goods_list_cover_state2_front_middle_price_value > 10% || <= 50% значения seller_settings_goods_list_quantity_value
+├────────
+│• color3
+│если seller_goods_list_cover_state2_front_middle_price_value > 50% || <= 100% значения seller_settings_goods_list_quantity_value
+└─
+┌─
+│seller_goods_list_cover_state2_front_middle
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color2
+│------ in any situation
+└─
+┌─
+│seller_goods_list_cover_state2_front_lower_img_frame_widget  
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color1
+│------ in any situation
+└─
+┌─
+│seller_goods_list_cover_state2_front_lower_control_edit
+│seller_goods_list_cover_state2_front_lower_control_expo
+│-------------------------------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color5
+│------ in pressing_state
+└─
+┌─
+│seller_goods_list_cover_state2_front_lower_control_book
+│-------------------------------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state (seller_goods_book_function=off)
+├────────
+│• color7
+│------ in pressing_state (seller_goods_book_function=on)
+└─
+┌─
+│seller_goods_list_cover_state2_front_top_number_value
+│seller_goods_list_cover_state2_front_top_name_value
+│seller_goods_list_cover_state2_front_middle_quantity_value
+│seller_goods_list_cover_state2_front_lower_control_edit_label
+│seller_goods_list_cover_state2_front_lower_control_book_label
+│seller_goods_list_cover_state2_front_lower_control_expo_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
+
+■ ■ seller_goods_list_cover_state3 ■ ■
+
+В seller_goods_list_cover_state3 seller_goods_list_cover имеют средний размер, располагаясь в 2 столбца, занимая по горизонтали ~50% экрана и порядка 20% по вертикали, где они выстраиваются в порядке публикации слева-направо и сверху-вниз. В seller_goods_list_cover_state3 карточка товара не имеет функции переключения между дополнительными экранами (по умолчанию всегда работает в режиме seller_goods_list_cover_state3_front).  
+
+✠ tables
+
+                                       codename:                                  type:                designation:           location:  interaction:
+   ┌───────[seller_goods_list_cover_state3                               ]  [component_lev1]                                   [ ✜ ✜ ]     [ no  ]
+   └┬┬┬────[seller_goods_list_cover_state3_front                         ]  [component_lev2]                                   [ ✜ ✜ ]     [ no  ]
+    ││└┬┬──[seller_goods_list_cover_state3_front_top                     ]  [component_lev3]                                   [ 🡅 ✜ ]     [ no  ]
+    ││ │└┬─[seller_goods_list_cover_state3_front_top_number              ]  [component_lev4]                                   [ ✜ 🡄 ]     [ no  ]
+    ││ │ └ [seller_goods_list_cover_state3_front_top_number_value        ]  [variable      ]  [ { number }                ]    [ ✜ ✜ ]     [ no  ]
+    ││ └─┬─[seller_goods_list_cover_state3_front_top_name                ]  [component_lev4]                                   [ ✜ 🡆 ]     [ no  ]
+    ││   └ [seller_goods_list_cover_state3_front_top_name_value          ]  [variable      ]  [ { string }                ]    [ ✜ ✜ ]     [ no  ]  
+    │└─┬┬──[seller_goods_list_cover_state3_front_middle                  ]  [component_lev3]                                   [ ✜ ✜ ]     [ no  ]
+    │  │└┬─[seller_goods_list_cover_state3_front_middle_price            ]  [component_lev4]                                   [ ✜ 🡄 ]     [ no  ] 
+    │  │ └ [seller_goods_list_cover_state3_front_middle_price_value      ]  [widget        ]  [ { number }                ]    [ ✜ ✜ ]     [ no  ]
+    │  └─┬─[seller_goods_list_cover_state3_front_middle_quantity         ]  [component_lev4]                                   [ ✜ 🡆 ]     [ no  ]
+    │    └ [seller_goods_list_cover_state3_front_middle_quantity_value   ]  [variable      ]  [ { number }                ]    [ ✜ ✜ ]     [ no  ]	
+    └┬─┬───[seller_goods_list_cover_state3_front_lower                   ]  [component_lev3]                                   [ 🡇 ✜ ]     [ no  ]
+     │ └┬──[seller_goods_list_cover_state3_front_lower_img               ]  [component_lev4]                                   [ ✜ 🡄 ]     [ no  ]
+     │  └┬─[seller_goods_list_cover_state3_front_lower_img_frame         ]  [picture+button]  [ { img }                   ]    [ ✜ ✜ ]     [ yes ]
+     │   └ [seller_goods_list_cover_state3_front_lower_img_frame_widget  ]  [widget        ]                                   [ 🡅 🡆 ]     [ yes ]
+     └┬┬┬──[seller_goods_list_cover_state3_front_lower_control           ]  [component_lev4]                                   [ ✜ 🡆 ]     [ no  ]
+      ││└┬─[seller_goods_list_cover_state3_front_lower_control_edit      ]  [button        ]                                   [ 🡅 ✜ ]     [ yes ]
+      ││ └ [seller_goods_list_cover_state3_front_lower_control_edit_label]  [label         ]  [ "редактор"                ]    [ ✜ ✜ ]     [ yes ]
+      │└─┬─[seller_goods_list_cover_state3_front_lower_control_book      ]  [button        ]                                   [ ✜ ✜ ]     [ yes ]
+      │  └ [seller_goods_list_cover_state3_front_lower_control_book_label]  [label         ]  [ "резерв"                  ]    [ ✜ ✜ ]     [ yes ]
+      └──┬─[seller_goods_list_cover_state3_front_lower_control_expo      ]  [button        ]                                   [ 🡇 ✜ ]     [ yes ]
+         └ [seller_goods_list_cover_state3_front_lower_control_expo_label]  [label         ]  [ "удалить"                 ]    [ ✜ ✜ ]     [ yes ]
+
+✠ details
+seller_goods_list_cover_state3_front состоит из 3 основных компонентов: 
+- seller_goods_list_cover_state3_front_top;
+- seller_goods_list_cover_state3_front_middle;
+- seller_goods_list_cover_state3_front_lower.
+
+seller_goods_list_cover_state3_front_top
+--- seller_goods_list_cover_state3_front_top локализован в верхней его части в качестве блока занимающего всю ширину seller_goods_list_cover_state3_front, а по высоте порядка 20% seller_goods_list_cover_state3_front. Состоит из 2 компонентов:
+1)----- seller_goods_list_cover_state3_front_top_number - представляет собой контейнер расположенный слева от seller_goods_list_cover_state3_front_top_name, который занимает порядка 5-10% пространства seller_goods_list_cover_state3_front_top и содержит seller_goods_list_cover_state3_front_top_number_value; 
+------- seller_goods_list_cover_state3_front_top_number_value - переменная с числовым значением отображающая порядковый номер товара согласно дате и времени его публикации, где последний опубликованный лот имеет seller_goods_list_cover_state3_front_top_number_value = 1; 
+2)----- seller_goods_list_cover_state3_front_top_name - является заголовком карточки товара состоящим из 2 элементов:
+------- seller_goods_list_cover_state3_front_top_name_value - переменная со строковым значением отвечающая за отображение seller_settings_goods_list_name_value, обладает font-weight:bold и в ситуации нехватки места в seller_goods_list_cover_state3_front_top, seller_settings_goods_list_name_value сокращается путем отбрасывания последних букв и добавлением трехточия.
+
+seller_goods_list_cover_state3_front_middle
+--- seller_goods_list_cover_state3_front_middle локализован под seller_goods_list_cover_state3_front_top в качестве блока занимающего всю ширину seller_goods_list_cover_state3_front, а по высоте порядка 80% seller_goods_list_cover_state3_front. Состоит из 2 компонентов:
+1)----- seller_goods_list_cover_state3_front_middle_price - представляет собой панель на которой отображается цена, находится в левой части seller_goods_list_cover_state3_front_middle занимая порядка 50% его пространства по горизонтали; 
+------- seller_goods_list_cover_state3_front_middle_price_value - переменная с числовым значением отображающая цену товара по шаблону: "seller_settings_goods_list_price_retail_value/seller_settings_goods_list_price_wholesale_value" - если указана розничная и оптовая цена;
+"seller_settings_goods_list_price_retail_value" - если указана розничная цена;
+"seller_settings_goods_list_price_wholesale_value" - если указана оптовая цена;
+2)----- seller_goods_list_cover_state3_front_middle_quantity - представляет собой виджет количества товара расположенный в правой части seller_goods_list_cover_state3_front_middle занимая около 50% его размера по горизонтали, который вмещает выровненный по центру компонент seller_goods_list_cover_state3_front_middle_quantity_value;
+------- seller_goods_list_cover_state3_front_middle_quantity_value - переменная с числовым значением расположенная в центре seller_goods_list_cover_state3_front_middle_quantity и отображающая количество товара в режиме seller_goods_list_cover_state3_front_middle_quantity_definite (в виде числового значения).
+
+seller_goods_list_cover_state3_front_lower
+--- seller_goods_list_cover_state3_front_lower - контейнер локализован в нижней части seller_goods_list_cover_state3_front содержащий 2 компонента:
+1)----- seller_goods_list_cover_state3_front_lower_img - расположен в левой части seller_goods_list_cover_state3_front_lower занимая 50% его ширины и включая seller_goods_list_cover_state3_front_lower_img_frame;
+------- seller_goods_list_cover_state3_front_lower_img_frame - является областью отображения seller_settings_goods_list_image_0, имеет равное соотношение сторон, может находиться в zoom=normal (размер по умолчанию) и zoom=max (размер на весь экран);
+--------- seller_goods_list_cover_state3_front_lower_img_frame_widget - представляется в виде геометрического (треугольник/прямоугольник) элемента выполняющего роль виджета отображающего состояние (активность) seller_goods_list_cover_state3_front располагаясь в верхней правой области seller_goods_list_cover_state3_front_lower_img_frame;
+2)----- seller_goods_list_cover_state3_front_lower_control - расположен в правой части seller_goods_list_cover_state3_front_lower, занимает 50% его ширины и включает 3 компонента-кнопки расположенных друг над другом сверху-вниз в следующем порядке:
+----- seller_goods_list_cover_state3_front_lower_control_edit - кнопка отвечающая за открытие seller_settings_goods_screen, в рамках seller_goods_list_cover_state3_front_lower_control локализован в верхней области;
+------- seller_goods_list_cover_state3_front_lower_control_edit_label - константный текстовый элемент следующего содержания: "редактор";
+----- seller_goods_list_cover_state3_front_lower_control_book - кнопка отвечающая за включение/выключение функции дающей buyer возможность зарезервировать товар по лоту, в рамках seller_goods_list_cover_state3_front_lower_control локализован в центральной области;
+------- seller_goods_list_cover_state3_front_lower_control_book_label - константный текстовый элемент следующего содержания: "резерв";
+----- seller_goods_list_cover_state3_front_lower_control_expo - кнопка отвечающая за функцию удаления seller_goods_list_cover_state3 из seller_goods_screen (может находиться либо в состоянии removed, либо в состоянии existed), в рамках seller_goods_list_cover_state3_front_lower_control локализован в нижней области;
+------- seller_goods_list_cover_state3_front_lower_control_expo_label - константный текстовый элемент следующего содержания: "удалить".
+
+✠ logics
+Нормативы отображения для seller_goods_list_cover_state3_front_middle_price_value: 
+- числа от 1 до 999999999 отображаются в обычном режиме;
+- числа > 999999999 отображаются с использовании аббревиатур:
+- числа > 1000000000 отображаются как 1B+;
+- числа > 1000000000000 отображаются как 1T+.
+
+Нормативы отображения для seller_goods_list_cover_state3_front_middle_quantity_value: 
+- числа от 1 до 999999 отображаются в обычном режиме;
+- числа > 999999 отображаются с использовании аббревиатур:
+- число > 1000000 отображается как 1M+;
+- число > 1000000000 отображается как 1B+;
+- числа > 1000000000000 отображаются как 1T+.
+
+✠ actions
+• seller_goods_list_cover_state3_front_lower_img_frame:
+╠ valid
+║ • gesture: tap
+║ occasion: нажатие в область seller_goods_list_cover_state3_front_lower_img_frame;
+║ condition:
+║ - && - если seller_settings_goods_list_image_value >= 1;
+║ - && - если seller_goods_list_cover_state3_front_lower_img_frame находится в режиме zoom=normal;
+║ result: seller_goods_list_cover_state3_front_lower_img_frame увеличивается на весь экран выравниваясь по горизонтали;
+║ • gesture: tap
+║ occasion: нажатие seller_goods_list_cover_state1_front_body_img_frame;
+║ condition:
+║ - && - если seller_settings_goods_list_image_value >= 1;
+║ - && - если seller_goods_list_cover_state3_front_lower_img_frame находится в режиме zoom=max (растянуто на весь экран);
+║ result: seller_goods_list_cover_state3_front_lower_img_frame уменьшается до обычного размера zoom=normal;
+╠ invalid
+║ • gesture: tap
+║ occasion: нажатие в область seller_goods_list_cover_state3_front_lower_img_frame;
+║ condition: если seller_settings_goods_list_image_value < 1;
+╙ result: seller_goods_list_cover_state3_front_lower_img_frame не реагирует на нажатие.
+• seller_goods_list_cover_state3_front_lower_control_edit:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_goods_list_cover_state3_front_lower_control_edit;
+║ condition: in any situation;
+╙ result: открывается seller_settings_goods_screen целевого лота.
+• seller_goods_list_cover_state3_front_lower_control_book:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_goods_list_cover_state3_front_lower_control_book;
+║ condition: seller_goods_book_function=off;
+║ result: происходит переключение в режим seller_goods_book_function=on, при котором buyer может зарезервировать товар по целевому лоту.
+║ • gesture: tap
+║ occasion: нажатие seller_goods_list_cover_state3_front_lower_control_book;
+║ condition: seller_goods_book_function=on;
+╙ result: происходит переключение в режим seller_goods_book_function=off, при котором buyer не может зарезервировать товар по целевому лоту.
+• seller_goods_list_cover_state3_front_lower_control_expo:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_goods_list_cover_state3_front_lower_control_expo;
+║ condition: in any situation;
+║ result: 
+║ - && - целевой лот удаляется из seller_goods_list_normal_state;
+║ - && - демонстрируется анимация, как seller_goods_list_cover_state3 уменьшаясь движется вверх и достигая seller_goods_searchlot_archive исчезает;
+║ - && - целевой лот удаляется из seller_goods_list_normal_state;
+╙ - && - seller_goods_list перестраивается, когда место и seller_goods_list_cover_state3_front_top_number_value удаленного лота занимает последующий лот (имеющий значение seller_goods_list_cover_state3_front_top_number_value + 1 относительно seller_goods_list_cover_state3_front_top_number_value удаленного лота);
+
+✠ color_states
+┌─
+│seller_goods_list_cover_state3_front
+│seller_goods_list_cover_state3_front_middle_quantity
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color0
+│------ in any situation
+└─
+┌─
+│seller_goods_list_cover_state3_front_middle_quantity
+│---------------------------
+│⟪⟪ border ⟫⟫ 
+├────────
+│• color1
+│если seller_goods_list_cover_state3_front_middle_price_value > 0% || <= 10% значения seller_settings_goods_list_quantity_value
+├────────
+│• color6
+│если seller_goods_list_cover_state3_front_middle_price_value > 10% || <= 50% значения seller_settings_goods_list_quantity_value
+├────────
+│• color3
+│если seller_goods_list_cover_state3_front_middle_price_value > 50% || <= 100% значения seller_settings_goods_list_quantity_value
+└─
+┌─
+│seller_goods_list_cover_state3_front_middle_price_value
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color1
+│если seller_goods_list_cover_state3_front_middle_price_value > 0% || <= 10% значения seller_settings_goods_list_quantity_value
+├────────
+│• color6
+│если seller_goods_list_cover_state3_front_middle_price_value > 10% || <= 50% значения seller_settings_goods_list_quantity_value
+├────────
+│• color3
+│если seller_goods_list_cover_state3_front_middle_price_value > 50% || <= 100% значения seller_settings_goods_list_quantity_value
+└─
+┌─
+│seller_goods_list_cover_state3_front_middle
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color2
+│------ in any situation
+└─
+┌─
+│seller_goods_list_cover_state3_front_lower_img_frame_widget  
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color1
+│------ in any situation
+└─
+┌─
+│seller_goods_list_cover_state3_front_lower_control_edit
+│seller_goods_list_cover_state3_front_lower_control_expo
+│-------------------------------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color5
+│------ in pressing_state
+└─
+┌─
+│seller_goods_list_cover_state3_front_lower_control_book
+│-------------------------------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state (seller_goods_book_function=off)
+├────────
+│• color7
+│------ in pressing_state (seller_goods_book_function=on)
+└─
+┌─
+│seller_goods_list_cover_state3_front_top_number_value
+│seller_goods_list_cover_state3_front_top_name_value
+│seller_goods_list_cover_state3_front_middle_quantity_value
+│seller_goods_list_cover_state3_front_lower_control_edit_label
+│seller_goods_list_cover_state3_front_lower_control_book_label
+│seller_goods_list_cover_state3_front_lower_control_expo_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
 
 
 ✠ tables
@@ -1609,6 +2039,7 @@ lot_cover_archived_state:
 │• color2
 │------ in any situation.
 └─
+
 
 
 
