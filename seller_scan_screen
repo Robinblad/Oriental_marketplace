@@ -1,0 +1,231 @@
+
+
+🡆🡆 seller_scan_screen
+■■■■■■■■■■■■■■■■■■■■■
+
+seller_scan_screen предназначен для товаро-денежных операций в условиях оффлайн продажи, когда buyer приобретает товар непосредственно вживую в торговой точке, в процессе чего требуется сделать расчет стоимости товара исходя из его веса либо с учетом иных характеристик. seller_scan_screen имеет встроенный калькулятор предоставляющий возможность рассчитать общую стоимость покупки и функционал генерации QR кода позволяющий произвести бесконтактный расчет.
+
+seller_scan_screen представлен в 3 подразделах навигацией по которым служит панель в верхней части экрана содержащая 3 кнопки (вкладки) расположенных слева-направо в следующем порядке:
+
+- check  - seller_scan_nav_check, при нажатии на которую открывается seller_scan_check_screen;
+- calc  - seller_scan_nav_calc, при нажатии на которую открывается seller_scan_calc_screen;
+- QR  - seller_scan_nav_qr, при нажатии на которую открывается seller_scan_qr_screen.
+
+При открытии seller_scan логика допускает активность одной из вкладок в каждый момент времени.
+seller_scan_calc_screen является экраном по умолчанию.
+В момент выхода из seller_scan посредством seller_scan_state_function, если статус по рассчитываемому ордеру seller_account_orders_list_order_ready = off, тогда фиксируется раздел который был открыт. Впоследствии при входе, если статус seller_account_orders_list_order_ready = off сохраняется, в seller_scan открывается раздел, который был открыт на момент последнего выхода из seller_scan. В момент когда статус по целевому ордеру становится seller_account_orders_list_order_ready = on, тогда seller_scan_state_function сбрасывается и при следующем открытии seller_scan_screen по умолчанию отображается seller_scan_calc_screen.
+
+
+🡆🡆🡆 seller_scan_calc_screen
+■■■■■■■■■■■■■■■■■■■■■■■■■■■
+
+Подраздел в котором отображается калькулятор. Основное пространство в центральной области экрана занимает seller_scan_calc_body состоящий из 3 секций:
+- seller_scan_calc_body_display  
+- seller_scan_calc_body_keys
+- seller_scan_calc_body_result
+
+✠ tables
+
+                                                     codename:                                 type:           designation:        location:   interaction:
+                    ┌┬┬──[seller_scan_nav                                             ]  [section       ]                           [ 🡅 ✜ ]      [ no  ]
+                    ││└┬─[seller_scan_nav_check                                       ]  [button        ]                           [ ✜ 🡄 ]      [ yes ]
+                    ││ └ [seller_scan_nav_check_label                                 ]  [label         ]  [ "чек"           ]      [ ✜ ✜ ]      [ yes ]
+                    │└─┬─[seller_scan_nav_scan                                        ]  [button        ]                           [ ✜ ✜ ]      [ yes ]
+                    │  └ [seller_scan_nav_scan_label                                  ]  [label         ]  [ "скан"          ]      [ ✜ ✜ ]      [ yes ]
+                    └──┬─[seller_scan_nav_qr                                          ]  [button        ]                           [ ✜ 🡆 ]      [ yes ]
+                       └ [seller_scan_nav_qr_label                                    ]  [label         ]  [ "QR"            ]      [ ✜ ✜ ]      [ yes ]
+ ┌┬──────────────────────[seller_scan_calc                                            ]  [section_lev1  ]                           [ ✜ ✜ ]      [ no  ]
+ │└┬┬───────────┬────────[seller_scan_calc_body                                       ]  [section_lev2  ]                           [ ✜ ✜ ]      [ no  ]
+ │ ││           └┬─┬─────[seller_scan_calc_body_display                               ]  [section_lev3  ]                           [ 🡅 ✜ ]      [ no  ] 
+ │ ││            │ └┬┬┬──[seller_scan_calc_body_display_top                           ]  [thead         ]                           [ 🡅 ✜ ]      [ no  ] 
+ │ ││            │  ││└┬─[seller_scan_calc_body_display_top_name                      ]  [th            ]                           [ ✜ 🡄 ]      [ no  ]
+ │ ││            │  ││ └ [seller_scan_calc_body_display_top_name_label                ]  [label         ]  [ "наименование"  ]      [ ✜ ✜ ]      [ no  ]
+ │ ││            │  │└─┬─[seller_scan_calc_body_display_top_quantity                  ]  [th            ]                           [ ✜ ✜ ]      [ no  ]
+ │ ││            │  │  └ [seller_scan_calc_body_display_top_quantity_label            ]  [label         ]  [ "количество"    ]      [ ✜ ✜ ]      [ no  ]
+ │ ││            │  └──┬─[seller_scan_calc_body_display_top_cost                      ]  [th            ]                           [ ✜ 🡆 ]      [ no  ]
+ │ ││            │     └ [seller_scan_calc_body_display_top_cost_label                ]  [label         ]  [ "стоимость"     ]      [ ✜ ✜ ]      [ no  ]
+ │ ││            └┬──────[seller_scan_calc_body_display_list                          ]  [section_lev4  ]                           [ ✜ ✜ ]      [ no  ]
+ │ ││             └┬┬┬───[seller_scan_calc_body_display_list_lot                      ]  [tbody         ]                           [ ✜ ✜ ]      [ no  ] 
+ │ ││              ││└┬──[seller_scan_calc_body_display_list_lot_name                 ]  [td            ]                           [ ✜ 🡄 ]      [ yes ]
+ │ ││              ││ └┬─[seller_scan_calc_body_display_list_lot_name_value           ]  [section_lev3  ]                           [ ✜ ✜ ]      [ yes ] 
+ │ ││              ││  ├ [seller_scan_calc_body_display_list_lot_name_value_label     ]  [label         ]  [ "лот "          ]      [ ✜ 🡄 ]      [ yes ]
+ │ ││              ││  └ [seller_scan_calc_body_display_list_lot_name_value_number    ]  [variable      ]  [ { number }      ]      [ ✜ 🡆 ]      [ yes ]
+ │ ││              │└─┬──[seller_scan_calc_body_display_list_lot_quantity             ]  [td            ]                           [ ✜ ✜ ]      [ yes ]
+ │ ││              │  └┬─[seller_scan_calc_body_display_list_lot_quantity_value       ]  [section_lev3  ]                           [ ✜ ✜ ]      [ yes ]
+ │ ││              │   ├ [seller_scan_calc_body_display_list_lot_quantity_value_number]  [variable      ]  [ { number }      ]      [ ✜ 🡄 ]      [ yes ]
+ │ ││              │   └ [seller_scan_calc_body_display_list_lot_quantity_value_string]  [variable      ]  [ { string }      ]      [ ✜ 🡆 ]      [ yes ]
+ │ ││              └──┬──[seller_scan_calc_body_display_list_lot_cost                 ]  [td            ]                           [ ✜ 🡆 ]      [ yes ]
+ │ ││                 └┬─[seller_scan_calc_body_display_list_lot_cost_value           ]  [section_lev3  ]                           [ ✜ ✜ ]      [ yes ]
+ │ ││                  ├ [seller_scan_calc_body_display_list_lot_cost_value_number    ]  [label+button  ]  [ { number }      ]      [ ✜ 🡄 ]      [ yes ]
+ │ ││                  └ [seller_scan_calc_body_display_list_lot_cost_value_string    ]  [label+button  ]  [ { string }      ]      [ ✜ 🡆 ]      [ yes ]
+ │ │└┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬──[seller_scan_calc_body_keys                                  ]  [section_lev3  ]                           [ ✜ ✜ ]      [ no  ] 
+ │ │ │││││││││││││││││└┬─[seller_scan_calc_body_keys_7                                ]  [button        ]                           [ 🡅 🡄 ]      [ yes ]
+ │ │ │││││││││││││││││ └ [seller_scan_calc_body_keys_7_label                          ]  [label         ]  [ "7"             ]      [ ✜ ✜ ]      [ yes ] 
+ │ │ ││││││││││││││││└─┬─[seller_scan_calc_body_keys_8                                ]  [button        ]                           [ 🡅 ✜ ]      [ yes ]
+ │ │ ││││││││││││││││  └ [seller_scan_calc_body_keys_8_label                          ]  [label         ]  [ "8"             ]      [ ✜ ✜ ]      [ yes ] 
+ │ │ │││││││││││││││└──┬─[seller_scan_calc_body_keys_9                                ]  [button        ]                           [ 🡅 ✜ ]      [ yes ]
+ │ │ │││││││││││││││   └ [seller_scan_calc_body_keys_9_label                          ]  [label         ]  [ "9"             ]      [ ✜ ✜ ]      [ yes ] 
+ │ │ ││││││││││││││└───┬─[seller_scan_calc_body_keys_del                              ]  [button        ]                           [ 🡅 ✜ ]      [ yes ]
+ │ │ ││││││││││││││    └ [seller_scan_calc_body_keys_del_label                        ]  [label         ]  [ "DEL"           ]      [ ✜ ✜ ]      [ yes ]
+ │ │ │││││││││││││└────┬─[seller_scan_calc_body_keys_ac                               ]  [button        ]                           [ 🡅 🡆 ]      [ yes ]
+ │ │ │││││││││││││     └ [seller_scan_calc_body_keys_ac_label                         ]  [label         ]  [ "AC"            ]      [ ✜ ✜ ]      [ yes ] 
+ │ │ ││││││││││││└─────┬─[seller_scan_calc_body_keys_4                                ]  [button        ]                           [ ✜ 🡄 ]      [ yes ]
+ │ │ ││││││││││││      └ [seller_scan_calc_body_keys_4_label                          ]  [label         ]  [ "4"             ]      [ ✜ ✜ ]      [ yes ] 
+ │ │ │││││││││││└──────┬─[seller_scan_calc_body_keys_5                                ]  [button        ]                           [ ✜ ✜ ]      [ yes ]
+ │ │ │││││││││││       └ [seller_scan_calc_body_keys_5_label                          ]  [label         ]  [ "5"             ]      [ ✜ ✜ ]      [ yes ] 
+ │ │ ││││││││││└───────┬─[seller_scan_calc_body_keys_6                                ]  [button        ]                           [ ✜ ✜ ]      [ yes ]
+ │ │ ││││││││││        └ [seller_scan_calc_body_keys_6_label                          ]  [label         ]  [ "6"             ]      [ ✜ ✜ ]      [ yes ]
+ │ │ │││││││││└────────┬─[seller_scan_calc_body_keys_divide                           ]  [button        ]                           [ ✜ ✜ ]      [ yes ]
+ │ │ │││││││││         └ [seller_scan_calc_body_keys_divide_label                     ]  [label         ]  [ ":"             ]      [ ✜ ✜ ]      [ yes ] 
+ │ │ ││││││││└─────────┬─[seller_scan_calc_body_keys_multi                            ]  [button        ]                           [ ✜ 🡆 ]      [ yes ]
+ │ │ ││││││││          └ [seller_scan_calc_body_keys_multi_label                      ]  [label         ]  [ "x"             ]      [ ✜ ✜ ]      [ yes ] 
+ │ │ │││││││└──────────┬─[seller_scan_calc_body_keys_1                                ]  [button        ]                           [ ✜ 🡄 ]      [ yes ]
+ │ │ │││││││           └ [seller_scan_calc_body_keys_1_label                          ]  [label         ]  [ "1"             ]      [ ✜ ✜ ]      [ yes ] 
+ │ │ ││││││└───────────┬─[seller_scan_calc_body_keys_2                                ]  [button        ]                           [ ✜ ✜ ]      [ yes ]
+ │ │ ││││││            └ [seller_scan_calc_body_keys_2_label                          ]  [label         ]  [ "2"             ]      [ ✜ ✜ ]      [ yes ]
+ │ │ │││││└────────────┬─[seller_scan_calc_body_keys_3                                ]  [button        ]                           [ ✜ ✜ ]      [ yes ]
+ │ │ │││││             └ [seller_scan_calc_body_keys_3_label                          ]  [label         ]  [ "3"             ]      [ ✜ ✜ ]      [ yes ] 
+ │ │ ││││└─────────────┬─[seller_scan_calc_body_keys_minus                            ]  [button        ]                           [ ✜ ✜ ]      [ yes ]
+ │ │ ││││              └ [seller_scan_calc_body_keys_minus_label                      ]  [label         ]  [ "-"             ]      [ ✜ ✜ ]      [ yes ] 
+ │ │ │││└──────────────┬─[seller_scan_calc_body_keys_plus                             ]  [button        ]                           [ ✜ 🡆 ]      [ yes ]
+ │ │ │││               └ [seller_scan_calc_body_keys_plus_label                       ]  [label         ]  [ "+"             ]      [ ✜ ✜ ]      [ yes ] 
+ │ │ ││└───────────────┬─[seller_scan_calc_body_keys_0                                ]  [button        ]                           [ 🡇 🡄 ]      [ yes ]
+ │ │ ││                └ [seller_scan_calc_body_keys_0_label                          ]  [label         ]  [ "0"             ]      [ ✜ ✜ ]      [ yes ]
+ │ │ │└────────────────┬─[seller_scan_calc_body_keys_dot                              ]  [button        ]                           [ 🡇 ✜ ]      [ yes ]
+ │ │ │                 └ [seller_scan_calc_body_keys_dot_label                        ]  [label         ]  [ "."             ]      [ ✜ ✜ ]      [ yes ] 
+ │ │ └─────────────────┬─[seller_scan_calc_body_keys_equal                            ]  [button        ]                           [ 🡇 🡆 ]      [ yes ]
+ │ │                   └ [seller_scan_calc_body_keys_equal_label                      ]  [label         ]  [ "="             ]      [ ✜ ✜ ]      [ yes ] 
+ │ └─────────────────┬┬──[seller_scan_calc_body_result                                ]  [section_lev3  ]                           [ 🡇 ✜ ]      [ no  ]
+ │                   │└┬─[seller_scan_calc_body_result_widget                         ]  [widget        ]                           [ ✜ 🡄 ]      [ no  ]
+ │                   │ ├ [seller_scan_calc_body_result_widget_signifier               ]  [variable      ]  [ { string }      ]      [ ✜ 🡄 ]      [ no  ]
+ │                   │ └ [seller_scan_calc_body_result_widget_output                  ]  [variable      ]  [ { number }      ]      [ ✜ 🡆 ]      [ no  ]
+ │                   └─┬─[seller_scan_calc_body_result_add                            ]  [button        ]                           [ ✜ 🡆 ]      [ yes ]
+ │                     └ [seller_scan_calc_body_result_add_label                      ]  [label         ]  [ "+ товар"       ]      [ ✜ ✜ ]      [ yes ]
+ └─────────────────────┬─[seller_scan_calc_buttons                                    ]  [section_lev2  ]                           [ 🡇 ✜ ]      [ no  ]
+                       ├ [seller_scan_calc_buttons_ok                                 ]  [button        ]                           [ ✜ 🡄 ]      [ yes ]
+                       ├ [seller_scan_calc_buttons_ok_label                           ]  [label         ]  [ "ОК"            ]      [ ✜ ✜ ]      [ yes ]
+                       ├ [seller_scan_calc_buttons_qr                                 ]  [button        ]                           [ ✜ 🡆 ]      [ yes ]
+                       └ [seller_scan_calc_buttons_qr_label                           ]  [label         ]  [ "QR-код"        ]      [ ✜ ✜ ]      [ yes ]
+                  ┌┬┬┬┬──[seller_nav                                                  ]  [section       ]                           [ ✜ ✜ ]      [ no  ]
+                  ││││└┬─[seller_nav_demand_button                                    ]  [button        ]                           [ ✜ 🡄 ]      [ yes ]
+                  ││││ ├ [seller_nav_demand_header                                    ]  [header        ]  [ "МОНИТОР"       ]      [ ✜ ✜ ]      [ no  ]  
+                  ││││ └ [seller_nav_demand_badge                                     ]  [badge         ]  [ { number }      ]      [ 🡅 🡆 ]      [ no  ] 	
+                  │││└─┬─[seller_nav_chat_button                                      ]  [button        ]                           [ ✜ 🡄 ]      [ yes ]   
+                  │││  ├ [seller_nav_chat_header                                      ]  [header        ]  [ "ЧАТ"           ]      [ ✜ ✜ ]      [ no  ] 
+                  │││  └ [seller_nav_chat_badge                                       ]  [badge         ]  [ { number }      ]      [ 🡅 🡆 ]      [ no  ] 
+                  ││└──┬─[seller_nav_shop_button                                      ]  [button        ]                           [ ✜ ✜ ]      [ yes ]   
+                  ││   ├ [seller_nav_shop_header                                      ]  [header        ]  [ "МАГАЗИН"       ]      [ ✜ ✜ ]      [ no  ] 
+                  ││   └ [seller_nav_shop_badge                                       ]  [badge         ]  [ { number }      ]      [ 🡅 🡆 ]      [ no  ]   
+                  │└───┬─[seller_nav_goods_button                                     ]  [button        ]                           [ ✜ 🡆 ]      [ yes ]   
+                  │    ├ [seller_nav_goods_header                                     ]  [header        ]  [ "ТОВАРЫ"        ]      [ ✜ ✜ ]      [ no  ] 
+                  │    └ [seller_nav_goods_badge                                      ]  [badge         ]  [ { number }      ]      [ 🡅 🡆 ]      [ no  ]     
+                  └────┬─[seller_nav_scan_button                                      ]  [button        ]                           [ ✜ 🡆 ]      [ yes ]   
+                       ├ [seller_nav_scan_header                                      ]  [header        ]  [ "КАБИНЕТ"       ]      [ ✜ ✜ ]      [ no  ] 
+                       └ [seller_nav_scan_badge                                       ]  [badge         ]  [ { number }      ]      [ 🡅 🡆 ]      [ no  ] 
+
+
+■ seller_scan_nav
+
+✠ details
+Секция seller_scan_nav является навигационной панелью seller_scan и как сквозная часть интерфейса присутствует на всех экранах seller_scan в верхней области. Секция состоит из 3 компонентов каждый из которых выполняет роль кнопки расположенные слева-направо в следующем порядке:
+
+1)  seller_scan_nav_check - кнопка предназначенная для перехода к seller_scan_check_screen;
+--- seller_scan_nav_check_label - является константным центрированным в seller_scan_nav_check текстовым элементом следующего содержания: "чек";
+2) seller_scan_nav_calc - кнопка предназначенная для перехода к seller_scan_calc_screen (активирована по умолчанию);
+--- seller_scan_nav_calc_label - является константным центрированным в seller_scan_nav_calc текстовым элементом следующего содержания: "скан";
+3) seller_scan_nav_qr - кнопка предназначенная для перехода к seller_scan_qr_screen;
+--- seller_scan_nav_qr_label - является константным центрированным в seller_scan_nav_qr текстовым элементом следующего содержания: "QR".
+
+✠ actions
+• seller_scan_nav_check:
+╠ valid
+║ • gesture: tap
+║ occasion: нажатие seller_scan_nav_check;
+║ condition:
+║ || - в ситуации присутствия в seller_scan_calc_screen;
+║ || - в ситуации присутствия в seller_scan_qr_screen;
+║ result: открывается seller_scan_check_screen.
+╠ invalid
+║ • gesture: tap
+║ occasion: нажатие seller_scan_nav_check;
+║ condition: в ситуации присутствия в seller_scan_check_screen;
+╙ result: не реагирует на нажатие.
+• seller_scan_nav_calc:
+╠ valid
+║ • gesture: tap
+║ occasion: нажатие seller_scan_nav_calc;
+║ condition:
+║ || - в ситуации присутствия в seller_scan_check_screen;
+║ || - в ситуации присутствия в seller_scan_qr_screen;
+║ result: открывается seller_scan_calc_screen.
+╠ invalid
+║ • gesture: tap
+║ occasion: нажатие seller_scan_nav_calc;
+║ condition: в ситуации присутствия в seller_scan_calc_screen;
+╙ result: не реагирует на нажатие.
+• seller_scan_nav_qr:
+╠ valid
+║ • gesture: tap
+║ occasion: нажатие seller_scan_nav_qr;
+║ condition:
+║ || - в ситуации присутствия в seller_scan_check_screen;
+║ || - в ситуации присутствия в seller_scan_calc_screen;
+║ result: открывается seller_scan_qr_screen.
+╠ invalid
+║ • gesture: tap
+║ occasion: нажатие seller_scan_nav_qr;
+║ condition: в ситуации присутствия в seller_scan_qr_screen;
+╙ result: не реагирует на нажатие.
+
+✠ color_states
+┌─ 
+│seller_scan_nav_check  (default_state по умолчанию в seller_scan_calc_screen)
+│seller_scan_nav_calc  (activated_state по умолчанию в seller_scan_calc_screen)
+│seller_scan_nav_qr  (default_state по умолчанию в seller_scan_calc_screen)
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color7
+│------ в activated_state
+└─
+┌─
+│seller_scan_nav_check_label
+│seller_scan_nav_scan_label
+│seller_scan_nav_qr_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
+
+■ seller_scan_calc_body_display
+
+✠ details
+seller_scan_calc_body_display состоит из 2 основных компонентов: 
+- seller_scan_calc_body_display_top;
+- seller_scan_calc_body_display_list.
+
+- seller_scan_calc_body_display_top локализован в верхней его части в качестве блока занимающего всю ширину seller_scan_calc_body_display, а по высоте порядка 10% seller_scan_calc_body_display и представляет собой верхняя таблицы, в котором располагаются заголовки столбцов для seller_scan_calc_body_display_list.
+--- seller_scan_calc_body_display_top_name - является левой ячейкой seller_scan_calc_body_display_top содержащей seller_scan_calc_body_display_top_name_label; 
+----- seller_scan_calc_body_display_top_name_label - константный текстовый элемент следующего содержания: "наименование";
+--- seller_scan_calc_body_display_top_quantity - является центральной ячейкой seller_scan_calc_body_display_top содержащей seller_scan_calc_body_display_top_quantity_label; 
+----- seller_scan_calc_body_display_top_quantity_label - константный текстовый элемент следующего содержания: "количество";
+--- seller_scan_calc_body_display_top_cost - является правой ячейкой seller_scan_calc_body_display_top содержащей seller_scan_calc_body_display_top_cost_label; 
+----- seller_scan_calc_body_display_top_cost_label - константный текстовый элемент следующего содержания: "стоимость";
+
+- seller_scan_calc_body_display_list локализован под seller_scan_calc_body_display_top в качестве списка seller_scan_calc_body_display_list_lot, который занимает всю ширину seller_scan_calc_body_display, а по высоте занимает пространство равное количеству seller_scan_calc_body_display_list_lot находящихся в seller_scan_calc_body_display_list. Если количество seller_scan_calc_body_display_list_lot не вмещается в seller_scan_calc_body_display_list, тогда у seller_scan_calc_body_display_list появляется скроллинг а с правой стороны по краю отображается seller_scan_calc_body_display_list_scrollbar;
+--- seller_scan_calc_body_display_list_lot - товарная позиция выводится в одну строку и содержит данные в 3 ячейках: seller_scan_calc_body_display_list_lot_name, seller_scan_calc_body_display_list_lot_quantity, seller_scan_calc_body_display_list_lot_cost. Количество seller_scan_calc_body_display_list_lot зависит от конкретного ордера;
+--- seller_scan_calc_body_display_list_lot_name - является левой ячейкой seller_scan_calc_body_display_list_lot содержащей seller_scan_calc_body_display_list_lot_name_value; 
+----- seller_scan_calc_body_display_list_lot_name_value - выровненное по центру seller_scan_calc_body_display_list_lot_name конкатенированное значение из 2 переменных seller_scan_calc_body_display_list_lot_name_value_label и seller_scan_calc_body_display_list_lot_name_value_number;
+------- seller_scan_calc_body_display_list_lot_name_value_label - константный текстовый элемент следующего содержания: "лот " размещающийся слева от seller_scan_calc_body_display_list_lot_name_value_number;
+------- seller_scan_calc_body_display_list_lot_name_value_label - переменная с числовым значением отображающая seller_goods_list_cover_stateX_front_top_number_value (seller_goods_list_cover_state1_front_top_number_value ...), располагается справа от seller_scan_calc_body_display_list_lot_name_value_label;
+
+--- seller_scan_calc_body_display_list_lot_quantity - является центральной ячейкой seller_scan_calc_body_display_list_lot содержащей seller_scan_calc_body_display_list_lot_quantity_value; 
+----- seller_scan_calc_body_display_list_lot_quantity_value - выровненное по центру seller_scan_calc_body_display_list_lot_quantity конкатенированное значение из 2 переменных seller_scan_calc_body_display_list_lot_quantity_value_number и seller_scan_calc_body_display_list_lot_quantity_value_string;
+------- seller_scan_calc_body_display_list_lot_quantity_value_number - переменная с числовым значением отображающая значение seller_scan_calc_body_result_widget_output, размещается слева от seller_scan_calc_body_display_list_lot_quantity_value_string;
+------- seller_scan_calc_body_display_list_lot_quantity_value_string - переменная со строковым значением отображающая специфичный seller_settings_goods_list_measure_value для целевого товара, располагается справа от seller_scan_calc_body_display_list_lot_quantity_value_number;
