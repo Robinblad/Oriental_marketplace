@@ -18,114 +18,121 @@ color5 - actived;
 
 
 
-
 🡆🡆 seller_settings_goods_screen
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 Открытие seller_settings_goods_screen осуществляется через нажатие кнопки seller_goods_searchlot_addlot. При инициации каждого нового лота создается индивидуальная форма goods_data, где хранится весь перечень его данных. В seller_settings_goods_screen осуществляется ввод и корректировка данных товара. Конфигурация seller_settings_goods_screen состоит из 3 разделов: seller_settings_goods_panel, seller_settings_goods_list и seller_settings_goods_buttons, главный из которых (seller_settings_goods_list) представлен 11 секциями. Располагаясь в самом верху seller_settings_goods_panel отображает заголовок для seller_settings_goods_screen: "Данные товара". Каждая секция seller_settings_goods_list имеет свой заголовок, который размещается над содержанием. Обязательными для активации = публикации лота являются seller_settings_goods_list_name и seller_settings_goods_list_price. Перечень компонентов seller_settings_goods_screen приведенный в порядке их расположения в интерфейсе сверху-вниз:
 
 ✠ tables
 
-                                                codename:                              type:                  designation:            location:  interaction:
---┌┬─────────────┬──[seller_settings_goods                                  ]  [section_lev1       ]			                       [ ✜ ✜ ]     [ no  ]
---││             └┬─[seller_settings_goods_panel                            ]  [section_lev2       ]			                       [ 🡅 ✜ ]     [ no  ]
---││              └ [seller_settings_goods_panel_label                      ]  [label              ]  [ "Данные товара"         ]      [ ✜ ✜ ]     [ no  ]
---│└┬┬┬┬┬┬┬┬┬┬┬┬────[seller_settings_goods_list                             ]  [section_lev2       ]                                   [ ✜ ✜ ]     [ no  ]
---│ │││││││││││├┬┬──[seller_settings_goods_list_name                        ]  [section_lev3       ]                                   [ 🡅 ✜ ]     [ no  ]
---│ │││││││││││││└┬─[seller_settings_goods_list_name_panel                  ]  [section_lev4       ]                                   [ 🡅 ✜ ]     [ no  ]
---│ │││││││││││││ └ [seller_settings_goods_list_name_panel_label            ]  [label              ]  [ "Наименование товара *" ]      [ ✜ ✜ ]     [ no  ]
---│ ││││││││││││└─┬─[seller_settings_goods_list_name_input                  ]  [button             ]                                   [ 🡇 ✜ ]     [ yes ]
---│ ││││││││││││  └ [seller_settings_goods_list_name_input_label            ]  [placeholder        ]  [ "название"              ]      [ ✜ ✜ ]     [ yes ]
---│ │││││││││││└──┬─[seller_settings_goods_list_name_protip                 ]  [button             ]                                   [ 🡇 🡆 ]     [ yes ]
---│ │││││││││││   └ [seller_settings_goods_list_name_protip_label           ]  [label              ]  [ "?"                     ]      [ ✜ ✜ ]     [ yes ]
---│ ││││││││││└┬┬┬──[seller_settings_goods_list_saletype                    ]  [section_lev3       ]                                   [ ✜ ✜ ]     [ no  ]
---│ ││││││││││ ││└┬─[seller_settings_goods_list_saletype_panel              ]  [section_lev4       ]                                   [ 🡅 ✜ ]     [ no  ]
---│ ││││││││││ ││ └ [seller_settings_goods_list_saletype_panel_label        ]  [label              ]  [ "Розница / опт"         ]      [ ✜ ✜ ]     [ no  ]
---│ ││││││││││ │└─┬─[seller_settings_goods_list_saletype_button             ]  [button             ]                                   [ 🡇 ✜ ]     [ yes ]
---│ ││││││││││ │  ├ [seller_settings_goods_list_saletype_button_label       ]  [label              ]  [ "Розница"               ]      [ ✜ ✜ ]     [ yes ]
---│ ││││││││││ │  └ [seller_settings_goods_list_saletype_button_icon        ]  [icon               ]                                   [ ✜ 🡆 ]     [ yes ]
---│ ││││││││││ └──┬─[seller_settings_goods_list_saletype_protip             ]  [button             ]                                   [ 🡇 🡆 ]     [ yes ]
---│ ││││││││││    └ [seller_settings_goods_list_saletype_protip_label       ]  [label              ]  [ "?"                     ]      [ ✜ ✜ ]     [ yes ]
---│ │││││││││└─┬┬┬──[seller_settings_goods_list_price_retail                ]  [section_lev3       ]                                   [ ✜ ✜ ]     [ no  ]
---│ │││││││││  ││└┬─[seller_settings_goods_list_price_retail_panel          ]  [section_lev4       ]                                   [ 🡅 ✜ ]     [ no  ]
---│ │││││││││  ││ └ [seller_settings_goods_list_price_retail_panel_label    ]  [label              ]  [ "Розничная цена товара" ]      [ ✜ ✜ ]     [ no  ]
---│ │││││││││  │└─┬─[seller_settings_goods_list_price_retail_input          ]  [input              ]                                   [ 🡇 ✜ ]     [ yes ]
---│ │││││││││  │  └ [seller_settings_goods_list_price_retail_input_label    ]  [placeholder        ]  [ "введите цену"          ]      [ ✜ ✜ ]     [ yes ]
---│ │││││││││  └──┬─[seller_settings_goods_list_price_retail_protip         ]  [button             ]                                   [ 🡇 🡆 ]     [ yes ]
---│ │││││││││     └ [seller_settings_goods_list_price_retail_protip_label   ]  [label              ]  [ "?"                     ]      [ ✜ ✜ ]     [ yes ]
---│ ││││││││└───┬┬──[seller_settings_goods_list_price_wholesale             ]  [section_lev3       ]                                   [ ✜ ✜ ]     [ no  ]
---│ ││││││││    │└┬─[seller_settings_goods_list_price_wholesale_panel       ]  [section_lev4       ]                                   [ 🡅 ✜ ]     [ no  ]
---│ ││││││││    │ └ [seller_settings_goods_list_price_wholesale_panel_label ]  [label              ]  [ "Оптовая цена товара"   ]      [ ✜ ✜ ]     [ no  ]
---│ ││││││││    └─┬─[seller_settings_goods_list_price_wholesale_input       ]  [input              ]                                   [ 🡇 ✜ ]     [ yes ]
---│ ││││││││      └ [seller_settings_goods_list_price_wholesale_input_label ]  [placeholder        ]  [ "введите цену"          ]      [ ✜ ✜ ]     [ yes ]
---│ │││││││└───┬┬┬──[seller_settings_goods_list_measure                     ]  [section_lev3       ]                                   [ ✜ ✜ ]     [ no  ]
---│ │││││││    ││└┬─[seller_settings_goods_list_measure_panel               ]  [section_lev4       ]                                   [ 🡅 ✜ ]     [ no  ]
---│ │││││││    ││ └ [seller_settings_goods_list_measure_panel_label         ]  [label              ]  [ "Единица измерения"     ]      [ ✜ ✜ ]     [ no  ]
---│ │││││││    │└─┬─[seller_settings_goods_list_measure_button              ]  [button             ]                                   [ 🡇 ✜ ]     [ yes ]
---│ │││││││    │  ├ [seller_settings_goods_list_measure_button_label        ]  [label              ]  [ "штук"                  ]      [ ✜ ✜ ]     [ yes ]
---│ │││││││    │  └ [seller_settings_goods_list_measure_button_icon         ]  [icon               ]                                   [ ✜ 🡆 ]     [ yes ]
---│ │││││││    └──┬─[seller_settings_goods_list_measure_protip              ]  [button             ]                                   [ 🡇 🡆 ]     [ yes ]
---│ │││││││       └ [seller_settings_goods_list_measure_protip_label        ]  [label              ]  [ "?"                     ]      [ ✜ ✜ ]     [ yes ]
---│ ││││││└───┬┬┬┬──[seller_settings_goods_list_quantity_ctrl               ]  [section_lev3       ]                                   [ ✜ ✜ ]     [ no  ]
---│ ││││││    │││└┬─[seller_settings_goods_list_quantity_ctrl_panel         ]  [section_lev4       ]                                   [ 🡅 ✜ ]     [ no  ]
---│ ││││││    │││ └ [seller_settings_goods_list_quantity_ctrl_panel_label   ]  [label              ]  [ "Индикатор количества"  ]      [ ✜ ✜ ]     [ no  ]
---│ ││││││    ││└─┬─[seller_settings_goods_list_quantity_ctrl_definite      ]  [button             ]                                   [ 🡇 🡄 ]     [ yes ]
---│ ││││││    ││  ├ [seller_settings_goods_list_quantity_ctrl_definite_label]  [label              ]  [ "точный"                ]      [ ✜ ✜ ]     [ yes ]
---│ ││││││    ││  └ [seller_settings_goods_list_quantity_ctrl_definite_icon ]  [icon               ]                                   [ ✜ ✜ ]     [ yes ]
---│ ││││││    │└──┬─[seller_settings_goods_list_quantity_ctrl_approx        ]  [button             ]                                   [ 🡇 ✜ ]     [ yes ] 
---│ ││││││    │   ├ [seller_settings_goods_list_quantity_ctrl_approx_label  ]  [label              ]  [ "усредненный"           ]      [ ✜ ✜ ]     [ yes ]
---│ ││││││    │   └ [seller_settings_goods_list_quantity_ctrl_approx_icon   ]  [icon               ]                                   [ ✜ ✜ ]     [ yes ]
---│ ││││││    └───┬─[seller_settings_goods_list_quantity_ctrl_protip        ]  [button             ]                                   [ 🡇 🡆 ]     [ yes ]
---│ ││││││        └ [seller_settings_goods_list_quantity_ctrl_protip_label  ]  [label              ]  [ "?"                     ]      [ ✜ ✜ ]     [ yes ]
---│ │││││└─────┬┬┬──[seller_settings_goods_list_quantity                    ]  [section_lev3       ]                                   [ ✜ ✜ ]     [ no  ]
---│ │││││      ││└┬─[seller_settings_goods_list_quantity_panel              ]  [section_lev4       ]                                   [ 🡅 ✜ ]     [ no  ]
---│ │││││      ││ └ [seller_settings_goods_list_quantity_panel_label        ]  [label              ]  [ "Количество"            ]      [ ✜ ✜ ]     [ no  ]
---│ │││││      │└─┬─[seller_settings_goods_list_quantity_input              ]  [input              ]                                   [ 🡇 ✜ ]     [ yes ]
---│ │││││      │  └ [seller_settings_goods_list_quantity_input_label        ]  [label              ]  [ "1"                     ]      [ ✜ ✜ ]     [ yes ]
---│ │││││      └──┬─[seller_settings_goods_list_quantity_protip             ]  [button             ]                                   [ 🡇 🡆 ]     [ yes ]
---│ │││││         └ [seller_settings_goods_list_quantity_protip_label       ]  [label              ]  [ "?"                     ]      [ ✜ ✜ ]     [ yes ]
---│ ││││└──────┬┬┬──[seller_settings_goods_list_depot                       ]  [section_lev3       ]                                   [ ✜ ✜ ]     [ no  ]
---│ ││││       ││└┬─[seller_settings_goods_list_depot_panel                 ]  [section_lev4       ]                                   [ 🡅 ✜ ]     [ no  ]
---│ ││││       ││ └ [seller_settings_goods_list_depot_panel_label           ]  [label              ]  [ "Склад"                 ]      [ ✜ ✜ ]     [ no  ]
---│ ││││       │└─┬─[seller_settings_goods_list_depot_button                ]  [button             ]                                   [ 🡇 ✜ ]     [ yes ]
---│ ││││       │  └ [seller_settings_goods_list_depot_button_label          ]  [label              ]  [ "открыть"               ]      [ ✜ ✜ ]     [ yes ]
---│ ││││       └──┬─[seller_settings_goods_list_depot_protip                ]  [button             ]                                   [ 🡇 🡆 ]     [ yes ]
---│ ││││          └ [seller_settings_goods_list_depot_protip_label          ]  [label              ]  [ "?"                     ]      [ ✜ ✜ ]     [ yes ]
---│ │││└──────┬┬┬┬──[seller_settings_goods_list_image                       ]  [section_lev3       ]                                   [ ✜ ✜ ]     [ no  ]
---│ │││       │││└┬─[seller_settings_goods_list_image_panel                 ]  [section_lev4       ]                                   [ 🡅 ✜ ]     [ no  ]
---│ │││       │││ └ [seller_settings_goods_list_image_panel_label           ]  [label              ]  [ "Изображение товара"    ]      [ ✜ ✜ ]     [ no  ]
---│ │││       ││└┬──[seller_settings_goods_list_image_carousel              ]  [carousel           ]                                   [ ✜ ✜ ]     [ yes ]
---│ │││       ││ └┬─[seller_settings_goods_list_image_carousel_frame        ]  [frame              ]                                   [ ✜ ✜ ]     [ yes ]
---│ │││       ││  └ [seller_settings_goods_list_image_carousel_frame_img    ]  [image              ]                                   [ ✜ ✜ ]     [ yes ]
---│ │││       │└──┬─[seller_settings_goods_list_image_button                ]  [button             ]                                   [ 🡇 ✜ ]     [ yes ]
---│ │││       │   └ [seller_settings_goods_list_image_button_label          ]  [label              ]  [ "добавить изображение"  ]      [ ✜ ✜ ]     [ yes ]
---│ │││       └───┬─[seller_settings_goods_list_image_protip                ]  [button             ]                                   [ 🡇 🡆 ]     [ yes ]
---│ │││           └ [seller_settings_goods_list_image_protip_label          ]  [label              ]  [ "?"                     ]      [ ✜ ✜ ]     [ yes ]
---│ ││└────────┬┬┬──[seller_settings_goods_list_description                 ]  [section_lev3       ]                                   [ ✜ ✜ ]     [ no  ]
---│ ││         ││└┬─[seller_settings_goods_list_description_panel           ]  [section_lev4       ]                                   [ 🡅 ✜ ]     [ no  ]
---│ ││         ││ └ [seller_settings_goods_list_description_panel_label     ]  [label              ]  [ "Описание товара"       ]      [ ✜ ✜ ]     [ no  ]
---│ ││         │└─┬─[seller_settings_goods_list_description_protip          ]  [button             ]                                   [ 🡇 🡆 ]     [ yes ]
---│ ││         │  └ [seller_settings_goods_list_description_protip_label    ]  [label              ]  [ "?"                     ]      [ ✜ ✜ ]     [ yes ]
---│ ││         └──┬─[seller_settings_goods_list_description_textaria        ]  [textaria           ]                                   [ ✜ ✜ ]     [ yes ]
---│ ││            └ [seller_settings_goods_list_description_textaria_label  ]  [placeholder        ]  [ "опишите ваш товар"     ]      [ ✜ ✜ ]     [ yes ]
---│ │└─────────┬┬┬──[seller_settings_goods_list_discount                    ]  [section_lev3       ]                                   [ ✜ ✜ ]     [ no  ]
---│ │          ││└┬─[seller_settings_goods_list_discount_panel              ]  [section_lev4       ]                                   [ 🡅 ✜ ]     [ no  ]
---│ │          ││ └ [seller_settings_goods_list_discount_panel_label        ]  [label              ]  [ "Скидки / Акции"        ]      [ ✜ ✜ ]     [ no  ]
---│ │          │└─┬─[seller_settings_goods_list_discount_button             ]  [button             ]                                   [ 🡇 ✜ ]     [ yes ]
---│ │          │  └ [seller_settings_goods_list_discount_button_label       ]  [label              ]  [ "открыть"               ]      [ ✜ ✜ ]     [ yes ]
---│ │          └──┬─[seller_settings_goods_list_discount_protip             ]  [button             ]                                   [ 🡇 🡆 ]     [ yes ]
---│ │             └ [seller_settings_goods_list_discount_protip_label       ]  [label              ]  [ "?"                     ]      [ ✜ ✜ ]     [ yes ]
---│ └──────────┬┬┬──[seller_settings_goods_list_delete                      ]  [button             ]                                   [ 🡇 ✜ ]     [ no  ]
---│            ││└┬─[seller_settings_goods_list_delete_panel                ]  [section_lev4       ]                                   [ 🡅 ✜ ]     [ no  ]
---│            ││ └ [seller_settings_goods_list_delete_panel_label          ]  [label              ]  [ "Удалить товар"         ]      [ ✜ ✜ ]     [ no  ]
---│            │└─┬─[seller_settings_goods_list_delete_button               ]  [button             ]                                   [ 🡇 ✜ ]     [ yes ]
---│            │  └ [seller_settings_goods_list_delete_button_label         ]  [label              ]  [ "удалить"               ]      [ ✜ ✜ ]     [ yes ]
---│            └──┬─[seller_settings_goods_list_delete_protip               ]  [button             ]                                   [ 🡇 🡆 ]     [ yes ]
---│               └ [seller_settings_goods_list_delete_protip_label         ]  [label              ]  [ "?"                     ]      [ ✜ ✜ ]     [ yes ]
---└─────────────┬┬──[seller_settings_goods_buttons                          ]  [section_lev2       ]                                   [ ✜ ✜ ]     [ no  ]
----             │└┬─[seller_settings_goods_buttons_no                       ]  [button             ]                                   [ ✜ 🡄 ]     [ yes ]
----             │ └ [seller_settings_goods_buttons_no_label                 ]  [label              ]  [ "отмена"                ]      [ ✜ ✜ ]     [ yes ]
----             └─┬─[seller_settings_goods_buttons_yes                      ]  [button             ]                                   [ ✜ 🡆 ]     [ yes ]
----               └ [seller_settings_goods_buttons_yes_label                ]  [label              ]  [ "ОК"                    ]      [ ✜ ✜ ]     [ yes ]
+                                                 codename:                               type:              designation:            location:  interaction:
+--┌┬─────────────┬──[seller_settings_goods                                       ]  [section_lev1]			                         [ ✜ ✜ ]     [ no  ]
+--││             └┬─[seller_settings_goods_panel                                 ]  [section_lev2]			                         [ 🡅 ✜ ]     [ no  ]
+--││              └ [seller_settings_goods_panel_label                           ]  [label       ]  [ "Данные товара"         ]      [ ✜ ✜ ]     [ no  ]
+--│└┬┬┬┬┬┬┬┬┬┬┬┬────[seller_settings_goods_list                                  ]  [section_lev2]                                   [ ✜ ✜ ]     [ no  ]
+--│ │││││││││││├┬┬──[seller_settings_goods_list_name                             ]  [section_lev3]                                   [ 🡅 ✜ ]     [ no  ]
+--│ │││││││││││││└┬─[seller_settings_goods_list_name_panel                       ]  [section_lev4]                                   [ 🡅 ✜ ]     [ no  ]
+--│ │││││││││││││ └ [seller_settings_goods_list_name_panel_label                 ]  [label       ]  [ "Наименование товара *" ]      [ ✜ ✜ ]     [ no  ]
+--│ ││││││││││││└─┬─[seller_settings_goods_list_name_input                       ]  [button      ]                                   [ 🡇 ✜ ]     [ yes ]
+--│ ││││││││││││  └ [seller_settings_goods_list_name_input_label                 ]  [placeholder ]  [ "название"              ]      [ ✜ ✜ ]     [ yes ]
+--│ │││││││││││└──┬─[seller_settings_goods_list_name_protip                      ]  [button      ]                                   [ 🡇 🡆 ]     [ yes ]
+--│ │││││││││││   └ [seller_settings_goods_list_name_protip_label                ]  [label       ]  [ "?"                     ]      [ ✜ ✜ ]     [ yes ]
+--│ ││││││││││└┬┬┬──[seller_settings_goods_list_saletype                         ]  [section_lev3]                                   [ ✜ ✜ ]     [ no  ]
+--│ ││││││││││ ││└┬─[seller_settings_goods_list_saletype_panel                   ]  [section_lev4]                                   [ 🡅 ✜ ]     [ no  ]
+--│ ││││││││││ ││ └ [seller_settings_goods_list_saletype_panel_label             ]  [label       ]  [ "Розница / опт"         ]      [ ✜ ✜ ]     [ no  ]
+--│ ││││││││││ │└─┬─[seller_settings_goods_list_saletype_button                  ]  [button      ]                                   [ 🡇 ✜ ]     [ yes ]
+--│ ││││││││││ │  ├ [seller_settings_goods_list_saletype_button_label            ]  [label       ]  [ "Розница"               ]      [ ✜ ✜ ]     [ yes ]
+--│ ││││││││││ │  └ [seller_settings_goods_list_saletype_button_icon             ]  [icon        ]                                   [ ✜ 🡆 ]     [ yes ]
+--│ ││││││││││ └──┬─[seller_settings_goods_list_saletype_protip                  ]  [button      ]                                   [ 🡇 🡆 ]     [ yes ]
+--│ ││││││││││    └ [seller_settings_goods_list_saletype_protip_label            ]  [label       ]  [ "?"                     ]      [ ✜ ✜ ]     [ yes ]
+--│ │││││││││└─┬┬┬──[seller_settings_goods_list_price_retail                     ]  [section_lev3]                                   [ ✜ ✜ ]     [ no  ]
+--│ │││││││││  ││└┬─[seller_settings_goods_list_price_retail_panel               ]  [section_lev4]                                   [ 🡅 ✜ ]     [ no  ]
+--│ │││││││││  ││ └ [seller_settings_goods_list_price_retail_panel_label         ]  [label       ]  [ "Розничная цена товара" ]      [ ✜ ✜ ]     [ no  ]
+--│ │││││││││  │└─┬─[seller_settings_goods_list_price_retail_input               ]  [input       ]                                   [ 🡇 ✜ ]     [ yes ]
+--│ │││││││││  │  └ [seller_settings_goods_list_price_retail_input_label         ]  [placeholder ]  [ "введите цену"          ]      [ ✜ ✜ ]     [ yes ]
+--│ │││││││││  └──┬─[seller_settings_goods_list_price_retail_protip              ]  [button      ]                                   [ 🡇 🡆 ]     [ yes ]
+--│ │││││││││     └ [seller_settings_goods_list_price_retail_protip_label        ]  [label       ]  [ "?"                     ]      [ ✜ ✜ ]     [ yes ]
+--│ ││││││││└┬┬─────[seller_settings_goods_list_price_wholesale                  ]  [section_lev3]                                   [ ✜ ✜ ]     [ no  ]
+--│ ││││││││ │└┬┬┬──[seller_settings_goods_list_price_wholesale_data             ]  [section_lev4]                                   [ 🡅 ✜ ]     [ no  ]
+--│ ││││││││ │ ││└┬─[seller_settings_goods_list_price_wholesale_data_panel       ]  [section_lev5]                                   [ 🡅 ✜ ]     [ no  ]
+--│ ││││││││ │ ││ └ [seller_settings_goods_list_price_wholesale_data_panel_label ]  [label       ]  [ "Оптовая цена товара"   ]      [ ✜ ✜ ]     [ no  ]
+--│ ││││││││ │ │└─┬─[seller_settings_goods_list_price_wholesale_data_input       ]  [input       ]                                   [ 🡇 ✜ ]     [ yes ]
+--│ ││││││││ │ │  └ [seller_settings_goods_list_price_wholesale_data_input_label ]  [placeholder ]  [ "введите цену"          ]      [ ✜ ✜ ]     [ yes ]
+--│ ││││││││ │ └──┬─[seller_settings_goods_list_price_wholesale_data_protip      ]  [button      ]                                   [ 🡇 🡆 ]     [ yes ]
+--│ ││││││││ │    └ [seller_settings_goods_list_price_wholesale_data_protip_label]  [label       ]  [ "?"                     ]      [ ✜ ✜ ]     [ yes ]
+--│ ││││││││ └──┬┬──[seller_settings_goods_list_price_wholesale_limit            ]  [section_lev4]                                   [ 🡅 ✜ ]     [ no  ]
+--│ ││││││││    │└┬─[seller_settings_goods_list_price_wholesale_limit_panel      ]  [section_lev5]                                   [ 🡅 ✜ ]     [ no  ]
+--│ ││││││││    │ └ [seller_settings_goods_list_price_wholesale_limit_panel_label]  [label       ]  [ "Минимальное количе..." ]      [ ✜ ✜ ]     [ no  ]
+--│ ││││││││    └─┬─[seller_settings_goods_list_price_wholesale_limit_input      ]  [input       ]                                   [ 🡇 ✜ ]     [ yes ]
+--│ ││││││││      └ [seller_settings_goods_list_price_wholesale_limit_input_label]  [placeholder ]  [ "1"                     ]      [ ✜ ✜ ]     [ yes ]
+--│ │││││││└───┬┬┬──[seller_settings_goods_list_measure                          ]  [section_lev3]                                   [ ✜ ✜ ]     [ no  ]
+--│ │││││││    ││└┬─[seller_settings_goods_list_measure_panel                    ]  [section_lev4]                                   [ 🡅 ✜ ]     [ no  ]
+--│ │││││││    ││ └ [seller_settings_goods_list_measure_panel_label              ]  [label       ]  [ "Единица измерения"     ]      [ ✜ ✜ ]     [ no  ]
+--│ │││││││    │└─┬─[seller_settings_goods_list_measure_button                   ]  [button      ]                                   [ 🡇 ✜ ]     [ yes ]
+--│ │││││││    │  ├ [seller_settings_goods_list_measure_button_label             ]  [label       ]  [ "штук"                  ]      [ ✜ ✜ ]     [ yes ]
+--│ │││││││    │  └ [seller_settings_goods_list_measure_button_icon              ]  [icon        ]                                   [ ✜ 🡆 ]     [ yes ]
+--│ │││││││    └──┬─[seller_settings_goods_list_measure_protip                   ]  [button      ]                                   [ 🡇 🡆 ]     [ yes ]
+--│ │││││││       └ [seller_settings_goods_list_measure_protip_label             ]  [label       ]  [ "?"                     ]      [ ✜ ✜ ]     [ yes ]
+--│ ││││││└───┬┬┬┬──[seller_settings_goods_list_quantity_ctrl                    ]  [section_lev3]                                   [ ✜ ✜ ]     [ no  ]
+--│ ││││││    │││└┬─[seller_settings_goods_list_quantity_ctrl_panel              ]  [section_lev4]                                   [ 🡅 ✜ ]     [ no  ]
+--│ ││││││    │││ └ [seller_settings_goods_list_quantity_ctrl_panel_label        ]  [label       ]  [ "Индикатор количества"  ]      [ ✜ ✜ ]     [ no  ]
+--│ ││││││    ││└─┬─[seller_settings_goods_list_quantity_ctrl_definite           ]  [button      ]                                   [ 🡇 🡄 ]     [ yes ]
+--│ ││││││    ││  ├ [seller_settings_goods_list_quantity_ctrl_definite_label     ]  [label       ]  [ "точный"                ]      [ ✜ ✜ ]     [ yes ]
+--│ ││││││    ││  └ [seller_settings_goods_list_quantity_ctrl_definite_icon      ]  [icon        ]                                   [ ✜ ✜ ]     [ yes ]
+--│ ││││││    │└──┬─[seller_settings_goods_list_quantity_ctrl_approx             ]  [button      ]                                   [ 🡇 ✜ ]     [ yes ] 
+--│ ││││││    │   ├ [seller_settings_goods_list_quantity_ctrl_approx_label       ]  [label       ]  [ "усредненный"           ]      [ ✜ ✜ ]     [ yes ]
+--│ ││││││    │   └ [seller_settings_goods_list_quantity_ctrl_approx_icon        ]  [icon        ]                                   [ ✜ ✜ ]     [ yes ]
+--│ ││││││    └───┬─[seller_settings_goods_list_quantity_ctrl_protip             ]  [button      ]                                   [ 🡇 🡆 ]     [ yes ]
+--│ ││││││        └ [seller_settings_goods_list_quantity_ctrl_protip_label       ]  [label       ]  [ "?"                     ]      [ ✜ ✜ ]     [ yes ]
+--│ │││││└─────┬┬┬──[seller_settings_goods_list_quantity                         ]  [section_lev3]                                   [ ✜ ✜ ]     [ no  ]
+--│ │││││      ││└┬─[seller_settings_goods_list_quantity_panel                   ]  [section_lev4]                                   [ 🡅 ✜ ]     [ no  ]
+--│ │││││      ││ └ [seller_settings_goods_list_quantity_panel_label             ]  [label       ]  [ "Количество"            ]      [ ✜ ✜ ]     [ no  ]
+--│ │││││      │└─┬─[seller_settings_goods_list_quantity_input                   ]  [input       ]                                   [ 🡇 ✜ ]     [ yes ]
+--│ │││││      │  └ [seller_settings_goods_list_quantity_input_label             ]  [label       ]  [ "1"                     ]      [ ✜ ✜ ]     [ yes ]
+--│ │││││      └──┬─[seller_settings_goods_list_quantity_protip                  ]  [button      ]                                   [ 🡇 🡆 ]     [ yes ]
+--│ │││││         └ [seller_settings_goods_list_quantity_protip_label            ]  [label       ]  [ "?"                     ]      [ ✜ ✜ ]     [ yes ]
+--│ ││││└──────┬┬┬──[seller_settings_goods_list_depot                            ]  [section_lev3]                                   [ ✜ ✜ ]     [ no  ]
+--│ ││││       ││└┬─[seller_settings_goods_list_depot_panel                      ]  [section_lev4]                                   [ 🡅 ✜ ]     [ no  ]
+--│ ││││       ││ └ [seller_settings_goods_list_depot_panel_label                ]  [label       ]  [ "Склад"                 ]      [ ✜ ✜ ]     [ no  ]
+--│ ││││       │└─┬─[seller_settings_goods_list_depot_button                     ]  [button      ]                                   [ 🡇 ✜ ]     [ yes ]
+--│ ││││       │  └ [seller_settings_goods_list_depot_button_label               ]  [label       ]  [ "открыть"               ]      [ ✜ ✜ ]     [ yes ]
+--│ ││││       └──┬─[seller_settings_goods_list_depot_protip                     ]  [button      ]                                   [ 🡇 🡆 ]     [ yes ]
+--│ ││││          └ [seller_settings_goods_list_depot_protip_label               ]  [label       ]  [ "?"                     ]      [ ✜ ✜ ]     [ yes ]
+--│ │││└──────┬┬┬┬──[seller_settings_goods_list_image                            ]  [section_lev3]                                   [ ✜ ✜ ]     [ no  ]
+--│ │││       │││└┬─[seller_settings_goods_list_image_panel                      ]  [section_lev4]                                   [ 🡅 ✜ ]     [ no  ]
+--│ │││       │││ └ [seller_settings_goods_list_image_panel_label                ]  [label       ]  [ "Изображение товара"    ]      [ ✜ ✜ ]     [ no  ]
+--│ │││       ││└┬──[seller_settings_goods_list_image_carousel                   ]  [carousel    ]                                   [ ✜ ✜ ]     [ yes ]
+--│ │││       ││ └┬─[seller_settings_goods_list_image_carousel_frame             ]  [frame       ]                                   [ ✜ ✜ ]     [ yes ]
+--│ │││       ││  └ [seller_settings_goods_list_image_carousel_frame_img         ]  [image       ]                                   [ ✜ ✜ ]     [ yes ]
+--│ │││       │└──┬─[seller_settings_goods_list_image_button                     ]  [button      ]                                   [ 🡇 ✜ ]     [ yes ]
+--│ │││       │   └ [seller_settings_goods_list_image_button_label               ]  [label       ]  [ "добавить изображение"  ]      [ ✜ ✜ ]     [ yes ]
+--│ │││       └───┬─[seller_settings_goods_list_image_protip                     ]  [button      ]                                   [ 🡇 🡆 ]     [ yes ]
+--│ │││           └ [seller_settings_goods_list_image_protip_label               ]  [label       ]  [ "?"                     ]      [ ✜ ✜ ]     [ yes ]
+--│ ││└────────┬┬┬──[seller_settings_goods_list_description                      ]  [section_lev3]                                   [ ✜ ✜ ]     [ no  ]
+--│ ││         ││└┬─[seller_settings_goods_list_description_panel                ]  [section_lev4]                                   [ 🡅 ✜ ]     [ no  ]
+--│ ││         ││ └ [seller_settings_goods_list_description_panel_label          ]  [label       ]  [ "Описание товара"       ]      [ ✜ ✜ ]     [ no  ]
+--│ ││         │└─┬─[seller_settings_goods_list_description_protip               ]  [button      ]                                   [ 🡇 🡆 ]     [ yes ]
+--│ ││         │  └ [seller_settings_goods_list_description_protip_label         ]  [label       ]  [ "?"                     ]      [ ✜ ✜ ]     [ yes ]
+--│ ││         └──┬─[seller_settings_goods_list_description_textaria             ]  [textaria    ]                                   [ ✜ ✜ ]     [ yes ]
+--│ ││            └ [seller_settings_goods_list_description_textaria_label       ]  [placeholder ]  [ "опишите ваш товар"     ]      [ ✜ ✜ ]     [ yes ]
+--│ │└─────────┬┬┬──[seller_settings_goods_list_discount                         ]  [section_lev3]                                   [ ✜ ✜ ]     [ no  ]
+--│ │          ││└┬─[seller_settings_goods_list_discount_panel                   ]  [section_lev4]                                   [ 🡅 ✜ ]     [ no  ]
+--│ │          ││ └ [seller_settings_goods_list_discount_panel_label             ]  [label       ]  [ "Скидки / Акции"        ]      [ ✜ ✜ ]     [ no  ]
+--│ │          │└─┬─[seller_settings_goods_list_discount_button                  ]  [button      ]                                   [ 🡇 ✜ ]     [ yes ]
+--│ │          │  └ [seller_settings_goods_list_discount_button_label            ]  [label       ]  [ "открыть"               ]      [ ✜ ✜ ]     [ yes ]
+--│ │          └──┬─[seller_settings_goods_list_discount_protip                  ]  [button      ]                                   [ 🡇 🡆 ]     [ yes ]
+--│ │             └ [seller_settings_goods_list_discount_protip_label            ]  [label       ]  [ "?"                     ]      [ ✜ ✜ ]     [ yes ]
+--│ └──────────┬┬┬──[seller_settings_goods_list_delete                           ]  [button      ]                                   [ 🡇 ✜ ]     [ no  ]
+--│            ││└┬─[seller_settings_goods_list_delete_panel                     ]  [section_lev4]                                   [ 🡅 ✜ ]     [ no  ]
+--│            ││ └ [seller_settings_goods_list_delete_panel_label               ]  [label       ]  [ "Удалить товар"         ]      [ ✜ ✜ ]     [ no  ]
+--│            │└─┬─[seller_settings_goods_list_delete_button                    ]  [button      ]                                   [ 🡇 ✜ ]     [ yes ]
+--│            │  └ [seller_settings_goods_list_delete_button_label              ]  [label       ]  [ "удалить"               ]      [ ✜ ✜ ]     [ yes ]
+--│            └──┬─[seller_settings_goods_list_delete_protip                    ]  [button      ]                                   [ 🡇 🡆 ]     [ yes ]
+--│               └ [seller_settings_goods_list_delete_protip_label              ]  [label       ]  [ "?"                     ]      [ ✜ ✜ ]     [ yes ]
+--└─────────────┬┬──[seller_settings_goods_buttons                               ]  [section_lev2]                                   [ ✜ ✜ ]     [ no  ]
+--              │└┬─[seller_settings_goods_buttons_no                            ]  [button      ]                                   [ ✜ 🡄 ]     [ yes ]
+--              │ └ [seller_settings_goods_buttons_no_label                      ]  [label       ]  [ "отмена"                ]      [ ✜ ✜ ]     [ yes ]
+--              └─┬─[seller_settings_goods_buttons_yes                           ]  [button      ]                                   [ ✜ 🡆 ]     [ yes ]
+--                └ [seller_settings_goods_buttons_yes_label                     ]  [label       ]  [ "ОК"                    ]      [ ✜ ✜ ]     [ yes ]
 
 
 ■ seller_settings_goods_list_name
@@ -772,65 +779,117 @@ seller_settings_goods_list_price_retail_protip_popover является вспл
 ■ seller_settings_goods_list_price_wholesale
 
 ✠ details
-Секция seller_settings_goods_list_price_wholesale появляется под seller_settings_goods_list_saletype, после того как была нажата кнопка seller_settings_goods_list_saletype_dropdown_item1; либо seller_settings_goods_list_price_wholesale появляется под seller_settings_goods_list_price_retail, после того как была нажата кнопка seller_settings_goods_list_saletype_dropdown_item2. seller_settings_goods_list_price_retail состоит из 2 компонентов:
-1)----- seller_settings_goods_list_price_wholesale_panel - панель служащая целью вывода заголовка опции seller_settings_goods_list_price_wholesale_panel_label;
-------- seller_settings_goods_list_name_panel_label - заголовок seller_settings_goods_list_price_wholesale с содержанием: "Оптовая цена товара";
-2)----- seller_settings_goods_list_price_wholesale_input - поле для ввода данных, содержит seller_settings_goods_list_price_wholesale_input_label в качестве placeholder;
-Нормативы для seller_settings_goods_list_price_wholesale_input: 
+Секция seller_settings_goods_list_price_wholesale появляется под seller_settings_goods_list_saletype, после того как была нажата кнопка seller_settings_goods_list_saletype_dropdown_item1; либо seller_settings_goods_list_price_wholesale появляется под seller_settings_goods_list_price_retail, после того как была нажата кнопка seller_settings_goods_list_saletype_dropdown_item2. 
+
+seller_settings_goods_list_price_wholesale состоит из 2 компонентов:
+1) seller_settings_goods_list_price_wholesale_data - позволяет ввести оптовую цену товара;
+2) seller_settings_goods_list_price_wholesale_limit - предназначен для указания минимального количества товара от которого действует оптовая цена.
+
+----- seller_settings_goods_list_price_wholesale_data - расположен в верхней части seller_settings_goods_list_price_wholesale и включает следующие компоненты:
+------- seller_settings_goods_list_price_wholesale_data_panel - панель служащая целью вывода seller_settings_goods_list_price_wholesale_data_panel_label, расположена вверху seller_settings_goods_list_price_wholesale_data;
+--------- seller_settings_goods_list_price_wholesale_data_panel_label - заголовок seller_settings_goods_list_price_wholesale_data с содержанием: "Оптовая цена товара";
+------- seller_settings_goods_list_price_wholesale_data_input - поле для ввода цены, размещается под seller_settings_goods_list_price_wholesale_data_panel, содержит seller_settings_goods_list_price_wholesale_data_input_label в качестве placeholder;
+Нормативы для seller_settings_goods_list_price_wholesale_data_input: 
 - минимум 1 символ;
 - максимум 50 символов;
 - допускаются цифры (0-9);
 - чувствительность к регистру отсутствует.
-------- seller_settings_goods_list_price_wholesale_input_label - выполняет роль placeholder с содержанием: "введите цену".
+--------- seller_settings_goods_list_price_wholesale_data_input_label - выполняет роль placeholder с содержанием: "введите цену";
+------- seller_settings_goods_list_price_wholesale_data_protip - кнопка круглой формы выполняющая роль аффорданса, находится справа от seller_settings_goods_list_price_wholesale_data_input и содержит seller_settings_goods_list_price_wholesale_data_protip_label;
+--------- seller_settings_goods_list_price_wholesale_data_protip_label - наименование следующего содержания: "?";
+
+----- seller_settings_goods_list_price_wholesale_limit - расположен в нижней части seller_settings_goods_list_price_wholesale и включает следующие компоненты:
+------- seller_settings_goods_list_price_wholesale_limit_panel - панель служащая целью вывода seller_settings_goods_list_price_wholesale_limit_panel_label, расположена вверху seller_settings_goods_list_price_wholesale_limit;
+--------- seller_settings_goods_list_price_wholesale_limit_panel_label - заголовок seller_settings_goods_list_price_wholesale_limit с содержанием: "Минимальное количество";
+------- seller_settings_goods_list_price_wholesale_limit_input - поле для ввода количества, размещается под seller_settings_goods_list_price_wholesale_limit_panel, содержит seller_settings_goods_list_price_wholesale_limit_input_label в качестве placeholder;
+Нормативы для seller_settings_goods_list_price_wholesale_limit_input: 
+- минимум 1 символ;
+- максимум 50 символов;
+- допускаются цифры (0-9);
+- чувствительность к регистру отсутствует.
+--------- seller_settings_goods_list_price_wholesale_limit_input_label - выполняет роль placeholder с содержанием: "10";
 
 ✠ actions
-• seller_settings_goods_list_price_wholesale_input:
+• seller_settings_goods_list_price_wholesale_data_input:
 ╠ valid / invalid
 ║ • gesture: tap 
-║ occasion: нажатие seller_settings_goods_list_price_wholesale_input;
+║ occasion: нажатие seller_settings_goods_list_price_wholesale_data_input;
 ║ condition: in any situation;
-║ && - seller_settings_goods_list_price_wholesale_input переходит в active_state;
+║ && - seller_settings_goods_list_price_wholesale_data_input переходит в active_state;
+║ && - появляется клавиатура для ввода (если она была скрыта);
+╙ && - карет устанавливается в конце текста (если текст наличествует).
+• seller_settings_goods_list_price_wholesale_data_protip:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_list_price_wholesale_data_protip;
+║ condition: in any situation;
+╙ result: по центру экрана всплывает seller_settings_goods_list_price_wholesale_data_protip_popover.
+• seller_settings_goods_list_price_wholesale_limit_input:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_list_price_wholesale_limit_input;
+║ condition: in any situation;
+║ && - seller_settings_goods_list_price_wholesale_limit_input переходит в active_state;
 ║ && - появляется клавиатура для ввода (если она была скрыта);
 ╙ && - карет устанавливается в конце текста (если текст наличествует).
 
 ✠ input_checks
-Фильтры проверяющие на соответствие нормативам содержание seller_settings_goods_list_price_wholesale_input. Если в ходе проверки фиксируется несоответствие, тогда состояние seller_settings_goods_list_price_wholesale_input позиционируется как invalid, в связи с чем отображается соответствующее типу проблемы предупреждение.
+♦ seller_settings_goods_list_price_wholesale_data_input
+Фильтры проверяющие на соответствие нормативам содержание seller_settings_goods_list_price_wholesale_data_input. Если в ходе проверки фиксируется несоответствие, тогда состояние seller_settings_goods_list_price_wholesale_data_input позиционируется как invalid, в связи с чем отображается соответствующее типу проблемы предупреждение.
 • overnaming:
 Анализ на превышение лимита допустимой длины price.
 Работает в active_state.
-При вводе price, в ситуации если символов > 50, под seller_settings_goods_list_price_wholesale_input всплывает seller_settings_goods_list_price_wholesale_alert_overnaming.
+При вводе price, в ситуации если символов > 50, под seller_settings_goods_list_price_wholesale_data_input всплывает seller_settings_goods_list_price_wholesale_data_alert_overnaming.
 • stopsymbol:
 Анализ на нажатие запрещенных клавиш базирующийся на превентивной блокировке ввода с любых клавиш кроме от 0 до 9.
 Работает в active_state. 
-При вводе price, в ситуации если использованы не цифры, под seller_settings_goods_list_price_wholesale_input всплывает seller_settings_goods_list_price_wholesale_alert_stopsymbol.
 • omission:
 Реакция на факт отсутствия введенных данных.
 Работает в inactive_state.
-В ситуации если поле пустое, а юзер нажимает на seller_settings_goods_buttons_yes, под seller_settings_goods_list_price_wholesale_input всплывает seller_settings_goods_list_price_wholesale_alert_omission.
+В ситуации если поле пустое, а юзер нажимает на seller_settings_goods_buttons_yes, под seller_settings_goods_list_price_wholesale_data_input всплывает seller_settings_goods_list_price_wholesale_data_alert_omission.
 • emptiness:
 Анализ на пустотность.
 Работает в active_state и inactive_state.
-Работает in any situation делая проверку на предмет отсутствия данных в seller_settings_goods_list_price_wholesale_input.  
+Работает in any situation делая проверку на предмет отсутствия данных в seller_settings_goods_list_price_wholesale_data_input.  
+
+♦ seller_settings_goods_list_price_wholesale_limit_input
+Фильтры проверяющие на соответствие нормативам содержание seller_settings_goods_list_price_wholesale_limit_input. Если в ходе проверки фиксируется несоответствие, тогда состояние seller_settings_goods_list_price_wholesale_limit_input позиционируется как invalid, в связи с чем отображается соответствующее типу проблемы предупреждение.
+• overnaming:
+Анализ на превышение лимита допустимой длины limit.
+Работает в active_state.
+При вводе price, в ситуации если символов > 50, под seller_settings_goods_list_price_wholesale_limit_input всплывает seller_settings_goods_list_price_wholesale_limit_alert_overnaming.
+• stopsymbol:
+Анализ на нажатие запрещенных клавиш базирующийся на превентивной блокировке ввода с любых клавиш кроме от 0 до 9.
+Работает в active_state. 
+
+✠ logics
+Если данные в seller_settings_goods_list_price_wholesale_limit_input не вводились, тогда по умолчанию применяется seller_settings_goods_price_wholesale_limit_value = 10.
+
 
 ✠ color_states
 ┌─
-│seller_settings_goods_list_price_wholesale_input
+│seller_settings_goods_list_price_wholesale_data_input
 │---------------------------
 │⟪⟪ border ⟫⟫ 
 │--------
 │• color3:
-│- || - invalid по факту проверки seller_settings_goods_list_price_wholesale_input на overnaming
-│- || - invalid по факту проверки seller_settings_goods_list_price_wholesale_input на stopsymbol
-│- || - invalid по факту проверки seller_settings_goods_list_price_wholesale_input на omission
-│- || - invalid по факту проверки seller_settings_goods_list_price_wholesale_input на emptiness
+│- || - invalid по факту проверки seller_settings_goods_list_price_wholesale_data_input на overnaming
+│- || - invalid по факту проверки seller_settings_goods_list_price_wholesale_data_input на stopsymbol
+│- || - invalid по факту проверки seller_settings_goods_list_price_wholesale_data_input на omission
+│- || - invalid по факту проверки seller_settings_goods_list_price_wholesale_data_input на emptiness
+│- || - invalid по факту проверки seller_settings_goods_list_price_wholesale_limit_input на overnaming
+│- || - invalid по факту проверки seller_settings_goods_list_price_wholesale_limit_input на stopsymbol
 │• color1:
-│- && - valid по факту проверки seller_settings_goods_list_price_wholesale_input на overnaming
-│- && - valid по факту проверки seller_settings_goods_list_price_wholesale_input на stopsymbol
-│- && - valid по факту проверки seller_settings_goods_list_price_wholesale_input на omission
-│- && - valid по факту проверки seller_settings_goods_list_price_wholesale_input на emptiness
+│- && - valid по факту проверки seller_settings_goods_list_price_wholesale_data_input на overnaming
+│- && - valid по факту проверки seller_settings_goods_list_price_wholesale_data_input на stopsymbol
+│- && - valid по факту проверки seller_settings_goods_list_price_wholesale_data_input на omission
+│- && - valid по факту проверки seller_settings_goods_list_price_wholesale_data_input на emptiness
+│- && - valid по факту проверки seller_settings_goods_list_price_wholesale_limit_input на overnaming
+│- && - valid по факту проверки seller_settings_goods_list_price_wholesale_limit_input на stopsymbol
 └─
 ┌─
-│seller_settings_goods_list_price_wholesale_panel
+│seller_settings_goods_list_price_wholesale_data_panel
+│seller_settings_goods_list_price_wholesale_limit_panel
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -838,8 +897,11 @@ seller_settings_goods_list_price_retail_protip_popover является вспл
 │------ in any situation
 └─
 ┌─
-│seller_settings_goods_list_price_wholesale_panel_label
-│seller_settings_goods_list_price_wholesale_input_label
+│seller_settings_goods_list_price_wholesale_data_panel_label
+│seller_settings_goods_list_price_wholesale_data_input_label
+│seller_settings_goods_list_price_wholesale_data_protip_label
+│seller_settings_goods_list_price_wholesale_limit_panel_label
+│seller_settings_goods_list_price_wholesale_limit_input_label
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -848,36 +910,92 @@ seller_settings_goods_list_price_retail_protip_popover является вспл
 └─
 
 ✠ alerts
-• seller_settings_goods_list_price_wholesale_alert_prompt:
+♦ seller_settings_goods_list_price_wholesale_data_input
+• seller_settings_goods_list_price_wholesale_data_alert_prompt:
 - focusing: да;
-- location: появляется над seller_settings_goods_list_price_wholesale_input для первых 3 лотов активированных seller;
-- occasion: в процессе ввода данных в seller_settings_goods_list_price_wholesale_input;
+- location: появляется над seller_settings_goods_list_price_wholesale_data_input для первых 3 лотов активированных seller;
+- occasion: в процессе ввода данных в seller_settings_goods_list_price_wholesale_data_input;
 - content:  "ВВОДИТЕ ЗНАЧЕНИЕ ЦЕНЫ ИСПОЛЬЗУЯ ЦИФРЫ. ДАННАЯ НАСТРОЙКА ЯВЛЯЕТСЯ ОБЯЗАТЕЛЬНОЙ ПРИ ПУБЛИКАЦИИ ЛОТА!".
-• seller_settings_goods_list_price_wholesale_alert_overnaming:
+• seller_settings_goods_list_price_wholesale_data_alert_overnaming:
 - focusing: да;
-- location: появляется под seller_settings_goods_list_price_wholesale_input;
+- location: появляется под seller_settings_goods_list_price_wholesale_data_input;
 - occasion: невалидность по факту проверки на overnaming;
 - content:  "ЗНАЧЕНИЕ ЦЕНЫ СЛИШКОМ ДЛИННОЕ, ПОЖАЛУЙСТА ИСПОЛЬЗУЙТЕ МЕНЬШЕ СИМВОЛОВ".
-• seller_settings_goods_list_price_wholesale_alert_stopsymbol:
-- focusing: да;
-- location: появляется под seller_settings_goods_list_price_wholesale_input;
-- occasion: невалидность по факту проверки на stopsymbol;
-- content:  "ИСПОЛЬЗОВАН ЗАПРЕЩЕННЫЙ СИМВОЛ: {указывается запрещенный символ жирным шрифтом белого цвета на color3 фоне}".
-• seller_settings_goods_list_price_wholesale_alert_omission:
+• seller_settings_goods_list_price_wholesale_data_alert_omission:
 - focusing: нет;
-- location: появляется под seller_settings_goods_list_price_wholesale_input;
-- occasion: нажатие на seller_settings_goods_buttons_yes, если seller_settings_goods_list_price_wholesale_input пустой;
+- location: появляется под seller_settings_goods_list_price_wholesale_data_input;
+- occasion: нажатие на seller_settings_goods_buttons_yes, если seller_settings_goods_list_price_wholesale_data_input пустой;
 - content:  "ПОЖАЛУЙСТА ВВЕДИТЕ ЦЕНУ ТОВАРА".
+♦ seller_settings_goods_list_price_wholesale_limit_input
+• seller_settings_goods_list_price_wholesale_limit_alert_overnaming:
+- focusing: да;
+- location: появляется под seller_settings_goods_list_price_wholesale_limit_input;
+- occasion: невалидность по факту проверки на overnaming;
+- content:  "ЗНАЧЕНИЕ КОЛИЧЕСТВА ТОВАРА СЛИШКОМ ДЛИННОЕ, ПОЖАЛУЙСТА ИСПОЛЬЗУЙТЕ МЕНЬШЕ СИМВОЛОВ".
 
 ✠ outputs
-• seller_settings_goods_list_price_wholesale_input:
+• seller_settings_goods_list_price_wholesale_data_input:
 ║occasion: нажатие seller_settings_goods_buttons_yes;
 ║condition: 
 ║- && - valid по факту проверки на overnaming
 ║- && - valid по факту проверки на stopsymbol
 ║- && - valid по факту проверки на omission
 ║- && - valid по факту проверки на emptiness
-╙ result: cодержимое seller_settings_goods_list_price_wholesale_input преобразуется в seller_settings_goods_list_price_wholesale_value.
+╙ result: cодержимое seller_settings_goods_list_price_wholesale_data_input преобразуется в seller_settings_goods_price_wholesale_data_value.
+• seller_settings_goods_list_price_wholesale_limit_input:
+║occasion: нажатие seller_settings_goods_buttons_yes;
+║condition: valid по факту проверки на overnaming
+╙ result: cодержимое seller_settings_goods_list_price_wholesale_limit_input преобразуется в seller_settings_goods_price_wholesale_limit_value.
+
+
+🡆🡆🡆 seller_settings_goods_list_price_wholesale_data_protip_popover
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+seller_settings_goods_list_price_wholesale_data_protip_popover является всплывающей подсказкой, которая появляется после нажатия seller_settings_goods_list_price_wholesale_data_protip.
+
+✠ tables
+
+                                          codename:                                           type:               designation:          location:  interaction:
+┌┬─[seller_settings_goods_list_price_wholesale_data_protip_popover                    ]  [section_lev1]                                  [ ✜ ✜ ]     [ no  ]
+│└ [seller_settings_goods_list_price_wholesale_data_protip_popover_text               ]  [text        ]  [ " Введите в поле наи... " ]   [ ✜ ✜ ]     [ no  ]
+└┬─[seller_settings_goods_list_price_wholesale_data_protip_popover_buttons_close      ]  [button      ]                                  [ ✜ ✜ ]     [ yes ]
+ └ [seller_settings_goods_list_price_wholesale_data_protip_popover_buttons_close_label]  [placeholder ]  [ " закрыть "               ]   [ ✜ ✜ ]     [ yes ]
+
+✠ details
+- seller_settings_goods_list_price_wholesale_data_protip_popover - представляет собой popover, который всплывает по центру экрана и включает 2 компонента:
+--- seller_settings_goods_list_price_wholesale_data_protip_popover_text - параграф текста выровненный по центру находится в верхней части seller_settings_goods_list_price_wholesale_data_protip_popover следующего содержания: "Данная опция позволяет указать минимальное количество (объем) товара к которому применяется оптовая цена. Если значение не указано, применяется значение количества = '10'";
+----- seller_settings_goods_list_price_wholesale_data_protip_popover_buttons_close - кнопка расположенная под seller_settings_goods_list_price_wholesale_data_protip_popover_text;
+--- seller_settings_goods_list_price_wholesale_data_protip_popover_buttons_close_label - наименование кнопки следующего содержания: "закрыть".
+
+✠ actions
+• seller_settings_goods_list_price_wholesale_data_protip_popover_buttons_close:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_settings_goods_list_price_wholesale_data_protip_popover_buttons_close;
+║ condition: in any situation;
+╙ result: seller_settings_goods_list_price_wholesale_data_protip_popover исчезает.
+
+✠ color_states
+┌─
+│seller_settings_goods_list_price_wholesale_data_protip_popover_buttons_close
+│-------------------------------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color5
+│------ in pressing_state
+└─
+┌─
+│seller_settings_goods_list_price_wholesale_data_protip_popover_text
+│seller_settings_goods_list_price_wholesale_data_protip_popover_buttons_close_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
 
 
 ■ seller_settings_goods_list_measure
@@ -2882,7 +3000,7 @@ seller_settings_goods_depot_lot_list_number_input_label (в качестве pla
 └─
 
 ✠ input_checks
-• seller_settings_goods_depot_lot_list_number_input
+♦ seller_settings_goods_depot_lot_list_number_input
 Фильтры проверяющие на соответствие нормативам содержание seller_settings_goods_depot_lot_list_number_input. Если в ходе проверки фиксируется несоответствие, тогда состояние seller_settings_goods_depot_lot_list_number_input позиционируется как invalid, в связи с чем отображается соответствующее типу проблемы предупреждение.
 • overnaming:
 Анализ на превышение лимита допустимой длины number.
@@ -2893,7 +3011,7 @@ seller_settings_goods_depot_lot_list_number_input_label (в качестве pla
 Работает в active_state. 
 При вводе number, в ситуации если использованы не цифры, под seller_settings_goods_depot_lot_list_number_input всплывает seller_settings_goods_depot_lot_list_number_alert_stopsymbol.
 
-• seller_settings_goods_depot_lot_list_quantity_input
+♦ seller_settings_goods_depot_lot_list_quantity_input
 Фильтры проверяющие на соответствие нормативам содержание seller_settings_goods_depot_lot_list_quantity_input. Если в ходе проверки фиксируется несоответствие, тогда состояние seller_settings_goods_depot_lot_list_quantity_input позиционируется как invalid, в связи с чем отображается соответствующее типу проблемы предупреждение.
 • overnaming:
 Анализ на превышение лимита допустимой длины quantity.
@@ -2904,7 +3022,7 @@ seller_settings_goods_depot_lot_list_number_input_label (в качестве pla
 Работает в active_state. 
 При вводе quantity, в ситуации если использованы не цифры, под seller_settings_goods_depot_lot_list_quantity_input всплывает seller_settings_goods_depot_lot_list_quantity_alert_stopsymbol.
 
-• seller_settings_goods_depot_lot_list_balance_input
+♦ seller_settings_goods_depot_lot_list_balance_input
 Фильтры проверяющие на соответствие нормативам содержание seller_settings_goods_depot_lot_list_balance_input. Если в ходе проверки фиксируется несоответствие, тогда состояние seller_settings_goods_depot_lot_list_balance_input позиционируется как invalid, в связи с чем отображается соответствующее типу проблемы предупреждение.
 • overnaming:
 Анализ на превышение лимита допустимой длины balance.
@@ -2916,7 +3034,7 @@ seller_settings_goods_depot_lot_list_number_input_label (в качестве pla
 При вводе balance, в ситуации если использованы не цифры, под seller_settings_goods_depot_lot_list_balance_input всплывает seller_settings_goods_depot_lot_list_balance_alert_stopsymbol.
 
 ✠ alerts
-• seller_settings_goods_depot_lot_list_number_alert_overnaming:
+♦ seller_settings_goods_depot_lot_list_number_alert_overnaming:
 - focusing: да;
 - location: появляется под seller_settings_goods_depot_lot_list_number_input;
 - occasion: невалидность по факту проверки на overnaming;
@@ -2927,7 +3045,7 @@ seller_settings_goods_depot_lot_list_number_input_label (в качестве pla
 - occasion: невалидность по факту проверки на stopsymbol;
 - content:  "ИСПОЛЬЗОВАН ЗАПРЕЩЕННЫЙ СИМВОЛ: {указывается запрещенный символ жирным шрифтом белого цвета на color3 фоне}".
 
-• seller_settings_goods_depot_lot_list_quantity_alert_overnaming:
+♦ seller_settings_goods_depot_lot_list_quantity_alert_overnaming:
 - focusing: да;
 - location: появляется под seller_settings_goods_depot_lot_list_quantity_input;
 - occasion: невалидность по факту проверки на overnaming;
@@ -2938,7 +3056,7 @@ seller_settings_goods_depot_lot_list_number_input_label (в качестве pla
 - occasion: невалидность по факту проверки на stopsymbol;
 - content:  "ИСПОЛЬЗОВАН ЗАПРЕЩЕННЫЙ СИМВОЛ: {указывается запрещенный символ жирным шрифтом белого цвета на color3 фоне}".
 
-• seller_settings_goods_depot_lot_list_balance_alert_overnaming:
+♦ seller_settings_goods_depot_lot_list_balance_alert_overnaming:
 - focusing: да;
 - location: появляется под seller_settings_goods_depot_lot_list_balance_input;
 - occasion: невалидность по факту проверки на overnaming;
@@ -4480,6 +4598,7 @@ seller_settings_goods_discount_act0_main_active_protip_popover является 
 
 
 🡆🡆🡆🡆🡆 seller_settings_goods_discount_preview_screen
+
 
 
 
