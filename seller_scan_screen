@@ -1,5 +1,6 @@
 
 
+
 🡆🡆 seller_scan_screen
 ■■■■■■■■■■■■■■■■■■■■■
 
@@ -13,7 +14,7 @@ seller_scan_screen представлен в 3 подразделах навиг
 
 При открытии seller_scan логика допускает активность одной из вкладок в каждый момент времени.
 seller_scan_calc_screen является экраном по умолчанию.
-В момент выхода из seller_scan посредством seller_scan_state_function, если статус по рассчитываемому ордеру seller_account_orders_list_order_ready = off, тогда фиксируется раздел который был открыт. Впоследствии при входе, если статус seller_account_orders_list_order_ready = off сохраняется, в seller_scan открывается раздел, который был открыт на момент последнего выхода из seller_scan. В момент когда статус по целевому ордеру становится seller_account_orders_list_order_ready = on, тогда seller_scan_state_function сбрасывается и при следующем открытии seller_scan_screen по умолчанию отображается seller_scan_calc_screen.
+В момент выхода из seller_scan посредством seller_scan_state_function, если статус по рассчитываемому ордеру seller_account_orders_list_order_ready = false, тогда фиксируется раздел который был открыт. Впоследствии при входе, если статус seller_account_orders_list_order_ready = false сохраняется, в seller_scan открывается раздел, который был открыт на момент последнего выхода из seller_scan. В момент когда статус по целевому ордеру становится seller_account_orders_list_order_ready = true, тогда seller_scan_state_function сбрасывается и при следующем открытии seller_scan_screen по умолчанию отображается seller_scan_calc_screen.
 
 
 🡆🡆🡆 seller_scan_calc_screen
@@ -45,19 +46,9 @@ seller_scan_calc_screen является экраном по умолчанию.
  │ ││            │  └──┬─[seller_scan_calc_body_display_top_cost                      ]  [th            ]                           [ ✜ 🡆 ]      [ no  ]
  │ ││            │     └ [seller_scan_calc_body_display_top_cost_label                ]  [label         ]  [ "стоимость"     ]      [ ✜ ✜ ]      [ no  ]
  │ ││            └┬──────[seller_scan_calc_body_display_list                          ]  [section_lev4  ]                           [ ✜ ✜ ]      [ no  ]
- │ ││             └┬┬┬───[seller_scan_calc_body_display_list_lot                      ]  [tbody         ]                           [ ✜ ✜ ]      [ no  ] 
- │ ││              ││└┬──[seller_scan_calc_body_display_list_lot_name                 ]  [td            ]                           [ ✜ 🡄 ]      [ yes ]
- │ ││              ││ └┬─[seller_scan_calc_body_display_list_lot_name_value           ]  [section_lev3  ]                           [ ✜ ✜ ]      [ yes ] 
- │ ││              ││  ├ [seller_scan_calc_body_display_list_lot_name_value_label     ]  [label         ]  [ "лот "          ]      [ ✜ 🡄 ]      [ yes ]
- │ ││              ││  └ [seller_scan_calc_body_display_list_lot_name_value_number    ]  [variable      ]  [ { number }      ]      [ ✜ 🡆 ]      [ yes ]
- │ ││              │└─┬──[seller_scan_calc_body_display_list_lot_quantity             ]  [td            ]                           [ ✜ ✜ ]      [ yes ]
- │ ││              │  └┬─[seller_scan_calc_body_display_list_lot_quantity_value       ]  [section_lev3  ]                           [ ✜ ✜ ]      [ yes ]
- │ ││              │   ├ [seller_scan_calc_body_display_list_lot_quantity_value_number]  [variable      ]  [ { number }      ]      [ ✜ 🡄 ]      [ yes ]
- │ ││              │   └ [seller_scan_calc_body_display_list_lot_quantity_value_string]  [variable      ]  [ { string }      ]      [ ✜ 🡆 ]      [ yes ]
- │ ││              └──┬──[seller_scan_calc_body_display_list_lot_cost                 ]  [td            ]                           [ ✜ 🡆 ]      [ yes ]
- │ ││                 └┬─[seller_scan_calc_body_display_list_lot_cost_value           ]  [section_lev3  ]                           [ ✜ ✜ ]      [ yes ]
- │ ││                  ├ [seller_scan_calc_body_display_list_lot_cost_value_number    ]  [label+button  ]  [ { number }      ]      [ ✜ 🡄 ]      [ yes ]
- │ ││                  └ [seller_scan_calc_body_display_list_lot_cost_value_string    ]  [label+button  ]  [ { string }      ]      [ ✜ 🡆 ]      [ yes ]
+
+          │ ││    └┬┬┬───[seller_scan_calc_body_display_list_lot_________________state]  [tbody         ]                           [ ✜ ✜ ]      [     ]
+
  │ │└┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬──[seller_scan_calc_body_keys                                  ]  [section_lev3  ]                           [ ✜ ✜ ]      [ no  ] 
  │ │ │││││││││││││││││└┬─[seller_scan_calc_body_keys_7                                ]  [button        ]                           [ 🡅 🡄 ]      [ yes ]
  │ │ │││││││││││││││││ └ [seller_scan_calc_body_keys_7_label                          ]  [label         ]  [ "7"             ]      [ ✜ ✜ ]      [ yes ] 
@@ -95,12 +86,9 @@ seller_scan_calc_screen является экраном по умолчанию.
  │ │ │                 └ [seller_scan_calc_body_keys_dot_label                        ]  [label         ]  [ "."             ]      [ ✜ ✜ ]      [ yes ] 
  │ │ └─────────────────┬─[seller_scan_calc_body_keys_equal                            ]  [button        ]                           [ 🡇 🡆 ]      [ yes ]
  │ │                   └ [seller_scan_calc_body_keys_equal_label                      ]  [label         ]  [ "="             ]      [ ✜ ✜ ]      [ yes ] 
- │ └─────────────────┬┬──[seller_scan_calc_body_result                                ]  [section_lev3  ]                           [ 🡇 ✜ ]      [ no  ]
- │                   │└┬─[seller_scan_calc_body_result_widget                         ]  [widget        ]                           [ ✜ 🡄 ]      [ no  ]
- │                   │ ├ [seller_scan_calc_body_result_widget_signifier               ]  [variable      ]  [ { string }      ]      [ ✜ 🡄 ]      [ no  ]
- │                   │ └ [seller_scan_calc_body_result_widget_output                  ]  [variable      ]  [ { number }      ]      [ ✜ 🡆 ]      [ no  ]
- │                   └─┬─[seller_scan_calc_body_result_add                            ]  [button        ]                           [ ✜ 🡆 ]      [ yes ]
- │                     └ [seller_scan_calc_body_result_add_label                      ]  [label         ]  [ "+ товар"       ]      [ ✜ ✜ ]      [ yes ]
+ 
+ │ └─────────────────┬┬──[seller_scan_calc_body_result___________________________state]  [section_lev3  ]                           [ 🡇 ✜ ]      [ no  ]
+
  └─────────────────────┬─[seller_scan_calc_buttons                                    ]  [section_lev2  ]                           [ 🡇 ✜ ]      [ no  ]
                        ├ [seller_scan_calc_buttons_ok                                 ]  [button        ]                           [ ✜ 🡄 ]      [ yes ]
                        ├ [seller_scan_calc_buttons_ok_label                           ]  [label         ]  [ "ОК"            ]      [ ✜ ✜ ]      [ yes ]
@@ -210,7 +198,7 @@ seller_scan_calc_body_display состоит из 2 основных компо�
 - seller_scan_calc_body_display_top;
 - seller_scan_calc_body_display_list.
 
-- seller_scan_calc_body_display_top локализован в верхней его части в качестве блока занимающего всю ширину seller_scan_calc_body_display, а по высоте порядка 10% seller_scan_calc_body_display и представляет собой верхняя таблицы, в котором располагаются заголовки столбцов для seller_scan_calc_body_display_list.
+- seller_scan_calc_body_display_top локализован в верхней его части в качестве блока занимающего всю ширину seller_scan_calc_body_display, а по высоте порядка 10% seller_scan_calc_body_display и представляет собой шапку таблицы, в которой располагаются заголовки столбцов для seller_scan_calc_body_display_list.
 --- seller_scan_calc_body_display_top_name - является левой ячейкой seller_scan_calc_body_display_top содержащей seller_scan_calc_body_display_top_name_label; 
 ----- seller_scan_calc_body_display_top_name_label - константный текстовый элемент следующего содержания: "наименование";
 --- seller_scan_calc_body_display_top_quantity - является центральной ячейкой seller_scan_calc_body_display_top содержащей seller_scan_calc_body_display_top_quantity_label; 
@@ -219,13 +207,389 @@ seller_scan_calc_body_display состоит из 2 основных компо�
 ----- seller_scan_calc_body_display_top_cost_label - константный текстовый элемент следующего содержания: "стоимость";
 
 - seller_scan_calc_body_display_list локализован под seller_scan_calc_body_display_top в качестве списка seller_scan_calc_body_display_list_lot, который занимает всю ширину seller_scan_calc_body_display, а по высоте занимает пространство равное количеству seller_scan_calc_body_display_list_lot находящихся в seller_scan_calc_body_display_list. Если количество seller_scan_calc_body_display_list_lot не вмещается в seller_scan_calc_body_display_list, тогда у seller_scan_calc_body_display_list появляется скроллинг а с правой стороны по краю отображается seller_scan_calc_body_display_list_scrollbar;
---- seller_scan_calc_body_display_list_lot - товарная позиция выводится в одну строку и содержит данные в 3 ячейках: seller_scan_calc_body_display_list_lot_name, seller_scan_calc_body_display_list_lot_quantity, seller_scan_calc_body_display_list_lot_cost. Количество seller_scan_calc_body_display_list_lot зависит от конкретного ордера;
---- seller_scan_calc_body_display_list_lot_name - является левой ячейкой seller_scan_calc_body_display_list_lot содержащей seller_scan_calc_body_display_list_lot_name_value; 
------ seller_scan_calc_body_display_list_lot_name_value - выровненное по центру seller_scan_calc_body_display_list_lot_name конкатенированное значение из 2 переменных seller_scan_calc_body_display_list_lot_name_value_label и seller_scan_calc_body_display_list_lot_name_value_number;
-------- seller_scan_calc_body_display_list_lot_name_value_label - константный текстовый элемент следующего содержания: "лот " размещающийся слева от seller_scan_calc_body_display_list_lot_name_value_number;
-------- seller_scan_calc_body_display_list_lot_name_value_label - переменная с числовым значением отображающая seller_goods_list_cover_stateX_front_top_number_value (seller_goods_list_cover_state1_front_top_number_value ...), располагается справа от seller_scan_calc_body_display_list_lot_name_value_label;
 
---- seller_scan_calc_body_display_list_lot_quantity - является центральной ячейкой seller_scan_calc_body_display_list_lot содержащей seller_scan_calc_body_display_list_lot_quantity_value; 
------ seller_scan_calc_body_display_list_lot_quantity_value - выровненное по центру seller_scan_calc_body_display_list_lot_quantity конкатенированное значение из 2 переменных seller_scan_calc_body_display_list_lot_quantity_value_number и seller_scan_calc_body_display_list_lot_quantity_value_string;
-------- seller_scan_calc_body_display_list_lot_quantity_value_number - переменная с числовым значением отображающая значение seller_scan_calc_body_result_widget_output, размещается слева от seller_scan_calc_body_display_list_lot_quantity_value_string;
-------- seller_scan_calc_body_display_list_lot_quantity_value_string - переменная со строковым значением отображающая специфичный seller_settings_goods_list_measure_value для целевого товара, располагается справа от seller_scan_calc_body_display_list_lot_quantity_value_number;
+✠ color_states
+┌─
+│seller_scan_calc_body_display_top
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color2
+│------ in any situation
+└─
+┌─
+│seller_scan_calc_body_display_top_name_label
+│seller_scan_calc_body_display_top_quantity_label
+│seller_scan_calc_body_display_top_cost_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
+■■■ seller_scan_calc_body_display_list_lot
+
+seller_scan_calc_body_display_list_lot является товарной расчетной позицией фигурирующей в ордере, которая размещается в seller_scan_calc_body_display_list согласно хронологии добавления снизу-вверх, где seller_scan_calc_body_display_list_lot занимающий нижнюю позицию добавлен последним. Как структурный реплицируемый компонент количество экземпляров seller_scan_calc_body_display_list_lot зависит от количества товарных позиций по конкретному ордеру.
+
+seller_scan_calc_body_display_list_lot обладает 2 состояниями:
+- seller_scan_calc_body_display_list_lot_active_state - когда происходит процессинг расчета по целевому лоту (в моментуме может быть только 1 экземпляр);
+- seller_scan_calc_body_display_list_lot_passive_state - когда процессинг расчета по целевому лоту завершен (может быть сколь угодно экземпляров).
+
+■ ■ seller_scan_calc_body_display_list_lot_active_state ■ ■
+
+✠ tables
+
+                                              codename:                                     type:           designation:         location:   interaction:
+ │ ││    └┬┬┬───[seller_scan_calc_body_display_list_lot_active                      ]  [tbody         ]                           [ ✜ ✜ ]      [ no  ] 
+ │ ││     ││└┬──[seller_scan_calc_body_display_list_lot_active_name                 ]  [td            ]                           [ ✜ 🡄 ]      [ no  ]
+ │ ││     ││ └┬─[seller_scan_calc_body_display_list_lot_active_name_value           ]  [section_lev3  ]                           [ ✜ ✜ ]      [ no  ] 
+ │ ││     ││  ├ [seller_scan_calc_body_display_list_lot_active_name_value_label     ]  [label         ]  [ "лот "          ]      [ ✜ 🡄 ]      [ no  ]
+ │ ││     ││  └ [seller_scan_calc_body_display_list_lot_active_name_value_number    ]  [variable      ]  [ { number }      ]      [ ✜ 🡆 ]      [ no  ]
+ │ ││     │└─┬──[seller_scan_calc_body_display_list_lot_active_quantity             ]  [td            ]                           [ ✜ ✜ ]      [ no  ]
+ │ ││     │  └┬─[seller_scan_calc_body_display_list_lot_active_quantity_value       ]  [section_lev3  ]                           [ ✜ ✜ ]      [ no  ]
+ │ ││     │   ├ [seller_scan_calc_body_display_list_lot_active_quantity_value_number]  [variable      ]  [ { number }      ]      [ ✜ 🡄 ]      [ no  ]
+ │ ││     │   └ [seller_scan_calc_body_display_list_lot_active_quantity_value_string]  [variable      ]  [ { string }      ]      [ ✜ 🡆 ]      [ no  ]
+ │ ││     └──┬──[seller_scan_calc_body_display_list_lot_active_cost                 ]  [td            ]                           [ ✜ 🡆 ]      [ no  ]
+ │ ││        └┬─[seller_scan_calc_body_display_list_lot_active_cost_value           ]  [section_lev3  ]                           [ ✜ ✜ ]      [ no  ]
+ │ ││         ├ [seller_scan_calc_body_display_list_lot_active_cost_value_number    ]  [label+button  ]  [ { number }      ]      [ ✜ 🡄 ]      [ no  ]
+ │ ││         └ [seller_scan_calc_body_display_list_lot_active_cost_value_string    ]  [label+button  ]  [ { string }      ]      [ ✜ 🡆 ]      [ no  ]
+
+
+✠ details
+--- seller_scan_calc_body_display_list_lot_active - товарная позиция выводится в одну строку и содержит данные в 3 ячейках: seller_scan_calc_body_display_list_lot_active_name, seller_scan_calc_body_display_list_lot_active_quantity, seller_scan_calc_body_display_list_lot_active_cost.
+seller_scan_calc_body_display_list_lot_active обладает следующими стилями:
+│border: 3px;
+│border-radius: 5px.
+
+seller_scan_calc_body_display_list_lot_active_name
+--- seller_scan_calc_body_display_list_lot_active_name - является левой ячейкой seller_scan_calc_body_display_list_lot_active содержащей seller_scan_calc_body_display_list_lot_active_name_value; 
+----- seller_scan_calc_body_display_list_lot_active_name_value - выровненное по центру seller_scan_calc_body_display_list_lot_active_name конкатенированное значение из 2 переменных seller_scan_calc_body_display_list_lot_active_name_value_label и seller_scan_calc_body_display_list_lot_active_name_value_number;
+------- seller_scan_calc_body_display_list_lot_active_name_value_label - константный текстовый элемент следующего содержания: "лот " размещающийся слева от seller_scan_calc_body_display_list_lot_active_name_value_number, имеет font-weight: bold;
+------- seller_scan_calc_body_display_list_lot_active_name_value_number - переменная с числовым значением отображающая seller_goods_list_cover_stateX_front_top_number_value (seller_goods_list_cover_state1_front_top_number_value ...), располагается справа от seller_scan_calc_body_display_list_lot_active_name_value_label, имеет font-weight: bold.
+
+seller_scan_calc_body_display_list_lot_active_quantity
+--- seller_scan_calc_body_display_list_lot_active_quantity - является центральной ячейкой seller_scan_calc_body_display_list_lot_active содержащей seller_scan_calc_body_display_list_lot_active_quantity_value; 
+----- seller_scan_calc_body_display_list_lot_active_quantity_value - выровненное по центру seller_scan_calc_body_display_list_lot_active_quantity конкатенированное значение из 2 переменных seller_scan_calc_body_display_list_lot_active_quantity_value_number и seller_scan_calc_body_display_list_lot_active_quantity_value_string;
+------- seller_scan_calc_body_display_list_lot_active_quantity_value_number - переменная с числовым значением отображающая значение seller_scan_calc_body_result_widget_output, размещается слева от seller_scan_calc_body_display_list_lot_active_quantity_value_string, имеет font-weight: bold;
+------- seller_scan_calc_body_display_list_lot_active_quantity_value_string - переменная со строковым значением отображающая специфичный seller_settings_goods_measure_value для целевого товара, располагается справа от seller_scan_calc_body_display_list_lot_active_quantity_value_number, имеет font-weight: bold.
+
+seller_scan_calc_body_display_list_lot_active_cost
+--- seller_scan_calc_body_display_list_lot_active_cost - является правой ячейкой seller_scan_calc_body_display_list_lot_active содержащей seller_scan_calc_body_display_list_lot_active_cost_value; 
+----- seller_scan_calc_body_display_list_lot_active_cost_value - выровненное по центру seller_scan_calc_body_display_list_lot_active_cost конкатенированное значение из 2 переменных seller_scan_calc_body_display_list_lot_active_cost_value_number и seller_scan_calc_body_display_list_lot_active_cost_value_string;
+------- seller_scan_calc_body_display_list_lot_active_cost_value_number - переменная с числовым значением отображающая значение seller_settings_goods_price_retail_value или seller_settings_goods_price_wholesale_data_value в зависимости от количества товара по целевому лоту (если указана оптовая цена), размещается слева от seller_scan_calc_body_display_list_lot_active_cost_value_string, имеет font-weight: bold;
+------- seller_scan_calc_body_display_list_lot_active_cost_value_string - переменная со строковым значением отображающая специфичный seller_settings_currency_value для seller, располагается справа от seller_scan_calc_body_display_list_lot_active_cost_value_number, имеет font-weight: bold.
+
+✠ actions
+• seller_scan_calc_body_display_list_lot_active:
+╠ valid / invalid
+║ • gesture: any
+║ occasion:  любые попытки интеракции с seller_scan_calc_body_display_list_lot_active;
+║ condition: in seller_scan_calc_body_display_list_lot_active_state;
+╙ result: seller_scan_calc_body_display_list_lot_active не реагирует.
+
+✠ logics
+Одномоментно в seller_scan_calc_body_display_list может быть только один экземпляр seller_scan_calc_body_display_list_lot_active, который всегда располагается в нижней позиции (нижней строкой) в seller_scan_calc_body_display_list.
+
+✠ color_states
+┌─
+│seller_scan_calc_body_display_list_lot_active
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color7
+│------ in any situation
+└─
+┌─
+│seller_scan_calc_body_display_list_lot_active_name_value_label
+│seller_scan_calc_body_display_list_lot_active_name_value_number
+│seller_scan_calc_body_display_list_lot_active_quantity_value_number
+│seller_scan_calc_body_display_list_lot_active_quantity_value_string
+│seller_scan_calc_body_display_list_lot_active_cost_value_number
+│seller_scan_calc_body_display_list_lot_active_cost_value_string
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
+
+■ ■ seller_scan_calc_body_display_list_lot_passive_state ■ ■
+
+✠ tables
+
+                                               codename:                                     type:           designation:         location:   interaction:
+ │ ││   └┬──────[seller_scan_calc_body_display_list                                  ]  [section_lev4  ]                           [ ✜ ✜ ]      [ no  ]
+ │ ││    └┬┬┬───[seller_scan_calc_body_display_list_lot_passive                      ]  [tbody         ]                           [ ✜ ✜ ]      [ yes ] 
+ │ ││     ││└┬──[seller_scan_calc_body_display_list_lot_passive_name                 ]  [td            ]                           [ ✜ 🡄 ]      [ yes ]
+ │ ││     ││ └┬─[seller_scan_calc_body_display_list_lot_passive_name_value           ]  [section_lev3  ]                           [ ✜ ✜ ]      [ yes ] 
+ │ ││     ││  ├ [seller_scan_calc_body_display_list_lot_passive_name_value_label     ]  [label         ]  [ "лот "          ]      [ ✜ 🡄 ]      [ yes ]
+ │ ││     ││  └ [seller_scan_calc_body_display_list_lot_passive_name_value_number    ]  [variable      ]  [ { number }      ]      [ ✜ 🡆 ]      [ yes ]
+ │ ││     │└─┬──[seller_scan_calc_body_display_list_lot_passive_quantity             ]  [td            ]                           [ ✜ ✜ ]      [ yes ]
+ │ ││     │  └┬─[seller_scan_calc_body_display_list_lot_passive_quantity_value       ]  [section_lev3  ]                           [ ✜ ✜ ]      [ yes ]
+ │ ││     │   ├ [seller_scan_calc_body_display_list_lot_passive_quantity_value_number]  [variable      ]  [ { number }      ]      [ ✜ 🡄 ]      [ yes ]
+ │ ││     │   └ [seller_scan_calc_body_display_list_lot_passive_quantity_value_string]  [variable      ]  [ { string }      ]      [ ✜ 🡆 ]      [ yes ]
+ │ ││     └──┬──[seller_scan_calc_body_display_list_lot_passive_cost                 ]  [td            ]                           [ ✜ 🡆 ]      [ yes ]
+ │ ││        └┬─[seller_scan_calc_body_display_list_lot_passive_cost_value           ]  [section_lev3  ]                           [ ✜ ✜ ]      [ yes ]
+ │ ││         ├ [seller_scan_calc_body_display_list_lot_passive_cost_value_number    ]  [label+button  ]  [ { number }      ]      [ ✜ 🡄 ]      [ yes ]
+ │ ││         └ [seller_scan_calc_body_display_list_lot_passive_cost_value_string    ]  [label+button  ]  [ { string }      ]      [ ✜ 🡆 ]      [ yes ]
+
+✠ details
+--- seller_scan_calc_body_display_list_lot_passive - товарная позиция выводится в одну строку и содержит данные в 3 ячейках: seller_scan_calc_body_display_list_lot_passive_name, seller_scan_calc_body_display_list_lot_passive_quantity, seller_scan_calc_body_display_list_lot_passive_cost.
+seller_scan_calc_body_display_list_lot_passive не имеет border. 
+
+seller_scan_calc_body_display_list_lot_passive_name
+--- seller_scan_calc_body_display_list_lot_passive_name - является левой ячейкой seller_scan_calc_body_display_list_lot_passive содержащей seller_scan_calc_body_display_list_lot_passive_name_value; 
+----- seller_scan_calc_body_display_list_lot_passive_name_value - выровненное по центру seller_scan_calc_body_display_list_lot_passive_name конкатенированное значение из 2 переменных seller_scan_calc_body_display_list_lot_passive_name_value_label и seller_scan_calc_body_display_list_lot_passive_name_value_number;
+------- seller_scan_calc_body_display_list_lot_passive_name_value_label - константный текстовый элемент следующего содержания: "лот " размещающийся слева от seller_scan_calc_body_display_list_lot_passive_name_value_number, имеет font-weight: normal;
+------- seller_scan_calc_body_display_list_lot_passive_name_value_number - переменная с числовым значением отображающая seller_goods_list_cover_stateX_front_top_number_value (seller_goods_list_cover_state1_front_top_number_value ...), располагается справа от seller_scan_calc_body_display_list_lot_passive_name_value_label, имеет font-weight: normal.
+
+seller_scan_calc_body_display_list_lot_passive_quantity
+--- seller_scan_calc_body_display_list_lot_passive_quantity - является центральной ячейкой seller_scan_calc_body_display_list_lot_passive содержащей seller_scan_calc_body_display_list_lot_passive_quantity_value; 
+----- seller_scan_calc_body_display_list_lot_passive_quantity_value - выровненное по центру seller_scan_calc_body_display_list_lot_passive_quantity конкатенированное значение из 2 переменных seller_scan_calc_body_display_list_lot_passive_quantity_value_number и seller_scan_calc_body_display_list_lot_passive_quantity_value_string;
+------- seller_scan_calc_body_display_list_lot_passive_quantity_value_number - переменная с числовым значением отображающая значение seller_scan_calc_body_result_widget_output, размещается слева от seller_scan_calc_body_display_list_lot_passive_quantity_value_string, имеет font-weight: normal;
+------- seller_scan_calc_body_display_list_lot_passive_quantity_value_string - переменная со строковым значением отображающая специфичный seller_settings_goods_measure_value для целевого товара, располагается справа от seller_scan_calc_body_display_list_lot_passive_quantity_value_number, имеет font-weight: normal.
+
+seller_scan_calc_body_display_list_lot_passive_cost
+--- seller_scan_calc_body_display_list_lot_passive_cost - является правой ячейкой seller_scan_calc_body_display_list_lot_passive содержащей seller_scan_calc_body_display_list_lot_passive_cost_value; 
+----- seller_scan_calc_body_display_list_lot_passive_cost_value - выровненное по центру seller_scan_calc_body_display_list_lot_passive_cost конкатенированное значение из 2 переменных seller_scan_calc_body_display_list_lot_passive_cost_value_number и seller_scan_calc_body_display_list_lot_passive_cost_value_string;
+------- seller_scan_calc_body_display_list_lot_passive_cost_value_number - переменная с числовым значением отображающая значение seller_settings_goods_price_retail_value или seller_settings_goods_price_wholesale_data_value в зависимости от количества товара по целевому лоту (если указана оптовая цена), размещается слева от seller_scan_calc_body_display_list_lot_passive_cost_value_string, имеет font-weight: normal;
+------- seller_scan_calc_body_display_list_lot_passive_cost_value_string - переменная со строковым значением отображающая специфичный seller_settings_currency_value для seller, располагается справа от seller_scan_calc_body_display_list_lot_passive_cost_value_number, имеет font-weight: normal.
+
+✠ actions
+• seller_scan_calc_body_display_list_lot_passive:
+╠ valid / invalid
+║ • gesture: tap & hold
+║ occasion:  нажатие и удержание от 1 и более секунд seller_scan_calc_body_display_list_lot_passive;
+║ condition: in any situation;
+║ result: по центру экрана всплывает seller_scan_calc_lot_delete_popover.
+╠ valid / invalid
+║ • gesture: swipe left / swipe right
+║ occasion:  делается свайп влево или вправо на целевом seller_scan_calc_body_display_list_lot_passive;
+║ condition: in any situation;
+║ result: 
+║ || - целевой seller_scan_calc_body_display_list_lot_passive двигается влево или вправо в зависимости от свайпа;
+║ || - при смещении центральной позиции целевого seller_scan_calc_body_display_list_lot_passive, он исчезает;
+╙ || - seller_scan_calc_body_display_list перерасчитывается, в результате чего seller_scan_calc_body_display_list_lot_passive (если они есть) находящиеся под исчезнувшим seller_scan_calc_body_display_list_lot_passive поднимаются на одну строку вверх.
+
+✠ color_states
+┌─
+│seller_scan_calc_body_display_list_lot_passive
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color2
+│------ in any situation
+└─
+┌─
+│seller_scan_calc_body_display_list_lot_passive_name_value_label
+│seller_scan_calc_body_display_list_lot_passive_name_value_number
+│seller_scan_calc_body_display_list_lot_passive_quantity_value_number
+│seller_scan_calc_body_display_list_lot_passive_quantity_value_string
+│seller_scan_calc_body_display_list_lot_passive_cost_value_number
+│seller_scan_calc_body_display_list_lot_passive_cost_value_string
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
+
+■ seller_scan_calc_body_keys
+
+
+
+
+
+■ seller_scan_calc_body_result
+
+seller_scan_calc_body_result представляет собой панель выполняющей частично информативную роль отображая результирующее калькуляции, а также служит цель добавления товарных позиций к калькулируемому ордеру (корзине).
+
+✠ tables
+
+                                                codename:                               type:           designation:         location:   interaction:
+ │ └───────────┬┬──[seller_scan_calc_body_result                                ]  [section_lev3  ]                           [ 🡇 ✜ ]      [ no  ]
+ │             │└┬─[seller_scan_calc_body_result_widget                         ]  [widget        ]                           [ ✜ 🡄 ]      [ no  ]
+ │             │ ├ [seller_scan_calc_body_result_widget_signifier__________state]  [variable      ]  [ { string }      ]      [ ✜ 🡄 ]      [ no  ]
+ │             │ └ [seller_scan_calc_body_result_widget_output_____________state]  [variable      ]  [ { number }      ]      [ ✜ 🡆 ]      [ no  ]
+ │             └─┬─[seller_scan_calc_body_result_add                            ]  [button        ]                           [ ✜ 🡆 ]      [ yes ]
+ │               └ [seller_scan_calc_body_result_add_label                      ]  [label         ]  [ "+ товар"       ]      [ ✜ ✜ ]      [ yes ]
+
+
+✠ details
+seller_scan_calc_body_result находится в нижней части seller_scan_calc_body и состоит из 2 структурных компонентов:
+- seller_scan_calc_body_result_widget - выполняет функцию виджета отображающего ввод и вывод процесса калькуляции;
+- seller_scan_calc_body_result_add - выполняет функцию добавления лота к рассчитываемому ордеру (корзине).
+
+- seller_scan_calc_body_result_widget - локализован слева и занимает порядка 70% ширины seller_scan_calc_body_result, представляет собой прямоугольный блок в рамках которого располагаются seller_scan_calc_body_result_widget_signifier и seller_scan_calc_body_result_widget_output;
+--- seller_scan_calc_body_result_add - представляет собой кнопку добавления лота для расчета ордера, которая расположена справа от seller_scan_calc_body_result_widget_signifier и содержит seller_scan_calc_body_result_add_label; 
+----- seller_scan_calc_body_result_add_label - константный центрированный текстовый элемент следующего содержания: "+ товар".
+
+✠ actions
+• seller_scan_calc_body_result_add:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion:  нажатие seller_scan_calc_body_result_add;
+║ condition: in any situation;
+╙ result: делается переход к seller_goods_screen.
+
+✠ color_states
+┌─
+│seller_scan_calc_body_result
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color2
+│------ in any situation
+└─
+┌─
+│seller_scan_calc_body_result_add
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color5
+│------ in pressing_state
+└─
+┌─
+│seller_scan_calc_body_result_add_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
+
+■■■ seller_scan_calc_body_result_widget_signifier
+
+seller_scan_calc_body_result_widget_signifier обладает 2 состояниями:
+- seller_scan_calc_body_result_widget_signifier_active_state - когда происходит процессинг расчета по целевому лоту (в моментуме может быть только 1 экземпляр);
+- seller_scan_calc_body_result_widget_signifier_passive_state - когда процессинг расчета по целевому лоту завершен (может быть сколь угодно экземпляров).
+
+■ ■ seller_scan_calc_body_result_widget_signifier_active_state ■ ■
+
+✠ tables
+
+                                               codename:                         type:           designation:         location:   interaction:
+ │              │ ├ [seller_scan_calc_body_result_widget_signifier_active]  [variable      ]  [ "кол-во: "      ]      [ ✜ 🡄 ]      [ no  ]
+
+
+✠ details
+--- seller_scan_calc_body_result_widget_signifier_active - подстановочный информер указывающий результирующий тип seller_scan_calc_body_result_widget_output в виде переменной со строковым значением, находится слева от seller_scan_calc_body_result_widget_output. В seller_scan_calc_body_result_widget_signifier_active отображает текст следующего содержания: "кол-во: ".
+
+✠ standards
+Нормативы отображения для seller_scan_calc_body_result_widget_signifier_active: 
+- целые числа отображаются от 1 до 999999999;
+- числа > 999999999 отображаются с использовании аббревиатуры;
+- число 1000000000 отображается как 1B;
+- число 1000000000000 отображается как 1T;
+- дробные числа отображаются с точностью 0.00000.
+
+✠ color_states
+┌─
+│seller_scan_calc_body_result_widget_signifier_active
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
+
+■ ■ seller_scan_calc_body_result_widget_signifier_passive_state ■ ■
+
+✠ tables
+
+                                               codename:                          type:           designation:         location:   interaction:
+ │              │ ├ [seller_scan_calc_body_result_widget_signifier_passive]  [variable      ]  [ "итог: "        ]      [ ✜ 🡄 ]      [ no  ]
+
+✠ details
+--- seller_scan_calc_body_result_widget_signifier_passive - подстановочный информер указывающий результирующий тип seller_scan_calc_body_result_widget_output в виде переменной со строковым значением, находится слева от seller_scan_calc_body_result_widget_output. В seller_scan_calc_body_result_widget_signifier_passive отображает текст следующего содержания: "итог: ".
+
+✠ standards
+Нормативы отображения для seller_scan_calc_body_result_widget_signifier_passive: 
+- целые числа отображаются от 1 до 999999999;
+- числа > 999999999 отображаются с использовании аббревиатуры;
+- число 1000000000 отображается как 1B;
+- число 1000000000000 отображается как 1T;
+- дробные числа отображаются с точностью 0.00000.
+
+✠ color_states
+┌─
+│seller_scan_calc_body_result_widget_signifier_passive
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
+
+■■■ seller_scan_calc_body_result_widget_output
+
+seller_scan_calc_body_result_widget_output обладает 2 состояниями:
+- seller_scan_calc_body_result_widget_output_active_state - когда происходит процессинг расчета по целевому лоту (в моментуме может быть только 1 экземпляр);
+- seller_scan_calc_body_result_widget_output_passive_state - когда процессинг расчета по целевому лоту завершен (может быть сколь угодно экземпляров).
+
+■ ■ seller_scan_calc_body_result_widget_output_active_state ■ ■
+
+✠ tables
+
+                                               codename:                           type:           designation:         location:   interaction:
+ │             │ └ [seller_scan_calc_body_result_widget_output_active_state]  [variable      ]  [ { number }      ]      [ ✜ 🡆 ]      [ no  ]
+
+✠ details
+----- seller_scan_calc_body_result_widget_output - переменная с числовым значением расположенная справа от seller_scan_calc_body_result_widget_signifier, которая в seller_scan_calc_body_result_widget_output_active_state выводит seller_scan_calc_quantity - количественное значение товара (лота).
+
+✠ standards
+Нормативы отображения для seller_scan_calc_body_result_widget_output_active: 
+- целые числа отображаются от 1 до 999999999;
+- числа > 999999999 отображаются с использовании аббревиатуры;
+- число 1000000000 отображается как 1B;
+- число 1000000000000 отображается как 1T;
+- дробные числа отображаются с точностью 0.00000.
+
+✠ color_states
+┌─
+│seller_scan_calc_body_result_widget_output_active
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
+
+■ ■ seller_scan_calc_body_result_widget_output_passive_state ■ ■
+
+✠ tables
+
+                                               codename:                            type:           designation:         location:   interaction:
+ │             │ └ [seller_scan_calc_body_result_widget_output_passive_state]  [variable      ]  [ { number }      ]      [ ✜ 🡆 ]      [ no  ]
+
+✠ details
+----- seller_scan_calc_body_result_widget_output - переменная с числовым значением расположенная справа от seller_scan_calc_body_result_widget_signifier, которая в seller_scan_calc_body_result_widget_output_passive_state выводит seller_scan_calc_sum - сумму по ордеру (корзине).
+
+✠ standards
+Нормативы отображения для seller_scan_calc_body_result_widget_output_passive: 
+- целые числа отображаются от 1 до 999999999;
+- числа > 999999999 отображаются с использовании аббревиатуры;
+- число 1000000000 отображается как 1B;
+- число 1000000000000 отображается как 1T;
+- дробные числа отображаются с точностью 0.00000.
+
+✠ color_states
+┌─
+│seller_scan_calc_body_result_widget_output_passive
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
