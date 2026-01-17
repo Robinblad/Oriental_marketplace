@@ -20,7 +20,7 @@ color6 - middle;
 
 🡆 seller_shop_screen
 ■■■■■■■■■■■■■■■■■■■■
-seller_shop_screen является домашним экраном seller_mode (является первым экраном который отображается для seller после инициализации через init_trial_screen и init_usual_screen), вход в который осуществляется посредством кнопки "МАГАЗИН" на seller_shop_nav и представляет собой информационный экран с органами управления наиболее динамических настроек. seller_shop_screen разделен на 10 sections следующего содержания расположенных сверху-вниз:
+seller_shop_screen является домашним экраном seller_mode (является первым экраном который отображается для seller после инициализации через seller_settings_trial_screen и init_usual_screen), вход в который осуществляется посредством кнопки "МАГАЗИН" на seller_shop_nav и представляет собой информационный экран с органами управления наиболее динамических настроек. seller_shop_screen разделен на 10 sections следующего содержания расположенных сверху-вниз:
 
 ✠ tables
 
@@ -95,11 +95,11 @@ s6) ┌─────┬──[seller_shop_acts                                
 ----  │    └ [seller_shop_acts_list_item_left_name                          ]  [label              ]  [ { string }                    ]  [ ✜ 🡆 ]     [ yes ]
 ----  └┬┬────[seller_shop_acts_list_item_right                              ]  [section_lev5       ]                                     [ ✜ 🡆 ]     [ yes ]
 ----   │└┬─┬─[seller_shop_acts_list_item_right_header                       ]  [section_lev6       ]                                     [ 🡅 ✜ ]     [ yes ]
-----   │ │ └ [seller_shop_acts_list_item_right_header_time                  ]  [value              ]  [ { number }                    ]  [ ✜ 🡄 ]     [ yes ]
+----   │ │ └ [seller_shop_acts_list_item_right_header_time                  ]  [variable           ]  [ { number }                    ]  [ ✜ 🡄 ]     [ yes ]
 ----   │ └┬┬─[seller_shop_acts_list_item_right_header_cause                 ]  [section_lev7       ]                                     [ ✜ 🡆 ]     [ yes ]
-----   │  │└ [seller_shop_acts_list_item_right_header_cause_object          ]  [value              ]  [ { string }                    ]  [ ✜ 🡄 ]     [ yes ]
+----   │  │└ [seller_shop_acts_list_item_right_header_cause_object          ]  [variable           ]  [ { string }                    ]  [ ✜ 🡄 ]     [ yes ]
 ----   │  └┬─[seller_shop_acts_list_item_right_header_cause_subject         ]  [section_lev8       ]  [ { string }                    ]  [ ✜ 🡆 ]     [ yes ]
-----   │   ├ [seller_shop_acts_list_item_right_header_cause_subject_value   ]  [value              ]  [ { number }                    ]  [ ✜ 🡄 ]     [ yes ]
+----   │   ├ [seller_shop_acts_list_item_right_header_cause_subject_value   ]  [variable           ]  [ { number }                    ]  [ ✜ 🡄 ]     [ yes ]
 ----   │   └ [seller_shop_acts_list_item_right_header_cause_subject_text    ]  [text               ]  [ " ордеров"                    ]  [ ✜ 🡆 ]     [ yes ]
 ----   └───┬─[seller_shop_acts_list_item_right_event                        ]  [section_lev6       ]                                     [ 🡇 ✜ ]     [ yes ]
 ----       └ [seller_shop_acts_list_item_right_event_text                   ]  [text               ]  [ { string }                    ]  [ ✜ ✜ ]     [ yes ]
@@ -248,11 +248,11 @@ s9)   ┌┬┬┬┬──[seller_nav                                          
 • seller_shop_nav_shop_badge
 ╠ valid
 ║ occasion: buyer заходит в магазин seller;
-║ condition: seller=online;
+║ condition: seller= trueline;
 ║ result: отображение в seller_shop_nav_shop_badge цифрового значения равного количеству находящихся в магазине посетителей.
 ╠ invalid
 ║ occasion: buyer заходит в магазин seller;
-║ condition: seller=offline;
+║ condition: seller= falseline;
 ╙ result: seller_shop_nav_shop_badge не отображается.
 
 
@@ -267,7 +267,7 @@ s9)   ┌┬┬┬┬──[seller_nav                                          
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color4
-│------ в default_state
+│------ in default_state
 ├────────
 │• color7
 │------ в activated_state
@@ -282,7 +282,7 @@ s9)   ┌┬┬┬┬──[seller_nav                                          
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color9
-│------ в default_state
+│------ in default_state
 ├────────
 │• color2
 │------ в activated_state 
@@ -344,10 +344,10 @@ s9)   ┌┬┬┬┬──[seller_nav                                          
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color2
-│------ в default_state
+│------ in default_state
 ├────────
 │• color5
-│------ в pressing_state 
+│------ in pressing_state 
 └─
 ┌─
 │seller_shop_top_address_info_label
@@ -447,15 +447,15 @@ s9)   ┌┬┬┬┬──[seller_nav                                          
 
 ✠ details
 Секция seller_shop_activity состоит из 3 компонентов:
-1) seller_shop_activity_button - кнопка с бейджем, при нажатии на которую открывается seller_setting_usual_active_screen;
+1) seller_shop_activity_button - кнопка с бейджем, при нажатии на которую открывается seller_setting_usual_activity_screen;
 -- seller_shop_activity_button_header - наименование кнопки "АКТИВНОСТЬ";
-2) seller_shop_activity_widget - отображает настройки сделанные в seller_setting_usual_active_screen: 
--- если выбран active_time_schedule, тогда в первой строке фигурирует сокращенное наименование варианта регулировки рабочего времени: "ГРАФИК", во второй строке фигурирует значение active_time_schedule_worktime;
--- если выбран active_time_auto, тогда 1 или 2 строками фигурирует сокращенное наименование варианта регулировки рабочего времени: "GPS ПОЗИЦИОНИРОВАНИЕ"; 
--- если выбран active_time_manual, тогда 1 или 2 строками фигурирует сокращенное наименование варианта регулировки рабочего времени: "РУЧНОЕ УПРАВЛЕНИЕ";
-3) seller_shop_activity_toggle - переключатель режимов между seller_shop_activity_toggle_switcher = on и seller_shop_activity_toggle_switcher = off:
+2) seller_shop_activity_widget - отображает настройки сделанные в seller_setting_usual_activity_screen: 
+-- если выбран activity_schedule, тогда в первой строке фигурирует сокращенное наименование варианта регулировки рабочего времени: "ГРАФИК", во второй строке фигурирует значение activity_schedule_worktime;
+-- если выбран activity_auto, тогда 1 или 2 строками фигурирует сокращенное наименование варианта регулировки рабочего времени: "GPS ПОЗИЦИОНИРОВАНИЕ"; 
+-- если выбран activity_manual, тогда 1 или 2 строками фигурирует сокращенное наименование варианта регулировки рабочего времени: "РУЧНОЕ УПРАВЛЕНИЕ";
+3) seller_shop_activity_toggle - переключатель режимов между seller_shop_activity_toggle_switcher = true и seller_shop_activity_toggle_switcher = false:
 -- seller_shop_activity_toggle_header - имеет наименование "РАБОТАЮ" в активированном режиме и наименование "НЕ РАБОТАЮ" в дезактивированном режиме;
--- seller_shop_activity_toggle_switcher - переключатель между рабочим (seller_shop_activity_toggle_switcher = on) и нерабочим режимом (seller_shop_activity_toggle_switcher = off). Если активирован active_time_schedule, тогда seller_shop_activity_toggle_switcher автоматически переключается между on и off согласно рабочему графику. Если активирован active_time_auto, тогда seller_shop_activity_toggle_switcher автоматически переключается между on и off согласно геолокации устройства seller. Если активирован active_time_manual, тогда seller_shop_activity_toggle_switcher переключается между on и off вручную.
+-- seller_shop_activity_toggle_switcher - переключатель между рабочим (seller_shop_activity_toggle_switcher = true) и нерабочим режимом (seller_shop_activity_toggle_switcher = false). Если активирован activity_schedule, тогда seller_shop_activity_toggle_switcher автоматически переключается между on и off согласно рабочему графику. Если активирован activity_auto, тогда seller_shop_activity_toggle_switcher автоматически переключается между on и off согласно геолокации устройства seller. Если активирован activity_manual, тогда seller_shop_activity_toggle_switcher переключается между on и off вручную.
 -- seller_shop_activity_toggle_indicator - отображает состояние согласно on/off для seller_shop_activity_toggle_switcher.
 
 ✠ actions
@@ -464,21 +464,21 @@ s9)   ┌┬┬┬┬──[seller_nav                                          
 ║ • gesture: tap
 ║ occasion: нажатие seller_shop_activity_button;
 ║ condition: in any situation;
-╙ result: открывается seller_setting_usual_active_screen.
+╙ result: открывается seller_setting_usual_activity_screen.
 • seller_shop_activity_toggle:
 ╠ valid / invalid
 ║ • gesture: tap
 ║ occasion: нажатие seller_shop_activity_toggle;
 ║ condition: in any situation;
 ║ result: 
-║ if (seller_shop_activity_toggle_switcher = off): 
+║ if (seller_shop_activity_toggle_switcher = false): 
 ║ {
-║ && - переключается в режим seller_shop_activity_toggle_switcher = on; 
+║ && - переключается в режим seller_shop_activity_toggle_switcher = true; 
 ║ && - opacity=1 для seller_shop_activity_widget;
 ║ }
-║ if (seller_shop_activity_toggle_switcher = on):
+║ if (seller_shop_activity_toggle_switcher = true):
 ║ {
-║ && - переключается в режим seller_shop_activity_toggle_switcher = off; 
+║ && - переключается в режим seller_shop_activity_toggle_switcher = false; 
 ║ && - opacity=0.2 для seller_shop_activity_widget.
 ╙ }
 
@@ -490,10 +490,10 @@ s9)   ┌┬┬┬┬──[seller_nav                                          
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color4
-│------ в default_state
+│------ in default_state
 ├────────
 │• color5
-│------ в pressing_state
+│------ in pressing_state
 └─
 ┌─
 │seller_shop_activity_toggle
@@ -509,10 +509,10 @@ s9)   ┌┬┬┬┬──[seller_nav                                          
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color7
-│------ окрашивается рычаг seller_shop_activity_toggle_switcher находящийся в правой позиции, когда seller_shop_activity_toggle_switcher = on
+│------ окрашивается рычаг seller_shop_activity_toggle_switcher находящийся в правой позиции, когда seller_shop_activity_toggle_switcher = true
 ├────────
 │• color4
-│------ окрашивается рычаг seller_shop_activity_toggle_switcher находящийся в левой позиции, когда seller_shop_activity_toggle_switcher = off
+│------ окрашивается рычаг seller_shop_activity_toggle_switcher находящийся в левой позиции, когда seller_shop_activity_toggle_switcher = false
 └─
 ┌─
 │seller_shop_activity_toggle_indicator
@@ -545,12 +545,12 @@ s9)   ┌┬┬┬┬──[seller_nav                                          
 -- seller_shop_ship_button_header - наименование кнопки "ДОСТАВКА";
 -- seller_shop_ship_button_badge - индиакатор отображающий количество невыполненных заказов с доставкой;
 2) seller_shop_ship_widget - отображает настройки сделанные в seller_setting_usual_ship_screen: 
--- если выбран active_time_schedule, тогда в первой строке фигурирует сокращенное наименование варианта регулировки рабочего времени: "ГРАФИК", во второй строке фигурирует значение active_time_schedule_worktime;
--- если выбран active_time_auto, тогда 1 или 2 строками фигурирует сокращенное наименование варианта регулировки рабочего времени: "GPS ПОЗИЦИОНИРОВАНИЕ"; 
--- если выбран active_time_manual, тогда 1 или 2 строками фигурирует сокращенное наименование варианта регулировки рабочего времени: "РУЧНОЕ УПРАВЛЕНИЕ";
+-- если выбран activity_schedule, тогда в первой строке фигурирует сокращенное наименование варианта регулировки рабочего времени: "ГРАФИК", во второй строке фигурирует значение activity_schedule_worktime;
+-- если выбран activity_auto, тогда 1 или 2 строками фигурирует сокращенное наименование варианта регулировки рабочего времени: "GPS ПОЗИЦИОНИРОВАНИЕ"; 
+-- если выбран activity_manual, тогда 1 или 2 строками фигурирует сокращенное наименование варианта регулировки рабочего времени: "РУЧНОЕ УПРАВЛЕНИЕ";
 3) seller_shop_ship_toggle - переключатель режимов между активацией и дезактивацией опции, включает 3 элемента (вся область компонента активна):
 -- seller_shop_ship_toggle_header - имеет наименование "АКТИВИРОВАНО" в активированном режиме и наименование "ОТКЛЮЧЕНО" в дезактивированном режиме;
--- seller_shop_ship_toggle_switcher - переключатель между рабочим (seller_shop_ship_toggle_switcher = on) и нерабочим режимом (seller_shop_ship_toggle_switcher = off). Включается и отключается вручную.
+-- seller_shop_ship_toggle_switcher - переключатель между рабочим (seller_shop_ship_toggle_switcher = true) и нерабочим режимом (seller_shop_ship_toggle_switcher = false). Включается и отключается вручную.
 -- seller_shop_ship_toggle_indicator - отображает состояние согласно on/off для seller_shop_ship_toggle_switcher.
 
 ✠ actions
@@ -566,14 +566,14 @@ s9)   ┌┬┬┬┬──[seller_nav                                          
 ║ occasion: нажатие seller_shop_ship_toggle;
 ║ condition: in any situation;
 ║ result: 
-║ if (если seller_shop_ship_toggle_switcher = off): 
+║ if (если seller_shop_ship_toggle_switcher = false): 
 ║ {
-║ && - переключается в режим seller_shop_ship_toggle_switcher = on; 
+║ && - переключается в режим seller_shop_ship_toggle_switcher = true; 
 ║ && - opacity=1 для seller_shop_ship_widget;
 ║ }
-║ if (если seller_shop_ship_toggle_switcher = on):
+║ if (если seller_shop_ship_toggle_switcher = true):
 ║ {
-║ && - переключается в режим seller_shop_ship_toggle_switcher = off; 
+║ && - переключается в режим seller_shop_ship_toggle_switcher = false; 
 ║ && - opacity=0.2 для seller_shop_ship_widget.
 ╙ }
 
@@ -581,11 +581,11 @@ s9)   ┌┬┬┬┬──[seller_nav                                          
 • seller_shop_ship_button_badge
 ╠ valid
 ║ occasion: buyer совершает покупку с активацией функции доставки;
-║ condition: seller_shop_ship_toggle_switcher = on;
+║ condition: seller_shop_ship_toggle_switcher = true;
 ║ result: отображение в seller_shop_ship_button_badge цифрового значения равного количеству покупок с доставкой по открытым ордерам.
 ╠ invalid
 ║ occasion: buyer планирует совершить покупку с доставкой;
-║ condition: seller_shop_ship_toggle_switcher = off;
+║ condition: seller_shop_ship_toggle_switcher = false;
 ╙ result: buyer не может активировать доставку.
 
 ✠ color_states
@@ -595,10 +595,10 @@ s9)   ┌┬┬┬┬──[seller_nav                                          
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color4
-│------ в default_state
+│------ in default_state
 ├────────
 │• color5
-│------ в pressing_state
+│------ in pressing_state
 └─
 ┌─
 │seller_shop_ship_button_badge
@@ -622,10 +622,10 @@ s9)   ┌┬┬┬┬──[seller_nav                                          
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color7
-│------ окрашивается рычаг seller_shop_ship_toggle_switcher находящийся в правой позиции, когда seller_shop_ship_toggle_switcher = on
+│------ окрашивается рычаг seller_shop_ship_toggle_switcher находящийся в правой позиции, когда seller_shop_ship_toggle_switcher = true
 ├────────
 │• color4
-│------ окрашивается рычаг seller_shop_ship_toggle_switcher находящийся в левой позиции, когда seller_shop_ship_toggle_switcher = off
+│------ окрашивается рычаг seller_shop_ship_toggle_switcher находящийся в левой позиции, когда seller_shop_ship_toggle_switcher = false
 └─
 ┌─
 │seller_shop_ship_toggle_indicator
@@ -703,10 +703,10 @@ s9)   ┌┬┬┬┬──[seller_nav                                          
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color4
-│------ в default_state
+│------ in default_state
 ├────────
 │• color5
-│------ в pressing_state
+│------ in pressing_state
 └─
 
 
@@ -724,7 +724,7 @@ s9)   ┌┬┬┬┬──[seller_nav                                          
 -- seller_shop_searchscan_scan_left_icon - в виде символа "+";
 -- seller_shop_searchscan_scan_right - правая часть seller_shop_searchscan_scan выполняющая дескриптивное назначение;
 -- seller_shop_searchscan_scan_right_label - отображает название кнопки "СКАН".
- 
+
 ✠ actions
 • seller_shop_searchscan_searcher_input_state1:
 ╠ valid / invalid
@@ -736,8 +736,9 @@ s9)   ┌┬┬┬┬──[seller_nav                                          
 ║ && - тело seller_shop_searchscan_scan сдвигается вправо оставляя видимым только seller_shop_searchscan_scan_left, который в результате занимает по горизонтали 
 ║ 5-10% экрана;
 ║ && - seller_shop_searchscan_searcher_input_placeholder исчезает;
-║ && - в seller_shop_searchscan_searcher_input появляется мигающая каретка и открывается клавиатура для ввода;
-╙ && - происходит открытие клавиатуры;
+║ && - seller_shop_searchscan_searcher_input переходит в active_state;
+║ && - появляется клавиатура для ввода (если она была скрыта);
+╙ && - в seller_shop_searchscan_searcher_input появляется мигающая каретка.
 • seller_shop_searchscan_searcher_input_state2:
 ╠ valid / invalid
 ║ • gesture: tap
@@ -776,7 +777,7 @@ s9)   ┌┬┬┬┬──[seller_nav                                          
 │------ в neutral_state;
 ├────────
 │• color5
-│------ в pressing_state;
+│------ in pressing_state;
 ├────────
 │• color3:
 │- || - invalid по факту проверки на overnaming
@@ -798,7 +799,7 @@ s9)   ┌┬┬┬┬──[seller_nav                                          
 │------ в neutral_state
 ├────────
 │• color5
-│------ в pressing_state
+│------ in pressing_state
 └─
 ┌─
 │seller_shop_searchscan_scan_right_label
@@ -953,10 +954,10 @@ seller_shop_searcher_popover_list_object располагаются в seller_sh
 │⟪⟪ border ⟫⟫ 
 ├────────
 │• color2
-│------ в default_state
+│------ in default_state
 ├────────
 │• color5
-│------ в pressing_state
+│------ in pressing_state
 └─
 
 
@@ -1068,38 +1069,100 @@ seller_shop_searcher_popover_list_object располагаются в seller_sh
 
 ✠ color_states
 ┌─
-│seller_nav_demand  (default_state по умолчанию в seller_demand_screen)
-│seller_nav_chat  (default_state по умолчанию в seller_chat_screen)
-│seller_nav_shop  (default_state по умолчанию в seller_shop_screen)
-│seller_nav_goods  (default_state по умолчанию в seller_goods_screen)
-│seller_nav_account  (default_state по умолчанию в seller_account_screen)
+│seller_nav_demand_badge  (activated_state по умолчанию в seller_demand_screen)
+│seller_nav_chat  (activated_state по умолчанию в seller_chat_screen)
+│seller_nav_shop  (activated_state по умолчанию в seller_shop_screen)
+│seller_nav_goods  (activated_state по умолчанию в seller_goods_screen)
+│seller_nav_account  (activated_state по умолчанию в seller_account_screen)
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color4
-│------ в default_state
+│------ in default_state
 ├────────
 │• color7
 │------ в activated_state
 └─
 ┌─
-│seller_nav_demand_badge  (default_state по умолчанию в seller_demand_screen) 
-│seller_nav_chat_badge  (default_state по умолчанию в seller_chat_screen)  
-│seller_nav_shop_badge  (default_state по умолчанию в seller_shop_screen)  
-│seller_nav_goods_badge  (default_state по умолчанию в seller_goods_screen)   
-│seller_nav_account_badge  (default_state по умолчанию в seller_account_screen)
+│seller_nav_demand  (activated_state по умолчанию в seller_demand_screen) 
+│seller_nav_chat_badge  (activated_state по умолчанию в seller_chat_screen)   
+│seller_nav_shop_badge  (activated_state по умолчанию в seller_shop_screen)  
+│seller_nav_goods_badge  (activated_state по умолчанию в seller_goods_screen)   
+│seller_nav_account_badge  (activated_state по умолчанию в seller_account_screen)
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color9
-│------ в default_state
+│------ in default_state
 ├────────
 │• color2
 │------ в activated_state 
 └─
 
 
+🡆🡆🡆 seller_nav_shop_update_popover
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 
+seller_nav_shop_update_popover является всплывающей подсказкой, которая появляется после нажатия seller_nav_shop в ситуации присутствия в seller_shop_screen.
+
+✠ tables
+
+                              codename:                                type:                 designation:              location:  interaction:
+  ┌──┬─[seller_nav_shop_update_popover                      ]  [section_lev1       ]                                    [ ✜ ✜ ]     [ no  ]
+  │  └ [seller_nav_shop_update_popover_text                 ]  [text               ]  [ "Доступна новая вер..." ]       [ 🡅 ✜ ]     [ no  ]
+  └┬┬──[seller_nav_shop_update_popover_buttons              ]  [button             ]                                    [ 🡇 ✜ ]     [ yes ]
+   │└┬─[seller_nav_shop_update_popover_buttons_close        ]  [button             ]                                    [ ✜ 🡄 ]     [ yes ]
+   │ └ [seller_nav_shop_update_popover_buttons_close_label  ]  [label              ]  [ "закрыть"               ]       [ ✜ ✜ ]     [ yes ]
+   └─┬─[seller_nav_shop_update_popover_buttons_upgrade      ]  [button             ]                                    [ ✜ 🡆 ]     [ yes ]
+     └ [seller_nav_shop_update_popover_buttons_upgrade_label]  [label              ]  [ "обновить"              ]       [ ✜ ✜ ]     [ yes ]
+
+✠ details
+- seller_nav_shop_update_popover - представляет собой popover, который всплывает по центру экрана и включает 2 компонента:
+--- seller_nav_shop_update_popover_text - параграф текста выровненный по центру находится в верхней части seller_nav_shop_update_popover следующего содержания: "Доступна новая версия приложения. Если вы хотите обновиться прямо сейчас, нажмите "Обновить";
+--- seller_nav_shop_update_popover_buttons - блок из двух кнопок расположенный в нижней части seller_nav_shop_update_popover:
+----- seller_nav_shop_update_popover_buttons_close - кнопка расположенная слева от seller_nav_shop_update_popover_buttons_upgrade, содержит seller_nav_shop_update_popover_buttons_close_label;
+--- seller_nav_shop_update_popover_buttons_close_label - наименование кнопки в виде константного центрированного текстового элемента следующего содержания: "закрыть";
+----- seller_nav_shop_update_popover_buttons_upgrade - кнопка расположенная справа от seller_nav_shop_update_popover_buttons_close, содержит seller_nav_shop_update_popover_buttons_upgrade_label;
+--- seller_nav_shop_update_popover_buttons_upgrade_label - наименование кнопки в виде константного центрированного текстового элемента следующего содержания: "обновить".
+
+✠ actions
+• seller_nav_shop_update_popover_buttons_close:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_nav_shop_update_popover_buttons_close;
+║ condition: in any situation;
+╙ result: seller_nav_shop_update_popover исчезает.
+• seller_nav_shop_update_popover_buttons_upgrade:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_nav_shop_update_popover_buttons_upgrade;
+║ condition: in any situation;
+║ result: 
+║ && - приложение закрывается;
+║ && - производится установка новой версии приложения.
+╙ && - после завершения установки новая версия приложение открывается (по умолчанию отображается seller_shop_screen).
+
+✠ color_states
+┌─
+│seller_nav_shop_update_popover_buttons_close
+│-------------------------------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color5
+│------ in pressing_state
+└─
+┌─
+│seller_nav_shop_update_popover_text
+│seller_nav_shop_update_popover_buttons_close_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
 
 
 🡆🡆 seller_shop_actions_screen
@@ -1138,11 +1201,11 @@ s2)┌──────┬──[seller_shop_actions_acts                      
 ----  │    └ [seller_shop_actions_acts_list_day_item_left_name                       ]  [label              ]  [ { string }                ]  [ ✜ 🡆 ]    [ yes ]
 ----  └┬┬────[seller_shop_actions_acts_list_day_item_right                           ]  [section_lev6       ]                                 [ ✜ 🡆 ]    [ yes ]
 ----   │└┬─┬─[seller_shop_actions_acts_list_day_item_right_header                    ]  [section_lev7       ]                                 [ 🡅 ✜ ]    [ yes ]
-----   │ │ └ [seller_shop_actions_acts_list_day_item_right_header_time               ]  [value              ]  [ { number }                ]  [ ✜ 🡄 ]    [ yes ]
+----   │ │ └ [seller_shop_actions_acts_list_day_item_right_header_time               ]  [variable           ]  [ { number }                ]  [ ✜ 🡄 ]    [ yes ]
 ----   │ └┬┬─[seller_shop_actions_acts_list_day_item_right_header_cause              ]  [section_lev8       ]                                 [ ✜ 🡆 ]    [ yes ]
-----   │  │└ [seller_shop_actions_acts_list_day_item_right_header_cause_object       ]  [value              ]  [ { string }                ]  [ ✜ 🡄 ]    [ yes ]
+----   │  │└ [seller_shop_actions_acts_list_day_item_right_header_cause_object       ]  [variable           ]  [ { string }                ]  [ ✜ 🡄 ]    [ yes ]
 ----   │  └┬─[seller_shop_actions_acts_list_day_item_right_header_cause_subject      ]  [section_lev9       ]  [ { string }                ]  [ ✜ 🡆 ]    [ yes ]
-----   │   ├ [seller_shop_actions_acts_list_day_item_right_header_cause_subject_value]  [value              ]  [ { number }                ]  [ ✜ 🡄 ]    [ yes ]
+----   │   ├ [seller_shop_actions_acts_list_day_item_right_header_cause_subject_value]  [variable           ]  [ { number }                ]  [ ✜ 🡄 ]    [ yes ]
 ----   │   └ [seller_shop_actions_acts_list_day_item_right_header_cause_subject_text ]  [text               ]  [ " ордеров"                ]  [ ✜ 🡆 ]    [ yes ]
 ----   └───┬─[seller_shop_actions_acts_list_day_item_right_event                     ]  [section_lev7       ]                                 [ 🡇 ✜ ]    [ yes ]
 ----       └ [seller_shop_actions_acts_list_day_item_right_event_text                ]  [text               ]  [ { string }                ]  [ ✜ ✜ ]    [ yes ]
@@ -1266,11 +1329,11 @@ s3)   ┌┬┬┬┬──[seller_nav                                          
 • seller_shop_nav_shop_badge
 ╠ valid
 ║ occasion: buyer заходит в магазин seller;
-║ condition: seller=online;
+║ condition: seller= trueline;
 ║ result: отображение в seller_shop_nav_shop_badge цифрового значения равного количеству находящихся в магазине посетителей.
 ╠ invalid
 ║ occasion: buyer заходит в магазин seller;
-║ condition: seller=offline;
+║ condition: seller= falseline;
 ╙ result: seller_shop_nav_shop_badge не отображается.
 
 
@@ -1285,7 +1348,7 @@ s3)   ┌┬┬┬┬──[seller_nav                                          
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color4
-│------ в default_state
+│------ in default_state
 ├────────
 │• color7
 │------ в activated_state
@@ -1300,7 +1363,7 @@ s3)   ┌┬┬┬┬──[seller_nav                                          
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color9
-│------ в default_state
+│------ in default_state
 ├────────
 │• color2
 │------ в activated_state 
@@ -1360,10 +1423,10 @@ s3)   ┌┬┬┬┬──[seller_nav                                          
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color4
-│------ в default_state
+│------ in default_state
 ├────────
 │• color5
-│------ в pressing_state
+│------ in pressing_state
 └─
 
 
@@ -1475,31 +1538,31 @@ s3)   ┌┬┬┬┬──[seller_nav                                          
 
 ✠ color_states
 ┌─
-│seller_nav_demand  (default_state по умолчанию в seller_demand_screen)
-│seller_nav_chat  (default_state по умолчанию в seller_chat_screen)
-│seller_nav_shop  (default_state по умолчанию в seller_shop_screen)
-│seller_nav_goods  (default_state по умолчанию в seller_goods_screen)
-│seller_nav_account  (default_state по умолчанию в seller_account_screen)
+│seller_nav_demand_badge  (activated_state по умолчанию в seller_demand_screen)
+│seller_nav_chat  (activated_state по умолчанию в seller_chat_screen)
+│seller_nav_shop  (activated_state по умолчанию в seller_shop_screen)
+│seller_nav_goods  (activated_state по умолчанию в seller_goods_screen)
+│seller_nav_account  (activated_state по умолчанию в seller_account_screen)
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color4
-│------ в default_state
+│------ in default_state
 ├────────
 │• color7
 │------ в activated_state
 └─
 ┌─
-│seller_nav_demand_badge  (default_state по умолчанию в seller_demand_screen) 
-│seller_nav_chat_badge  (default_state по умолчанию в seller_chat_screen)  
-│seller_nav_shop_badge  (default_state по умолчанию в seller_shop_screen)  
-│seller_nav_goods_badge  (default_state по умолчанию в seller_goods_screen)   
-│seller_nav_account_badge  (default_state по умолчанию в seller_account_screen)
+│seller_nav_demand  (activated_state по умолчанию в seller_demand_screen) 
+│seller_nav_chat_badge  (activated_state по умолчанию в seller_chat_screen)   
+│seller_nav_shop_badge  (activated_state по умолчанию в seller_shop_screen)  
+│seller_nav_goods_badge  (activated_state по умолчанию в seller_goods_screen)   
+│seller_nav_account_badge  (activated_state по умолчанию в seller_account_screen)
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color9
-│------ в default_state
+│------ in default_state
 ├────────
 │• color2
 │------ в activated_state 
@@ -1544,8 +1607,8 @@ s2)    ┌──┬──[seller_shop_visitors                                 ]
 ----     ││├ [seller_shop_visitors_list_day_visitor_time           ]  [label              ]  [ { number }                ]     [ ✜ 🡄 ]     [ yes ]
 ----     ││└ [seller_shop_visitors_list_day_visitor_name           ]  [label              ]  [ { string }                ]     [ ✜ ✜ ]     [ yes ] 
 ----     │└┬─[seller_shop_visitors_list_day_visitor_status         ]  [section_lev5       ]                                    [ ✜ ✜ ]     [ yes ]
-----     │ ├ [seller_shop_visitors_list_day_visitor_status_string  ]  [value              ]  [ { string }                ]     [ ✜ ✜ ]     [ yes ]
-----     │ └ [seller_shop_visitors_list_day_visitor_status_number  ]  [value              ]  [ { number }                ]     [ ✜ ✜ ]     [ yes ]
+----     │ ├ [seller_shop_visitors_list_day_visitor_status_string  ]  [variable           ]  [ { string }                ]     [ ✜ ✜ ]     [ yes ]
+----     │ └ [seller_shop_visitors_list_day_visitor_status_number  ]  [variable           ]  [ { number }                ]     [ ✜ ✜ ]     [ yes ]
 ----     └── [seller_shop_visitors_list_day_visitor_number         ]  [label              ]  [ { number }                ]     [ ✜ 🡆 ]     [ yes ]
 s3)   ┌┬┬┬┬──[seller_nav                                           ]  [section            ]                                    [ ✜ ✜ ]     [ no  ]
 ----  ││││└┬─[seller_nav_demand                                    ]  [button             ]                                    [ ✜ 🡄 ]     [ yes ]
@@ -1667,11 +1730,11 @@ s3)   ┌┬┬┬┬──[seller_nav                                          
 • seller_shop_nav_shop_badge
 ╠ valid
 ║ occasion: buyer заходит в магазин seller;
-║ condition: seller=online;
+║ condition: seller= trueline;
 ║ result: отображение в seller_shop_nav_shop_badge цифрового значения равного количеству находящихся в магазине посетителей.
 ╠ invalid
 ║ occasion: buyer заходит в магазин seller;
-║ condition: seller=offline;
+║ condition: seller= falseline;
 ╙ result: seller_shop_nav_shop_badge не отображается.
 
 
@@ -1686,7 +1749,7 @@ s3)   ┌┬┬┬┬──[seller_nav                                          
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color4
-│------ в default_state
+│------ in default_state
 ├────────
 │• color7
 │------ в activated_state
@@ -1701,7 +1764,7 @@ s3)   ┌┬┬┬┬──[seller_nav                                          
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color9
-│------ в default_state
+│------ in default_state
 ├────────
 │• color2
 │------ в activated_state 
@@ -1771,10 +1834,10 @@ return " ордеров";
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color2
-│------ в default_state
+│------ in default_state
 ├────────
 │• color5
-│------ в pressing_state
+│------ in pressing_state
 └─
 ┌─
 │seller_shop_visitors_list_day_visitor
@@ -1782,7 +1845,7 @@ return " ордеров";
 │⟪⟪ border ⟫⟫ 
 ├────────
 │• color4
-│------ в default_state
+│------ in default_state
 ├────────
 │• color9
 │------ в focusing_state
@@ -1897,31 +1960,31 @@ return " ордеров";
 
 ✠ color_states
 ┌─
-│seller_nav_demand  (default_state по умолчанию в seller_demand_screen)
-│seller_nav_chat  (default_state по умолчанию в seller_chat_screen)
-│seller_nav_shop  (default_state по умолчанию в seller_shop_screen)
-│seller_nav_goods  (default_state по умолчанию в seller_goods_screen)
-│seller_nav_account  (default_state по умолчанию в seller_account_screen)
+│seller_nav_demand_badge  (activated_state по умолчанию в seller_demand_screen)
+│seller_nav_chat  (activated_state по умолчанию в seller_chat_screen)
+│seller_nav_shop  (activated_state по умолчанию в seller_shop_screen)
+│seller_nav_goods  (activated_state по умолчанию в seller_goods_screen)
+│seller_nav_account  (activated_state по умолчанию в seller_account_screen)
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color4
-│------ в default_state
+│------ in default_state
 ├────────
 │• color7
 │------ в activated_state
 └─
 ┌─
-│seller_nav_demand_badge  (default_state по умолчанию в seller_demand_screen) 
-│seller_nav_chat_badge  (default_state по умолчанию в seller_chat_screen)  
-│seller_nav_shop_badge  (default_state по умолчанию в seller_shop_screen)  
-│seller_nav_goods_badge  (default_state по умолчанию в seller_goods_screen)   
-│seller_nav_account_badge  (default_state по умолчанию в seller_account_screen)
+│seller_nav_demand  (activated_state по умолчанию в seller_demand_screen) 
+│seller_nav_chat_badge  (activated_state по умолчанию в seller_chat_screen)   
+│seller_nav_shop_badge  (activated_state по умолчанию в seller_shop_screen)  
+│seller_nav_goods_badge  (activated_state по умолчанию в seller_goods_screen)   
+│seller_nav_account_badge  (activated_state по умолчанию в seller_account_screen)
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color9
-│------ в default_state
+│------ in default_state
 ├────────
 │• color2
 │------ в activated_state 
@@ -2092,11 +2155,11 @@ s3)   ┌┬┬┬┬──[seller_nav                               ]  [section
 • seller_shop_nav_shop_badge
 ╠ valid
 ║ occasion: buyer заходит в магазин seller;
-║ condition: seller=online;
+║ condition: seller= trueline;
 ║ result: отображение в seller_shop_nav_shop_badge цифрового значения равного количеству находящихся в магазине посетителей.
 ╠ invalid
 ║ occasion: buyer заходит в магазин seller;
-║ condition: seller=offline;
+║ condition: seller= falseline;
 ╙ result: seller_shop_nav_shop_badge не отображается.
 
 
@@ -2111,7 +2174,7 @@ s3)   ┌┬┬┬┬──[seller_nav                               ]  [section
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color4
-│------ в default_state
+│------ in default_state
 ├────────
 │• color7
 │------ в activated_state
@@ -2126,7 +2189,7 @@ s3)   ┌┬┬┬┬──[seller_nav                               ]  [section
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color9
-│------ в default_state
+│------ in default_state
 ├────────
 │• color2
 │------ в activated_state 
@@ -2199,10 +2262,10 @@ s3)   ┌┬┬┬┬──[seller_nav                               ]  [section
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color2
-│------ в default_state
+│------ in default_state
 ├────────
 │• color5
-│------ в pressing_state
+│------ in pressing_state
 └─
 ┌─
 │seller_shop_call_list_day_item
@@ -2210,7 +2273,7 @@ s3)   ┌┬┬┬┬──[seller_nav                               ]  [section
 │⟪⟪ border ⟫⟫ 
 ├────────
 │• color4
-│------ в default_state
+│------ in default_state
 ├────────
 │• color9
 │------ в focusing_state
@@ -2341,31 +2404,31 @@ s3)   ┌┬┬┬┬──[seller_nav                               ]  [section
 
 ✠ color_states
 ┌─
-│seller_nav_demand  (default_state по умолчанию в seller_demand_screen)
-│seller_nav_chat  (default_state по умолчанию в seller_chat_screen)
-│seller_nav_shop  (default_state по умолчанию в seller_shop_screen)
-│seller_nav_goods  (default_state по умолчанию в seller_goods_screen)
-│seller_nav_account  (default_state по умолчанию в seller_account_screen)
+│seller_nav_demand_badge  (activated_state по умолчанию в seller_demand_screen)
+│seller_nav_chat  (activated_state по умолчанию в seller_chat_screen)
+│seller_nav_shop  (activated_state по умолчанию в seller_shop_screen)
+│seller_nav_goods  (activated_state по умолчанию в seller_goods_screen)
+│seller_nav_account  (activated_state по умолчанию в seller_account_screen)
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color4
-│------ в default_state
+│------ in default_state
 ├────────
 │• color7
 │------ в activated_state
 └─
 ┌─
-│seller_nav_demand_badge  (default_state по умолчанию в seller_demand_screen) 
-│seller_nav_chat_badge  (default_state по умолчанию в seller_chat_screen)  
-│seller_nav_shop_badge  (default_state по умолчанию в seller_shop_screen)  
-│seller_nav_goods_badge  (default_state по умолчанию в seller_goods_screen)   
-│seller_nav_account_badge  (default_state по умолчанию в seller_account_screen)
+│seller_nav_demand  (activated_state по умолчанию в seller_demand_screen) 
+│seller_nav_chat_badge  (activated_state по умолчанию в seller_chat_screen)   
+│seller_nav_shop_badge  (activated_state по умолчанию в seller_shop_screen)  
+│seller_nav_goods_badge  (activated_state по умолчанию в seller_goods_screen)   
+│seller_nav_account_badge  (activated_state по умолчанию в seller_account_screen)
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color9
-│------ в default_state
+│------ in default_state
 ├────────
 │• color2
 │------ в activated_state 
@@ -2431,7 +2494,7 @@ seller_shop_call_phone является основной областью seller
 - seller_shop_call_phone_linked_state
 
 
-■■■ seller_shop_call_phone_default_state ■■■
+■ ■ seller_shop_call_phone_default_state ■ ■
 
 seller_shop_call_phone_default_state отображается в неактивной ситуации (за рамками сессии звонка) при открытии seller_shop_call_phone_screen.
 
@@ -2535,14 +2598,14 @@ seller_shop_call_phone_default_state открывается если совер�
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color4
-│------ в default_state
+│------ in default_state
 ├────────
 │• color5
-│------ в pressing_state
+│------ in pressing_state
 └─
 
 
-■■■ seller_shop_call_phone_outgoing_state ■■■
+■ ■ seller_shop_call_phone_outgoing_state ■ ■
 
 seller_shop_call_phone_outgoing_state отображается в ситуации исходящего звонка, между инициацией продавцом звонка и моментом когда юзер принимающий звонок возьмет трубку, после того как seller нажимает seller_shop_call_phone_default_main_buttons_call.
 
@@ -2627,14 +2690,14 @@ s2) ┌─────┬──[seller_shop_call_phone_outgoing                 
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color4
-│------ в default_state
+│------ in default_state
 ├────────
 │• color5
-│------ в pressing_state
+│------ in pressing_state
 └─
 
 
-■■■ seller_shop_call_phone_incoming_state ■■■
+■ ■ seller_shop_call_phone_incoming_state ■ ■
 
 seller_shop_call_phone_incoming_state отображается в ситуации входящего звонка, момент между тем как юзер делающий звонок его инициировал и когда продавец принимающий звонок возьмет трубку.
 
@@ -2733,16 +2796,16 @@ s2) ┌─────┬──[seller_shop_call_phone_incoming                 
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color4
-│------ в default_state
+│------ in default_state
 ├────────
 │• color5
-│------ в pressing_state
+│------ in pressing_state
 └─
 
 
-■■■ seller_shop_call_phone_linked_order_state ■■■
+■ ■ seller_shop_call_phone_linked_order_state ■ ■
 
-seller_shop_call_phone_linked_order_state отображается в ситуации входящего/исходящего звонка, когда соединение установлено (seller_shop_call_phone_connection_function=on) и buyer и seller подняли трубки.
+seller_shop_call_phone_linked_order_state отображается в ситуации входящего/исходящего звонка, когда соединение установлено (seller_shop_call_phone_connection_function= true) и buyer и seller подняли трубки.
 
 ✠ tables
 
@@ -2825,10 +2888,10 @@ s2) ┌─────┬──[seller_shop_call_phone_linked_order             
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color4
-│------ в default_state
+│------ in default_state
 ├────────
 │• color5
-│------ в pressing_state
+│------ in pressing_state
 └─
 
 
@@ -2849,7 +2912,7 @@ seller_shop_call_phone_context_order_state отображается в ситу�
                                codename:                           type:                   designation:            location:   interaction:
 ---- ││└───┬─[seller_shop_call_phone_context_order      ]  [section_lev4+button]                                    [ ✜ ✜ ]      [ yes ]
 ---- ││    ├ [seller_shop_call_phone_context_order_label]  [label              ]  [ "ордер: "                 ]     [ ✜ 🡄 ]      [ yes ]
----- ││    └ [seller_shop_call_phone_context_order_alias]  [value              ]  [ { string }                ]     [ ✜ 🡆 ]      [ yes ]
+---- ││    └ [seller_shop_call_phone_context_order_alias]  [variable           ]  [ { string }                ]     [ ✜ 🡆 ]      [ yes ]
 
 ✠ details
 ----- seller_shop_call_phone_context_order - является кнопкой, отображает данные по ордеру посредством 2 элементов:
@@ -2883,10 +2946,10 @@ seller_shop_call_phone_context_order_state отображается при ус�
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color4
-│------ в default_state
+│------ in default_state
 ├────────
 │• color5
-│------ в pressing_state
+│------ in pressing_state
 └─
 
 
@@ -2931,10 +2994,10 @@ seller_shop_call_phone_context_history_state отображается при у�
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color4
-│------ в default_state
+│------ in default_state
 ├────────
 │• color5
-│------ в pressing_state
+│------ in pressing_state
 └─
 
 
@@ -3019,13 +3082,13 @@ s2) ┌┬───────────┬──[seller_settings            
 ----│ │││││││  │  └ [seller_settings_list_geoposition_button_label]  [label              ]  [ " открыть настройки "     ]     [ ✜ ✜ ]     [ yes ]
 ----│ │││││││  └──┬─[seller_settings_list_geoposition_protip      ]  [button             ]                                    [ ✜ 🡆 ]     [ yes ]
 ----│ │││││││     └ [seller_settings_list_geoposition_protip_label]  [label              ]  [ " ? "                     ]     [ ✜ ✜ ]     [ yes ]
-----│ ││││││└──┬┬┬──[seller_settings_list_active                  ]  [section_lev3       ]                                    [ ✜ ✜ ]     [ no  ]
-----│ ││││││   ││└┬─[seller_settings_list_active_panel            ]  [section_lev4       ]                                    [ 🡅 ✜ ]     [ no  ]
-----│ ││││││   ││ └ [seller_settings_list_active_panel_label      ]  [label              ]  [ " Рабочее время * "       ]     [ ✜ ✜ ]     [ no  ]
-----│ ││││││   │└─┬─[seller_settings_list_active_button           ]  [section_lev4+button]                                    [ 🡇 ✜ ]     [ yes ]
-----│ ││││││   │  └ [seller_settings_list_active_button_label     ]  [label              ]  [ " открыть настройки "     ]     [ ✜ ✜ ]     [ yes ]
-----│ ││││││   └──┬─[seller_settings_list_active_protip           ]  [button             ]                                    [ ✜ 🡆 ]     [ yes ]
-----│ ││││││      └ [seller_settings_list_active_protip_label     ]  [label              ]  [ " ? "                     ]     [ ✜ ✜ ]     [ yes ]
+----│ ││││││└──┬┬┬──[seller_settings_list_activity                  ]  [section_lev3       ]                                    [ ✜ ✜ ]     [ no  ]
+----│ ││││││   ││└┬─[seller_settings_list_activity_panel            ]  [section_lev4       ]                                    [ 🡅 ✜ ]     [ no  ]
+----│ ││││││   ││ └ [seller_settings_list_activity_panel_label      ]  [label              ]  [ " Рабочее время * "       ]     [ ✜ ✜ ]     [ no  ]
+----│ ││││││   │└─┬─[seller_settings_list_activity_button           ]  [section_lev4+button]                                    [ 🡇 ✜ ]     [ yes ]
+----│ ││││││   │  └ [seller_settings_list_activity_button_label     ]  [label              ]  [ " открыть настройки "     ]     [ ✜ ✜ ]     [ yes ]
+----│ ││││││   └──┬─[seller_settings_list_activity_protip           ]  [button             ]                                    [ ✜ 🡆 ]     [ yes ]
+----│ ││││││      └ [seller_settings_list_activity_protip_label     ]  [label              ]  [ " ? "                     ]     [ ✜ ✜ ]     [ yes ]
 ----│ │││││└──┬┬─┬──[seller_settings_list_language                ]  [section_lev3       ]                                    [ ✜ ✜ ]     [ no  ]
 ----│ │││││   ││ └┬─[seller_settings_list_language_panel          ]  [section_lev4       ]                                    [ 🡅 ✜ ]     [ no  ]
 ----│ │││││   ││  └ [seller_settings_list_language_panel_label    ]  [label              ]  [ " Язык "                  ]     [ ✜ ✜ ]     [ no  ]
@@ -3110,7 +3173,7 @@ seller_settings занимает центральную область seller_se
 --- seller_settings_list_personal представляет собой блок данных прямоугольной формы расположенный в верхней части состоящий из 3 компонентов:
 1) ----- seller_settings_list_personal_panel - информационная панель находящаяся в верхней части seller_settings_list_personal в виде компактного прямоугольного блока напоминающего кнопку которая содержит seller_settings_list_personal_panel_label;
 ------- seller_settings_list_personal_panel_label - наименование опции следующего содержания: "Личные данные";
-2) ----- seller_settings_list_personal_drawer - кнопка инициирующая выпадающий список, находится под seller_settings_list_personal_panel, содержит seller_settings_list_personal_drawer_icon и seller_settings_list_personal_drawer_label:
+2) ----- seller_settings_list_personal_drawer - кнопка инициирующая развертывающийся список по типу accordion menu, находится под seller_settings_list_personal_panel, содержит seller_settings_list_personal_drawer_icon и seller_settings_list_personal_drawer_label:
 ------- seller_settings_list_personal_drawer_icon - иконка в виде стрелки указывающей вниз, находится слева;
 ------- seller_settings_list_personal_drawer_label - наименование кнопки "развернуть", находится в позиции с небольшим смещением вправо от центра;
 3) ----- seller_settings_list_personal_protip - кнопка круглой формы выполняющая роль аффорданса, находится справа от seller_settings_list_personal_drawer и содержит seller_settings_list_personal_protip_label;
@@ -3179,10 +3242,10 @@ seller_settings_list_personal_protip_label_good отображается в си
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color4
-│------ в default_state
+│------ in default_state
 ├────────
 │• color5
-│------ в pressing_state
+│------ in pressing_state
 └─
 ┌─
 │seller_settings_list_personal_drawer_label
@@ -3195,7 +3258,7 @@ seller_settings_list_personal_protip_label_good отображается в си
 └─
 
 
-■■ seller_settings_list_personal_drawer
+■■■ seller_settings_list_personal_drawer
 
                                    codename:                                     type:                  designation:            location:  interaction:
 ---┌┬┬┬┬─────[seller_settings_list_personal                          ]  [section_lev4       ]                                    [ ✜ ✜ ]     [ no  ]
@@ -3252,7 +3315,9 @@ seller_settings_list_personal_protip_label_good отображается в си
 ║ occasion: нажатие seller_settings_list_personal_username_input;
 ║ condition: in any situation;
 ║ result:
-║ && - появляется клавиатура для ввода (если она была закрыта);
+║ result: 
+║ && - seller_settings_list_personal_username_input переходит в active_state;
+║ && - появляется клавиатура для ввода (если она была скрыта);
 ╙ && - карет устанавливается в конце текста (если текст наличествует).
 • seller_settings_list_personal_username_protip:
 ╠ valid / invalid
@@ -3262,9 +3327,8 @@ seller_settings_list_personal_protip_label_good отображается в си
 ╙ result: по центру экрана всплывает seller_settings_list_personal_username_protip_popover.
 
 ✠ input_checks
-
 • seller_settings_list_personal_username_input
-Фильтры проверяющие на соответствие нормативам содержание seller_settings_list_personal_username_input. Если в ходе проверки фиксируется несоответствие, тогда состояние seller_settings_list_personal_username_input позиционируется как invalid, в соответствии с чем отображается соответствующее типу проблемы предупреждение.
+Фильтры проверяющие на соответствие нормативам содержание seller_settings_list_personal_username_input. Если в ходе проверки фиксируется несоответствие, тогда состояние seller_settings_list_personal_username_input позиционируется как invalid, в связи с чем отображается соответствующее типу проблемы предупреждение.
 • duplicity:
 Username анализируется на предмет совпадения с дубликатами.
 Работает в active_state.
@@ -3416,6 +3480,19 @@ seller_settings_list_personal_username_protip_label_good отображаетс�
 │------ in any situation
 └─
 
+✠ outputs
+• seller_settings_list_personal_username_input:
+║occasion: нажатие seller_settings_buttons_yes;
+║condition: 
+║- && - valid по факту проверки seller_settings_list_personal_username_input на duplicity;
+║- && - valid по факту проверки seller_settings_list_personal_username_input на undernaming;
+║- && - valid по факту проверки seller_settings_list_personal_username_input на overnaming;
+║- && - valid по факту проверки seller_settings_list_personal_username_input на stopsymbol;
+║- && - valid по факту проверки seller_settings_list_personal_username_input на stopword;
+║- && - valid по факту проверки seller_settings_list_personal_username_input на omission;
+║- && - valid по факту проверки seller_settings_list_personal_username_input на emptiness;
+╙ result: cодержимое seller_settings_list_personal_username_input преобразуется в seller_settings_username_value.
+
 
 ■ seller_settings_list_personal_phone
 
@@ -3444,7 +3521,8 @@ seller_settings_list_personal_username_protip_label_good отображаетс�
 ║ occasion: нажатие seller_settings_list_personal_phone_number_input;
 ║ condition: in any situation;
 ║ result:
-║ && - появляется клавиатура для ввода (если она была закрыта);
+║ && - seller_settings_list_personal_phone_number_input переходит в active_state;
+║ && - появляется клавиатура для ввода (если она была скрыта);
 ╙ && - карет устанавливается в конце текста (если текст наличествует).
 • seller_settings_list_personal_phone_protip:
 ╠ valid / invalid
@@ -3454,7 +3532,7 @@ seller_settings_list_personal_username_protip_label_good отображаетс�
 ╙ result: по центру экрана всплывает seller_settings_list_personal_phone_protip_popover.
 
 ✠ input_checks
-Фильтры проверяющие на соответствие нормативам содержание seller_settings_list_personal_phone_number_input. Если в ходе проверки фиксируется несоответствие, тогда состояние seller_settings_list_personal_phone_number_input позиционируется как invalid, в соответствии с чем отображается соответствующее типу проблемы предупреждение.
+Фильтры проверяющие на соответствие нормативам содержание seller_settings_list_personal_phone_number_input. Если в ходе проверки фиксируется несоответствие, тогда состояние seller_settings_list_personal_phone_number_input позиционируется как invalid, в связи с чем отображается соответствующее типу проблемы предупреждение.
 • integrity: 
 Делается анализ на предмет длины (целостности) номера в соответствии с шаблоном страны.
 Работает в active_state.
@@ -3549,10 +3627,10 @@ seller_settings_list_personal_phone_protip_label_good отображается �
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color4
-│------ в default_state
+│------ in default_state
 ├────────
 │• color5
-│------ в pressing_state
+│------ in pressing_state
 └─
 ┌─
 │seller_settings_list_personal_phone_panel
@@ -3573,6 +3651,16 @@ seller_settings_list_personal_phone_protip_label_good отображается �
 │------ in any situation
 └─
 
+✠ outputs
+• seller_settings_list_personal_phone_number_input:
+║occasion: нажатие seller_settings_buttons_yes;
+║condition: 
+║- && - valid по факту проверки seller_settings_list_personal_phone_number_input на integrity;
+║- && - valid по факту проверки seller_settings_list_personal_phone_number_input на stopsymbol;
+║- && - valid по факту проверки seller_settings_list_personal_phone_number_input на omission;
+║- && - valid по факту проверки seller_settings_list_personal_phone_number_input на emptiness;
+╙ result: cодержимое seller_settings_list_personal_phone_number_code и seller_settings_list_personal_phone_number_input преобразуется в seller_settings_phone_value.
+
 
 ■ seller_settings_list_personal_firstname
 
@@ -3591,7 +3679,8 @@ seller_settings_list_personal_phone_protip_label_good отображается �
 ║ occasion: нажатие seller_settings_list_personal_firstname_input;
 ║ condition: in any situation;
 ║ result:
-║ && - появляется клавиатура для ввода (если она была закрыта);
+║ && - seller_settings_list_personal_firstname_input переходит в active_state;
+║ && - появляется клавиатура для ввода (если она была скрыта);
 ╙ && - карет устанавливается в конце текста (если текст наличествует).
 • seller_settings_list_personal_firstname_protip:
 ╠ valid / invalid
@@ -3602,7 +3691,7 @@ seller_settings_list_personal_phone_protip_label_good отображается �
 
 ✠ input_checks
 • seller_settings_list_personal_firstname_input
-Фильтры проверяющие на соответствие нормативам содержание seller_settings_list_personal_firstname_input. Если в ходе проверки фиксируется несоответствие, тогда состояние seller_settings_list_personal_firstname_input позиционируется как invalid, в соответствии с чем отображается соответствующее типу проблемы предупреждение.
+Фильтры проверяющие на соответствие нормативам содержание seller_settings_list_personal_firstname_input. Если в ходе проверки фиксируется несоответствие, тогда состояние seller_settings_list_personal_firstname_input позиционируется как invalid, в связи с чем отображается соответствующее типу проблемы предупреждение.
 • overnaming:
 Анализ на превышение лимита допустимой длины firstname.
 Работает в active_state.
@@ -3724,6 +3813,17 @@ seller_settings_list_personal_firstname_protip_label_good отображаетс
 │------ in any situation
 └─
 
+✠ outputs
+• seller_settings_list_personal_firstname_input:
+║occasion: нажатие seller_settings_buttons_yes;
+║condition: 
+║- && - valid по факту проверки seller_settings_list_personal_firstname_input на overnaming;
+║- && - valid по факту проверки seller_settings_list_personal_firstname_input на stopsymbol;
+║- && - valid по факту проверки seller_settings_list_personal_firstname_input на stopword;
+║- && - valid по факту проверки seller_settings_list_personal_firstname_input на omission;
+║- && - valid по факту проверки seller_settings_list_personal_firstname_input на emptiness;
+╙ result: cодержимое seller_settings_list_personal_firstname_input преобразуется в seller_settings_firstname_value.
+
 
 ■ seller_settings_list_personal_secondname
 
@@ -3742,7 +3842,8 @@ seller_settings_list_personal_firstname_protip_label_good отображаетс
 ║ occasion: нажатие seller_settings_list_personal_secondname_input;
 ║ condition: in any situation;
 ║ result:
-║ && - появляется клавиатура для ввода (если она была закрыта);
+║ && - seller_settings_list_personal_secondname_input переходит в active_state;
+║ && - появляется клавиатура для ввода (если она была скрыта);
 ╙ && - карет устанавливается в конце текста (если текст наличествует).
 • seller_settings_list_personal_secondname_protip:
 ╠ valid / invalid
@@ -3753,7 +3854,7 @@ seller_settings_list_personal_firstname_protip_label_good отображаетс
 
 ✠ input_checks
 • seller_settings_list_personal_secondname_input
-Фильтры проверяющие на соответствие нормативам содержание seller_settings_list_personal_secondname_input. Если в ходе проверки фиксируется несоответствие, тогда состояние seller_settings_list_personal_secondname_input позиционируется как invalid, в соответствии с чем отображается соответствующее типу проблемы предупреждение.
+Фильтры проверяющие на соответствие нормативам содержание seller_settings_list_personal_secondname_input. Если в ходе проверки фиксируется несоответствие, тогда состояние seller_settings_list_personal_secondname_input позиционируется как invalid, в связи с чем отображается соответствующее типу проблемы предупреждение.
 • overnaming:
 Анализ на превышение лимита допустимой длины secondname.
 Работает в active_state.
@@ -3876,6 +3977,17 @@ seller_settings_list_personal_secondname_protip_label_good отображает�
 │------ in any situation
 └─
 
+✠ outputs
+• seller_settings_list_personal_secondname_input:
+║occasion: нажатие seller_settings_buttons_yes;
+║condition: 
+║- && - valid по факту проверки seller_settings_list_personal_secondname_input на overnaming;
+║- && - valid по факту проверки seller_settings_list_personal_secondname_input на stopsymbol;
+║- && - valid по факту проверки seller_settings_list_personal_secondname_input на stopword;
+║- && - valid по факту проверки seller_settings_list_personal_secondname_input на omission;
+║- && - valid по факту проверки seller_settings_list_personal_secondname_input на emptiness;
+╙ result: cодержимое seller_settings_list_personal_secondname_input преобразуется в seller_settings_secondname_value.
+
 
 ■ seller_settings_list_personal_passport
 
@@ -3894,7 +4006,8 @@ seller_settings_list_personal_secondname_protip_label_good отображает�
 ║ occasion: нажатие seller_settings_list_personal_passport_input;
 ║ condition: in any situation;
 ║ result:
-║ && - появляется клавиатура для ввода (если она была закрыта);
+║ && - seller_settings_list_personal_passport_input переходит в active_state;
+║ && - появляется клавиатура для ввода (если она была скрыта);
 ╙ && - карет устанавливается в конце текста (если текст наличествует).
 • seller_settings_list_personal_passport_protip:
 ╠ valid / invalid
@@ -3905,7 +4018,7 @@ seller_settings_list_personal_secondname_protip_label_good отображает�
 
 ✠ input_checks
 • seller_settings_list_personal_passport_input
-Фильтры проверяющие на соответствие нормативам содержание seller_settings_list_personal_passport_input. Если в ходе проверки фиксируется несоответствие, тогда состояние seller_settings_list_personal_passport_input позиционируется как invalid, в соответствии с чем отображается соответствующее типу проблемы предупреждение.
+Фильтры проверяющие на соответствие нормативам содержание seller_settings_list_personal_passport_input. Если в ходе проверки фиксируется несоответствие, тогда состояние seller_settings_list_personal_passport_input позиционируется как invalid, в связи с чем отображается соответствующее типу проблемы предупреждение.
 • integrity: 
 Делается анализ на предмет длины (целостности) номера в соответствии со страной, которой принадлежит паспорт.
 Работает в active_state.
@@ -4027,6 +4140,17 @@ seller_settings_list_personal_passport_protip_label_good отображаетс�
 │------ in any situation
 └─
 
+✠ outputs
+• seller_settings_list_personal_passport_input:
+║occasion: нажатие seller_settings_buttons_yes;
+║condition: 
+║- && - valid по факту проверки seller_settings_list_personal_passport_input на stopsymbol;
+║- && - valid по факту проверки seller_settings_list_personal_passport_input на integrity;
+║- && - valid по факту проверки seller_settings_list_personal_passport_input на duplicity;
+║- && - valid по факту проверки seller_settings_list_personal_passport_input на omission;
+║- && - valid по факту проверки seller_settings_list_personal_passport_input на emptiness;
+╙ result: cодержимое seller_settings_list_personal_passport_input преобразуется в seller_settings_passport_value.
+
 
 ■ seller_settings_list_geoposition
 
@@ -4054,8 +4178,8 @@ seller_settings_list_personal_passport_protip_label_good отображаетс�
 ╙ result: по центру экрана всплывает seller_settings_list_geoposition_protip_popover.
 
 ✠ logics
-seller_settings_list_geoposition_protip_label_bad отображается в ситуации если настройка seller_settings_list_geoposition=off (не установлена).
-seller_settings_list_geoposition_protip_label_good отображается в ситуации если настройка seller_settings_list_geoposition=on (установлена).
+seller_settings_list_geoposition_protip_label_bad отображается в ситуации если настройка seller_settings_list_geoposition= false (не установлена).
+seller_settings_list_geoposition_protip_label_good отображается в ситуации если настройка seller_settings_list_geoposition= true (установлена).
 
 ✠ color_states
 ┌─
@@ -4065,10 +4189,10 @@ seller_settings_list_geoposition_protip_label_good отображается в �
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color4
-│------ в default_state
+│------ in default_state
 ├────────
 │• color5
-│------ в pressing_state
+│------ in pressing_state
 └─
 ┌─
 │seller_settings_list_geoposition_panel
@@ -4090,50 +4214,50 @@ seller_settings_list_geoposition_protip_label_good отображается в �
 └─
 
 
-■ seller_settings_list_active
+■ seller_settings_list_activity
 
 ✠ details
-------- seller_settings_list_active - опция отвечающая за настройку рабочего времени торговой точки;
---------- seller_settings_list_active_panel - информационная панель находящаяся в верхней части seller_settings_list_active в виде компактного прямоугольного блока напоминающего кнопку которая содержит seller_settings_list_active_panel_label;
------------ seller_settings_list_active_panel_label - наименование опции следующего содержания: "Рабочее время *";
---------- seller_settings_list_active_button - кнопка отвечающая за открытие настроек рабочего времени;
------------ seller_settings_list_active_button_label - наименование кнопки: "открыть настройки";
---------- seller_settings_list_active_protip - кнопка круглой формы выполняющая роль аффорданса, находится справа от seller_settings_list_active_button и содержит seller_settings_list_active_protip_label;
------------ seller_settings_list_active_protip_label - представляется в виде иконки двух типов: seller_settings_list_active_protip_label_bad - с символом восклицательного знака, seller_settings_list_active_protip_label_good - с символом галочки.
+------- seller_settings_list_activity - опция отвечающая за настройку рабочего времени торговой точки;
+--------- seller_settings_list_activity_panel - информационная панель находящаяся в верхней части seller_settings_list_activity в виде компактного прямоугольного блока напоминающего кнопку которая содержит seller_settings_list_activity_panel_label;
+----------- seller_settings_list_activity_panel_label - наименование опции следующего содержания: "Рабочее время *";
+--------- seller_settings_list_activity_button - кнопка отвечающая за открытие настроек рабочего времени;
+----------- seller_settings_list_activity_button_label - наименование кнопки: "открыть настройки";
+--------- seller_settings_list_activity_protip - кнопка круглой формы выполняющая роль аффорданса, находится справа от seller_settings_list_activity_button и содержит seller_settings_list_activity_protip_label;
+----------- seller_settings_list_activity_protip_label - представляется в виде иконки двух типов: seller_settings_list_activity_protip_label_bad - с символом восклицательного знака, seller_settings_list_activity_protip_label_good - с символом галочки.
 
 ✠ actions
-• seller_settings_list_active_button:
+• seller_settings_list_activity_button:
 ╠ valid / invalid
 ║ • gesture: tap
-║ occasion: нажатие seller_settings_list_active_button;
+║ occasion: нажатие seller_settings_list_activity_button;
 ║ condition: in any situation;
-╙ result: открывается seller_settings_active_screen.
-• seller_settings_list_active_protip:
+╙ result: открывается seller_settings_activity_screen.
+• seller_settings_list_activity_protip:
 ╠ valid / invalid
 ║ • gesture: tap
-║ occasion: нажатие seller_settings_list_active_protip;
+║ occasion: нажатие seller_settings_list_activity_protip;
 ║ condition: in any situation;
-╙ result: по центру экрана всплывает seller_settings_list_active_protip_popover.
+╙ result: по центру экрана всплывает seller_settings_list_activity_protip_popover.
 
 ✠ logics
-seller_settings_list_active_protip_label_bad отображается в ситуации если настройка seller_settings_list_active=off (не установлена).
-seller_settings_list_active_protip_label_good отображается в ситуации если настройка seller_settings_list_active=on (установлена).
+seller_settings_list_activity_protip_label_bad отображается в ситуации если настройка seller_settings_list_activity= false (не установлена).
+seller_settings_list_activity_protip_label_good отображается в ситуации если настройка seller_settings_list_activity= true (установлена).
 
 ✠ color_states
 ┌─
-│seller_settings_list_active_button
-│seller_settings_list_active_protip
+│seller_settings_list_activity_button
+│seller_settings_list_activity_protip
 │-------------------------------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color4
-│------ в default_state
+│------ in default_state
 ├────────
 │• color5
-│------ в pressing_state
+│------ in pressing_state
 └─
 ┌─
-│seller_settings_list_active_panel
+│seller_settings_list_activity_panel
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -4141,9 +4265,9 @@ seller_settings_list_active_protip_label_good отображается в сит
 │------ in any situation
 └─
 ┌─
-│seller_settings_list_active_panel_label
-│seller_settings_list_active_button_label
-│seller_settings_list_active_protip_label
+│seller_settings_list_activity_panel_label
+│seller_settings_list_activity_button_label
+│seller_settings_list_activity_protip_label
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -4158,7 +4282,7 @@ seller_settings_list_active_protip_label_good отображается в сит
 ------- seller_settings_list_language - опция отвечающая за выбор языка интерфейса (по умолчанию применяется язык используемый в системе);
 --------- seller_settings_list_language_panel - информационная панель находящаяся в верхней части seller_settings_list_language в виде компактного прямоугольного блока напоминающего кнопку которая содержит seller_settings_list_language_panel_label;
 ----------- seller_settings_list_language_panel_label - наименование опции следующего содержания: "Язык";
---------- seller_settings_list_language_button - кнопка-триггер активирующая появление seller_settings_list_language_dropdown_list;
+--------- seller_settings_list_language_button - кнопка-триггер активирующая появление seller_settings_list_language_dropdown;
 ----------- seller_settings_list_language_button_icon - иконка в виде стрелки направленной вниз, расположена слева;
 ----------- seller_settings_list_language_button_label - наименование кнопки в виде переменной со строковым значением;
 
@@ -4168,7 +4292,7 @@ seller_settings_list_active_protip_label_good отображается в сит
 ║ • gesture: tap
 ║ occasion: нажатие seller_settings_list_language_button;
 ║ condition: in any situation;
-╙ result: возникает seller_settings_list_language_dropdown_list и разворачивается вниз.
+╙ result: возникает seller_settings_list_language_dropdown и разворачивается вниз.
 
 ✠ color_states
 ┌─
@@ -4177,10 +4301,10 @@ seller_settings_list_active_protip_label_good отображается в сит
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color4
-│------ в default_state
+│------ in default_state
 ├────────
 │• color5
-│------ в pressing_state
+│------ in pressing_state
 └─
 ┌─
 │seller_settings_list_language_panel
@@ -4200,45 +4324,57 @@ seller_settings_list_active_protip_label_good отображается в сит
 │------ in any situation
 └─
 
+✠ outputs
+• seller_settings_list_personal_secondname_input:
+║occasion: нажатие seller_settings_buttons_yes;
+║condition: 
+║- && - valid по факту проверки seller_settings_list_personal_secondname_input на overnaming;
+║- && - valid по факту проверки seller_settings_list_personal_secondname_input на stopsymbol;
+║- && - valid по факту проверки seller_settings_list_personal_secondname_input на stopword;
+║- && - valid по факту проверки seller_settings_list_personal_secondname_input на omission;
+║- && - valid по факту проверки seller_settings_list_personal_secondname_input на emptiness;
+╙ result: cодержимое seller_settings_list_personal_secondname_input преобразуется в seller_settings_secondname_value.
 
-■ seller_settings_list_language_dropdown_list
+
+
+■ seller_settings_list_language_dropdown
 
 Выпадающий список состоящий из кнопок выбора языка. Список лимитирован такими языками как: english, русский, кыргызча.
 
 ✠ tables
 
-----│ │││││   │ └┬──[seller_settings_list_language_dropdown_list           ]  [section_lev4       ]                                    [ ✜ ✜ ]     [ yes ]
-----│ │││││   │  └┬─[seller_settings_list_language_dropdown_list_item      ]  [section_lev5       ]                                    [ ✜ ✜ ]     [ yes ]
-----│ │││││   │   └ [seller_settings_list_language_dropdown_list_item_label]  [label              ]  [ { string }                ]     [ ✜ ✜ ]     [ yes ]
+----│ │││││   │ └┬──[seller_settings_list_language_dropdown           ]  [section_lev4       ]                                    [ ✜ ✜ ]     [ yes ]
+----│ │││││   │  └┬─[seller_settings_list_language_dropdown_item      ]  [section_lev5       ]                                    [ ✜ ✜ ]     [ yes ]
+----│ │││││   │   └ [seller_settings_list_language_dropdown_item_label]  [label              ]  [ { string }                ]     [ ✜ ✜ ]     [ yes ]
 
 
 ✠ details
---------- seller_settings_list_language_dropdown_list - листинг из кнопок отвечающих за выбор языка;
------------ seller_settings_list_language_dropdown_list_item - отдельная кнопка отвечающая за выбор конкретного языка (количество языков будет определяться по ходу разработки);
-------------- seller_settings_list_language_dropdown_list_item_label - наименование кнопки в виде переменной со строковым значением.
+--------- seller_settings_list_language_dropdown - листинг из кнопок отвечающих за выбор языка;
+----------- seller_settings_list_language_dropdown_item - отдельная кнопка отвечающая за выбор конкретного языка (количество языков будет определяться по ходу разработки);
+------------- seller_settings_list_language_dropdown_item_label - наименование кнопки в виде переменной со строковым значением.
 
 ✠ actions
-• seller_settings_list_language_dropdown_list_item:
+• seller_settings_list_language_dropdown_item:
 ╠ valid / invalid
 ║ • gesture: tap
-║ occasion: нажатие seller_settings_list_language_dropdown_list_item;
+║ occasion: нажатие seller_settings_list_language_dropdown_item;
 ║ condition: in any situation;
 ╙ result: происходит переключение интерфейса на целевой (выбранный) язык.
 
 ✠ color_states
 ┌─
-│seller_settings_list_language_dropdown_list_item
+│seller_settings_list_language_dropdown_item
 │-------------------------------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color4
-│------ в default_state
+│------ in default_state
 ├────────
 │• color5
-│------ в pressing_state
+│------ in pressing_state
 └─
 ┌─
-│seller_settings_list_language_dropdown_list_item_label
+│seller_settings_list_language_dropdown_item_label
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -4272,10 +4408,10 @@ seller_settings_list_active_protip_label_good отображается в сит
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color4
-│------ в default_state
+│------ in default_state
 ├────────
 │• color5
-│------ в pressing_state
+│------ in pressing_state
 └─
 ┌─
 │seller_settings_list_currency_panel
@@ -4327,10 +4463,10 @@ seller_settings_list_active_protip_label_good отображается в сит
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color4
-│------ в default_state
+│------ in default_state
 ├────────
 │• color5
-│------ в pressing_state
+│------ in pressing_state
 └─
 ┌─
 │seller_settings_list_currency_dropdown_list_item_label
@@ -4375,10 +4511,10 @@ seller_settings_list_active_protip_label_good отображается в сит
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color4
-│------ в default_state
+│------ in default_state
 ├────────
 │• color5
-│------ в pressing_state
+│------ in pressing_state
 └─
 ┌─
 │seller_settings_list_avatar_panel
@@ -4433,10 +4569,10 @@ seller_settings_avatar_protip_popover является всплывающей п
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color4
-│------ в default_state
+│------ in default_state
 ├────────
 │• color5
-│------ в pressing_state
+│------ in pressing_state
 └─
 ┌─
 │seller_settings_avatar_protip_popover_text
@@ -4482,10 +4618,10 @@ seller_settings_avatar_protip_popover является всплывающей п
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color4
-│------ в default_state
+│------ in default_state
 ├────────
 │• color5
-│------ в pressing_state
+│------ in pressing_state
 └─
 ┌─
 │seller_settings_list_skin_panel
@@ -4540,10 +4676,10 @@ seller_settings_skin_protip_popover является всплывающей по
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color4
-│------ в default_state
+│------ in default_state
 ├────────
 │• color5
-│------ в pressing_state
+│------ in pressing_state
 └─
 ┌─
 │seller_settings_skin_protip_popover_text
@@ -4564,8 +4700,8 @@ seller_settings_skin_protip_popover является всплывающей по
 ----------- seller_settings_list_sound_panel_label - наименование опции следующего содержания: "Звуки";
 --------- seller_settings_list_sound_button - кнопка влючающая и выключающая звук;
 ----------- seller_settings_list_sound_button_label - имеет 2 состояния:
-seller_settings_list_sound_button_label=on - отображает наименование: "звуковые уведомления включены";
-seller_settings_list_sound_button_label=off - отображает наименование: "звуковые уведомления выключены";
+seller_settings_list_sound_button_label= true - отображает наименование: "звуковые уведомления включены";
+seller_settings_list_sound_button_label= false - отображает наименование: "звуковые уведомления выключены";
 --------- seller_settings_list_sound_protip - кнопка для открытия подсказки seller_settings_list_sound_protip_popover;
 ----------- seller_settings_list_sound_protip_label - наименование кнопки следующего содержания: "?".
 
@@ -4574,14 +4710,14 @@ seller_settings_list_sound_button_label=off - отображает наимен�
 ╠ valid / invalid
 ║ • gesture: tap
 ║ occasion: нажатие seller_settings_list_sound_button;
-║ condition: seller_settings_list_sound_button_label=on;
-╙ result: состояние переключается в seller_settings_list_sound_button_label=off.
+║ condition: seller_settings_list_sound_button_label= true;
+╙ result: состояние переключается в seller_settings_list_sound_button_label= false.
 • seller_settings_list_sound_button (off):
 ╠ valid / invalid
 ║ • gesture: tap
 ║ occasion: нажатие seller_settings_list_sound_button;
-║ condition: seller_settings_list_sound_button_label=off;
-╙ result: состояние переключается в seller_settings_list_sound_button_label=on.
+║ condition: seller_settings_list_sound_button_label= false;
+╙ result: состояние переключается в seller_settings_list_sound_button_label= true.
 • seller_settings_list_sound_protip:
 ╠ valid / invalid
 ║ • gesture: tap
@@ -4597,10 +4733,10 @@ seller_settings_list_sound_button_label=off - отображает наимен�
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color4
-│------ в default_state
+│------ in default_state
 ├────────
 │• color5
-│------ в pressing_state
+│------ in pressing_state
 └─
 ┌─
 │seller_settings_list_sound_panel
@@ -4655,10 +4791,10 @@ seller_settings_sound_protip_popover является всплывающей п�
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color4
-│------ в default_state
+│------ in default_state
 ├────────
 │• color5
-│------ в pressing_state
+│------ in pressing_state
 └─
 ┌─
 │seller_settings_sound_protip_popover_text
@@ -4703,10 +4839,10 @@ seller_settings_sound_protip_popover является всплывающей п�
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color4
-│------ в default_state
+│------ in default_state
 ├────────
 │• color5
-│------ в pressing_state
+│------ in pressing_state
 └─
 ┌─
 │seller_settings_list_delete_panel
@@ -4761,10 +4897,10 @@ seller_settings_delete_protip_popover является всплывающей п
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color4
-│------ в default_state
+│------ in default_state
 ├────────
 │• color5
-│------ в pressing_state
+│------ in pressing_state
 └─
 ┌─
 │seller_settings_delete_protip_popover_text
@@ -4823,10 +4959,10 @@ seller_settings_delete_alert_popover появляется после нажат�
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color4
-│------ в default_state
+│------ in default_state
 ├────────
 │• color5
-│------ в pressing_state
+│------ in pressing_state
 └─
 ┌─
 │seller_settings_delete_alert_popover_text
@@ -4844,10 +4980,10 @@ seller_settings_delete_alert_popover появляется после нажат�
 
 ✠ details
 - seller_settings_buttons - блок из 2 кнопок расположенных в самом низу seller_settings_screen;
---- seller_settings_buttons_no - кнопка расположенная слева, призванная закрытие seller_settings_screen без применения изменений;
------ seller_settings_buttons_no_label - наименование опции следующего содержания: "отмена";
+--- seller_settings_buttons_no - кнопка расположенная слева, призвана закрывать seller_settings_screen без применения изменений;
+----- seller_settings_buttons_no_label - константный центрированный текстовый элемент следующего содержания: "отмена";
 --- seller_settings_buttons_yes - кнопка расположенная справа, призванная применить сделанные изменения в seller_settings_screen;
------ seller_settings_buttons_yes_label - наименование опции следующего содержания: "ОК".
+----- seller_settings_buttons_yes_label - константный центрированный текстовый элемент следующего содержания: "ОК".
 
 ✠ actions
 • seller_settings_buttons_no:
@@ -4887,10 +5023,21 @@ seller_settings_delete_alert_popover появляется после нажат�
 ║ - && - valid по факту проверки seller_settings_list_personal_passport_input на duplicity;
 ║ - && - valid по факту проверки seller_settings_list_personal_passport_input на omission;
 ║ - && - valid по факту проверки seller_settings_list_personal_passport_input на emptiness;
-║ - && - seller_settings_list_geoposition_protip_label_good отображается в ситуации если настройка seller_settings_list_geoposition=on (установлена);
-║ - && - seller_settings_list_active_protip_label_good отображается в ситуации если настройка seller_settings_list_active=on (установлена).
+║ - && - seller_settings_list_geoposition_protip_label_good отображается в ситуации если настройка seller_settings_list_geoposition= true (установлена);
+║ - && - seller_settings_list_activity_protip_label_good отображается в ситуации если настройка seller_settings_list_activity= true (установлена).
 ║ result: 
-║ - && - seller_settings_screen закрывается с применением изменений;
+║ - && - происходит перезапись seller_settings_username_value;
+║ - && - происходит перезапись seller_settings_phone_value;
+║ - && - происходит перезапись seller_settings_firstname_value;
+║ - && - происходит перезапись seller_settings_secondname_value;
+║ - && - происходит перезапись seller_settings_passport_value;
+║ - && - происходит перезапись seller_settings_geoposition_value;
+║ - && - происходит перезапись seller_settings_activity_value;
+║ - && - происходит перезапись seller_settings_language_value;
+║ - && - происходит перезапись seller_settings_currency_value;
+║ - && - происходит перезапись seller_settings_avatar_value;
+║ - && - происходит перезапись seller_settings_skin_value;
+║ - && - происходит перезапись seller_settings_sound_value;
 ║ - && - делается переход к предыдущему экрану из которого был открыт seller_settings_screen.
 ╠ invalid
 ║ • gesture: tap
@@ -4922,35 +5069,54 @@ seller_settings_delete_alert_popover появляется после нажат�
 ║ - || - invalid по факту проверки seller_settings_list_personal_passport_input на duplicity;
 ║ - || - invalid по факту проверки seller_settings_list_personal_passport_input на omission;
 ║ - || - invalid по факту проверки seller_settings_list_personal_passport_input на emptiness;
-║ - || - seller_settings_list_geoposition_protip_label_good отображается в ситуации если seller_settings_list_geoposition=off;
-║ - || - seller_settings_list_active_protip_label_good отображается в ситуации если seller_settings_list_active=off.
-╙ result: открывается seller_settings_list_delete_protip_popover.
+║ - || - seller_settings_list_geoposition_protip_label_good отображается в ситуации если seller_settings_list_geoposition= false;
+║ - || - seller_settings_list_activity_protip_label_good отображается в ситуации если seller_settings_list_activity= false.
+╙ result: seller_settings_buttons_yes не реагирует на нажатие (находится в inactive_state).
 
 ✠ color_states
 ┌─
-│seller_settings_list_delete_button
-│seller_settings_list_delete_protip
-│-------------------------------------------------
+│seller_settings_buttons_yes
+│------------------------- 
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color4
-│------ в default_state
+│------ in default_state
+│ - && - valid по seller_settings_list_personal_username_input
+│ - && - valid по seller_settings_list_personal_phone_input
+│ - && - valid по seller_settings_list_personal_firstname_input
+│ - && - valid по seller_settings_list_personal_secondname_input
+│ - && - valid по seller_settings_list_personal_passport_input
 ├────────
 │• color5
-│------ в pressing_state
+│------ in pressing_state
+│ - && - valid по seller_settings_list_personal_username_input
+│ - && - valid по seller_settings_list_personal_phone_input
+│ - && - valid по seller_settings_list_personal_firstname_input
+│ - && - valid по seller_settings_list_personal_secondname_input
+│ - && - valid по seller_settings_list_personal_passport_input
+├────────
+│• color0
+│------ in any situation
+│ - || - invalid по seller_settings_list_personal_username_input
+│ - || - invalid по seller_settings_list_personal_phone_input
+│ - || - invalid по seller_settings_list_personal_firstname_input
+│ - || - invalid по seller_settings_list_personal_secondname_input
+│ - || - invalid по seller_settings_list_personal_passport_input
 └─
 ┌─
-│seller_settings_list_delete_panel
-│---------------------------
+│seller_settings_buttons_no
+│-------------------------------- 
 │⟪⟪ body ⟫⟫ 
 ├────────
-│• color2
-│------ in any situation
+│• color4
+│------ in default_state
+├────────
+│• color5
+│------ in pressing_state
 └─
 ┌─
-│seller_settings_list_delete_panel_label
-│seller_settings_list_delete_button_label
-│seller_settings_list_delete_protip_label
+│seller_settings_buttons_no_label
+│seller_settings_buttons_yes_label
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
