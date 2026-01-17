@@ -1014,5 +1014,72 @@ seller_scan_calc_any_sum - сумма по арифметическому выр
 └─
 
 
+■ seller_scan_calc_buttons
+
+✠ details
+- seller_scan_calc_buttons - блок из 2 кнопок расположенных в самом низу seller_scan_calc;
+--- seller_scan_calc_buttons_ok - кнопка расположенная слева, призвана закрывать seller_scan_calc_screen;
+----- seller_scan_calc_buttons_ok_label - константный центрированный текстовый элемент следующего содержания: "ОК", содержит seller_scan_calc_buttons_ok_label;
+--- seller_scan_calc_buttons_qr - кнопка расположенная справа, отвечает за инициализацию перехода к seller_scan_qr_screen, содержит seller_scan_calc_buttons_qr_label;
+----- seller_scan_calc_buttons_qr_label - константный центрированный текстовый элемент следующего содержания: "QR-код".
+
+✠ actions
+• seller_scan_calc_buttons_ok:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_scan_calc_buttons_ok;
+║ condition: in any situation;
+║ result:
+║ - && - seller_scan_calc_screen закрывается;
+╙ - && - делается переход к seller_shop_screen.
+• seller_scan_calc_buttons_qr:
+╠ valid
+║ • gesture: tap
+║ occasion: нажатие seller_scan_calc_buttons_qr;
+║ condition: если seller_scan_calc_body_display_list не пустой;
+║ result:
+║ - && - seller_scan_calc_screen закрывается;
+║ - && - seller_scan_qr_screen открывается.
+╠ invalid
+║ • gesture: tap
+║ occasion: нажатие seller_scan_calc_buttons_qr;
+║ condition: если seller_scan_calc_body_display_list пустой;
+╙ result: seller_scan_calc_buttons_qr не реагирует на нажатие.
+
+✠ color_states
+┌─
+│seller_scan_calc_buttons_ok
+│-------------------------------- 
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color5
+│------ in pressing_state
+└─
+┌─
+│seller_scan_calc_buttons_qr
+│------------------------- 
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state  (когда seller_scan_calc_body_display_list не пустой)
+├────────
+│• color5
+│------ in pressing_state
+├────────
+│• color0
+│------ in any situation  (когда seller_scan_calc_body_display_list пустой)
+└─
+┌─
+│seller_scan_calc_buttons_ok_label
+│seller_scan_calc_buttons_qr_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
 
 
