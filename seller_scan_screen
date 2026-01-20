@@ -3,6 +3,7 @@
 
 
 
+
 🡆🡆 seller_scan_screen
 ■■■■■■■■■■■■■■■■■■■■■
 
@@ -1223,7 +1224,7 @@ seller_scan_calc_any_sum - сумма по арифметическому выр
 
 
 🡆🡆🡆 seller_scan_qr_screen
-■■■■■■■■■■■■■■■■■■■■■■■■■■■
+■■■■■■■■■■■■■■■■■■■■■■■■■
 
 Подраздел в котором отображается QR-код. Основное пространство в центральной области экрана занимает seller_scan_qr_body состоящий из 3 секций расположенных сверху-вниз в следующем порядке в seller_scan_qr_screen:
 - seller_scan_qr_body_top  
@@ -1247,11 +1248,9 @@ seller_scan_calc_any_sum - сумма по арифметическому выр
     │ │└┬┬┬─┬──[seller_scan_qr_body_main                                 ]  [section_lev3  ]                           [ ✜ ✜ ]      [ no  ]			 
     │ │ │││ └┬─[seller_scan_qr_body_main_title                           ]  [section_lev4  ]                           [ 🡅 ✜ ]      [ no  ]
     │ │ │││  └ [seller_scan_qr_body_main_title_label                     ]  [label         ]  [ "сканирование"  ]      [ ✜ ✜ ]      [ no  ]
-    │ │ ││└┬┬──[seller_scan_qr_body_main_data                            ]  [section_lev4  ]                           [ ✜ ✜ ]      [ no  ]
-    │ │ ││ │└┬─[seller_scan_qr_body_main_data_name                       ]  [section_lev5  ]                           [ ✜ ✜ ]      [ no  ]
-    │ │ ││ │ └ [seller_scan_qr_body_main_data_name_label                 ]  [label         ]  [ { string }      ]      [ ✜ ✜ ]      [ no  ]
-    │ │ ││ └─┬─[seller_scan_qr_body_main_data_phone                      ]  [section_lev5  ]                           [ ✜ ✜ ]      [ no  ]
-    │ │ ││   └ [seller_scan_qr_body_main_data_phone_label                ]  [label         ]  [ { number }      ]      [ ✜ ✜ ]      [ no  ]
+	
+    │ │ ││└┬┬──[seller_scan_qr_body_main_data_______________________state]  [section_lev4  ]                           [ ✜ ✜ ]      [ no  ]
+	
     │ │ │└─────[seller_scan_qr_body_main_code                            ]  [img           ]                           [ ✜ ✜ ]      [ no  ]
     │ │ └──────[seller_scan_qr_body_main_text                            ]  [text          ]  [ "Чтобы опла..." ]      [ 🡇 ✜ ]      [ no  ]
     │ └────┬┬──[seller_scan_qr_body_result                               ]  [section_lev3  ]                           [ 🡇 ✜ ]      [ no  ]
@@ -1314,7 +1313,7 @@ seller_scan_calc_any_sum - сумма по арифметическому выр
 ✠ details
 - seller_scan_qr_body_main - локализован в центральной части seller_scan_qr_body содержащий основной контент, включает следующие компоненты:
 - seller_scan_qr_body_main_title  
-- seller_scan_qr_body_main_data
+- seller_scan_qr_body_main_data (обладает двумя состояниями)
 - seller_scan_qr_body_main_code
 - seller_scan_qr_body_main_text.
 
@@ -1347,4 +1346,99 @@ seller_scan_calc_any_sum - сумма по арифметическому выр
 │• color8
 │------ in any situation
 └─
+
+
+
+
+■■■ seller_scan_qr_body_main_data
+
+seller_scan_qr_body_main_data обладает 2 состояниями:
+- seller_scan_qr_body_main_data_ordered_state - операция с существующим ордером;
+- seller_scan_qr_body_main_data_direct_state - операция в рамках прямой продажи.
+
+■ ■ seller_scan_qr_body_main_data_ordered_state ■ ■
+
+✠ tables
+
+                                    codename:                             type:           designation:        location:   interaction:
+    │ │ ││└┬┬──[seller_scan_qr_body_main_data_ordered            ]  [section_lev4  ]                           [ ✜ ✜ ]      [ no  ]
+    │ │ ││ │└┬─[seller_scan_qr_body_main_data_ordered_name       ]  [section_lev5  ]                           [ 🡅 ✜ ]      [ no  ]
+    │ │ ││ │ └ [seller_scan_qr_body_main_data_ordered_name_value ]  [variable      ]  [ { string }      ]      [ ✜ ✜ ]      [ no  ]
+    │ │ ││ └─┬─[seller_scan_qr_body_main_data_ordered_phone      ]  [section_lev5  ]                           [ 🡇 ✜ ]      [ no  ]
+    │ │ ││   └ [seller_scan_qr_body_main_data_ordered_phone_value]  [variable      ]  [ { number }      ]      [ ✜ ✜ ]      [ no  ]
+
+✠ details
+--- seller_scan_qr_body_main_data_ordered - блок данных расположенный под seller_scan_qr_body_main_title, занимающий всю ширину родительского контейнера, содержащий информацию о плательщике включает seller_scan_qr_body_main_data_ordered_name и seller_scan_qr_body_main_data_ordered_phone;
+----- seller_scan_qr_body_main_data_ordered_name - контейнер для текстового элемента seller_scan_qr_body_main_data_ordered_name_value размещающийся в верхней части seller_scan_qr_body_main_data_ordered, занимающий все его пространство по горизонтали и 50% по вертикали;
+------- seller_scan_qr_body_main_data_ordered_name_value - переменная со строковым значением центрированная в seller_scan_qr_body_main_data_ordered_name, которая выводит фамилию и имя buyer по шаблону: "Second name + First name." (First name представлена первой буквой);
+----- seller_scan_qr_body_main_data_ordered_phone - контейнер для текстового элемента seller_scan_qr_body_main_data_ordered_phone_value размещающийся в нижней части seller_scan_qr_body_main_data_ordered, занимающий все его пространство по горизонтали и 50% по вертикали;
+------- seller_scan_qr_body_main_data_ordered_phone_value - переменная с числовым значением центрированная в seller_scan_qr_body_main_data_ordered_phone, которая выводит телефон buyer.
+
+✠ color_states
+┌─
+│seller_scan_qr_body_main_data_ordered
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color0
+│------ in any situation
+└─
+┌─
+│seller_scan_qr_body_main_data_ordered_name_value
+│seller_scan_qr_body_main_data_ordered_phone_value
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
+
+■ ■ seller_scan_qr_body_main_data_direct_state ■ ■
+
+✠ tables
+
+                                       codename:                              type:           designation:         location:   interaction:
+    │ │ │└┬┬───[seller_scan_qr_body_main_data_direct                  ]  [section_lev4  ]                           [ ✜ ✜ ]      [ no  ]
+    │ │ │ │└┬──[seller_scan_qr_body_main_data_direct_lots             ]  [section_lev5  ]                           [ 🡅 ✜ ]      [ no  ]
+    │ │ │ │ └┬─[seller_scan_qr_body_main_data_direct_lots_value       ]  [variable      ]                           [ ✜ ✜ ]      [ no  ]
+    │ │ │ │  ├ [seller_scan_qr_body_main_data_direct_lots_value_number]  [variable      ]  [ { number }      ]      [ ✜ 🡄 ]      [ no  ]
+    │ │ │ │  └ [seller_scan_qr_body_main_data_direct_lots_value_label ]  [label         ]  [ " товарных ..." ]      [ ✜ 🡆 ]      [ no  ]
+    │ │ │ └─┬──[seller_scan_qr_body_main_data_direct_formed           ]  [section_lev5  ]                           [ 🡇 ✜ ]      [ no  ]
+    │ │ │   └┬─[seller_scan_qr_body_main_data_direct_formed_value     ]  [section_lev6  ]                           [ ✜ ✜ ]      [ no  ]
+    │ │ │    ├ [seller_scan_qr_body_main_data_direct_formed_value_date]  [variable      ]  [ { number }      ]      [ ✜ 🡄 ]      [ no  ]
+    │ │ │    └ [seller_scan_qr_body_main_data_direct_formed_value_time]  [variable      ]  [ { number }      ]      [ ✜ 🡆 ]      [ no  ]
+
+✠ details
+--- seller_scan_qr_body_main_data_direct - блок данных расположенный под seller_scan_qr_body_main_title, занимающий всю ширину родительского контейнера, содержащий информацию о количестве лотов по ордеру и время формирования ордера, включает компоненты seller_scan_qr_body_main_data_direct_lots и seller_scan_qr_body_main_data_direct_formed;
+----- seller_scan_qr_body_main_data_direct_lots - контейнер для текстового элемента seller_scan_qr_body_main_data_direct_lots_value размещающийся в верхней части seller_scan_qr_body_main_data_direct, занимающий все его пространство по горизонтали и 50% по вертикали;
+------- seller_scan_qr_body_main_data_direct_lots_value - выровненное по центру seller_scan_qr_body_main_data_direct_lots конкатенированное значение из 2 переменных seller_scan_qr_body_main_data_direct_lots_value_number и seller_scan_qr_body_main_data_direct_lots_value_label;
+--------- seller_scan_qr_body_main_data_direct_lots_value_number - переменная с числовым значением отображающая количество seller_scan_calc_body_display_list_lot по текущему ордеру, размещается слева от seller_scan_qr_body_main_data_direct_lots_value_label.
+--------- seller_scan_qr_body_main_data_direct_lots_value_label - константный текстовый элемент: " товарных позиций" размещающийся слева от seller_scan_qr_body_main_data_direct_lots_value_number;
+----- seller_scan_qr_body_main_data_direct_formed - контейнер для текстового элемента seller_scan_qr_body_main_data_direct_formed_value размещающийся в нижней части seller_scan_qr_body_main_data_direct, занимающий все его пространство по горизонтали и 50% по вертикали;
+------- seller_scan_qr_body_main_data_direct_formed_value - выровненное по центру seller_scan_qr_body_main_data_direct_formed конкатенированное значение из 2 переменных seller_scan_qr_body_main_data_direct_formed_value_date и seller_scan_qr_body_main_data_direct_formed_value_time;
+--------- seller_scan_qr_body_main_data_direct_formed_value_date - переменная с числовым значением отображающая дату формирования ордера по шаблону "DD.MM.YY", размещается слева от seller_scan_qr_body_main_data_direct_formed_value_time;
+--------- seller_scan_qr_body_main_data_direct_formed_value_time - переменная с числовым значением отображающая время формирования ордера по шаблону "HH:MM", размещается справа от seller_scan_qr_body_main_data_direct_formed_value_date.
+
+✠ color_states
+┌─
+│seller_scan_qr_body_main_data_direct
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color0
+│------ in any situation
+└─
+┌─
+│seller_scan_qr_body_main_data_direct_lots_value_number
+│seller_scan_qr_body_main_data_direct_lots_value_label
+│seller_scan_qr_body_main_data_direct_formed_value_date
+│seller_scan_qr_body_main_data_direct_formed_value_time
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
 
