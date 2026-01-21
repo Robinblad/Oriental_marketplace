@@ -3,7 +3,6 @@
 
 
 
-
 🡆🡆 seller_scan_screen
 ■■■■■■■■■■■■■■■■■■■■■
 
@@ -95,8 +94,8 @@ seller_scan_calc_screen является экраном по умолчанию.
  └─────────────────────┬─[seller_scan_calc_buttons                                    ]  [section_lev2  ]                           [ 🡇 ✜ ]      [ no  ]
                        ├ [seller_scan_calc_buttons_ok                                 ]  [button        ]                           [ ✜ 🡄 ]      [ yes ]
                        ├ [seller_scan_calc_buttons_ok_label                           ]  [label         ]  [ "ОК"            ]      [ ✜ ✜ ]      [ yes ]
-                       ├ [seller_scan_calc_buttons_qr                                 ]  [button        ]                           [ ✜ 🡆 ]      [ yes ]
-                       └ [seller_scan_calc_buttons_qr_label                           ]  [label         ]  [ "QR-код"        ]      [ ✜ ✜ ]      [ yes ]
+                       ├ [seller_scan_calc_buttons_pay                                 ]  [button        ]                           [ ✜ 🡆 ]      [ yes ]
+                       └ [seller_scan_calc_buttons_pay_label                           ]  [label         ]  [ "платеж"        ]      [ ✜ ✜ ]      [ yes ]
                   ┌┬┬┬┬──[seller_nav                                                  ]  [section       ]                           [ ✜ ✜ ]      [ no  ]
                   ││││└┬─[seller_nav_demand_button                                    ]  [button        ]                           [ ✜ 🡄 ]      [ yes ]
                   ││││ ├ [seller_nav_demand_header                                    ]  [header        ]  [ "МОНИТОР"       ]      [ ✜ ✜ ]      [ no  ]  
@@ -120,11 +119,11 @@ seller_scan_calc_screen является экраном по умолчанию.
 ✠ details
 Секция seller_scan_nav является навигационной панелью seller_scan и как сквозная часть интерфейса присутствует на всех экранах seller_scan в верхней области. Секция состоит из 3 компонентов каждый из которых выполняет роль кнопки расположенные слева-направо в следующем порядке:
 
-1)  seller_scan_nav_check - кнопка предназначенная для перехода к seller_scan_check_screen;
+1)  seller_scan_nav_check - кнопка предназначенная для перехода к seller_scan_check_screen (в рамках seller_scan_check_screen активирована по умолчанию);
 --- seller_scan_nav_check_label - является константным центрированным в seller_scan_nav_check текстовым элементом следующего содержания: "чек";
-2) seller_scan_nav_calc - кнопка предназначенная для перехода к seller_scan_calc_screen (активирована по умолчанию);
+2) seller_scan_nav_calc - кнопка предназначенная для перехода к seller_scan_calc_screen (в рамках seller_scan_calc_screen активирована по умолчанию);
 --- seller_scan_nav_calc_label - является константным центрированным в seller_scan_nav_calc текстовым элементом следующего содержания: "скан";
-3) seller_scan_nav_qr - кнопка предназначенная для перехода к seller_scan_qr_screen;
+3) seller_scan_nav_qr - кнопка предназначенная для перехода к seller_scan_qr_screen (в рамках seller_scan_qr_screen активирована по умолчанию);
 --- seller_scan_nav_qr_label - является константным центрированным в seller_scan_nav_qr текстовым элементом следующего содержания: "QR".
 
 ✠ actions
@@ -170,9 +169,9 @@ seller_scan_calc_screen является экраном по умолчанию.
 
 ✠ color_states
 ┌─ 
-│seller_scan_nav_check  (default_state по умолчанию в seller_scan_calc_screen)
+│seller_scan_nav_check  (activated_state по умолчанию в seller_scan_check_screen)
 │seller_scan_nav_calc  (activated_state по умолчанию в seller_scan_calc_screen)
-│seller_scan_nav_qr  (default_state по умолчанию в seller_scan_calc_screen)
+│seller_scan_nav_qr  (activated_state по умолчанию в seller_scan_qr_screen)
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -814,7 +813,7 @@ activated_state - состояние при котором seller_scan_calc_body
 
 ■ seller_scan_calc_body_result
 
-seller_scan_calc_body_result представляет собой панель выполняющей частично информативную роль отображая результирующее калькуляции, а также служит цель добавления товарных позиций к калькулируемому ордеру (корзине).
+seller_scan_calc_body_result представляет собой панель выполняющей частично информативную роль отображая результирующее калькуляции, а также служит целью добавления товарных позиций к калькулируемому ордеру (корзине).
 
 ✠ tables
 
@@ -1019,9 +1018,9 @@ seller_scan_calc_any_sum - сумма по арифметическому выр
 ✠ details
 - seller_scan_calc_buttons - блок из 2 кнопок расположенных в самом низу seller_scan_calc;
 --- seller_scan_calc_buttons_ok - кнопка расположенная слева, призвана закрывать seller_scan_calc_screen;
------ seller_scan_calc_buttons_ok_label - константный центрированный текстовый элемент следующего содержания: "ОК", содержит seller_scan_calc_buttons_ok_label;
---- seller_scan_calc_buttons_qr - кнопка расположенная справа, отвечает за инициализацию перехода к seller_scan_qr_screen, содержит seller_scan_calc_buttons_qr_label;
------ seller_scan_calc_buttons_qr_label - константный центрированный текстовый элемент следующего содержания: "QR-код".
+----- seller_scan_calc_buttons_ok_label - константный центрированный текстовый элемент следующего содержания: "ОК";
+--- seller_scan_calc_buttons_pay - кнопка расположенная справа, отвечает за инициализацию перехода к seller_scan_qr_screen, содержит seller_scan_calc_buttons_pay_label;
+----- seller_scan_calc_buttons_pay_label - константный центрированный текстовый элемент следующего содержания: "платеж".
 
 ✠ actions
 • seller_scan_calc_buttons_ok:
@@ -1032,10 +1031,10 @@ seller_scan_calc_any_sum - сумма по арифметическому выр
 ║ result:
 ║ - && - seller_scan_calc_screen закрывается;
 ╙ - && - делается переход к seller_shop_screen.
-• seller_scan_calc_buttons_qr:
+• seller_scan_calc_buttons_pay:
 ╠ valid
 ║ • gesture: tap
-║ occasion: нажатие seller_scan_calc_buttons_qr;
+║ occasion: нажатие seller_scan_calc_buttons_pay;
 ║ condition: если seller_scan_calc_body_display_list не пустой;
 ║ result:
 ║ - && - производится генерация seller_scan_qr_code для целевого ордера по лотам находящимся в seller_scan_calc_body_display_list;
@@ -1043,9 +1042,9 @@ seller_scan_calc_any_sum - сумма по арифметическому выр
 ║ - && - seller_scan_qr_screen открывается.
 ╠ invalid
 ║ • gesture: tap
-║ occasion: нажатие seller_scan_calc_buttons_qr;
+║ occasion: нажатие seller_scan_calc_buttons_pay;
 ║ condition: если seller_scan_calc_body_display_list пустой;
-╙ result: seller_scan_calc_buttons_qr не реагирует на нажатие.
+╙ result: seller_scan_calc_buttons_pay не реагирует на нажатие.
 
 ✠ color_states
 ┌─
@@ -1060,7 +1059,7 @@ seller_scan_calc_any_sum - сумма по арифметическому выр
 │------ in pressing_state
 └─
 ┌─
-│seller_scan_calc_buttons_qr
+│seller_scan_calc_buttons_pay
 │------------------------- 
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -1075,7 +1074,7 @@ seller_scan_calc_any_sum - сумма по арифметическому выр
 └─
 ┌─
 │seller_scan_calc_buttons_ok_label
-│seller_scan_calc_buttons_qr_label
+│seller_scan_calc_buttons_pay_label
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -1262,8 +1261,8 @@ seller_scan_calc_any_sum - сумма по арифметическому выр
     └──────┬┬──[seller_scan_qr_buttons                                   ]  [section_lev2  ]                           [ 🡇 ✜ ]      [ no  ]
            │└┬─[seller_scan_qr_buttons_ok                                ]  [button        ]                           [ ✜ 🡄 ]      [ yes ]
            │ └ [seller_scan_qr_buttons_ok_label                          ]  [label         ]  [ "ОК"            ]      [ ✜ ✜ ]      [ yes ]
-           └─┬─[seller_scan_qr_buttons_back                              ]  [button        ]                           [ ✜ 🡆 ]      [ yes ]
-             └ [seller_scan_qr_buttons_back_label                        ]  [label         ]  [ "QR-код"        ]      [ ✜ ✜ ]      [ yes ]
+           └─┬─[seller_scan_qr_buttons_pay                               ]  [button        ]                           [ ✜ 🡆 ]      [ yes ]
+             └ [seller_scan_qr_buttons_pay_label                         ]  [label         ]  [ "платеж"        ]      [ ✜ ✜ ]      [ yes ]
         ┌┬┬┬┬──[seller_nav                                               ]  [section       ]                           [ ✜ ✜ ]      [ no  ]
         ││││└┬─[seller_nav_demand_button                                 ]  [button        ]                           [ ✜ 🡄 ]      [ yes ]
         ││││ ├ [seller_nav_demand_header                                 ]  [header        ]  [ "МОНИТОР"       ]      [ ✜ ✜ ]      [ no  ]  
@@ -1280,6 +1279,85 @@ seller_scan_calc_any_sum - сумма по арифметическому выр
         └────┬─[seller_nav_scan_button                                   ]  [button        ]                           [ ✜ 🡆 ]      [ yes ]   
              ├ [seller_nav_scan_header                                   ]  [header        ]  [ "КАБИНЕТ"       ]      [ ✜ ✜ ]      [ no  ] 
              └ [seller_nav_scan_badge                                    ]  [badge         ]  [ { number }      ]      [ 🡅 🡆 ]      [ no  ] 
+
+
+■ seller_scan_nav
+
+✠ details
+Секция seller_scan_nav является навигационной панелью seller_scan и как сквозная часть интерфейса присутствует на всех экранах seller_scan в верхней области. Секция состоит из 3 компонентов каждый из которых выполняет роль кнопки расположенные слева-направо в следующем порядке:
+
+1)  seller_scan_nav_check - кнопка предназначенная для перехода к seller_scan_check_screen (в рамках seller_scan_check_screen активирована по умолчанию);
+--- seller_scan_nav_check_label - является константным центрированным в seller_scan_nav_check текстовым элементом следующего содержания: "чек";
+2) seller_scan_nav_calc - кнопка предназначенная для перехода к seller_scan_calc_screen (в рамках seller_scan_calc_screen активирована по умолчанию);
+--- seller_scan_nav_calc_label - является константным центрированным в seller_scan_nav_calc текстовым элементом следующего содержания: "скан";
+3) seller_scan_nav_qr - кнопка предназначенная для перехода к seller_scan_qr_screen (в рамках seller_scan_qr_screen активирована по умолчанию);
+--- seller_scan_nav_qr_label - является константным центрированным в seller_scan_nav_qr текстовым элементом следующего содержания: "QR".
+
+✠ actions
+• seller_scan_nav_check:
+╠ valid
+║ • gesture: tap
+║ occasion: нажатие seller_scan_nav_check;
+║ condition:
+║ || - в ситуации присутствия в seller_scan_calc_screen;
+║ || - в ситуации присутствия в seller_scan_qr_screen;
+║ result: открывается seller_scan_check_screen.
+╠ invalid
+║ • gesture: tap
+║ occasion: нажатие seller_scan_nav_check;
+║ condition: в ситуации присутствия в seller_scan_check_screen;
+╙ result: не реагирует на нажатие.
+• seller_scan_nav_calc:
+╠ valid
+║ • gesture: tap
+║ occasion: нажатие seller_scan_nav_calc;
+║ condition:
+║ || - в ситуации присутствия в seller_scan_check_screen;
+║ || - в ситуации присутствия в seller_scan_qr_screen;
+║ result: открывается seller_scan_calc_screen.
+╠ invalid
+║ • gesture: tap
+║ occasion: нажатие seller_scan_nav_calc;
+║ condition: в ситуации присутствия в seller_scan_calc_screen;
+╙ result: не реагирует на нажатие.
+• seller_scan_nav_qr:
+╠ valid
+║ • gesture: tap
+║ occasion: нажатие seller_scan_nav_qr;
+║ condition:
+║ || - в ситуации присутствия в seller_scan_check_screen;
+║ || - в ситуации присутствия в seller_scan_calc_screen;
+║ result: открывается seller_scan_qr_screen.
+╠ invalid
+║ • gesture: tap
+║ occasion: нажатие seller_scan_nav_qr;
+║ condition: в ситуации присутствия в seller_scan_qr_screen;
+╙ result: не реагирует на нажатие.
+
+✠ color_states
+┌─ 
+│seller_scan_nav_check  (activated_state по умолчанию в seller_scan_check_screen)
+│seller_scan_nav_calc  (activated_state по умолчанию в seller_scan_calc_screen)
+│seller_scan_nav_qr  (activated_state по умолчанию в seller_scan_qr_screen)
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color7
+│------ в activated_state
+└─
+┌─
+│seller_scan_nav_check_label
+│seller_scan_nav_scan_label
+│seller_scan_nav_qr_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
 
 
 ■ seller_scan_qr_body_top
@@ -1307,25 +1385,20 @@ seller_scan_calc_any_sum - сумма по арифметическому выр
 └─
 
 
-
 ■ seller_scan_qr_body_main
 
 ✠ details
 - seller_scan_qr_body_main - локализован в центральной части seller_scan_qr_body содержащий основной контент, включает следующие компоненты:
-- seller_scan_qr_body_main_title  
-- seller_scan_qr_body_main_data (обладает двумя состояниями)
-- seller_scan_qr_body_main_code
+- seller_scan_qr_body_main_title;
+- seller_scan_qr_body_main_data (обладает двумя состояниями);
+- seller_scan_qr_body_main_code;
 - seller_scan_qr_body_main_text.
 
+✠ details
 ------- seller_scan_qr_body_main_title - контейнер для заголовка seller_scan_qr_screen расположенный в верхней части seller_scan_qr_body_main;
 --------- seller_scan_qr_body_main_title_label - константный центрированный текстовый элемент с крупным шрифтом следующего содержания: "QR-код для оплаты";
-------- seller_scan_qr_body_main_data - блок данных содержащий 2 компонента содержащих информацию о плательщике;
---- seller_scan_qr_body_main_quantity - является центральной ячейкой seller_scan_qr_body_main содержащей seller_scan_qr_body_main_quantity_label; 
------ seller_scan_qr_body_main_quantity_label - константный текстовый элемент следующего содержания: "количество";
---- seller_scan_qr_body_main_cost - является правой ячейкой seller_scan_qr_body_main содержащей seller_scan_qr_body_main_cost_label; 
------ seller_scan_qr_body_main_cost_label - константный текстовый элемент следующего содержания: "стоимость";
-
-- seller_scan_qr_body_main_list локализован под seller_scan_qr_body_main в качестве списка seller_scan_qr_body_main_list_lot, который занимает всю ширину seller_scan_qr_body_main, а по высоте занимает пространство равное количеству seller_scan_qr_body_main_list_lot находящихся в seller_scan_qr_body_main_list. Если количество seller_scan_qr_body_main_list_lot не вмещается в seller_scan_qr_body_main_list, тогда у seller_scan_qr_body_main_list появляется скроллинг а с правой стороны по краю отображается seller_scan_qr_body_main_list_scrollbar;
+------- seller_scan_qr_body_main_code - является изображением QR-кода в формате SVG, размещается в центральной области экрана между seller_scan_qr_body_main_data и seller_scan_qr_body_main_text, занимая ~20-25% пространства viewport; 
+------- seller_scan_qr_body_main_text - константный текстовый элемент в качестве параграфа, располагающийся под seller_scan_qr_body_main_code с горизонтальным центрированием и обладающий следующим содержанием: "Чтобы оплатить покупку покупателю необходимо сканировать данное изображение с помощью камеры своего смартфона. Сканирование можно включить в банковском, либо другом финансовом приложении".
 
 ✠ color_states
 ┌─
@@ -1333,13 +1406,12 @@ seller_scan_calc_any_sum - сумма по арифметическому выр
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
-│• color2
+│• color0
 │------ in any situation
 └─
 ┌─
-│seller_scan_qr_body_main_name_label
-│seller_scan_qr_body_main_quantity_label
-│seller_scan_qr_body_main_cost_label
+│seller_scan_qr_body_main_title
+│seller_scan_qr_body_main_text
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -1348,11 +1420,9 @@ seller_scan_calc_any_sum - сумма по арифметическому выр
 └─
 
 
-
-
 ■■■ seller_scan_qr_body_main_data
 
-seller_scan_qr_body_main_data обладает 2 состояниями:
+seller_scan_qr_body_main_data - содержит информацию о плательщике и обладает 2 состояниями:
 - seller_scan_qr_body_main_data_ordered_state - операция с существующим ордером;
 - seller_scan_qr_body_main_data_direct_state - операция в рамках прямой продажи.
 
@@ -1368,7 +1438,7 @@ seller_scan_qr_body_main_data обладает 2 состояниями:
     │ │ ││   └ [seller_scan_qr_body_main_data_ordered_phone_value]  [variable      ]  [ { number }      ]      [ ✜ ✜ ]      [ no  ]
 
 ✠ details
---- seller_scan_qr_body_main_data_ordered - блок данных расположенный под seller_scan_qr_body_main_title, занимающий всю ширину родительского контейнера, содержащий информацию о плательщике включает seller_scan_qr_body_main_data_ordered_name и seller_scan_qr_body_main_data_ordered_phone;
+--- seller_scan_qr_body_main_data_ordered - блок данных расположенный под seller_scan_qr_body_main_title, занимающий всю ширину родительского контейнера, включает seller_scan_qr_body_main_data_ordered_name и seller_scan_qr_body_main_data_ordered_phone;
 ----- seller_scan_qr_body_main_data_ordered_name - контейнер для текстового элемента seller_scan_qr_body_main_data_ordered_name_value размещающийся в верхней части seller_scan_qr_body_main_data_ordered, занимающий все его пространство по горизонтали и 50% по вертикали;
 ------- seller_scan_qr_body_main_data_ordered_name_value - переменная со строковым значением центрированная в seller_scan_qr_body_main_data_ordered_name, которая выводит фамилию и имя buyer по шаблону: "Second name + First name." (First name представлена первой буквой);
 ----- seller_scan_qr_body_main_data_ordered_phone - контейнер для текстового элемента seller_scan_qr_body_main_data_ordered_phone_value размещающийся в нижней части seller_scan_qr_body_main_data_ordered, занимающий все его пространство по горизонтали и 50% по вертикали;
@@ -1440,5 +1510,267 @@ seller_scan_qr_body_main_data обладает 2 состояниями:
 │• color8
 │------ in any situation
 └─
+
+
+■ seller_scan_qr_body_result
+
+seller_scan_qr_body_result представляет собой панель выполняющей частично информативную роль отображая результирующее калькуляции, а также служит целью добавления товарных позиций к калькулируемому ордеру (корзине).
+
+✠ tables
+
+                                               codename:                              type:           designation:         location:   interaction:
+ │ └───────────┬┬──[seller_scan_qr_body_result                                ]  [section_lev3  ]                           [ 🡇 ✜ ]      [ no  ]
+ │             │└┬─[seller_scan_qr_body_result_widget                         ]  [widget        ]                           [ ✜ 🡄 ]      [ no  ]
+ │             │ ├ [seller_scan_qr_body_result_widget_signifier__________state]  [variable      ]  [ { string }      ]      [ ✜ 🡄 ]      [ no  ]
+ │             │ └ [seller_scan_qr_body_result_widget_output_____________state]  [variable      ]  [ { number }      ]      [ ✜ 🡆 ]      [ no  ]
+ │             └─┬─[seller_scan_qr_body_result_add                            ]  [button        ]                           [ ✜ 🡆 ]      [ yes ]
+ │               └ [seller_scan_qr_body_result_add_label                      ]  [label         ]  [ "+ товар"       ]      [ ✜ ✜ ]      [ yes ]
+
+
+✠ details
+seller_scan_qr_body_result находится в нижней части seller_scan_calc_body и состоит из 2 структурных компонентов:
+- seller_scan_qr_body_result_widget - выполняет функцию виджета отображающего ввод и вывод процесса калькуляции;
+- seller_scan_qr_body_result_add - выполняет функцию добавления лота к рассчитываемому ордеру (корзине).
+
+- seller_scan_qr_body_result_widget - локализован слева и занимает порядка 70% ширины seller_scan_qr_body_result, представляет собой прямоугольный блок в рамках которого располагаются seller_scan_qr_body_result_widget_signifier и seller_scan_qr_body_result_widget_output;
+--- seller_scan_qr_body_result_add - представляет собой кнопку добавления лота для расчета ордера, которая расположена справа от seller_scan_qr_body_result_widget_signifier и содержит seller_scan_qr_body_result_add_label; 
+----- seller_scan_qr_body_result_add_label - константный центрированный текстовый элемент следующего содержания: "+ товар".
+
+✠ actions
+• seller_scan_qr_body_result_add:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion:  нажатие seller_scan_qr_body_result_add;
+║ condition: in any situation;
+╙ result: делается переход к seller_goods_screen.
+
+✠ logics
+Расчет в seller_scan_calc производится с использованием двух типов вычислений:
+seller_scan_calc_lot_function - калькуляция по лотам в рамках текущего ордера;
+seller_scan_calc_any_function - калькуляция за рамками текущего ордера.
+
+✠ color_states
+┌─
+│seller_scan_qr_body_result
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color2
+│------ in any situation
+└─
+┌─
+│seller_scan_qr_body_result_add
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color5
+│------ in pressing_state
+└─
+┌─
+│seller_scan_qr_body_result_add_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
+
+■■■ seller_scan_qr_body_result_widget_signifier
+
+seller_scan_qr_body_result_widget_signifier обладает 2 состояниями:
+- seller_scan_qr_body_result_widget_signifier_active_state - когда происходит процессинг расчета по целевому лоту (в моментуме может быть только 1 экземпляр);
+- seller_scan_qr_body_result_widget_signifier_passive_state - когда процессинг расчета по целевому лоту завершен (может быть сколь угодно экземпляров).
+
+■ ■ seller_scan_qr_body_result_widget_signifier_active_state ■ ■
+
+✠ tables
+
+                                             codename:                         type:           designation:         location:   interaction:
+ │              │ ├ [seller_scan_qr_body_result_widget_signifier_active]  [variable      ]  [ "кол-во: "      ]      [ ✜ 🡄 ]      [ no  ]
+
+
+✠ details
+--- seller_scan_qr_body_result_widget_signifier_active - подстановочный информер указывающий результирующий тип seller_scan_qr_body_result_widget_output в виде переменной со строковым значением, находится слева от seller_scan_qr_body_result_widget_output. В seller_scan_qr_body_result_widget_signifier_active отображает текст следующего содержания: "кол-во: ".
+
+✠ standards
+Нормативы отображения для seller_scan_qr_body_result_widget_signifier_active: 
+- целые числа отображаются от 1 до 999999999;
+- числа > 999999999 отображаются с использовании аббревиатуры;
+- число 1000000000 отображается как 1B;
+- число 1000000000000 отображается как 1T;
+- дробные числа отображаются с точностью 0.00000.
+
+✠ color_states
+┌─
+│seller_scan_qr_body_result_widget_signifier_active
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
+
+■ ■ seller_scan_qr_body_result_widget_signifier_passive_state ■ ■
+
+✠ tables
+
+                                             codename:                          type:           designation:         location:   interaction:
+ │              │ ├ [seller_scan_qr_body_result_widget_signifier_passive]  [variable      ]  [ "итог: "        ]      [ ✜ 🡄 ]      [ no  ]
+
+✠ details
+--- seller_scan_qr_body_result_widget_signifier_passive - подстановочный информер указывающий результирующий тип seller_scan_qr_body_result_widget_output в виде переменной со строковым значением, находится слева от seller_scan_qr_body_result_widget_output. В seller_scan_qr_body_result_widget_signifier_passive отображает текст следующего содержания: "итог: ".
+
+✠ standards
+Нормативы отображения для seller_scan_qr_body_result_widget_signifier_passive: 
+- целые числа отображаются от 1 до 999999999;
+- числа > 999999999 отображаются с использовании аббревиатуры;
+- число 1000000000 отображается как 1B;
+- число 1000000000000 отображается как 1T;
+- дробные числа отображаются с точностью 0.00000.
+
+✠ color_states
+┌─
+│seller_scan_qr_body_result_widget_signifier_passive
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
+
+■■■ seller_scan_qr_body_result_widget_output
+
+seller_scan_qr_body_result_widget_output обладает 2 состояниями:
+- seller_scan_qr_body_result_widget_output_active_state - когда происходит процессинг расчета по целевому лоту;
+- seller_scan_qr_body_result_widget_output_passive_state - когда процессинг расчета по текущему лоту завершен.
+
+seller_scan_qr_body_result_widget_output выводит 3 типа переменной являющихся операндами в seller_scan_calc_lot_function:
+seller_scan_calc_quantity - количественное значение товара;
+seller_scan_calc_any - операнд арифметического выражения;
+seller_scan_calc_quantity_sum - сумма в рамках расчетного ордера;
+seller_scan_calc_any_sum - сумма по арифметическому выражению за рамками расчетного ордера.
+
+
+■ ■ seller_scan_qr_body_result_widget_output_active_state ■ ■
+
+✠ tables
+
+                                             codename:                           type:           designation:         location:   interaction:
+ │             │ └ [seller_scan_qr_body_result_widget_output_active_state]  [variable      ]  [ { number }      ]      [ ✜ 🡆 ]      [ no  ]
+
+✠ details
+----- seller_scan_qr_body_result_widget_output - переменная с числовым значением расположенная справа от seller_scan_qr_body_result_widget_signifier, которая в seller_scan_qr_body_result_widget_output_active_state выводит seller_scan_calc_quantity - количественное значение товара (лота).
+
+✠ standards
+Нормативы отображения для seller_scan_qr_body_result_widget_output_active: 
+- целые числа отображаются от 1 до 999999999;
+- числа > 999999999 отображаются с использовании аббревиатуры;
+- число 1000000000 отображается как 1B;
+- число 1000000000000 отображается как 1T;
+- дробные числа отображаются с точностью 0.00000.
+
+✠ color_states
+┌─
+│seller_scan_qr_body_result_widget_output_active
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
+
+■ ■ seller_scan_qr_body_result_widget_output_passive_state ■ ■
+
+✠ tables
+
+                                             codename:                            type:           designation:         location:   interaction:
+ │             │ └ [seller_scan_qr_body_result_widget_output_passive_state]  [variable      ]  [ { number }      ]      [ ✜ 🡆 ]      [ no  ]
+
+✠ details
+----- seller_scan_qr_body_result_widget_output - переменная с числовым значением расположенная справа от seller_scan_qr_body_result_widget_signifier, которая в seller_scan_qr_body_result_widget_output_passive_state выводит seller_scan_calc_quantity_sum - сумму по ордеру (корзине).
+
+✠ standards
+Нормативы отображения для seller_scan_qr_body_result_widget_output_passive: 
+- целые числа отображаются от 1 до 999999999;
+- числа > 999999999 отображаются с использовании аббревиатуры;
+- число 1000000000 отображается как 1B;
+- число 1000000000000 отображается как 1T;
+- дробные числа отображаются с точностью 0.00000.
+
+✠ color_states
+┌─
+│seller_scan_qr_body_result_widget_output_passive
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
+
+■ seller_scan_qr_buttons
+
+✠ details
+- seller_scan_qr_buttons - блок из 2 кнопок расположенных в самом низу seller_scan_calc;
+--- seller_scan_qr_buttons_ok - кнопка расположенная слева, призвана закрывать seller_scan_qr_screen;
+----- seller_scan_qr_buttons_ok_label - константный центрированный текстовый элемент следующего содержания: "ОК";
+--- seller_scan_qr_buttons_pay - кнопка расположенная справа, отвечает за инициализацию принятия платежа в ручном режиме, содержит seller_scan_qr_buttons_pay_label;
+----- seller_scan_qr_buttons_pay_label - константный центрированный текстовый элемент следующего содержания: "платеж".
+
+✠ actions
+• seller_scan_qr_buttons_ok:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_scan_qr_buttons_ok;
+║ condition: in any situation;
+║ result:
+║ - && - seller_scan_qr_screen закрывается;
+║ - && - делается переход к seller_scan_calc_screen;
+╙ - && - seller_scan_calc_body_display_list очищается.
+• seller_scan_qr_buttons_pay:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_scan_qr_buttons_pay;
+║ condition: если платеж (безналичный) по лотам из текущего seller_scan_calc_body_display_list не зафиксирован на момент нажатия;
+║ result:
+║ - && - производится формирование и регистрация нового ордера в seller_db базирующегося на лотах из текущего seller_scan_calc_body_display_list;
+║ - && - созданный лот начинает фигурировать в seller_account_history_screen;
+║ - && - по центру экрана всплывает seller_scan_qr_buttons_pay_popover;
+║ • gesture: tap
+║ occasion: нажатие seller_scan_qr_buttons_pay;
+║ condition: если платеж (безналичный) по лотам из текущего seller_scan_calc_body_display_list был зафиксирован до момента нажатия;
+╙ result: по центру экрана всплывает seller_scan_qr_buttons_pay_popover.
+
+✠ color_states
+┌─
+│seller_scan_qr_buttons_ok
+│seller_scan_qr_buttons_pay
+│-------------------------------- 
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color5
+│------ in pressing_state
+└─
+┌─
+│seller_scan_qr_buttons_ok_label
+│seller_scan_qr_buttons_pay_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
+
 
 
