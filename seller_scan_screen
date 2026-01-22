@@ -6,7 +6,7 @@
 🡆🡆 seller_scan_screen
 ■■■■■■■■■■■■■■■■■■■■■
 
-seller_scan_screen предназначен для товаро-денежных операций в условиях оффлайн продажи, когда buyer приобретает товар непосредственно вживую в торговой точке, в процессе чего требуется сделать расчет стоимости товара исходя из его веса либо с учетом иных характеристик. seller_scan_screen имеет встроенный калькулятор предоставляющий возможность рассчитать общую стоимость покупки и функционал генерации QR кода позволяющий произвести безналичный расчет.
+seller_scan_screen предназначен для товаро-денежных операций в условиях оффлайн продажи (postpaid вариант оплаты), когда buyer приобретает товар непосредственно вживую в торговой точке, либо производится операция над незакрытым ордером, в процессе чего требуется сделать расчет стоимости товара исходя из его веса либо с учетом иных характеристик. seller_scan_screen имеет встроенный калькулятор предоставляющий возможность рассчитать общую стоимость покупки и функционал генерации QR кода позволяющий произвести безналичный расчет.
 
 seller_scan_screen представлен в 3 подразделах навигацией по которым служит панель в верхней части экрана содержащая 3 кнопки (вкладки) расположенных слева-направо в следующем порядке:
 
@@ -374,7 +374,7 @@ seller_scan_calc_body_display_list_lot_passive_cost
 ║ condition: in any situation;
 ║ result: 
 ║ && - целевой seller_scan_calc_body_display_list_lot_passive переходит в activated_state;
-║ && - по центру экрана всплывает seller_scan_calc_lot_delete_popover;
+║ && - по центру экрана всплывает seller_scan_calc_lot_delete_modal;
 ╠ valid / invalid
 ║ • gesture: swipe left / swipe right
 ║ occasion:  делается свайп влево или вправо на целевом seller_scan_calc_body_display_list_lot_passive;
@@ -1037,7 +1037,8 @@ seller_scan_calc_any_sum - сумма по арифметическому выр
 ║ occasion: нажатие seller_scan_calc_buttons_pay;
 ║ condition: если seller_scan_calc_body_display_list не пустой;
 ║ result:
-║ - && - производится генерация seller_scan_qr_code для целевого ордера по лотам находящимся в seller_scan_calc_body_display_list;
+║ - && - производится создание user_id_data_seller_orders_opened_id базирующегося на лотах из текущего seller_scan_calc_body_display_list;
+║ - && - производится генерация seller_scan_qr_code на базе user_id_data_seller_orders_opened_id;
 ║ - && - seller_scan_calc_screen закрывается;
 ║ - && - seller_scan_qr_screen открывается.
 ╠ invalid
@@ -1739,14 +1740,11 @@ seller_scan_calc_any_sum - сумма по арифметическому выр
 ║ • gesture: tap
 ║ occasion: нажатие seller_scan_qr_buttons_pay;
 ║ condition: если платеж (безналичный) по лотам из текущего seller_scan_calc_body_display_list не зафиксирован на момент нажатия;
-║ result:
-║ - && - производится формирование и регистрация нового ордера в seller_db базирующегося на лотах из текущего seller_scan_calc_body_display_list;
-║ - && - созданный лот начинает фигурировать в seller_account_history_screen;
-║ - && - по центру экрана всплывает seller_scan_qr_buttons_pay_popover;
+║ result: по центру экрана всплывает seller_scan_qr_buttons_pay_check_modal;
 ║ • gesture: tap
 ║ occasion: нажатие seller_scan_qr_buttons_pay;
 ║ condition: если платеж (безналичный) по лотам из текущего seller_scan_calc_body_display_list был зафиксирован до момента нажатия;
-╙ result: по центру экрана всплывает seller_scan_qr_buttons_pay_popover.
+╙ result: по центру экрана всплывает seller_scan_qr_buttons_pay_done_popover.
 
 ✠ color_states
 ┌─
@@ -1771,6 +1769,194 @@ seller_scan_calc_any_sum - сумма по арифметическому выр
 │------ in any situation
 └─
 
+
+🡆🡆🡆🡆 seller_scan_qr_buttons_pay_check_modal
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+✠ tables
+
+                                 codename:                                   type:                  designation:        location:  interaction:
+┌┬─┬─[seller_scan_qr_buttons_pay_check_modal                      ]  [section_lev1       ]                               [ ✜ ✜ ]     [ no  ]
+││ └ [seller_scan_qr_buttons_pay_check_modal_text                 ]  [text               ]  [ "Если платеж по тек..." ]  [ 🡅 ✜ ]     [ no  ]
+│└┬──[seller_scan_qr_buttons_pay_check_modal_buttons              ]  [section_lev2       ]                               [ 🡇 ✜ ]     [ no  ] 
+│ └┬─[seller_scan_qr_buttons_pay_check_modal_buttons_proceed      ]  [button             ]                               [ 🡅 ✜ ]     [ yes ]
+│  └ [seller_scan_qr_buttons_pay_check_modal_buttons_proceed_label]  [label              ]  [ "подтвердить"           ]  [ ✜ ✜ ]     [ yes ]
+└──┬─[seller_scan_qr_buttons_pay_check_modal_buttons_close        ]  [button             ]                               [ 🡇 ✜ ]     [ yes ]
+   └ [seller_scan_qr_buttons_pay_check_modal_buttons_close_label  ]  [label              ]  [ "закрыть"               ]  [ ✜ ✜ ]     [ yes ]
+
+
+✠ details
+- seller_scan_qr_buttons_pay_check_modal - представляет собой модальное окно, которое всплывает по центру экрана и включает 2 компонента:
+--- seller_scan_qr_buttons_pay_check_modal_text - текстовый элемент центрированный по горизонтали расположенный в верхней части seller_scan_qr_buttons_pay_check_modal со следующим содержанием: "Если платеж по текущему ордеру был сделан, нажмите кнопку 'подтвердить'";
+--- seller_scan_qr_buttons_pay_check_modal_buttons - контейнер расположен в нижней части seller_scan_qr_buttons_pay_check_modal, содержащий 2 кнопки; 
+----- seller_scan_qr_buttons_pay_check_modal_buttons_proceed - кнопка расположенная над seller_scan_qr_buttons_pay_check_modal_buttons_close, предназначена для инициализации операции создания ордера, содержит seller_scan_qr_buttons_pay_check_modal_buttons_proceed_label;
+------- seller_scan_qr_buttons_pay_check_modal_buttons_proceed_label - наименование кнопки следующего содержания: "подтвердить".
+----- seller_scan_qr_buttons_pay_check_modal_buttons_close - кнопка расположенная под seller_scan_qr_buttons_pay_check_modal_buttons_proceed, предназначена для закрытия seller_scan_qr_buttons_pay_check_modal без изменений, содержит seller_scan_qr_buttons_pay_check_modal_buttons_close_label;
+------- seller_scan_qr_buttons_pay_check_modal_buttons_close_label - наименование кнопки следующего содержания: "закрыть";
+
+✠ actions
+• seller_scan_qr_buttons_pay_check_modal_buttons_proceed:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_scan_qr_buttons_pay_check_modal_buttons_proceed;
+║ condition: in any situation;
+║ result:
+║ - && - производится формирование нового ордера базирующегося на лотах из текущего seller_scan_calc_body_display_list и seller_scan_calc_quantity_sum;
+║ - && - фиксируется user_id_data_seller_orders_closed_id_transact_postpaid_type_cash;
+╙ - && - созданный лот начинает фигурировать в seller_account_history_screen.
+• seller_scan_qr_buttons_pay_check_modal_buttons_close:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_scan_qr_buttons_pay_check_modal_buttons_close;
+║ condition: in any situation;
+╙ result: seller_scan_qr_buttons_pay_check_modal исчезает.
+
+✠ color_states
+┌─
+│seller_scan_qr_buttons_pay_check_modal_buttons_proceed
+│seller_scan_qr_buttons_pay_check_modal_buttons_close
+│-------------------------------- 
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color5
+│------ in pressing_state
+└─
+┌─
+│seller_scan_qr_buttons_pay_check_modal_text
+│seller_scan_qr_buttons_pay_check_modal_buttons_proceed_label
+│seller_scan_qr_buttons_pay_check_modal_buttons_close_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
+
+
+🡆🡆🡆🡆 seller_scan_qr_buttons_pay_done_popover
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+seller_scan_qr_buttons_pay_done_popover является окном уведомления, которое отображается после нажатия seller_scan_qr_buttons_pay.
+
+✠ tables
+
+                             codename:                          type:            designation:         location:  interaction:
+---┌───[seller_scan_qr_buttons_pay_done_popover              ]  [section_lev1]                              [ ✜ ✜ ]     [ yes ]
+   │
+---│└┬─[seller_scan_qr_buttons_pay_done_popover_text____state]  [section_lev2]                              [ ✜ ✜ ]     [ no  ]
+   │
+---└─┬─[seller_scan_qr_buttons_pay_done_popover_btn          ]  [section_lev2]                              [ ✜ ✜ ]     [ no  ]
+---  └ [seller_scan_qr_buttons_pay_done_popover_btn_close    ]  [section_lev2]                              [ ✜ ✜ ]     [ no  ]
+
+
+✠ details
+- seller_scan_qr_buttons_pay_done_popover - представляет собой popover, который всплывает по центру экрана и включает компонент seller_scan_qr_buttons_pay_done_popover_text;
+--- seller_scan_qr_buttons_pay_done_popover_btn - кнопка расположенная в нижней части seller_scan_qr_buttons_pay_done_popover, предназначенная для закрытия seller_scan_qr_buttons_pay_done_popover, содержит seller_scan_qr_buttons_pay_done_popover_btn_close;
+----- seller_scan_qr_buttons_pay_done_popover_btn_close - константный центрированный текстовый элемент следующего содержания: "закрыть".
+
+✠ actions
+• seller_scan_qr_buttons_pay_done_popover_btn:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_scan_qr_buttons_pay_done_popover_btn;
+║ condition: in any situation;
+╙ result: seller_scan_qr_buttons_pay_done_popover исчезает.
+
+✠ color_states
+┌─
+│seller_scan_qr_buttons_pay_done_popover_btn
+│-------------------------------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color5
+│------ in pressing_state
+└─
+┌─
+│seller_scan_qr_buttons_pay_done_popover
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color2
+│------ in any situation
+└─
+
+
+■ seller_scan_qr_buttons_pay_done_popover_text
+
+seller_scan_qr_buttons_pay_done_popover_text обладает 2 состояниями:
+- seller_scan_qr_buttons_pay_done_popover_text_named_state - если у целевого ордера нет данных по user_id_data_seller_orders_opened_id_client_name;
+- seller_scan_qr_buttons_pay_done_popover_text_noname_state - если у целевого ордера есть данные по user_id_data_seller_orders_opened_id_client_name.
+
+
+■ ■ seller_scan_qr_buttons_pay_done_popover_text_named_state ■ ■
+
+✠ tables
+
+                                   codename:                              type:            designation:         location:  interaction:
+---└┬─[seller_scan_qr_buttons_pay_done_popover_text_named         ]  [section_lev2]                              [ ✜ ✜ ]     [ no  ]
+--- ├ [seller_scan_qr_buttons_pay_done_popover_text_named_part1   ]  [text        ]  [ "Платеж от "        ]     [ ✜ 🡄 ]     [ yes ]
+--- ├ [seller_scan_qr_buttons_pay_done_popover_text_named_username]  [variable    ]  [ {string}            ]     [ ✜ ✜ ]     [ yes ]
+--- ├ [seller_scan_qr_buttons_pay_done_popover_text_named_part2   ]  [text        ]  [ " по ордеру "       ]     [ ✜ ✜ ]     [ yes ]
+--- ├ [seller_scan_qr_buttons_pay_done_popover_text_named_payment ]  [variable    ]  [ {number}            ]     [ ✜ ✜ ]     [ yes ]
+--- ├ [seller_scan_qr_buttons_pay_done_popover_text_named_part3   ]  [text        ]  [ " в размере "       ]     [ ✜ ✜ ]     [ yes ]
+--- ├ [seller_scan_qr_buttons_pay_done_popover_text_named_payment ]  [variable    ]  [ {number}            ]     [ ✜ ✜ ]     [ yes ]
+--- └ [seller_scan_qr_buttons_pay_done_popover_text_named_part4   ]  [text        ]  [ " получен"          ]     [ ✜ 🡆 ]     [ yes ]
+
+✠ details
+--- seller_scan_qr_buttons_pay_done_popover_text_named - параграф текста выровненный по центру, находится в верхней части seller_scan_qr_buttons_pay_done_popover следующего содержания: "'Платеж от ' {username} ' по ордеру ' {order} ' в размере ' {payment} ' получен";
+где: 
+username = user_id_data_seller_orders_opened_id_client_name;
+order = user_id_data_seller_orders_closed_id;
+payment = user_id_data_seller_orders_closed_id_cart_sum.
+
+✠ color_states
+┌─
+│seller_scan_qr_buttons_pay_done_popover_text_named
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
+
+■ ■ seller_scan_qr_buttons_pay_done_popover_text_noname_state ■ ■
+
+✠ tables
+
+                                   codename:                              type:            designation:         location:  interaction:
+---└┬─[seller_scan_qr_buttons_pay_done_popover_text_noname         ]  [section_lev2]                              [ ✜ ✜ ]     [ no  ]
+--- ├ [seller_scan_qr_buttons_pay_done_popover_text_noname_part1   ]  [text        ]  [ "Платеж от "        ]     [ ✜ 🡄 ]     [ yes ]
+--- ├ [seller_scan_qr_buttons_pay_done_popover_text_noname_username]  [variable    ]  [ {string}            ]     [ ✜ ✜ ]     [ yes ]
+--- ├ [seller_scan_qr_buttons_pay_done_popover_text_noname_part2   ]  [text        ]  [ " по ордеру "       ]     [ ✜ ✜ ]     [ yes ]
+--- ├ [seller_scan_qr_buttons_pay_done_popover_text_noname_payment ]  [variable    ]  [ {number}            ]     [ ✜ ✜ ]     [ yes ]
+--- ├ [seller_scan_qr_buttons_pay_done_popover_text_noname_part3   ]  [text        ]  [ " в размере "       ]     [ ✜ ✜ ]     [ yes ]
+--- ├ [seller_scan_qr_buttons_pay_done_popover_text_noname_payment ]  [variable    ]  [ {number}            ]     [ ✜ ✜ ]     [ yes ]
+--- └ [seller_scan_qr_buttons_pay_done_popover_text_noname_part4   ]  [text        ]  [ " получен"          ]     [ ✜ 🡆 ]     [ yes ]
+
+✠ details
+--- seller_scan_qr_buttons_pay_done_popover_text_noname - параграф текста выровненный по центру, находится в верхней части seller_scan_qr_buttons_pay_done_popover следующего содержания: "'Платеж от ' {username} ' по ордеру ' {order} ' в размере ' {payment} ' получен";
+где: 
+username = user_id_data_seller_orders_opened_id_client_name;
+order = user_id_data_seller_orders_closed_id;
+payment = user_id_data_seller_orders_closed_id_cart_sum.
+
+✠ color_states
+┌─
+│seller_scan_qr_buttons_pay_done_popover_text_noname
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
 
 
 
