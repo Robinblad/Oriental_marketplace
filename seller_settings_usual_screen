@@ -92,11 +92,11 @@ s2)  ┌┬──────────┬──[seller_settings              
 ---- │         │  └ [seller_settings_list_avatar_button_label     ]  [label              ]  [ " открыть настройки "     ]     [ ✜ ✜ ]     [ yes ]
 ---- │         └──┬─[seller_settings_list_avatar_protip           ]  [button             ]                                    [ ✜ 🡆 ]     [ yes ]
 ---- │            └ [seller_settings_list_avatar_protip_label     ]  [label              ]  [ " ? "                     ]     [ ✜ ✜ ]     [ yes ]
----- └──────────┬┬──[seller_settings_buttons                      ]  [section_lev2       ]                                    [ ✜ ✜ ]     [ no  ]
-----            │└┬─[seller_settings_buttons_no                   ]  [button             ]                                    [ ✜ ✜ ]     [ yes ]
-----            │ └ [seller_settings_buttons_no_label             ]  [label              ]  [ " отмена "                ]     [ ✜ ✜ ]     [ yes ]
-----            └─┬─[seller_settings_buttons_yes                  ]  [button             ]                                    [ ✜ ✜ ]     [ yes ]
-----              └ [seller_settings_buttons_yes_label            ]  [label              ]  [ " ОК "                    ]     [ ✜ ✜ ]     [ yes ]
+---- └──────────┬┬──[seller_settings_btn                          ]  [section_lev2       ]                                    [ ✜ ✜ ]     [ no  ]
+----            │└┬─[seller_settings_btn_no                       ]  [button             ]                                    [ ✜ ✜ ]     [ yes ]
+----            │ └ [seller_settings_btn_no_label                 ]  [label              ]  [ " отмена "                ]     [ ✜ ✜ ]     [ yes ]
+----            └─┬─[seller_settings_btn_yes                      ]  [button             ]                                    [ ✜ ✜ ]     [ yes ]
+----              └ [seller_settings_btn_yes_label                ]  [label              ]  [ " ОК "                    ]     [ ✜ ✜ ]     [ yes ]
 s3)          ┌┬┬┬┬──[seller_nav                                   ]  [section            ]                                    [ ✜ ✜ ]     [ no  ]
 ----         ││││└┬─[seller_nav_demand                            ]  [button             ]                                    [ ✜ 🡄 ]     [ yes ]
 ----         ││││ ├ [seller_nav_demand_label                      ]  [label              ]  [ "СПРОС"                   ]     [ ✜ ✜ ]     [ no  ]  
@@ -117,13 +117,13 @@ s3)          ┌┬┬┬┬──[seller_nav                                   
 ✠ details
 seller_settings занимает центральную область seller_settings_usual_screen и состоит из 3 основных структурных единиц:
 - seller_settings_top - находится в верхней части seller_settings в виде прямоугольного блока занимая в высоту порядка 3-4% площади экрана и включает seller_settings_top_label;
---- seller_settings_buttons_no_label - заголовок seller_settings_usual_screen следующего содержания: "* - Необходимо обязательно указать";  
+--- seller_settings_btn_no_label - заголовок seller_settings_usual_screen следующего содержания: "* - Необходимо обязательно указать";  
 - seller_settings_list - основная область seller_settings в виде скроллируемого списка настроек 
-- seller_settings_buttons - кнопки расположенные в нижней части seller_settings:
---- seller_settings_buttons_no - кнопка находящаяся слева и отвечающая за закрытие seller_settings_usual_screen без применения изменений;
------ seller_settings_buttons_no_label - наименование кнопки seller_settings_buttons_no "отмена";
---- seller_settings_buttons_yes - кнопка находящаяся справа и отвечающая за применение сделанных изменений;
------ seller_settings_buttons_yes_label - наименование кнопки seller_settings_buttons_yes "ОК";
+- seller_settings_btn - кнопки расположенные в нижней части seller_settings:
+--- seller_settings_btn_no - кнопка находящаяся слева и отвечающая за закрытие seller_settings_usual_screen без применения изменений;
+----- seller_settings_btn_no_label - наименование кнопки seller_settings_btn_no "отмена";
+--- seller_settings_btn_yes - кнопка находящаяся справа и отвечающая за применение сделанных изменений;
+----- seller_settings_btn_yes_label - наименование кнопки seller_settings_btn_yes "ОК";
 
 
 ■ seller_settings_list_username
@@ -179,7 +179,7 @@ Username анализируется на предмет совпадения с 
 • omission:
 Реакция на факт отсутствия введенных данных.
 Работает в inactive_state.
-В ситуации если поле пустое, а юзер нажимает на seller_settings_buttons_yes, под seller_settings_list_username_input всплывает seller_settings_list_username_alert_omission.
+В ситуации если поле пустое, а юзер нажимает на seller_settings_btn_yes, под seller_settings_list_username_input всплывает seller_settings_list_username_alert_omission.
 • emptiness:
 Анализ на пустотность.
 Работает в active_state и inactive_state.
@@ -219,7 +219,7 @@ Username анализируется на предмет совпадения с 
 • user_settings_username_alert_omission:
 - focusing: нет;
 - location: появляется под seller_settings_list_username_input;
-- occasion: нажатие на seller_settings_buttons_yes, если seller_settings_list_username_input пустой;
+- occasion: нажатие на seller_settings_btn_yes, если seller_settings_list_username_input пустой;
 - content:  "ПОЖАЛУЙСТА ВВЕДИТЕ ЗДЕСЬ ВАШЕ ИМЯ".
 
 ✠ logics
@@ -358,7 +358,7 @@ seller_settings_list_username_protip_label_good отображается в си
 • omission:
 Реакция на факт отсутствия введенных данных.
 Работает в inactive_state.
-В ситуации если поле пустое, а юзер нажимает на seller_settings_buttons_yes, под seller_settings_list_phone_number_input всплывает seller_settings_list_phone_number_alert_omission.
+В ситуации если поле пустое, а юзер нажимает на seller_settings_btn_yes, под seller_settings_list_phone_number_input всплывает seller_settings_list_phone_number_alert_omission.
 • emptiness:
 Анализ на пустотность.
 Работает в active_state и inactive_state.
@@ -383,7 +383,7 @@ seller_settings_list_username_protip_label_good отображается в си
 • seller_settings_list_phone_number_alert_omission:
 - focusing: нет;
 - location: появляется под seller_settings_list_phone_number_input;
-- occasion: нажатие на seller_settings_buttons_yes, если seller_settings_list_phone_number_input пустой;
+- occasion: нажатие на seller_settings_btn_yes, если seller_settings_list_phone_number_input пустой;
 - content:  "ПОЖАЛУЙСТА ВВЕДИТЕ ЗДЕСЬ ВАШ ТЕЛЕФОН".
 
 ✠ logics
@@ -511,7 +511,7 @@ seller_settings_list_phone_protip_label_good отображается в сит�
 • omission:
 Реакция на факт отсутствия введенных данных.
 Работает в inactive_state.
-В ситуации если поле пустое, а юзер нажимает на seller_settings_buttons_yes, под seller_settings_list_firstname_input всплывает seller_settings_list_perso_firstname_alert_omission.
+В ситуации если поле пустое, а юзер нажимает на seller_settings_btn_yes, под seller_settings_list_firstname_input всплывает seller_settings_list_perso_firstname_alert_omission.
 • emptiness:
 Анализ на пустотность.
 Работает в active_state и inactive_state.
@@ -541,7 +541,7 @@ seller_settings_list_phone_protip_label_good отображается в сит�
 • seller_settings_list_firstname_alert_omission:
 - focusing: нет;
 - location: появляется под seller_settings_list_firstname_input;
-- occasion: нажатие на seller_settings_buttons_yes, если seller_settings_list_firstname_input пустой;
+- occasion: нажатие на seller_settings_btn_yes, если seller_settings_list_firstname_input пустой;
 - content:  "ПОЖАЛУЙСТА ВВЕДИТЕ ЗДЕСЬ ВАШЕ ИМЯ".
 
 ✠ logics
@@ -663,7 +663,7 @@ seller_settings_list_firstname_protip_label_good отображается в с�
 • omission:
 Реакция на факт отсутствия введенных данных.
 Работает в inactive_state.
-В ситуации если поле пустое, а юзер нажимает на seller_settings_buttons_yes, под seller_settings_list_secondname_input всплывает seller_settings_list_secondname_alert_omission.
+В ситуации если поле пустое, а юзер нажимает на seller_settings_btn_yes, под seller_settings_list_secondname_input всплывает seller_settings_list_secondname_alert_omission.
 • emptiness:
 Анализ на пустотность.
 Работает в active_state и inactive_state.
@@ -694,7 +694,7 @@ seller_settings_list_firstname_protip_label_good отображается в с�
 • seller_settings_list_secondname_alert_omission:
 - focusing: нет;
 - location: появляется под seller_settings_list_secondname_input;
-- occasion: нажатие на seller_settings_buttons_yes, если seller_settings_list_secondname_input пустой;
+- occasion: нажатие на seller_settings_btn_yes, если seller_settings_list_secondname_input пустой;
 - content:  "ПОЖАЛУЙСТА ВВЕДИТЕ ЗДЕСЬ ВАШУ ФАМИЛИЮ".
 
 ✠ logics
@@ -816,7 +816,7 @@ seller_settings_list_secondname_protip_label_good отображается в с
 • omission:
 Реакция на факт отсутствия введенных данных.
 Работает в inactive_state.
-В ситуации если поле пустое, а юзер нажимает на seller_settings_buttons_yes, под seller_settings_list_passport_input всплывает seller_settings_list_passport_alert_omission.
+В ситуации если поле пустое, а юзер нажимает на seller_settings_btn_yes, под seller_settings_list_passport_input всплывает seller_settings_list_passport_alert_omission.
 • emptiness:
 Анализ на пустотность.
 Работает в active_state и inactive_state.
@@ -846,7 +846,7 @@ seller_settings_list_secondname_protip_label_good отображается в с
 • seller_settings_list_passport_alert_omission:
 - focusing: нет;
 - location: появляется под seller_settings_list_passport_input;
-- occasion: нажатие на seller_settings_buttons_yes, если seller_settings_list_passport_input пустой;
+- occasion: нажатие на seller_settings_btn_yes, если seller_settings_list_passport_input пустой;
 - content:  "ПОЖАЛУЙСТА ВВЕДИТЕ ЗДЕСЬ НОМЕР ВАШЕГО ПАСПОРТА".
 
 ✠ logics
@@ -1114,26 +1114,26 @@ seller_settings_avatar_protip_popover является всплывающей п
 
 ---  ┌┬─[seller_settings_avatar_protip_popover                     ]  [section_lev1       ]                                    [ ✜ ✜ ]     [ no  ]
 ---  │└ [seller_settings_avatar_protip_popover_text                ]  [text               ]  [ " Опция отвечает за ... " ]     [ ✜ ✜ ]     [ no  ]
----  └┬─[seller_settings_avatar_protip_popover_buttons_close       ]  [button             ]                                    [ ✜ ✜ ]     [ yes ]
----   └ [seller_settings_avatar_protip_popover_buttons_close_label ]  [label              ]  [ " закрыть "               ]     [ ✜ ✜ ]     [ yes ]
+---  └┬─[seller_settings_avatar_protip_popover_btn_close           ]  [button             ]                                    [ ✜ ✜ ]     [ yes ]
+---   └ [seller_settings_avatar_protip_popover_btn_close_label     ]  [label              ]  [ " закрыть "               ]     [ ✜ ✜ ]     [ yes ]
 
 ✠ details
 - seller_settings_avatar_protip_popover - представляет собой popover, который всплывает по центру экрана и включает 2 компонента:
 --- seller_settings_avatar_protip_popover_text - параграф текста выровненный по центру находится в верхней части seller_settings_avatar_protip_popover следующего содержания: "Опция отвечает за настройку вашего аватара/фирменного знака";
------ seller_settings_avatar_protip_popover_buttons_close - кнопка расположенная под seller_settings_avatar_protip_popover_text;
---- seller_settings_avatar_protip_popover_buttons_close_label - наименование кнопки следующего содержания: "закрыть".
+----- seller_settings_avatar_protip_popover_btn_close - кнопка расположенная под seller_settings_avatar_protip_popover_text;
+--- seller_settings_avatar_protip_popover_btn_close_label - наименование кнопки следующего содержания: "закрыть".
 
 ✠ actions
-• seller_settings_avatar_protip_popover_buttons_close:
+• seller_settings_avatar_protip_popover_btn_close:
 ╠ valid / invalid
 ║ • gesture: tap
-║ occasion: нажатие seller_settings_avatar_protip_popover_buttons_close;
+║ occasion: нажатие seller_settings_avatar_protip_popover_btn_close;
 ║ condition: in any situation;
 ╙ result: seller_settings_avatar_protip_popover исчезает.
 
 ✠ color_states
 ┌─
-│seller_settings_avatar_protip_popover_buttons_close
+│seller_settings_avatar_protip_popover_btn_close
 │-------------------------------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -1145,7 +1145,7 @@ seller_settings_avatar_protip_popover является всплывающей п
 └─
 ┌─
 │seller_settings_avatar_protip_popover_text
-│seller_settings_avatar_protip_popover_buttons_close_label
+│seller_settings_avatar_protip_popover_btn_close_label
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -1154,26 +1154,26 @@ seller_settings_avatar_protip_popover является всплывающей п
 └─
 
 
-■ seller_settings_buttons
+■ seller_settings_btn
 
 ✠ details
-- seller_settings_buttons - блок из 2 кнопок расположенных в самом низу seller_settings_usual_screen;
---- seller_settings_buttons_no - кнопка расположенная слева, призванная закрытие seller_settings_usual_screen без применения изменений;
------ seller_settings_buttons_no_label - наименование опции следующего содержания: "отмена";
---- seller_settings_buttons_yes - кнопка расположенная справа, призванная применить сделанные изменения в seller_settings_usual_screen;
------ seller_settings_buttons_yes_label - наименование опции следующего содержания: "ОК".
+- seller_settings_btn - блок из 2 кнопок расположенных в самом низу seller_settings_usual_screen;
+--- seller_settings_btn_no - кнопка расположенная слева, призвана закрывать seller_settings_usual_screen без применения изменений;
+----- seller_settings_btn_no_label - константный центрированный текстовый элемент следующего содержания: "отмена";
+--- seller_settings_btn_yes - кнопка расположенная справа, призванная применить сделанные изменения в seller_settings_usual_screen;
+----- seller_settings_btn_yes_label - константный центрированный текстовый элемент следующего содержания: "ОК".
 
 ✠ actions
-• seller_settings_buttons_no:
+• seller_settings_btn_no:
 ╠ valid / invalid
 ║ • gesture: tap
-║ occasion: нажатие seller_settings_buttons_no;
+║ occasion: нажатие seller_settings_btn_no;
 ║ condition: in any situation;
 ╙ result: seller_settings_usual_screen закрывается.
-• seller_settings_buttons_yes:
+• seller_settings_btn_yes:
 ╠ valid
 ║ • gesture: tap
-║ occasion: нажатие seller_settings_buttons_yes;
+║ occasion: нажатие seller_settings_btn_yes;
 ║ condition:
 ║ - && - valid по факту проверки seller_settings_list_username_input на duplicity;
 ║ - && - valid по факту проверки seller_settings_list_username_input на undernaming;
@@ -1208,7 +1208,7 @@ seller_settings_avatar_protip_popover является всплывающей п
 ║ - && - делается переход к предыдущему экрану из которого был открыт seller_settings_usual_screen.
 ╠ invalid
 ║ • gesture: tap
-║ occasion: нажатие seller_settings_buttons_yes;
+║ occasion: нажатие seller_settings_btn_yes;
 ║ condition:
 ║ - || - invalid по факту проверки seller_settings_list_username_input на duplicity;
 ║ - || - invalid по факту проверки seller_settings_list_username_input на undernaming;
@@ -1238,11 +1238,11 @@ seller_settings_avatar_protip_popover является всплывающей п
 ║ - || - invalid по факту проверки seller_settings_list_passport_input на emptiness;
 ║ - || - seller_settings_list_geoposition_protip_label_good отображается в ситуации если seller_settings_list_geoposition= false;
 ║ - || - seller_settings_list_activity_protip_label_good отображается в ситуации если seller_settings_list_activity= false.
-╙ result: seller_settings_buttons_yes не реагирует на нажатие (находится в inactive_state).
+╙ result: seller_settings_btn_yes не реагирует на нажатие (находится в inactive_state).
 
 ✠ color_states
 ┌─
-│seller_settings_buttons_yes
+│seller_settings_btn_yes
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -1256,7 +1256,7 @@ seller_settings_avatar_protip_popover является всплывающей п
 │------ в inactive_state
 └─
 ┌─
-│seller_settings_buttons_no
+│seller_settings_btn_no
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -1267,8 +1267,8 @@ seller_settings_avatar_protip_popover является всплывающей п
 │------ in pressing_state
 └─
 ┌─
-│seller_settings_buttons_no_label
-│seller_settings_buttons_yes_label
+│seller_settings_btn_no_label
+│seller_settings_btn_yes_label
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -1278,7 +1278,7 @@ seller_settings_avatar_protip_popover является всплывающей п
 
 
 
-После нажатия на seller_settings_buttons_yes в ситуации, если все введенные данные в seller_settings_usual_screen валидны, а данные в user_settings_phone_form_input были изменены, всплывает seller_settings_trial_popover с 4 секциями:
+После нажатия на seller_settings_btn_yes в ситуации, если все введенные данные в seller_settings_usual_screen валидны, а данные в user_settings_phone_form_input были изменены, всплывает seller_settings_trial_popover с 4 секциями:
 
                   codename:                                             condition:
 s1) [ seller_settings_trial_popover_header ]  "ПОДТВЕРДИТЕ РЕГИСТРАЦИЮ"
