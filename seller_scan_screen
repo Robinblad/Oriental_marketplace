@@ -3,6 +3,7 @@
 
 
 
+
 🡆🡆 seller_scan_screen
 ■■■■■■■■■■■■■■■■■■■■■
 
@@ -22,10 +23,7 @@ seller_scan_calc_screen является экраном по умолчанию.
 🡆🡆🡆 seller_scan_calc_screen
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■
 
-Подраздел в котором отображается калькулятор. Основное пространство в центральной области экрана занимает seller_scan_calc_body состоящий из 3 секций:
-- seller_scan_calc_body_display  
-- seller_scan_calc_body_keys
-- seller_scan_calc_body_result
+Подраздел в котором отображается калькулятор главное предназначение которого рассчитать стоимость лотов отложенного ордера либо ордера сформированного в результате прямой продажи (в том числе с оплатой наличными). 
 
 ✠ tables
 
@@ -91,11 +89,11 @@ seller_scan_calc_screen является экраном по умолчанию.
  
  │ └─────────────────┬┬──[seller_scan_calc_body_result___________________________state]  [section_lev3  ]                           [ 🡇 ✜ ]      [ no  ]
 
- └─────────────────────┬─[seller_scan_calc_buttons                                    ]  [section_lev2  ]                           [ 🡇 ✜ ]      [ no  ]
-                       ├ [seller_scan_calc_buttons_ok                                 ]  [button        ]                           [ ✜ 🡄 ]      [ yes ]
-                       ├ [seller_scan_calc_buttons_ok_label                           ]  [label         ]  [ "ОК"            ]      [ ✜ ✜ ]      [ yes ]
-                       ├ [seller_scan_calc_buttons_pay                                 ]  [button        ]                           [ ✜ 🡆 ]      [ yes ]
-                       └ [seller_scan_calc_buttons_pay_label                           ]  [label         ]  [ "платеж"        ]      [ ✜ ✜ ]      [ yes ]
+ └─────────────────────┬─[seller_scan_calc_btn                                        ]  [section_lev2  ]                           [ 🡇 ✜ ]      [ no  ]
+                       ├ [seller_scan_calc_btn_ok                                     ]  [button        ]                           [ ✜ 🡄 ]      [ yes ]
+                       ├ [seller_scan_calc_btn_ok_label                               ]  [label         ]  [ "ОК"            ]      [ ✜ ✜ ]      [ yes ]
+                       ├ [seller_scan_calc_btn_pay                                    ]  [button        ]                           [ ✜ 🡆 ]      [ yes ]
+                       └ [seller_scan_calc_btn_pay_label                              ]  [label         ]  [ "платеж"        ]      [ ✜ ✜ ]      [ yes ]
                   ┌┬┬┬┬──[seller_nav                                                  ]  [section       ]                           [ ✜ ✜ ]      [ no  ]
                   ││││└┬─[seller_nav_demand_button                                    ]  [button        ]                           [ ✜ 🡄 ]      [ yes ]
                   ││││ ├ [seller_nav_demand_header                                    ]  [header        ]  [ "МОНИТОР"       ]      [ ✜ ✜ ]      [ no  ]  
@@ -112,6 +110,12 @@ seller_scan_calc_screen является экраном по умолчанию.
                   └────┬─[seller_nav_scan_button                                      ]  [button        ]                           [ ✜ 🡆 ]      [ yes ]   
                        ├ [seller_nav_scan_header                                      ]  [header        ]  [ "КАБИНЕТ"       ]      [ ✜ ✜ ]      [ no  ] 
                        └ [seller_nav_scan_badge                                       ]  [badge         ]  [ { number }      ]      [ 🡅 🡆 ]      [ no  ] 
+
+✠ details
+Основное пространство seller_scan_calc_screen в центральной области экрана занимает seller_scan_calc_body состоящий из 3 секций:
+- seller_scan_calc_body_display  
+- seller_scan_calc_body_keys
+- seller_scan_calc_body_result.
 
 
 ■ seller_scan_nav
@@ -1013,43 +1017,43 @@ seller_scan_calc_any_sum - сумма по арифметическому выр
 └─
 
 
-■ seller_scan_calc_buttons
+■ seller_scan_calc_btn
 
 ✠ details
-- seller_scan_calc_buttons - блок из 2 кнопок расположенных в самом низу seller_scan_calc;
---- seller_scan_calc_buttons_ok - кнопка расположенная слева, призвана закрывать seller_scan_calc_screen;
------ seller_scan_calc_buttons_ok_label - константный центрированный текстовый элемент следующего содержания: "ОК";
---- seller_scan_calc_buttons_pay - кнопка расположенная справа, отвечает за инициализацию перехода к seller_scan_qr_screen, содержит seller_scan_calc_buttons_pay_label;
------ seller_scan_calc_buttons_pay_label - константный центрированный текстовый элемент следующего содержания: "платеж".
+- seller_scan_calc_btn - блок из 2 кнопок расположенных в самом низу seller_scan_calc;
+--- seller_scan_calc_btn_ok - кнопка расположенная слева, призвана закрывать seller_scan_calc_screen;
+----- seller_scan_calc_btn_ok_label - константный центрированный текстовый элемент следующего содержания: "ОК";
+--- seller_scan_calc_btn_pay - кнопка расположенная справа, отвечает за инициализацию перехода к seller_scan_qr_screen, содержит seller_scan_calc_btn_pay_label;
+----- seller_scan_calc_btn_pay_label - константный центрированный текстовый элемент следующего содержания: "платеж".
 
 ✠ actions
-• seller_scan_calc_buttons_ok:
+• seller_scan_calc_btn_ok:
 ╠ valid / invalid
 ║ • gesture: tap
-║ occasion: нажатие seller_scan_calc_buttons_ok;
+║ occasion: нажатие seller_scan_calc_btn_ok;
 ║ condition: in any situation;
 ║ result:
 ║ - && - seller_scan_calc_screen закрывается;
 ╙ - && - делается переход к seller_shop_screen.
-• seller_scan_calc_buttons_pay:
+• seller_scan_calc_btn_pay:
 ╠ valid
 ║ • gesture: tap
-║ occasion: нажатие seller_scan_calc_buttons_pay;
+║ occasion: нажатие seller_scan_calc_btn_pay;
 ║ condition: если seller_scan_calc_body_display_list не пустой;
 ║ result:
-║ - && - производится создание user_id_data_seller_orders_opened_id базирующегося на лотах из текущего seller_scan_calc_body_display_list;
-║ - && - производится генерация seller_scan_qr_code на базе user_id_data_seller_orders_opened_id;
+║ - && - производится создание user_id_data_seller_level_orders_opened_id базирующегося на лотах из текущего seller_scan_calc_body_display_list;
+║ - && - производится генерация seller_scan_qr_code на базе user_id_data_seller_level_orders_opened_id;
 ║ - && - seller_scan_calc_screen закрывается;
 ║ - && - seller_scan_qr_screen открывается.
 ╠ invalid
 ║ • gesture: tap
-║ occasion: нажатие seller_scan_calc_buttons_pay;
+║ occasion: нажатие seller_scan_calc_btn_pay;
 ║ condition: если seller_scan_calc_body_display_list пустой;
-╙ result: seller_scan_calc_buttons_pay не реагирует на нажатие.
+╙ result: seller_scan_calc_btn_pay не реагирует на нажатие.
 
 ✠ color_states
 ┌─
-│seller_scan_calc_buttons_ok
+│seller_scan_calc_btn_ok
 │-------------------------------- 
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -1060,7 +1064,7 @@ seller_scan_calc_any_sum - сумма по арифметическому выр
 │------ in pressing_state
 └─
 ┌─
-│seller_scan_calc_buttons_pay
+│seller_scan_calc_btn_pay
 │------------------------- 
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -1074,8 +1078,8 @@ seller_scan_calc_any_sum - сумма по арифметическому выр
 │------ in any situation  (когда seller_scan_calc_body_display_list пустой)
 └─
 ┌─
-│seller_scan_calc_buttons_ok_label
-│seller_scan_calc_buttons_pay_label
+│seller_scan_calc_btn_ok_label
+│seller_scan_calc_btn_pay_label
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -1226,10 +1230,7 @@ seller_scan_calc_any_sum - сумма по арифметическому выр
 🡆🡆🡆 seller_scan_qr_screen
 ■■■■■■■■■■■■■■■■■■■■■■■■■
 
-Подраздел в котором отображается QR-код. Основное пространство в центральной области экрана занимает seller_scan_qr_body состоящий из 3 секций расположенных сверху-вниз в следующем порядке в seller_scan_qr_screen:
-- seller_scan_qr_body_top  
-- seller_scan_qr_body_main
-- seller_scan_qr_body_result.
+Подраздел в котором отображается QR-код, а также данные по ордеру и платильщику. 
 
 ✠ tables
 
@@ -1259,11 +1260,11 @@ seller_scan_calc_any_sum - сумма по арифметическому выр
     │      │ └ [seller_scan_qr_body_result_widget_output_passive_state   ]  [variable      ]  [ { number }      ]      [ ✜ 🡆 ]      [ no  ]
     │      └─┬─[seller_scan_qr_body_result_add                           ]  [button        ]                           [ ✜ 🡆 ]      [ yes ]
     │        └ [seller_scan_qr_body_result_add_label                     ]  [label         ]  [ "+ товар"       ]      [ ✜ ✜ ]      [ yes ]
-    └──────┬┬──[seller_scan_qr_buttons                                   ]  [section_lev2  ]                           [ 🡇 ✜ ]      [ no  ]
-           │└┬─[seller_scan_qr_buttons_ok                                ]  [button        ]                           [ ✜ 🡄 ]      [ yes ]
-           │ └ [seller_scan_qr_buttons_ok_label                          ]  [label         ]  [ "ОК"            ]      [ ✜ ✜ ]      [ yes ]
-           └─┬─[seller_scan_qr_buttons_pay                               ]  [button        ]                           [ ✜ 🡆 ]      [ yes ]
-             └ [seller_scan_qr_buttons_pay_label                         ]  [label         ]  [ "платеж"        ]      [ ✜ ✜ ]      [ yes ]
+    └──────┬┬──[seller_scan_qr_btn                                       ]  [section_lev2  ]                           [ 🡇 ✜ ]      [ no  ]
+           │└┬─[seller_scan_qr_btn_ok                                    ]  [button        ]                           [ ✜ 🡄 ]      [ yes ]
+           │ └ [seller_scan_qr_btn_ok_label                              ]  [label         ]  [ "ОК"            ]      [ ✜ ✜ ]      [ yes ]
+           └─┬─[seller_scan_qr_btn_pay                                   ]  [button        ]                           [ ✜ 🡆 ]      [ yes ]
+             └ [seller_scan_qr_btn_pay_label                             ]  [label         ]  [ "платеж"        ]      [ ✜ ✜ ]      [ yes ]
         ┌┬┬┬┬──[seller_nav                                               ]  [section       ]                           [ ✜ ✜ ]      [ no  ]
         ││││└┬─[seller_nav_demand_button                                 ]  [button        ]                           [ ✜ 🡄 ]      [ yes ]
         ││││ ├ [seller_nav_demand_header                                 ]  [header        ]  [ "МОНИТОР"       ]      [ ✜ ✜ ]      [ no  ]  
@@ -1281,6 +1282,11 @@ seller_scan_calc_any_sum - сумма по арифметическому выр
              ├ [seller_nav_scan_header                                   ]  [header        ]  [ "КАБИНЕТ"       ]      [ ✜ ✜ ]      [ no  ] 
              └ [seller_nav_scan_badge                                    ]  [badge         ]  [ { number }      ]      [ 🡅 🡆 ]      [ no  ] 
 
+✠ details
+Основное пространство seller_scan_qr_screen в центральной области экрана занимает seller_scan_qr_body состоящий из 3 секций расположенных сверху-вниз в следующем порядке:
+- seller_scan_qr_body_top  
+- seller_scan_qr_body_main
+- seller_scan_qr_body_result.
 
 ■ seller_scan_nav
 
@@ -1441,9 +1447,9 @@ seller_scan_qr_body_main_data - содержит информацию о пла�
 ✠ details
 --- seller_scan_qr_body_main_data_ordered - блок данных расположенный под seller_scan_qr_body_main_title, занимающий всю ширину родительского контейнера, включает seller_scan_qr_body_main_data_ordered_name и seller_scan_qr_body_main_data_ordered_phone;
 ----- seller_scan_qr_body_main_data_ordered_name - контейнер для текстового элемента seller_scan_qr_body_main_data_ordered_name_value размещающийся в верхней части seller_scan_qr_body_main_data_ordered, занимающий все его пространство по горизонтали и 50% по вертикали;
-------- seller_scan_qr_body_main_data_ordered_name_value - переменная со строковым значением центрированная в seller_scan_qr_body_main_data_ordered_name, которая выводит фамилию и имя buyer по шаблону: "Second name + First name." (First name представлена первой буквой);
+------- seller_scan_qr_body_main_data_ordered_name_value - переменная со строковым значением центрированная в seller_scan_qr_body_main_data_ordered_name, которая выводит фамилию и имя buyer по шаблону: "user_id_data_seller_level_orders_closed_id_client_name_secondname.user_id_data_seller_level_orders_closed_id_client_name_firstname", где user_id_data_seller_level_orders_closed_id_client_name_firstname представлена первой буквой;
 ----- seller_scan_qr_body_main_data_ordered_phone - контейнер для текстового элемента seller_scan_qr_body_main_data_ordered_phone_value размещающийся в нижней части seller_scan_qr_body_main_data_ordered, занимающий все его пространство по горизонтали и 50% по вертикали;
-------- seller_scan_qr_body_main_data_ordered_phone_value - переменная с числовым значением центрированная в seller_scan_qr_body_main_data_ordered_phone, которая выводит телефон buyer.
+------- seller_scan_qr_body_main_data_ordered_phone_value - переменная с числовым значением центрированная в seller_scan_qr_body_main_data_ordered_phone, которая выводит user_id_data_seller_level_orders_closed_id_client_phone (телефон buyer).
 
 ✠ color_states
 ┌─
@@ -1470,22 +1476,19 @@ seller_scan_qr_body_main_data - содержит информацию о пла�
 ✠ tables
 
                                        codename:                              type:           designation:         location:   interaction:
-    │ │ │└┬┬───[seller_scan_qr_body_main_data_direct                  ]  [section_lev4  ]                           [ ✜ ✜ ]      [ no  ]
-    │ │ │ │└┬──[seller_scan_qr_body_main_data_direct_lots             ]  [section_lev5  ]                           [ 🡅 ✜ ]      [ no  ]
-    │ │ │ │ └┬─[seller_scan_qr_body_main_data_direct_lots_value       ]  [variable      ]                           [ ✜ ✜ ]      [ no  ]
-    │ │ │ │  ├ [seller_scan_qr_body_main_data_direct_lots_value_number]  [variable      ]  [ { number }      ]      [ ✜ 🡄 ]      [ no  ]
-    │ │ │ │  └ [seller_scan_qr_body_main_data_direct_lots_value_label ]  [label         ]  [ " товарных ..." ]      [ ✜ 🡆 ]      [ no  ]
-    │ │ │ └─┬──[seller_scan_qr_body_main_data_direct_formed           ]  [section_lev5  ]                           [ 🡇 ✜ ]      [ no  ]
+    │ │ │ └┬┬──[seller_scan_qr_body_main_data_direct                  ]  [section_lev4  ]                           [ ✜ ✜ ]      [ no  ]
+    │ │ │  │└┬─[seller_scan_qr_body_main_data_direct_order            ]  [section_lev5  ]                           [ 🡅 ✜ ]      [ no  ]
+    │ │ │  │ └─[seller_scan_qr_body_main_data_direct_order_value      ]  [variable      ]  [ { number }      ]      [ ✜ ✜ ]      [ no  ]	
+    │ │ │  └┬──[seller_scan_qr_body_main_data_direct_formed           ]  [section_lev5  ]                           [ 🡇 ✜ ]      [ no  ]
     │ │ │   └┬─[seller_scan_qr_body_main_data_direct_formed_value     ]  [section_lev6  ]                           [ ✜ ✜ ]      [ no  ]
     │ │ │    ├ [seller_scan_qr_body_main_data_direct_formed_value_date]  [variable      ]  [ { number }      ]      [ ✜ 🡄 ]      [ no  ]
     │ │ │    └ [seller_scan_qr_body_main_data_direct_formed_value_time]  [variable      ]  [ { number }      ]      [ ✜ 🡆 ]      [ no  ]
 
+
 ✠ details
---- seller_scan_qr_body_main_data_direct - блок данных расположенный под seller_scan_qr_body_main_title, занимающий всю ширину родительского контейнера, содержащий информацию о количестве лотов по ордеру и время формирования ордера, включает компоненты seller_scan_qr_body_main_data_direct_lots и seller_scan_qr_body_main_data_direct_formed;
------ seller_scan_qr_body_main_data_direct_lots - контейнер для текстового элемента seller_scan_qr_body_main_data_direct_lots_value размещающийся в верхней части seller_scan_qr_body_main_data_direct, занимающий все его пространство по горизонтали и 50% по вертикали;
-------- seller_scan_qr_body_main_data_direct_lots_value - выровненное по центру seller_scan_qr_body_main_data_direct_lots конкатенированное значение из 2 переменных seller_scan_qr_body_main_data_direct_lots_value_number и seller_scan_qr_body_main_data_direct_lots_value_label;
---------- seller_scan_qr_body_main_data_direct_lots_value_number - переменная с числовым значением отображающая количество seller_scan_calc_body_display_list_lot по текущему ордеру, размещается слева от seller_scan_qr_body_main_data_direct_lots_value_label.
---------- seller_scan_qr_body_main_data_direct_lots_value_label - константный текстовый элемент: " товарных позиций" размещающийся слева от seller_scan_qr_body_main_data_direct_lots_value_number;
+--- seller_scan_qr_body_main_data_direct - блок данных расположенный под seller_scan_qr_body_main_title, занимающий всю ширину родительского контейнера, содержащий информацию по номеру и времени формирования ордера, включает компоненты seller_scan_qr_body_main_data_direct_order и seller_scan_qr_body_main_data_direct_formed;
+----- seller_scan_qr_body_main_data_direct_order - контейнер для текстового элемента seller_scan_qr_body_main_data_direct_order_value размещающийся в верхней части seller_scan_qr_body_main_data_direct, занимающий все его пространство по горизонтали и 50% по вертикали;
+------- seller_scan_qr_body_main_data_direct_order_value - переменная с числовым значением отображающая user_id_data_seller_level_orders_closed_id;
 ----- seller_scan_qr_body_main_data_direct_formed - контейнер для текстового элемента seller_scan_qr_body_main_data_direct_formed_value размещающийся в нижней части seller_scan_qr_body_main_data_direct, занимающий все его пространство по горизонтали и 50% по вертикали;
 ------- seller_scan_qr_body_main_data_direct_formed_value - выровненное по центру seller_scan_qr_body_main_data_direct_formed конкатенированное значение из 2 переменных seller_scan_qr_body_main_data_direct_formed_value_date и seller_scan_qr_body_main_data_direct_formed_value_time;
 --------- seller_scan_qr_body_main_data_direct_formed_value_date - переменная с числовым значением отображающая дату формирования ордера по шаблону "DD.MM.YY", размещается слева от seller_scan_qr_body_main_data_direct_formed_value_time;
@@ -1501,8 +1504,7 @@ seller_scan_qr_body_main_data - содержит информацию о пла�
 │------ in any situation
 └─
 ┌─
-│seller_scan_qr_body_main_data_direct_lots_value_number
-│seller_scan_qr_body_main_data_direct_lots_value_label
+│seller_scan_qr_body_main_data_direct_order_value
 │seller_scan_qr_body_main_data_direct_formed_value_date
 │seller_scan_qr_body_main_data_direct_formed_value_time
 │---------------------------
@@ -1716,40 +1718,43 @@ seller_scan_calc_any_sum - сумма по арифметическому выр
 └─
 
 
-■ seller_scan_qr_buttons
+■ seller_scan_qr_btn
 
 ✠ details
-- seller_scan_qr_buttons - блок из 2 кнопок расположенных в самом низу seller_scan_calc;
---- seller_scan_qr_buttons_ok - кнопка расположенная слева, призвана закрывать seller_scan_qr_screen;
------ seller_scan_qr_buttons_ok_label - константный центрированный текстовый элемент следующего содержания: "ОК";
---- seller_scan_qr_buttons_pay - кнопка расположенная справа, отвечает за инициализацию принятия платежа в ручном режиме, содержит seller_scan_qr_buttons_pay_label;
------ seller_scan_qr_buttons_pay_label - константный центрированный текстовый элемент следующего содержания: "платеж".
+- seller_scan_qr_btn - блок из 2 кнопок расположенных в самом низу seller_scan_calc;
+--- seller_scan_qr_btn_ok - кнопка расположенная слева, призвана закрывать seller_scan_qr_screen;
+----- seller_scan_qr_btn_ok_label - константный центрированный текстовый элемент следующего содержания: "ОК";
+--- seller_scan_qr_btn_pay - кнопка расположенная справа, отвечает за инициализацию принятия платежа в ручном режиме, содержит seller_scan_qr_btn_pay_label;
+----- seller_scan_qr_btn_pay_label - константный центрированный текстовый элемент следующего содержания: "платеж".
 
 ✠ actions
-• seller_scan_qr_buttons_ok:
+• seller_scan_qr_btn_ok:
 ╠ valid / invalid
 ║ • gesture: tap
-║ occasion: нажатие seller_scan_qr_buttons_ok;
+║ occasion: нажатие seller_scan_qr_btn_ok;
 ║ condition: in any situation;
 ║ result:
 ║ - && - seller_scan_qr_screen закрывается;
 ║ - && - делается переход к seller_scan_calc_screen;
 ╙ - && - seller_scan_calc_body_display_list очищается.
-• seller_scan_qr_buttons_pay:
+• seller_scan_qr_btn_pay:
 ╠ valid / invalid
 ║ • gesture: tap
-║ occasion: нажатие seller_scan_qr_buttons_pay;
+║ occasion: нажатие seller_scan_qr_btn_pay;
 ║ condition: если платеж (безналичный) по лотам из текущего seller_scan_calc_body_display_list не зафиксирован на момент нажатия;
-║ result: по центру экрана всплывает seller_scan_qr_buttons_pay_check_modal;
+║ result: по центру экрана всплывает seller_scan_qr_btn_pay_check_modal;
 ║ • gesture: tap
-║ occasion: нажатие seller_scan_qr_buttons_pay;
+║ occasion: нажатие seller_scan_qr_btn_pay;
 ║ condition: если платеж (безналичный) по лотам из текущего seller_scan_calc_body_display_list был зафиксирован до момента нажатия;
-╙ result: по центру экрана всплывает seller_scan_qr_buttons_pay_done_popover.
+╙ result: по центру экрана всплывает seller_scan_qr_btn_pay_done_popover.
+
+✠ logics
+После того как делается закрытие seller_account_order_check_modal, совершается переход к seller_scan_calc_screen с ощищенным seller_scan_calc_body_display_list.
 
 ✠ color_states
 ┌─
-│seller_scan_qr_buttons_ok
-│seller_scan_qr_buttons_pay
+│seller_scan_qr_btn_ok
+│seller_scan_qr_btn_pay
 │-------------------------------- 
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -1760,8 +1765,8 @@ seller_scan_calc_any_sum - сумма по арифметическому выр
 │------ in pressing_state
 └─
 ┌─
-│seller_scan_qr_buttons_ok_label
-│seller_scan_qr_buttons_pay_label
+│seller_scan_qr_btn_ok_label
+│seller_scan_qr_btn_pay_label
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -1770,51 +1775,53 @@ seller_scan_calc_any_sum - сумма по арифметическому выр
 └─
 
 
-🡆🡆🡆🡆 seller_scan_qr_buttons_pay_check_modal
+
+🡆🡆🡆🡆 seller_scan_qr_btn_pay_check_modal
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 
 ✠ tables
 
                                  codename:                                   type:                  designation:        location:  interaction:
-┌┬─┬─[seller_scan_qr_buttons_pay_check_modal                      ]  [section_lev1       ]                               [ ✜ ✜ ]     [ no  ]
-││ └ [seller_scan_qr_buttons_pay_check_modal_text                 ]  [text               ]  [ "Если платеж по тек..." ]  [ 🡅 ✜ ]     [ no  ]
-│└┬──[seller_scan_qr_buttons_pay_check_modal_buttons              ]  [section_lev2       ]                               [ 🡇 ✜ ]     [ no  ] 
-│ └┬─[seller_scan_qr_buttons_pay_check_modal_buttons_proceed      ]  [button             ]                               [ 🡅 ✜ ]     [ yes ]
-│  └ [seller_scan_qr_buttons_pay_check_modal_buttons_proceed_label]  [label              ]  [ "подтвердить"           ]  [ ✜ ✜ ]     [ yes ]
-└──┬─[seller_scan_qr_buttons_pay_check_modal_buttons_close        ]  [button             ]                               [ 🡇 ✜ ]     [ yes ]
-   └ [seller_scan_qr_buttons_pay_check_modal_buttons_close_label  ]  [label              ]  [ "закрыть"               ]  [ ✜ ✜ ]     [ yes ]
+┌┬─┬─[seller_scan_qr_btn_pay_check_modal                      ]  [section_lev1       ]                               [ ✜ ✜ ]     [ no  ]
+││ └ [seller_scan_qr_btn_pay_check_modal_text                 ]  [text               ]  [ "Если платеж по тек..." ]  [ 🡅 ✜ ]     [ no  ]
+│└┬──[seller_scan_qr_btn_pay_check_modal_btn                  ]  [section_lev2       ]                               [ 🡇 ✜ ]     [ no  ] 
+│ └┬─[seller_scan_qr_btn_pay_check_modal_btn_proceed          ]  [button             ]                               [ 🡅 ✜ ]     [ yes ]
+│  └ [seller_scan_qr_btn_pay_check_modal_btn_proceed_label    ]  [label              ]  [ "подтвердить"           ]  [ ✜ ✜ ]     [ yes ]
+└──┬─[seller_scan_qr_btn_pay_check_modal_btn_close            ]  [button             ]                               [ 🡇 ✜ ]     [ yes ]
+   └ [seller_scan_qr_btn_pay_check_modal_btn_close_label      ]  [label              ]  [ "закрыть"               ]  [ ✜ ✜ ]     [ yes ]
 
 
 ✠ details
-- seller_scan_qr_buttons_pay_check_modal - представляет собой модальное окно, которое всплывает по центру экрана и включает 2 компонента:
---- seller_scan_qr_buttons_pay_check_modal_text - текстовый элемент центрированный по горизонтали расположенный в верхней части seller_scan_qr_buttons_pay_check_modal со следующим содержанием: "Если платеж по текущему ордеру был сделан, нажмите кнопку 'подтвердить'";
---- seller_scan_qr_buttons_pay_check_modal_buttons - контейнер расположен в нижней части seller_scan_qr_buttons_pay_check_modal, содержащий 2 кнопки; 
------ seller_scan_qr_buttons_pay_check_modal_buttons_proceed - кнопка расположенная над seller_scan_qr_buttons_pay_check_modal_buttons_close, предназначена для инициализации операции создания ордера, содержит seller_scan_qr_buttons_pay_check_modal_buttons_proceed_label;
-------- seller_scan_qr_buttons_pay_check_modal_buttons_proceed_label - наименование кнопки следующего содержания: "подтвердить".
------ seller_scan_qr_buttons_pay_check_modal_buttons_close - кнопка расположенная под seller_scan_qr_buttons_pay_check_modal_buttons_proceed, предназначена для закрытия seller_scan_qr_buttons_pay_check_modal без изменений, содержит seller_scan_qr_buttons_pay_check_modal_buttons_close_label;
-------- seller_scan_qr_buttons_pay_check_modal_buttons_close_label - наименование кнопки следующего содержания: "закрыть";
+- seller_scan_qr_btn_pay_check_modal - представляет собой модальное окно, которое всплывает по центру экрана и включает 2 компонента:
+--- seller_scan_qr_btn_pay_check_modal_text - текстовый элемент центрированный по горизонтали расположенный в верхней части seller_scan_qr_btn_pay_check_modal со следующим содержанием: "Если платеж по текущему ордеру был сделан, нажмите кнопку 'подтвердить'";
+--- seller_scan_qr_btn_pay_check_modal_btn - контейнер расположен в нижней части seller_scan_qr_btn_pay_check_modal, содержащий 2 кнопки; 
+----- seller_scan_qr_btn_pay_check_modal_btn_proceed - кнопка расположенная над seller_scan_qr_btn_pay_check_modal_btn_close, предназначена для инициализации операции создания ордера, содержит seller_scan_qr_btn_pay_check_modal_btn_proceed_label;
+------- seller_scan_qr_btn_pay_check_modal_btn_proceed_label - наименование кнопки следующего содержания: "подтвердить".
+----- seller_scan_qr_btn_pay_check_modal_btn_close - кнопка расположенная под seller_scan_qr_btn_pay_check_modal_btn_proceed, предназначена для закрытия seller_scan_qr_btn_pay_check_modal без изменений, содержит seller_scan_qr_btn_pay_check_modal_btn_close_label;
+------- seller_scan_qr_btn_pay_check_modal_btn_close_label - наименование кнопки следующего содержания: "закрыть";
 
 ✠ actions
-• seller_scan_qr_buttons_pay_check_modal_buttons_proceed:
+• seller_scan_qr_btn_pay_check_modal_btn_proceed:
 ╠ valid / invalid
 ║ • gesture: tap
-║ occasion: нажатие seller_scan_qr_buttons_pay_check_modal_buttons_proceed;
+║ occasion: нажатие seller_scan_qr_btn_pay_check_modal_btn_proceed;
 ║ condition: in any situation;
 ║ result:
 ║ - && - производится формирование нового ордера базирующегося на лотах из текущего seller_scan_calc_body_display_list и seller_scan_calc_quantity_sum;
-║ - && - фиксируется user_id_data_seller_orders_closed_id_transact_postpaid_type_cash;
-╙ - && - созданный лот начинает фигурировать в seller_account_history_screen.
-• seller_scan_qr_buttons_pay_check_modal_buttons_close:
+║ - && - фиксируется user_id_data_seller_level_orders_closed_id_transact_postpaid_type_cash;
+║ - && - созданный лот начинает фигурировать в seller_account_history_screen;
+╙ - && - делается переход к seller_account_order_check_modal, где отображаются данные по целевому ордеру.
+• seller_scan_qr_btn_pay_check_modal_btn_close:
 ╠ valid / invalid
 ║ • gesture: tap
-║ occasion: нажатие seller_scan_qr_buttons_pay_check_modal_buttons_close;
+║ occasion: нажатие seller_scan_qr_btn_pay_check_modal_btn_close;
 ║ condition: in any situation;
-╙ result: seller_scan_qr_buttons_pay_check_modal исчезает.
+╙ result: seller_scan_qr_btn_pay_check_modal исчезает.
 
 ✠ color_states
 ┌─
-│seller_scan_qr_buttons_pay_check_modal_buttons_proceed
-│seller_scan_qr_buttons_pay_check_modal_buttons_close
+│seller_scan_qr_btn_pay_check_modal_btn_proceed
+│seller_scan_qr_btn_pay_check_modal_btn_close
 │-------------------------------- 
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -1825,9 +1832,9 @@ seller_scan_calc_any_sum - сумма по арифметическому выр
 │------ in pressing_state
 └─
 ┌─
-│seller_scan_qr_buttons_pay_check_modal_text
-│seller_scan_qr_buttons_pay_check_modal_buttons_proceed_label
-│seller_scan_qr_buttons_pay_check_modal_buttons_close_label
+│seller_scan_qr_btn_pay_check_modal_text
+│seller_scan_qr_btn_pay_check_modal_btn_proceed_label
+│seller_scan_qr_btn_pay_check_modal_btn_close_label
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -1835,40 +1842,41 @@ seller_scan_calc_any_sum - сумма по арифметическому выр
 │------ in any situation
 └─
 
-
-
-🡆🡆🡆🡆 seller_scan_qr_buttons_pay_done_popover
+     
+🡆🡆🡆🡆 seller_scan_qr_btn_pay_done_popover
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 
-seller_scan_qr_buttons_pay_done_popover является окном уведомления, которое отображается после нажатия seller_scan_qr_buttons_pay.
+seller_scan_qr_btn_pay_done_popover является окном уведомления, которое отображается в 2 ситуациях: 
+- после того как произошел безналичный платеж по целевому ордеру (автоматически), если seller находится в любом из подразделов seller_scan; 
+- после нажатия seller_scan_qr_btn_pay.
 
 ✠ tables
 
-                             codename:                          type:            designation:         location:  interaction:
----┌───[seller_scan_qr_buttons_pay_done_popover              ]  [section_lev1]                              [ ✜ ✜ ]     [ yes ]
+                              codename:                              type:            designation:         location:  interaction:
+---┌───[seller_scan_qr_btn_pay_done_popover              ]  [section_lev1]                              [ ✜ ✜ ]     [ yes ]
    │
----│└┬─[seller_scan_qr_buttons_pay_done_popover_text____state]  [section_lev2]                              [ ✜ ✜ ]     [ no  ]
+---│└┬─[seller_scan_qr_btn_pay_done_popover_text____state]  [section_lev2]                              [ ✜ ✜ ]     [ no  ]
    │
----└─┬─[seller_scan_qr_buttons_pay_done_popover_btn          ]  [section_lev2]                              [ ✜ ✜ ]     [ no  ]
----  └ [seller_scan_qr_buttons_pay_done_popover_btn_close    ]  [section_lev2]                              [ ✜ ✜ ]     [ no  ]
+---└─┬─[seller_scan_qr_btn_pay_done_popover_btn          ]  [section_lev2]                              [ ✜ ✜ ]     [ no  ]
+---  └ [seller_scan_qr_btn_pay_done_popover_btn_close    ]  [section_lev2]                              [ ✜ ✜ ]     [ no  ]
 
 
 ✠ details
-- seller_scan_qr_buttons_pay_done_popover - представляет собой popover, который всплывает по центру экрана и включает компонент seller_scan_qr_buttons_pay_done_popover_text;
---- seller_scan_qr_buttons_pay_done_popover_btn - кнопка расположенная в нижней части seller_scan_qr_buttons_pay_done_popover, предназначенная для закрытия seller_scan_qr_buttons_pay_done_popover, содержит seller_scan_qr_buttons_pay_done_popover_btn_close;
------ seller_scan_qr_buttons_pay_done_popover_btn_close - константный центрированный текстовый элемент следующего содержания: "закрыть".
+- seller_scan_qr_btn_pay_done_popover - представляет собой popover, который всплывает по центру экрана и включает компонент seller_scan_qr_btn_pay_done_popover_text;
+--- seller_scan_qr_btn_pay_done_popover_btn - кнопка расположенная в нижней части seller_scan_qr_btn_pay_done_popover, предназначенная для закрытия seller_scan_qr_btn_pay_done_popover, содержит seller_scan_qr_btn_pay_done_popover_btn_close;
+----- seller_scan_qr_btn_pay_done_popover_btn_close - константный центрированный текстовый элемент следующего содержания: "закрыть".
 
 ✠ actions
-• seller_scan_qr_buttons_pay_done_popover_btn:
+• seller_scan_qr_btn_pay_done_popover_btn:
 ╠ valid / invalid
 ║ • gesture: tap
-║ occasion: нажатие seller_scan_qr_buttons_pay_done_popover_btn;
+║ occasion: нажатие seller_scan_qr_btn_pay_done_popover_btn;
 ║ condition: in any situation;
-╙ result: seller_scan_qr_buttons_pay_done_popover исчезает.
+╙ result: seller_scan_qr_btn_pay_done_popover исчезает.
 
 ✠ color_states
 ┌─
-│seller_scan_qr_buttons_pay_done_popover_btn
+│seller_scan_qr_btn_pay_done_popover_btn
 │-------------------------------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -1879,7 +1887,7 @@ seller_scan_qr_buttons_pay_done_popover является окном уведом
 │------ in pressing_state
 └─
 ┌─
-│seller_scan_qr_buttons_pay_done_popover
+│seller_scan_qr_btn_pay_done_popover
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -1888,37 +1896,51 @@ seller_scan_qr_buttons_pay_done_popover является окном уведом
 └─
 
 
-■ seller_scan_qr_buttons_pay_done_popover_text
+■ seller_scan_qr_btn_pay_done_popover_text
 
-seller_scan_qr_buttons_pay_done_popover_text обладает 2 состояниями:
-- seller_scan_qr_buttons_pay_done_popover_text_named_state - если у целевого ордера нет данных по user_id_data_seller_orders_opened_id_client_name;
-- seller_scan_qr_buttons_pay_done_popover_text_noname_state - если у целевого ордера есть данные по user_id_data_seller_orders_opened_id_client_name.
+seller_scan_qr_btn_pay_done_popover_text обладает 2 состояниями:
+- seller_scan_qr_btn_pay_done_popover_text_named_state - если у целевого ордера есть данные по user_id_data_seller_level_orders_opened_id_client_name;
+- seller_scan_qr_btn_pay_done_popover_text_noname_state - если у целевого ордера нет данных по user_id_data_seller_level_orders_opened_id_client_name.
 
 
-■ ■ seller_scan_qr_buttons_pay_done_popover_text_named_state ■ ■
+■ ■ seller_scan_qr_btn_pay_done_popover_text_named_state ■ ■
 
 ✠ tables
 
-                                   codename:                              type:            designation:         location:  interaction:
----└┬─[seller_scan_qr_buttons_pay_done_popover_text_named         ]  [section_lev2]                              [ ✜ ✜ ]     [ no  ]
---- ├ [seller_scan_qr_buttons_pay_done_popover_text_named_part1   ]  [text        ]  [ "Платеж от "        ]     [ ✜ 🡄 ]     [ yes ]
---- ├ [seller_scan_qr_buttons_pay_done_popover_text_named_username]  [variable    ]  [ {string}            ]     [ ✜ ✜ ]     [ yes ]
---- ├ [seller_scan_qr_buttons_pay_done_popover_text_named_part2   ]  [text        ]  [ " по ордеру "       ]     [ ✜ ✜ ]     [ yes ]
---- ├ [seller_scan_qr_buttons_pay_done_popover_text_named_payment ]  [variable    ]  [ {number}            ]     [ ✜ ✜ ]     [ yes ]
---- ├ [seller_scan_qr_buttons_pay_done_popover_text_named_part3   ]  [text        ]  [ " в размере "       ]     [ ✜ ✜ ]     [ yes ]
---- ├ [seller_scan_qr_buttons_pay_done_popover_text_named_payment ]  [variable    ]  [ {number}            ]     [ ✜ ✜ ]     [ yes ]
---- └ [seller_scan_qr_buttons_pay_done_popover_text_named_part4   ]  [text        ]  [ " получен"          ]     [ ✜ 🡆 ]     [ yes ]
+                                   codename:                                       type:            designation:         location:  interaction:
+-└┬┬┬─[seller_scan_qr_btn_pay_done_popover_text_named                  ]  [section_lev2]                              [ ✜ ✜ ]     [ no  ]
+--││└ [seller_scan_qr_btn_pay_done_popover_text_named_part1            ]  [text        ]  [ "Платеж от "        ]     [ ✜ 🡄 ]     [ yes ]
+--│└┬─[seller_scan_qr_btn_pay_done_popover_text_named_client           ]  [variable    ]                              [ ✜ ✜ ]     [ yes ]
+--│ ├ [seller_scan_qr_btn_pay_done_popover_text_named_client_secondname]  [variable    ]  [ {string}            ]     [ ✜ ✜ ]     [ yes ]
+--│ └ [seller_scan_qr_btn_pay_done_popover_text_named_client_firstname ]  [variable    ]  [ {string}            ]     [ ✜ ✜ ]     [ yes ]
+--└─┬ [seller_scan_qr_btn_pay_done_popover_text_named_part2            ]  [text        ]  [ " по ордеру "       ]     [ ✜ ✜ ]     [ yes ]
+--- ├ [seller_scan_qr_btn_pay_done_popover_text_named_order            ]  [variable    ]  [ {number}            ]     [ ✜ ✜ ]     [ yes ]
+--- ├ [seller_scan_qr_btn_pay_done_popover_text_named_part3            ]  [text        ]  [ " в размере "       ]     [ ✜ ✜ ]     [ yes ]
+--- ├ [seller_scan_qr_btn_pay_done_popover_text_named_payment          ]  [variable    ]  [ {number}            ]     [ ✜ ✜ ]     [ yes ]
+--- └ [seller_scan_qr_btn_pay_done_popover_text_named_part4            ]  [text        ]  [ " получен"          ]     [ ✜ 🡆 ]     [ yes ]
 
 ✠ details
---- seller_scan_qr_buttons_pay_done_popover_text_named - параграф текста выровненный по центру, находится в верхней части seller_scan_qr_buttons_pay_done_popover следующего содержания: "'Платеж от ' {username} ' по ордеру ' {order} ' в размере ' {payment} ' получен";
-где: 
-username = user_id_data_seller_orders_opened_id_client_name;
-order = user_id_data_seller_orders_closed_id;
-payment = user_id_data_seller_orders_closed_id_cart_sum.
+--- seller_scan_qr_btn_pay_done_popover_text_named - параграф текста выровненный по центру, находится в верхней части seller_scan_qr_btn_pay_done_popover следующего содержания: "'Платеж от ' + {user_id_data_seller_level_orders_closed_id_client_name_secondname.user_id_data_seller_level_orders_closed_id_client_name_firstname} + ' по ордеру ' + {user_id_data_seller_level_orders_closed_id} + ' в размере ' + {user_id_data_seller_level_orders_closed_id_cart_sum} + ' получен'", который состоит из 7 конкатенированированных элементов: 
+----- seller_scan_qr_btn_pay_done_popover_text_named_part1 - представляется в качестве константного текстового элемента находящегося в левой позиции начала параграфа следующего содержания: "Платеж от ";
+----- seller_scan_qr_btn_pay_done_popover_text_named_client - конкатенированное значение расположенное справа от seller_scan_qr_btn_pay_done_popover_text_named_part1 состоящее из 2 переменных seller_scan_qr_btn_pay_done_popover_text_named_client_secondname и seller_scan_qr_btn_pay_done_popover_text_named_client_firstname, которое выводит их согласно шаблону: "user_id_data_seller_level_orders_closed_id_client_name_secondname.user_id_data_seller_level_orders_closed_id_client_name_firstname";
+----- seller_scan_qr_btn_pay_done_popover_text_named_client_secondname - переменная со строковым значением расположенная слева от seller_scan_qr_btn_pay_done_popover_text_named_client_firstname, которая выводит user_id_data_seller_level_orders_closed_id_client_name_secondname;
+----- seller_scan_qr_btn_pay_done_popover_text_named_client_firstname - переменная со строковым значением расположенная справа от seller_scan_qr_btn_pay_done_popover_text_named_client_secondname, которая выводит первый символ user_id_data_seller_level_orders_closed_id_client_name_firstname;
+----- seller_scan_qr_btn_pay_done_popover_text_named_part2 - константный текстовый элемент расположенный справа от seller_scan_qr_btn_pay_done_popover_text_named_client следующего содержания: " по ордеру ";
+----- seller_scan_qr_btn_pay_done_popover_text_named_order - переменная с числовым значением расположенная справа от seller_scan_qr_btn_pay_done_popover_text_named_part2, которая выводит user_id_data_seller_level_orders_closed_id;
+----- seller_scan_qr_btn_pay_done_popover_text_named_part3 - константный текстовый элемент расположенный справа от seller_scan_qr_btn_pay_done_popover_text_named_order следующего содержания: " в размере ";
+----- seller_scan_qr_btn_pay_done_popover_text_named_payment - переменная с числовым значением расположенная справа от seller_scan_qr_btn_pay_done_popover_text_named_part3, которая выводит user_id_data_seller_level_orders_closed_id_cart_sum;
+----- seller_scan_qr_btn_pay_done_popover_text_named_part4 - константный текстовый элемент расположенный справа от seller_scan_qr_btn_pay_done_popover_text_named_payment следующего содержания: " получен".
 
 ✠ color_states
 ┌─
-│seller_scan_qr_buttons_pay_done_popover_text_named
+│seller_scan_qr_btn_pay_done_popover_text_named_part1
+│seller_scan_qr_btn_pay_done_popover_text_named_client_secondname
+│seller_scan_qr_btn_pay_done_popover_text_named_client_firstname
+│seller_scan_qr_btn_pay_done_popover_text_named_part2
+│seller_scan_qr_btn_pay_done_popover_text_named_order
+│seller_scan_qr_btn_pay_done_popover_text_named_part3
+│seller_scan_qr_btn_pay_done_popover_text_named_payment
+│seller_scan_qr_btn_pay_done_popover_text_named_part4
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -1927,36 +1949,735 @@ payment = user_id_data_seller_orders_closed_id_cart_sum.
 └─
 
 
-■ ■ seller_scan_qr_buttons_pay_done_popover_text_noname_state ■ ■
+■ ■ seller_scan_qr_btn_pay_done_popover_text_noname_state ■ ■
 
 ✠ tables
 
                                    codename:                              type:            designation:         location:  interaction:
----└┬─[seller_scan_qr_buttons_pay_done_popover_text_noname         ]  [section_lev2]                              [ ✜ ✜ ]     [ no  ]
---- ├ [seller_scan_qr_buttons_pay_done_popover_text_noname_part1   ]  [text        ]  [ "Платеж от "        ]     [ ✜ 🡄 ]     [ yes ]
---- ├ [seller_scan_qr_buttons_pay_done_popover_text_noname_username]  [variable    ]  [ {string}            ]     [ ✜ ✜ ]     [ yes ]
---- ├ [seller_scan_qr_buttons_pay_done_popover_text_noname_part2   ]  [text        ]  [ " по ордеру "       ]     [ ✜ ✜ ]     [ yes ]
---- ├ [seller_scan_qr_buttons_pay_done_popover_text_noname_payment ]  [variable    ]  [ {number}            ]     [ ✜ ✜ ]     [ yes ]
---- ├ [seller_scan_qr_buttons_pay_done_popover_text_noname_part3   ]  [text        ]  [ " в размере "       ]     [ ✜ ✜ ]     [ yes ]
---- ├ [seller_scan_qr_buttons_pay_done_popover_text_noname_payment ]  [variable    ]  [ {number}            ]     [ ✜ ✜ ]     [ yes ]
---- └ [seller_scan_qr_buttons_pay_done_popover_text_noname_part4   ]  [text        ]  [ " получен"          ]     [ ✜ 🡆 ]     [ yes ]
+---└┬─[seller_scan_qr_btn_pay_done_popover_text_noname         ]  [section_lev2]                              [ ✜ ✜ ]     [ no  ]
+--- ├ [seller_scan_qr_btn_pay_done_popover_text_noname_part1   ]  [text        ]  [ "Платеж по ордеру " ]     [ ✜ 🡄 ]     [ yes ]
+--- ├ [seller_scan_qr_btn_pay_done_popover_text_noname_order   ]  [variable    ]  [ {number}            ]     [ ✜ ✜ ]     [ yes ]
+--- ├ [seller_scan_qr_btn_pay_done_popover_text_noname_part2   ]  [text        ]  [ " в размере "       ]     [ ✜ ✜ ]     [ yes ]
+--- ├ [seller_scan_qr_btn_pay_done_popover_text_noname_payment ]  [variable    ]  [ {number}            ]     [ ✜ ✜ ]     [ yes ]
+--- └ [seller_scan_qr_btn_pay_done_popover_text_noname_part3   ]  [text        ]  [ " получен"          ]     [ ✜ 🡆 ]     [ yes ]
 
 ✠ details
---- seller_scan_qr_buttons_pay_done_popover_text_noname - параграф текста выровненный по центру, находится в верхней части seller_scan_qr_buttons_pay_done_popover следующего содержания: "'Платеж от ' {username} ' по ордеру ' {order} ' в размере ' {payment} ' получен";
-где: 
-username = user_id_data_seller_orders_opened_id_client_name;
-order = user_id_data_seller_orders_closed_id;
-payment = user_id_data_seller_orders_closed_id_cart_sum.
+--- seller_scan_qr_btn_pay_done_popover_text_noname - параграф текста выровненный по центру, находится в верхней части seller_scan_qr_btn_pay_done_popover следующего содержания: "'Платеж по ордеру ' + {user_id_data_seller_level_orders_closed_id} + ' в размере ' + {user_id_data_seller_level_orders_closed_id_cart_sum} + ' получен'", который состоит из 5 конкатенированированных элементов:  
+----- seller_scan_qr_btn_pay_done_popover_text_noname_part1 - представляется в качестве константного текстового элемента находящегося в левой позиции начала параграфа следующего содержания: "Платеж по ордеру ";
+----- seller_scan_qr_btn_pay_done_popover_text_noname_order - переменная с числовым значением расположенная справа от seller_scan_qr_btn_pay_done_popover_text_noname_part1, которая выводит user_id_data_seller_level_orders_closed_id;
+----- seller_scan_qr_btn_pay_done_popover_text_noname_part2 - константный текстовый элемент расположенный справа от seller_scan_qr_btn_pay_done_popover_text_noname_order следующего содержания: " в размере ";
+----- seller_scan_qr_btn_pay_done_popover_text_noname_payment - переменная с числовым значением расположенная справа от seller_scan_qr_btn_pay_done_popover_text_noname_part2, которая выводит user_id_data_seller_level_orders_closed_id_cart_sum;
+----- seller_scan_qr_btn_pay_done_popover_text_noname_part3 - константный текстовый элемент расположенный справа от seller_scan_qr_btn_pay_done_popover_text_noname_payment следующего содержания: " получен".
 
 ✠ color_states
 ┌─
-│seller_scan_qr_buttons_pay_done_popover_text_noname
+│seller_scan_qr_btn_pay_done_popover_text_noname_part1
+│seller_scan_qr_btn_pay_done_popover_text_noname_order
+│seller_scan_qr_btn_pay_done_popover_text_noname_part2
+│seller_scan_qr_btn_pay_done_popover_text_noname_payment
+│seller_scan_qr_btn_pay_done_popover_text_noname_part3
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color8
 │------ in any situation
 └─
+
+
+■ seller_nav
+
+✠ details
+Секция seller_nav является навигационной панелью seller_mode и как сквозная часть интерфейса присутствует на всех экранах в нижней области. Секция состоит из 5 компонентов каждый из которых выполняет роль кнопки:
+1) seller_nav_demand - кнопка с наименованием и бейджем, предназначена для перехода к seller_demand_screen;
+-- seller_nav_demand_label - представлен заголовком "МОНИТОР";
+-- seller_nav_demand_badge - размещается в верхнем правом углу, отображает количество hunt_screen_demand_message в seller_demand_screen.
+2) seller_nav_chat - кнопка с наименованием и бейджем, предназначена для перехода к seller_chat_screen;
+-- seller_nav_chat_label - представлен заголовком "ЧАТ";
+-- seller_nav_chat_badge - размещается в верхнем правом углу, отображает количество непросмотренных chat_screen_chat_message_node.
+3) seller_nav_shop - кнопка с наименованием и бейджем, предназначена для перехода к seller_shop_screen (в seller_shop_screen активирована по умолчанию);
+-- seller_nav_shop_label - представлен логотипом в seller_shop_screen, либо наименованием "МАГАЗИН" в остальных экранах;
+-- seller_nav_shop_badge - размещается в верхнем правом углу, отображается только в seller_shop_screen, показывает доступные обновления приложения.
+4) seller_nav_goods - кнопка с наименованием и бейджем, предназначена для перехода к seller_goods_screen;
+-- seller_nav_goods_label - представлен заголовком "ТОВАРЫ";
+-- seller_nav_goods_badge - размещается в верхнем правом углу, отображает число лотов по которым заканчивается товар.
+5) seller_nav_account - кнопка с наименованием и бейджем, предназначена для перехода к seller_account_screen;
+-- seller_nav_account_label - представлен заголовком "КАБИНЕТ";
+-- seller_nav_account_badge - размещается в верхнем правом углу, отображает количество непросмотренных денежных транзакций.
+
+✠ actions
+• seller_nav_demand:
+╠ valid
+║ • gesture: tap
+║ occasion: нажатие seller_nav_demand;
+║ condition:
+║ || - в ситуации присутствия в seller_chat_screen;
+║ || - в ситуации присутствия в seller_shop_screen;
+║ || - в ситуации присутствия в seller_goods_screen;
+║ || - в ситуации присутствия в seller_account_screen;
+║ result: открывается seller_demand_screen.
+╠ invalid
+║ • gesture: tap
+║ occasion: нажатие seller_nav_demand;
+║ condition: в ситуации присутствия в seller_demand_screen;
+╙ result: не реагирует на нажатие.
+• seller_nav_chat:
+╠ valid
+║ • gesture: tap
+║ occasion: нажатие seller_nav_chat;
+║ condition:
+║ || - в ситуации присутствия в seller_demand_screen;
+║ || - в ситуации присутствия в seller_shop_screen;
+║ || - в ситуации присутствия в seller_goods_screen;
+║ || - в ситуации присутствия в seller_account_screen;
+║ result: открывается seller_chat_screen.
+╠ invalid
+║ • gesture: tap
+║ occasion: нажатие seller_nav_chat;
+║ condition: в ситуации присутствия в seller_chat_screen;
+╙ result: не реагирует на нажатие.
+• seller_nav_shop:
+╠ valid
+║ • gesture: tap 
+║ occasion: нажатие seller_nav_shop;
+║ condition: 
+║ && - в ситуации присутствия в seller_shop_screen;
+║ && - в ситуации если доступно обновление приложения;
+║ result: открывается seller_nav_shop_update_popover;
+╠ valid
+║ • gesture: tap 
+║ occasion: нажатие seller_nav_shop;
+║ condition: 
+║ || - в ситуации присутствия в seller_demand_screen;
+║ || - в ситуации присутствия в seller_chat_screen;
+║ || - в ситуации присутствия в seller_goods_screen;
+║ || - в ситуации присутствия в seller_account_screen;
+║ result: открывается seller_shop_screen;
+╠ invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_nav_shop;
+║ condition:
+║ && - в ситуации присутствия в seller_shop_screen;
+║ && - в ситуации отсутствия обновлений приложения;
+╙ result: не реагирует на нажатие.
+• seller_nav_goods:
+╠ valid
+║ • gesture: tap
+║ occasion: нажатие seller_nav_goods;
+║ condition:
+║ || - в ситуации присутствия в seller_demand_screen;
+║ || - в ситуации присутствия в seller_chat_screen;
+║ || - в ситуации присутствия в seller_shop_screen;
+║ || - в ситуации присутствия в seller_account_screen;
+║ result: открывается seller_goods_screen.
+╠ invalid
+║ • gesture: tap
+║ occasion: нажатие seller_nav_goods;
+║ condition: в ситуации присутствия в seller_goods_screen;
+╙ result: не реагирует на нажатие.
+• seller_nav_account:
+╠ valid
+║ • gesture: tap
+║ occasion: нажатие seller_nav_account;
+║ condition:
+║ || - в ситуации присутствия в seller_demand_screen;
+║ || - в ситуации присутствия в seller_chat_screen;
+║ || - в ситуации присутствия в seller_shop_screen;
+║ || - в ситуации присутствия в seller_goods_screen;
+║ result: открывается seller_account_screen.
+╠ invalid
+║ • gesture: tap
+║ occasion: нажатие seller_nav_account;
+║ condition: в ситуации присутствия в seller_account_screen;
+╙ result: не реагирует на нажатие.
+
+✠ color_states
+┌─
+│seller_nav_demand  (activated_state по умолчанию в seller_demand_screen)
+│seller_nav_chat  (activated_state по умолчанию в seller_chat_screen)
+│seller_nav_shop  (activated_state по умолчанию в seller_shop_screen)
+│seller_nav_goods  (activated_state по умолчанию в seller_goods_screen)
+│seller_nav_account  (activated_state по умолчанию в seller_account_screen)
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color7
+│------ в activated_state
+└─
+┌─
+│seller_nav_demand_badge  (activated_state по умолчанию в seller_demand_screen)
+│seller_nav_chat_badge  (activated_state по умолчанию в seller_chat_screen)   
+│seller_nav_shop_badge  (activated_state по умолчанию в seller_shop_screen)  
+│seller_nav_goods_badge  (activated_state по умолчанию в seller_goods_screen)   
+│seller_nav_account_badge  (activated_state по умолчанию в seller_account_screen)
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color9
+│------ in default_state
+├────────
+│• color2
+│------ в activated_state 
+└─
+
+
+
+🡆🡆🡆 seller_scan_check_screen
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+Подраздел в котором отображается список ордеров в хронологическом порядке сверху-вниз, где последний ордер помещенный в список находится в самом верху. 
+
+✠ tables
+
+                                      codename:                              type:                     designation:            location:   interaction:
+       ┌┬┬──[seller_scan_nav                                      ]  [section            ]                                      [ 🡅 ✜ ]      [ no  ]
+       ││└┬─[seller_scan_nav_check                                ]  [button             ]                                      [ ✜ 🡄 ]      [ yes ]
+       ││ └ [seller_scan_nav_check_label                          ]  [label              ]  [ "чек"                         ]   [ ✜ ✜ ]      [ yes ]
+       │└─┬─[seller_scan_nav_scan                                 ]  [button             ]                                      [ ✜ ✜ ]      [ yes ]
+       │  └ [seller_scan_nav_scan_label                           ]  [label              ]  [ "скан"                        ]   [ ✜ ✜ ]      [ yes ]
+       └──┬─[seller_scan_nav_qr                                   ]  [button             ]                                      [ ✜ 🡆 ]      [ yes ]
+          └ [seller_scan_nav_qr_label                             ]  [label              ]  [ "QR"                          ]   [ ✜ ✜ ]      [ yes ]
+   ┌┬───────[seller_scan_check                                    ]  [section_lev1       ]                                      [ ✜ ✜ ]      [ no  ] 
+   │└┬┬┬────[seller_scan_check_main                               ]  [section_lev2       ]                                      [ ✜ ✜ ]      [ no  ]
+   │ ││└┬┬──[seller_scan_check_main_top                           ]  [thead              ]                                      [ 🡅 ✜ ]      [ no  ] 
+   │ ││ │└┬─[seller_scan_check_main_top_order                     ]  [th                 ]                                      [ ✜ 🡄 ]      [ no  ]
+   │ ││ │ └ [seller_scan_check_main_top_order_label               ]  [label              ]  [ "# ордера"                    ]   [ ✜ ✜ ]      [ no  ]
+   │ ││ └─┬─[seller_scan_check_main_top_time                      ]  [th                 ]                                      [ ✜ 🡆 ]      [ no  ]
+   │ ││   └ [seller_scan_check_main_top_time_label                ]  [label              ]  [ "время"                       ]   [ ✜ ✜ ]      [ no  ]
+   │ │└┬────[seller_scan_check_main_list                          ]  [tbody              ]                                      [ ✜ ✜ ]      [ no  ]
+   │ │ └┬┬──[seller_scan_check_main_list_order                    ]  [tr                 ]                                      [ ✜ ✜ ]      [ yes ]
+   │ │  │└┬─[seller_scan_check_main_list_order_number             ]  [td                 ]                                      [ ✜ 🡄 ]      [ yes ]
+   │ │  │ └ [seller_scan_check_main_list_order_number_value       ]  [variable           ]  [ { number }                    ]   [ ✜ ✜ ]      [ yes ]
+   │ │  └┬──[seller_scan_check_main_list_order_creation           ]  [td                 ]                                      [ ✜ 🡆 ]      [ yes ]
+   │ │   └┬─[seller_scan_check_main_list_order_creation_value     ]  [section_lev6       ]                                      [ ✜ ✜ ]      [ yes ]
+   │ │    ├ [seller_scan_check_main_list_order_creation_value_date]  [variable           ]  [ { number }                    ]   [ ✜ 🡄 ]      [ yes ]
+   │ │    └ [seller_scan_check_main_list_order_creation_value_time]  [variable           ]  [ { number }                    ]   [ ✜ 🡆 ]      [ yes ]
+   │ └───┬──[seller_scan_check_main_bottom                        ]  [section_lev3       ]                                      [ 🡇 ✜ ]      [ no  ] 
+   │     └┬─[seller_scan_check_main_bottom_label                  ]  [label              ]  [ "список ордеров"              ]   [ ✜ ✜ ]      [ no  ]	
+   └──────┬─[seller_scan_check_btn                                ]  [section_lev2       ]                                      [ 🡇 ✜ ]      [ no  ] 
+          └ [seller_scan_check_btn_title                          ]  [label              ]  [ "назад"                       ]   [ ✜ ✜ ]      [ yes ]
+     ┌┬┬┬┬──[seller_nav                                           ]  [section            ]                                      [ ✜ ✜ ]      [ no  ]
+     ││││└┬─[seller_nav_demand_button                             ]  [button             ]                                      [ ✜ 🡄 ]      [ yes ]
+     ││││ ├ [seller_nav_demand_header                             ]  [header             ]  [ "МОНИТОР"                     ]   [ ✜ ✜ ]      [ no  ]  
+     ││││ └ [seller_nav_demand_badge                              ]  [badge              ]  [ { number }                    ]   [ 🡅 🡆 ]      [ no  ] 	
+     │││└─┬─[seller_nav_chat_button                               ]  [button             ]                                      [ ✜ 🡄 ]      [ yes ]   
+     │││  ├ [seller_nav_chat_header                               ]  [header             ]  [ "ЧАТ"                         ]   [ ✜ ✜ ]      [ no  ] 
+     │││  └ [seller_nav_chat_badge                                ]  [badge              ]  [ { number }                    ]   [ 🡅 🡆 ]      [ no  ] 
+     ││└──┬─[seller_nav_shop_button                               ]  [button             ]                                      [ ✜ ✜ ]      [ yes ]   
+     ││   ├ [seller_nav_shop_header                               ]  [header             ]  [ "МАГАЗИН"                     ]   [ ✜ ✜ ]      [ no  ] 
+     ││   └ [seller_nav_shop_badge                                ]  [badge              ]  [ { number }                    ]   [ 🡅 🡆 ]      [ no  ]   
+     │└───┬─[seller_nav_goods_button                              ]  [button             ]                                      [ ✜ 🡆 ]      [ yes ]   
+     │    ├ [seller_nav_goods_header                              ]  [header             ]  [ "ТОВАРЫ"                      ]   [ ✜ ✜ ]      [ no  ] 
+     │    └ [seller_nav_goods_badge                               ]  [badge              ]  [ { number }                    ]   [ 🡅 🡆 ]      [ no  ]     
+     └────┬─[seller_nav_scan_button                               ]  [button             ]                                      [ ✜ 🡆 ]      [ yes ]   
+          ├ [seller_nav_scan_header                               ]  [header             ]  [ "КАБИНЕТ"                     ]   [ ✜ ✜ ]      [ no  ] 
+          └ [seller_nav_scan_badge                                ]  [badge              ]  [ { number }                    ]   [ 🡅 🡆 ]      [ no  ] 
+
+
+✠ details
+Основное пространство в центральной области экрана занимает seller_scan_check состоящий из 2 секций: 
+- seller_scan_check_main
+- seller_scan_check_btn
+
+
+■ seller_scan_nav
+
+✠ details
+Секция seller_scan_nav является навигационной панелью seller_scan и как сквозная часть интерфейса присутствует на всех экранах seller_scan в верхней области. Секция состоит из 3 компонентов каждый из которых выполняет роль кнопки расположенные слева-направо в следующем порядке:
+
+1)  seller_scan_nav_check - кнопка предназначенная для перехода к seller_scan_check_screen (в рамках seller_scan_check_screen активирована по умолчанию);
+--- seller_scan_nav_check_label - является константным центрированным в seller_scan_nav_check текстовым элементом следующего содержания: "чек";
+2) seller_scan_nav_calc - кнопка предназначенная для перехода к seller_scan_calc_screen (в рамках seller_scan_calc_screen активирована по умолчанию);
+--- seller_scan_nav_calc_label - является константным центрированным в seller_scan_nav_calc текстовым элементом следующего содержания: "скан";
+3) seller_scan_nav_qr - кнопка предназначенная для перехода к seller_scan_qr_screen (в рамках seller_scan_qr_screen активирована по умолчанию);
+--- seller_scan_nav_qr_label - является константным центрированным в seller_scan_nav_qr текстовым элементом следующего содержания: "QR".
+
+✠ actions
+• seller_scan_nav_check:
+╠ valid
+║ • gesture: tap
+║ occasion: нажатие seller_scan_nav_check;
+║ condition:
+║ || - в ситуации присутствия в seller_scan_calc_screen;
+║ || - в ситуации присутствия в seller_scan_qr_screen;
+║ result: открывается seller_scan_check_screen.
+╠ invalid
+║ • gesture: tap
+║ occasion: нажатие seller_scan_nav_check;
+║ condition: в ситуации присутствия в seller_scan_check_screen;
+╙ result: не реагирует на нажатие.
+• seller_scan_nav_calc:
+╠ valid
+║ • gesture: tap
+║ occasion: нажатие seller_scan_nav_calc;
+║ condition:
+║ || - в ситуации присутствия в seller_scan_check_screen;
+║ || - в ситуации присутствия в seller_scan_qr_screen;
+║ result: открывается seller_scan_calc_screen.
+╠ invalid
+║ • gesture: tap
+║ occasion: нажатие seller_scan_nav_calc;
+║ condition: в ситуации присутствия в seller_scan_calc_screen;
+╙ result: не реагирует на нажатие.
+• seller_scan_nav_qr:
+╠ valid
+║ • gesture: tap
+║ occasion: нажатие seller_scan_nav_qr;
+║ condition:
+║ || - в ситуации присутствия в seller_scan_check_screen;
+║ || - в ситуации присутствия в seller_scan_calc_screen;
+║ result: открывается seller_scan_qr_screen.
+╠ invalid
+║ • gesture: tap
+║ occasion: нажатие seller_scan_nav_qr;
+║ condition: в ситуации присутствия в seller_scan_qr_screen;
+╙ result: не реагирует на нажатие.
+
+✠ color_states
+┌─ 
+│seller_scan_nav_check  (activated_state по умолчанию в seller_scan_check_screen)
+│seller_scan_nav_calc  (activated_state по умолчанию в seller_scan_calc_screen)
+│seller_scan_nav_qr  (activated_state по умолчанию в seller_scan_qr_screen)
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color7
+│------ в activated_state
+└─
+┌─
+│seller_scan_nav_check_label
+│seller_scan_nav_scan_label
+│seller_scan_nav_qr_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
+
+■ seller_scan_check_main
+
+✠ details
+seller_scan_check_main подразделяется на 3 составных части:
+- seller_scan_check_main_top
+- seller_scan_check_main_list
+- seller_scan_check_main_bottom
+
+1) seller_scan_check_main_top
+--- seller_scan_check_main_top - является панелью представляющей шапку для таблицы seller_scan_check_main_list, располагается в качестве компактного блока высотой порядка 6-8% от вертикальной области экрана в верхней части seller_scan_check_main, включает в себя seller_scan_check_main_top_order и seller_scan_check_main_top_time;
+----- seller_scan_check_main_top_order - является левой ячейкой seller_scan_check_main_top содержащей seller_scan_check_main_top_order_label; 
+------- seller_scan_check_main_top_order_label - наименование ячейки в виде константного текстового элемента следующего содержания: "# ордера";
+----- seller_scan_check_main_top_time - правой левой ячейкой seller_scan_check_main_top содержащей seller_scan_check_main_top_time_label; 
+------- seller_scan_check_main_top_time_label - наименование ячейки в виде константного текстового элемента следующего содержания: "время".
+
+2) seller_scan_check_main_list
+--- seller_scan_check_main - является основной рабочей областью seller_scan_check в виде скроллируемой таблицы из 2 колонок состоящей из seller_scan_check_main_list_order, которая расположена в центральной части и занимает около 100% по ширине видимой области экрана и ~75% viewport по вертикали; 
+----- seller_scan_check_main_list_order - является реплицируемым компонентом, количество экземпляров которого в seller_scan_check_main_list зависит от количества ордеров базе данных магазина, включает в себя seller_scan_check_main_list_order_number и seller_scan_check_main_list_order_creation;
+------- seller_scan_check_main_list_order_number - левая ячейка seller_scan_check_main_list_order содержащая seller_scan_check_main_list_order_number_value;
+--------- seller_scan_check_main_list_order_number_value - переменная с числовым значением отображающая id ордера;
+------- seller_scan_check_main_list_order_creation - правая ячейка seller_scan_check_main_list_order содержащая seller_scan_check_main_list_order_creation;
+--------- seller_scan_check_main_list_order_creation_value - выровненное по центру seller_scan_check_main_list_order_creation конкатенированное значение из 2 переменных seller_scan_check_main_list_order_creation_value_date и seller_scan_check_main_list_order_creation_value_time;
+----------- seller_scan_check_main_list_order_creation_value_date - переменная с числовым значением отображающая дату ордера по шаблону "DD.MM.YY ", расположена  слева от seller_scan_check_main_list_order_creation_value_time;
+----------- seller_scan_check_main_list_order_creation_value_time - переменная с числовым значением отображающая время ордера по шаблону "(HH:MM)", расположена  справа от seller_scan_check_main_list_order_creation_value_date.
+
+3) seller_scan_check_main_bottom
+--- seller_scan_check_main_bottom - представляет собой панель (в высоту около 3-4% viewport по вертикали) расположенную в самом низу seller_scan_check_main, которая содержит seller_scan_check_main_bottom_label;
+----- seller_scan_check_main_bottom_label - константный текстовый элемент следующего содержания: "список ордеров", который центрирован внутри seller_scan_check_main_bottom.
+
+✠ actions
+• seller_scan_check_main_list_order:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_scan_check_main_list_order;
+║ condition: in any situation;
+╙ result: делается переход к seller_scan_check_data_screen.
+
+✠ color_states
+┌─ 
+│seller_scan_check_main_list_order
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color2
+│------ in default_state
+├────────
+│• color5
+│------ in pressing_state
+└─
+┌─ 
+│seller_scan_check_main_top_order_label
+│seller_scan_check_main_top_time_label
+│seller_scan_check_main_list_order_number_value
+│seller_scan_check_main_list_order_creation_value_date
+│seller_scan_check_main_list_order_creation_value_time
+│seller_scan_check_main_bottom_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color8
+│------ in any situation
+└─
+
+
+■ seller_scan_check_btn
+
+✠ details
+--- seller_scan_check_btn - кнопка центрированная по горизонтали в теле seller_scan_check и располагающаяся под seller_scan_check_main, которая включает seller_scan_check_btn_title;
+----- seller_scan_check_btn_title - наименование кнопки "назад".
+
+✠ actions
+• seller_scan_check_btn:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_scan_check_btn;
+║ condition: in any situation;
+╙ result: делается переход к seller_scan_calc_screen.
+
+✠ color_states
+┌─ 
+│seller_scan_check_btn
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color5
+│------ in pressing_state
+└─
+┌─ 
+│seller_scan_check_btn_title
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color8
+│------ in any situation
+└─
+
+
+■ seller_nav
+
+✠ details
+Секция seller_nav является навигационной панелью seller_mode и как сквозная часть интерфейса присутствует на всех экранах в нижней области. Секция состоит из 5 компонентов каждый из которых выполняет роль кнопки:
+1) seller_nav_demand - кнопка с наименованием и бейджем, предназначена для перехода к seller_demand_screen;
+-- seller_nav_demand_label - представлен заголовком "МОНИТОР";
+-- seller_nav_demand_badge - размещается в верхнем правом углу, отображает количество hunt_screen_demand_message в seller_demand_screen.
+2) seller_nav_chat - кнопка с наименованием и бейджем, предназначена для перехода к seller_chat_screen;
+-- seller_nav_chat_label - представлен заголовком "ЧАТ";
+-- seller_nav_chat_badge - размещается в верхнем правом углу, отображает количество непросмотренных chat_screen_chat_message_node.
+3) seller_nav_shop - кнопка с наименованием и бейджем, предназначена для перехода к seller_shop_screen (в seller_shop_screen активирована по умолчанию);
+-- seller_nav_shop_label - представлен логотипом в seller_shop_screen, либо наименованием "МАГАЗИН" в остальных экранах;
+-- seller_nav_shop_badge - размещается в верхнем правом углу, отображается только в seller_shop_screen, показывает доступные обновления приложения.
+4) seller_nav_goods - кнопка с наименованием и бейджем, предназначена для перехода к seller_goods_screen;
+-- seller_nav_goods_label - представлен заголовком "ТОВАРЫ";
+-- seller_nav_goods_badge - размещается в верхнем правом углу, отображает число лотов по которым заканчивается товар.
+5) seller_nav_account - кнопка с наименованием и бейджем, предназначена для перехода к seller_account_screen;
+-- seller_nav_account_label - представлен заголовком "КАБИНЕТ";
+-- seller_nav_account_badge - размещается в верхнем правом углу, отображает количество непросмотренных денежных транзакций.
+
+✠ actions
+• seller_nav_demand:
+╠ valid
+║ • gesture: tap
+║ occasion: нажатие seller_nav_demand;
+║ condition:
+║ || - в ситуации присутствия в seller_chat_screen;
+║ || - в ситуации присутствия в seller_shop_screen;
+║ || - в ситуации присутствия в seller_goods_screen;
+║ || - в ситуации присутствия в seller_account_screen;
+║ result: открывается seller_demand_screen.
+╠ invalid
+║ • gesture: tap
+║ occasion: нажатие seller_nav_demand;
+║ condition: в ситуации присутствия в seller_demand_screen;
+╙ result: не реагирует на нажатие.
+• seller_nav_chat:
+╠ valid
+║ • gesture: tap
+║ occasion: нажатие seller_nav_chat;
+║ condition:
+║ || - в ситуации присутствия в seller_demand_screen;
+║ || - в ситуации присутствия в seller_shop_screen;
+║ || - в ситуации присутствия в seller_goods_screen;
+║ || - в ситуации присутствия в seller_account_screen;
+║ result: открывается seller_chat_screen.
+╠ invalid
+║ • gesture: tap
+║ occasion: нажатие seller_nav_chat;
+║ condition: в ситуации присутствия в seller_chat_screen;
+╙ result: не реагирует на нажатие.
+• seller_nav_shop:
+╠ valid
+║ • gesture: tap 
+║ occasion: нажатие seller_nav_shop;
+║ condition: 
+║ && - в ситуации присутствия в seller_shop_screen;
+║ && - в ситуации если доступно обновление приложения;
+║ result: открывается seller_nav_shop_update_popover;
+╠ valid
+║ • gesture: tap 
+║ occasion: нажатие seller_nav_shop;
+║ condition: 
+║ || - в ситуации присутствия в seller_demand_screen;
+║ || - в ситуации присутствия в seller_chat_screen;
+║ || - в ситуации присутствия в seller_goods_screen;
+║ || - в ситуации присутствия в seller_account_screen;
+║ result: открывается seller_shop_screen;
+╠ invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_nav_shop;
+║ condition:
+║ && - в ситуации присутствия в seller_shop_screen;
+║ && - в ситуации отсутствия обновлений приложения;
+╙ result: не реагирует на нажатие.
+• seller_nav_goods:
+╠ valid
+║ • gesture: tap
+║ occasion: нажатие seller_nav_goods;
+║ condition:
+║ || - в ситуации присутствия в seller_demand_screen;
+║ || - в ситуации присутствия в seller_chat_screen;
+║ || - в ситуации присутствия в seller_shop_screen;
+║ || - в ситуации присутствия в seller_account_screen;
+║ result: открывается seller_goods_screen.
+╠ invalid
+║ • gesture: tap
+║ occasion: нажатие seller_nav_goods;
+║ condition: в ситуации присутствия в seller_goods_screen;
+╙ result: не реагирует на нажатие.
+• seller_nav_account:
+╠ valid
+║ • gesture: tap
+║ occasion: нажатие seller_nav_account;
+║ condition:
+║ || - в ситуации присутствия в seller_demand_screen;
+║ || - в ситуации присутствия в seller_chat_screen;
+║ || - в ситуации присутствия в seller_shop_screen;
+║ || - в ситуации присутствия в seller_goods_screen;
+║ result: открывается seller_account_screen.
+╠ invalid
+║ • gesture: tap
+║ occasion: нажатие seller_nav_account;
+║ condition: в ситуации присутствия в seller_account_screen;
+╙ result: не реагирует на нажатие.
+
+✠ color_states
+┌─
+│seller_nav_demand  (activated_state по умолчанию в seller_demand_screen)
+│seller_nav_chat  (activated_state по умолчанию в seller_chat_screen)
+│seller_nav_shop  (activated_state по умолчанию в seller_shop_screen)
+│seller_nav_goods  (activated_state по умолчанию в seller_goods_screen)
+│seller_nav_account  (activated_state по умолчанию в seller_account_screen)
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color7
+│------ в activated_state
+└─
+┌─
+│seller_nav_demand_badge  (activated_state по умолчанию в seller_demand_screen)
+│seller_nav_chat_badge  (activated_state по умолчанию в seller_chat_screen)   
+│seller_nav_shop_badge  (activated_state по умолчанию в seller_shop_screen)  
+│seller_nav_goods_badge  (activated_state по умолчанию в seller_goods_screen)   
+│seller_nav_account_badge  (activated_state по умолчанию в seller_account_screen)
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color9
+│------ in default_state
+├────────
+│• color2
+│------ в activated_state 
+└─
+
+
+
+
+
+
+🡆🡆🡆🡆 seller_scan_check_data_screen
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+Подраздел в котором отображаются детали по выбранному орде  ру. 
+
+✠ tables
+
+                                             codename:                                 type:             designation:       location:   interaction:
+          ┌┬┬──[seller_scan_nav                                               ]    [section     ]                            [ 🡅 ✜ ]      [ no  ]
+          ││└┬─[seller_scan_nav_check                                         ]    [button      ]                            [ ✜ 🡄 ]      [ yes ]
+          ││ └ [seller_scan_nav_check_label                                   ]    [label       ]  [ "чек"               ]   [ ✜ ✜ ]      [ yes ]
+          │└─┬─[seller_scan_nav_scan                                          ]    [button      ]                            [ ✜ ✜ ]      [ yes ]
+          │  └ [seller_scan_nav_scan_label                                    ]    [label       ]  [ "скан"              ]   [ ✜ ✜ ]      [ yes ]
+          └──┬─[seller_scan_nav_qr                                            ]    [button      ]                            [ ✜ 🡆 ]      [ yes ]
+             └ [seller_scan_nav_qr_label                                      ]    [label       ]  [ "QR"                ]   [ ✜ ✜ ]      [ yes ]
+  ┌─────────┬──[seller_scan_check_data                                        ]    [section_lev1]                            [ ✜ ✜ ]      [ no  ] 
+  │         └┬─[seller_scan_check_data_top                                    ]    [section_lev2]                            [ 🡅 ✜ ]      [ no  ] 
+  │          └ [seller_scan_check_data_top_title                              ]    [label       ]  [ "ЧЕК"               ]   [ ✜ ✜ ]      [ no  ] 
+  └┬┬─────┬────[seller_scan_check_data_main                                   ]    [section_lev2]                            [ ✜ ✜ ]      [ no  ]
+   ││     └┬┬──[seller_scan_check_data_main_top                               ]    [thead       ]                            [ 🡅 ✜ ]      [ no  ] 
+   ││      │└┬─[seller_scan_check_data_main_top_param                         ]    [th          ]                            [ ✜ 🡄 ]      [ no  ]
+   ││      │ └ [seller_scan_check_data_main_top_param_label                   ]    [label       ]  [ "параметр"          ]   [ ✜ ✜ ]      [ no  ]
+   ││      └─┬─[seller_scan_check_data_main_top_value                         ]    [th          ]                            [ ✜ 🡆 ]      [ no  ]
+   ││        └ [seller_scan_check_data_main_top_value_label                   ]    [label       ]  [ "значение"          ]   [ ✜ ✜ ]      [ no  ]
+   │└┬┬────────[seller_scan_check_data_main_list                              ]    [tbody       ]                            [ ✜ ✜ ]      [ no  ]
+   │ │└┬┬┬┬────[seller_scan_check_data_main_list_cart_lot                     ]    [section_lev4]                            [ ✜ ✜ ]      [ no  ]
+   │ │ │││└┬┬──[seller_scan_check_data_main_list_cart_lot_number              ]    [tr          ]                            [ ✜ ✜ ]      [ no  ]
+   │ │ │││ │└┬─[seller_scan_check_data_main_list_cart_lot_number_left         ]    [td          ]                            [ ✜ 🡄 ]      [ no  ]
+   │ │ │││ │ └ [seller_scan_check_data_main_list_cart_lot_number_left_param   ]    [label       ]  [ "# товара"          ]   [ ✜ ✜ ]      [ no  ]
+   │ │ │││ └─┬─[seller_scan_check_data_main_list_cart_lot_number_right        ]    [td          ]                            [ ✜ 🡄 ]      [ no  ]
+   │ │ │││   └ [seller_scan_check_data_main_list_cart_lot_number_right_value  ]    [variable    ]  [ { number }          ]   [ ✜ ✜ ]      [ no  ]
+   │ │ ││└─┬┬──[seller_scan_check_data_main_list_cart_lot_name                ]    [tr          ]                            [ ✜ ✜ ]      [ no  ]
+   │ │ ││  │└┬─[seller_scan_check_data_main_list_cart_lot_name_left           ]    [td          ]                            [ ✜ 🡄 ]      [ no  ]
+   │ │ ││  │ └ [seller_scan_check_data_main_list_cart_lot_name_left_param     ]    [label       ]  [ "наименование"      ]   [ ✜ ✜ ]      [ no  ]
+   │ │ ││  └─┬─[seller_scan_check_data_main_list_cart_lot_name_right          ]    [td          ]                            [ ✜ 🡆 ]      [ no  ]
+   │ │ ││    └ [seller_scan_check_data_main_list_cart_lot_name_right_value    ]    [variable    ]  [ { string }          ]   [ ✜ ✜ ]      [ no  ]  
+   │ │ │└──┬┬──[seller_scan_check_data_main_list_cart_lot_quantity            ]    [tr          ]                            [ ✜ ✜ ]      [ no  ]
+   │ │ │   │└┬─[seller_scan_check_data_main_list_cart_lot_quantity_left       ]    [td          ]                            [ ✜ 🡄 ]      [ no  ]
+   │ │ │   │ └ [seller_scan_check_data_main_list_cart_lot_quantity_left_param ]    [label       ]  [ "количество"        ]   [ ✜ ✜ ]      [ no  ]
+   │ │ │   └─┬─[seller_scan_check_data_main_list_cart_lot_quantity_right      ]    [td          ]                            [ ✜ 🡆 ]      [ no  ]
+   │ │ │     └ [seller_scan_check_data_main_list_cart_lot_quantity_right_value]    [variable    ]  [ { number }          ]   [ ✜ ✜ ]      [ no  ]
+   │ │ └───┬┬──[seller_scan_check_data_main_list_cart_lot_price               ]    [tr          ]                            [ ✜ ✜ ]      [ no  ]
+   │ │     │└┬─[seller_scan_check_data_main_list_cart_lot_price_left          ]    [td          ]                            [ ✜ 🡄 ]      [ no  ]
+   │ │     │ └ [seller_scan_check_data_main_list_cart_lot_price_left_param    ]    [label       ]  [ "цена"              ]   [ ✜ ✜ ]      [ no  ]
+   │ │     └─┬─[seller_scan_check_data_main_list_cart_lot_price_right         ]    [td          ]                            [ ✜ 🡆 ]      [ no  ]
+   │ │       └ [seller_scan_check_data_main_list_cart_lot_price_right_value   ]    [variable    ]  [ { number }          ]   [ ✜ ✜ ]      [ no  ]
+   │ ├─────┬┬──[seller_scan_check_data_main_list_cart_sum                     ]    [tr          ]                            [ ✜ ✜ ]      [ no  ]
+   │ │     │└┬─[seller_scan_check_data_main_list_cart_sum_left                ]    [td          ]                            [ ✜ 🡄 ]      [ no  ]
+   │ │     │ └ [seller_scan_check_data_main_list_cart_sum_left_param          ]    [label       ]  [ "сумма оплаты"      ]   [ ✜ ✜ ]      [ no  ]
+   │ │     └─┬─[seller_scan_check_data_main_list_cart_sum_right               ]    [td          ]                            [ ✜ 🡆 ]      [ no  ]
+   │ │       └ [seller_scan_check_data_main_list_cart_sum_right_value         ]    [variable    ]  [ { number }          ]   [ ✜ ✜ ]      [ no  ]
+   │ ├─────┬┬──[seller_scan_check_data_main_list_tax_nds                      ]    [tr          ]                            [ ✜ ✜ ]      [ no  ]
+   │ │     │└┬─[seller_scan_check_data_main_list_tax_nds_left                 ]    [td          ]                            [ ✜ 🡄 ]      [ no  ]
+   │ │     │ └ [seller_scan_check_data_main_list_tax_nds_left_param           ]    [label       ]  [ "ндс"               ]   [ ✜ ✜ ]      [ no  ]
+   │ │     └─┬─[seller_scan_check_data_main_list_tax_nds_right                ]    [td          ]                            [ ✜ 🡆 ]      [ no  ]
+   │ │       └ [seller_scan_check_data_main_list_tax_nds_right_value          ]    [variable    ]  [ { number }          ]   [ ✜ ✜ ]      [ no  ]
+   │ ├─────┬┬──[seller_scan_check_data_main_list_tax_nsp                      ]    [tr          ]                            [ ✜ ✜ ]      [ no  ]
+   │ │     │└┬─[seller_scan_check_data_main_list_tax_nsp_left                 ]    [td          ]                            [ ✜ 🡄 ]      [ no  ]
+   │ │     │ └ [seller_scan_check_data_main_list_tax_nsp_left_param           ]    [label       ]  [ "нсп"               ]   [ ✜ ✜ ]      [ no  ]
+   │ │     └─┬─[seller_scan_check_data_main_list_tax_nsp_right                ]    [td          ]                            [ ✜ 🡆 ]      [ no  ]
+   │ │       └ [seller_scan_check_data_main_list_tax_nsp_right_value          ]    [variable    ]  [ { number }          ]   [ ✜ ✜ ]      [ no  ]
+   │ ├─────┬┬──[seller_scan_check_data_main_list_tax_sum                      ]    [tr          ]                            [ ✜ ✜ ]      [ no  ]
+   │ │     │└┬─[seller_scan_check_data_main_list_tax_sum_left                 ]    [td          ]                            [ ✜ 🡄 ]      [ no  ]
+   │ │     │ └ [seller_scan_check_data_main_list_tax_sum_left_param           ]    [label       ]  [ "сумма налога"      ]   [ ✜ ✜ ]      [ no  ]
+   │ │     └─┬─[seller_scan_check_data_main_list_tax_sum_right                ]    [td          ]                            [ ✜ 🡆 ]      [ no  ]
+   │ │       └ [seller_scan_check_data_main_list_tax_sum_right_value          ]    [variable    ]  [ { number }          ]   [ ✜ ✜ ]      [ no  ] 
+   │ ├─────┬┬──[seller_scan_check_data_main_list_profit                       ]    [tr          ]                            [ ✜ ✜ ]      [ no  ]
+   │ │     │└┬─[seller_scan_check_data_main_list_profit_left                  ]    [td          ]                            [ ✜ 🡄 ]      [ no  ]
+   │ │     │ └ [seller_scan_check_data_main_list_profit_left_param            ]    [label       ]  [ "сумма прибыли"     ]   [ ✜ ✜ ]      [ no  ]
+   │ │     └─┬─[seller_scan_check_data_main_list_profit_right                 ]    [td          ]                            [ ✜ 🡆 ]      [ no  ]
+   │ │       └ [seller_scan_check_data_main_list_profit_right_value           ]    [variable    ]  [ { number }          ]   [ ✜ ✜ ]      [ no  ]
+   │ ├─────┬┬──[seller_scan_check_data_main_list_transact_number              ]    [tr          ]                            [ ✜ ✜ ]      [ no  ]
+   │ │     │└┬─[seller_scan_check_data_main_list_transact_number_left         ]    [td          ]                            [ ✜ 🡄 ]      [ no  ]
+   │ │     │ └ [seller_scan_check_data_main_list_transact_number_left_param   ]    [label       ]  [ "номер транзакции"  ]   [ ✜ ✜ ]      [ no  ]
+   │ │     └─┬─[seller_scan_check_data_main_list_transact_number_right        ]    [td          ]                            [ ✜ 🡆 ]      [ no  ]
+   │ │       └ [seller_scan_check_data_main_list_transact_number_right_value  ]    [variable    ]  [ { number }          ]   [ ✜ ✜ ]      [ no  ]
+   │ ├─────┬┬──[seller_scan_check_data_main_list_transact_time                ]    [tr          ]                            [ ✜ ✜ ]      [ no  ]
+   │ │     │└┬─[seller_scan_check_data_main_list_transact_time_left           ]    [td          ]                            [ ✜ 🡄 ]      [ no  ]
+   │ │     │ └ [seller_scan_check_data_main_list_transact_time_left_param     ]    [label       ]  [ "время транзакции"  ]   [ ✜ ✜ ]      [ no  ]
+   │ │     └─┬─[seller_scan_check_data_main_list_transact_time_right          ]    [td          ]                            [ ✜ 🡆 ]      [ no  ]
+   │ │       └ [seller_scan_check_data_main_list_transact_time_right_value    ]    [variable    ]  [ { number }          ]   [ ✜ ✜ ]      [ no  ]
+   │ ├─────┬┬──[seller_scan_check_data_main_list_transact_type                ]    [tr          ]                            [ ✜ ✜ ]      [ no  ]
+   │ │     │└┬─[seller_scan_check_data_main_list_transact_type_left           ]    [td          ]                            [ ✜ 🡄 ]      [ no  ]
+   │ │     │ └ [seller_scan_check_data_main_list_transact_type_left_param     ]    [label       ]  [ "тип оплаты"        ]   [ ✜ ✜ ]      [ no  ]
+   │ │     └─┬─[seller_scan_check_data_main_list_transact_type_right          ]    [td          ]                            [ ✜ 🡆 ]      [ no  ]
+   │ │       └ [seller_scan_check_data_main_list_transact_type_right_value    ]    [variable    ]  [ { string }          ]   [ ✜ ✜ ]      [ no  ]
+   │ ├─────┬┬──[seller_scan_check_data_main_list_client_name                  ]    [tr          ]                            [ ✜ ✜ ]      [ no  ]
+   │ │     │└┬─[seller_scan_check_data_main_list_client_name_left             ]    [td          ]                            [ ✜ 🡄 ]      [ no  ]
+   │ │     │ └ [seller_scan_check_data_main_list_client_name_left_param       ]    [label       ]  [ "покупатель"        ]   [ ✜ ✜ ]      [ no  ]
+   │ │     └─┬─[seller_scan_check_data_main_list_client_name_right            ]    [td          ]                            [ ✜ 🡆 ]      [ no  ]
+   │ │       └ [seller_scan_check_data_main_list_client_name_right_value      ]    [variable    ]  [ { string }          ]   [ ✜ ✜ ]      [ no  ]
+   │ ├─────┬┬──[seller_scan_check_data_main_list_client_phone                 ]    [tr          ]                            [ ✜ ✜ ]      [ no  ]
+   │ │     │└┬─[seller_scan_check_data_main_list_client_phone_left            ]    [td          ]                            [ ✜ 🡄 ]      [ no  ]
+   │ │     │ └ [seller_scan_check_data_main_list_client_phone_left_param      ]    [label       ]  [ "телефон"           ]   [ ✜ ✜ ]      [ no  ]
+   │ │     └─┬─[seller_scan_check_data_main_list_client_phone_right           ]    [td          ]                            [ ✜ 🡆 ]      [ no  ]
+   │ │       └ [seller_scan_check_data_main_list_client_phone_right_value     ]    [variable    ]  [ { number }          ]   [ ✜ ✜ ]      [ no  ]
+   │ ├─────┬┬──[seller_scan_check_data_main_list_book                         ]    [tr          ]                            [ ✜ ✜ ]      [ no  ]
+   │ │     │└┬─[seller_scan_check_data_main_list_book_left                    ]    [td          ]                            [ ✜ 🡄 ]      [ no  ]
+   │ │     │ └ [seller_scan_check_data_main_list_book_left_param              ]    [label       ]  [ "резервирование"    ]   [ ✜ ✜ ]      [ no  ]
+   │ │     └─┬─[seller_scan_check_data_main_list_book_right                   ]    [td          ]                            [ ✜ 🡆 ]      [ no  ]
+   │ │       └ [seller_scan_check_data_main_list_book_right_value             ]    [variable    ]  [ { boolean }         ]   [ ✜ ✜ ]      [ no  ]
+   │ ├─────┬┬──[seller_scan_check_data_main_list_ship_activation              ]    [tr          ]                            [ ✜ ✜ ]      [ no  ]
+   │ │     │└┬─[seller_scan_check_data_main_list_ship_activation_left         ]    [td          ]                            [ ✜ 🡄 ]      [ no  ]
+   │ │     │ └ [seller_scan_check_data_main_list_ship_activation_left_param   ]    [label       ]  [ "доставка"          ]   [ ✜ ✜ ]      [ no  ]
+   │ │     └─┬─[seller_scan_check_data_main_list_ship_activation_right        ]    [td          ]                            [ ✜ 🡆 ]      [ no  ]
+   │ │       └ [seller_scan_check_data_main_list_ship_activation_right_value  ]    [variable    ]  [ { boolean }         ]   [ ✜ ✜ ]      [ no  ]
+   │ ├─────┬┬──[seller_scan_check_data_main_list_operator_number              ]    [tr          ]                            [ ✜ ✜ ]      [ no  ]
+   │ │     │└┬─[seller_scan_check_data_main_list_operator_number_left         ]    [td          ]                            [ ✜ 🡄 ]      [ no  ]
+   │ │     │ └ [seller_scan_check_data_main_list_operator_number_left_param   ]    [label       ]  [ "продавец"          ]   [ ✜ ✜ ]      [ no  ]
+   │ │     └─┬─[seller_scan_check_data_main_list_operator_number_right        ]    [td          ]                            [ ✜ 🡆 ]      [ no  ]
+   │ │       └ [seller_scan_check_data_main_list_operator_number_right_value  ]    [variable    ]  [ { number }          ]   [ ✜ ✜ ]      [ no  ]
+   │ └─────┬┬──[seller_scan_check_data_main_list_operator_shift               ]    [tr          ]                            [ ✜ ✜ ]      [ no  ]
+   │       │└┬─[seller_scan_check_data_main_list_operator_shift_left          ]    [td          ]                            [ ✜ 🡄 ]      [ no  ]
+   │       │ └ [seller_scan_check_data_main_list_operator_shift_left_param    ]    [label       ]  [ "смена"             ]   [ ✜ ✜ ]      [ no  ]
+   │       └─┬─[seller_scan_check_data_main_list_operator_shift_right         ]    [td          ]                            [ ✜ 🡆 ]      [ no  ]
+   │         └ [seller_scan_check_data_main_list_operator_shift_right_value   ]    [variable    ]  [ { number }          ]   [ ✜ ✜ ]      [ no  ]
+   └────────┬──[seller_scan_check_data_main_bottom_btn                        ]    [section_lev3]                            [ 🡇 ✜ ]      [ no  ] 
+            └┬─[seller_scan_check_data_main_bottom_btn_back                   ]    [button      ]                            [ ✜ 🡄 ]      [ yes ]
+             └ [seller_scan_check_data_main_bottom_btn_back_title             ]    [label       ]  [ "назад"             ]   [ ✜ ✜ ]      [ yes ]
+        ┌┬┬┬┬──[seller_nav                                                    ]    [section     ]                            [ ✜ ✜ ]      [ no  ]
+        ││││└┬─[seller_nav_demand_button                                      ]    [button      ]                            [ ✜ 🡄 ]      [ yes ]
+        ││││ ├ [seller_nav_demand_header                                      ]    [header      ]  [ "МОНИТОР"           ]   [ ✜ ✜ ]      [ no  ]  
+        ││││ └ [seller_nav_demand_badge                                       ]    [badge       ]  [ { number }          ]   [ 🡅 🡆 ]      [ no  ] 	
+        │││└─┬─[seller_nav_chat_button                                        ]    [button      ]                            [ ✜ 🡄 ]      [ yes ]   
+        │││  ├ [seller_nav_chat_header                                        ]    [header      ]  [ "ЧАТ"               ]   [ ✜ ✜ ]      [ no  ] 
+        │││  └ [seller_nav_chat_badge                                         ]    [badge       ]  [ { number }          ]   [ 🡅 🡆 ]      [ no  ] 
+        ││└──┬─[seller_nav_shop_button                                        ]    [button      ]                            [ ✜ ✜ ]      [ yes ]   
+        ││   ├ [seller_nav_shop_header                                        ]    [header      ]  [ "МАГАЗИН"           ]   [ ✜ ✜ ]      [ no  ] 
+        ││   └ [seller_nav_shop_badge                                         ]    [badge       ]  [ { number }          ]   [ 🡅 🡆 ]      [ no  ]   
+        │└───┬─[seller_nav_goods_button                                       ]    [button      ]                            [ ✜ 🡆 ]      [ yes ]   
+        │    ├ [seller_nav_goods_header                                       ]    [header      ]  [ "ТОВАРЫ"            ]   [ ✜ ✜ ]      [ no  ] 
+        │    └ [seller_nav_goods_badge                                        ]    [badge       ]  [ { number }          ]   [ 🡅 🡆 ]      [ no  ]     
+        └────┬─[seller_nav_scan_button                                        ]    [button      ]                            [ ✜ 🡆 ]      [ yes ]   
+             ├ [seller_nav_scan_header                                        ]    [header      ]  [ "КАБИНЕТ"           ]   [ ✜ ✜ ]      [ no  ] 
+             └ [seller_nav_scan_badge                                         ]    [badge       ]  [ { number }          ]   [ 🡅 🡆 ]      [ no  ] 
+
+
+Основное пространство в центральной области экрана занимает seller_scan_check_data_main состоящий из 2 секций:
+- seller_scan_check_data_main_top  
+- seller_scan_check_data_main_list
+
+■ seller_scan_check_data
+
+✠ details
+seller_scan_check_data_main_top
+--- seller_scan_check_data_main_top - является панелью представляющей шапку для seller_scan_check_data_main_list, располагается в качестве компактного блока высотой порядка 6-8% от вертикальной области экрана в верхней части seller_scan_check_data_main, включает в себя seller_scan_check_data_main_top_param и seller_scan_check_data_main_top_value;
+----- seller_scan_check_data_main_top_param - является левой ячейкой seller_scan_check_data_main_top содержащей seller_scan_check_data_main_top_param_label; 
+------- seller_scan_check_data_main_top_param_label - наименование ячейки в виде константного текстового элемента следующего содержания: "параметр";
+----- seller_scan_check_data_main_top_value - является правой ячейкой seller_scan_check_data_main_top содержащей seller_scan_check_data_main_top_value_label; 
+------- seller_scan_check_data_main_top_value_label - наименование ячейки в виде константного текстового элемента следующего содержания: "значение".
+ 
+--- seller_scan_check_data_main_list - является телом данных чека, который располагается в центральной области экрана занимает порядка 70% viewport по вертикали;
+
+----- seller_scan_check_data_main_list_cart_lot - является сводкой по товару в виде подгруппы включающей 4 компонента:
+------- seller_scan_check_data_main_list_cart_lot_number - состоит из ячеек seller_scan_check_data_main_list_cart_lot_number_left и seller_scan_check_data_main_list_cart_lot_number_right;
+--------- seller_scan_check_data_main_list_cart_lot_number_left - левая ячейка seller_scan_check_data_main_list_cart_lot_number; 
+----------- seller_scan_check_data_main_list_cart_lot_number_left_param - константное текстовое значение: "# товара";
+--------- seller_scan_check_data_main_list_cart_lot_number_right - правая ячейка seller_scan_check_data_main_list_cart_lot_number;
+----------- seller_scan_check_data_main_list_cart_lot_number_right_value - переменная с числовым значением отображающая номер товара в каталоге магазина;
+------- seller_scan_check_data_main_list_cart_lot_name - находится под seller_scan_check_data_main_list_cart_lot_number и состоит из 2 ячеек;
+--------- seller_scan_check_data_main_list_cart_lot_name_left - левая ячейка seller_scan_check_data_main_list_cart_lot_name;
+----------- seller_scan_check_data_main_list_cart_lot_name_left - константное текстовое значение: "наименование";
+--------- seller_scan_check_data_main_list_cart_lot_name_right - правая ячейка seller_scan_check_data_main_list_cart_lot_name;
+----------- seller_scan_check_data_main_list_cart_lot_name_right_value - переменная со строковым значением отображающая название товарной позиции в каталоге магазина;
+------- seller_scan_check_data_main_list_cart_lot_quantity - находится под seller_scan_check_data_main_list_cart_lot_name и состоит из 2 ячеек:
+--------- seller_scan_check_data_main_list_cart_lot_quantity_left - левая ячейка seller_scan_check_data_main_list_cart_lot_quantity;
+----------- seller_scan_check_data_main_list_cart_lot_quantity_left_param - константное текстовое значение: "количество";
+--------- seller_scan_check_data_main_list_cart_lot_quantity_right - правая ячейка seller_scan_check_data_main_list_cart_lot_quantity;
+----------- seller_scan_check_data_main_list_cart_lot_quantity_right_value - переменная с числовым значением, отображает количество товара в корзине по seller_scan_check_data_main_list_cart_lot согласно единицам измерения данного лота;
+------- seller_scan_check_data_main_list_cart_lot_price - находится под seller_scan_check_data_main_list_cart_lot_quantity и состоит из 2 ячеек:
+--------- seller_scan_check_data_main_list_cart_lot_price_left - левая ячейка seller_scan_check_data_main_list_cart_lot_price;
+----------- seller_scan_check_data_main_list_cart_lot_price_left_param - константное текстовое значение: "цена";
+--------- seller_scan_check_data_main_list_cart_lot_price_right - правая ячейка seller_scan_check_data_main_list_cart_lot_price;
+----------- seller_scan_check_data_main_list_cart_lot_price_right_value - переменная с числовым значением, отображает цену товара согласно его количеству в корзине;
 
 
 
