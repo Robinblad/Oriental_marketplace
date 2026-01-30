@@ -2507,7 +2507,7 @@ seller_scan_check_main подразделяется на 3 составных ч
 🡆🡆🡆🡆 seller_scan_check_data_screen
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 
-Подраздел в котором отображаются детали по выбранному орде  ру. 
+Подраздел в котором отображаются детали по выбранному ордеру. 
 
 ✠ tables
 
@@ -2645,6 +2645,86 @@ seller_scan_check_main подразделяется на 3 составных ч
 - seller_scan_check_data_main_top  
 - seller_scan_check_data_main_list
 
+
+■ seller_scan_nav
+
+✠ details
+Секция seller_scan_nav является навигационной панелью seller_scan и как сквозная часть интерфейса присутствует на всех экранах seller_scan в верхней области. Секция состоит из 3 компонентов каждый из которых выполняет роль кнопки расположенные слева-направо в следующем порядке:
+
+1)  seller_scan_nav_check - кнопка предназначенная для перехода к seller_scan_check_screen (в рамках seller_scan_check_screen активирована по умолчанию);
+--- seller_scan_nav_check_label - является константным центрированным в seller_scan_nav_check текстовым элементом следующего содержания: "чек";
+2) seller_scan_nav_calc - кнопка предназначенная для перехода к seller_scan_calc_screen (в рамках seller_scan_calc_screen активирована по умолчанию);
+--- seller_scan_nav_calc_label - является константным центрированным в seller_scan_nav_calc текстовым элементом следующего содержания: "скан";
+3) seller_scan_nav_qr - кнопка предназначенная для перехода к seller_scan_qr_screen (в рамках seller_scan_qr_screen активирована по умолчанию);
+--- seller_scan_nav_qr_label - является константным центрированным в seller_scan_nav_qr текстовым элементом следующего содержания: "QR".
+
+✠ actions
+• seller_scan_nav_check:
+╠ valid
+║ • gesture: tap
+║ occasion: нажатие seller_scan_nav_check;
+║ condition:
+║ || - в ситуации присутствия в seller_scan_calc_screen;
+║ || - в ситуации присутствия в seller_scan_qr_screen;
+║ result: открывается seller_scan_check_screen.
+╠ invalid
+║ • gesture: tap
+║ occasion: нажатие seller_scan_nav_check;
+║ condition: в ситуации присутствия в seller_scan_check_screen;
+╙ result: не реагирует на нажатие.
+• seller_scan_nav_calc:
+╠ valid
+║ • gesture: tap
+║ occasion: нажатие seller_scan_nav_calc;
+║ condition:
+║ || - в ситуации присутствия в seller_scan_check_screen;
+║ || - в ситуации присутствия в seller_scan_qr_screen;
+║ result: открывается seller_scan_calc_screen.
+╠ invalid
+║ • gesture: tap
+║ occasion: нажатие seller_scan_nav_calc;
+║ condition: в ситуации присутствия в seller_scan_calc_screen;
+╙ result: не реагирует на нажатие.
+• seller_scan_nav_qr:
+╠ valid
+║ • gesture: tap
+║ occasion: нажатие seller_scan_nav_qr;
+║ condition:
+║ || - в ситуации присутствия в seller_scan_check_screen;
+║ || - в ситуации присутствия в seller_scan_calc_screen;
+║ result: открывается seller_scan_qr_screen.
+╠ invalid
+║ • gesture: tap
+║ occasion: нажатие seller_scan_nav_qr;
+║ condition: в ситуации присутствия в seller_scan_qr_screen;
+╙ result: не реагирует на нажатие.
+
+✠ color_states
+┌─ 
+│seller_scan_nav_check  (activated_state по умолчанию в seller_scan_check_screen)
+│seller_scan_nav_calc  (activated_state по умолчанию в seller_scan_calc_screen)
+│seller_scan_nav_qr  (activated_state по умолчанию в seller_scan_qr_screen)
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color7
+│------ в activated_state
+└─
+┌─
+│seller_scan_nav_check_label
+│seller_scan_nav_scan_label
+│seller_scan_nav_qr_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
+
 ■ seller_scan_check_data
 
 ✠ details
@@ -2655,29 +2735,324 @@ seller_scan_check_data_main_top
 ----- seller_scan_check_data_main_top_value - является правой ячейкой seller_scan_check_data_main_top содержащей seller_scan_check_data_main_top_value_label; 
 ------- seller_scan_check_data_main_top_value_label - наименование ячейки в виде константного текстового элемента следующего содержания: "значение".
  
---- seller_scan_check_data_main_list - является телом данных чека, который располагается в центральной области экрана занимает порядка 70% viewport по вертикали;
+--- seller_scan_check_data_main_list - является телом данных чека, который располагается в центральной области экрана занимает порядка 70% viewport по вертикали и обладает функцией скроллирования;
 
 ----- seller_scan_check_data_main_list_cart_lot - является сводкой по товару в виде подгруппы включающей 4 компонента:
 ------- seller_scan_check_data_main_list_cart_lot_number - состоит из ячеек seller_scan_check_data_main_list_cart_lot_number_left и seller_scan_check_data_main_list_cart_lot_number_right;
 --------- seller_scan_check_data_main_list_cart_lot_number_left - левая ячейка seller_scan_check_data_main_list_cart_lot_number; 
------------ seller_scan_check_data_main_list_cart_lot_number_left_param - константное текстовое значение: "# товара";
+----------- seller_scan_check_data_main_list_cart_lot_number_left_param - константное текстовое значение отображающее наименование параметра: "# товара";
 --------- seller_scan_check_data_main_list_cart_lot_number_right - правая ячейка seller_scan_check_data_main_list_cart_lot_number;
 ----------- seller_scan_check_data_main_list_cart_lot_number_right_value - переменная с числовым значением отображающая номер товара в каталоге магазина;
 ------- seller_scan_check_data_main_list_cart_lot_name - находится под seller_scan_check_data_main_list_cart_lot_number и состоит из 2 ячеек;
 --------- seller_scan_check_data_main_list_cart_lot_name_left - левая ячейка seller_scan_check_data_main_list_cart_lot_name;
------------ seller_scan_check_data_main_list_cart_lot_name_left - константное текстовое значение: "наименование";
+----------- seller_scan_check_data_main_list_cart_lot_name_left - константное текстовое значение отображающее наименование параметра: "наименование";
 --------- seller_scan_check_data_main_list_cart_lot_name_right - правая ячейка seller_scan_check_data_main_list_cart_lot_name;
 ----------- seller_scan_check_data_main_list_cart_lot_name_right_value - переменная со строковым значением отображающая название товарной позиции в каталоге магазина;
-------- seller_scan_check_data_main_list_cart_lot_quantity - находится под seller_scan_check_data_main_list_cart_lot_name и состоит из 2 ячеек:
+------- seller_scan_check_data_main_list_cart_lot_quantity - находится под seller_scan_check_data_main_list_cart_lot_name и состоит из 2 ячеек;
 --------- seller_scan_check_data_main_list_cart_lot_quantity_left - левая ячейка seller_scan_check_data_main_list_cart_lot_quantity;
------------ seller_scan_check_data_main_list_cart_lot_quantity_left_param - константное текстовое значение: "количество";
+----------- seller_scan_check_data_main_list_cart_lot_quantity_left_param - константное текстовое значение отображающее наименование параметра: "количество";
 --------- seller_scan_check_data_main_list_cart_lot_quantity_right - правая ячейка seller_scan_check_data_main_list_cart_lot_quantity;
 ----------- seller_scan_check_data_main_list_cart_lot_quantity_right_value - переменная с числовым значением, отображает количество товара в корзине по seller_scan_check_data_main_list_cart_lot согласно единицам измерения данного лота;
-------- seller_scan_check_data_main_list_cart_lot_price - находится под seller_scan_check_data_main_list_cart_lot_quantity и состоит из 2 ячеек:
+------- seller_scan_check_data_main_list_cart_lot_price - находится под seller_scan_check_data_main_list_cart_lot_quantity и состоит из 2 ячеек;
 --------- seller_scan_check_data_main_list_cart_lot_price_left - левая ячейка seller_scan_check_data_main_list_cart_lot_price;
------------ seller_scan_check_data_main_list_cart_lot_price_left_param - константное текстовое значение: "цена";
+----------- seller_scan_check_data_main_list_cart_lot_price_left_param - константное текстовое значение отображающее наименование параметра: "цена";
 --------- seller_scan_check_data_main_list_cart_lot_price_right - правая ячейка seller_scan_check_data_main_list_cart_lot_price;
 ----------- seller_scan_check_data_main_list_cart_lot_price_right_value - переменная с числовым значением, отображает цену товара согласно его количеству в корзине;
+----- seller_scan_check_data_main_list_cart_sum - располагается под всеми seller_scan_check_data_main_list_cart_lot подгруппами и состоит из 2 ячеек:
+------- seller_scan_check_data_main_list_cart_sum_left - левая ячейка seller_scan_check_data_main_list_cart_sum;
+--------- seller_scan_check_data_main_list_cart_sum_left_param - константное текстовое значение отображающее наименование параметра: "сумма оплаты";
+------- seller_scan_check_data_main_list_cart_sum_value - правая ячейка seller_scan_check_data_main_list_cart_sum;
+--------- seller_scan_check_data_main_list_cart_sum_value - переменная с числовым значением, отображает общую сумму по всем seller_scan_check_data_main_list_cart_lot находящимся в корзине;
+----- seller_scan_check_data_main_list_tax_nds - находится под seller_scan_check_data_main_list_cart_sum, состоит из 2 ячеек;
+------- seller_scan_check_data_main_list_tax_nds_left - левая ячейка seller_scan_check_data_main_list_tax_nds;
+--------- seller_scan_check_data_main_list_tax_nds_left_param - константное текстовое значение отображающее наименование параметра: "ндс";
+------- seller_scan_check_data_main_list_tax_nds_right - правая ячейка seller_scan_check_data_main_list_tax_nds;
+--------- seller_scan_check_data_main_list_tax_nds_right_value - переменная с числовым значением, отображает величину налога ндс в процентном выражении;
+----- seller_scan_check_data_main_list_tax_nsp - находится под seller_scan_check_data_main_list_tax_nds, состоит из 2 ячеек;
+------- seller_scan_check_data_main_list_tax_nsp_left_param - левая ячейка seller_scan_check_data_main_list_tax_nsp;
+--------- seller_scan_check_data_main_list_tax_nsp_left_param - константное текстовое значение отображающее наименование параметра: "нсп";
+------- seller_scan_check_data_main_list_tax_nsp_right_value - правая ячейка seller_scan_check_data_main_list_tax_nsp;
+--------- seller_scan_check_data_main_list_tax_nsp_right_value - переменная с числовым значением, отображает величину налога нсп в процентном выражении;
+----- seller_scan_check_data_main_list_tax_sum - находится под seller_scan_check_data_main_list_tax_nsp, состоит из 2 ячеек:
+------- seller_scan_check_data_main_list_tax_sum_param - левая ячейка seller_scan_check_data_main_list_tax_sum;
+--------- seller_scan_check_data_main_list_tax_sum_param - константное текстовое значение отображающее наименование параметра: "сумма налога";
+------- seller_scan_check_data_main_list_tax_sum_value - правая ячейка seller_scan_check_data_main_list_tax_sum;
+--------- seller_scan_check_data_main_list_tax_sum_value - переменная с числовым значением, отображает сумму налога в денежном выражении соответствующего seller_scan_check_data_main_list_cart_sum_value;
+----- seller_scan_check_data_main_list_profit - находится под seller_scan_check_data_main_list_tax_sum, состоит из 2 ячеек:
+------- seller_scan_check_data_main_list_profit_param - левая ячейка seller_scan_check_data_main_list_profit;
+--------- seller_scan_check_data_main_list_profit_param - константное текстовое значение отображающее наименование параметра: "сумма прибыли";
+------- seller_scan_check_data_main_list_profit_value - правая ячейка seller_scan_check_data_main_list_profit;
+--------- seller_scan_check_data_main_list_profit_value - переменная с числовым значением, отображает сумму прибыли в денежном выражении по seller_scan_check_data_main_list_cart_sum_value за вычетом seller_scan_check_data_main_list_tax_sum_value;
+----- seller_scan_check_data_main_list_transact_number - находится под seller_scan_check_data_main_list_profit, состоит из 2 ячеек:
+------- seller_scan_check_data_main_list_transact_number_param - левая ячейка seller_scan_check_data_main_list_transact_number;
+--------- seller_scan_check_data_main_list_transact_number_param - константное текстовое значение отображающее наименование параметра: "номер транзакции";
+------- seller_scan_check_data_main_list_transact_number_value - правая ячейка seller_scan_check_data_main_list_transact_number;
+--------- seller_scan_check_data_main_list_transact_number_value - переменная с числовым значением, отображает номер транзакции оплаты ордера;
+----- seller_scan_check_data_main_list_transact_time - находится под seller_scan_check_data_main_list_transact_number, состоит из 2 ячеек:
+------- seller_scan_check_data_main_list_transact_time_param - левая ячейка seller_scan_check_data_main_list_transact_time;
+--------- seller_scan_check_data_main_list_transact_time_param - константное текстовое значение отображающее наименование параметра: "время транзакции";
+------- seller_scan_check_data_main_list_transact_time_value - правая ячейка seller_scan_check_data_main_list_transact_time;
+--------- seller_scan_check_data_main_list_transact_time_value - переменная с числовым значением, отображает время транзакции по ордеру по схеме: [число.месяц.год  (часы:минуты)];
+----- seller_scan_check_data_main_list_transact_type - находится под seller_scan_check_data_main_list_transact_time, состоит из 2 ячеек:
+------- seller_scan_check_data_main_list_transact_type_param - левая ячейка seller_scan_check_data_main_list_transact_type;
+--------- seller_scan_check_data_main_list_transact_type_param - константное текстовое значение отображающее наименование параметра: "тип оплаты";
+------- seller_scan_check_data_main_list_transact_type_value - правая ячейка seller_scan_check_data_main_list_transact_type;
+--------- seller_scan_check_data_main_list_transact_type_value - переменная со строковым значением, отображает тип (инструмент) с помощью которого была совершена транзакция;
+----- seller_scan_check_data_main_list_client_name - находится под seller_scan_check_data_main_list_transact_type, состоит из 2 ячеек:
+------- seller_scan_check_data_main_list_client_name_param - левая ячейка  seller_scan_check_data_main_list_client_name;
+--------- seller_scan_check_data_main_list_client_name_param - константное текстовое значение отображающее наименование параметра: "покупатель";
+------- seller_scan_check_data_main_list_client_name_value - правая ячейка seller_scan_check_data_main_list_client_name;
+--------- seller_scan_check_data_main_list_client_name_value - переменная со строковым значением, отображает фамилию и имя buyer по шаблону: "user_id_data_seller_level_orders_closed_id_client_name_secondname.user_id_data_seller_level_orders_closed_id_client_name_firstname", где user_id_data_seller_level_orders_closed_id_client_name_firstname представлена первой буквой;
+----- seller_scan_check_data_main_list_book - находится под seller_scan_check_data_main_list_client_name, состоит из 2 ячеек:
+------- seller_scan_check_data_main_list_book_param - левая ячейка seller_scan_check_data_main_list_book;
+--------- seller_scan_check_data_main_list_book_param - константное текстовое значение отображающее наименование параметра: "резервирование";
+------- seller_scan_check_data_main_list_book_value - правая ячейка seller_scan_check_data_main_list_book;
+--------- seller_scan_check_data_main_list_book_value - переменная с булевым значением, отображает активирование настройки в виде "да/нет";
+----- seller_scan_check_data_main_list_ship_activation - находится под seller_scan_check_data_main_list_book, состоит из 2 ячеек:
+------- seller_scan_check_data_main_list_ship_activation_param - левая ячейка seller_scan_check_data_main_list_ship_activation;
+--------- seller_scan_check_data_main_list_ship_activation_param - константное текстовое значение отображающее наименование параметра: "доставка";
+------- seller_scan_check_data_main_list_ship_activation_value - правая ячейка seller_scan_check_data_main_list_ship_activation;
+--------- seller_scan_check_data_main_list_ship_activation_value - переменная с булевым значением, отображает активирование настройки в виде "да/нет";
+----- seller_scan_check_data_main_list_operator_number - находится под seller_scan_check_data_main_list_ship_activation, состоит из 2 ячеек:
+------- seller_scan_check_data_main_list_operator_number_param - левая ячейка seller_scan_check_data_main_list_operator_number;
+--------- seller_scan_check_data_main_list_operator_number_param - константное текстовое значение отображающее наименование параметра: "продавец";
+------- seller_scan_check_data_main_list_operator_number_value - правая ячейка seller_scan_check_data_main_list_operator_number;
+--------- seller_scan_check_data_main_list_operator_number_value - переменная с числовым значением, отображает номер оператора во время работы которого был обработан ордер;
+----- seller_scan_check_data_main_list_operator_shift - находится под seller_scan_check_data_main_list_operator_number, состоит из 2 ячеек:
+------- seller_scan_check_data_main_list_operator_shift_param - левая ячейка seller_scan_check_data_main_list_operator_shift;
+--------- seller_scan_check_data_main_list_operator_shift_param - константное текстовое значение отображающее наименование параметра: "смена";
+------- seller_scan_check_data_main_list_operator_shift_value - правая ячейка seller_scan_check_data_main_list_operator_shift;
+--------- seller_scan_check_data_main_list_operator_shift_value - переменная с числовым значением, отображает номер смены оператора во время работы которого был обработан ордер;
 
+--- seller_scan_check_data_main_bottom_btn - контейнер располагающийся в нижней части seller_scan_check_data_main содержащий seller_scan_check_data_main_bottom_btn_back;
+----- seller_scan_check_data_main_bottom_btn_back - кнопка центрированная в seller_scan_check_data_main_bottom_btn;
+------- seller_scan_check_data_main_bottom_btn_back_title - наименование seller_scan_check_data_main_bottom_btn_back: "назад".
+
+✠ actions
+• seller_scan_check_data_main_bottom_btn_back:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_scan_check_data_main_bottom_btn_back;
+║ condition: in any situation;
+╙ result: происходит возврат к seller_scan_check_screen.
+
+✠ color_states
+┌─ 
+│seller_scan_check_data_main_list
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color2
+│------ in any situation
+└─
+┌─ 
+│seller_scan_check_data_main_bottom_btn_back
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color5
+│------ in pressing_state
+└─
+┌─ 
+│seller_scan_check_data_top_title
+│seller_scan_check_data_main_top_param_label
+│seller_scan_check_data_main_top_value_label
+│seller_scan_check_data_main_list_cart_lot_number_left_param
+│seller_scan_check_data_main_list_cart_lot_number_right_value
+│seller_scan_check_data_main_list_cart_lot_name_left_param
+│seller_scan_check_data_main_list_cart_lot_name_right_value
+│seller_scan_check_data_main_list_cart_lot_quantity_left_param
+│seller_scan_check_data_main_list_cart_lot_quantity_right_value
+│seller_scan_check_data_main_list_cart_lot_price_left_param
+│seller_scan_check_data_main_list_cart_lot_price_right_value
+│seller_scan_check_data_main_list_cart_sum_left_param
+│seller_scan_check_data_main_list_cart_sum_right_value
+│seller_scan_check_data_main_list_tax_nds_left_param
+│seller_scan_check_data_main_list_tax_nds_right_value
+│seller_scan_check_data_main_list_tax_nsp_left_param
+│seller_scan_check_data_main_list_tax_nsp_right_value
+│seller_scan_check_data_main_list_tax_sum_left_param
+│seller_scan_check_data_main_list_tax_sum_right_value
+│seller_scan_check_data_main_list_profit_left_param
+│seller_scan_check_data_main_list_profit_right_value
+│seller_scan_check_data_main_list_transact_number_left_param
+│seller_scan_check_data_main_list_transact_number_right_value
+│seller_scan_check_data_main_list_transact_time_left_param
+│seller_scan_check_data_main_list_transact_time_right_value
+│seller_scan_check_data_main_list_transact_type_left_param
+│seller_scan_check_data_main_list_transact_type_right_value
+│seller_scan_check_data_main_list_client_name_left_param
+│seller_scan_check_data_main_list_client_name_right_value
+│seller_scan_check_data_main_list_client_phone_left_param
+│seller_scan_check_data_main_list_client_phone_right_value
+│seller_scan_check_data_main_list_book_left_param
+│seller_scan_check_data_main_list_book_right_value
+│seller_scan_check_data_main_list_ship_activation_left_param
+│seller_scan_check_data_main_list_ship_activation_right_value
+│seller_scan_check_data_main_list_operator_number_left_param
+│seller_scan_check_data_main_list_operator_number_right_value
+│seller_scan_check_data_main_list_operator_shift_left_param
+│seller_scan_check_data_main_list_operator_shift_right_value
+│seller_scan_check_data_main_bottom_btn_back_title
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color8
+│------ in any situation
+└─
+
+✠ props
+seller_settings_activity импортирует следующие props:
+user_id_data_seller_level_orders_closed_id_cart
+user_id_data_seller_level_orders_closed_id_tax_nds
+user_id_data_seller_level_orders_closed_id_tax_nsp
+user_id_data_seller_level_orders_closed_id_tax_sum
+user_id_data_seller_level_orders_closed_id_profit
+user_id_data_seller_level_orders_closed_id_transact
+user_id_data_seller_level_orders_closed_id_client
+user_id_data_seller_level_orders_closed_id_book
+user_id_data_seller_level_orders_closed_id_ship
+user_id_data_seller_level_orders_closed_id_operator.
+
+■ seller_nav
+
+✠ details
+Секция seller_nav является навигационной панелью seller_mode и как сквозная часть интерфейса присутствует на всех экранах в нижней области. Секция состоит из 5 компонентов каждый из которых выполняет роль кнопки:
+1) seller_nav_demand - кнопка с наименованием и бейджем, предназначена для перехода к seller_demand_screen;
+-- seller_nav_demand_label - представлен заголовком "МОНИТОР";
+-- seller_nav_demand_badge - размещается в верхнем правом углу, отображает количество hunt_screen_demand_message в seller_demand_screen.
+2) seller_nav_chat - кнопка с наименованием и бейджем, предназначена для перехода к seller_chat_screen;
+-- seller_nav_chat_label - представлен заголовком "ЧАТ";
+-- seller_nav_chat_badge - размещается в верхнем правом углу, отображает количество непросмотренных chat_screen_chat_message_node.
+3) seller_nav_shop - кнопка с наименованием и бейджем, предназначена для перехода к seller_shop_screen (в seller_shop_screen активирована по умолчанию);
+-- seller_nav_shop_label - представлен логотипом в seller_shop_screen, либо наименованием "МАГАЗИН" в остальных экранах;
+-- seller_nav_shop_badge - размещается в верхнем правом углу, отображается только в seller_shop_screen, показывает доступные обновления приложения.
+4) seller_nav_goods - кнопка с наименованием и бейджем, предназначена для перехода к seller_goods_screen;
+-- seller_nav_goods_label - представлен заголовком "ТОВАРЫ";
+-- seller_nav_goods_badge - размещается в верхнем правом углу, отображает число лотов по которым заканчивается товар.
+5) seller_nav_account - кнопка с наименованием и бейджем, предназначена для перехода к seller_account_screen;
+-- seller_nav_account_label - представлен заголовком "КАБИНЕТ";
+-- seller_nav_account_badge - размещается в верхнем правом углу, отображает количество непросмотренных денежных транзакций.
+
+✠ actions
+• seller_nav_demand:
+╠ valid
+║ • gesture: tap
+║ occasion: нажатие seller_nav_demand;
+║ condition:
+║ || - в ситуации присутствия в seller_chat_screen;
+║ || - в ситуации присутствия в seller_shop_screen;
+║ || - в ситуации присутствия в seller_goods_screen;
+║ || - в ситуации присутствия в seller_account_screen;
+║ result: открывается seller_demand_screen.
+╠ invalid
+║ • gesture: tap
+║ occasion: нажатие seller_nav_demand;
+║ condition: в ситуации присутствия в seller_demand_screen;
+╙ result: не реагирует на нажатие.
+• seller_nav_chat:
+╠ valid
+║ • gesture: tap
+║ occasion: нажатие seller_nav_chat;
+║ condition:
+║ || - в ситуации присутствия в seller_demand_screen;
+║ || - в ситуации присутствия в seller_shop_screen;
+║ || - в ситуации присутствия в seller_goods_screen;
+║ || - в ситуации присутствия в seller_account_screen;
+║ result: открывается seller_chat_screen.
+╠ invalid
+║ • gesture: tap
+║ occasion: нажатие seller_nav_chat;
+║ condition: в ситуации присутствия в seller_chat_screen;
+╙ result: не реагирует на нажатие.
+• seller_nav_shop:
+╠ valid
+║ • gesture: tap 
+║ occasion: нажатие seller_nav_shop;
+║ condition: 
+║ && - в ситуации присутствия в seller_shop_screen;
+║ && - в ситуации если доступно обновление приложения;
+║ result: открывается seller_nav_shop_update_popover;
+╠ valid
+║ • gesture: tap 
+║ occasion: нажатие seller_nav_shop;
+║ condition: 
+║ || - в ситуации присутствия в seller_demand_screen;
+║ || - в ситуации присутствия в seller_chat_screen;
+║ || - в ситуации присутствия в seller_goods_screen;
+║ || - в ситуации присутствия в seller_account_screen;
+║ result: открывается seller_shop_screen;
+╠ invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_nav_shop;
+║ condition:
+║ && - в ситуации присутствия в seller_shop_screen;
+║ && - в ситуации отсутствия обновлений приложения;
+╙ result: не реагирует на нажатие.
+• seller_nav_goods:
+╠ valid
+║ • gesture: tap
+║ occasion: нажатие seller_nav_goods;
+║ condition:
+║ || - в ситуации присутствия в seller_demand_screen;
+║ || - в ситуации присутствия в seller_chat_screen;
+║ || - в ситуации присутствия в seller_shop_screen;
+║ || - в ситуации присутствия в seller_account_screen;
+║ result: открывается seller_goods_screen.
+╠ invalid
+║ • gesture: tap
+║ occasion: нажатие seller_nav_goods;
+║ condition: в ситуации присутствия в seller_goods_screen;
+╙ result: не реагирует на нажатие.
+• seller_nav_account:
+╠ valid
+║ • gesture: tap
+║ occasion: нажатие seller_nav_account;
+║ condition:
+║ || - в ситуации присутствия в seller_demand_screen;
+║ || - в ситуации присутствия в seller_chat_screen;
+║ || - в ситуации присутствия в seller_shop_screen;
+║ || - в ситуации присутствия в seller_goods_screen;
+║ result: открывается seller_account_screen.
+╠ invalid
+║ • gesture: tap
+║ occasion: нажатие seller_nav_account;
+║ condition: в ситуации присутствия в seller_account_screen;
+╙ result: не реагирует на нажатие.
+
+✠ color_states
+┌─
+│seller_nav_demand  (activated_state по умолчанию в seller_demand_screen)
+│seller_nav_chat  (activated_state по умолчанию в seller_chat_screen)
+│seller_nav_shop  (activated_state по умолчанию в seller_shop_screen)
+│seller_nav_goods  (activated_state по умолчанию в seller_goods_screen)
+│seller_nav_account  (activated_state по умолчанию в seller_account_screen)
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color7
+│------ в activated_state
+└─
+┌─
+│seller_nav_demand_badge  (activated_state по умолчанию в seller_demand_screen)
+│seller_nav_chat_badge  (activated_state по умолчанию в seller_chat_screen)   
+│seller_nav_shop_badge  (activated_state по умолчанию в seller_shop_screen)  
+│seller_nav_goods_badge  (activated_state по умолчанию в seller_goods_screen)   
+│seller_nav_account_badge  (activated_state по умолчанию в seller_account_screen)
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color9
+│------ in default_state
+├────────
+│• color2
+│------ в activated_state 
+└─
 
 
