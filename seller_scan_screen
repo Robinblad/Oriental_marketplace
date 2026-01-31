@@ -4,6 +4,8 @@
 
 
 
+
+
 🡆🡆 seller_scan_screen
 ■■■■■■■■■■■■■■■■■■■■■
 
@@ -2282,7 +2284,7 @@ seller_scan_check_main подразделяется на 3 составных ч
 ------- seller_scan_check_main_list_order_number - левая ячейка seller_scan_check_main_list_order содержащая seller_scan_check_main_list_order_number_value;
 --------- seller_scan_check_main_list_order_number_value - переменная с числовым значением отображающая id ордера;
 ------- seller_scan_check_main_list_order_creation - правая ячейка seller_scan_check_main_list_order содержащая seller_scan_check_main_list_order_creation;
---------- seller_scan_check_main_list_order_creation_value - выровненное по центру seller_scan_check_main_list_order_creation конкатенированное значение из 2 переменных seller_scan_check_main_list_order_creation_value_date и seller_scan_check_main_list_order_creation_value_time;
+--------- seller_scan_check_main_list_order_creation_value - выровненное по центру seller_scan_check_main_list_order_creation конкатенированное значение из переменных seller_scan_check_main_list_order_creation_value_date и seller_scan_check_main_list_order_creation_value_time;
 ----------- seller_scan_check_main_list_order_creation_value_date - переменная с числовым значением отображающая дату ордера по шаблону "DD.MM.YY ", расположена  слева от seller_scan_check_main_list_order_creation_value_time;
 ----------- seller_scan_check_main_list_order_creation_value_time - переменная с числовым значением отображающая время ордера по шаблону "(HH:MM)", расположена  справа от seller_scan_check_main_list_order_creation_value_date.
 
@@ -2503,7 +2505,6 @@ seller_scan_check_main подразделяется на 3 составных ч
 
 
 
-
 🡆🡆🡆🡆 seller_scan_check_data_screen
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 
@@ -2519,110 +2520,114 @@ seller_scan_check_main подразделяется на 3 составных ч
           │  └ [seller_scan_nav_scan_label                                    ]    [label       ]  [ "скан"              ]   [ ✜ ✜ ]      [ yes ]
           └──┬─[seller_scan_nav_qr                                            ]    [button      ]                            [ ✜ 🡆 ]      [ yes ]
              └ [seller_scan_nav_qr_label                                      ]    [label       ]  [ "QR"                ]   [ ✜ ✜ ]      [ yes ]
-  ┌─────────┬──[seller_scan_check_data                                        ]    [section_lev1]                            [ ✜ ✜ ]      [ no  ] 
-  │         └┬─[seller_scan_check_data_top                                    ]    [section_lev2]                            [ 🡅 ✜ ]      [ no  ] 
-  │          └ [seller_scan_check_data_top_title                              ]    [label       ]  [ "ЧЕК"               ]   [ ✜ ✜ ]      [ no  ] 
-  └┬┬─────┬────[seller_scan_check_data_main                                   ]    [section_lev2]                            [ ✜ ✜ ]      [ no  ]
-   ││     └┬┬──[seller_scan_check_data_main_top                               ]    [thead       ]                            [ 🡅 ✜ ]      [ no  ] 
-   ││      │└┬─[seller_scan_check_data_main_top_param                         ]    [th          ]                            [ ✜ 🡄 ]      [ no  ]
-   ││      │ └ [seller_scan_check_data_main_top_param_label                   ]    [label       ]  [ "параметр"          ]   [ ✜ ✜ ]      [ no  ]
-   ││      └─┬─[seller_scan_check_data_main_top_value                         ]    [th          ]                            [ ✜ 🡆 ]      [ no  ]
-   ││        └ [seller_scan_check_data_main_top_value_label                   ]    [label       ]  [ "значение"          ]   [ ✜ ✜ ]      [ no  ]
-   │└┬┬────────[seller_scan_check_data_main_list                              ]    [tbody       ]                            [ ✜ ✜ ]      [ no  ]
-   │ │└┬┬┬┬────[seller_scan_check_data_main_list_cart_lot                     ]    [section_lev4]                            [ ✜ ✜ ]      [ no  ]
-   │ │ │││└┬┬──[seller_scan_check_data_main_list_cart_lot_number              ]    [tr          ]                            [ ✜ ✜ ]      [ no  ]
-   │ │ │││ │└┬─[seller_scan_check_data_main_list_cart_lot_number_left         ]    [td          ]                            [ ✜ 🡄 ]      [ no  ]
-   │ │ │││ │ └ [seller_scan_check_data_main_list_cart_lot_number_left_param   ]    [label       ]  [ "# товара"          ]   [ ✜ ✜ ]      [ no  ]
-   │ │ │││ └─┬─[seller_scan_check_data_main_list_cart_lot_number_right        ]    [td          ]                            [ ✜ 🡄 ]      [ no  ]
-   │ │ │││   └ [seller_scan_check_data_main_list_cart_lot_number_right_value  ]    [variable    ]  [ { number }          ]   [ ✜ ✜ ]      [ no  ]
-   │ │ ││└─┬┬──[seller_scan_check_data_main_list_cart_lot_name                ]    [tr          ]                            [ ✜ ✜ ]      [ no  ]
-   │ │ ││  │└┬─[seller_scan_check_data_main_list_cart_lot_name_left           ]    [td          ]                            [ ✜ 🡄 ]      [ no  ]
-   │ │ ││  │ └ [seller_scan_check_data_main_list_cart_lot_name_left_param     ]    [label       ]  [ "наименование"      ]   [ ✜ ✜ ]      [ no  ]
-   │ │ ││  └─┬─[seller_scan_check_data_main_list_cart_lot_name_right          ]    [td          ]                            [ ✜ 🡆 ]      [ no  ]
-   │ │ ││    └ [seller_scan_check_data_main_list_cart_lot_name_right_value    ]    [variable    ]  [ { string }          ]   [ ✜ ✜ ]      [ no  ]  
-   │ │ │└──┬┬──[seller_scan_check_data_main_list_cart_lot_quantity            ]    [tr          ]                            [ ✜ ✜ ]      [ no  ]
-   │ │ │   │└┬─[seller_scan_check_data_main_list_cart_lot_quantity_left       ]    [td          ]                            [ ✜ 🡄 ]      [ no  ]
-   │ │ │   │ └ [seller_scan_check_data_main_list_cart_lot_quantity_left_param ]    [label       ]  [ "количество"        ]   [ ✜ ✜ ]      [ no  ]
-   │ │ │   └─┬─[seller_scan_check_data_main_list_cart_lot_quantity_right      ]    [td          ]                            [ ✜ 🡆 ]      [ no  ]
-   │ │ │     └ [seller_scan_check_data_main_list_cart_lot_quantity_right_value]    [variable    ]  [ { number }          ]   [ ✜ ✜ ]      [ no  ]
-   │ │ └───┬┬──[seller_scan_check_data_main_list_cart_lot_price               ]    [tr          ]                            [ ✜ ✜ ]      [ no  ]
-   │ │     │└┬─[seller_scan_check_data_main_list_cart_lot_price_left          ]    [td          ]                            [ ✜ 🡄 ]      [ no  ]
-   │ │     │ └ [seller_scan_check_data_main_list_cart_lot_price_left_param    ]    [label       ]  [ "цена"              ]   [ ✜ ✜ ]      [ no  ]
-   │ │     └─┬─[seller_scan_check_data_main_list_cart_lot_price_right         ]    [td          ]                            [ ✜ 🡆 ]      [ no  ]
-   │ │       └ [seller_scan_check_data_main_list_cart_lot_price_right_value   ]    [variable    ]  [ { number }          ]   [ ✜ ✜ ]      [ no  ]
-   │ ├─────┬┬──[seller_scan_check_data_main_list_cart_sum                     ]    [tr          ]                            [ ✜ ✜ ]      [ no  ]
-   │ │     │└┬─[seller_scan_check_data_main_list_cart_sum_left                ]    [td          ]                            [ ✜ 🡄 ]      [ no  ]
-   │ │     │ └ [seller_scan_check_data_main_list_cart_sum_left_param          ]    [label       ]  [ "сумма оплаты"      ]   [ ✜ ✜ ]      [ no  ]
-   │ │     └─┬─[seller_scan_check_data_main_list_cart_sum_right               ]    [td          ]                            [ ✜ 🡆 ]      [ no  ]
-   │ │       └ [seller_scan_check_data_main_list_cart_sum_right_value         ]    [variable    ]  [ { number }          ]   [ ✜ ✜ ]      [ no  ]
-   │ ├─────┬┬──[seller_scan_check_data_main_list_tax_nds                      ]    [tr          ]                            [ ✜ ✜ ]      [ no  ]
-   │ │     │└┬─[seller_scan_check_data_main_list_tax_nds_left                 ]    [td          ]                            [ ✜ 🡄 ]      [ no  ]
-   │ │     │ └ [seller_scan_check_data_main_list_tax_nds_left_param           ]    [label       ]  [ "ндс"               ]   [ ✜ ✜ ]      [ no  ]
-   │ │     └─┬─[seller_scan_check_data_main_list_tax_nds_right                ]    [td          ]                            [ ✜ 🡆 ]      [ no  ]
-   │ │       └ [seller_scan_check_data_main_list_tax_nds_right_value          ]    [variable    ]  [ { number }          ]   [ ✜ ✜ ]      [ no  ]
-   │ ├─────┬┬──[seller_scan_check_data_main_list_tax_nsp                      ]    [tr          ]                            [ ✜ ✜ ]      [ no  ]
-   │ │     │└┬─[seller_scan_check_data_main_list_tax_nsp_left                 ]    [td          ]                            [ ✜ 🡄 ]      [ no  ]
-   │ │     │ └ [seller_scan_check_data_main_list_tax_nsp_left_param           ]    [label       ]  [ "нсп"               ]   [ ✜ ✜ ]      [ no  ]
-   │ │     └─┬─[seller_scan_check_data_main_list_tax_nsp_right                ]    [td          ]                            [ ✜ 🡆 ]      [ no  ]
-   │ │       └ [seller_scan_check_data_main_list_tax_nsp_right_value          ]    [variable    ]  [ { number }          ]   [ ✜ ✜ ]      [ no  ]
-   │ ├─────┬┬──[seller_scan_check_data_main_list_tax_sum                      ]    [tr          ]                            [ ✜ ✜ ]      [ no  ]
-   │ │     │└┬─[seller_scan_check_data_main_list_tax_sum_left                 ]    [td          ]                            [ ✜ 🡄 ]      [ no  ]
-   │ │     │ └ [seller_scan_check_data_main_list_tax_sum_left_param           ]    [label       ]  [ "сумма налога"      ]   [ ✜ ✜ ]      [ no  ]
-   │ │     └─┬─[seller_scan_check_data_main_list_tax_sum_right                ]    [td          ]                            [ ✜ 🡆 ]      [ no  ]
-   │ │       └ [seller_scan_check_data_main_list_tax_sum_right_value          ]    [variable    ]  [ { number }          ]   [ ✜ ✜ ]      [ no  ] 
-   │ ├─────┬┬──[seller_scan_check_data_main_list_profit                       ]    [tr          ]                            [ ✜ ✜ ]      [ no  ]
-   │ │     │└┬─[seller_scan_check_data_main_list_profit_left                  ]    [td          ]                            [ ✜ 🡄 ]      [ no  ]
-   │ │     │ └ [seller_scan_check_data_main_list_profit_left_param            ]    [label       ]  [ "сумма прибыли"     ]   [ ✜ ✜ ]      [ no  ]
-   │ │     └─┬─[seller_scan_check_data_main_list_profit_right                 ]    [td          ]                            [ ✜ 🡆 ]      [ no  ]
-   │ │       └ [seller_scan_check_data_main_list_profit_right_value           ]    [variable    ]  [ { number }          ]   [ ✜ ✜ ]      [ no  ]
-   │ ├─────┬┬──[seller_scan_check_data_main_list_transact_number              ]    [tr          ]                            [ ✜ ✜ ]      [ no  ]
-   │ │     │└┬─[seller_scan_check_data_main_list_transact_number_left         ]    [td          ]                            [ ✜ 🡄 ]      [ no  ]
-   │ │     │ └ [seller_scan_check_data_main_list_transact_number_left_param   ]    [label       ]  [ "номер транзакции"  ]   [ ✜ ✜ ]      [ no  ]
-   │ │     └─┬─[seller_scan_check_data_main_list_transact_number_right        ]    [td          ]                            [ ✜ 🡆 ]      [ no  ]
-   │ │       └ [seller_scan_check_data_main_list_transact_number_right_value  ]    [variable    ]  [ { number }          ]   [ ✜ ✜ ]      [ no  ]
-   │ ├─────┬┬──[seller_scan_check_data_main_list_transact_time                ]    [tr          ]                            [ ✜ ✜ ]      [ no  ]
-   │ │     │└┬─[seller_scan_check_data_main_list_transact_time_left           ]    [td          ]                            [ ✜ 🡄 ]      [ no  ]
-   │ │     │ └ [seller_scan_check_data_main_list_transact_time_left_param     ]    [label       ]  [ "время транзакции"  ]   [ ✜ ✜ ]      [ no  ]
-   │ │     └─┬─[seller_scan_check_data_main_list_transact_time_right          ]    [td          ]                            [ ✜ 🡆 ]      [ no  ]
-   │ │       └ [seller_scan_check_data_main_list_transact_time_right_value    ]    [variable    ]  [ { number }          ]   [ ✜ ✜ ]      [ no  ]
-   │ ├─────┬┬──[seller_scan_check_data_main_list_transact_type                ]    [tr          ]                            [ ✜ ✜ ]      [ no  ]
-   │ │     │└┬─[seller_scan_check_data_main_list_transact_type_left           ]    [td          ]                            [ ✜ 🡄 ]      [ no  ]
-   │ │     │ └ [seller_scan_check_data_main_list_transact_type_left_param     ]    [label       ]  [ "тип оплаты"        ]   [ ✜ ✜ ]      [ no  ]
-   │ │     └─┬─[seller_scan_check_data_main_list_transact_type_right          ]    [td          ]                            [ ✜ 🡆 ]      [ no  ]
-   │ │       └ [seller_scan_check_data_main_list_transact_type_right_value    ]    [variable    ]  [ { string }          ]   [ ✜ ✜ ]      [ no  ]
-   │ ├─────┬┬──[seller_scan_check_data_main_list_client_name                  ]    [tr          ]                            [ ✜ ✜ ]      [ no  ]
-   │ │     │└┬─[seller_scan_check_data_main_list_client_name_left             ]    [td          ]                            [ ✜ 🡄 ]      [ no  ]
-   │ │     │ └ [seller_scan_check_data_main_list_client_name_left_param       ]    [label       ]  [ "покупатель"        ]   [ ✜ ✜ ]      [ no  ]
-   │ │     └─┬─[seller_scan_check_data_main_list_client_name_right            ]    [td          ]                            [ ✜ 🡆 ]      [ no  ]
-   │ │       └ [seller_scan_check_data_main_list_client_name_right_value      ]    [variable    ]  [ { string }          ]   [ ✜ ✜ ]      [ no  ]
-   │ ├─────┬┬──[seller_scan_check_data_main_list_client_phone                 ]    [tr          ]                            [ ✜ ✜ ]      [ no  ]
-   │ │     │└┬─[seller_scan_check_data_main_list_client_phone_left            ]    [td          ]                            [ ✜ 🡄 ]      [ no  ]
-   │ │     │ └ [seller_scan_check_data_main_list_client_phone_left_param      ]    [label       ]  [ "телефон"           ]   [ ✜ ✜ ]      [ no  ]
-   │ │     └─┬─[seller_scan_check_data_main_list_client_phone_right           ]    [td          ]                            [ ✜ 🡆 ]      [ no  ]
-   │ │       └ [seller_scan_check_data_main_list_client_phone_right_value     ]    [variable    ]  [ { number }          ]   [ ✜ ✜ ]      [ no  ]
-   │ ├─────┬┬──[seller_scan_check_data_main_list_book                         ]    [tr          ]                            [ ✜ ✜ ]      [ no  ]
-   │ │     │└┬─[seller_scan_check_data_main_list_book_left                    ]    [td          ]                            [ ✜ 🡄 ]      [ no  ]
-   │ │     │ └ [seller_scan_check_data_main_list_book_left_param              ]    [label       ]  [ "резервирование"    ]   [ ✜ ✜ ]      [ no  ]
-   │ │     └─┬─[seller_scan_check_data_main_list_book_right                   ]    [td          ]                            [ ✜ 🡆 ]      [ no  ]
-   │ │       └ [seller_scan_check_data_main_list_book_right_value             ]    [variable    ]  [ { boolean }         ]   [ ✜ ✜ ]      [ no  ]
-   │ ├─────┬┬──[seller_scan_check_data_main_list_ship_activation              ]    [tr          ]                            [ ✜ ✜ ]      [ no  ]
-   │ │     │└┬─[seller_scan_check_data_main_list_ship_activation_left         ]    [td          ]                            [ ✜ 🡄 ]      [ no  ]
-   │ │     │ └ [seller_scan_check_data_main_list_ship_activation_left_param   ]    [label       ]  [ "доставка"          ]   [ ✜ ✜ ]      [ no  ]
-   │ │     └─┬─[seller_scan_check_data_main_list_ship_activation_right        ]    [td          ]                            [ ✜ 🡆 ]      [ no  ]
-   │ │       └ [seller_scan_check_data_main_list_ship_activation_right_value  ]    [variable    ]  [ { boolean }         ]   [ ✜ ✜ ]      [ no  ]
-   │ ├─────┬┬──[seller_scan_check_data_main_list_operator_number              ]    [tr          ]                            [ ✜ ✜ ]      [ no  ]
-   │ │     │└┬─[seller_scan_check_data_main_list_operator_number_left         ]    [td          ]                            [ ✜ 🡄 ]      [ no  ]
-   │ │     │ └ [seller_scan_check_data_main_list_operator_number_left_param   ]    [label       ]  [ "продавец"          ]   [ ✜ ✜ ]      [ no  ]
-   │ │     └─┬─[seller_scan_check_data_main_list_operator_number_right        ]    [td          ]                            [ ✜ 🡆 ]      [ no  ]
-   │ │       └ [seller_scan_check_data_main_list_operator_number_right_value  ]    [variable    ]  [ { number }          ]   [ ✜ ✜ ]      [ no  ]
-   │ └─────┬┬──[seller_scan_check_data_main_list_operator_shift               ]    [tr          ]                            [ ✜ ✜ ]      [ no  ]
-   │       │└┬─[seller_scan_check_data_main_list_operator_shift_left          ]    [td          ]                            [ ✜ 🡄 ]      [ no  ]
-   │       │ └ [seller_scan_check_data_main_list_operator_shift_left_param    ]    [label       ]  [ "смена"             ]   [ ✜ ✜ ]      [ no  ]
-   │       └─┬─[seller_scan_check_data_main_list_operator_shift_right         ]    [td          ]                            [ ✜ 🡆 ]      [ no  ]
-   │         └ [seller_scan_check_data_main_list_operator_shift_right_value   ]    [variable    ]  [ { number }          ]   [ ✜ ✜ ]      [ no  ]
-   └────────┬──[seller_scan_check_data_main_bottom_btn                        ]    [section_lev3]                            [ 🡇 ✜ ]      [ no  ] 
-            └┬─[seller_scan_check_data_main_bottom_btn_back                   ]    [button      ]                            [ ✜ 🡄 ]      [ yes ]
-             └ [seller_scan_check_data_main_bottom_btn_back_title             ]    [label       ]  [ "назад"             ]   [ ✜ ✜ ]      [ yes ]
+ ┌┬─────────┬──[seller_scan_check_data                                        ]    [section_lev1]                            [ ✜ ✜ ]      [ no  ] 
+ ││         └┬─[seller_scan_check_data_top                                    ]    [section_lev2]                            [ 🡅 ✜ ]      [ no  ] 
+ ││          └ [seller_scan_check_data_top_title                              ]    [label       ]  [ "ЧЕК"               ]   [ ✜ ✜ ]      [ no  ] 
+ │└┬┬─────┬────[seller_scan_check_data_main                                   ]    [section_lev2]                            [ ✜ ✜ ]      [ no  ]
+ │ ││     └┬┬──[seller_scan_check_data_main_top                               ]    [thead       ]                            [ 🡅 ✜ ]      [ no  ] 
+ │ ││      │└┬─[seller_scan_check_data_main_top_param                         ]    [th          ]                            [ ✜ 🡄 ]      [ no  ]
+ │ ││      │ └ [seller_scan_check_data_main_top_param_label                   ]    [label       ]  [ "параметр"          ]   [ ✜ ✜ ]      [ no  ]
+ │ ││      └─┬─[seller_scan_check_data_main_top_value                         ]    [th          ]                            [ ✜ 🡆 ]      [ no  ]
+ │ ││        └ [seller_scan_check_data_main_top_value_label                   ]    [label       ]  [ "значение"          ]   [ ✜ ✜ ]      [ no  ]
+ │ │└┬┬────────[seller_scan_check_data_main_list                              ]    [tbody       ]                            [ ✜ ✜ ]      [ no  ]
+ │ │ │└┬┬┬┬────[seller_scan_check_data_main_list_cart_lot                     ]    [section_lev4]                            [ ✜ ✜ ]      [ no  ]
+ │ │ │ │││└┬┬──[seller_scan_check_data_main_list_cart_lot_number              ]    [tr          ]                            [ ✜ ✜ ]      [ no  ]
+ │ │ │ │││ │└┬─[seller_scan_check_data_main_list_cart_lot_number_left         ]    [td          ]                            [ ✜ 🡄 ]      [ no  ]
+ │ │ │ │││ │ └ [seller_scan_check_data_main_list_cart_lot_number_left_param   ]    [label       ]  [ "# товара"          ]   [ ✜ ✜ ]      [ no  ]
+ │ │ │ │││ └─┬─[seller_scan_check_data_main_list_cart_lot_number_right        ]    [td          ]                            [ ✜ 🡄 ]      [ no  ]
+ │ │ │ │││   └ [seller_scan_check_data_main_list_cart_lot_number_right_value  ]    [variable    ]  [ { number }          ]   [ ✜ ✜ ]      [ no  ]
+ │ │ │ ││└─┬┬──[seller_scan_check_data_main_list_cart_lot_name                ]    [tr          ]                            [ ✜ ✜ ]      [ no  ]
+ │ │ │ ││  │└┬─[seller_scan_check_data_main_list_cart_lot_name_left           ]    [td          ]                            [ ✜ 🡄 ]      [ no  ]
+ │ │ │ ││  │ └ [seller_scan_check_data_main_list_cart_lot_name_left_param     ]    [label       ]  [ "наименование"      ]   [ ✜ ✜ ]      [ no  ]
+ │ │ │ ││  └─┬─[seller_scan_check_data_main_list_cart_lot_name_right          ]    [td          ]                            [ ✜ 🡆 ]      [ no  ]
+ │ │ │ ││    └ [seller_scan_check_data_main_list_cart_lot_name_right_value    ]    [variable    ]  [ { string }          ]   [ ✜ ✜ ]      [ no  ]  
+ │ │ │ │└──┬┬──[seller_scan_check_data_main_list_cart_lot_quantity            ]    [tr          ]                            [ ✜ ✜ ]      [ no  ]
+ │ │ │ │   │└┬─[seller_scan_check_data_main_list_cart_lot_quantity_left       ]    [td          ]                            [ ✜ 🡄 ]      [ no  ]
+ │ │ │ │   │ └ [seller_scan_check_data_main_list_cart_lot_quantity_left_param ]    [label       ]  [ "количество"        ]   [ ✜ ✜ ]      [ no  ]
+ │ │ │ │   └─┬─[seller_scan_check_data_main_list_cart_lot_quantity_right      ]    [td          ]                            [ ✜ 🡆 ]      [ no  ]
+ │ │ │ │     └ [seller_scan_check_data_main_list_cart_lot_quantity_right_value]    [variable    ]  [ { number }          ]   [ ✜ ✜ ]      [ no  ]
+ │ │ │ └───┬┬──[seller_scan_check_data_main_list_cart_lot_price               ]    [tr          ]                            [ ✜ ✜ ]      [ no  ]
+ │ │ │     │└┬─[seller_scan_check_data_main_list_cart_lot_price_left          ]    [td          ]                            [ ✜ 🡄 ]      [ no  ]
+ │ │ │     │ └ [seller_scan_check_data_main_list_cart_lot_price_left_param    ]    [label       ]  [ "цена"              ]   [ ✜ ✜ ]      [ no  ]
+ │ │ │     └─┬─[seller_scan_check_data_main_list_cart_lot_price_right         ]    [td          ]                            [ ✜ 🡆 ]      [ no  ]
+ │ │ │       └ [seller_scan_check_data_main_list_cart_lot_price_right_value   ]    [variable    ]  [ { number }          ]   [ ✜ ✜ ]      [ no  ]
+ │ │ ├─────┬┬──[seller_scan_check_data_main_list_cart_sum                     ]    [tr          ]                            [ ✜ ✜ ]      [ no  ]
+ │ │ │     │└┬─[seller_scan_check_data_main_list_cart_sum_left                ]    [td          ]                            [ ✜ 🡄 ]      [ no  ]
+ │ │ │     │ └ [seller_scan_check_data_main_list_cart_sum_left_param          ]    [label       ]  [ "сумма оплаты"      ]   [ ✜ ✜ ]      [ no  ]
+ │ │ │     └─┬─[seller_scan_check_data_main_list_cart_sum_right               ]    [td          ]                            [ ✜ 🡆 ]      [ no  ]
+ │ │ │       └ [seller_scan_check_data_main_list_cart_sum_right_value         ]    [variable    ]  [ { number }          ]   [ ✜ ✜ ]      [ no  ]
+ │ │ ├─────┬┬──[seller_scan_check_data_main_list_tax_nds                      ]    [tr          ]                            [ ✜ ✜ ]      [ no  ]
+ │ │ │     │└┬─[seller_scan_check_data_main_list_tax_nds_left                 ]    [td          ]                            [ ✜ 🡄 ]      [ no  ]
+ │ │ │     │ └ [seller_scan_check_data_main_list_tax_nds_left_param           ]    [label       ]  [ "ндс"               ]   [ ✜ ✜ ]      [ no  ]
+ │ │ │     └─┬─[seller_scan_check_data_main_list_tax_nds_right                ]    [td          ]                            [ ✜ 🡆 ]      [ no  ]
+ │ │ │       └ [seller_scan_check_data_main_list_tax_nds_right_value          ]    [variable    ]  [ { number }          ]   [ ✜ ✜ ]      [ no  ]
+ │ │ ├─────┬┬──[seller_scan_check_data_main_list_tax_nsp                      ]    [tr          ]                            [ ✜ ✜ ]      [ no  ]
+ │ │ │     │└┬─[seller_scan_check_data_main_list_tax_nsp_left                 ]    [td          ]                            [ ✜ 🡄 ]      [ no  ]
+ │ │ │     │ └ [seller_scan_check_data_main_list_tax_nsp_left_param           ]    [label       ]  [ "нсп"               ]   [ ✜ ✜ ]      [ no  ]
+ │ │ │     └─┬─[seller_scan_check_data_main_list_tax_nsp_right                ]    [td          ]                            [ ✜ 🡆 ]      [ no  ]
+ │ │ │       └ [seller_scan_check_data_main_list_tax_nsp_right_value          ]    [variable    ]  [ { number }          ]   [ ✜ ✜ ]      [ no  ]
+ │ │ ├─────┬┬──[seller_scan_check_data_main_list_tax_sum                      ]    [tr          ]                            [ ✜ ✜ ]      [ no  ]
+ │ │ │     │└┬─[seller_scan_check_data_main_list_tax_sum_left                 ]    [td          ]                            [ ✜ 🡄 ]      [ no  ]
+ │ │ │     │ └ [seller_scan_check_data_main_list_tax_sum_left_param           ]    [label       ]  [ "сумма налога"      ]   [ ✜ ✜ ]      [ no  ]
+ │ │ │     └─┬─[seller_scan_check_data_main_list_tax_sum_right                ]    [td          ]                            [ ✜ 🡆 ]      [ no  ]
+ │ │ │       └ [seller_scan_check_data_main_list_tax_sum_right_value          ]    [variable    ]  [ { number }          ]   [ ✜ ✜ ]      [ no  ] 
+ │ │ ├─────┬┬──[seller_scan_check_data_main_list_profit                       ]    [tr          ]                            [ ✜ ✜ ]      [ no  ]
+ │ │ │     │└┬─[seller_scan_check_data_main_list_profit_left                  ]    [td          ]                            [ ✜ 🡄 ]      [ no  ]
+ │ │ │     │ └ [seller_scan_check_data_main_list_profit_left_param            ]    [label       ]  [ "сумма прибыли"     ]   [ ✜ ✜ ]      [ no  ]
+ │ │ │     └─┬─[seller_scan_check_data_main_list_profit_right                 ]    [td          ]                            [ ✜ 🡆 ]      [ no  ]
+ │ │ │       └ [seller_scan_check_data_main_list_profit_right_value           ]    [variable    ]  [ { number }          ]   [ ✜ ✜ ]      [ no  ]
+ │ │ ├─────┬┬──[seller_scan_check_data_main_list_transact_number              ]    [tr          ]                            [ ✜ ✜ ]      [ no  ]
+ │ │ │     │└┬─[seller_scan_check_data_main_list_transact_number_left         ]    [td          ]                            [ ✜ 🡄 ]      [ no  ]
+ │ │ │     │ └ [seller_scan_check_data_main_list_transact_number_left_param   ]    [label       ]  [ "номер транзакции"  ]   [ ✜ ✜ ]      [ no  ]
+ │ │ │     └─┬─[seller_scan_check_data_main_list_transact_number_right        ]    [td          ]                            [ ✜ 🡆 ]      [ no  ]
+ │ │ │       └ [seller_scan_check_data_main_list_transact_number_right_value  ]    [variable    ]  [ { number }          ]   [ ✜ ✜ ]      [ no  ]
+ │ │ ├─────┬┬──[seller_scan_check_data_main_list_transact_time                ]    [tr          ]                            [ ✜ ✜ ]      [ no  ]
+ │ │ │     │└┬─[seller_scan_check_data_main_list_transact_time_left           ]    [td          ]                            [ ✜ 🡄 ]      [ no  ]
+ │ │ │     │ └ [seller_scan_check_data_main_list_transact_time_left_param     ]    [label       ]  [ "время транзакции"  ]   [ ✜ ✜ ]      [ no  ]
+ │ │ │     └─┬─[seller_scan_check_data_main_list_transact_time_right          ]    [td          ]                            [ ✜ 🡆 ]      [ no  ]
+ │ │ │       └ [seller_scan_check_data_main_list_transact_time_right_value    ]    [variable    ]  [ { number }          ]   [ ✜ ✜ ]      [ no  ]
+ │ │ ├─────┬┬──[seller_scan_check_data_main_list_transact_type                ]    [tr          ]                            [ ✜ ✜ ]      [ no  ]
+ │ │ │     │└┬─[seller_scan_check_data_main_list_transact_type_left           ]    [td          ]                            [ ✜ 🡄 ]      [ no  ]
+ │ │ │     │ └ [seller_scan_check_data_main_list_transact_type_left_param     ]    [label       ]  [ "тип оплаты"        ]   [ ✜ ✜ ]      [ no  ]
+ │ │ │     └─┬─[seller_scan_check_data_main_list_transact_type_right          ]    [td          ]                            [ ✜ 🡆 ]      [ no  ]
+ │ │ │       └ [seller_scan_check_data_main_list_transact_type_right_value    ]    [variable    ]  [ { string }          ]   [ ✜ ✜ ]      [ no  ]
+ │ │ ├─────┬┬──[seller_scan_check_data_main_list_client_name                  ]    [tr          ]                            [ ✜ ✜ ]      [ no  ]
+ │ │ │     │└┬─[seller_scan_check_data_main_list_client_name_left             ]    [td          ]                            [ ✜ 🡄 ]      [ no  ]
+ │ │ │     │ └ [seller_scan_check_data_main_list_client_name_left_param       ]    [label       ]  [ "покупатель"        ]   [ ✜ ✜ ]      [ no  ]
+ │ │ │     └─┬─[seller_scan_check_data_main_list_client_name_right            ]    [td          ]                            [ ✜ 🡆 ]      [ no  ]
+ │ │ │       └ [seller_scan_check_data_main_list_client_name_right_value      ]    [variable    ]  [ { string }          ]   [ ✜ ✜ ]      [ no  ]
+ │ │ ├─────┬┬──[seller_scan_check_data_main_list_client_phone                 ]    [tr          ]                            [ ✜ ✜ ]      [ no  ]
+ │ │ │     │└┬─[seller_scan_check_data_main_list_client_phone_left            ]    [td          ]                            [ ✜ 🡄 ]      [ no  ]
+ │ │ │     │ └ [seller_scan_check_data_main_list_client_phone_left_param      ]    [label       ]  [ "телефон"           ]   [ ✜ ✜ ]      [ no  ]
+ │ │ │     └─┬─[seller_scan_check_data_main_list_client_phone_right           ]    [td          ]                            [ ✜ 🡆 ]      [ no  ]
+ │ │ │       └ [seller_scan_check_data_main_list_client_phone_right_value     ]    [variable    ]  [ { number }          ]   [ ✜ ✜ ]      [ no  ]
+ │ │ ├─────┬┬──[seller_scan_check_data_main_list_book                         ]    [tr          ]                            [ ✜ ✜ ]      [ no  ]
+ │ │ │     │└┬─[seller_scan_check_data_main_list_book_left                    ]    [td          ]                            [ ✜ 🡄 ]      [ no  ]
+ │ │ │     │ └ [seller_scan_check_data_main_list_book_left_param              ]    [label       ]  [ "резервирование"    ]   [ ✜ ✜ ]      [ no  ]
+ │ │ │     └─┬─[seller_scan_check_data_main_list_book_right                   ]    [td          ]                            [ ✜ 🡆 ]      [ no  ]
+ │ │ │       └ [seller_scan_check_data_main_list_book_right_value             ]    [variable    ]  [ { boolean }         ]   [ ✜ ✜ ]      [ no  ]
+ │ │ ├─────┬┬──[seller_scan_check_data_main_list_ship_activation              ]    [tr          ]                            [ ✜ ✜ ]      [ no  ]
+ │ │ │     │└┬─[seller_scan_check_data_main_list_ship_activation_left         ]    [td          ]                            [ ✜ 🡄 ]      [ no  ]
+ │ │ │     │ └ [seller_scan_check_data_main_list_ship_activation_left_param   ]    [label       ]  [ "доставка"          ]   [ ✜ ✜ ]      [ no  ]
+ │ │ │     └─┬─[seller_scan_check_data_main_list_ship_activation_right        ]    [td          ]                            [ ✜ 🡆 ]      [ no  ]
+ │ │ │       └ [seller_scan_check_data_main_list_ship_activation_right_value  ]    [variable    ]  [ { boolean }         ]   [ ✜ ✜ ]      [ no  ]
+ │ │ ├─────┬┬──[seller_scan_check_data_main_list_operator_number              ]    [tr          ]                            [ ✜ ✜ ]      [ no  ]
+ │ │ │     │└┬─[seller_scan_check_data_main_list_operator_number_left         ]    [td          ]                            [ ✜ 🡄 ]      [ no  ]
+ │ │ │     │ └ [seller_scan_check_data_main_list_operator_number_left_param   ]    [label       ]  [ "продавец"          ]   [ ✜ ✜ ]      [ no  ]
+ │ │ │     └─┬─[seller_scan_check_data_main_list_operator_number_right        ]    [td          ]                            [ ✜ 🡆 ]      [ no  ]
+ │ │ │       └ [seller_scan_check_data_main_list_operator_number_right_value  ]    [variable    ]  [ { number }          ]   [ ✜ ✜ ]      [ no  ]
+ │ │ └─────┬┬──[seller_scan_check_data_main_list_operator_shift               ]    [tr          ]                            [ ✜ ✜ ]      [ no  ]
+ │ │       │└┬─[seller_scan_check_data_main_list_operator_shift_left          ]    [td          ]                            [ ✜ 🡄 ]      [ no  ]
+ │ │       │ └ [seller_scan_check_data_main_list_operator_shift_left_param    ]    [label       ]  [ "смена"             ]   [ ✜ ✜ ]      [ no  ]
+ │ │       └─┬─[seller_scan_check_data_main_list_operator_shift_right         ]    [td          ]                            [ ✜ 🡆 ]      [ no  ]
+ │ │         └ [seller_scan_check_data_main_list_operator_shift_right_value   ]    [variable    ]  [ { number }          ]   [ ✜ ✜ ]      [ no  ]
+ │ └────────┬──[seller_scan_check_data_main_bottom                            ]    [section_lev3]                            [ 🡇 ✜ ]      [ no  ]
+ │          └┬─[seller_scan_check_data_main_bottom_order                      ]    [section_lev3]                            [ ✜ ✜ ]      [ no  ]
+ │           ├ [seller_scan_check_data_main_bottom_order_label                ]    [label       ]  [ "ордер: "           ]   [ ✜ 🡄 ]      [ no  ]
+ │           └ [seller_scan_check_data_main_bottom_order_value                ]    [variable    ]  [ { number }          ]   [ ✜ 🡆 ]      [ no  ]
+ └──────────┬──[seller_scan_check_data_btn                                    ]    [section_lev2]                            [ 🡇 ✜ ]      [ no  ] 
+            └┬─[seller_scan_check_data_btn_back                               ]    [button      ]                            [ ✜ 🡄 ]      [ yes ]
+             └ [seller_scan_check_data_btn_back_title                         ]    [label       ]  [ "назад"             ]   [ ✜ ✜ ]      [ yes ]
         ┌┬┬┬┬──[seller_nav                                                    ]    [section     ]                            [ ✜ ✜ ]      [ no  ]
         ││││└┬─[seller_nav_demand_button                                      ]    [button      ]                            [ ✜ 🡄 ]      [ yes ]
         ││││ ├ [seller_nav_demand_header                                      ]    [header      ]  [ "МОНИТОР"           ]   [ ✜ ✜ ]      [ no  ]  
@@ -2641,9 +2646,10 @@ seller_scan_check_main подразделяется на 3 составных ч
              └ [seller_nav_scan_badge                                         ]    [badge       ]  [ { number }          ]   [ 🡅 🡆 ]      [ no  ] 
 
 
-Основное пространство в центральной области экрана занимает seller_scan_check_data_main состоящий из 2 секций:
+Основное пространство в центральной области экрана занимает seller_scan_check_data_main состоящий из 3 секций:
 - seller_scan_check_data_main_top  
 - seller_scan_check_data_main_list
+- seller_scan_check_data_main_bottom.
 
 
 ■ seller_scan_nav
@@ -2736,7 +2742,6 @@ seller_scan_check_data_main_top
 ------- seller_scan_check_data_main_top_value_label - наименование ячейки в виде константного текстового элемента следующего содержания: "значение".
  
 --- seller_scan_check_data_main_list - является телом данных чека, который располагается в центральной области экрана занимает порядка 70% viewport по вертикали и обладает функцией скроллирования;
-
 ----- seller_scan_check_data_main_list_cart_lot - является сводкой по товару в виде подгруппы включающей 4 компонента:
 ------- seller_scan_check_data_main_list_cart_lot_number - состоит из ячеек seller_scan_check_data_main_list_cart_lot_number_left и seller_scan_check_data_main_list_cart_lot_number_right;
 --------- seller_scan_check_data_main_list_cart_lot_number_left - левая ячейка seller_scan_check_data_main_list_cart_lot_number; 
@@ -2824,15 +2829,20 @@ seller_scan_check_data_main_top
 ------- seller_scan_check_data_main_list_operator_shift_value - правая ячейка seller_scan_check_data_main_list_operator_shift;
 --------- seller_scan_check_data_main_list_operator_shift_value - переменная с числовым значением, отображает номер смены оператора во время работы которого был обработан ордер;
 
---- seller_scan_check_data_main_bottom_btn - контейнер располагающийся в нижней части seller_scan_check_data_main содержащий seller_scan_check_data_main_bottom_btn_back;
------ seller_scan_check_data_main_bottom_btn_back - кнопка центрированная в seller_scan_check_data_main_bottom_btn;
-------- seller_scan_check_data_main_bottom_btn_back_title - наименование seller_scan_check_data_main_bottom_btn_back: "назад".
+--- seller_scan_check_data_main_bottom - представляет собой панель (в высоту около 3-4% viewport по вертикали) расположенную в самом низу seller_scan_check_data_main, которая содержит seller_scan_check_data_main_bottom_order;
+----- seller_scan_check_data_main_bottom_order - выровненное по центру seller_scan_check_data_main_bottom конкатенированное значение из переменных seller_scan_check_data_main_bottom_order_label и seller_scan_check_data_main_bottom_order_value;
+------- seller_scan_check_data_main_bottom_order_label - переменная с числовым значением, отображает номер ордера, которая располагается слева от seller_scan_check_data_main_bottom_order_value;
+------- seller_scan_check_data_main_bottom_order_value - константный текстовый элемент следующего содержания: "ордер: ", который располагается справа от seller_scan_check_data_main_bottom_order_label;
+
+--- seller_scan_check_data_btn - контейнер располагающийся в нижней части seller_scan_check_data_main содержащий seller_scan_check_data_btn_back;
+----- seller_scan_check_data_btn_back - кнопка центрированная в seller_scan_check_data_btn;
+------- seller_scan_check_data_btn_back_title - наименование seller_scan_check_data_btn_back: "назад".
 
 ✠ actions
-• seller_scan_check_data_main_bottom_btn_back:
+• seller_scan_check_data_btn_back:
 ╠ valid / invalid
 ║ • gesture: tap 
-║ occasion: нажатие seller_scan_check_data_main_bottom_btn_back;
+║ occasion: нажатие seller_scan_check_data_btn_back;
 ║ condition: in any situation;
 ╙ result: происходит возврат к seller_scan_check_screen.
 
@@ -2846,7 +2856,7 @@ seller_scan_check_data_main_top
 │------ in any situation
 └─
 ┌─ 
-│seller_scan_check_data_main_bottom_btn_back
+│seller_scan_check_data_btn_back
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -2896,7 +2906,9 @@ seller_scan_check_data_main_top
 │seller_scan_check_data_main_list_operator_number_right_value
 │seller_scan_check_data_main_list_operator_shift_left_param
 │seller_scan_check_data_main_list_operator_shift_right_value
-│seller_scan_check_data_main_bottom_btn_back_title
+│seller_scan_check_data_main_bottom_order_label
+│seller_scan_check_data_main_bottom_order_value
+│seller_scan_check_data_btn_back_title
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 │--------
@@ -2906,16 +2918,17 @@ seller_scan_check_data_main_top
 
 ✠ props
 seller_settings_activity импортирует следующие props:
-user_id_data_seller_level_orders_closed_id_cart
-user_id_data_seller_level_orders_closed_id_tax_nds
-user_id_data_seller_level_orders_closed_id_tax_nsp
-user_id_data_seller_level_orders_closed_id_tax_sum
-user_id_data_seller_level_orders_closed_id_profit
-user_id_data_seller_level_orders_closed_id_transact
-user_id_data_seller_level_orders_closed_id_client
-user_id_data_seller_level_orders_closed_id_book
-user_id_data_seller_level_orders_closed_id_ship
+user_id_data_seller_level_orders_closed_id_cart;
+user_id_data_seller_level_orders_closed_id_tax_nds;
+user_id_data_seller_level_orders_closed_id_tax_nsp;
+user_id_data_seller_level_orders_closed_id_tax_sum;
+user_id_data_seller_level_orders_closed_id_profit;
+user_id_data_seller_level_orders_closed_id_transact;
+user_id_data_seller_level_orders_closed_id_client;
+user_id_data_seller_level_orders_closed_id_book;
+user_id_data_seller_level_orders_closed_id_ship;
 user_id_data_seller_level_orders_closed_id_operator.
+
 
 ■ seller_nav
 
@@ -3054,5 +3067,3 @@ user_id_data_seller_level_orders_closed_id_operator.
 │• color2
 │------ в activated_state 
 └─
-
-
