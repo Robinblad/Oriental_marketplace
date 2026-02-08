@@ -9,59 +9,58 @@ color5 - actived;
 -------------------------------------------------------------------
 
 
-
-
-  
 🡆 seller_signup_screen 
 ■■■■■■■■■■■■■■■■■■■■■■
 
 seller_signup_screen появляется при первом открытии приложения для первичной регистрации. seller_signup_screen состоит из 8 секций (компонентов) последовательно расположенных сверху-вниз в следующем составе:
 
-                                  codename:                           type:                  designation:             location:  interaction:
----- ┌┬┬┬┬┬┬┬──[seller_signup                              ]  [section_lev1       ]                                    [ ✜ ✜ ]     [ no  ] 
-1)   │││││││└┬─[seller_signup_title                        ]  [section_lev2       ]                                    [ 🡅 ✜ ]     [ no  ] 
----- │││││││ ├ [seller_signup_title_label                  ]  [label              ]  [ "Регистрация"             ]     [ ✜ ✜ ]     [ no  ]
----- │││││││ └ [seller_signup_title_description            ]  [label              ]  [ "Выберите удобный вар..." ]     [ ✜ ✜ ]     [ no  ]
-2)   ││││││└┬──[seller_signup_google                       ]  [section_lev2       ]                                    [ 🡅 ✜ ]     [ yes ] 
----- ││││││ └┬─[seller_signup_google_btn                   ]  [button             ]                                    [ ✜ ✜ ]     [ yes ]
----- ││││││  ├ [seller_signup_google_btn_icon              ]  [icon               ]                                    [ ✜ 🡄 ]     [ yes ]
----- ││││││  └ [seller_signup_google_btn_label             ]  [label              ]  [ "Продолжить с Google"     ]     [ ✜ 🡆 ]     [ yes ]
-3)   │││││└─┬──[seller_signup_apple                        ]  [section_lev2       ]                                    [ ✜ ✜ ]     [ yes ] 
----- │││││  └┬─[seller_signup_apple_btn                    ]  [button             ]                                    [ ✜ ✜ ]     [ yes ]
----- │││││   ├ [seller_signup_apple_btn_icon               ]  [icon               ]                                    [ ✜ 🡄 ]     [ yes ]
----- │││││   └ [seller_signup_apple_btn_label              ]  [label              ]  [ "Продолжить с Apple"      ]     [ ✜ 🡆 ]     [ yes ]
-4)   ││││└───┬─[seller_signup_divider                      ]  [section_lev2       ]                                    [ ✜ ✜ ]     [ no  ] 
----- ││││    ├ [seller_signup_divider_leftline             ]  [line               ]                                    [ ✜ 🡄 ]     [ no  ]
----- ││││    ├ [seller_signup_divider_or                   ]  [label              ]  [ "или"                     ]     [ ✜ ✜ ]     [ no  ]
----- ││││    └ [seller_signup_divider_rightline            ]  [line               ]                                    [ ✜ 🡆 ]     [ no  ]
-5)   │││└─┬─┬──[seller_signup_phone                        ]  [section_lev2       ]                                    [ 🡅 ✜ ]     [ no  ] 
----- │││  │ └┬─[seller_signup_phone_helper                 ]  [section_lev2       ]                                    [ 🡅 ✜ ]     [ no  ] 
----- │││  │  └ [seller_signup_phone_helper_label           ]  [label              ]  [ "Телефон"                 ]     [ ✜ ✜ ]     [ no  ]
----  │││  └┬┬──[seller_signup_phone_form                   ]  [section_lev2       ]                                    [ ✜ ✜ ]     [ no  ] 
----  │││   │└┬─[seller_signup_phone_form_code              ]  [button             ]                                    [ ✜ ✜ ]     [ yes ] 
----- │││   │ ├ [seller_signup_phone_form_code_flag         ]  [icon               ]                                    [ ✜ ✜ ]     [ yes ]
----- │││   │ └ [seller_signup_phone_form_code_value        ]  [variable           ]  [ "999"                     ]     [ ✜ 🡄 ]     [ yes ]
----  │││   └─┬─[seller_signup_phone_form_mobile            ]  [input              ]                                    [ ✜ ✜ ]     [ yes ] 
----- │││     └ [seller_signup_phone_form_mobile_value      ]  [placeholder        ]  [ "+999-999-999"            ]     [ ✜ 🡄 ]     [ yes ]
-6)   ││└────┬──[seller_signup_validation                   ]  [section_lev2       ]                                    [ 🡅 ✜ ]     [ yes ] 
----- ││     └┬─[seller_signup_validation_btn               ]  [button             ]                                    [ ✜ ✜ ]     [ yes ]
----- ││      └ [seller_signup_validation_btn_label         ]  [label              ]  [ "OK"                      ]     [ ✜ ✜ ]     [ yes ]
-7)   │└────┬┬──[seller_signup_enter                        ]  [section_lev2       ]                                    [ 🡇 ✜ ]     [ no  ]
----- │     │└┬─[seller_signup_enter_question               ]  [section_lev3       ]                                    [ ✜ 🡄 ]     [ no  ]
----- │     │ └ [seller_signup_enter_question_label         ]  [label              ]  [ "Уже есть аккаунт? "      ]     [ ✜ ✜ ]     [ no  ]
----- │     └─┬─[seller_signup_enter_btn                    ]  [button             ]                                    [ ✜ 🡆 ]     [ yes ]
----- │       └ [seller_signup_enter_btn_label              ]  [label              ]  [ "Войти"                   ]     [ ✜ ✜ ]     [ yes ]
-8)   └───────┬─[seller_signup_agreement                    ]  [section_lev2       ]                                    [ 🡇 ✜ ]     [ no  ]
-----         ├ [seller_signup_agreement_text               ]  [label              ]  [ "Совершая вход, вы с... " ]     [ 🡅 ✜ ]     [ no  ]
-----         └ [seller_signup_agreement_btn                ]  [button             ]  [ "Пользовательским сог..." ]     [ 🡇 ✜ ]     [ yes ]
+                                  codename:                            type:                  designation:             location:  interaction:
+---- ┌┬┬┬┬┬┬┬──[seller_signup                              ]  [section_lev1        ]                                    [ ✜ ✜ ]     [ no  ] 
+1)   │││││││└┬─[seller_signup_title                        ]  [section_lev2        ]                                    [ 🡅 ✜ ]     [ no  ] 
+---- │││││││ ├ [seller_signup_title_label                  ]  [label               ]  [ "Регистрация"             ]     [ ✜ ✜ ]     [ no  ]
+---- │││││││ └ [seller_signup_title_text                   ]  [label               ]  [ "Выберите удобный вар..." ]     [ ✜ ✜ ]     [ no  ]
+2)   ││││││└┬──[seller_signup_google                       ]  [section_lev2        ]                                    [ 🡅 ✜ ]     [ yes ] 
+---- ││││││ └┬─[seller_signup_google_btn                   ]  [button              ]                                    [ ✜ ✜ ]     [ yes ]
+---- ││││││  ├ [seller_signup_google_btn_icon              ]  [icon                ]                                    [ ✜ 🡄 ]     [ yes ]
+---- ││││││  └ [seller_signup_google_btn_label             ]  [label               ]  [ "Продолжить с Google"     ]     [ ✜ 🡆 ]     [ yes ]
+3)   │││││└─┬──[seller_signup_apple                        ]  [section_lev2        ]                                    [ ✜ ✜ ]     [ yes ] 
+---- │││││  └┬─[seller_signup_apple_btn                    ]  [button              ]                                    [ ✜ ✜ ]     [ yes ]
+---- │││││   ├ [seller_signup_apple_btn_icon               ]  [icon                ]                                    [ ✜ 🡄 ]     [ yes ]
+---- │││││   └ [seller_signup_apple_btn_label              ]  [label               ]  [ "Продолжить с Apple"      ]     [ ✜ 🡆 ]     [ yes ]
+4)   ││││└───┬─[seller_signup_divider                      ]  [section_lev2        ]                                    [ ✜ ✜ ]     [ no  ] 
+---- ││││    ├ [seller_signup_divider_leftline             ]  [line                ]                                    [ ✜ 🡄 ]     [ no  ]
+---- ││││    ├ [seller_signup_divider_or                   ]  [label               ]  [ "или"                     ]     [ ✜ ✜ ]     [ no  ]
+---- ││││    └ [seller_signup_divider_rightline            ]  [line                ]                                    [ ✜ 🡆 ]     [ no  ]
+5)   │││└─┬─┬──[seller_signup_phone                        ]  [section_lev2        ]                                    [ 🡅 ✜ ]     [ no  ] 
+---- │││  │ └┬─[seller_signup_phone_helper                 ]  [section_lev2        ]                                    [ 🡅 ✜ ]     [ no  ] 
+---- │││  │  └ [seller_signup_phone_helper_label           ]  [label               ]  [ "Телефон"                 ]     [ ✜ ✜ ]     [ no  ]
+---  │││  └┬┬──[seller_signup_phone_form                   ]  [section_lev2        ]                                    [ ✜ ✜ ]     [ no  ] 
+---  │││   │└┬─[seller_signup_phone_form_code              ]  [button              ]                                    [ ✜ ✜ ]     [ yes ] 
+---- │││   │ ├ [seller_signup_phone_form_code_flag         ]  [icon                ]                                    [ ✜ ✜ ]     [ yes ]
+---- │││   │ └ [seller_signup_phone_form_code_value        ]  [variable            ]  [ "999"                     ]     [ ✜ 🡄 ]     [ yes ]
+---  │││   └─┬─[seller_signup_phone_form_mobile            ]  [input               ]                                    [ ✜ ✜ ]     [ yes ] 
+                 
+---- │││     └ [seller_signup_phone_form_mobile_state______]  [placeholder/variable]                                    [ ✜ 🡄 ]     [ yes ]
+
+6)   ││└────┬──[seller_signup_validation                   ]  [section_lev2        ]                                    [ 🡅 ✜ ]     [ yes ] 
+---- ││     └┬─[seller_signup_validation_btn               ]  [button              ]                                    [ ✜ ✜ ]     [ yes ]
+---- ││      └ [seller_signup_validation_btn_label         ]  [label               ]  [ "OK"                      ]     [ ✜ ✜ ]     [ yes ]
+7)   │└────┬┬──[seller_signup_enter                        ]  [section_lev2        ]                                    [ 🡇 ✜ ]     [ no  ]
+---- │     │└┬─[seller_signup_enter_question               ]  [section_lev3        ]                                    [ ✜ 🡄 ]     [ no  ]
+---- │     │ └ [seller_signup_enter_question_label         ]  [label               ]  [ "Уже есть аккаунт? "      ]     [ ✜ ✜ ]     [ no  ]
+---- │     └─┬─[seller_signup_enter_btn                    ]  [button              ]                                    [ ✜ 🡆 ]     [ yes ]
+---- │       └ [seller_signup_enter_btn_label              ]  [label               ]  [ "Войти"                   ]     [ ✜ ✜ ]     [ yes ]
+8)   └───────┬─[seller_signup_agreement                    ]  [section_lev2        ]                                    [ 🡇 ✜ ]     [ no  ]
+----         ├ [seller_signup_agreement_text               ]  [label               ]  [ "Совершая вход, вы с... " ]     [ 🡅 ✜ ]     [ no  ]
+----         └ [seller_signup_agreement_btn                ]  [button              ]  [ "Пользовательским сог..." ]     [ 🡇 ✜ ]     [ yes ]
 
 
 ■ seller_signup_title
 
 ✠ details
---- seller_signup_title - находится в верхней части seller_signup выполняя роль контейнера с вертикальным выравниванием для seller_signup_title_label и seller_signup_title_description;
+--- seller_signup_title - находится в верхней части seller_signup выполняя роль контейнера с вертикальным выравниванием для seller_signup_title_label и seller_signup_title_text;
 ----- seller_signup_title_label - константное строковое значение в качестве центрированного заголовка seller_signup_screen следующего содержания: "Регистрация", имеет text-align: center и font-weight: bold;  
------ seller_signup_title_description - константное строковое значение следующего содержания: "Выберите удобный вариант активации аккаунта", имеет text-align: center, располагается под seller_signup_title_label.
+----- seller_signup_title_text - константное строковое значение следующего содержания: "Выберите удобный вариант активации аккаунта", имеет text-align: center, располагается под seller_signup_title_label.
 
 ✠ color_states
 ┌─
@@ -74,7 +73,7 @@ seller_signup_screen появляется при первом открытии �
 └─
 ┌─
 │seller_signup_title_label
-│seller_signup_title_description
+│seller_signup_title_text
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -267,7 +266,7 @@ seller_signup_screen появляется при первом открытии �
 В ситуации если поле пустое, а юзер нажимает на seller_signup_validation_btn, под seller_signup_phone_form_mobile всплывает seller_signup_phone_mobile_alert_omission.
 
 ✠ alerts
-• seller_signup_list_phone_alert_prompt:
+• seller_signup_phone_form_alert_prompt:
 - focusing: да;
 - location: появляется над seller_signup_phone_form_mobile;
 - occasion: в процессе ввода данных в seller_signup_phone_form_mobile;
@@ -332,6 +331,79 @@ seller_signup_screen появляется при первом открытии �
 │⟪⟪ body ⟫⟫ 
 ├────────
 │• color2
+│------ in any situation
+└─
+
+
+■ seller_signup_phone_form_mobile_state
+
+seller_signup_phone_form_mobile_state может находиться в одном из 2 состояний:
+- seller_signup_phone_form_mobile_state_placeholder
+- seller_signup_phone_form_mobile_state_value
+
+■ seller_signup_phone_form_mobile_state_placeholder ■
+
+seller_signup_phone_form_mobile_state_placeholder отображается в ситуации по умолчанию в default_state.
+
+✠ tables
+
+                                codename:                            type:                    designation:            location:  interaction:
+---- │││     └ [seller_signup_phone_form_mobile_placeholder]  [placeholder        ]  [ "+999-999-999"            ]     [ ✜ 🡄 ]     [ yes ]
+
+✠ details
+----- seller_signup_phone_form_mobile_placeholder константное строковое значение в качестве placeholder в seller_signup_phone_form_mobile отображающее "+999-999-999".
+
+✠ actions
+• seller_signup_phone_form_mobile:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие на seller_signup_phone_form_mobile;
+║ condition: в рамках seller_signup_phone_form_mobile_state_placeholder;
+║ result:
+║ && - seller_signup_phone_form_mobile переходит из seller_signup_phone_form_mobile_placeholder в seller_signup_phone_form_mobile_state_value;
+║ && - placeholder удаляется;
+║ && - появляется клавиатура для ввода (если она была скрыта);
+╙ && - карет устанавливается в конце текста (если текст наличествует).
+
+✠ color_states
+┌─
+│seller_signup_phone_form_mobile_placeholder
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in any situation
+└─
+
+■ seller_signup_phone_form_mobile_state_value ■
+
+seller_signup_phone_form_mobile_state_value отображается в active_state.
+
+✠ tables
+
+                                   codename:                        type:                 designation:         location:  interaction:
+----   │││││││   └ [seller_signup_phone_form_mobile_value]  [variable          ]    [ { number }          ]     [ ✜ 🡄 ]     [ yes ]
+
+✠ details
+----- seller_signup_phone_form_mobile_state_value переменная со строковым значением, которая отображается в seller_signup_phone_form_mobile, когда юзер вводит данные.
+
+✠ actions
+• seller_signup_phone_form_mobile:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие на seller_signup_phone_form_mobile;
+║ condition: в рамках seller_signup_phone_form_mobile_state_value;
+║ result:
+║ && - появляется клавиатура для ввода (если она была скрыта);
+╙ && - карет устанавливается в конце текста (если текст наличествует).
+
+✠ color_states
+┌─
+│seller_signup_phone_form_mobile_state_value
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
 │------ in any situation
 └─
 
@@ -486,7 +558,7 @@ seller_signup_validation_modal является модальным окном, �
 ---  ┌┬┬┬┬───[seller_signup_validation_modal                     ]  [section_lev1       ]                                    [ ✜ ✜ ]      [ no  ]
 1)   ││││└┬┬─[seller_signup_validation_modal_title               ]  [section_lev2       ]                                    [ 🡅 ✜ ]      [ no  ]
 ---  ││││ │└ [seller_signup_validation_modal_title_label         ]  [label              ]  [ "Подтвердите регистрацию" ]     [ 🡅 ✜ ]      [ no  ]
----  ││││ └─ [seller_signup_validation_modal_title_description   ]  [text               ]  [ "Для подтверждения ре..." ]     [ 🡇 ✜ ]      [ no  ]
+---  ││││ └─ [seller_signup_validation_modal_title_text          ]  [text               ]  [ "Для подтверждения ре..." ]     [ 🡇 ✜ ]      [ no  ]
 2)   │││└─┬──[seller_signup_validation_modal_input               ]  [section_lev2       ]                                    [ ✜ ✜ ]      [ yes ]
 ---  │││  ├┬─[seller_signup_validation_modal_input_field1        ]  [input              ]                                    [ ✜ 🡄 ]      [ yes ]
 ---  │││  │└ [seller_signup_validation_modal_input_field1_dash   ]  [placeholder        ]                                    [ ✜ ✜ ]      [ yes ]
@@ -510,9 +582,9 @@ seller_signup_validation_modal является модальным окном, �
 ---        └ [seller_signup_validation_modal_close_btn_label     ]  [label              ]  [ "закрыть"                 ]     [ ✜ ✜ ]      [ yes ]
 
 ✠ details
-1) seller_signup_validation_modal_title - находится в верхней части seller_signup_validation_modal выполняя роль контейнера с вертикальным выравниванием для seller_signup_validation_modal_title_label и seller_signup_validation_modal_title_description; 
------ seller_signup_validation_modal_title_label - константное строковое значение в качестве центрированного заголовка seller_signin_screen следующего содержания: "Подтвердите регистрацию", имеет text-align: center и font-weight: bold, располагается над seller_signup_validation_modal_title_description;  
------ seller_signup_validation_modal_title_description - константное строковое значение в качестве параграфа выровненного по центру следующего содержания: "Для подтверждения регистрации на ваш телефон выслан пин код. Пожалуйста введите его в форму", имеет text-align: center, располагается под seller_signup_validation_modal_title_label.
+1) seller_signup_validation_modal_title - находится в верхней части seller_signup_validation_modal выполняя роль контейнера с вертикальным выравниванием для seller_signup_validation_modal_title_label и seller_signup_validation_modal_title_text; 
+----- seller_signup_validation_modal_title_label - константное строковое значение в качестве центрированного заголовка seller_signin_screen следующего содержания: "Подтвердите регистрацию", имеет text-align: center и font-weight: bold, располагается над seller_signup_validation_modal_title_text;  
+----- seller_signup_validation_modal_title_text - константное строковое значение в качестве параграфа выровненного по центру следующего содержания: "Для подтверждения регистрации на ваш телефон выслан пин код. Пожалуйста введите его в форму", имеет text-align: center, располагается под seller_signup_validation_modal_title_label.
 2) seller_signup_validation_modal_input - выполняет роль контейнера для 6 полей для ввода:
 ----- seller_signup_validation_modal_input_field1 - input обладающий квадратной геометрией, допускает ввод 1 символа числового значения, находится в крайне левой позиции внутри seller_signup_validation_modal_input. По умолчанию seller_signup_validation_modal_input_field1 обладает focus_state;
 ------- seller_signup_validation_modal_input_field1_dash - placeholder в виде символа дефиса центрированного внутри seller_signup_validation_modal_input_field1;
@@ -534,11 +606,6 @@ seller_signup_validation_modal является модальным окном, �
 5) seller_signup_validation_modal_close - выполняет роль контейнера для seller_signup_validation_modal_close_btn;
 ----- seller_signup_validation_modal_close_btn - кнопка отвечающая за закрытие seller_signup_validation_modal, содержит seller_signup_validation_modal_close_btn_label;
 ------- seller_signup_validation_modal_close_btn_label - наименование кнопки следующего содержания: "закрыть".
-
---- seller_signin_title - находится в верхней части seller_signin выполняя роль контейнера с вертикальным выравниванием для seller_signin_title_label и seller_signin_title_description;
------ seller_signin_title_label - константное строковое значение в качестве центрированного заголовка seller_signin_screen следующего содержания: "Вход", имеет text-align: center и font-weight: bold;  
------ seller_signin_title_description - константное строковое значение следующего содержания: "Для того чтобы войти в аккаунт введите требуемые данные", имеет text-align: center, располагается под seller_signin_title_label.
-
 
 ✠ actions
 • seller_signup_validation_modal_input_field1
@@ -563,10 +630,10 @@ seller_signup_validation_modal является модальным окном, �
 ║ - && - появляется клавиатура для ввода (если она была скрыта);
 ║ - && - если текст наличествует - seller_signup_validation_modal_input_field очищается;
 ╙ - && - карет устанавливается перед позицией символа.
-• seller_signup_validation_modal_repeat:
+• seller_signup_validation_modal_repeat_btn:
 ╠ valid / invalid
 ║ • gesture: tap
-║ occasion: нажатие seller_signup_validation_modal_repeat;
+║ occasion: нажатие seller_signup_validation_modal_repeat_btn;
 ║ condition:
 ║ - && - valid по факту проверки на stopsymbol и emptiness для seller_signup_validation_modal_input_field1;
 ║ - && - valid по факту проверки на stopsymbol и emptiness для seller_signup_validation_modal_input_field2;
@@ -575,10 +642,10 @@ seller_signup_validation_modal является модальным окном, �
 ║ - && - valid по факту проверки на stopsymbol и emptiness для seller_signup_validation_modal_input_field5;
 ║ - && - valid по факту проверки на stopsymbol и emptiness для seller_signup_validation_modal_input_field6;
 ╙ result: сервер делает повторную отправку seller_signin_pincode.
-• seller_signup_validation_modal_btn_close:
+• seller_signup_validation_modal_close_btn:
 ╠ valid / invalid
 ║ • gesture: tap
-║ occasion: нажатие seller_signup_validation_modal_btn_close;
+║ occasion: нажатие seller_signup_validation_modal_close_btn;
 ║ condition: in any situation;
 ╙ result: происходит закрытие seller_signup_validation_modal.
 
@@ -609,14 +676,17 @@ seller_signup_validation_modal является модальным окном, �
 ✠ color_states
 ┌─
 │seller_signup_validation_modal
+│seller_signup_validation_modal_title
 │seller_signup_validation_modal_input
-│seller_signup_validation_modal_repeat
 │seller_signup_validation_modal_input_field1
 │seller_signup_validation_modal_input_field2
 │seller_signup_validation_modal_input_field3
 │seller_signup_validation_modal_input_field4
 │seller_signup_validation_modal_input_field5
 │seller_signup_validation_modal_input_field6
+│seller_signup_validation_modal_if
+│seller_signup_validation_modal_repeat
+│seller_signup_validation_modal_close
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -640,7 +710,7 @@ seller_signup_validation_modal является модальным окном, �
 │------ in focus_state
 └─
 ┌─
-│seller_signup_validation_modal_repeat
+│seller_signup_validation_modal_repeat_btn
 │-------------------------------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -651,7 +721,7 @@ seller_signup_validation_modal является модальным окном, �
 │------ in pressing_state
 └─
 ┌─
-│seller_signup_validation_modal_btn_close
+│seller_signup_validation_modal_close_btn
 │-------------------------------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -675,10 +745,11 @@ seller_signup_validation_modal является модальным окном, �
 │------ in any situation
 └─
 ┌─
-│seller_signup_validation_modal_title
-│seller_signup_validation_modal_title_description
-│seller_signup_validation_modal_repeat_label
-│seller_signup_validation_modal_btn_close_label
+│seller_signup_validation_modal_title_label
+│seller_signup_validation_modal_title_text
+│seller_signup_validation_modal_if_text
+│seller_signup_validation_modal_repeat_btn_label
+│seller_signup_validation_modal_close_btn_label
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -688,54 +759,65 @@ seller_signup_validation_modal является модальным окном, �
 
 
 
+-------------------------------------------------------------------
+-------------------------------------------------------------------
+-------------------------------------------------------------------
+-------------------------------------------------------------------
+-------------------------------------------------------------------
+
+
 
 🡆 seller_signin_screen 
 ■■■■■■■■■■■■■■■■■■■■■■
 
 seller_signin_screen появляется каждый раз при открытии приложения в случае, если юзер прежде вышел из аккаунта. seller_signin_screen состоит из 9 секций (компонентов) последовательно расположенных сверху-вниз в следующем составе:
 
-                                      codename:                           type:                  designation:             location:  interaction:
-----   ┌┬┬┬┬┬┬┬─┬──[seller_signin                              ]  [section_lev1       ]                                    [ ✜ ✜ ]     [ no  ] 
-1)     ││││││││ └┬─[seller_signin_title                        ]  [section_lev2       ]                                    [ 🡅 ✜ ]     [ no  ] 
-----   ││││││││  ├ [seller_signin_title_label                  ]  [label              ]  [ "Вход"                    ]     [ ✜ ✜ ]     [ no  ]
-----   ││││││││  └ [seller_signin_title_description            ]  [label              ]  [ "Для того чтобы войти..." ]     [ ✜ ✜ ]     [ no  ]
-2)     │││││││└┬┬──[seller_signin_phone                        ]  [section_lev2       ]                                    [ 🡅 ✜ ]     [ no  ] 
-----   │││││││ │└┬─[seller_signin_phone_helper                 ]  [section_lev3       ]                                    [ 🡅 ✜ ]     [ no  ] 
-----   │││││││ │ └ [seller_signin_phone_helper_label           ]  [label              ]  [ "Телефон или почта"       ]     [ ✜ ✜ ]     [ no  ]
----    │││││││ └─┬─[seller_signin_phone_input                  ]  [input              ]                                    [ 🡇 ✜ ]     [ yes ] 
-----   │││││││   └ [seller_signin_phone_input_value            ]  [placeholder        ]  [ "name@mail.com"           ]     [ ✜ 🡄 ]     [ yes ]
-3)     ││││││└─┬┬──[seller_signin_password                     ]  [section_lev2       ]                                    [ 🡅 ✜ ]     [ no  ] 
-----   ││││││  │└┬─[seller_signin_password_helper              ]  [section_lev3       ]                                    [ 🡅 ✜ ]     [ no  ] 
-----   ││││││  │ └ [seller_signin_password_helper_label        ]  [label              ]  [ "Пароль"                  ]     [ ✜ ✜ ]     [ no  ]
----    ││││││  └─┬─[seller_signin_password_input               ]  [input              ]                                    [ 🡇 ✜ ]     [ yes ] 
-----   ││││││    └ [seller_signin_password_input_value         ]  [placeholder        ]  [ "ваш пароль"              ]     [ ✜ 🡄 ]     [ yes ]
-4)     │││││└────┬─[seller_signin_recover                      ]  [section_lev2       ]                                    [ 🡇 ✜ ]     [ yes ]
-----   │││││     └ [seller_signin_recover_btn                  ]  [button             ]  [ "Забыли свой пароль?    " ]     [ 🡅 ✜ ]     [ yes ]
-5)     ││││└────┬──[seller_signin_validation                   ]  [section_lev2       ]                                    [ 🡅 ✜ ]     [ yes ]
-----   ││││     └┬─[seller_signin_validation_btn               ]  [button             ]                                    [ ✜ ✜ ]     [ yes ]
-----   ││││      └ [seller_signin_validation_btn_label         ]  [label              ]  [ "войти"                   ]     [ ✜ ✜ ]     [ yes ]
-6)     │││└──────┬─[seller_signin_divider                      ]  [section_lev2       ]                                    [ ✜ ✜ ]     [ no  ] 
-----   │││       ├ [seller_signin_divider_leftline             ]  [line               ]                                    [ ✜ 🡄 ]     [ no  ]
-----   │││       ├ [seller_signin_divider_or                   ]  [label              ]  [ "или"                     ]     [ ✜ ✜ ]     [ no  ]
-----   │││       └ [seller_signin_divider_rightline            ]  [line               ]                                    [ ✜ 🡆 ]     [ no  ]
-7)     ││└──────┬──[seller_signin_google                       ]  [section_lev2       ]                                    [ 🡅 ✜ ]     [ yes ] 
-----   ││       └┬─[seller_signin_google_btn                   ]  [button             ]                                    [ ✜ ✜ ]     [ yes ]
-----   ││        ├ [seller_signin_google_btn_icon              ]  [icon               ]                                    [ ✜ 🡄 ]     [ yes ]
-----   ││        └ [seller_signin_google_btn_label             ]  [label              ]  [ "Продолжить с Google"     ]     [ ✜ 🡆 ]     [ yes ]
-8)     │└───────┬──[seller_signin_apple                        ]  [section_lev2       ]                                    [ ✜ ✜ ]     [ yes ] 
-----   │        └┬─[seller_signin_apple_btn                    ]  [button             ]                                    [ ✜ ✜ ]     [ yes ]
-----   │         ├ [seller_signin_apple_btn_icon               ]  [icon               ]                                    [ ✜ 🡄 ]     [ yes ]
-----   │         └ [seller_signin_apple_btn_label              ]  [label              ]  [ "Продолжить с Apple"      ]     [ ✜ 🡆 ]     [ yes ]
-9)     └─────────┬─[seller_signin_create                       ]  [section_lev2       ]                                    [ 🡇 ✜ ]     [ yes ]
-----             └ [seller_signin_create_btn                   ]  [button             ]  [ "Создать новый аккаунт"   ]     [ ✜ ✜ ]     [ yes ]
+                                      codename:                           type:                   designation:             location:  interaction:
+----   ┌┬┬┬┬┬┬┬─┬──[seller_signin                              ]  [section_lev1        ]                                    [ ✜ ✜ ]     [ no  ] 
+1)     ││││││││ └┬─[seller_signin_title                        ]  [section_lev2        ]                                    [ 🡅 ✜ ]     [ no  ] 
+----   ││││││││  ├ [seller_signin_title_label                  ]  [label               ]  [ "Вход"                    ]     [ ✜ ✜ ]     [ no  ]
+----   ││││││││  └ [seller_signin_title_text                   ]  [text                ]  [ "Для того чтобы войти..." ]     [ ✜ ✜ ]     [ no  ]
+2)     │││││││└┬┬──[seller_signin_phone                        ]  [section_lev2        ]                                    [ 🡅 ✜ ]     [ no  ] 
+----   │││││││ │└┬─[seller_signin_phone_helper                 ]  [section_lev3        ]                                    [ 🡅 ✜ ]     [ no  ] 
+----   │││││││ │ └ [seller_signin_phone_helper_label           ]  [label               ]  [ "Телефон или почта"       ]     [ ✜ ✜ ]     [ no  ]
+---    │││││││ └─┬─[seller_signin_phone_input                  ]  [input               ]                                    [ 🡇 ✜ ]     [ yes ]
+
+----   │││││││   └ [seller_signin_phone_input_state____________]  [placeholder/variable]                                    [ ✜ 🡄 ]     [ yes ]
+
+3)     ││││││└─┬┬──[seller_signin_password                     ]  [section_lev2        ]                                    [ 🡅 ✜ ]     [ no  ] 
+----   ││││││  │└┬─[seller_signin_password_helper              ]  [section_lev3        ]                                    [ 🡅 ✜ ]     [ no  ] 
+----   ││││││  │ └ [seller_signin_password_helper_label        ]  [label               ]  [ "Пароль"                  ]     [ ✜ ✜ ]     [ no  ]
+---    ││││││  └─┬─[seller_signin_password_input               ]  [input               ]                                    [ 🡇 ✜ ]     [ yes ] 
+
+----   ││││││    └ [seller_signin_password_input_state_________]  [placeholder/variable]                                    [ ✜ 🡄 ]     [ yes ]
+
+4)     │││││└────┬─[seller_signin_recover                      ]  [section_lev2        ]                                    [ 🡇 ✜ ]     [ yes ]
+----   │││││     └ [seller_signin_recover_btn                  ]  [button              ]  [ "Забыли свой пароль?    " ]     [ 🡅 ✜ ]     [ yes ]
+5)     ││││└────┬──[seller_signin_validation                   ]  [section_lev2        ]                                    [ 🡅 ✜ ]     [ yes ]
+----   ││││     └┬─[seller_signin_validation_btn               ]  [button              ]                                    [ ✜ ✜ ]     [ yes ]
+----   ││││      └ [seller_signin_validation_btn_label         ]  [label               ]  [ "войти"                   ]     [ ✜ ✜ ]     [ yes ]
+6)     │││└──────┬─[seller_signin_divider                      ]  [section_lev2        ]                                    [ ✜ ✜ ]     [ no  ] 
+----   │││       ├ [seller_signin_divider_leftline             ]  [line                ]                                    [ ✜ 🡄 ]     [ no  ]
+----   │││       ├ [seller_signin_divider_or                   ]  [label               ]  [ "или"                     ]     [ ✜ ✜ ]     [ no  ]
+----   │││       └ [seller_signin_divider_rightline            ]  [line                ]                                    [ ✜ 🡆 ]     [ no  ]
+7)     ││└──────┬──[seller_signin_google                       ]  [section_lev2        ]                                    [ 🡅 ✜ ]     [ yes ] 
+----   ││       └┬─[seller_signin_google_btn                   ]  [button              ]                                    [ ✜ ✜ ]     [ yes ]
+----   ││        ├ [seller_signin_google_btn_icon              ]  [icon                ]                                    [ ✜ 🡄 ]     [ yes ]
+----   ││        └ [seller_signin_google_btn_label             ]  [label               ]  [ "Продолжить с Google"     ]     [ ✜ 🡆 ]     [ yes ]
+8)     │└───────┬──[seller_signin_apple                        ]  [section_lev2        ]                                    [ ✜ ✜ ]     [ yes ] 
+----   │        └┬─[seller_signin_apple_btn                    ]  [button              ]                                    [ ✜ ✜ ]     [ yes ]
+----   │         ├ [seller_signin_apple_btn_icon               ]  [icon                ]                                    [ ✜ 🡄 ]     [ yes ]
+----   │         └ [seller_signin_apple_btn_label              ]  [label               ]  [ "Продолжить с Apple"      ]     [ ✜ 🡆 ]     [ yes ]
+9)     └─────────┬─[seller_signin_create                       ]  [section_lev2        ]                                    [ 🡇 ✜ ]     [ yes ]
+----             └ [seller_signin_create_btn                   ]  [button              ]  [ "Создать новый аккаунт"   ]     [ ✜ ✜ ]     [ yes ]
 
 
 ■ seller_signin_title
 
 ✠ details
---- seller_signin_title - находится в верхней части seller_signin выполняя роль контейнера с вертикальным выравниванием для seller_signin_title_label и seller_signin_title_description;
+--- seller_signin_title - находится в верхней части seller_signin выполняя роль контейнера с вертикальным выравниванием для seller_signin_title_label и seller_signin_title_text;
 ----- seller_signin_title_label - константное строковое значение в качестве центрированного заголовка seller_signin_screen следующего содержания: "Вход", имеет text-align: center и font-weight: bold;  
------ seller_signin_title_description - константное строковое значение следующего содержания: "Для того чтобы войти в аккаунт введите требуемые данные", имеет text-align: center, располагается под seller_signin_title_label.
+----- seller_signin_title_text - константное строковое значение следующего содержания: "Для того чтобы войти в аккаунт введите требуемые данные", имеет text-align: center, располагается под seller_signin_title_label.
 
 ✠ color_states
 ┌─
@@ -748,7 +830,7 @@ seller_signin_screen появляется каждый раз при откры�
 └─
 ┌─
 │seller_signin_title_label
-│seller_signin_title_description
+│seller_signin_title_text
 │---------------------------
 │⟪⟪ body ⟫⟫ 
 ├────────
@@ -791,7 +873,7 @@ seller_signin_screen появляется каждый раз при откры�
 • nolatin:
 Анализ на языковую принадлежность вводимых символов (букв) к латинскому алфавиту.
 Работает в active_state.
-При вводе нелатинских символов под seller_signin_phone_input всплывает seller_signin_phone_alert_nolatin.
+При вводе нелатинских символов под seller_signin_phone_input всплывает seller_signin_phone_alert_nolatin, а ввод блокируется.
 • omission:
 Реакция на факт отсутствия введенных данных.
 Работает в inactive_state.
@@ -802,7 +884,7 @@ seller_signin_screen появляется каждый раз при откры�
 Работает in any situation делая проверку на предмет отсутствия данных в seller_signin_phone_input.  
 
 ✠ alerts
-• user_settings_username_alert_stopsymbol:
+• seller_signin_phone_alert_stopsymbol:
 - focusing: да;
 - location: появляется под seller_signin_phone_input;
 - occasion: невалидность по факту проверки на stopsymbol;
@@ -817,7 +899,7 @@ seller_signin_screen появляется каждый раз при откры�
 - location: появляется под seller_signin_phone_input;
 - occasion: невалидность по факту проверки на nolatin;
 - content:  "ДОПУСКАЕТСЯ ИСПОЛЬЗОВАНИЕ ТОЛЬКО БУКВ ЛАТИНСКОГО АЛФАВИТА A-Z".
-• user_settings_username_alert_omission:
+• seller_signin_phone_alert_omission:
 - focusing: нет;
 - location: появляется под seller_signin_phone_input;
 - occasion: нажатие на seller_signin_validation_btn, если seller_signin_phone_input пустой;
@@ -878,6 +960,79 @@ user_id_data_profile_email;
 user_id_data_profile_phone_mobile.
 
 
+■ seller_signin_phone_input_state
+
+seller_signin_phone_input_state может находиться в одном из 2 состояний:
+- seller_signin_phone_input_state_placeholder
+- seller_signin_phone_input_state_value
+
+■ seller_signin_phone_input_state_placeholder ■
+
+seller_signin_phone_input_state_placeholder отображается в ситуации по умолчанию в default_state.
+
+✠ tables
+
+                                    codename:                        type:                   designation:            location:  interaction:
+----   │││││││   └ [seller_signin_phone_input_placeholder ]  [placeholder        ]  [ "name@mail.com"           ]     [ ✜ 🡄 ]     [ yes ]
+
+✠ details
+----- seller_signin_phone_input_placeholder константное строковое значение в качестве placeholder в seller_signin_phone_input отображающее "name@mail.com".
+
+✠ actions
+• seller_signin_phone_input:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие на seller_signin_phone_input;
+║ condition: в рамках seller_signin_phone_input_state_placeholder;
+║ result:
+║ && - seller_signin_phone_input переходит из seller_signin_phone_input_placeholder в seller_signin_phone_input_state_value;
+║ && - placeholder удаляется;
+║ && - появляется клавиатура для ввода (если она была скрыта);
+╙ && - карет устанавливается в конце текста (если текст наличествует).
+
+✠ color_states
+┌─
+│seller_signin_phone_input_placeholder
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in any situation
+└─
+
+■ seller_signin_phone_input_state_value ■
+
+seller_signin_phone_input_state_value отображается в active_state.
+
+✠ tables
+
+                                   codename:                     type:                  designation:         location:  interaction:
+----   │││││││   └ [seller_signin_phone_input_value   ]  [variable          ]     [ { string }          ]     [ ✜ 🡄 ]     [ yes ]
+
+✠ details
+----- seller_signin_phone_input_state_value переменная со строковым значением, которая отображается в seller_signin_phone_input, когда юзер вводит данные.
+
+✠ actions
+• seller_signin_phone_input:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие на seller_signin_phone_input;
+║ condition: в рамках seller_signin_phone_input_state_value;
+║ result:
+║ && - появляется клавиатура для ввода (если она была скрыта);
+╙ && - карет устанавливается в конце текста (если текст наличествует).
+
+✠ color_states
+┌─
+│seller_signin_phone_input_state_value
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
+
 ■ seller_signin_password
 
 ✠ details
@@ -912,7 +1067,7 @@ user_id_data_profile_phone_mobile.
 • nolatin:
 Анализ на языковую принадлежность вводимых символов (букв) к латинскому алфавиту.
 Работает в active_state.
-При вводе нелатинских символов под seller_signin_password_input всплывает seller_signin_password_alert_nolatin.
+При вводе нелатинских символов под seller_signin_password_input всплывает seller_signin_password_alert_nolatin, а ввод блокируется.
 • omission:
 Реакция на факт отсутствия введенных данных.
 Работает в inactive_state.
@@ -923,7 +1078,7 @@ user_id_data_profile_phone_mobile.
 Работает in any situation делая проверку на предмет отсутствия данных в seller_signin_password_input.  
 
 ✠ alerts
-• user_settings_username_alert_stopsymbol:
+• seller_signin_password_alert_stopsymbol:
 - focusing: да;
 - location: появляется под seller_signin_password_input;
 - occasion: невалидность по факту проверки на stopsymbol;
@@ -938,7 +1093,7 @@ user_id_data_profile_phone_mobile.
 - location: появляется под seller_signin_password_input;
 - occasion: невалидность по факту проверки на nolatin;
 - content:  "ДОПУСКАЕТСЯ ИСПОЛЬЗОВАНИЕ ТОЛЬКО БУКВ ЛАТИНСКОГО АЛФАВИТА A-Z".
-• user_settings_username_alert_omission:
+• seller_signin_password_alert_omission:
 - focusing: нет;
 - location: появляется под seller_signin_password_input;
 - occasion: нажатие на seller_signin_validation_btn, если seller_signin_password_input пустой;
@@ -996,6 +1151,80 @@ user_id_data_profile_phone_mobile.
 ✠ props
 seller_signin_password импортирует следующие props:
 user_id_data_profile_password.
+
+
+■ seller_signin_phone_input_state
+
+seller_signin_phone_input_state может находиться в одном из 2 состояний:
+- seller_signin_phone_input_state_placeholder
+- seller_signin_phone_input_state_value
+
+■ seller_signin_phone_input_state_placeholder ■
+
+seller_signin_phone_input_state_placeholder отображается в ситуации по умолчанию в default_state.
+
+✠ tables
+
+                                    codename:                            type:                    designation:            location:  interaction:
+----   ││││││    └ [seller_signin_password_input_state_________]  [placeholder        ]  [ "ваш пароль"              ]     [ ✜ 🡄 ]     [ yes ]
+
+
+✠ details
+----- seller_signin_phone_input_placeholder константное строковое значение в качестве placeholder в seller_signin_phone_input отображающее "ваш пароль".
+
+✠ actions
+• seller_signin_phone_input:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие на seller_signin_phone_input;
+║ condition: в рамках seller_signin_phone_input_state_placeholder;
+║ result:
+║ && - seller_signin_phone_input переходит из seller_signin_phone_input_placeholder в seller_signin_phone_input_state_value;
+║ && - placeholder удаляется;
+║ && - появляется клавиатура для ввода (если она была скрыта);
+╙ && - карет устанавливается в конце текста (если текст наличествует).
+
+✠ color_states
+┌─
+│seller_signin_phone_input_placeholder
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in any situation
+└─
+
+■ seller_signin_phone_input_state_value ■
+
+seller_signin_phone_input_state_value отображается в active_state.
+
+✠ tables
+
+                                   codename:                     type:                 designation:         location:  interaction:
+----   │││││││   └ [seller_signin_phone_input_value   ]  [variable          ]    [ { string }          ]     [ ✜ 🡄 ]     [ yes ]
+
+✠ details
+----- seller_signin_phone_input_state_value переменная со строковым значением, которая отображается в seller_signin_phone_input, когда юзер вводит данные.
+
+✠ actions
+• seller_signin_phone_input:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие на seller_signin_phone_input;
+║ condition: в рамках seller_signin_phone_input_state_value;
+║ result:
+║ && - появляется клавиатура для ввода (если она была скрыта);
+╙ && - карет устанавливается в конце текста (если текст наличествует).
+
+✠ color_states
+┌─
+│seller_signin_phone_input_state_value
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
 
 
 ■ seller_signin_recover
@@ -1263,6 +1492,415 @@ user_id_data_profile_password.
 └─
 
 
+
+
+
+🡆🡆 seller_signin_recover_screen 
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+
+seller_signin_recover_screen предназначен для осуществления процедуры восстановления пароля, который состоит из 5 секций (компонентов) последовательно расположенных сверху-вниз в следующем составе:
+
+                                   codename:                           type:                  designation:             location:  interaction:
+----   ┌┬┬┬─┬──[seller_signin_recover                      ]  [section_lev1        ]                                    [ ✜ ✜ ]     [ no  ] 
+1)     ││││ └┬─[seller_signin_recover_title                ]  [section_lev2        ]                                    [ 🡅 ✜ ]     [ no  ] 
+----   ││││  ├ [seller_signin_recover_title_label          ]  [label               ]  [ "Восстановление пароля"   ]     [ 🡅 ✜ ]     [ no  ]
+----   ││││  └ [seller_signin_recover_title_text           ]  [text                ]  [ "Введите адрес электр..." ]     [ 🡇 ✜ ]     [ no  ]
+2)     │││└┬┬──[seller_signin_recover_email                ]  [section_lev2        ]                                    [ 🡅 ✜ ]     [ no  ] 
+----   │││ │└┬─[seller_signin_recover_email_helper         ]  [section_lev3        ]                                    [ 🡅 ✜ ]     [ no  ] 
+----   │││ │ └ [seller_signin_recover_email_helper_label   ]  [label               ]  [ "Электронная почта"       ]     [ ✜ ✜ ]     [ no  ]
+---    │││ └─┬─[seller_signin_recover_email_input          ]  [input               ]                                    [ 🡇 ✜ ]     [ yes ]
+ 
+----   │││   └ [seller_signin_recover_email_input_state____]  [placeholder/variable]                                    [ ✜ 🡄 ]     [ yes ]
+
+3)     ││└──┬──[seller_signin_recover_dispatch             ]  [section_lev2        ]                                    [ ✜ ✜ ]     [ yes ]
+----   ││   └┬─[seller_signin_recover_dispatch_btn         ]  [button              ]                                    [ ✜ ✜ ]     [ yes ]
+----   ││    └ [seller_signin_recover_dispatch_btn_label   ]  [label               ]  [ "отправить"               ]     [ ✜ ✜ ]     [ yes ]
+4)     │└────┬─[seller_signin_recover_if                   ]  [section_lev2        ]                                    [ ✜ ✜ ]     [ no  ]
+---    │     └ [seller_signin_recover_if_text              ]  [text                ]  [ "Если код не пришел, ..." ]     [ ✜ ✜ ]     [ no  ]
+5)     └─────┬─[seller_signin_recover_create               ]  [section_lev2        ]                                    [ 🡇 ✜ ]     [ yes ]
+----         └ [seller_signin_recover_create_btn           ]  [button              ]  [ "Создать новый аккаунт"   ]     [ ✜ ✜ ]     [ yes ]
+
+■ seller_signin_recover_title
+
+✠ details
+--- seller_signin_recover_title - находится в верхней части seller_signin_recover выполняя роль контейнера с вертикальным выравниванием для seller_signin_recover_title_label и seller_signin_recover_title_text;
+----- seller_signin_recover_title_label - константное строковое значение в качестве центрированного заголовка seller_signin_recover_screen следующего содержания: "Восстановление пароля", имеет text-align: center и font-weight: bold;  
+----- seller_signin_recover_title_text - константное строковое значение следующего содержания: "Введите адрес электронной почты, нажмите “Отправить”, после чего к вам на почту придет письмо с инструкцией восстановления", имеет text-align: center, располагается под seller_signin_recover_title_label.
+
+✠ color_states
+┌─
+│seller_signin_recover_title
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color0
+│------ in any situation
+└─
+┌─
+│seller_signin_recover_title_label
+│seller_signin_recover_title_text
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
+
+■ seller_signin_recover_email
+
+✠ details
+--- seller_signin_recover_email - выполняет роль контейнера с вертикальным выравниванием для seller_signin_recover_email_helper и seller_signin_recover_email_input;
+----- seller_signin_recover_email_helper - контейнер для seller_signin_recover_email_helper_label расположенный над seller_signin_recover_email_input;
+------- seller_signin_recover_email_helper_label - константное строковое значение в качестве подсказки к seller_signin_recover_email_input со следующим содержанием: "Электронная почта";
+----- seller_signin_recover_email_input - поле для ввода адреса электронной почты юзера, расположена под seller_signin_recover_email_helper;
+
+✠ actions
+• seller_signin_recover_email_input:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_signin_recover_email_input;
+║ condition: in any situation;
+║ result:
+║ && - seller_signin_recover_email_input переходит в active_state;
+║ && - появляется клавиатура для ввода (если она была скрыта);
+╙ && - карет устанавливается в конце текста (если текст наличествует).
+
+✠ input_checks
+• seller_signin_recover_email_input
+Фильтры проверяющие на соответствие нормативам содержание seller_signin_recover_email_input. Если в ходе проверки фиксируется несоответствие, тогда состояние seller_signin_recover_email_input позиционируется как invalid, в связи с чем отображается соответствующее типу проблемы предупреждение.
+• stopsymbol:
+Анализ на нажатие запрещенных клавиш базирующийся на превентивной блокировке ввода неразрешенных символов в перечень которых входят любые символы исключая: буквы, цифры, пробел и (. , $ & @ # : ; – _).
+Работает в active_state. 
+При вводе phone/email, в ситуации если использованы запрещенные символы, под seller_signin_recover_email_input всплывает seller_signin_recover_email_alert_stopsymbol.
+• mismatch:
+Анализ на совпадение содержимого seller_signin_recover_email_input с данными в db.
+Работает в inactive_state.
+При нажатии seller_signin_recover_dispatch_btn, в ситуации несоответствия между seller_signin_recover_email_input_value и user_id_data_profile_email, под seller_signin_recover_email_input всплывает seller_signin_recover_email_alert_mismatch.
+• nolatin:
+Анализ на языковую принадлежность вводимых символов (букв) к латинскому алфавиту.
+Работает в active_state.
+При вводе нелатинских символов под seller_signin_recover_email_input всплывает seller_signin_recover_email_alert_nolatin, а ввод блокируется.
+• omission:
+Реакция на факт отсутствия введенных данных.
+Работает в inactive_state.
+В ситуации если поле пустое, а юзер нажимает на seller_signin_recover_dispatch_btn, под seller_signin_recover_email_input всплывает seller_signin_recover_email_alert_omission.
+• emptiness:
+Анализ на пустотность.
+Работает в active_state и inactive_state.
+Работает in any situation делая проверку на предмет отсутствия данных в seller_signin_recover_email_input.  
+
+✠ alerts
+• seller_signin_recover_email_alert_stopsymbol:
+- focusing: да;
+- location: появляется под seller_signin_recover_email_input;
+- occasion: невалидность по факту проверки на stopsymbol;
+- content:  "ИСПОЛЬЗОВАН ЗАПРЕЩЕННЫЙ СИМВОЛ: {указывается запрещенный символ жирным шрифтом белого цвета на color3 фоне}".
+• seller_signin_recover_email_alert_mismatch:
+- focusing: да;
+- location: появляется под seller_signin_recover_email_input;
+- occasion: невалидность по факту проверки на mismatch;
+- content:  "УКАЗАННЫЙ АДРЕС ПОЧТЫ НЕ НАЙДЕН. ПОЖАЛУЙСТА ПРОВЕРЬТЕ КОРРЕКТНОСТЬ АДРЕСА".
+• seller_signin_recover_email_alert_nolatin:
+- focusing: да;
+- location: появляется под seller_signin_recover_email_input;
+- occasion: невалидность по факту проверки на nolatin;
+- content:  "ДОПУСКАЕТСЯ ИСПОЛЬЗОВАНИЕ ТОЛЬКО БУКВ ЛАТИНСКОГО АЛФАВИТА A-Z".
+• seller_signin_recover_email_alert_omission:
+- focusing: нет;
+- location: появляется под seller_signin_recover_email_input;
+- occasion: нажатие на seller_signin_recover_dispatch_btn, если seller_signin_recover_email_input пустой;
+- content:  "ПОЖАЛУЙСТА ВВЕДИТЕ В ПОЛЕ ВАШ АДРЕС ЭЛЕКТРОННОЙ ПОЧТЫ".
+
+✠ color_states
+┌─
+│seller_signin_recover_email
+│seller_signin_recover_email_helper
+│seller_signin_recover_email_input
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color0
+│------ in any situation
+└─
+┌─
+│seller_signin_recover_email_input
+│-------------------------------------------------
+│⟪⟪ border ⟫⟫
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color3
+│- || - invalid по факту проверки на stopsymbol
+│- || - invalid по факту проверки на mismatch
+│- || - invalid по факту проверки на nolatin
+│- || - invalid по факту проверки на omission
+│- || - invalid по факту проверки на emptiness
+├────────
+│• color1
+│- && - valid по факту проверки на stopsymbol
+│- && - valid по факту проверки на mismatch
+│- && - valid по факту проверки на nolatin
+│- && - valid по факту проверки на omission
+│- && - valid по факту проверки на emptiness
+└─
+┌─
+│seller_signin_recover_email_helper_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
+✠ props
+seller_signin_recover_email импортирует следующие props:
+user_id_data_profile_email.
+
+
+■ seller_signin_recover_email_input_state
+
+seller_signin_recover_email_input_state может находиться в одном из 2 состояний:
+- seller_signin_recover_email_input_state_placeholder
+- seller_signin_recover_email_input_state_value
+
+
+■ seller_signin_recover_email_input_state_placeholder ■
+
+seller_signin_recover_email_input_state_placeholder отображается в ситуации по умолчанию в default_state.
+
+✠ tables
+
+                                    codename:                           type:                  designation:             location:  interaction:
+----   │││   └ [seller_signin_recover_email_input_placeholder]  [placeholder        ]  [ "name@mail.com"           ]     [ ✜ 🡄 ]     [ yes ]
+
+✠ details
+----- seller_signin_recover_email_input_placeholder константное строковое значение в качестве placeholder в seller_signin_recover_email_input отображающее "name@mail.com".
+
+✠ actions
+• seller_signin_recover_email_input:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие на seller_signin_recover_email_input;
+║ condition: в рамках seller_signin_recover_email_input_state_placeholder;
+║ result:
+║ && - seller_signin_recover_email_input переходит из seller_signin_recover_email_input_placeholder в seller_signin_recover_email_input_state_value;
+║ && - placeholder удаляется;
+║ && - появляется клавиатура для ввода (если она была скрыта);
+╙ && - карет устанавливается в конце текста (если текст наличествует).
+
+✠ color_states
+┌─
+│seller_signin_recover_email_input_placeholder
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in any situation
+└─
+
+
+■ seller_signin_recover_email_input_state_value ■
+
+seller_signin_recover_email_input_state_value отображается в active_state.
+
+✠ tables
+
+                                   codename:                             type:                designation:         location:  interaction:
+----   │││   └ [seller_signin_recover_email_input_value      ]     [variable         ]  [ { string }          ]     [ ✜ 🡄 ]     [ yes ]
+
+✠ details
+----- seller_signin_recover_email_input_state_value переменная со строковым значением, которая отображается в seller_signin_recover_email_input, когда юзер вводит данные.
+
+✠ actions
+• seller_signin_recover_email_input:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие на seller_signin_recover_email_input;
+║ condition: в рамках seller_signin_recover_email_input_state_value;
+║ result:
+║ && - появляется клавиатура для ввода (если она была скрыта);
+╙ && - карет устанавливается в конце текста (если текст наличествует).
+
+✠ color_states
+┌─
+│seller_signin_recover_email_input_state_value
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
+
+■ seller_signin_recover_dispatch
+
+✠ details
+--- seller_signin_recover_dispatch - выполняет роль контейнера для seller_signin_recover_dispatch_btn;
+----- seller_signin_recover_dispatch_btn - кнопка отвечающая за активацию функции отправки данных из seller_signin_recover_email_input_state_value, имеет justify-content: center, наследует ширину родительского компонента;
+------- seller_signin_recover_dispatch_btn_label - константное строковое значение в качестве наименования seller_signin_recover_dispatch_btn: "отправить".
+
+✠ actions
+• seller_signin_recover_dispatch_btn:
+╠ valid
+║ • gesture: tap
+║ occasion: нажатие seller_signin_recover_dispatch_btn;
+║ condition:
+║ - && - valid по факту проверки seller_signin_recover_email_input на stopsymbol;
+║ - && - valid по факту проверки seller_signin_recover_email_input на mismatch;
+║ - && - valid по факту проверки seller_signin_recover_email_input на nolatin;
+║ - && - valid по факту проверки seller_signin_recover_email_input на omission;
+║ - && - valid по факту проверки seller_signin_recover_email_input на emptiness;
+║ result: по центру экрана всплывает seller_signin_recover_popover.
+╠ invalid
+║ • gesture: tap
+║ occasion: нажатие seller_signin_recover_dispatch_btn;
+║ condition:
+║ - || - invalid по факту проверки seller_signin_recover_email_input на stopsymbol;
+║ - || - invalid по факту проверки seller_signin_recover_email_input на mismatch;
+║ - || - invalid по факту проверки seller_signin_recover_email_input на nolatin;
+║ - || - invalid по факту проверки seller_signin_recover_email_input на omission;
+║ - || - invalid по факту проверки seller_signin_recover_email_input на emptiness;
+╙ result: seller_signin_recover_dispatch_btn не реагирует на нажатие (находится в inactive_state).
+
+✠ color_states
+┌─
+│seller_signin_recover_dispatch
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color0
+│------ in any situation
+└─
+┌─
+│seller_signin_recover_dispatch_btn
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color5
+│------ in pressing_state
+└─
+┌─
+│seller_signin_recover_dispatch_btn_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
+
+■ seller_signin_recover_if
+
+✠ details
+--- seller_signin_recover_if - выполняет роль контейнера для seller_signin_recover_if_text;
+----- seller_signin_recover_if_text - константное строковое значение центрированное внутри seller_signin_recover_if следующего содержания: "Если код не пришел, сделайте повторную отправку, либо проверьте папку “Спам” вашего почтового клиента".
+
+✠ color_states
+┌─
+│seller_signin_recover_if
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color0
+│------ in any situation
+└─
+┌─
+│seller_signin_recover_if_text
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
+
+■ seller_signin_recover_create
+
+✠ details
+--- seller_signin_recover_create - выполняет роль контейнера для seller_signin_recover_create_btn;
+----- seller_signin_recover_create_btn - константное строковое значение с нижним подчеркиванием следующего содержания: "Создать новый аккаунт", выполняет роль кнопки с прозрачными границами, заливкой и центрированием в seller_signin_recover_create.
+
+✠ actions
+• seller_signin_recover_create_btn:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_signin_recover_create_btn;
+║ condition: in any situation;
+╙ result: делается переход к seller_signup_screen.
+
+✠ color_states
+┌─
+│seller_signin_recover_create
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color0
+│------ in any situation
+└─
+┌─
+│seller_signin_recover_create_btn
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
+
+
+🡆🡆 seller_signin_recover_popover
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+seller_signin_recover_popover является всплывающим окном, которое появляется после нажатия seller_signin_recover_dispatch_btn.
+
+✠ tables
+
+                               codename:                              type:                  designation:            location:  interaction:
+---  ┌┬─[seller_signin_recover_popover                     ]  [section_lev1       ]                                   [ ✜ ✜ ]     [ no  ]
+---  │└ [seller_signin_recover_popover_text                ]  [text               ]  [ "На вашу почту высла..." ]     [ 🡅 ✜ ]     [ no  ]
+---  └┬─[seller_signin_recover_popover_btn_close           ]  [button             ]                                   [ 🡇 ✜ ]     [ yes ]
+---   └ [seller_signin_recover_popover_btn_close_label     ]  [label              ]  [ "отправить"              ]     [ ✜ ✜ ]     [ yes ]
+
+✠ details
+- seller_signin_recover_popover - представляет собой popover, который всплывает по центру экрана и включает 2 компонента:
+--- seller_signin_recover_popover_text - параграф текста выровненный по центру находится в верхней части seller_signin_recover_popover следующего содержания: "На вашу почту выслано письмо с инструкцией по восстановлению пароля. Если вы не видите письма, проверьте папку “Спам” вашего почтового клиента, либо сделайте повторную отправку";
+--- seller_signin_recover_popover_btn_close - кнопка расположенная под seller_signin_recover_popover_text;
+----- seller_signin_recover_popover_btn_close_label - наименование кнопки следующего содержания: "отправить".
+
+✠ actions
+• seller_signin_recover_popover_btn_close:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_signin_recover_popover_btn_close;
+║ condition: in any situation;
+╙ result: seller_signin_recover_popover исчезает.
+
+✠ color_states
+┌─
+│seller_signin_recover_popover_btn_close
+│-------------------------------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color5
+│------ in pressing_state
+└─
+┌─
+│seller_signin_recover_popover_text
+│seller_signin_recover_popover_btn_close_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
 
 
 
