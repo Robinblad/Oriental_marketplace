@@ -17,6 +17,144 @@ color9 - attention;
 
 
 
+■ seller_nav
+
+✠ details
+Секция seller_nav является навигационной панелью seller_mode и как сквозная часть интерфейса присутствует на всех экранах в нижней области. Секция состоит из 5 компонентов каждый из которых выполняет роль кнопки:
+1) seller_nav_demand - кнопка с наименованием и бейджем, предназначена для перехода к seller_demand_screen;
+-- seller_nav_demand_label - представлен заголовком "МОНИТОР";
+-- seller_nav_demand_badge - размещается в верхнем правом углу, отображает количество hunt_screen_demand_message в seller_demand_screen.
+2) seller_nav_chat - кнопка с наименованием и бейджем, предназначена для перехода к seller_chat_screen;
+-- seller_nav_chat_label - представлен заголовком "ЧАТ";
+-- seller_nav_chat_badge - размещается в верхнем правом углу, отображает количество непросмотренных chat_screen_chat_message_node.
+3) seller_nav_shop - кнопка с наименованием и бейджем, предназначена для перехода к seller_shop_screen;
+-- seller_nav_shop_label - представлен логотипом в seller_shop_screen, либо наименованием "МАГАЗИН" в остальных экранах;
+-- seller_nav_shop_badge - размещается в верхнем правом углу, отображается только в seller_shop_screen, показывает доступные обновления приложения.
+4) seller_nav_goods - кнопка с наименованием и бейджем, предназначена для перехода к seller_goods_screen;
+-- seller_nav_goods_label - представлен заголовком "ТОВАРЫ";
+-- seller_nav_goods_badge - размещается в верхнем правом углу, отображает число лотов по которым заканчивается товар.
+5) seller_nav_account - кнопка с наименованием и бейджем, предназначена для перехода к seller_account_screen (в seller_account_screen активирована по умолчанию);
+-- seller_nav_account_label - представлен заголовком "КАБИНЕТ";
+-- seller_nav_account_badge - размещается в верхнем правом углу, отображает количество непросмотренных денежных транзакций.
+
+✠ actions
+• seller_nav_demand:
+╠ valid
+║ • gesture: tap
+║ occasion: нажатие seller_nav_demand;
+║ condition:
+║ || - в ситуации присутствия в seller_chat_screen;
+║ || - в ситуации присутствия в seller_shop_screen;
+║ || - в ситуации присутствия в seller_goods_screen;
+║ || - в ситуации присутствия в seller_account_screen;
+║ result: открывается seller_demand_screen.
+╠ invalid
+║ • gesture: tap
+║ occasion: нажатие seller_nav_demand;
+║ condition: в ситуации присутствия в seller_demand_screen;
+╙ result: не реагирует на нажатие.
+• seller_nav_chat:
+╠ valid
+║ • gesture: tap
+║ occasion: нажатие seller_nav_chat;
+║ condition:
+║ || - в ситуации присутствия в seller_demand_screen;
+║ || - в ситуации присутствия в seller_shop_screen;
+║ || - в ситуации присутствия в seller_goods_screen;
+║ || - в ситуации присутствия в seller_account_screen;
+║ result: открывается seller_chat_screen.
+╠ invalid
+║ • gesture: tap
+║ occasion: нажатие seller_nav_chat;
+║ condition: в ситуации присутствия в seller_chat_screen;
+╙ result: не реагирует на нажатие.
+• seller_nav_shop:
+╠ valid
+║ • gesture: tap 
+║ occasion: нажатие seller_nav_shop;
+║ condition: 
+║ && - в ситуации присутствия в seller_shop_screen;
+║ && - в ситуации если доступно обновление приложения;
+║ result: открывается seller_nav_shop_update_popover;
+╠ valid
+║ • gesture: tap 
+║ occasion: нажатие seller_nav_shop;
+║ condition: 
+║ || - в ситуации присутствия в seller_demand_screen;
+║ || - в ситуации присутствия в seller_chat_screen;
+║ || - в ситуации присутствия в seller_goods_screen;
+║ || - в ситуации присутствия в seller_account_screen;
+║ result: открывается seller_shop_screen;
+╠ invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_nav_shop;
+║ condition:
+║ && - в ситуации присутствия в seller_shop_screen;
+║ && - в ситуации отсутствия обновлений приложения;
+╙ result: не реагирует на нажатие.
+• seller_nav_goods:
+╠ valid
+║ • gesture: tap
+║ occasion: нажатие seller_nav_goods;
+║ condition:
+║ || - в ситуации присутствия в seller_demand_screen;
+║ || - в ситуации присутствия в seller_chat_screen;
+║ || - в ситуации присутствия в seller_shop_screen;
+║ || - в ситуации присутствия в seller_account_screen;
+║ result: открывается seller_goods_screen.
+╠ invalid
+║ • gesture: tap
+║ occasion: нажатие seller_nav_goods;
+║ condition: в ситуации присутствия в seller_goods_screen;
+╙ result: не реагирует на нажатие.
+• seller_nav_account:
+╠ valid
+║ • gesture: tap
+║ occasion: нажатие seller_nav_account;
+║ condition:
+║ || - в ситуации присутствия в seller_demand_screen;
+║ || - в ситуации присутствия в seller_chat_screen;
+║ || - в ситуации присутствия в seller_shop_screen;
+║ || - в ситуации присутствия в seller_goods_screen;
+║ result: открывается seller_account_screen.
+╠ invalid
+║ • gesture: tap
+║ occasion: нажатие seller_nav_account;
+║ condition: в ситуации присутствия в seller_account_screen;
+╙ result: не реагирует на нажатие.
+
+✠ color_states
+┌─
+│seller_nav_demand_badge  (activated_state по умолчанию в seller_demand_screen)
+│seller_nav_chat  (activated_state по умолчанию в seller_chat_screen)
+│seller_nav_shop  (activated_state по умолчанию в seller_shop_screen)
+│seller_nav_goods  (activated_state по умолчанию в seller_goods_screen)
+│seller_nav_account  (activated_state по умолчанию в seller_account_screen)
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color7
+│------ в activated_state
+└─
+┌─
+│seller_nav_demand  (activated_state по умолчанию в seller_demand_screen) 
+│seller_nav_chat_badge  (activated_state по умолчанию в seller_chat_screen)   
+│seller_nav_shop_badge  (activated_state по умолчанию в seller_shop_screen)  
+│seller_nav_goods_badge  (activated_state по умолчанию в seller_goods_screen)   
+│seller_nav_account_badge  (activated_state по умолчанию в seller_account_screen)
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color9
+│------ in default_state
+├────────
+│• color2
+│------ в activated_state 
+└─
+
 
 
 🡆🡆 seller_account_order_mix_modal
