@@ -15,6 +15,91 @@ color9 - attention;
 
 
 
+■ seller_account_orders_bottom
+
+✠ details
+Секция seller_account_orders_bottom располагается в нижней части seller_account_orders и предназначена для выбора варианта ранжирования seller_account_orders_list (сверху-вниз). Секция включает 4 кнопки расположенных слева-направо в следующем порядке:
+
+- seller_account_orders_bottom_profit - переключает seller_account_orders_list в состояние ранжирования ордеров по доходности;
+- seller_account_orders_bottom_quantity - переключает seller_account_orders_list в состояние ранжирования ордеров по количеству товарных позиций;
+- seller_account_orders_bottom_alphabit - переключает seller_account_orders_list в состояние ранжирования ордеров по алфавиту;
+- seller_account_orders_bottom_time - переключает seller_account_orders_list в состояние ранжирования ордеров по времени (by default).
+
+✠ actions
+• seller_account_orders_bottom_profit:
+╠ valid
+║ • gesture: tap 
+║ occasion: нажатие seller_account_orders_bottom_profit;
+║ condition:
+║ || активирована кнопка seller_account_orders_bottom_quantity;
+║ || активирована кнопка seller_account_orders_bottom_alphabit;
+║ || активирована кнопка seller_account_orders_bottom_time;
+║ result: seller_account_orders_list переключается в состояние ранжирования по доходу, где ордер с наибольшей доходностью размещается вверху;
+╠ invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_account_orders_bottom_profit;
+║ condition: активирована seller_account_orders_bottom_profit;
+╙ result: seller_account_orders_list не реагирует на нажатие.
+• seller_account_orders_bottom_quantity:
+╠ valid
+║ • gesture: tap 
+║ occasion: нажатие seller_account_orders_bottom_quantity;
+║ condition:
+║ || активирована кнопка seller_account_orders_bottom_profit;
+║ || активирована кнопка seller_account_orders_bottom_alphabit;
+║ || активирована кнопка seller_account_orders_bottom_time;
+║ result: seller_account_orders_list переключается в состояние ранжирования по количеству товарных позиций в ордере, где ордер с наибольшим количеством товарных
+║         позиций размещается в топе seller_account_orders_list;
+╠ invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_account_orders_bottom_quantity;
+║ condition: активирована seller_account_orders_bottom_quantity;
+╙ result: seller_account_orders_list не реагирует на нажатие.
+• seller_account_orders_bottom_alphabit:
+╠ valid
+║ • gesture: tap 
+║ occasion: нажатие seller_account_orders_bottom_alphabit;
+║ condition:
+║ || активирована кнопка seller_account_orders_bottom_profit;
+║ || активирована кнопка seller_account_orders_bottom_quantity;
+║ || активирована кнопка seller_account_orders_bottom_time;
+║ result: seller_account_orders_list переключается в состояние ранжирования по алфавиту значения seller_account_orders_list_order_client, где
+║         seller_account_orders_list_order_client с фамилией начинающейся с буквы "A" размещается в топе seller_account_orders_list;
+╠ invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_account_orders_bottom_alphabit;
+║ condition: активирована seller_account_orders_bottom_alphabit;
+╙ result: seller_account_orders_list не реагирует на нажатие.
+• seller_account_orders_bottom_time:
+╠ valid
+║ • gesture: tap 
+║ occasion: нажатие seller_account_orders_bottom_time;
+║ condition:
+║ || активирована кнопка seller_account_orders_bottom_profit;
+║ || активирована кнопка seller_account_orders_bottom_quantity;
+║ || активирована кнопка seller_account_orders_bottom_alphabit;
+║ result: seller_account_orders_list переключается в состояние ранжирования по времени создания ордера, где seller_account_orders_list_order с более поздней
+║         датой размещается в топе seller_account_orders_list;
+╠ invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_account_orders_bottom_time;
+║ condition: активирована seller_account_orders_bottom_time;
+╙ result: seller_account_orders_list не реагирует на нажатие.
+
+✠ color_states
+┌─
+│seller_account_orders_bottom_profit
+│seller_account_orders_bottom_quantity
+│seller_account_orders_bottom_alphabit
+│seller_account_orders_bottom_time
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color4
+│------ in default_state
+│• color7
+│------ in pressing_state
+└─
 
 
 ■ seller_nav
