@@ -15,6 +15,74 @@ color9 - attention;
 
 
 
+■ seller_account_orders_list
+
+Секция seller_account_orders_list расположена в центральной части seller_account_orders в виде списка имеющего 2 секции:
+ - seller_account_orders_list_top - шапка списка состоит из 7 компонентов и призвана отобразить названия 7 столбцов seller_account_orders_list;
+ - seller_account_orders_list_order - секция в виде данных по ордеру представленного строкой подразделенной на 7 компонентов, также выполняет роль кнопки.
+
+
+■ seller_account_orders_list_order
+
+✠ details
+Секция seller_account_orders_list_top состоит из 7 компонентов расположенных слева-направо в следующем порядке:
+- seller_account_orders_list_order_time - отображает значение времени создания ордера по шаблону: "hh:mm:ss";
+- seller_account_orders_list_order_client - отображает фамилию и имя buyer по шаблону: "Second name.First name" (First name отображается в виде его первой буквы);
+- seller_account_orders_list_order_quantity - отображает количество позиций по ордеру;
+- seller_account_orders_list_order_book - отображает информацию о том, активирована функция бронирования покупателем или нет в виде переменной: "да/нет";
+- seller_account_orders_list_order_ship - отображает информацию о том, активирована функция доставки покупателем или нет в виде переменной: "да/нет";
+- seller_account_orders_list_order_payment - отображает значение суммы транзакции по ордеру;
+- seller_account_orders_list_order_ready - отображает выполненность ордера в качестве чекбокса.
+
+✠ actions
+• seller_account_orders_list_order;
+• seller_account_orders_list_order_time;
+• seller_account_orders_list_order_client;
+• seller_account_orders_list_order_quantity;
+• seller_account_orders_list_order_book;
+• seller_account_orders_list_order_ship;
+• seller_account_orders_list_order_payment;
+• seller_account_orders_list_order_ready;
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: 
+║ || нажатие seller_account_orders_list_order;
+║ || нажатие seller_account_orders_list_order_time;
+║ || нажатие seller_account_orders_list_order_client;
+║ || нажатие seller_account_orders_list_order_quantity;
+║ || нажатие seller_account_orders_list_order_book;
+║ || нажатие seller_account_orders_list_order_ship;
+║ || нажатие seller_account_orders_list_order_payment;
+║ || нажатие seller_account_orders_list_order_ready;
+║ condition: in any situation;
+╙ result: открывается seller_account_order_mix_modal.
+
+✠ color_states
+┌─
+│seller_account_orders_list_order;
+│seller_account_orders_list_order_time;
+│seller_account_orders_list_order_client;
+│seller_account_orders_list_order_quantity;
+│seller_account_orders_list_order_book;
+│seller_account_orders_list_order_ship;
+│seller_account_orders_list_order_payment;
+│seller_account_orders_list_order_ready;
+│---------------------------
+│• color2
+│------ in default_state
+│• color5
+│------ in pressing_state
+└─
+
+✠ logics
+При проставлении чекбокса в seller_account_orders_list_order_ready:
+1) меняется seller_account_orders_top_middle_widget_value;
+2) система реагирует на состояние чекбокса следующим образом:
+- seller_account_orders_list_order_ready = false меняется на seller_account_orders_list_order_ready = true;
+- seller_account_orders_list_order с seller_account_orders_list_order_ready = true сохраняет свое присутствие в seller_account_orders_list.
+- после выхода из seller_account_orders_screen конкретный seller_account_orders_list_order с seller_account_orders_list_order_ready = true удаляется из seller_account_orders_list и добавляется в seller_history_orders_list.
+
+
 ■ seller_account_orders_bottom
 
 ✠ details
