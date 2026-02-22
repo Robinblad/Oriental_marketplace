@@ -14,6 +14,101 @@ color9 - attention;
 -------------------------------------------------------------------
 
 
+■ seller_account_orders_top_state2 ■
+
+✠ tables
+
+                          codename:                              type:                   designation:           pressed/default:   location:   interaction:
+
+---┌┬┬──[seller_account_orders_top                    ]  [section_lev2       ]                                   [color2/color2]     [ 🡅 ✜ ]      [ no  ] 
+---││└┬─[seller_account_orders_top_upper              ]  [section_lev3       ]                                   [color8/color8]     [ 🡅 ✜ ]      [ no  ]
+---││ ├ [seller_account_orders_top_upper_protip       ]  [button             ] [ "?"                           ] [color8/color8]     [ ✜ 🡄 ]      [ yes ]
+---││ ├ [seller_account_orders_top_upper_title        ]  [header             ] [ "Авто-закрытие ордеров"       ] [color8/color8]     [ ✜ ✜ ]      [ no  ]
+---││ └ [seller_account_orders_top_upper_toggle       ]  [toggle             ]                                   [color7/color4]     [ ✜ 🡆 ]      [ yes ]
+---│└─┬─[seller_account_orders_top_middle             ]  [section_lev3       ]                                   [color8/color8]     [ ✜ ✜ ]      [ no  ]
+---│  ├ [seller_account_orders_top_middle_widget      ]  [widget             ]                                   [color8/color8]     [ ✜ ✜ ]      [ no  ]
+---│  ├ [seller_account_orders_top_middle_widget_title]  [header             ] [ "Открытые ордера: "           ] [color8/color8]     [ ✜ 🡄 ]      [ no  ]
+---│  └ [seller_account_orders_top_middle_widget_value]  [header             ] [ { number }                    ] [color8/color8]     [ ✜ 🡆 ]      [ no  ]
+---└──┬─[seller_account_orders_top_lower              ]  [section_lev3       ]                                   [color7/color4]     [ ✜ ✜ ]      [ yes ]
+---   ├ [seller_account_orders_top_lower_button       ]  [button             ]                                   [color7/color4]     [ ✜ ✜ ]      [ yes ]
+---   ├ [seller_account_orders_top_lower_button_icon  ]  [icon               ] [ стрелка вверх                 ] [color8/color8]     [ ✜ 🡄 ]      [ yes ]
+---   └ [seller_account_orders_top_lower_button_title ]  [toggle             ] [ "закрыть"                     ] [color8/color8]     [ ✜ 🡆 ]      [ yes ]
+
+✠ details
+Секция seller_account_orders_top_state2 раскрывается вниз из seller_account_orders_top_state1 и представляет собой панель (порядка 350-500px высотой) которая представлена тремя секциями второго порядка:
+- seller_account_orders_top_upper - секция расположенная в верхней части включающая 3 компонента, которые идут слева-направо в следующем порядке:
+--- seller_account_orders_top_upper_protip - круглая кнопка со знаком "?" вызывающая подсказку;
+--- seller_account_orders_top_upper_title - заголовок тумблера "Авто-закрытие ордеров";
+--- seller_account_orders_top_upper_toggle - тумблер вкл/выкл функцию авто-закрытия ордеров, может быть в одном из 2 состояний (on - правая позиция /off - левая позиция);
+- seller_account_orders_top_middle - секция расположенная в средней части включающая 1 компонент:
+--- seller_account_orders_top_middle_widget - находится по центру и состоит из 2 элементов:
+----- seller_account_orders_top_middle_widget_title - заголовок виджета "Открытые ордера: ";
+----- seller_account_orders_top_middle_widget_value - значение переменной, которая отображает количество ордеров в seller_account_orders_list;
+- seller_account_orders_top_lower - секция расположенная в нижней части включающая 1 компонент:
+--- seller_account_orders_top_lower_button - находится по центру и состоит из 2 элементов:
+----- seller_account_orders_top_lower_button_icon - иконка черного цвета в виде плоской стрелки направленной вниз;
+----- seller_account_orders_top_lower_button_title - заголовок кнопки "закрыть" расположена справо относително seller_account_orders_top_lower_button_icon.
+
+✠ actions
+• seller_account_orders_top_upper_protip:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_account_orders_top_upper_protip;
+║ condition: в состоянии seller_account_orders_top_state2;
+╙ result: открывается seller_account_orders_top_upper_protip_popover.
+• seller_account_orders_top_upper_toggle (on):
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_account_orders_top_upper_toggle;
+║ condition: seller_account_orders_top_upper_toggle = false;
+╙ result: происходит переключение в seller_account_orders_top_upper_toggle = true.
+• seller_account_orders_top_upper_toggle (off):
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_account_orders_top_upper_toggle;
+║ condition: seller_account_orders_top_upper_toggle = true;
+╙ result: происходит переключение в seller_account_orders_top_upper_toggle = false.
+• seller_account_orders_top_lower:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_account_orders_top_lower;
+║ condition: в состоянии seller_account_orders_top_state2;
+╙ result: seller_account_orders_top переходит в состояние seller_account_orders_top_state1.
+
+✠ color_states
+┌─
+│seller_account_orders_top_upper_protip
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color4
+│------ in default_state
+│• color5
+│------ in pressing_state
+└─
+┌─
+│seller_account_orders_top_upper_title
+│seller_account_orders_top_middle_widget_title
+│seller_account_orders_top_middle_widget_value
+│seller_account_orders_top_lower_button_icon
+│seller_account_orders_top_lower_button_title
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color8
+│------ in any situation.
+└─
+┌─
+│seller_account_orders_top_upper_toggle
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color4
+│------ in default_state
+│• color7
+│------ в active_state
+└─
+
 
 ■ seller_account_orders_list
 
