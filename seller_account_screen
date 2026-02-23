@@ -13,6 +13,70 @@ color9 - attention;
 
 -------------------------------------------------------------------
 
+■ seller_account_orders_top
+
+Секция seller_account_orders_top расположена в верхней части seller_account_orders в виде панели которая может быть в двух состояниях:
+ - seller_account_orders_top_state1 - отображается в свернутом виде;
+ - seller_account_orders_top_state2 - отображается в развернутом виде.
+
+
+■ seller_account_orders_top_state1 ■
+
+✠ tables
+
+                          codename:                              type:                   designation:           pressed/default:   location:   interaction:
+
+---  ┌┬─[seller_account_orders_top                    ]  [section_lev2       ]                                   [color2/color2]     [ 🡅 ✜ ]      [ yes ] 
+---  │└ [seller_account_orders_top_title              ]  [header             ] [ {{number} 'открытых ордеров'} ] [color8/color8]     [ ✜ ✜ ]      [ yes ] 
+---  └┬ [seller_account_orders_top_options            ]  [section_lev3       ]                                   [color2/color2]     [ ✜ 🡆 ]      [ yes ]
+---   ├ [seller_account_orders_top_options_title      ]  [header             ] [ "НАСТРОЙКИ"                   ] [color8/color8]     [ ✜ 🡆 ]      [ yes ]
+---   ├ [seller_account_orders_top_options_icon       ]  [icon               ] [ стрелка вниз                  ] [color8/color8]     [ ✜ 🡄 ]      [ yes ]
+---   └ [seller_account_orders_top_options_button     ]  [button             ]                                   [color7/color4]     [ ✜ ✜ ]      [ yes ]
+
+✠ details
+Секция seller_account_orders_top_state1 находится в верхней части seller_account_orders и представляет собой компактную панель (не более 100px высотой) которая представлена двумя компонентами:
+- seller_account_orders_top_title - заголовок со значением переменной отображающий количество открытых ордеров;
+- seller_account_orders_top_options - кнопка содержащая 3 элемента:
+--- seller_account_orders_top_options_title - заголовок кнопки "НАСТРОЙКИ";
+--- seller_account_orders_top_options_icon - иконка в виде стрелки вниз;
+--- seller_account_orders_top_options_button - кнопка активирующая открытие настроек.
+
+✠ actions
+• seller_account_orders_top_options:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_account_orders_top_options_button;
+║ condition: в состоянии seller_account_orders_top_state1;
+╙ result: открывается seller_account_orders_top_state2.
+
+✠ color_states
+┌─
+│seller_account_orders_top_title
+│---------------------------
+│⟪⟪ text ⟫⟫ 
+│--------
+│• color8
+│------ in any situation
+└─
+┌─
+│seller_account_orders_top_options
+│seller_account_orders_top_options_button
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color2
+│------ in any situation
+└─
+┌─
+│seller_account_orders_top_options_title
+│seller_account_orders_top_options_icon
+│---------------------------
+│⟪⟪ text ⟫⟫ 
+│--------
+│• color8
+│------ in any situation
+└─
+
 
 ■ seller_account_orders_top_state2 ■
 
