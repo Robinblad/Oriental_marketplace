@@ -13,6 +13,76 @@ color9 - attention;
 
 -------------------------------------------------------------------
 
+
+
+■ seller_account_nav
+
+✠ details
+Секция seller_account_nav является навигационной панелью seller_account и как сквозная часть интерфейса присутствует на всех экранах seller_account в верхней области. Секция состоит из 4 компонентов каждый из которых выполняет роль кнопки расположенные слева-направо в следующем порядке:
+
+1)  seller_account_nav_payments - кнопка предназначенная для перехода к seller_account_payments (активирована по умолчанию);
+--- seller_account_nav_payments_label - является текстовым элементом следующего содержания: "ПЛАТЕЖИ";
+2) seller_account_nav_orders - кнопка предназначенная для перехода к seller_account_orders;
+--- seller_account_nav_orders_label - является текстовым элементом следующего содержания: "ОРДЕРА";
+3) seller_account_nav_history - кнопка предназначенная для перехода к seller_account_history;
+--- seller_account_nav_history_label - является текстовым элементом следующего содержания: "ИСТОРИЯ";
+4) seller_account_nav_analysis - кнопка предназначенная для перехода к seller_account_analysis;
+--- seller_account_nav_analysis_label - является текстовым элементом следующего содержания: "АНАЛИЗ".
+
+✠ actions
+• seller_account_nav_payments: 
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_account_nav_payments;
+║ condition: in any situation;
+╙ result: не реагирует на нажатие.
+• seller_account_nav_orders:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_account_nav_orders;
+║ condition: in any situation;
+╙ result: открывается seller_account_orders_screen.
+• seller_account_nav_history:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_account_nav_history;
+║ condition: in any situation;
+╙ result: открывается seller_account_history_screen.
+• seller_account_nav_analysis:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_account_nav_analysis;
+║ condition: in any situation;
+╙ result: открывается seller_account_analysis_screen.
+
+✠ color_states
+┌─ 
+│seller_account_nav_payments  (default_state по умолчанию в seller_account_payments)
+│seller_account_nav_orders  (inactive_state по умолчанию в seller_account_payments)
+│seller_account_nav_history  (inactive_state по умолчанию в seller_account_payments)
+│seller_account_nav_analysis  (inactive_state по умолчанию в seller_account_payments)
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color7
+│------ в activated_state
+└─
+┌─
+│seller_account_nav_payments_label
+│seller_account_nav_orders_label
+│seller_account_nav_history_label
+│seller_account_nav_analysis_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
+
 ■ seller_account_orders_top
 
 Секция seller_account_orders_top расположена в верхней части seller_account_orders в виде панели которая может быть в двух состояниях:
