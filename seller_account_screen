@@ -14,6 +14,72 @@ color9 - attention;
 -------------------------------------------------------------------
 
 
+🡆🡆 seller_account_orders_screen
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+
+Подраздел в котором единым списком отображаются текущие ордера находящиеся в работе (не закрытые). Основное пространство в центральной области экрана занимает seller_account_orders состоящий из 3 секций второго уровня:
+- seller_account_orders_top  
+- seller_account_orders_list
+- seller_account_orders_bottom
+
+✠ tables
+
+                              codename:                            type:                     designation:               location:   interaction:
+s1) ┌┬┬┬──[seller_account_nav                           ]  [section            ]                                         [ 🡅 ✜ ]      [ no  ]
+--- │││└┬─[seller_account_nav_payments                  ]  [button             ]                                         [ ✜ 🡄 ]      [ yes ]
+--- │││ └ [seller_account_nav_payments_label            ]  [label              ]  [ "ПЛАТЕЖИ"                     ]      [ ✜ ✜ ]      [ yes ]
+--- ││└─┬─[seller_account_nav_orders                    ]  [button             ]                                         [ ✜ ✜ ]      [ yes ]
+--- ││  └ [seller_account_nav_orders_label              ]  [label              ]  [ "ОРДЕРА"                      ]      [ ✜ ✜ ]      [ yes ]
+--- │└──┬─[seller_account_nav_history                   ]  [button             ]                                         [ ✜ ✜ ]      [ yes ]
+--- │   └ [seller_account_nav_history_label             ]  [label              ]  [ "ИСТОРИЯ"                     ]      [ ✜ ✜ ]      [ yes ]
+--- └───┬─[seller_account_nav_analysis                  ]  [button             ]                                         [ ✜ 🡆 ]      [ yes ]
+---     └ [seller_account_nav_analysis_label            ]  [label              ]  [ "АНАЛИЗ"                      ]      [ ✜ ✜ ]      [ yes ]
+---  ┌┬───[seller_account_orders                        ]  [section_lev1       ]                                         [ ✜ ✜ ]      [ no  ] 
+s2)  │└┬┬─[seller_account_orders_top                    ]  [section_lev2       ]                                         [ 🡅 ✜ ]      [ yes ] 
+---  │ │└ [seller_account_orders_top_title              ]  [header             ]  [ {{number} 'открытых ордеров'} ]      [ ✜ ✜ ]      [ yes ] 
+---  │ └┬ [seller_account_orders_top_options            ]  [section_lev3       ]                                         [ ✜ 🡆 ]      [ yes ]
+---  │  ├ [seller_account_orders_top_options_title      ]  [header             ]  [ "НАСТРОЙКИ"                   ]      [ ✜ 🡆 ]      [ yes ]
+---  │  ├ [seller_account_orders_top_options_icon       ]  [icon               ]  [ стрелка вниз                  ]      [ ✜ 🡄 ]      [ yes ]
+---  │  └ [seller_account_orders_top_options_button     ]  [button             ]                                         [ ✜ ✜ ]      [ yes ]
+---  ├┬┬──[seller_account_orders_list                   ]  [section_lev2       ]                                         [ ✜ ✜ ]      [ no  ]
+---  ││└┬ [seller_account_orders_list_top               ]  [section_lev3       ]                                         [ 🡅 ✜ ]      [ no  ]
+---  ││ ├ [seller_account_orders_list_top_time          ]  [label              ]  [ "ВРЕМЯ"                       ]      [ ✜ 🡄 ]      [ no  ]
+---  ││ ├ [seller_account_orders_list_top_client        ]  [label              ]  [ "КЛИЕНТ"                      ]      [ ✜ 🡄 ]      [ no  ]
+---  ││ ├ [seller_account_orders_list_top_quantity      ]  [label              ]  [ "КОЛИЧЕСТВО"                  ]      [ ✜ ✜ ]      [ no  ]
+---  ││ ├ [seller_account_orders_list_top_book          ]  [label              ]  [ "БРОНИРОВАНИЕ"                ]      [ ✜ ✜ ]      [ no  ]
+---  ││ ├ [seller_account_orders_list_top_ship          ]  [label              ]  [ "ДОСТАВКА"                    ]      [ ✜ ✜ ]      [ no  ]
+---  ││ ├ [seller_account_orders_list_top_payment       ]  [label              ]  [ "ОПЛАТА"                      ]      [ ✜ 🡆 ]      [ no  ] 
+---  ││ └ [seller_account_orders_list_top_ready         ]  [label              ]  [ "ГОТОВ"                       ]      [ ✜ 🡆 ]      [ no  ]
+---  │└─┬─[seller_account_orders_list_order             ]  [section_lev3+button]                                  ]      [ ✜ ✜ ]      [ yes ] 
+---  │  ├ [seller_account_orders_list_order_time        ]  [label+button       ]  [ { string }                    ]      [ ✜ 🡄 ]      [ yes ]
+---  │  ├ [seller_account_orders_list_order_client      ]  [label+button       ]  [ { string }                    ]      [ ✜ 🡄 ]      [ yes ] 
+---  │  ├ [seller_account_orders_list_order_quantity    ]  [label+button       ]  [ { number }                    ]      [ ✜ ✜ ]      [ yes ]
+---  │  ├ [seller_account_orders_list_order_book        ]  [label+button       ]  [ { string }                    ]      [ ✜ ✜ ]      [ yes ]
+---  │  ├ [seller_account_orders_list_order_ship        ]  [label+button       ]  [ { string }                    ]      [ ✜ ✜ ]      [ yes ]
+---  │  ├ [seller_account_orders_list_order_payment     ]  [label+button       ]  [ { number }                    ]      [ ✜ 🡆 ]      [ yes ]
+---  │  └ [seller_account_orders_list_order_ready       ]  [checkbox+button    ]                                         [ ✜ 🡆 ]      [ yes ]
+---  └──┬─[seller_account_orders_bottom                 ]  [section_lev2       ]                                         [ ✜ ✜ ]      [ no  ]
+---     ├ [seller_account_orders_bottom_profit          ]  [button             ]  [ "ДОХОД"                       ]      [ ✜ 🡄 ]      [ yes ]
+---     ├ [seller_account_orders_bottom_quantity        ]  [button             ]  [ "КОЛИЧЕСТВО"                  ]      [ ✜ ✜ ]      [ yes ]
+---     ├ [seller_account_orders_bottom_alphabit        ]  [button             ]  [ "АЛФАВИТ"                     ]      [ ✜ ✜ ]      [ yes ]
+---     └ [seller_account_orders_bottom_time            ]  [button             ]  [ "ВРЕМЯ"                       ]      [ ✜ 🡆 ]      [ yes ]
+s3)┌┬┬┬┬──[seller_nav                                   ]  [section            ]                                         [ ✜ ✜ ]      [ no  ]
+---││││└┬─[seller_nav_demand_button                     ]  [button             ]                                         [ ✜ 🡄 ]      [ yes ]
+---││││ ├ [seller_nav_demand_header                     ]  [header             ]  [ "МОНИТОР"                     ]      [ ✜ ✜ ]      [ no  ]  
+---││││ └ [seller_nav_demand_badge                      ]  [badge              ]  [ { number }                    ]      [ 🡅 🡆 ]      [ no  ] 	
+---│││└─┬─[seller_nav_chat_button                       ]  [button             ]                                         [ ✜ 🡄 ]      [ yes ]   
+---│││  ├ [seller_nav_chat_header                       ]  [header             ]  [ "ЧАТ"                         ]      [ ✜ ✜ ]      [ no  ] 
+---│││  └ [seller_nav_chat_badge                        ]  [badge              ]  [ { number }                    ]      [ 🡅 🡆 ]      [ no  ] 
+---││└──┬─[seller_nav_shop_button                       ]  [button             ]                                         [ ✜ ✜ ]      [ yes ]   
+---││   ├ [seller_nav_shop_header                       ]  [header             ]  [ "МАГАЗИН"                     ]      [ ✜ ✜ ]      [ no  ] 
+---││   └ [seller_nav_shop_badge                        ]  [badge              ]  [ { number }                    ]      [ 🡅 🡆 ]      [ no  ]   
+---│└───┬─[seller_nav_goods_button                      ]  [button             ]                                         [ ✜ 🡆 ]      [ yes ]   
+---│    ├ [seller_nav_goods_header                      ]  [header             ]  [ "ТОВАРЫ"                      ]      [ ✜ ✜ ]      [ no  ] 
+---│    └ [seller_nav_goods_badge                       ]  [badge              ]  [ { number }                    ]      [ 🡅 🡆 ]      [ no  ]     
+---└────┬─[seller_nav_account_button                    ]  [button             ]                                         [ ✜ 🡆 ]      [ yes ]   
+---     ├ [seller_nav_account_header                    ]  [header             ]  [ "КАБИНЕТ"                     ]      [ ✜ ✜ ]      [ no  ] 
+---     └ [seller_nav_account_badge                     ]  [badge              ]  [ { number }                    ]      [ 🡅 🡆 ]      [ no  ] 
+   
 
 ■ seller_account_nav
 
