@@ -10,6 +10,216 @@
 
 
 
+■ seller_chat_blog_edit
+
+seller_chat_blog_edit является формой создаваемого поста. 
+
+✠ details
+Верхняя часть seller_chat_blog_edit примыкает к seller_chat_nav; занимает по ширине и высоте всю доступную область экрана и состоит из 5 компонентов:  
+- seller_chat_blog_edit_header - заголовок поста с увеличенным в 2 раза размером шрифта параграфа font-size: 2.0rem (обязательное наличие);
+- seller_chat_blog_edit_image - представлен в качестве иконки-кнопки "+" при нажатии на которую открывается приложение "галерия" на устройстве, где seller может выбрать требуемый контент, который может быть как статичным изображением так и видео; если изображение уже вставлено, то при нажатии на него также открывается "галерия", после применения новый контент заменяет предыдущий;
+- seller_chat_blog_edit_text - поле для ввода текста с лимитами: минимум - 10 символов, максимум - 9999 символов (обязательное наличие);
+- seller_chat_blog_edit_close - кнопка отвечающая за функцию закрытия seller_chat_blog_edit без принятия изменений;
+- seller_chat_blog_edit_public - кнопка отвечающая за функцию публикации нового поста.
+Как минимум seller_chat_blog_edit для возможности публикации должен содержать заголовок и текст.
+
+✠ actions
+• seller_chat_blog_edit_image:
+╠ valid / invalid 
+║ • gesture: tap 
+║ occasion: нажатие в область seller_chat_blog_edit_image;
+║ condition: in any situation;
+╙ result: открывается приложение "галерия" на устройстве.
+• seller_chat_blog_edit_text:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие в область seller_chat_blog_edit_text;
+║ condition: in any situation;
+╙ result: активируется клавиатура на устройстве.
+• seller_chat_blog_edit_close:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие кнопки seller_chat_blog_edit_close;
+║ condition: in any situation;
+╙ result: seller_chat_blog_edit_screen закрывается без публикации поста с удалением всей введенной информацией в поля seller_chat_blog_edit.
+• seller_chat_blog_edit_public:
+╠ valid
+║ • gesture: tap 
+║ occasion: нажатие кнопки seller_chat_blog_edit_public;
+║ condition: 
+║ && - valid по seller_chat_blog_edit_header;
+║ && - valid по seller_chat_blog_edit_text;
+╙ result: в seller_chat_blog_list_screen публикуется новый пост.
+• seller_chat_blog_edit_public:
+╠ invalid
+║ • gesture: tap 
+║ occasion: нажатие кнопки seller_chat_blog_edit_public;
+║ condition: 
+║ || - invalid по seller_chat_blog_edit_header;
+║ || - invalid по seller_chat_blog_edit_text;
+╙ result: seller_chat_blog_edit_public не реагирует на нажатие.
+ 
+✠ input_checks 
+♦ seller_chat_blog_edit_header
+Фильтры проверяющие на соответствие нормативам содержание seller_chat_blog_edit_header_input. Если в ходе проверки фиксируется несоответствие, тогда состояние seller_chat_blog_edit_header_input позиционируется как invalid, в связи с чем отображается соответствующее типу проблемы предупреждение.
+• undernaming:
+Анализ на недостижение лимита допустимой длины header (недостижение норматива).
+Работает в active_state.
+При вводе header, в ситуации если символов < 5, под seller_chat_blog_edit_header_input всплывает seller_chat_blog_edit_header_alert_undernaming.
+• overnaming:
+Анализ на превышение лимита допустимой длины header (превышение норматива).
+Работает в active_state.
+При вводе header, в ситуации если символов > 100, под seller_chat_blog_edit_header_input всплывает seller_chat_blog_edit_header_alert_overnaming.
+• stopword:
+Анализ на запрещенные слова, базирующийся на тезариусе содержащем надлежащий материал.
+Работает в active_state.
+При вводе header, в ситуации если использованы запрещенные слова, под seller_chat_blog_edit_header_input всплывает seller_chat_blog_edit_header_alert_stopword.
+• omission:
+Реакция на факт отсутствия введенных данных.
+Работает в inactive_state.
+В ситуации если seller_chat_blog_edit_header_input пустой, а юзер нажимает на seller_chat_blog_edit_public, под seller_chat_blog_edit_header_input всплывает seller_chat_blog_edit_header_alert_omission.
+
+♦ seller_chat_blog_edit_text 
+Фильтры проверяющие на соответствие нормативам содержание seller_chat_blog_edit_text_textaria. Если в ходе проверки фиксируется несоответствие, тогда состояние seller_chat_blog_edit_text_textaria позиционируется как invalid, в связи с чем отображается соответствующее типу проблемы предупреждение.
+• undernaming:
+Анализ на недостижение лимита допустимой длины seller_chat_blog_edit_text (недостижение норматива).
+Работает в active_state.
+При вводе seller_chat_blog_edit_text, в ситуации если символов < 5, под seller_chat_blog_edit_text_textaria всплывает seller_chat_blog_edit_text_alert_undernaming.
+• overnaming:
+Анализ на превышение лимита допустимой длины seller_chat_blog_edit_text (превышение норматива).
+Работает в active_state.
+При вводе seller_chat_blog_edit_text, в ситуации если символов > 9999, под seller_chat_blog_edit_text_textaria всплывает seller_chat_blog_edit_text_alert_overnaming.
+• stopword:
+Анализ на запрещенные слова, базирующийся на тезариусе содержащем надлежащий материал.
+Работает в active_state.
+При вводе seller_chat_blog_edit_text, в ситуации если использованы запрещенные слова, под seller_chat_blog_edit_text_textaria всплывает seller_chat_blog_edit_text_alert_stopword.
+• omission:
+Реакция на факт отсутствия введенных данных.
+Работает в inactive_state.
+В ситуации если seller_chat_blog_edit_text_textaria пустой, а юзер нажимает на seller_chat_blog_edit_public, под seller_chat_blog_edit_text_textaria всплывает seller_chat_blog_edit_text_alert_omission.
+
+✠ alerts
+♦ seller_chat_blog_edit_header
+• seller_chat_blog_edit_header_alert_undernaming:
+- focusing: да;
+- location: появляется под user_settings_username_input;
+- occasion: невалидность по факту проверки на undernaming;
+- content:  "ЗАГОЛОВОК СЛИШКОМ КОРОТКИЙ, ПОЖАЛУЙСТА ИСПОЛЬЗУЙТЕ БОЛЬШЕ 5 СИМВОЛОВ".
+• seller_chat_blog_edit_header_alert_overnaming:
+- focusing: да;
+- location: появляется под seller_chat_blog_edit_header_input;
+- occasion: если в seller_chat_blog_edit_header_input введено букв > 50;
+- content:  "ЗАГОЛОВОК СЛИШКОМ ДЛИННЫЙ, ПОЖАЛУЙСТА ИСПОЛЬЗУЙТЕ МЕНЬШЕ СИМВОЛОВ".
+• seller_chat_blog_edit_header_alert_stopword:
+- focusing: да;
+- location: появляется под seller_chat_blog_edit_header_input;
+- occasion: если использованы запрещенные слова;
+- content:  "ИСПОЛЬЗОВАНО ЗАПРЕЩЕННОЕ СЛОВО {указывается запрещенное слово жирным шрифтом белого цвета на color3 фоне}".
+• seller_chat_blog_edit_header_alert_omission:
+- focusing: нет;
+- location: появляется под seller_chat_blog_edit_header_input;
+- occasion: нажатие на seller_settings_button_yes, если seller_chat_blog_edit_header_input пустой;
+- content:  "НАЛИЧИЕ ЗАГОЛОВКА ПРИ ПУБЛИКАЦИИ ПОСТА ОБЯЗАТЕЛЬНО".
+♦ seller_chat_blog_edit_text
+• seller_chat_blog_edit_text_alert_undernaming:
+- focusing: да;
+- location: появляется под user_settings_username_textaria;
+- occasion: невалидность по факту проверки на undernaming;
+- content:  "ТЕКСТ СЛИШКОМ КОРОТКИЙ, ПОЖАЛУЙСТА ИСПОЛЬЗУЙТЕ БОЛЬШЕ 5 СИМВОЛОВ".
+• seller_chat_blog_edit_text_alert_overnaming:
+- focusing: да;
+- location: появляется под seller_chat_blog_edit_text_textaria;
+- occasion: если в seller_chat_blog_edit_text_textaria введено букв > 50;
+- content:  "ТЕКСТ СЛИШКОМ ДЛИННЫЙ, ПОЖАЛУЙСТА ИСПОЛЬЗУЙТЕ МЕНЬШЕ СИМВОЛОВ".
+• seller_chat_blog_edit_text_alert_stopword:
+- focusing: да;
+- location: появляется под seller_chat_blog_edit_text_textaria;
+- occasion: если использованы запрещенные слова;
+- content:  "ИСПОЛЬЗОВАНО ЗАПРЕЩЕННОЕ СЛОВО {указывается запрещенное слово жирным шрифтом белого цвета на color3 фоне}".
+• seller_chat_blog_edit_text_alert_omission:
+- focusing: нет;
+- location: появляется под seller_chat_blog_edit_text_textaria;
+- occasion: нажатие на seller_settings_button_yes, если seller_chat_blog_edit_text_textaria пустой;
+- content:  "НАЛИЧИЕ ТЕКСТА ПРИ ПУБЛИКАЦИИ ПОСТА ОБЯЗАТЕЛЬНО".
+
+✠ color_states
+┌─
+│seller_chat_blog_edit_header 
+│---------------------------
+│⟪⟪ border ⟫⟫ 
+│--------
+│• color3:
+│- || - invalid по факту проверки на undernaming; 
+│- || - invalid по факту проверки на overnaming; 
+│- || - invalid по факту проверки на stopword; 
+│- || - invalid по факту проверки на omission.
+│• color1:
+│- && - valid по факту проверки на undernaming;
+│- && - valid по факту проверки на overnaming.
+│- && - valid по факту проверки на stopword;
+│- && - valid по факту проверки на omission.
+└─
+┌─
+│seller_chat_blog_edit_image  
+│---------------------------
+│⟪⟪ border ⟫⟫ 
+│--------
+│• color2:
+│------ in any situation.
+└─
+┌─
+│seller_chat_blog_edit_text 
+│---------------------------
+│⟪⟪ border ⟫⟫ 
+│--------
+│• color3:
+│- || - invalid по факту проверки на undernaming; 
+│- || - invalid по факту проверки на overnaming; 
+│- || - invalid по факту проверки на stopword; 
+│- || - invalid по факту проверки на omission.
+│• color1:
+│- && - valid по факту проверки на undernaming;
+│- && - valid по факту проверки на overnaming.
+│- && - valid по факту проверки на stopword;
+│- && - valid по факту проверки на omission.
+└─
+┌─
+│seller_chat_blog_edit_close  
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color2:
+│------ in any situation.
+└─
+┌─
+│seller_chat_blog_edit_public 
+│------------------------- 
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color1
+│- && - valid по seller_chat_blog_edit_header;
+│- && - valid по seller_chat_blog_edit_text.
+│• color3 (pressing_state)
+│- || - invalid по seller_chat_blog_edit_header;
+│- || - invalid по seller_chat_blog_edit_text.
+│• color2 (inactive_state)
+│------ in any situation.
+└─
+
+✠ outputs
+• seller_chat_blog_edit_header
+• seller_chat_blog_edit_image
+• seller_chat_blog_edit_text
+╠ valid / invalid
+║ • gesture: tap 
+║occasion: нажатие seller_chat_blog_edit_public;
+║condition: 
+║ && - valid по факту проверки на undernaming;
+║ && - valid по факту проверки на overnaming.
+║ && - valid по факту проверки на stopword;
+║ && - valid по факту проверки на omission;
+╙ result: пост публикуется в seller_chat_blog_list_screen.
+
 
 ■ seller_nav
 
