@@ -10,6 +10,50 @@
 
 
 
+■ seller_chat_nav
+
+✠ details
+seller_chat_nav представлен 3 компонентами: 
+- seller_chat_nav_blog - кнопка расположенная в левой части секции отвечающая за переход к seller_chat_blog_list_screen (активирована по умолчанию;
+- seller_chat_nav_forum - кнопка расположенная в центральной части секции отвечающая за переход к seller_chat_forum;
+- seller_chat_nav_chat - кнопка расположенная в правой части секции отвечающая за переход к seller_chat_chat;
+
+✠ actions
+• seller_chat_nav_blog:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_chat_nav_blog;
+║ condition: in any situation;
+╙ result: открывается seller_chat_blog_list_screen.
+• seller_chat_nav_forum:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_chat_nav_forum;
+║ condition: in any situation;
+╙ result: открывается seller_chat_forum.
+• seller_chat_nav_chat:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_chat_nav_chat;
+║ condition: in any situation;
+╙ result: открывается seller_chat_chat.
+
+✠ color_states
+┌─ 
+│seller_chat_nav_blog  (activated_state по умолчанию в seller_chat_chat_screen)
+│seller_chat_nav_forum  (activated_state по умолчанию в seller_chat_forum_screen)
+│seller_chat_nav_chat  (activated_state по умолчанию в seller_chat_chat_screen)
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color7
+│------ в activated_state
+└─
+
+
 ■ seller_chat_blog_edit
 
 seller_chat_blog_edit является формой создаваемого поста. 
