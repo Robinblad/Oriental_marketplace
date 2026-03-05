@@ -10,6 +10,43 @@
 
 
 
+🡆🡆 seller_chat_blog_edit_screen
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+
+seller_chat_blog_edit_screen открывается после нажатия seller_chat_blog_list_new_button. 
+
+✠ tables
+seller_chat_blog_edit_screen разделен на 3 sections следующего содержания расположенных сверху-вниз:
+ 
+                   codename:                    type:          designation:     pressed/default:     location:    interaction:    important:
+s1)  ┌─[seller_chat_nav                 ]   [section     ] 
+---  ├ [seller_chat_nav_blog            ]   [button      ]   ["БЛОГ"        ]   [color5/color2]       [ ✜ 🡄 ]       [ yes ]
+---  ├ [seller_chat_nav_forum           ]   [button      ]   ["ФОРУМ"       ]   [color5/color2]       [ ✜ ✜ ]       [ yes ]
+---  └ [seller_chat_nav_chat            ]   [button      ]   ["ЧАТ"         ]   [color5/color2]       [ ✜ 🡆 ]       [ yes ]  
+s2) ┌──[seller_chat_blog_edit           ]   [section     ]                                            [ ✜ ✜ ]
+--- └┬─[seller_chat_blog_edit_header    ]   [input       ]   [""            ]                         [ 🡅 ✜ ]       [ yes ]        [ yes ]
+---  ├ [seller_chat_blog_edit_image     ]   [image+button]   ["ИЗОБРАЖЕНИЕ" ]                         [ ✜ 🡄 ]       [ no  ]        [ no  ]
+---  ├ [seller_chat_blog_edit_text      ]   [textaria    ]   [""                [color5/color2]       [ ✜ 🡆 ]       [ yes ]        [ yes ]   
+---  ├ [seller_chat_blog_edit_close     ]   [button      ]   ["ЗАКРЫТЬ"     ]   [color5/color2]       [ 🡇 🡄 ]       [ yes ]        
+---  └ [seller_chat_blog_edit_public    ]   [button      ]   ["ОПУБЛИКОВАТЬ"]   [color1/color2]       [ 🡇 🡆 ]       [ yes ]
+s3) ┌─ [seller_nav                      ]   [section     ]                                            [ 🡇 ✜ ]
+--- ├┬ [seller_nav_demand_button        ]   [button      ]                      [color1/color2]       [ ✜ 🡄 ]       [ yes ]
+--- │├ [seller_nav_demand_header        ]   [header      ]   ["МОНИТОР"     ]   [color1/color2]       [ ✜ ✜ ]       [ no  ]  
+--- │└ [seller_nav_demand_badge         ]   [badge       ]   [{ number }    ]   [color1/color2]       [ 🡅 🡆 ]       [ no  ] 	
+--- ├┬ [seller_nav_chat_button          ]   [button      ]                      [color1/color2]       [ ✜ 🡄 ]       [ yes ]   
+--- │├ [seller_nav_chat_header          ]   [header      ]   ["ЧАТ"         ]   [color1/color2]       [ ✜ ✜ ]       [ no  ] 
+--- │└ [seller_nav_chat_badge           ]   [badge       ]   [{ number }    ]   [color1/color2]       [ 🡅 🡆 ]       [ no  ] 
+--- ├┬ [seller_nav_shop_button          ]   [button      ]                      [color1/color2]       [ ✜ ✜ ]       [ yes ]   
+--- │├ [seller_nav_shop_header          ]   [header      ]   ["МАГАЗИН"     ]   [color1/color2]       [ ✜ ✜ ]       [ no  ] 
+--- │└ [seller_nav_shop_badge           ]   [badge       ]   [{ number }    ]   [color1/color2]       [ 🡅 🡆 ]       [ no  ]   
+--- ├┬ [seller_nav_goods_button         ]   [button      ]                      [color1/color2]       [ ✜ 🡆 ]       [ yes ]   
+--- │├ [seller_nav_goods_header         ]   [header      ]   ["ТОВАРЫ"      ]   [color1/color2]       [ ✜ ✜ ]       [ no  ] 
+--- │└ [seller_nav_goods_badge          ]   [badge       ]   [{ number }    ]   [color1/color2]       [ 🡅 🡆 ]       [ no  ]     
+--- └┬ [seller_nav_account_button       ]   [button      ]                      [color1/color2]       [ ✜ 🡆 ]       [ yes ]   
+---  ├ [seller_nav_account_header       ]   [header      ]   ["КАБИНЕТ"     ]   [color1/color2]       [ ✜ ✜ ]       [ no  ] 
+---  └ [seller_nav_account_badge        ]   [badge       ]   [{ number }    ]   [color1/color2]       [ 🡅 🡆 ]       [ no  ] 
+
+
 ■ seller_chat_nav
 
 ✠ details
