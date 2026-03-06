@@ -10,6 +10,60 @@
 
 
 
+
+🡆🡆🡆 seller_chat_blog_list_post_emoji_popover
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+✠ tables
+При тапе на кнопку seller_chat_blog_list_post всплывает seller_chat_blog_list_post_emoji_popover со следующим содержанием:
+
+                          codename:                               type:           interaction:      location:         inactive/active:    		      
+[seller_chat_blog_list_post_emoji_popover_symbol_like   ]     [icon+button]         [ yes ]          [ ✜ ✜ ]          [color2/color5]
+[seller_chat_blog_list_post_emoji_popover_symbol_dislike]     [icon+button]         [ yes ]          [ ✜ ✜ ]          [color2/color5]
+[seller_chat_blog_list_post_emoji_popover_symbol_fire   ]     [icon+button]         [ yes ]          [ ✜ ✜ ]          [color2/color5]
+[seller_chat_blog_list_post_emoji_popover_symbol_100%   ]     [icon+button]         [ yes ]          [ ✜ ✜ ]          [color2/color5]
+[seller_chat_blog_list_post_emoji_popover_symbol_heart  ]     [icon+button]         [ yes ]          [ ✜ ✜ ]          [color2/color5]
+[seller_chat_blog_list_post_emoji_popover_symbol_look   ]     [icon+button]         [ yes ]          [ ✜ ✜ ]          [color2/color5]
+[seller_chat_blog_list_post_emoji_popover_symbol_shit   ]     [icon+button]         [ yes ]          [ ✜ ✜ ]          [color2/color5]
+[seller_chat_blog_list_post_emoji_popover_symbol_ok     ]     [icon+button]         [ yes ]          [ ✜ ✜ ]          [color2/color5]
+[seller_chat_blog_list_post_emoji_popover_button        ]     [button     ]         [ yes ]          [ ✜ 🡆 ]          [color2/color5]
+
+✠ details
+seller_chat_blog_list_post_emoji_popover выполнен в виде панели высотой ~5% и шириной 80-90% экрана со всеми компонентами расположенными в одну строку. Местоположение seller_chat_blog_list_post_emoji_popover зависит от места нажатия и возникает чуть выше (5% от высоты экрана) этого места. 
+seller_chat_blog_list_post_emoji_popover содержит следующие компоненты:
+seller_chat_blog_list_post_emoji_popover_symbol - массив emoji-символов (в tables представлена часть возможных вариантов);
+seller_chat_blog_list_post_emoji_popover_button - кнопка отвечающая за открытие всего перечня emoji-символов.
+
+✠ actions
+• seller_chat_blog_list_post_emoji_popover_symbol:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие любого seller_chat_blog_list_post_emoji_popover_symbol;
+║ condition: in any situation;
+║ result: 
+║ && - seller_chat_blog_list_post_emoji_popover закрывается;
+║ && - целевой seller_chat_blog_list_post_emoji_popover_symbol появляется в качестве seller_chat_blog_list_post_emoji в seller_chat_blog_list_post.
+• seller_chat_blog_list_post_emoji_popover_button:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_chat_blog_list_post_emoji_popover_button;
+║ condition: in any situation;
+╙ result: происходит плавное раскрытие seller_chat_blog_list_post_emoji_popover сверху вниз, в результате чего его размер по вертикали увеличивается минимум при котором все доступные emoji помещаются в seller_chat_blog_list_post_emoji_popover и максимум до 25% от высоты экрана с возможностью скроллирования seller_chat_blog_list_post_emoji_popover.
+
+✠ color_states
+┌─
+│seller_chat_blog_list_post_emoji_popover_symbol
+│seller_chat_blog_list_post_emoji_popover_button
+│---------------------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color2
+│------ in default_state;
+│• color5
+│------ in pressing_state.
+└─
+
+
 🡆🡆 seller_chat_blog_edit_screen
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 
