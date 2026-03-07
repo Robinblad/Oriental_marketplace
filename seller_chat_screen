@@ -10,6 +10,61 @@
 
 
 
+
+■ seller_chat_blog_list_post
+
+seller_chat_blog_list_post является телом опубликованного поста.
+
+✠ details
+seller_chat_blog_list_post появляется после процедуры публикации поста; каждый новый пост над предыдущим; верхняя граница seller_chat_blog_list_post примыкает к seller_chat_blog_list_new; занимает по ширине всю доступную область экрана, по высоте каждый пост имеет индивидуальный размер зависящий от содержания seller_chat_blog_list_post_content и состоит из 5 компонентов:  
+- seller_chat_blog_list_post_header - заголовок поста с увеличенным в 2 раза размером шрифта параграфа font-size: 2.0rem;
+- seller_chat_blog_list_post_content - представляет собой комбинацию изображения/видео и текста, либо только изображение/видео или текст;
+- seller_chat_blog_list_post_emoji - виджет-кнопка отображающий лайк/дизлайк либо другой вариант эмоционального выражения;
+- seller_chat_blog_list_post_viewer - виджет отображающий количество просмотров поста;
+- seller_chat_blog_list_post_time - виджет отображающий время публикации поста.
+
+✠ actions
+• seller_chat_blog_list_post:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_chat_blog_list_post;
+║ condition: in any situation;
+║ result: появляется seller_chat_blog_list_post_emoji_popover.
+║ • gesture: tap & hold 1
+║ occasion: нажатие и удержание от 1 и более секунд seller_chat_blog_list_post;
+║ condition: in any situation;
+║ result: 
+║ && - вокруг seller_chat_blog_list_post возникает окантовка;
+║ && - по центру seller_chat_blog_list_post появляется кнопка seller_chat_blog_list_post_delete;
+• seller_chat_blog_list_post_emoji:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие на конкретный seller_chat_blog_list_post_emoji_item;
+║ condition: в ситуации наличия emoji минимум одного типа;
+║ result: совершается увеличение значения seller_chat_blog_list_post_emoji_item_value на +1.
+
+✠ color_states
+┌─
+│seller_chat_blog_list_post
+│---------------------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color2
+│------ in default_state;
+│• color5
+│------ in pressing_state (gesture: tap & hold 1).
+└─
+┌─
+│seller_chat_blog_list_post_viewer
+│seller_chat_blog_list_post_time
+│---------------------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color2
+│------ in any situation.
+└─
+
+
 ■ seller_nav
 
 ✠ details
