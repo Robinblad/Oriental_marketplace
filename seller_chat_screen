@@ -10,6 +10,33 @@
 
 
 
+■ seller_chat_blog_list_new
+
+✠ details
+seller_chat_blog_list_new расположен в верхней области экрана под seller_chat_nav и состоит из 2 компонентов:  
+- seller_chat_blog_list_new_info   - виджет отображающий количество опубликованных постов и среднее количество опубликованных постов в неделю;
+- seller_chat_blog_list_new_button - кнопка при нажатии на которую совершается переход к seller_chat_blog_edit_screen;
+
+✠ actions
+• seller_chat_blog_list_new_button:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_chat_blog_list_new_button;
+║ condition: in any situation;
+╙ result: открывается seller_chat_blog_edit_screen.
+
+✠ color_states
+┌─
+│seller_chat_blog_list_new_button
+│---------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color2
+│------ in default_state;
+│• color5
+│------ in pressing_state.
+└─
+
 
 ■ seller_chat_blog_list_post
 
