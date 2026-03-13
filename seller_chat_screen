@@ -1,5 +1,15 @@
 
 
+color0 - background;
+color1 - success;
+color2 - neutral;
+color3 - warning;
+color4 - accentual;
+color5 - pressing;
+color6 - middle;
+color7 - activated;
+color8 - font;
+color9 - focusing;
 
 
 -------------------------------------------------------------------
