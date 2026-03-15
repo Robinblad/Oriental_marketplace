@@ -1472,6 +1472,53 @@ seller_settings_goods_list_measure_dropdown появляется при нажа
 ╙ && - сохраняется в local_storage и по умолчанию применяется при открытии seller_settings_goods_screen для публикации следующего лота.
 
 
+🡆🡆🡆 seller_settings_goods_list_quantity_ctrl_protip_popover
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 
+seller_settings_goods_list_quantity_ctrl_protip_popover является всплывающей подсказкой, которая появляется после нажатия seller_settings_goods_list_quantity_ctrl_protip.
+
+✠ tables
+
+                                     codename:                                      type:                   designation:           location:  interaction:
+┌┬─[seller_settings_goods_list_quantity_ctrl_protip_popover                ]  [section_lev1       ]                                  [ ✜ ✜ ]     [ no  ]
+│└ [seller_settings_goods_list_quantity_ctrl_protip_popover_text           ]  [text               ]  [ " С помощью настройк... " ]   [ ✜ ✜ ]     [ no  ]
+└┬─[seller_settings_goods_list_quantity_ctrl_protip_popover_btn_close      ]  [button             ]                                  [ ✜ ✜ ]     [ yes ]
+ └ [seller_settings_goods_list_quantity_ctrl_protip_popover_btn_close_label]  [label              ]  [ " закрыть "               ]   [ ✜ ✜ ]     [ yes ]
+
+✠ details
+- seller_settings_goods_list_quantity_ctrl_protip_popover - представляет собой popover, который всплывает по центру экрана и включает 2 компонента:
+--- seller_settings_goods_list_quantity_ctrl_protip_popover_text - параграф текста выровненный по центру находится в верхней части seller_settings_goods_list_quantity_ctrl_protip_popover следующего содержания: "С помощью настройки 'ИНДИКАТОР КОЛИЧЕСТВА' можно выбрать индикатор количества товара. 'ТОЧНЫЙ' вариант индикатора отображает количество в единицах. 'ПРИБЛИЗИТЕЛЬНЫЙ' вариант индикатора отображает количество такими формулировками как: 'много', 'есть', 'мало'. Индикатор отображается как для вас (позволяет регулировать количество), так и для покупателя (позволяет увидеть объем товара). По умолчанию устанавливается 'ПРИБЛИЗИТЕЛЬНЫЙ'. Данная настройка не является обязательной при публикации лота";
+----- seller_settings_goods_list_quantity_ctrl_protip_popover_btn_close - кнопка расположенная под seller_settings_goods_list_quantity_ctrl_protip_popover_text;
+--- seller_settings_goods_list_quantity_ctrl_protip_popover_btn_close_label - наименование кнопки следующего содержания: "закрыть".
+
+✠ actions
+• seller_settings_goods_list_quantity_ctrl_protip_popover_btn_close:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_settings_goods_list_quantity_ctrl_protip_popover_btn_close;
+║ condition: in any situation;
+╙ result: seller_settings_goods_list_quantity_ctrl_protip_popover исчезает.
+
+✠ color_states
+┌─
+│seller_settings_goods_list_quantity_ctrl_protip_popover_btn_close
+│-------------------------------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color5
+│------ in pressing_state
+└─
+┌─
+│seller_settings_goods_list_quantity_ctrl_protip_popover_text
+│seller_settings_goods_list_quantity_ctrl_protip_popover_btn_close_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
 
 
