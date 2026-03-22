@@ -1937,3 +1937,67 @@ seller_settings_goods_list_image_carousel_frame=max - состояние в ко
 ║ && - вывод seller_settings_goods_image_value;
 ╙ && - вывод всех image согласно наименованию.
 
+
+🡆🡆🡆 seller_settings_goods_list_image_carousel_frame_popover
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+При нажатии и удержании от 1-1.5 и более секунд кнопки seller_settings_goods_list_image_carousel_frame, всплывает seller_settings_goods_list_image_carousel_frame_popover со следующим содержанием:
+
+✠ tables
+
+                                        codename:                                        type:                  designation:        location:  interaction:
+┌┬─┬─[seller_settings_goods_list_image_carousel_frame_popover                 ]  [section_lev1       ]                               [ ✜ ✜ ]     [ no  ]
+││ └ [seller_settings_goods_list_image_carousel_frame_popover_icon            ]  [icon               ]                               [ ✜ ✜ ]     [ no  ]
+│└┬──[seller_settings_goods_list_image_carousel_frame_popover_btn             ]  [button             ]                               [ ✜ ✜ ]     [ no  ] 
+│ └┬─[seller_settings_goods_list_image_carousel_frame_popover_btn_close       ]  [button             ]                               [ ✜ ✜ ]     [ yes ]
+│  └ [seller_settings_goods_list_image_carousel_frame_popover_btn_close_label ]  [label              ]  [ "закрыть"               ]  [ ✜ ✜ ]     [ yes ]
+└──┬─[seller_settings_goods_list_image_carousel_frame_popover_btn_delete      ]  [button             ]                               [ ✜ ✜ ]     [ yes ]
+   └ [seller_settings_goods_list_image_carousel_frame_popover_btn_delete_label]  [label              ]  [ "удалить"               ]  [ ✜ ✜ ]     [ yes ]
+
+✠ details
+- seller_settings_goods_list_image_carousel_frame_popover - представляет собой popover, который всплывает по центру экрана и включает 2 компонента:
+--- seller_settings_goods_list_image_carousel_frame_popover_icon - иконка в виде мусорной корзины расположенная в верхней части seller_settings_goods_list_image_carousel_frame_popover с выравниванием по центру;
+--- seller_settings_goods_list_image_carousel_frame_popover_btn - контейнер расположен в нижней части seller_settings_goods_list_image_carousel_frame_popover, содержащий 2 кнопки; 
+----- seller_settings_goods_list_image_carousel_frame_popover_btn_close - кнопка расположенная слева, предназначена для закрытия seller_settings_goods_list_image_carousel_frame_popover без изменений;
+------- seller_settings_goods_list_image_carousel_frame_popover_btn_close_label - наименование кнопки следующего содержания: "закрыть";
+----- seller_settings_goods_list_image_carousel_frame_popover_btn_delete - кнопка расположенная справа, предназначена для инициализации операции удаления целевого seller_settings_goods_list_image_carousel_frame_img;
+------- seller_settings_goods_list_image_carousel_frame_popover_btn_delete_label - наименование кнопки следующего содержания: "удалить".
+
+✠ actions
+• seller_settings_goods_list_image_carousel_frame_popover_btn_close:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_settings_goods_list_image_carousel_frame_popover_btn_close;
+║ condition: in any situation;
+╙ result: seller_settings_goods_list_image_carousel_frame_popover исчезает.
+• seller_settings_goods_list_image_carousel_frame_popover_btn_delete:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_settings_goods_list_image_carousel_frame_popover_btn_delete;
+║ condition: in any situation;
+║ result:  
+║ && - целевой seller_settings_goods_list_image_carousel_frame_img удаляется;
+╙ && - seller_settings_goods_list_image_carousel_frame_popover исчезает.
+
+✠ color_states
+┌─
+│seller_settings_goods_list_image_carousel_frame_popover_btn_close
+│seller_settings_goods_list_image_carousel_frame_popover_btn_delete
+│-------------------------------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color5
+│------ in pressing_state
+└─
+┌─
+│seller_settings_goods_list_image_carousel_frame_popover_btn_close_label
+│seller_settings_goods_list_image_carousel_frame_popover_btn_delete_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
