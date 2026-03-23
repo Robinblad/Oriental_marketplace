@@ -2001,3 +2001,53 @@ seller_settings_goods_list_image_carousel_frame=max - состояние в ко
 │• color8
 │------ in any situation
 └─
+
+
+🡆🡆🡆 seller_settings_goods_list_image_protip_popover
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+seller_settings_goods_list_image_protip_popover является всплывающей подсказкой, которая появляется после нажатия seller_settings_goods_list_image_protip.
+
+✠ tables
+
+                                  codename:                                   type:                  designation:          location:  interaction:
+┌┬─[seller_settings_goods_list_image_protip_popover                ]  [section_lev1       ]                                 [ ✜ ✜ ]     [ no  ]
+│└ [seller_settings_goods_list_image_protip_popover_text           ]  [text               ]  [ " Опция отвечает за ... " ]  [ ✜ ✜ ]     [ no  ]
+└┬─[seller_settings_goods_list_image_protip_popover_btn_close      ]  [button             ]                                 [ ✜ ✜ ]     [ yes ]
+ └ [seller_settings_goods_list_image_protip_popover_btn_close_label]  [label              ]  [ " закрыть "               ]  [ ✜ ✜ ]     [ yes ]
+
+✠ details
+- seller_settings_goods_list_image_protip_popover - представляет собой popover, который всплывает по центру экрана и включает 2 компонента:
+--- seller_settings_goods_list_image_protip_popover_text - параграф текста выровненный по центру находится в верхней части seller_settings_goods_list_image_protip_popover следующего содержания: "Настройка 'ИЗОБРАЖЕНИЕ ТОВАРА' позволяет добавить фотографию или любое другое изображение товара. При нажатии кнопки 'ДОБАВИТЬ ИЗОБРАЖЕНИЕ' открывается приложение камеры вашего устройства, с помощью которого вы можете как тут же сделать фото, либо добавить изображение из галереи. Всего может быть добавлено 10 изображений. Для удаления изображения требуется удерживать его более 1 сек, перетащить в корзину и отпустить. Данная настройка не является обязательной при публикации лота".
+----- seller_settings_goods_list_image_protip_popover_btn_close - кнопка расположенная под seller_settings_goods_list_image_protip_popover_text;
+--- seller_settings_goods_list_image_protip_popover_btn_close_label - наименование кнопки следующего содержания: "закрыть".
+
+✠ actions
+• seller_settings_goods_list_image_protip_popover_btn_close:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_settings_goods_list_image_protip_popover_btn_close;
+║ condition: in any situation;
+╙ result: seller_settings_goods_list_image_protip_popover исчезает.
+
+✠ color_states
+┌─
+│seller_settings_goods_list_image_protip_popover_btn_close
+│-------------------------------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color5
+│------ in pressing_state
+└─
+┌─
+│seller_settings_goods_list_image_protip_popover_text
+│seller_settings_goods_list_image_protip_popover_btn_close_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
