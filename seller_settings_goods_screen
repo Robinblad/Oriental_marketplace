@@ -2310,3 +2310,63 @@ seller_settings_goods_list_discount_protip_popover является всплыв
 │• color8
 │------ in any situation
 └─
+
+
+■ seller_settings_goods_list_delete
+
+Опция seller_settings_goods_list_delete предназначена для удаления лота (товара) из каталога магазина.
+
+✠ details
+Секция seller_settings_goods_list_delete состоит из 3 компонентов:  
+1)----- seller_settings_goods_list_delete_panel - панель служащая целью вывода заголовка опции seller_settings_goods_list_delete_panel_label; 
+------- seller_settings_goods_list_delete_panel_label - заголовок для seller_settings_goods_list_delete с содержанием: "Удалить товар";
+2)----- seller_settings_goods_list_delete_button - кнопка предназначенная для инициализации акта удаления лота;
+------- seller_settings_goods_list_delete_button_label - наименование кнопки по умолчанию: "удалить";
+3)----- seller_settings_goods_list_delete_protip - кнопка отвечающая за вызов подсказки seller_settings_goods_list_delete_protip_popover;  
+------- seller_settings_goods_list_delete_protip_label - наименование следующего содержания: "?".
+
+✠ actions
+• seller_settings_goods_list_delete_button:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_list_delete_button;
+║ condition: in any situation;
+╙ result: по центру экрана всплывает seller_settings_goods_list_delete_modal.
+• seller_settings_goods_list_delete_protip:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_list_delete_protip;
+║ condition: in any situation;
+╙ result: по центру экрана всплывает seller_settings_goods_list_delete_protip_popover.
+
+✠ color_states
+┌─
+│seller_settings_goods_list_delete_button
+│seller_settings_goods_list_delete_protip
+│-------------------------------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color5
+│------ in pressing_state
+└─
+┌─
+│seller_settings_goods_list_delete_panel
+│-------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color2
+│------ in any situation.
+└─
+┌─
+│seller_settings_goods_list_delete_panel_label
+│seller_settings_goods_list_delete_button_label
+│seller_settings_goods_list_delete_protip_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
