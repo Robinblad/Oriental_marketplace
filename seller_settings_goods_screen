@@ -2370,3 +2370,67 @@ seller_settings_goods_list_discount_protip_popover является всплыв
 │• color8
 │------ in any situation
 └─
+
+
+🡆🡆🡆 seller_settings_goods_list_delete_modal
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+seller_settings_goods_list_delete_modal появляется после нажатия seller_settings_goods_list_delete_button и предназначен для уведомления об удалении.
+
+✠ tables
+
+                                  codename:                                   type:                  designation:           location:  interaction:
+---┌──┬─[seller_settings_goods_list_delete_modal                 ]  [section_lev1       ]                                    [ ✜ ✜ ]     [ no  ]
+---│  └ [seller_settings_goods_list_delete_modal_text            ]  [text               ]  [ " Данная операция не... " ]     [ ✜ ✜ ]     [ no  ]
+---└┬┬──[seller_settings_goods_list_delete_modal_btn             ]  [section_lev2       ]                                    [ ✜ ✜ ]     [ no  ]
+----│└┬─[seller_settings_goods_list_delete_modal_btn_close       ]  [button             ]                                    [ ✜ ✜ ]     [ yes ]
+----│ └ [seller_settings_goods_list_delete_modal_btn_close_label ]  [label              ]  [ " отмена "                ]     [ ✜ ✜ ]     [ yes ]
+----└─┬─[seller_settings_goods_list_delete_modal_btn_delete      ]  [button             ]                                    [ ✜ ✜ ]     [ yes ]
+----  └ [seller_settings_goods_list_delete_modal_btn_delete_label]  [label              ]  [ " удалить "               ]     [ ✜ ✜ ]     [ yes ]
+
+✠ details
+- seller_settings_goods_list_delete_modal - представляет собой popover, который всплывает по центру экрана и включает 2 компонента:
+--- seller_settings_goods_list_delete_modal_text - параграф текста выровненный по центру находится в верхней части seller_settings_goods_list_delete_modal следующего содержания: "Данная операция необратима. Вы действительно хотите удалить лот (товар) и всю информацию о нем?";
+----- seller_settings_goods_list_delete_modal_btn - блок из 2 кнопок расположенный под seller_settings_goods_list_delete_modal_text;
+--- seller_settings_goods_list_delete_modal_btn_close - кнопка призванная закрыть seller_settings_goods_list_delete_modal;
+--- seller_settings_goods_list_delete_modal_btn_close_label - наименование кнопки следующего содержания: "отмена";
+--- seller_settings_goods_list_delete_modal_btn_delete - кнопка призванная инициализировать процедуру удаления;
+--- seller_settings_goods_list_delete_modal_btn_delete_label - наименование кнопки следующего содержания: "удалить".
+
+✠ actions
+• seller_settings_goods_list_delete_modal_btn_close:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_settings_goods_list_delete_modal_btn_close;
+║ condition: in any situation;
+╙ result: seller_settings_goods_list_delete_modal исчезает.
+• seller_settings_goods_list_delete_modal_btn_delete:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_settings_goods_list_delete_modal_btn_delete;
+║ condition: in any situation;
+╙ result: делается процедура удаления лота.
+
+✠ color_states
+┌─
+│seller_settings_goods_list_delete_modal_btn_close
+│seller_settings_goods_list_delete_modal_btn_delete
+│-------------------------------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color5
+│------ in pressing_state
+└─
+┌─
+│seller_settings_goods_list_delete_modal_text
+│seller_settings_goods_list_delete_modal_btn_close_label
+│seller_settings_goods_list_delete_modal_btn_delete_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
