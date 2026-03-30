@@ -2484,3 +2484,128 @@ seller_settings_goods_list_delete_protip_popover является всплыва
 │• color8
 │------ in any situation
 └─
+
+
+■ seller_settings_goods_btn
+
+✠ details
+- seller_settings_goods_btn - представляет собой блок расположенный в самом низу seller_settings_goods_screen и включает 2 компонента:
+1)--- seller_settings_goods_btn_no - кнопка расположенная слева, содержит seller_settings_goods_btn_no_label;
+----- seller_settings_goods_btn_no_label - наименование кнопки следующего содержания: "отмена";
+2)--- seller_settings_goods_btn_yes - кнопка расположенная справа, содержит seller_settings_goods_btn_yes_label;
+----- seller_settings_goods_btn_yes_label - наименование кнопки следующего содержания: "ОК".
+
+✠ actions
+• seller_settings_goods_btn_no:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_btn_no;
+║ condition: in any situation;
+║ result:
+║ && - seller_settings_goods_screen закрывается без сохранения изменений;
+╙ && - совершается переход к seller_goods_screen с фиксацией viewport, где верхний край экрана отображает верхнюю границу seller_goods_list.
+• seller_settings_goods_btn_yes:
+╠ valid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_btn_yes;
+║ condition: 
+║ && - valid по seller_settings_goods_list_name;
+║ && - valid по seller_settings_goods_list_price;
+║ result:
+║ && - в seller_db создается lot_id;
+║ && - данному lot_id присваивается дата его создания;
+║ && - seller_settings_goods_screen закрывается с сохранением в seller_db по seller_settings_goods_name_value в секцию с присвоенным lot_id;
+║ && - seller_settings_goods_screen закрывается с сохранением в seller_db по seller_settings_goods_saletype_value в секцию с присвоенным lot_id;
+║ && - seller_settings_goods_screen закрывается с сохранением в seller_db по seller_settings_goods_price_retail_value в секцию с присвоенным lot_id;
+║ && - seller_settings_goods_screen закрывается с сохранением в seller_db по seller_settings_goods_price_wholesale_data_value в секцию с присвоенным lot_id;
+║ && - seller_settings_goods_screen закрывается с сохранением в seller_db по seller_settings_goods_price_wholesale_limit_value в секцию с присвоенным lot_id;
+║ && - seller_settings_goods_screen закрывается с сохранением в seller_db по seller_settings_goods_measure_value в секцию с присвоенным lot_id;
+║ && - seller_settings_goods_screen закрывается с сохранением в seller_db по seller_settings_goods_quantity_ctrl_value в секцию с присвоенным lot_id;
+║ && - seller_settings_goods_screen закрывается с сохранением в seller_db по seller_settings_goods_quantity_value в секцию с присвоенным lot_id;
+║ && - seller_settings_goods_screen закрывается с сохранением в seller_db по seller_settings_goods_depot_value в секцию с присвоенным lot_id;
+║ && - seller_settings_goods_screen закрывается с сохранением в seller_db по seller_settings_goods_image_value в секцию с присвоенным lot_id;
+║ && - seller_settings_goods_screen закрывается с сохранением в seller_db по seller_settings_goods_description_value в секцию с присвоенным lot_id;
+║ && - seller_settings_goods_screen закрывается с сохранением в seller_db по seller_settings_goods_discount_value в секцию с присвоенным lot_id;
+║ && - осуществляется публикация лота в качестве seller_goods_list_cover в топ seller_goods_list;
+║ && - совершается переход к seller_goods_screen с фиксацией viewport, где верхний край экрана отображает верхнюю границу seller_goods_list.
+╠ invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_btn_yes;
+║ condition: 
+║ || - invalid по seller_settings_goods_list_name;
+║ || - invalid по seller_settings_goods_list_price;
+╙ result: seller_settings_goods_btn_yes не реагирует на нажатие.
+
+✠ color_states  
+┌─
+│seller_settings_goods_btn_no
+│-------------------------------- 
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color5
+│------ in pressing_state
+└─
+┌─
+│seller_settings_goods_btn_yes
+│------------------------- 
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+│ - && - valid по seller_settings_goods_list_name
+│ - && - valid по seller_settings_goods_list_price
+├────────
+│• color5
+│------ in pressing_state
+│ - && - valid по seller_settings_goods_list_name
+│ - && - valid по seller_settings_goods_list_price
+├────────
+│• color0
+│------ in any situation
+│ - || - invalid по seller_settings_goods_list_name
+│ - || - invalid по seller_settings_goods_list_price
+└─
+┌─
+│seller_settings_goods_btn_no_label
+│seller_settings_goods_btn_yes_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
+
+При публикации лота создается lot_id, который включает следующий перечень данных: 
+ - unix_time (milliseconds); 
+ - user_settings_phone.
+ 
+Запись делается по схеме:
+{unix_time} + '_' + {user_settings_phone};
+
+Пример полной длины lot_id при наличии следующих исходных данных: 
+ - unix_time код = 1739818921072662; 
+ - user_settings_phone = 996550698598;
+
+Результирующее значение lot_id:
+1739818921072662_996550698598.
+
+
+goods_data
+лот содержит следующий перечень данных:
+
+lot_id
+lot_date
+lot_name
+lot_price
+lot_measure
+lot_quantity
+lot_quantity_manager
+lot_saletype
+lot_image
+lot_image_link
+lot_description
+
