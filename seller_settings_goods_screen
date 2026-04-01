@@ -2609,3 +2609,120 @@ lot_image
 lot_image_link
 lot_description
 
+
+🡆🡆🡆 seller_settings_goods_depot_screen
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+
+Представляет собой экран менеджмента партий товара позволяющий добавлять и удалять партии. Перечень компонентов seller_settings_goods_depot_screen приведенный в порядке их расположения в интерфейсе сверху-вниз:
+
+✠ tables
+
+                              codename:                                type:                  designation:           location:  interaction:
+┌┬───┬──[seller_settings_goods_depot                        ]  [section_lev1       ]                                  [ ✜ ✜ ]     [ no  ]
+││   └┬─[seller_settings_goods_depot_top                    ]  [section_lev2       ]  [ "Управление партиями"     ]   [ 🡅 ✜ ]     [ no  ]
+││    └ [seller_settings_goods_depot_top_label              ]  [label              ]                                  [ ✜ ✜ ]     [ no  ]
+│└┬┬────[seller_settings_goods_depot_list                   ]  [section_lev2       ]                                  [ ✜ ✜ ]     [ no  ]
+│ │└┬┬──[seller_settings_goods_depot_list_party             ]  [section_lev3       ]                                  [ ✜ ✜ ]     [ no  ]
+│ │ │└┬─[seller_settings_goods_depot_list_party_button      ]  [button             ]                                  [ ✜ ✜ ]     [ yes ]
+│ │ │ ├ [seller_settings_goods_depot_list_party_button_label]  [label              ]  [ "Партия товара # "        ]   [ ✜ ✜ ]     [ yes ]
+│ │ │ └ [seller_settings_goods_depot_list_party_button_value]  [variable           ]  [ { number }                ]   [ ✜ 🡆 ]     [ yes ]
+│ │ └─┬─[seller_settings_goods_depot_list_party_delete      ]  [button             ]                                  [ ✜ 🡆 ]     [ yes ]
+│ │   └ [seller_settings_goods_depot_list_party_delete_label]  [label              ]  [ "X"                       ]   [ ✜ ✜ ]     [ yes ]
+│ └───┬─[seller_settings_goods_depot_list_adding            ]  [button             ]                                  [ ✜ ✜ ]     [ yes ]
+│     └ [seller_settings_goods_depot_list_adding_label      ]  [label              ]  [ "Добавить партию"         ]   [ ✜ ✜ ]     [ yes ]
+└───┬┬──[seller_settings_goods_depot_btn                    ]  [section_lev2       ]                                  [ 🡇 ✜ ]     [ no  ]
+    │└┬─[seller_settings_goods_depot_btn_no                 ]  [button             ]                                  [ ✜ 🡄 ]     [ yes ]
+    │ └ [seller_settings_goods_depot_btn_no_label           ]  [label              ]  [ "отмена"                  ]   [ ✜ ✜ ]     [ yes ]
+    └─┬─[seller_settings_goods_depot_btn_yes                ]  [button             ]                                  [ ✜ 🡆 ]     [ yes ]
+      └ [seller_settings_goods_depot_btn_yes_label          ]  [label              ]  [ "ОК"                      ]   [ ✜ ✜ ]     [ yes ]
+
+✠ details
+--- seller_settings_goods_depot_top - блок прямоугольной формы расположенный в самом верху seller_settings_goods_depot_screen, выполняет функцию контейнера для seller_settings_goods_depot_top_label;
+----- seller_settings_goods_depot_top_label - заголовок следующего содержания: "Управление партиями";
+--- seller_settings_goods_depot_list - занимает порядка 80-85% пространства seller_settings_goods_depot_screen, вмещает в себя два типа компонентов: seller_settings_goods_depot_list_party и seller_settings_goods_depot_list_adding;
+----- seller_settings_goods_depot_list_party - является инстансом партии, который в качестве органов управления содержит 2 кнопки: seller_settings_goods_depot_list_party_button и seller_settings_goods_depot_list_party_delete;
+------- seller_settings_goods_depot_list_party_button - кнопка открывающая доступ к настройкам партии;
+--------- seller_settings_goods_depot_list_party_button_label - константный текстовый элемент следующего содержания: "Партия товара # ";
+--------- seller_settings_goods_depot_list_party_button_value - переменная с числовым значением отображающая номер партии;
+------- seller_settings_goods_depot_list_party_delete - кнопка расположенная справа от seller_settings_goods_depot_list_party_button позволяющая удалить целевую партию;
+--------- seller_settings_goods_depot_list_party_delete_label - константный текстовый элемент следующего содержания: "X" (либо используется иконка);
+------- seller_settings_goods_depot_list_adding - кнопка позволяющая добавить новую партию, всегда располагается под seller_settings_goods_depot_list_party вне зависимости от их количества;
+--------- seller_settings_goods_depot_list_adding_label - наименование seller_settings_goods_depot_list_adding в качестве константного текстового элемента следующего содержания: "Добавить партию";
+--- seller_settings_goods_depot_btn - блок из 2 кнопок расположенный в самом низу seller_settings_goods_depot_screen;
+----- seller_settings_goods_depot_btn_no - кнопка отвечающая за выход из seller_settings_goods_depot_screen без применения изменений;
+------- seller_settings_goods_depot_btn_no_label - наименование кнопки seller_settings_goods_depot_btn_no: "отмена";
+----- seller_settings_goods_depot_btn_yes - кнопка отвечающая за выход из seller_settings_goods_depot_screen с применением изменений;
+------- seller_settings_goods_depot_btn_yes_label - наименование кнопки seller_settings_goods_depot_btn_yes: "ОК".
+
+✠ actions
+• seller_settings_goods_depot_list_party_button:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_depot_list_party_button;
+║ condition: in any situation;
+╙ result: делается переход к seller_settings_goods_depot_lot_screen целевой партии.
+• seller_settings_goods_depot_list_party_delete:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_depot_list_party_delete;
+║ condition: in any situation;
+╙ result: делается удаление целевой партии в рамках которой была нажата кнопка seller_settings_goods_depot_list_party_delete.
+• seller_settings_goods_depot_list_adding:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_depot_list_adding;
+║ condition: in any situation;
+╙ result: открывается seller_settings_goods_depot_lot_screen с пустыми полями.
+• seller_settings_goods_depot_btn_no:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_depot_btn_no;
+║ condition: in any situation;
+╙ result: seller_settings_goods_depot_screen закрывается без применения изменений.
+• seller_settings_goods_depot_btn_yes:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_depot_btn_yes;
+║ condition: in any situation;
+╙ result: seller_settings_goods_depot_screen закрывается с применением изменений.
+
+✠ color_states
+┌─
+│seller_settings_goods_depot_list_party_button
+│seller_settings_goods_depot_list_party_delete
+│seller_settings_goods_depot_list_adding
+│seller_settings_goods_depot_btn_no
+│seller_settings_goods_depot_btn_yes
+│-------------------------------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color5
+│------ in pressing_state
+└─
+┌─
+│seller_settings_goods_depot_top
+│seller_settings_goods_depot_list
+│seller_settings_goods_depot_btn
+│-------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color2
+│------ in any situation
+└─
+┌─
+│seller_settings_goods_depot_top_label
+│seller_settings_goods_depot_list_party_button_label
+│seller_settings_goods_depot_list_party_button_value
+│seller_settings_goods_depot_list_party_delete_label
+│seller_settings_goods_depot_list_adding_label
+│seller_settings_goods_depot_btn_no_label
+│seller_settings_goods_depot_btn_yes_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
