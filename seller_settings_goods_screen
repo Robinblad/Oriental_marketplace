@@ -2726,3 +2726,102 @@ lot_description
 │• color8
 │------ in any situation
 └─
+
+
+🡆🡆🡆🡆 seller_settings_goods_depot_lot_screen
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+
+Представляет собой экран опций партии. 
+
+✠ tables
+
+                                          codename:                                    type:                   designation:            location:  interaction:
+   ┌┬───────┬──[seller_settings_goods_depot_lot                              ]  [section_lev1       ]			                        [ ✜ ✜ ]     [ no  ]
+   ││       └┬─[seller_settings_goods_depot_lot_panel                        ]  [section_lev2       ]			                        [ 🡅 ✜ ]     [ no  ]
+   ││        └ [seller_settings_goods_depot_lot_panel_label                  ]  [label              ]  [ " Настройки партии т... " ]    [ ✜ ✜ ]     [ no  ]
+   │└┬┬┬┬┬─────[seller_settings_goods_depot_lot_list                         ]  [section_lev2       ]                                   [ ✜ ✜ ]     [ no  ]
+   │ ││││└┬┬┬──[seller_settings_goods_depot_lot_list_number                  ]  [section_lev3       ]                                   [ 🡅 ✜ ]     [ no  ]
+   │ ││││ ││└┬─[seller_settings_goods_depot_lot_list_number_panel            ]  [section_lev4       ]                                   [ 🡅 ✜ ]     [ no  ]
+   │ ││││ ││ └ [seller_settings_goods_depot_lot_list_number_panel_label      ]  [label              ]  [ " Номер партии * "        ]    [ ✜ ✜ ]     [ no  ]
+   │ ││││ │└─┬─[seller_settings_goods_depot_lot_list_number_input            ]  [input              ]                                   [ 🡇 ✜ ]     [ yes ]
+   │ ││││ │  └ [seller_settings_goods_depot_lot_list_number_input_label      ]  [variable           ]  [ { number }                ]    [ ✜ ✜ ]     [ yes ]
+   │ ││││ └──┬─[seller_settings_goods_depot_lot_list_number_protip           ]  [button             ]                                   [ 🡇 🡆 ]     [ yes ]
+   │ ││││    └ [seller_settings_goods_depot_lot_list_number_protip_label     ]  [label              ]  [ " ? "                     ]    [ ✜ ✜ ]     [ yes ]
+   │ │││└─┬┬┬──[seller_settings_goods_depot_lot_list_entry                   ]  [section_lev3       ]                                   [ ✜ ✜ ]     [ no  ]
+   │ │││  ││└┬─[seller_settings_goods_depot_lot_list_entry_panel             ]  [section_lev4       ]                                   [ 🡅 ✜ ]     [ no  ]
+   │ │││  ││ └ [seller_settings_goods_depot_lot_list_entry_panel_label       ]  [label              ]  [ " Дата поступления  "     ]    [ ✜ ✜ ]     [ no  ]
+   │ │││  │└─┬─[seller_settings_goods_depot_lot_list_entry_button            ]  [button             ]                                   [ 🡇 ✜ ]     [ yes ]
+   │ │││  │  └ [seller_settings_goods_depot_lot_list_entry_button_widget     ]  [widget+variable    ]  [ { number }                ]    [ ✜ ✜ ]     [ yes ]
+   │ │││  └──┬─[seller_settings_goods_depot_lot_list_entry_protip            ]  [button             ]                                   [ 🡇 🡆 ]     [ yes ]
+   │ │││     └ [seller_settings_goods_depot_lot_list_entry_protip_label      ]  [label              ]  [ " ? "                     ]    [ ✜ ✜ ]     [ yes ]
+   │ ││└──┬┬┬──[seller_settings_goods_depot_lot_list_quantity                ]  [section_lev3       ]                                   [ ✜ ✜ ]     [ no  ]
+   │ ││   ││└┬─[seller_settings_goods_depot_lot_list_quantity_panel          ]  [section_lev4       ]                                   [ 🡅 ✜ ]     [ no  ]
+   │ ││   ││ └ [seller_settings_goods_depot_lot_list_quantity_panel_label    ]  [label              ]  [ " Количество * "          ]    [ ✜ ✜ ]     [ no  ]
+   │ ││   │└─┬─[seller_settings_goods_depot_lot_list_quantity_input          ]  [input              ]                                   [ 🡇 ✜ ]     [ yes ]
+   │ ││   │  └ [seller_settings_goods_depot_lot_list_quantity_input_label    ]  [placeholder        ]  [ " 1 "                     ]    [ ✜ ✜ ]     [ yes ]
+   │ ││   └──┬─[seller_settings_goods_depot_lot_list_quantity_protip         ]  [button             ]                                   [ 🡇 🡆 ]     [ yes ]
+   │ ││      └ [seller_settings_goods_depot_lot_list_quantity_protip_label   ]  [label              ]  [ " ? "                     ]    [ ✜ ✜ ]     [ yes ]
+   │ │└───┬┬┬──[seller_settings_goods_depot_lot_list_balance                 ]  [section_lev3       ]                                   [ ✜ ✜ ]     [ no  ]
+   │ │    ││└┬─[seller_settings_goods_depot_lot_list_balance_panel           ]  [section_lev4       ]                                   [ 🡅 ✜ ]     [ no  ]
+   │ │    ││ └ [seller_settings_goods_depot_lot_list_balance_panel_label     ]  [label              ]  [ " Остаток "               ]    [ ✜ ✜ ]     [ no  ]
+   │ │    │└─┬─[seller_settings_goods_depot_lot_list_balance_input           ]  [input              ]                                   [ 🡇 ✜ ]     [ yes ]
+   │ │    │  └ [seller_settings_goods_depot_lot_list_balance_input_label     ]  [variable           ]  [ { number }                ]    [ ✜ ✜ ]     [ yes ]
+   │ │    └──┬─[seller_settings_goods_depot_lot_list_balance_protip          ]  [button             ]                                   [ 🡇 🡆 ]     [ yes ]
+   │ │       └ [seller_settings_goods_depot_lot_list_balance_protip_label    ]  [label              ]  [ " ? "                     ]    [ ✜ ✜ ]     [ yes ]
+   │ └────┬┬┬──[seller_settings_goods_depot_lot_list_expiration              ]  [section_lev3       ]                                   [ ✜ ✜ ]     [ no  ]
+   │      ││└┬─[seller_settings_goods_depot_lot_list_expiration_panel        ]  [section_lev4       ]                                   [ 🡅 ✜ ]     [ no  ]
+   │      ││ └ [seller_settings_goods_depot_lot_list_expiration_panel_label  ]  [label              ]  [ " Срок годности до "      ]    [ ✜ ✜ ]     [ no  ]
+   │      │└─┬─[seller_settings_goods_depot_lot_list_expiration_button       ]  [button             ]                                   [ 🡇 ✜ ]     [ yes ]
+   │      │  └ [seller_settings_goods_depot_lot_list_expiration_button_widget]  [widget+variable    ]  [ { number }                ]    [ ✜ ✜ ]     [ yes ]
+   │      └──┬─[seller_settings_goods_depot_lot_list_expiration_protip       ]  [button             ]                                   [ 🡇 🡆 ]     [ yes ]
+   │         └ [seller_settings_goods_depot_lot_list_expiration_protip_label ]  [label              ]  [ " ? "                     ]    [ ✜ ✜ ]     [ yes ]
+   └───────┬┬──[seller_settings_goods_depot_lot_btn                          ]  [section_lev2       ]                                   [ 🡇 ✜ ]     [ no  ]
+           │└┬─[seller_settings_goods_depot_lot_btn_no_button                ]  [button             ]                                   [ ✜ 🡄 ]     [ yes ]
+           │ └ [seller_settings_goods_depot_lot_btn_no_button_label          ]  [label              ]  [ " отмена "                ]    [ ✜ ✜ ]     [ yes ]
+           └─┬─[seller_settings_goods_depot_lot_btn_yes_button               ]  [button             ]                                   [ ✜ 🡆 ]     [ yes ]
+             └ [seller_settings_goods_depot_lot_btn_yes_button_label         ]  [label              ]  [ " ОК "                    ]    [ ✜ ✜ ]     [ yes ]
+
+✠ details
+--- seller_settings_goods_depot_lot_panel - блок прямоугольной формы расположенный в самом верху seller_settings_goods_depot_lot_screen, выполняет функцию контейнера для seller_settings_goods_depot_lot_panel_label;
+----- seller_settings_goods_depot_lot_panel_label - заголовок следующего содержания: "Настройки партии товара";
+--- seller_settings_goods_depot_lot_list - занимает порядка 80-85% пространства seller_settings_goods_depot_lot_screen, содержит 5 компонентов;
+1)----- seller_settings_goods_depot_lot_list_number - опция позволяющая задать номер партии, которая должна быть указана в обязательном порядке (без ее указания партия не будет зарегистрирована);
+------- seller_settings_goods_depot_lot_list_number_panel - панель находящаяся в верхней части seller_settings_goods_depot_lot_list_number и содержащая seller_settings_goods_depot_lot_list_number_panel_label;
+--------- seller_settings_goods_depot_lot_list_number_panel_label - константный текстовый элемент следующего содержания: "Номер партии *";
+------- seller_settings_goods_depot_lot_list_number_input - поле для ввода данных, содержит seller_settings_goods_depot_lot_list_number_input_label в качестве placeholder; 
+--------- seller_settings_goods_depot_lot_list_number_input_label - переменная с числовым значением отображающая номер партии выполняющая роль placeholder;
+------- seller_settings_goods_depot_lot_list_number_protip - кнопка отвечающая за вызов подсказки seller_settings_goods_depot_lot_list_number_protip_popover; 
+--------- seller_settings_goods_depot_lot_list_number_protip_label - наименование seller_settings_goods_depot_lot_list_number_protip  в виде константного текстового элемента: "?";
+2)----- seller_settings_goods_depot_lot_list_entry - опция позволяющая указать дату поступления товара;
+------- seller_settings_goods_depot_lot_list_entry_panel - панель находящаяся в верхней части seller_settings_goods_depot_lot_list_entry и содержащая seller_settings_goods_depot_lot_list_entry_panel_label;
+--------- seller_settings_goods_depot_lot_list_entry_panel_label - константный текстовый элемент следующего содержания: "Дата поступления";
+------- seller_settings_goods_depot_lot_list_entry_button - кнопка посредством которой открывается календарь seller_settings_goods_depot_lot_list_entry_calendar_modal; 
+--------- seller_settings_goods_depot_lot_list_entry_button_widget - переменная с числовым значением по умолчанию отображающая текущую дату;
+------- seller_settings_goods_depot_lot_list_entry_protip - кнопка отвечающая за вызов подсказки seller_settings_goods_depot_lot_list_entry_protip_popover; 
+--------- seller_settings_goods_depot_lot_list_entry_protip_label - наименование seller_settings_goods_depot_lot_list_entry_protip  в виде константного текстового элемента: "?";
+3)----- seller_settings_goods_depot_lot_list_quantity - опция позволяющая указать количество товара в партии, которая должна быть указана в обязательном порядке (без ее указания партия не будет зарегистрирована);
+------- seller_settings_goods_depot_lot_list_quantity_panel - панель находящаяся в верхней части seller_settings_goods_depot_lot_list_quantity и содержащая seller_settings_goods_depot_lot_list_quantity_panel_label;
+--------- seller_settings_goods_depot_lot_list_quantity_panel_label - константный текстовый элемент следующего содержания: "Количество *";
+------- seller_settings_goods_depot_lot_list_quantity_input - поле для ввода данных, содержит seller_settings_goods_depot_lot_list_quantity_input_label в качестве placeholder; 
+--------- seller_settings_goods_depot_lot_list_quantity_input_label - константный текстовый элемент со стринговым значением отображающий: "1";
+------- seller_settings_goods_depot_lot_list_quantity_protip - кнопка отвечающая за вызов подсказки seller_settings_goods_depot_lot_list_quantity_protip_popover; 
+--------- seller_settings_goods_depot_lot_list_quantity_protip_label - наименование seller_settings_goods_depot_lot_list_quantity_protip в виде константного текстового элемента: "?";
+4)----- seller_settings_goods_depot_lot_list_balance - опция позволяющая указать текущий остаток по партии;
+------- seller_settings_goods_depot_lot_list_balance_panel - панель находящаяся в верхней части seller_settings_goods_depot_lot_list_balance и содержащая seller_settings_goods_depot_lot_list_balance_panel_label;
+--------- seller_settings_goods_depot_lot_list_balance_panel_label - константный текстовый элемент следующего содержания: "Остаток";
+------- seller_settings_goods_depot_lot_list_balance_input - поле для ввода данных, содержит seller_settings_goods_depot_lot_list_balance_input_label в качестве placeholder; 
+--------- seller_settings_goods_depot_lot_list_balance_input_label - переменная с числовым значением отображающая остаток по партии выполняющая роль placeholder;
+------- seller_settings_goods_depot_lot_list_balance_protip - кнопка отвечающая за вызов подсказки seller_settings_goods_depot_lot_list_balance_protip_popover; 
+--------- seller_settings_goods_depot_lot_list_balance_protip_label - наименование seller_settings_goods_depot_lot_list_balance_protip  в виде константного текстового элемента: "?";
+5)----- seller_settings_goods_depot_lot_list_expiration - опция позволяющая указать срок годности товара по партии;
+------- seller_settings_goods_depot_lot_list_expiration_panel - панель находящаяся в верхней части seller_settings_goods_depot_lot_list_expiration и содержащая seller_settings_goods_depot_lot_list_expiration_panel_label;
+--------- seller_settings_goods_depot_lot_list_expiration_panel_label - константный текстовый элемент следующего содержания: "Срок годности до";
+------- seller_settings_goods_depot_lot_list_expiration_button - кнопка посредством которой открывается календарь seller_settings_goods_depot_lot_list_expiration_calendar_modal; 
+--------- seller_settings_goods_depot_lot_list_expiration_button_widget - переменная с числовым значением по умолчанию отображающая текущую дату;
+------- seller_settings_goods_depot_lot_list_expiration_protip - кнопка отвечающая за вызов подсказки seller_settings_goods_depot_lot_list_expiration_protip_popover; 
+--------- seller_settings_goods_depot_lot_list_expiration_protip_label - наименование seller_settings_goods_depot_lot_list_expiration_protip  в виде константного текстового элемента: "?";
+--- seller_settings_goods_depot_lot_btn - блок из 2 кнопок расположенный в самом низу seller_settings_goods_depot_lot_screen;
+----- seller_settings_goods_depot_lot_btn_no - кнопка отвечающая за выход из seller_settings_goods_depot_lot_screen без применения изменений;
+------- seller_settings_goods_depot_lot_btn_no_label - наименование кнопки seller_settings_goods_depot_lot_btn_no: "отмена";
+----- seller_settings_goods_depot_lot_btn_yes - кнопка отвечающая за выход из seller_settings_goods_depot_lot_screen с применением изменений;
+------- seller_settings_goods_depot_lot_btn_yes_label - наименование кнопки seller_settings_goods_depot_lot_btn_yes: "ОК".
