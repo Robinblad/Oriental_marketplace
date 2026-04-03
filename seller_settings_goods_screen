@@ -2825,3 +2825,179 @@ lot_description
 ------- seller_settings_goods_depot_lot_btn_no_label - наименование кнопки seller_settings_goods_depot_lot_btn_no: "отмена";
 ----- seller_settings_goods_depot_lot_btn_yes - кнопка отвечающая за выход из seller_settings_goods_depot_lot_screen с применением изменений;
 ------- seller_settings_goods_depot_lot_btn_yes_label - наименование кнопки seller_settings_goods_depot_lot_btn_yes: "ОК".
+
+
+✠ actions
+• seller_settings_goods_depot_lot_list_number_input:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_depot_lot_list_number_input;
+║ condition: in any situation;
+║ result:
+║ && - seller_settings_goods_depot_lot_list_number_input переходит в active_state;
+║ && - появляется клавиатура для ввода (если она была скрыта);
+║ && - placeholder исчезает;
+╙ && - карет устанавливается в конце текста (если текст наличествует).
+• seller_settings_goods_depot_lot_list_number_protip:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_depot_lot_list_number_protip;
+║ condition: in any situation;
+╙ result: по центру экрана всплывает seller_settings_goods_depot_lot_list_number_protip_popover.
+• seller_settings_goods_depot_lot_list_entry_button:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_depot_lot_list_entry_button;
+║ condition: in any situation;
+╙ result: всплывает seller_settings_goods_depot_lot_list_entry_calendar_modal.
+• seller_settings_goods_depot_lot_list_entry_protip:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_depot_lot_list_entry_protip;
+║ condition: in any situation;
+╙ result: по центру экрана всплывает seller_settings_goods_depot_lot_list_entry_protip_popover.
+• seller_settings_goods_depot_lot_list_quantity_input:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_depot_lot_list_quantity_input;
+║ condition: in any situation;
+║ result:
+║ && - seller_settings_goods_depot_lot_list_quantity_input переходит в active_state;
+║ && - появляется клавиатура для ввода (если она была скрыта);
+║ && - placeholder исчезает;
+╙ && - карет устанавливается в конце текста (если текст наличествует).
+• seller_settings_goods_depot_lot_list_quantity_protip:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_depot_lot_list_quantity_protip;
+║ condition: in any situation;
+╙ result: по центру экрана всплывает seller_settings_goods_depot_lot_list_quantity_protip_popover.
+• seller_settings_goods_depot_lot_list_balance_input:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_depot_lot_list_balance_input;
+║ condition: in any situation;
+║ result:
+║ && - seller_settings_goods_depot_lot_list_balance_input переходит в active_state;
+║ && - появляется клавиатура для ввода (если она была скрыта);
+║ && - placeholder исчезает;
+╙ && - карет устанавливается в конце текста (если текст наличествует).
+• seller_settings_goods_depot_lot_list_balance_protip:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_depot_lot_list_balance_protip;
+║ condition: in any situation;
+╙ result: по центру экрана всплывает seller_settings_goods_depot_lot_list_balance_protip_popover.
+• seller_settings_goods_depot_lot_list_expiration_button:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_depot_lot_list_expiration_button;
+║ condition: in any situation;
+╙ result: всплывает seller_settings_goods_depot_lot_list_expiration_calendar_modal.
+• seller_settings_goods_depot_lot_list_expiration_protip:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_depot_lot_list_expiration_protip;
+║ condition: in any situation;
+╙ result: по центру экрана всплывает seller_settings_goods_depot_lot_list_expiration_protip_popover.
+• seller_settings_goods_depot_lot_btn_no_button:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_depot_lot_btn_no_button;
+║ condition: in any situation;
+╙ result: seller_settings_goods_depot_lot_screen закрывается без применения изменений.
+• seller_settings_goods_depot_lot_btn_yes_button:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_depot_lot_btn_yes_button;
+║ condition: in any situation;
+╙ result: seller_settings_goods_depot_lot_screen закрывается с применением изменений.
+
+✠ logics
+1) 
+seller_settings_goods_depot_lot_list_number_input_label (в качестве placeholder) автоматически рассчитывается исходя из количества массива существующих seller_settings_goods_depot_list_party ( let seller_settings_goods_depot_lot_list_number_input_label = [seller_settings_goods_depot_list_party] + 1 ). Так если уже существует 2 seller_settings_goods_depot_list_party, тогда при создании новой seller_settings_goods_depot_list_party значение seller_settings_goods_depot_lot_list_number_input_label = 3.
+2)
+Для seller_settings_goods_depot_lot_list_entry_button_widget автоматически проставляется текущая дата ( let seller_settings_goods_depot_lot_list_entry_button_widget = new Date() ).
+3)
+Для seller_settings_goods_depot_lot_list_balance_input_label (в качестве placeholder) используется текущее значение seller_settings_goods_depot_lot_list_quantity_input_label ( seller_settings_goods_depot_lot_list_balance_input_label = seller_settings_goods_depot_lot_list_quantity_input_label ).
+4)
+Для seller_settings_goods_depot_lot_list_expiration_button_widget автоматически проставляется текущая дата ( let seller_settings_goods_depot_lot_list_expiration_button_widget = new Date() ).
+
+Если юзер не вносит своих данных в перечень seller_settings_goods_depot_lot_list, тогда в качестве валидных значений используются текущие значения placeholders и widgets.
+
+✠ color_states
+┌─
+│seller_settings_goods_depot_lot_list_number_input
+│seller_settings_goods_depot_lot_list_quantity_input
+│seller_settings_goods_depot_lot_list_balance_input
+│---------------------------
+│⟪⟪ border ⟫⟫ 
+├────────
+│• color3:
+│- || - invalid по факту проверки на overnaming
+│- || - invalid по факту проверки на stopsymbol
+├────────
+│• color1:
+│- && - valid по факту проверки на overnaming
+│- && - valid по факту проверки на stopsymbol
+└─
+┌─
+│seller_settings_goods_depot_lot_list_number_protip
+│seller_settings_goods_depot_lot_list_entry_button
+│seller_settings_goods_depot_lot_list_entry_protip
+│seller_settings_goods_depot_lot_list_quantity_protip
+│seller_settings_goods_depot_lot_list_balance_protip
+│seller_settings_goods_depot_lot_list_expiration_button
+│seller_settings_goods_depot_lot_list_expiration_protip
+│seller_settings_goods_depot_lot_btn_no_button
+│seller_settings_goods_depot_lot_btn_yes_button
+│-------------------------------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color5
+│------ in pressing_state
+└─
+┌─
+│seller_settings_goods_depot_lot_panel
+│seller_settings_goods_depot_lot_list_number_panel
+│seller_settings_goods_depot_lot_list_entry_panel
+│seller_settings_goods_depot_lot_list_quantity_panel
+│seller_settings_goods_depot_lot_list_balance_panel
+│seller_settings_goods_depot_lot_list_expiration_panel
+│seller_settings_goods_depot_lot_list_entry_panel
+│seller_settings_goods_depot_lot_list_entry_panel
+│seller_settings_goods_depot_lot_list_entry_panel
+│-------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color2
+│------ in any situation
+└─
+┌─
+│seller_settings_goods_depot_lot_panel_label
+│seller_settings_goods_depot_lot_list_number_panel_label
+│seller_settings_goods_depot_lot_list_number_input_label
+│seller_settings_goods_depot_lot_list_number_protip_label
+│seller_settings_goods_depot_lot_list_entry_panel_label
+│seller_settings_goods_depot_lot_list_entry_button_widget
+│seller_settings_goods_depot_lot_list_entry_protip_label
+│seller_settings_goods_depot_lot_list_quantity_panel_label
+│seller_settings_goods_depot_lot_list_quantity_input_label
+│seller_settings_goods_depot_lot_list_quantity_protip_label
+│seller_settings_goods_depot_lot_list_balance_panel_label
+│seller_settings_goods_depot_lot_list_balance_input_label
+│seller_settings_goods_depot_lot_list_balance_protip_label
+│seller_settings_goods_depot_lot_list_expiration_panel_label
+│seller_settings_goods_depot_lot_list_expiration_button_widget
+│seller_settings_goods_depot_lot_list_expiration_protip_label
+│seller_settings_goods_depot_lot_btn_no_button_label
+│seller_settings_goods_depot_lot_btn_yes_button_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
