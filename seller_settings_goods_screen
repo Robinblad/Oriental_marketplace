@@ -3001,3 +3001,106 @@ seller_settings_goods_depot_lot_list_number_input_label (в качестве pla
 │• color8
 │------ in any situation
 └─
+
+
+✠ input_checks
+♦ seller_settings_goods_depot_lot_list_number_input
+Фильтры проверяющие на соответствие нормативам содержание seller_settings_goods_depot_lot_list_number_input. Если в ходе проверки фиксируется несоответствие, тогда состояние seller_settings_goods_depot_lot_list_number_input позиционируется как invalid, в связи с чем отображается соответствующее типу проблемы предупреждение.
+• overnaming:
+Анализ на превышение лимита допустимой длины number.
+Работает в active_state.
+При вводе number, в ситуации если символов > 50, под seller_settings_goods_depot_lot_list_number_input всплывает seller_settings_goods_depot_lot_list_number_alert_overnaming.
+• stopsymbol:
+Анализ на нажатие запрещенных клавиш базирующийся на превентивной блокировке ввода с любых клавиш кроме от 0 до 9.
+Работает в active_state. 
+При вводе number, в ситуации если использованы не цифры, под seller_settings_goods_depot_lot_list_number_input всплывает seller_settings_goods_depot_lot_list_number_alert_stopsymbol.
+
+♦ seller_settings_goods_depot_lot_list_quantity_input
+Фильтры проверяющие на соответствие нормативам содержание seller_settings_goods_depot_lot_list_quantity_input. Если в ходе проверки фиксируется несоответствие, тогда состояние seller_settings_goods_depot_lot_list_quantity_input позиционируется как invalid, в связи с чем отображается соответствующее типу проблемы предупреждение.
+• overnaming:
+Анализ на превышение лимита допустимой длины quantity.
+Работает в active_state.
+При вводе quantity, в ситуации если символов > 50, под seller_settings_goods_depot_lot_list_quantity_input всплывает seller_settings_goods_depot_lot_list_quantity_alert_overnaming.
+• stopsymbol:
+Анализ на нажатие запрещенных клавиш базирующийся на превентивной блокировке ввода с любых клавиш кроме от 0 до 9.
+Работает в active_state. 
+При вводе quantity, в ситуации если использованы не цифры, под seller_settings_goods_depot_lot_list_quantity_input всплывает seller_settings_goods_depot_lot_list_quantity_alert_stopsymbol.
+
+♦ seller_settings_goods_depot_lot_list_balance_input
+Фильтры проверяющие на соответствие нормативам содержание seller_settings_goods_depot_lot_list_balance_input. Если в ходе проверки фиксируется несоответствие, тогда состояние seller_settings_goods_depot_lot_list_balance_input позиционируется как invalid, в связи с чем отображается соответствующее типу проблемы предупреждение.
+• overnaming:
+Анализ на превышение лимита допустимой длины balance.
+Работает в active_state.
+При вводе balance, в ситуации если символов > 50, под seller_settings_goods_depot_lot_list_balance_input всплывает seller_settings_goods_depot_lot_list_balance_alert_overnaming.
+• stopsymbol:
+Анализ на нажатие запрещенных клавиш базирующийся на превентивной блокировке ввода с любых клавиш кроме от 0 до 9.
+Работает в active_state. 
+При вводе balance, в ситуации если использованы не цифры, под seller_settings_goods_depot_lot_list_balance_input всплывает seller_settings_goods_depot_lot_list_balance_alert_stopsymbol.
+
+✠ alerts
+♦ seller_settings_goods_depot_lot_list_number_alert_overnaming:
+- focusing: да;
+- location: появляется под seller_settings_goods_depot_lot_list_number_input;
+- occasion: невалидность по факту проверки на overnaming;
+- content:  "ЧИСЛО СЛИШКОМ БОЛЬШОЕ, ПОЖАЛУЙСТА ИСПОЛЬЗУЙТЕ МЕНЬШЕ СИМВОЛОВ".
+• seller_settings_goods_depot_lot_list_number_alert_stopsymbol:
+- focusing: да;
+- location: появляется под seller_settings_goods_depot_lot_list_number_input;
+- occasion: невалидность по факту проверки на stopsymbol;
+- content:  "ИСПОЛЬЗОВАН ЗАПРЕЩЕННЫЙ СИМВОЛ: {указывается запрещенный символ жирным шрифтом белого цвета на color3 фоне}".
+
+♦ seller_settings_goods_depot_lot_list_quantity_alert_overnaming:
+- focusing: да;
+- location: появляется под seller_settings_goods_depot_lot_list_quantity_input;
+- occasion: невалидность по факту проверки на overnaming;
+- content:  "ЧИСЛО СЛИШКОМ БОЛЬШОЕ, ПОЖАЛУЙСТА ИСПОЛЬЗУЙТЕ МЕНЬШЕ СИМВОЛОВ".
+• seller_settings_goods_depot_lot_list_quantity_alert_stopsymbol:
+- focusing: да;
+- location: появляется под seller_settings_goods_depot_lot_list_quantity_input;
+- occasion: невалидность по факту проверки на stopsymbol;
+- content:  "ИСПОЛЬЗОВАН ЗАПРЕЩЕННЫЙ СИМВОЛ: {указывается запрещенный символ жирным шрифтом белого цвета на color3 фоне}".
+
+♦ seller_settings_goods_depot_lot_list_balance_alert_overnaming:
+- focusing: да;
+- location: появляется под seller_settings_goods_depot_lot_list_balance_input;
+- occasion: невалидность по факту проверки на overnaming;
+- content:  "ЧИСЛО СЛИШКОМ БОЛЬШОЕ, ПОЖАЛУЙСТА ИСПОЛЬЗУЙТЕ МЕНЬШЕ СИМВОЛОВ".
+• seller_settings_goods_depot_lot_list_balance_alert_stopsymbol:
+- focusing: да;
+- location: появляется под seller_settings_goods_depot_lot_list_balance_input;
+- occasion: невалидность по факту проверки на stopsymbol;
+- content:  "ИСПОЛЬЗОВАН ЗАПРЕЩЕННЫЙ СИМВОЛ: {указывается запрещенный символ жирным шрифтом белого цвета на color3 фоне}".
+
+✠ outputs
+• seller_settings_goods_depot_lot_list_number_input_label:
+║ occasion: нажатие seller_settings_goods_depot_lot_btn_yes_button;
+║ condition: in any situation;
+╙ result: cодержимое seller_settings_goods_depot_lot_list_number_input_label преобразуется в seller_settings_goods_depot_lot_list_number_value.
+• seller_settings_goods_depot_lot_list_entry_button_widget:
+║ occasion: нажатие seller_settings_goods_depot_lot_btn_yes_button;
+║ condition: in any situation;
+╙ result: cодержимое seller_settings_goods_depot_lot_list_entry_button_widget преобразуется в seller_settings_goods_depot_lot_list_entry_value.
+• seller_settings_goods_depot_lot_list_quantity_input_label:
+║ occasion: нажатие seller_settings_goods_depot_lot_btn_yes_button;
+║ condition: in any situation;
+╙ result: cодержимое seller_settings_goods_depot_lot_list_quantity_input_label преобразуется в seller_settings_goods_depot_lot_list_quantity_value.
+• seller_settings_goods_depot_lot_list_balance_input_label:
+║ occasion: нажатие seller_settings_goods_depot_lot_btn_yes_button;
+║ condition: in any situation;
+╙ result: cодержимое seller_settings_goods_depot_lot_list_balance_input_label преобразуется в seller_settings_goods_depot_lot_list_balance_value.
+• seller_settings_goods_depot_lot_list_expiration_button_widget:
+║ occasion: нажатие seller_settings_goods_depot_lot_btn_yes_button;
+║ condition: in any situation;
+╙ result: cодержимое seller_settings_goods_depot_lot_list_expiration_button_widget преобразуется в seller_settings_goods_depot_lot_list_expiration_value.
+
+На выходе формируется объект seller_settings_goods_depot_value следующего содержания:
+
+let seller_settings_goods_depot_value = {
+	seller_settings_goods_depot_lot_list_number_value: null,
+	seller_settings_goods_depot_lot_list_entry_value: null,
+	seller_settings_goods_depot_lot_list_quantity_value: null,
+	seller_settings_goods_depot_lot_list_balance_value: null,
+	seller_settings_goods_depot_lot_list_expiration_value: null
+};
+
+Если seller_settings_goods_depot_lot_list_number_value и/или seller_settings_goods_depot_lot_list_quantity_value = null, тогда seller_settings_goods_depot_value не формируется.
