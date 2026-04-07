@@ -3104,3 +3104,54 @@ let seller_settings_goods_depot_value = {
 };
 
 Если seller_settings_goods_depot_lot_list_number_value и/или seller_settings_goods_depot_lot_list_quantity_value = null, тогда seller_settings_goods_depot_value не формируется.
+
+
+🡆🡆🡆🡆🡆 seller_settings_goods_depot_lot_list_number_protip_popover
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+seller_settings_goods_depot_lot_list_number_protip_popover является всплывающей подсказкой, которая появляется после нажатия seller_settings_goods_depot_lot_list_number_protip.
+
+✠ tables
+
+                                    codename:                                    type:                  designation:           location:  interaction:
+┌┬─[seller_settings_goods_depot_lot_list_number_protip_popover                ]  [section_lev1       ]                                  [ ✜ ✜ ]     [ no  ]
+│└ [seller_settings_goods_depot_lot_list_number_protip_popover_text           ]  [text               ]  [ " Данная опция отвеч... " ]   [ ✜ ✜ ]     [ no  ]
+└┬─[seller_settings_goods_depot_lot_list_number_protip_popover_btn_close      ]  [button             ]                                  [ ✜ ✜ ]     [ yes ]
+ └ [seller_settings_goods_depot_lot_list_number_protip_popover_btn_close_label]  [label              ]  [ " закрыть "               ]   [ ✜ ✜ ]     [ yes ]
+
+✠ details
+- seller_settings_goods_depot_lot_list_number_protip_popover - представляет собой popover, который всплывает по центру экрана и включает 2 компонента:
+--- seller_settings_goods_depot_lot_list_number_protip_popover_text - параграф текста выровненный по центру находится в верхней части seller_settings_goods_depot_lot_list_number_protip_popover следующего содержания: "Опция отвечает за номер партии товара. Допускается вводить только цифры. Если вы не указываете номер, тогда он проставляется автоматически";
+----- seller_settings_goods_depot_lot_list_number_protip_popover_btn_close - кнопка расположенная под seller_settings_goods_depot_lot_list_number_protip_popover_text;
+--- seller_settings_goods_depot_lot_list_number_protip_popover_btn_close_label - наименование кнопки следующего содержания: "закрыть".
+
+✠ actions
+• seller_settings_goods_depot_lot_list_number_protip_popover_btn_close:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_settings_goods_depot_lot_list_number_protip_popover_btn_close;
+║ condition: in any situation;
+╙ result: seller_settings_goods_depot_lot_list_number_protip_popover исчезает.
+
+✠ color_states
+┌─
+│seller_settings_goods_depot_lot_list_number_protip_popover_btn_close
+│-------------------------------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color5
+│------ in pressing_state
+└─
+┌─
+│seller_settings_goods_depot_lot_list_number_protip_popover_text
+│seller_settings_goods_depot_lot_list_number_protip_popover_btn_close_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
