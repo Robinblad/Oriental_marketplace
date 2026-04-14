@@ -3360,3 +3360,69 @@ seller_settings_goods_depot_lot_list_number_input_label_d
 seller_settings_goods_depot_lot_list_number_input_label_m
 seller_settings_goods_depot_lot_list_number_input_label_y
 
+
+
+🡆🡆🡆 seller_settings_goods_discount_screen
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+
+Представляет собой экран из ряда кнопок отвечающих за выбор варианта маркетинговой акции. Перечень компонентов seller_settings_goods_discount_screen приведенный в порядке их расположения в интерфейсе сверху-вниз:
+
+✠ tables
+
+                                          codename:                               type:                   designation:           location:  interaction:
+  ┌┬───────────┬──[seller_settings_goods_discount                       ]  [section_lev1       ]                                  [ ✜ ✜ ]     [ no  ]
+  ││           └┬─[seller_settings_goods_discount_top                   ]  [section_lev2       ]  [ "Скидки / Акции"          ]   [ 🡅 ✜ ]     [ no  ]
+  ││            └ [seller_settings_goods_discount_top_label             ]  [label              ]                                  [ ✜ ✜ ]     [ no  ]
+  │└┬┬┬┬┬┬┬┬┬┬────[seller_settings_goods_discount_list                  ]  [section_lev2       ]                                  [ ✜ ✜ ]     [ no  ]
+  │ │││││││││└┬┬──[seller_settings_goods_discount_list_act0             ]  [section_lev3       ]                                  [ 🡅 ✜ ]     [ no  ]
+  │ │││││││││ │└┬─[seller_settings_goods_discount_list_act0_button      ]  [button             ]                                  [ ✜ ✜ ]     [ yes ]
+  │ │││││││││ │ └ [seller_settings_goods_discount_list_act0_button_label]  [label              ]  [ "Горячая цена"            ]   [ ✜ ✜ ]     [ yes ]
+  │ │││││││││ └─┬─[seller_settings_goods_discount_list_act0_protip      ]  [button             ]                                  [ ✜ 🡆 ]     [ yes ]
+  │ │││││││││   └ [seller_settings_goods_discount_list_act0_protip_label]  [label              ]  [ "?"                       ]   [ ✜ ✜ ]     [ yes ]
+  │ ││││││││└─┬┬──[seller_settings_goods_discount_list_act1             ]  [section_lev3       ]                                  [ ✜ ✜ ]     [ no  ]
+  │ ││││││││  │└┬─[seller_settings_goods_discount_list_act1_button      ]  [button             ]                                  [ ✜ ✜ ]     [ yes ]
+  │ ││││││││  │ └ [seller_settings_goods_discount_list_act1_button_label]  [label              ]  [ "Сниженная цена"          ]   [ ✜ ✜ ]     [ yes ]
+  │ ││││││││  └─┬─[seller_settings_goods_discount_list_act1_protip      ]  [button             ]                                  [ ✜ 🡆 ]     [ yes ]
+  │ ││││││││    └ [seller_settings_goods_discount_list_act1_protip_label]  [label              ]  [ "?"                       ]   [ ✜ ✜ ]     [ yes ]
+  │ │││││││└──┬┬──[seller_settings_goods_discount_list_act2             ]  [section_lev3       ]                                  [ ✜ ✜ ]     [ no  ]
+  │ │││││││   │└┬─[seller_settings_goods_discount_list_act2_button      ]  [button             ]                                  [ ✜ ✜ ]     [ yes ]
+  │ │││││││   │ └ [seller_settings_goods_discount_list_act2_button_label]  [label              ]  [ "Специальное предложение" ]   [ ✜ ✜ ]     [ yes ]
+  │ │││││││   └─┬─[seller_settings_goods_discount_list_act2_protip      ]  [button             ]                                  [ ✜ 🡆 ]     [ yes ]
+  │ │││││││     └ [seller_settings_goods_discount_list_act2_protip_label]  [label              ]  [ "?"                       ]   [ ✜ ✜ ]     [ yes ]
+  │ ││││││└───┬┬──[seller_settings_goods_discount_list_act3             ]  [section_lev3       ]                                  [ ✜ ✜ ]     [ no  ]
+  │ ││││││    │└┬─[seller_settings_goods_discount_list_act3_button      ]  [label              ]                                  [ ✜ ✜ ]     [ yes ]
+  │ ││││││    │ └ [seller_settings_goods_discount_list_act3_button_label]  [label              ]  [ "Только сегодня"          ]   [ ✜ ✜ ]     [ yes ]
+  │ ││││││    └─┬─[seller_settings_goods_discount_list_act3_protip      ]  [button             ]                                  [ ✜ 🡆 ]     [ yes ]
+  │ ││││││      └ [seller_settings_goods_discount_list_act3_protip_label]  [label              ]  [ "?"                       ]   [ ✜ ✜ ]     [ yes ]
+  │ │││││└────┬┬──[seller_settings_goods_discount_list_act4             ]  [section_lev3       ]                                  [ ✜ ✜ ]     [ no  ]
+  │ │││││     │└┬─[seller_settings_goods_discount_list_act4_button      ]  [label              ]                                  [ ✜ ✜ ]     [ yes ]
+  │ │││││     │ └ [seller_settings_goods_discount_list_act4_button_label]  [label              ]  [ "Обратный отсчет"         ]   [ ✜ ✜ ]     [ yes ]
+  │ │││││     └─┬─[seller_settings_goods_discount_list_act4_protip      ]  [button             ]                                  [ ✜ 🡆 ]     [ yes ]
+  │ │││││       └ [seller_settings_goods_discount_list_act4_protip_label]  [label              ]  [ "?"                       ]   [ ✜ ✜ ]     [ yes ]
+  │ ││││└─────┬┬──[seller_settings_goods_discount_list_act5             ]  [section_lev3       ]                                  [ ✜ ✜ ]     [ no  ]
+  │ ││││      │└┬─[seller_settings_goods_discount_list_act5_button      ]  [label              ]                                  [ ✜ ✜ ]     [ yes ]
+  │ ││││      │ └ [seller_settings_goods_discount_list_act5_button_label]  [label              ]  [ "Бесплатная доставка"     ]   [ ✜ ✜ ]     [ yes ]
+  │ ││││      └─┬─[seller_settings_goods_discount_list_act5_protip      ]  [button             ]                                  [ ✜ 🡆 ]     [ yes ]
+  │ ││││        └ [seller_settings_goods_discount_list_act5_protip_label]  [label              ]  [ "?"                       ]   [ ✜ ✜ ]     [ yes ]
+  │ │││└──────┬┬──[seller_settings_goods_discount_list_act6             ]  [section_lev3       ]                                  [ ✜ ✜ ]     [ no  ]
+  │ │││       │└┬─[seller_settings_goods_discount_list_act6_button      ]  [label              ]                                  [ ✜ ✜ ]     [ yes ]
+  │ │││       │ └ [seller_settings_goods_discount_list_act6_button_label]  [label              ]  [ "Накопительная скидка"    ]   [ ✜ ✜ ]     [ yes ]
+  │ │││       └─┬─[seller_settings_goods_discount_list_act6_protip      ]  [button             ]                                  [ ✜ 🡆 ]     [ yes ]
+  │ │││         └ [seller_settings_goods_discount_list_act6_protip_label]  [label              ]  [ "?"                       ]   [ ✜ ✜ ]     [ yes ]
+  │ ││└───────┬┬──[seller_settings_goods_discount_list_act7             ]  [section_lev3       ]                                  [ ✜ ✜ ]     [ no  ]
+  │ ││        │└┬─[seller_settings_goods_discount_list_act7_button      ]  [label              ]                                  [ ✜ ✜ ]     [ yes ]
+  │ ││        │ └ [seller_settings_goods_discount_list_act7_button_label]  [label              ]  [ "Скидка пенсионерам"      ]   [ ✜ ✜ ]     [ yes ]
+  │ ││        └─┬─[seller_settings_goods_discount_list_act7_protip      ]  [button             ]                                  [ ✜ 🡆 ]     [ yes ]
+  │ ││          └ [seller_settings_goods_discount_list_act7_protip_label]  [label              ]  [ "?"                       ]   [ ✜ ✜ ]     [ yes ]
+  │ │└────────┬┬──[seller_settings_goods_discount_list_act8             ]  [section_lev3       ]                                  [ ✜ ✜ ]     [ no  ]
+  │ │         │└┬─[seller_settings_goods_discount_list_act8_button      ]  [label              ]                                  [ ✜ ✜ ]     [ yes ]
+  │ │         │ └ [seller_settings_goods_discount_list_act8_button_label]  [label              ]  [ "Скидка студентам"        ]   [ ✜ ✜ ]     [ yes ]
+  │ │         └─┬─[seller_settings_goods_discount_list_act8_protip      ]  [button             ]                                  [ ✜ 🡆 ]     [ yes ]
+  │ │           └ [seller_settings_goods_discount_list_act8_protip_label]  [label              ]  [ "?"                       ]   [ ✜ ✜ ]     [ yes ]
+  │ └─────────┬┬──[seller_settings_goods_discount_list_act9             ]  [section_lev3       ]                                  [ ✜ ✜ ]     [ no  ]
+  │           │└┬─[seller_settings_goods_discount_list_act9_button      ]  [label              ]                                  [ ✜ ✜ ]     [ yes ]
+  │           │ └ [seller_settings_goods_discount_list_act9_button_label]  [label              ]  [ "Скидка %"                ]   [ ✜ ✜ ]     [ yes ]
+  │           └─┬─[seller_settings_goods_discount_list_act9_protip      ]  [button             ]                                  [ ✜ 🡆 ]     [ yes ]
+  │             └ [seller_settings_goods_discount_list_act9_protip_label]  [label              ]  [ "?"                       ]   [ ✜ ✜ ]     [ yes ]
+  └─────────────┬─[seller_settings_goods_discount_button_ok             ]  [section_lev2+button]                                  [ ✜ ✜ ]     [ yes ]
+                └ [seller_settings_goods_discount_button_ok_label       ]  [label              ]  [ "ОК"                      ]   [ ✜ ✜ ]     [ yes ]
