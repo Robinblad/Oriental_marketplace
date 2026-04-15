@@ -3426,3 +3426,61 @@ seller_settings_goods_depot_lot_list_number_input_label_y
   │             └ [seller_settings_goods_discount_list_act9_protip_label]  [label              ]  [ "?"                       ]   [ ✜ ✜ ]     [ yes ]
   └─────────────┬─[seller_settings_goods_discount_button_ok             ]  [section_lev2+button]                                  [ ✜ ✜ ]     [ yes ]
                 └ [seller_settings_goods_discount_button_ok_label       ]  [label              ]  [ "ОК"                      ]   [ ✜ ✜ ]     [ yes ]
+
+
+✠ details
+--- seller_settings_goods_discount_top - блок прямоугольной формы расположенный в самом верху seller_settings_goods_discount_screen, выполняет функцию контейнера для seller_settings_goods_discount_top_label;
+----- seller_settings_goods_discount_top_label - заголовок следующего содержания: "Скидки / Акции";
+--- seller_settings_goods_discount_list - занимает порядка 80-85% пространства seller_settings_goods_discount_screen по вертикали, вмещает в себя 10 блоков, каждый из которых включает кнопку для перехода к настройке акции и кнопку для открытия подсказки;
+----- seller_settings_goods_discount_list_act0 - находится в самом верху seller_settings_goods_discount_list, содержит seller_settings_goods_discount_list_act0_button и seller_settings_goods_discount_list_act0_protip;
+------- seller_settings_goods_discount_list_act0_button - кнопка для перехода к настройке, содержит seller_settings_goods_discount_list_act0_button_label;
+--------- seller_settings_goods_discount_list_act0_button_label - константный текстовый элемент следующего содержания: "Горячая цена";
+------- seller_settings_goods_discount_list_act0_protip - кнопка отвечающая за вызов подсказки seller_settings_goods_discount_list_act0_protip_popover;  
+--------- seller_settings_goods_discount_list_act0_protip_label - наименование кнопки в виде константного текстового элемента: "?";
+----- seller_settings_goods_discount_list_act1 - находится под seller_settings_goods_discount_list_act0, содержит seller_settings_goods_discount_list_act1_button и seller_settings_goods_discount_list_act1_protip;
+------- seller_settings_goods_discount_list_act1_button - кнопка для перехода к настройке, содержит seller_settings_goods_discount_list_act1_button_label;
+--------- seller_settings_goods_discount_list_act1_button_label - константный текстовый элемент следующего содержания: "Сниженная цена";
+------- seller_settings_goods_discount_list_act1_protip - кнопка отвечающая за вызов подсказки seller_settings_goods_discount_list_act1_protip_popover;  
+--------- seller_settings_goods_discount_list_act1_protip_label - наименование кнопки в виде константного текстового элемента: "?";
+----- seller_settings_goods_discount_list_act2 - находится под seller_settings_goods_discount_list_act1, содержит seller_settings_goods_discount_list_act2_button и seller_settings_goods_discount_list_act2_protip;
+------- seller_settings_goods_discount_list_act2_button - кнопка для перехода к настройке, содержит seller_settings_goods_discount_list_act2_button_label;
+--------- seller_settings_goods_discount_list_act2_button_label - константный текстовый элемент следующего содержания: "Специальное предложение";
+------- seller_settings_goods_discount_list_act2_protip - кнопка отвечающая за вызов подсказки seller_settings_goods_discount_list_act2_protip_popover;  
+--------- seller_settings_goods_discount_list_act2_protip_label - наименование кнопки в виде константного текстового элемента: "?";
+----- seller_settings_goods_discount_list_act3 - находится под seller_settings_goods_discount_list_act2, содержит seller_settings_goods_discount_list_act3_button и seller_settings_goods_discount_list_act3_protip;
+------- seller_settings_goods_discount_list_act3_button - кнопка для перехода к настройке, содержит seller_settings_goods_discount_list_act3_button_label;
+--------- seller_settings_goods_discount_list_act3_button_label - константный текстовый элемент следующего содержания: "Только сегодня";
+------- seller_settings_goods_discount_list_act3_protip - кнопка отвечающая за вызов подсказки seller_settings_goods_discount_list_act3_protip_popover;  
+--------- seller_settings_goods_discount_list_act3_protip_label - наименование кнопки в виде константного текстового элемента: "?";
+----- seller_settings_goods_discount_list_act4 - находится под seller_settings_goods_discount_list_act3, содержит seller_settings_goods_discount_list_act4_button и seller_settings_goods_discount_list_act4_protip;
+------- seller_settings_goods_discount_list_act4_button - кнопка для перехода к настройке, содержит seller_settings_goods_discount_list_act4_button_label;
+--------- seller_settings_goods_discount_list_act4_button_label - константный текстовый элемент следующего содержания: "Обратный отсчет";
+------- seller_settings_goods_discount_list_act4_protip - кнопка отвечающая за вызов подсказки seller_settings_goods_discount_list_act4_protip_popover;  
+--------- seller_settings_goods_discount_list_act4_protip_label - наименование кнопки в виде константного текстового элемента: "?";
+----- seller_settings_goods_discount_list_act5 - находится под seller_settings_goods_discount_list_act4, содержит seller_settings_goods_discount_list_act5_button и seller_settings_goods_discount_list_act5_protip;
+------- seller_settings_goods_discount_list_act5_button - кнопка для перехода к настройке, содержит seller_settings_goods_discount_list_act5_button_label;
+--------- seller_settings_goods_discount_list_act5_button_label - константный текстовый элемент следующего содержания: "Бесплатная доставка";
+------- seller_settings_goods_discount_list_act5_protip - кнопка отвечающая за вызов подсказки seller_settings_goods_discount_list_act5_protip_popover;  
+--------- seller_settings_goods_discount_list_act5_protip_label - наименование кнопки в виде константного текстового элемента: "?";
+----- seller_settings_goods_discount_list_act6 - находится под seller_settings_goods_discount_list_act5, содержит seller_settings_goods_discount_list_act6_button и seller_settings_goods_discount_list_act6_protip;
+------- seller_settings_goods_discount_list_act6_button - кнопка для перехода к настройке, содержит seller_settings_goods_discount_list_act6_button_label;
+--------- seller_settings_goods_discount_list_act6_button_label - константный текстовый элемент следующего содержания: "Накопительная скидка";
+------- seller_settings_goods_discount_list_act6_protip - кнопка отвечающая за вызов подсказки seller_settings_goods_discount_list_act6_protip_popover;  
+--------- seller_settings_goods_discount_list_act6_protip_label - наименование кнопки в виде константного текстового элемента: "?";
+----- seller_settings_goods_discount_list_act7 - находится под seller_settings_goods_discount_list_act6, содержит seller_settings_goods_discount_list_act7_button и seller_settings_goods_discount_list_act7_protip;
+------- seller_settings_goods_discount_list_act7_button - кнопка для перехода к настройке, содержит seller_settings_goods_discount_list_act7_button_label;
+--------- seller_settings_goods_discount_list_act7_button_label - константный текстовый элемент следующего содержания: "Скидка пенсионерам";
+------- seller_settings_goods_discount_list_act7_protip - кнопка отвечающая за вызов подсказки seller_settings_goods_discount_list_act7_protip_popover;  
+--------- seller_settings_goods_discount_list_act7_protip_label - наименование кнопки в виде константного текстового элемента: "?";
+----- seller_settings_goods_discount_list_act8 - находится под seller_settings_goods_discount_list_act7, содержит seller_settings_goods_discount_list_act8_button и seller_settings_goods_discount_list_act8_protip;
+------- seller_settings_goods_discount_list_act8_button - кнопка для перехода к настройке, содержит seller_settings_goods_discount_list_act8_button_label;
+--------- seller_settings_goods_discount_list_act8_button_label - константный текстовый элемент следующего содержания: "Скидка студентам";
+------- seller_settings_goods_discount_list_act8_protip - кнопка отвечающая за вызов подсказки seller_settings_goods_discount_list_act8_protip_popover;  
+--------- seller_settings_goods_discount_list_act8_protip_label - наименование кнопки в виде константного текстового элемента: "?";
+----- seller_settings_goods_discount_list_act9 - находится под seller_settings_goods_discount_list_act8, содержит seller_settings_goods_discount_list_act9_button и seller_settings_goods_discount_list_act9_protip;
+------- seller_settings_goods_discount_list_act9_button - кнопка для перехода к настройке, содержит seller_settings_goods_discount_list_act9_button_label;
+--------- seller_settings_goods_discount_list_act9_button_label - константный текстовый элемент следующего содержания: "Скидка студентам";
+------- seller_settings_goods_discount_list_act9_protip - кнопка отвечающая за вызов подсказки seller_settings_goods_discount_list_act9_protip_popover;  
+--------- seller_settings_goods_discount_list_act9_protip_label - наименование кнопки в виде константного текстового элемента: "?";
+--- seller_settings_goods_discount_button_ok - кнопка отвечающая за выход из seller_settings_goods_discount_screen с применением изменений;
+----- seller_settings_goods_discount_button_ok_label - наименование кнопки seller_settings_goods_discount_button_ok: "ОК".
