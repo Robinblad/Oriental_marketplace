@@ -3484,3 +3484,132 @@ seller_settings_goods_depot_lot_list_number_input_label_y
 --------- seller_settings_goods_discount_list_act9_protip_label - наименование кнопки в виде константного текстового элемента: "?";
 --- seller_settings_goods_discount_button_ok - кнопка отвечающая за выход из seller_settings_goods_discount_screen с применением изменений;
 ----- seller_settings_goods_discount_button_ok_label - наименование кнопки seller_settings_goods_discount_button_ok: "ОК".
+
+
+✠ actions
+• seller_settings_goods_discount_list_act0_button:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_discount_list_act0_button;
+║ condition: in any situation;
+╙ result: делается переход к seller_settings_goods_discount_act0_screen.
+• seller_settings_goods_discount_list_act0_protip:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_discount_list_act0_protip;
+║ condition: in any situation;
+╙ result: по центру экрана всплывает seller_settings_goods_discount_list_act0_protip_popover.
+• seller_settings_goods_discount_list_act1_button:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_discount_list_act1_button;
+║ condition: in any situation;
+╙ result: делается переход к seller_settings_goods_discount_list_act1_screen.
+• seller_settings_goods_discount_list_act1_protip:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_discount_list_act1_protip;
+║ condition: in any situation;
+╙ result: по центру экрана всплывает seller_settings_goods_discount_list_act1_protip_popover.
+• seller_settings_goods_discount_list_act2_button:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_discount_list_act2_button;
+║ condition: in any situation;
+╙ result: делается переход к seller_settings_goods_discount_list_act2_screen.
+• seller_settings_goods_discount_list_act2_protip:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_discount_list_act2_protip;
+║ condition: in any situation;
+╙ result: по центру экрана всплывает seller_settings_goods_discount_list_act2_protip_popover.
+• seller_settings_goods_discount_list_act3_button:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_discount_list_act3_button;
+║ condition: in any situation;
+╙ result: делается переход к seller_settings_goods_discount_list_act3_screen.
+• seller_settings_goods_discount_list_act3_protip:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_discount_list_act3_protip;
+║ condition: in any situation;
+╙ result: по центру экрана всплывает seller_settings_goods_discount_list_act3_protip_popover.
+• seller_settings_goods_discount_list_act4_button:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_discount_list_act4_button;
+║ condition: in any situation;
+╙ result: делается переход к seller_settings_goods_discount_list_act4_screen.
+• seller_settings_goods_discount_list_act4_protip:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_discount_list_act4_protip;
+║ condition: in any situation;
+╙ result: по центру экрана всплывает seller_settings_goods_discount_list_act4_protip_popover.
+• seller_settings_goods_discount_list_act5_button:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_discount_list_act5_button;
+║ condition: in any situation;
+╙ result: делается переход к seller_settings_goods_discount_list_act5_screen.
+• seller_settings_goods_discount_list_act5_protip:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_discount_list_act5_protip;
+║ condition: in any situation;
+╙ result: по центру экрана всплывает seller_settings_goods_discount_list_act5_protip_popover.
+• seller_settings_goods_discount_list_act6_button:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_discount_list_act6_button;
+║ condition: in any situation;
+╙ result: делается переход к seller_settings_goods_discount_list_act6_screen.
+• seller_settings_goods_discount_list_act6_protip:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_discount_list_act6_protip;
+║ condition: in any situation;
+╙ result: по центру экрана всплывает seller_settings_goods_discount_list_act6_protip_popover.
+• seller_settings_goods_discount_list_act7_button:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_discount_list_act7_button;
+║ condition: in any situation;
+╙ result: делается переход к seller_settings_goods_discount_list_act7_screen.
+• seller_settings_goods_discount_list_act7_protip:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_discount_list_act7_protip;
+║ condition: in any situation;
+╙ result: по центру экрана всплывает seller_settings_goods_discount_list_act7_protip_popover.
+• seller_settings_goods_discount_list_act8_button:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_discount_list_act8_button;
+║ condition: in any situation;
+╙ result: делается переход к seller_settings_goods_discount_list_act8_screen.
+• seller_settings_goods_discount_list_act8_protip:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_discount_list_act8_protip;
+║ condition: in any situation;
+╙ result: по центру экрана всплывает seller_settings_goods_discount_list_act8_protip_popover.
+• seller_settings_goods_discount_list_act9_button:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_discount_list_act9_button;
+║ condition: in any situation;
+╙ result: делается переход к seller_settings_goods_discount_list_act9_screen.
+• seller_settings_goods_discount_list_act9_protip:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_discount_list_act9_protip;
+║ condition: in any situation;
+╙ result: по центру экрана всплывает seller_settings_goods_discount_list_act9_protip_popover.
+• seller_settings_goods_discount_button_ok:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_settings_goods_discount_button_ok;
+║ condition: in any situation;
+╙ result: seller_settings_goods_discount_screen закрывается.
