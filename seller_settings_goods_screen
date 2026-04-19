@@ -3613,3 +3613,90 @@ seller_settings_goods_depot_lot_list_number_input_label_y
 ║ occasion: нажатие seller_settings_goods_discount_button_ok;
 ║ condition: in any situation;
 ╙ result: seller_settings_goods_discount_screen закрывается.
+
+
+✠ color_states
+┌─
+│seller_settings_goods_discount_list_act0_button
+│seller_settings_goods_discount_list_act1_button
+│seller_settings_goods_discount_list_act2_button
+│seller_settings_goods_discount_list_act3_button
+│seller_settings_goods_discount_list_act4_button
+│seller_settings_goods_discount_list_act5_button
+│seller_settings_goods_discount_list_act6_button
+│seller_settings_goods_discount_list_act7_button
+│seller_settings_goods_discount_list_act8_button
+│seller_settings_goods_discount_list_act9_button
+│seller_settings_goods_discount_list_act0_protip
+│seller_settings_goods_discount_list_act1_protip
+│seller_settings_goods_discount_list_act2_protip
+│seller_settings_goods_discount_list_act3_protip
+│seller_settings_goods_discount_list_act4_protip
+│seller_settings_goods_discount_list_act5_protip
+│seller_settings_goods_discount_list_act6_protip
+│seller_settings_goods_discount_list_act7_protip
+│seller_settings_goods_discount_list_act8_protip
+│seller_settings_goods_discount_list_act9_protip
+│seller_settings_goods_discount_button_ok
+│-------------------------------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color5
+│------ in pressing_state
+└─
+┌─
+│seller_settings_goods_discount_top
+│-------------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color2
+│------ in any situation
+└─
+┌─
+│seller_settings_goods_discount_top_label
+│seller_settings_goods_discount_list_act0_button_label
+│seller_settings_goods_discount_list_act1_button_label
+│seller_settings_goods_discount_list_act2_button_label
+│seller_settings_goods_discount_list_act3_button_label
+│seller_settings_goods_discount_list_act4_button_label
+│seller_settings_goods_discount_list_act5_button_label
+│seller_settings_goods_discount_list_act6_button_label
+│seller_settings_goods_discount_list_act7_button_label
+│seller_settings_goods_discount_list_act8_button_label
+│seller_settings_goods_discount_list_act9_button_label
+│seller_settings_goods_discount_list_act0_protip_label
+│seller_settings_goods_discount_list_act1_protip_label
+│seller_settings_goods_discount_list_act2_protip_label
+│seller_settings_goods_discount_list_act3_protip_label
+│seller_settings_goods_discount_list_act4_protip_label
+│seller_settings_goods_discount_list_act5_protip_label
+│seller_settings_goods_discount_list_act6_protip_label
+│seller_settings_goods_discount_list_act7_protip_label
+│seller_settings_goods_discount_list_act8_protip_label
+│seller_settings_goods_discount_list_act9_protip_label
+│seller_settings_goods_discount_button_ok_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
+✠ outputs
+На выходе формируется объект seller_settings_goods_discount_value следующего содержания:
+
+let seller_settings_goods_discount_value = {
+	seller_settings_goods_discount_act0_value: null,
+	seller_settings_goods_discount_act1_value: null,
+	seller_settings_goods_discount_act2_value: null,
+	seller_settings_goods_discount_act3_value: null,
+	seller_settings_goods_discount_act4_value: null,
+	seller_settings_goods_discount_act5_value: null,
+	seller_settings_goods_discount_act6_value: null,
+	seller_settings_goods_discount_act7_value: null,
+	seller_settings_goods_discount_act8_value: null,
+	seller_settings_goods_discount_act9_value: null,
+}.
