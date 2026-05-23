@@ -466,6 +466,90 @@ seller_goods_view_unwrapped_panel_btn_4;
 
 
 
+■ seller_goods_list
+
+seller_goods_list представляет собой макро-структуру включающую группу секций seller_goods_list_cover, которая находится в центральной области seller_goods_screen по ширине занимая все пространство экрана и порядка 80-90% экрана по вертикали, где отображаются seller_goods_list_cover. Если количество seller_goods_list_cover не входит в границы видимой области seller_goods_list, тогда у него появляется скроллинг. seller_goods_list обладает 3 состояниями:
+- seller_goods_list_normal_state
+- seller_goods_list_search_state
+- seller_goods_list_archive_state
+
+■ ■ seller_goods_list_normal_state ■ ■
+
+seller_goods_list_normal_state отображается в ситуации по умолчанию, когда в seller_goods_list согласно хронологии публикации сверху-вниз единым списком выводятся активные seller_goods_list_cover.
+
+■ ■ seller_goods_list_search_state ■ ■
+
+seller_goods_list_search_state отображается в ситуации поиска, когда после того как в seller_goods_searchlot_searcher был введен запрос, согласно степени совпадения с этим запросом (где результат с наивысшей степенью корелляции находится в топе списка) сверху-вниз единым списком выводятся seller_goods_list_cover.
+
+■ ■ seller_goods_list_archive_state ■ ■
+
+seller_goods_list_archive_state отображается в ситуации просмотра архива, когда после того как seller_goods_searchlot_archive была нажата, в seller_goods_list согласно хронологии отправки в архив (где последний seller_goods_list_cover который был отправлен в архив находится в топе списка) сверху-вниз единым списком выводятся архивные seller_goods_list_cover. seller_goods_list_cover находящийся в seller_goods_list_archive_state невиден для buyer и доступен только для seller. 
+
+
+■■■ seller_goods_list_cover
+
+seller_goods_list_cover обладает 4 состояниями:
+seller_goods_list_cover_state1 (активен по умолчанию);
+seller_goods_list_cover_state2;
+seller_goods_list_cover_state3;
+seller_goods_list_cover_state4.
+
+
+■ ■ seller_goods_list_cover_state1 ■ ■
+
+В seller_goods_list_cover_state1 seller_goods_list_cover имеют максимальный размер из 4 state занимая по горизонтали всю доступную область экрана и порядка 20% по вертикали, где они выстраиваются друг за другом сверху-вниз по одному в один столбец, а также структуру из 3 панелей:
+- seller_goods_list_cover_state1_front;
+- seller_goods_list_cover_state1_lots;
+- seller_goods_list_cover_state1_stat.
+
+
+■ ■ seller_goods_list_cover_state1_front
+
+seller_goods_list_cover_state1_front - это вид карточки товара со стороны seller, является центральной панелью seller_goods_list_cover_state1, вид на которую открывается по умолчанию каждый раз при открытии/возвращении к seller_goods_screen.
+
+✠ tables
+
+                                             codename:                                    type:                designation:           location:  interaction:
+ ┌───────────[seller_goods_list_cover_state1                                      ]  [component_lev1]                                   [ ✜ ✜ ]     [ yes ]
+ └┬─────┬────[seller_goods_list_cover_state1_front                                ]  [component_lev2]                                   [ ✜ ✜ ]     [ no  ]
+  │     └┬┬──[seller_goods_list_cover_state1_front_top                            ]  [component_lev3]                                   [ 🡅 ✜ ]     [ no  ]
+  │      │└┬─[seller_goods_list_cover_state1_front_top_number                     ]  [component_lev4]                                   [ ✜ 🡄 ]     [ no  ]
+  │      │ └ [seller_goods_list_cover_state1_front_top_number_value               ]  [variable      ]  [ { number }                ]    [ ✜ ✜ ]     [ no  ]
+  │      └─┬─[seller_goods_list_cover_state1_front_top_name                       ]  [component_lev4]                                   [ ✜ 🡆 ]     [ no  ]
+  │        ├ [seller_goods_list_cover_state1_front_top_name_value                 ]  [variable      ]  [ { string }                ]    [ ✜ 🡄 ]     [ no  ]
+  │        └ [seller_goods_list_cover_state1_front_top_name_description           ]  [variable      ]  [ { string }                ]    [ ✜ 🡆 ]     [ no  ]
+  └┬┬┬───────[seller_goods_list_cover_state1_front_body                           ]  [component_lev3]                                   [ ✜ ✜ ]     [ no  ]
+   ││└┬┬┬────[seller_goods_list_cover_state1_front_body_info                      ]  [component_lev4]                                   [ ✜ 🡄 ]     [ no  ]
+   ││ ││└┬┬──[seller_goods_list_cover_state1_front_body_info_date                 ]  [component_lev5]                                   [ 🡅 ✜ ]     [ no  ]
+   ││ ││ │└┬─[seller_goods_list_cover_state1_front_body_info_date_left            ]  [widget        ]                                   [ ✜ 🡄 ]     [ no  ]
+   ││ ││ │ └ [seller_goods_list_cover_state1_front_body_info_date_left_value      ]  [variable      ]  [ { number }                ]    [ ✜ ✜ ]     [ no  ]
+   ││ ││ └─┬─[seller_goods_list_cover_state1_front_body_info_date_right           ]  [component_lev6]                                   [ ✜ 🡆 ]     [ no  ]
+   ││ ││   └ [seller_goods_list_cover_state1_front_body_info_date_right_label     ]  [label         ]  [ "дата"                    ]    [ ✜ ✜ ]     [ no  ]
+   ││ │└─┬┬──[seller_goods_list_cover_state1_front_body_info_price                ]  [component_lev5]                                   [ ✜ ✜ ]     [ no  ]
+   ││ │  │└┬─[seller_goods_list_cover_state1_front_body_info_price_left           ]  [widget        ]                                   [ ✜ 🡄 ]     [ no  ]	 
+   ││ │  │ └ [seller_goods_list_cover_state1_front_body_info_price_left_value     ]  [variable      ]  [ { number }                ]    [ ✜ ✜ ]     [ no  ]
+   ││ │  └─┬─[seller_goods_list_cover_state1_front_body_info_price_right          ]  [component_lev6]                                   [ ✜ 🡆 ]     [ no  ]
+   ││ │    └ [seller_goods_list_cover_state1_front_body_info_price_right_label    ]  [label         ]  [ "кг"                      ]    [ ✜ ✜ ]     [ no  ]
+   ││ └─┬┬┬──[seller_goods_list_cover_state1_front_body_info_quantity             ]  [component_lev5]                                   [ 🡇 ✜ ]     [ no  ]
+   ││   ││└┬─[seller_goods_list_cover_state1_front_body_info_quantity_minus       ]  [button        ]                                   [ ✜ 🡄 ]     [ yes ]
+   ││   ││ └ [seller_goods_list_cover_state1_front_body_info_quantity_minus_icon  ]  [icon          ]                                   [ ✜ ✜ ]     [ yes ]
+   ││   │└─┬─[seller_goods_list_cover_state1_front_body_info_quantity_widget      ]  [widget        ]                                   [ ✜ ✜ ]     [ no  ]
+   ││   │  └ [seller_goods_list_cover_state1_front_body_info_quantity_widget_value]  [variable      ]  [ { number }                ]    [ ✜ ✜ ]     [ no  ]
+   ││   └──┬─[seller_goods_list_cover_state1_front_body_info_quantity_plus        ]  [button        ]                                   [ ✜ 🡆 ]     [ yes ]
+   ││      └ [seller_goods_list_cover_state1_front_body_info_quantity_plus_icon   ]  [icon          ]                                   [ ✜ ✜ ]     [ yes ]
+   │└─────┬──[seller_goods_list_cover_state1_front_body_img                       ]  [component_lev4]                                   [ ✜ ✜ ]     [ no  ]
+   │      └┬─[seller_goods_list_cover_state1_front_body_img_frame                 ]  [picture+button]  [ { img }                   ]    [ ✜ ✜ ]     [ yes ]
+   │       └ [seller_goods_list_cover_state1_front_body_img_frame_widget          ]  [widget        ]                                   [ 🡅 🡆 ]     [ yes ]
+   └────┬┬┬──[seller_goods_list_cover_state1_front_body_control                   ]  [component_lev4]                                   [ ✜ 🡆 ]     [ no  ]
+        ││└┬─[seller_goods_list_cover_state1_front_body_control_edit              ]  [button        ]                                   [ 🡅 ✜ ]     [ yes ]
+        ││ └ [seller_goods_list_cover_state1_front_body_control_edit_label        ]  [label         ]  [ "редактор"                ]    [ ✜ ✜ ]     [ yes ]
+        │└─┬─[seller_goods_list_cover_state1_front_body_control_book              ]  [button        ]                                   [ ✜ ✜ ]     [ yes ]
+        │  └ [seller_goods_list_cover_state1_front_body_control_book_label        ]  [label         ]  [ "резерв"                  ]    [ ✜ ✜ ]     [ yes ]
+        └──┬─[seller_goods_list_cover_state1_front_body_control_expo              ]  [button        ]                                   [ 🡇 ✜ ]     [ yes ]
+           └ [seller_goods_list_cover_state1_front_body_control_expo_label        ]  [label         ]  [ "удалить"                 ]    [ ✜ ✜ ]     [ yes ]
+
+
+
 
 
 lot_id
