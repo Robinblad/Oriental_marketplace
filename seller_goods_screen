@@ -549,6 +549,51 @@ seller_goods_list_cover_state1_front - это вид карточки товар
            └ [seller_goods_list_cover_state1_front_body_control_expo_label        ]  [label         ]  [ "удалить"                 ]    [ ✜ ✜ ]     [ yes ]
 
 
+✠ details
+seller_goods_list_cover_state1_front состоит из 2 основных компонентов: 
+- seller_goods_list_cover_state1_front_top;
+- seller_goods_list_cover_state1_front_body.
+
+- seller_goods_list_cover_state1_front_top локализован в верхней части родительского компонента в качестве блока занимающего всю ширину seller_goods_list_cover_state1_front, а по высоте порядка 20% seller_goods_list_cover_state1_front. Состоит из 2 компонентов:
+1)--- seller_goods_list_cover_state1_front_top_number - представляет собой контейнер расположенный слева от seller_goods_list_cover_state1_front_top_name, который занимает порядка 5-10% пространства seller_goods_list_cover_state1_front_top и содержит seller_goods_list_cover_state1_front_top_number_value; 
+----- seller_goods_list_cover_state1_front_top_number_value - переменная с числовым значением отображающая порядковый номер товара согласно дате и времени его публикации, где последний опубликованный лот имеет seller_goods_list_cover_state1_front_top_number_value = 1;  
+2)--- seller_goods_list_cover_state1_front_top_name - является заголовком карточки товара состоящим из 2 элементов:
+----- seller_goods_list_cover_state1_front_top_name_value - переменная со строковым значением отвечающая за отображение seller_settings_goods_description_value, располагается слева от seller_goods_list_cover_state1_front_top_name_description, обладает font-weight:bold и в зависимости от длины может занимать всю ширину seller_goods_list_cover_state1_front_top;
+----- seller_goods_list_cover_state1_front_top_name_description - переменная со строковым значением отвечающая за отображение seller_settings_goods_name_value, располагается справа от seller_goods_list_cover_state1_front_top_name_value, обладает font-weight:normal. seller_goods_list_cover_state1_front_top_name_description помещается в двойные кавычки, где отображается начало содержания seller_goods_list_cover_state1_front_top_name_description и размещается с отступом справа от seller_goods_list_cover_state1_front_top_name_value. 
+
+- seller_goods_list_cover_state1_front_body локализован в нижней части seller_goods_list_cover_state1_front в качестве блока занимающего всю ширину seller_goods_list_cover_state1_front, а по высоте порядка 80% seller_goods_list_cover_state1_front. Состоит из 3 компонентов расположенных по горизонтали слева-направо (flex-direction: row):
+1)--- seller_goods_list_cover_state1_front_body_info - расположен в левой части seller_goods_list_cover_state1_front_body, занимает 30-40% ширины seller_goods_list_cover_state1_front. Состоит из 3 компонентов:
+----- seller_goods_list_cover_state1_front_body_info_date - представляет собой панель на которой отображается дата, находится в верхней части seller_goods_list_cover_state1_front_body_info занимая порядка 30% его пространства по вертикали и все доступное пространство по горизонтали; 
+------- seller_goods_list_cover_state1_front_body_info_date_left - контейнер расположенный в левой части тела seller_goods_list_cover_state1_front_body_info_date занимая около 60% его размера по горизонтали, который вмещает выровненный по центру компонент seller_goods_list_cover_state1_front_body_info_date_left_value;
+--------- seller_goods_list_cover_state1_front_body_info_date_left_value - переменная с числовым значением отображающая дату публикации товара по шаблону "DD.MM.YY"; 
+------- seller_goods_list_cover_state1_front_body_info_date_right - контейнер расположенный в правой части тела seller_goods_list_cover_state1_front_body_info_date занимая около 40% его размера по горизонтали, который вмещает выровненный по центру компонент seller_goods_list_cover_state1_front_body_info_date_right_label;
+--------- seller_goods_list_cover_state1_front_body_info_date_right_label - константный текстовый элемент следующего содержания: "дата";
+----- seller_goods_list_cover_state1_front_body_info_price - представляет собой панель на которой отображается цена, находится в центральной части seller_goods_list_cover_state1_front_body_info занимая порядка 30% его пространства по вертикали и все доступное пространство по горизонтали; 
+------- seller_goods_list_cover_state1_front_body_info_price_left - контейнер расположенный в левой части тела seller_goods_list_cover_state1_front_body_info_price занимая около 60% его размера по горизонтали, который вмещает выровненный по центру компонент seller_goods_list_cover_state1_front_body_info_price_left_value;
+--------- seller_goods_list_cover_state1_front_body_info_price_left_value - переменная с числовым значением отображающая цену товара по шаблону: "seller_settings_goods_price_retail_value/seller_settings_goods_price_wholesale_data_value" - если указана розничная и оптовая цена;
+"seller_settings_goods_price_retail_value" - если указана розничная цена;
+"seller_settings_goods_price_wholesale_data_value" - если указана оптовая цена;
+------- seller_goods_list_cover_state1_front_body_info_price_right - контейнер расположенный в правой части тела seller_goods_list_cover_state1_front_body_info_price занимая около 40% его размера по горизонтали, который вмещает выровненный по центру компонент seller_goods_list_cover_state1_front_body_info_price_right_label;
+--------- seller_goods_list_cover_state1_front_body_info_price_right_label - константный текстовый элемент следующего содержания: "кг";
+----- seller_goods_list_cover_state1_front_body_info_quantity - представляет собой виджет количества товара и органами его управления, находится в нижней части seller_goods_list_cover_state1_front_body_info занимая порядка 30% его пространства по вертикали и все доступное пространство по горизонтали; 
+------- seller_goods_list_cover_state1_front_body_info_quantity_minus - является кнопкой расположенной в левой части seller_goods_list_cover_state1_front_body_info_quantity;
+--------- seller_goods_list_cover_state1_front_body_info_quantity_minus_icon - иконка в виде символа старта проигрывателя с направлением налево и знаком "-" по центру;
+------- seller_goods_list_cover_state1_front_body_info_quantity_widget - является виджетом в виде прямоугольного фрейма расположенного в центре seller_goods_list_cover_state1_front_body_info_quantity, который посредством seller_goods_list_cover_state1_front_body_info_quantity_widget_value отображает значение количества товара;
+--------- seller_goods_list_cover_state1_front_body_info_quantity_widget_value - имеет 2 режима работы:
+- seller_goods_list_cover_state1_front_body_info_quantity_widget_definite - если активирован seller_settings_goods_list_quantity_ctrl_definite, тогда seller_goods_list_cover_state1_front_body_info_quantity_widget_value выводится в виде переменной с числовым значением;
+- seller_goods_list_cover_state1_front_body_info_quantity_widget_approx - если активирован seller_settings_goods_list_quantity_ctrl_approx, тогда seller_goods_list_cover_state1_front_body_info_quantity_widget_value отображается в качестве иконки с трехступенчатой композицией баров и вариативной цветовой окраской в зависимости от состояния;
+------- seller_goods_list_cover_state1_front_body_info_quantity_plus - является кнопкой расположенной в правой части seller_goods_list_cover_state1_front_body_info_quantity;
+--------- seller_goods_list_cover_state1_front_body_info_quantity_plus_icon - иконка в виде символа старта проигрывателя с направлением направо и знаком "+" по центру;
+2)--- seller_goods_list_cover_state1_front_body_img - локализован в центральной части seller_goods_list_cover_state1_front_body (между seller_goods_list_cover_state1_front_body_info и seller_goods_list_cover_state1_front_body_control), занимает ~30% ширины seller_goods_list_cover_state1_front_body и включает seller_goods_list_cover_state1_front_body_img_frame;
+----- seller_goods_list_cover_state1_front_body_img_frame - является областью отображения seller_settings_goods_list_image_0, имеет равное соотношение сторон;
+------- seller_goods_list_cover_state1_front_body_img_frame_widget - представляется в виде геометрического (зеленый треугольник) элемента выполняющего роль виджета отображающего состояние (активность) seller_goods_list_cover_state1_front располагаясь в верхней правой области seller_goods_list_cover_state1_front_body_img_frame;
+3)--- seller_goods_list_cover_state1_front_body_control - локализован в правой части seller_goods_list_cover_state1_front_body, занимает ~30% ширины seller_goods_list_cover_state1_front_body и состоит из 3 компонентов:
+----- seller_goods_list_cover_state1_front_body_control_edit - кнопка отвечающая за открытие seller_settings_goods_screen, в рамках seller_goods_list_cover_state1_front_body_control локализован в верхней области;
+------- seller_goods_list_cover_state1_front_body_control_edit_label - константный текстовый элемент seller_goods_list_cover_state1_front_body_control_edit: "редактор";
+----- seller_goods_list_cover_state1_front_body_control_book - кнопка отвечающая за включение/выключение функции дающей buyer возможность зарезервировать товар по лоту, в рамках seller_goods_list_cover_state1_front_body_control локализован в центральной области;
+------- seller_goods_list_cover_state1_front_body_control_book_label - константный текстовый элемент seller_goods_list_cover_state1_front_body_control_book: "резерв";
+----- seller_goods_list_cover_state1_front_body_control_expo - кнопка отвечающая за функцию удаления seller_goods_list_cover_state1 из seller_goods_screen (может находиться либо в состоянии removed, либо в состоянии existed), в рамках seller_goods_list_cover_state1_front_body_control локализован в нижней области;
+------- seller_goods_list_cover_state1_front_body_control_expo_label - константный текстовый элемент seller_goods_list_cover_state1_front_body_control_book: "удалить".
 
 
 
