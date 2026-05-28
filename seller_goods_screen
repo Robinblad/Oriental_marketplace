@@ -752,6 +752,113 @@ seller_goods_list_cover_state1_front_body_info_quantity_widget_approx = high.
 ╙ result: seller_goods_list_cover_state1_front_body_info_quantity_minus не реагирует на нажатие.
 
 
+✠ color_states
+┌─
+│seller_goods_list_cover_state1_front  
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color0
+│------ in any situation
+└─
+┌─
+│seller_goods_list_cover_state1_front_top_name
+│seller_goods_list_cover_state1_front_body_info_date_left
+│seller_goods_list_cover_state1_front_body_info_price_left
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color2
+│------ in any situation
+└─
+┌─
+│seller_goods_list_cover_state1_front_top_number
+│seller_goods_list_cover_state1_front_body_info_date_right
+│seller_goods_list_cover_state1_front_body_info_price_right
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color4
+│------ in any situation
+└─
+┌─
+│seller_goods_list_cover_state1_front_body_img_frame_widget  
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color1
+│------ in any situation
+└─
+┌─
+│seller_goods_list_cover_state1_front_body_info_quantity_widget_approx  
+│seller_goods_list_cover_state1_front_body_info_quantity_widget_definite
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color2
+│------ для seller_goods_list_cover_state1_front_body_info_quantity_widget_approx = sold
+│------ для seller_goods_list_cover_state1_front_body_info_quantity_widget_definite = 0
+├────────
+│• color3
+│------ для seller_goods_list_cover_state1_front_body_info_quantity_widget_approx = low
+│------ для seller_goods_list_cover_state1_front_body_info_quantity_widget_definite: 
+│ если seller_goods_list_cover_state1_front_body_info_quantity_widget_definite > 0% || <= 10% значения seller_settings_goods_quantity_value
+├────────
+│• color6
+│------ для seller_goods_list_cover_state1_front_body_info_quantity_widget_approx = norm
+│------ для seller_goods_list_cover_state1_front_body_info_quantity_widget_definite: 
+│ если seller_goods_list_cover_state1_front_body_info_quantity_widget_definite > 10% || <= 50% значения seller_settings_goods_quantity_value
+├────────
+│• color1
+│------ для seller_goods_list_cover_state1_front_body_info_quantity_widget_approx = high
+│------ для seller_goods_list_cover_state1_front_body_info_quantity_widget_definite: 
+│ если seller_goods_list_cover_state1_front_body_info_quantity_widget_definite > 50% || <= 100% значения seller_settings_goods_quantity_value
+└─
+┌─
+│seller_goods_list_cover_state1_front_body_info_quantity_minus
+│seller_goods_list_cover_state1_front_body_info_quantity_plus
+│seller_goods_list_cover_state1_front_body_img_frame
+│seller_goods_list_cover_state1_front_body_control_edit
+│seller_goods_list_cover_state1_front_body_control_expo
+│-------------------------------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color5
+│------ in pressing_state
+└─
+┌─
+│seller_goods_list_cover_state1_front_body_control_book
+│-------------------------------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state (seller_goods_book_function= false)
+├────────
+│• color7
+│------ in pressing_state (seller_goods_book_function= true)
+└─
+┌─
+│seller_goods_list_cover_state1_front_top_number_value
+│seller_goods_list_cover_state1_front_top_name_value
+│seller_goods_list_cover_state1_front_top_name_description
+│seller_goods_list_cover_state1_front_body_info_date_left_value
+│seller_goods_list_cover_state1_front_body_info_date_right_label
+│seller_goods_list_cover_state1_front_body_info_price_left_value
+│seller_goods_list_cover_state1_front_body_info_price_right_label
+│seller_goods_list_cover_state1_front_body_control_edit_label
+│seller_goods_list_cover_state1_front_body_control_book_label
+│seller_goods_list_cover_state1_front_body_control_expo_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
+
 
 lot_id
 lot_date
