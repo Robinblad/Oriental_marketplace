@@ -859,6 +859,137 @@ seller_goods_list_cover_state1_front_body_info_quantity_widget_approx = high.
 └─
 
 
+■ ■ seller_goods_list_cover_state1_lots
+
+seller_goods_list_cover_state1_lots представляет собой виджет партий товара, является левой панелью seller_goods_list_cover_state1, вид на которую открывается при свайпе вправо.
+
+✠ tables
+
+                                  codename:                          type:                designation:           location:  interaction:
+     ┌─────[seller_goods_list_cover_state1                         ]  [component_lev1]                                   [ ✜ ✜ ]     [ yes ]
+     └┬┬┬──[seller_goods_list_cover_state1_lots                    ]  [component_lev2]                                   [ ✜ ✜ ]     [ no  ]
+      ││└┬─[seller_goods_list_cover_state1_lots_top                ]  [spreadsheet   ]                                   [ 🡅 ✜ ]     [ no  ]
+      ││ ├ [seller_goods_list_cover_state1_lots_top_number         ]  [label         ]  [ "#"                       ]    [ ✜ 🡄 ]     [ no  ]
+      ││ ├ [seller_goods_list_cover_state1_lots_top_entry          ]  [label         ]  [ "поступление"             ]    [ ✜ ✜ ]     [ no  ]
+      ││ ├ [seller_goods_list_cover_state1_lots_top_quantity       ]  [label         ]  [ "количество"              ]    [ ✜ ✜ ]     [ no  ]
+      ││ ├ [seller_goods_list_cover_state1_lots_top_balance        ]  [label         ]  [ "остаток"                 ]    [ ✜ ✜ ]     [ no  ]
+      ││ └ [seller_goods_list_cover_state1_lots_top_expiration     ]  [label         ]  [ "годен до"                ]    [ ✜ 🡆 ]     [ no  ]
+      │└┬──[seller_goods_list_cover_state1_lots_list               ]  [spreadsheet   ]                                   [ ✜ ✜ ]     [ no  ]
+      │ └┬─[seller_goods_list_cover_state1_lots_list_lot           ]  [component_lev4]                                   [ ✜ ✜ ]     [ yes ]
+      │  ├ [seller_goods_list_cover_state1_lots_list_lot_number    ]  [variable      ]  [ { number }                ]    [ ✜ 🡄 ]     [ yes ]
+      │  ├ [seller_goods_list_cover_state1_lots_list_lot_entry     ]  [variable      ]  [ { number }                ]    [ ✜ ✜ ]     [ yes ]
+      │  ├ [seller_goods_list_cover_state1_lots_list_lot_quantity  ]  [variable      ]  [ { string }                ]    [ ✜ ✜ ]     [ yes ]
+      │  ├ [seller_goods_list_cover_state1_lots_list_lot_balance   ]  [variable      ]  [ { string }                ]    [ ✜ ✜ ]     [ yes ]
+      │  └ [seller_goods_list_cover_state1_lots_list_lot_expiration]  [variable      ]  [ { number }                ]    [ ✜ 🡆 ]     [ yes ]
+      └──┬─[seller_goods_list_cover_state1_lots_button             ]  [button        ]                                   [ 🡇 ✜ ]     [ yes ]
+	     └ [seller_goods_list_cover_state1_lots_button_label       ]  [label         ]  [ "добавить партию"         ]    [ ✜ ✜ ]     [ yes ]
+
+✠ details
+seller_goods_list_cover_state1_lots состоит из 3 основных компонентов: 
+- seller_goods_list_cover_state1_lots_top;
+- seller_goods_list_cover_state1_lots_list;
+- seller_goods_list_cover_state1_lots_button.
+
+--- seller_goods_list_cover_state1_lots_top локализован в верхней части seller_goods_list_cover_state1_lots в качестве таблицы подразделенной на 5 ячеек выполняющей роль заголовков для seller_goods_list_cover_state1_lots_list_lot и занимающей всю ширину seller_goods_list_cover_state1_lots, а по высоте порядка 15% seller_goods_list_cover_state1_lots, содержит 5 компонентов:
+----- seller_goods_list_cover_state1_lots_top_number - константный текстовый элемент "#" расположенный в крайней левой ячейке, являющийся заголовком для первого столбца seller_goods_list_cover_state1_lots_list_lot в котором выводится seller_goods_list_cover_state1_lots_list_lot_number; 
+----- seller_goods_list_cover_state1_lots_top_entry - константный текстовый элемент "поступление" расположенный во второй ячейке являющийся заголовком для второго столбца seller_goods_list_cover_state1_lots_list_lot в котором выводится seller_goods_list_cover_state1_lots_list_lot_entry; 
+----- seller_goods_list_cover_state1_lots_top_quantity - константный текстовый элемент "количество" расположенный в третьей ячейке являющийся заголовком для третьего столбца seller_goods_list_cover_state1_lots_list_lot в котором выводится seller_goods_list_cover_state1_lots_list_lot_quantity; 
+----- seller_goods_list_cover_state1_lots_top_balance - константный текстовый элемент "остаток" расположенный в четвертой ячейке являющийся заголовком для четвертого столбца seller_goods_list_cover_state1_lots_list_lot в котором выводится seller_goods_list_cover_state1_lots_list_lot_balance; 
+----- seller_goods_list_cover_state1_lots_top_expiration - константный текстовый элемент "годен до" расположенный в пятой ячейке являющийся заголовком для пятого столбца seller_goods_list_cover_state1_lots_list_lot в котором выводится seller_goods_list_cover_state1_lots_list_lot_expiration;
+--- seller_goods_list_cover_state1_lots_list локализован в центральной части seller_goods_list_cover_state1_lots в качестве таблицы подразделенной на 5 ячеек и состоящий из seller_goods_list_cover_state1_lots_list_lot, располагающийся во всю ширину seller_goods_list_cover_state1_lots, а по высоте занимающий порядка 85% seller_goods_list_cover_state1_lots. Если количество seller_goods_list_cover_state1_lots_list_lot не вмещается в видимом поле seller_goods_list_cover_state1_lots, тогда у seller_goods_list_cover_state1_lots_list появляется скроллинг (с правой стороны возникает полоса прокрутки);
+----- seller_goods_list_cover_state1_lots_list_lot - является типовым контейнером для отображения данных партии товара, состоящий из 5 ячеек со следующими компонентами:
+------- seller_goods_list_cover_state1_lots_list_lot_number - представляется в виде переменной с числовым значением фигурируемом в первой ячейке (первый столбец), которая выводит текущий seller_settings_goods_depot_lot_list_number_value; 
+------- seller_goods_list_cover_state1_lots_list_lot_entry - представляется в виде переменной с числовым значением фигурируемом во второй ячейке (второй столбец), который выводит текущий seller_settings_goods_depot_lot_list_entry_value; 
+------- seller_goods_list_cover_state1_lots_list_lot_quantity - представляется в виде переменной со строковым значением фигурируемом в третьей ячейке (третий столбец), который выводит текущий seller_settings_goods_depot_lot_list_quantity_value; 
+------- seller_goods_list_cover_state1_lots_list_lot_balance - представляется в виде переменной со строковым значением фигурируемом в четвертой ячейке (четвертый столбец), который выводит текущий seller_settings_goods_depot_lot_list_balance_value;
+------- seller_goods_list_cover_state1_lots_list_lot_expiration - представляется в виде переменной с числовым значением фигурируемом в пятой ячейке (пятый столбец), который выводит текущий seller_settings_goods_depot_lot_list_expiration_value;
+--- seller_goods_list_cover_state1_lots_button локализован в нижней части seller_goods_list_cover_state1_lots, где вплотную (встык) примыкает к seller_goods_list_cover_state1_lots_list, действуя в качестве кнопки позволяющей инициализировать акт добавления новой партии, которая занимает всю ширину seller_goods_list_cover_state1_lots, а по высоте порядка 20-25% seller_goods_list_cover_state1_lots и содержит элемент seller_goods_list_cover_state1_lots_button_label;
+----- seller_goods_list_cover_state1_lots_button_label - константный центрированный текстовый элемент следующего содержания: "добавить партию".
+
+✠ actions
+• seller_goods_list_cover_state1:
+╠ valid
+║ • gesture: swipe left
+║ occasion: делается свайп влево;
+║ condition: в рамках seller_goods_list_cover_state1_lots;
+║ result: seller_goods_list_cover_state1_lots уходит налево и скрывается, а на его место помещается seller_goods_list_cover_state1_front;
+╠ invalid
+║ • gesture: swipe right
+║ occasion: делается свайп вправо;
+║ condition: в рамках seller_goods_list_cover_state1_lots;
+╙ result: seller_goods_list_cover_state1_lots сохраняет свое положение;
+• seller_goods_list_cover_state1_lots_list_lot:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие в область seller_goods_list_cover_state1_lots_list_lot;
+║ condition: in any situation;
+╙ result: открывается seller_settings_goods_depot_lot_screen целевой партии.
+• seller_goods_list_cover_state1_lots_button:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_goods_list_cover_state1_lots_button;
+║ condition: in any situation;
+╙ result: открывается seller_settings_goods_depot_lot_screen с пустыми полями.
+
+✠ color_states
+┌─
+│seller_goods_list_cover_state1_lots  
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color0
+│------ in any situation
+└─
+┌─
+│seller_goods_list_cover_state1_lots_top
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color2
+│------ in any situation
+└─
+┌─
+│seller_goods_list_cover_state1_lots_list_lot
+│-------------------------------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color2
+│------ in default_state
+├────────
+│• color5
+│------ in pressing_state
+└─
+┌─
+│seller_goods_list_cover_state1_lots_button
+│-------------------------------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color5
+│------ in pressing_state
+└─
+┌─
+│seller_goods_list_cover_state1_lots_top_number
+│seller_goods_list_cover_state1_lots_top_entry
+│seller_goods_list_cover_state1_lots_top_quantity
+│seller_goods_list_cover_state1_lots_top_balance
+│seller_goods_list_cover_state1_lots_top_expiration
+│seller_goods_list_cover_state1_lots_list_lot_number
+│seller_goods_list_cover_state1_lots_list_lot_entry
+│seller_goods_list_cover_state1_lots_list_lot_quantity
+│seller_goods_list_cover_state1_lots_list_lot_balance
+│seller_goods_list_cover_state1_lots_list_lot_expiration
+│seller_goods_list_cover_state1_lots_button_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
+
 
 lot_id
 lot_date
