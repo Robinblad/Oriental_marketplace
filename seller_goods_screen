@@ -1231,6 +1231,54 @@ seller_goods_list_cover_state2_front_lower
 - числа > 1000000000000 отображаются как 1T+.
 
 
+✠ actions
+• seller_goods_list_cover_state2_front_lower_img_frame:
+╠ valid
+║ • gesture: tap
+║ occasion: нажатие в область seller_goods_list_cover_state2_front_lower_img_frame;
+║ condition:
+║ - && - если seller_settings_goods_image_value >= 1;
+║ - && - если seller_goods_list_cover_state2_front_lower_img_frame находится в режиме zoom=normal;
+║ result: seller_goods_list_cover_state2_front_lower_img_frame увеличивается на весь экран выравниваясь по горизонтали;
+║ • gesture: tap
+║ occasion: нажатие seller_goods_list_cover_state1_front_body_img_frame;
+║ condition:
+║ - && - если seller_settings_goods_image_value >= 1;
+║ - && - если seller_goods_list_cover_state2_front_lower_img_frame находится в режиме zoom=max (растянуто на весь экран);
+║ result: seller_goods_list_cover_state2_front_lower_img_frame уменьшается до обычного размера zoom=normal;
+╠ invalid
+║ • gesture: tap
+║ occasion: нажатие в область seller_goods_list_cover_state2_front_lower_img_frame;
+║ condition: если seller_settings_goods_image_value < 1;
+╙ result: seller_goods_list_cover_state2_front_lower_img_frame не реагирует на нажатие.
+• seller_goods_list_cover_state2_front_lower_control_edit:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_goods_list_cover_state2_front_lower_control_edit;
+║ condition: in any situation;
+╙ result: открывается seller_settings_goods_screen целевого лота.
+• seller_goods_list_cover_state2_front_lower_control_book:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_goods_list_cover_state2_front_lower_control_book;
+║ condition: seller_goods_book_function= false;
+║ result: происходит переключение в режим seller_goods_book_function= true, при котором buyer может зарезервировать товар по целевому лоту.
+║ • gesture: tap
+║ occasion: нажатие seller_goods_list_cover_state2_front_lower_control_book;
+║ condition: seller_goods_book_function= true;
+╙ result: происходит переключение в режим seller_goods_book_function= false, при котором buyer не может зарезервировать товар по целевому лоту.
+• seller_goods_list_cover_state2_front_lower_control_expo:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_goods_list_cover_state2_front_lower_control_expo;
+║ condition: in any situation;
+║ result: 
+║ - && - демонстрируется анимация, как seller_goods_list_cover_state2 уменьшаясь движется вверх и достигая seller_goods_searchlot_archive исчезает;
+║ - && - целевой лот удаляется из seller_goods_list_normal_state;
+║ - && - целевой лот добавляется в seller_goods_list_archive_state;
+╙ - && - seller_goods_list перестраивается, когда место и seller_goods_list_cover_state2_front_top_number_value удаленного лота занимает последующий лот (имеющий значение seller_goods_list_cover_state2_front_top_number_value + 1 относительно seller_goods_list_cover_state2_front_top_number_value удаленного лота);
+
+
 
 
 lot_id
