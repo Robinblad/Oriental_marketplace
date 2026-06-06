@@ -1279,6 +1279,92 @@ seller_goods_list_cover_state2_front_lower
 ╙ - && - seller_goods_list перестраивается, когда место и seller_goods_list_cover_state2_front_top_number_value удаленного лота занимает последующий лот (имеющий значение seller_goods_list_cover_state2_front_top_number_value + 1 относительно seller_goods_list_cover_state2_front_top_number_value удаленного лота);
 
 
+✠ color_states
+┌─
+│seller_goods_list_cover_state2_front
+│seller_goods_list_cover_state2_front_middle_quantity
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color0
+│------ in any situation
+└─
+┌─
+│seller_goods_list_cover_state2_front_top_number
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in any situation
+└─
+┌─
+│seller_goods_list_cover_state2_front_middle_quantity
+│seller_goods_list_cover_state2_front_middle_quantity_value
+│---------------------------
+│⟪⟪ border ⟫⟫ 
+│⟪⟪ body ⟫⟫
+├────────
+│• color1
+│если seller_goods_list_cover_state2_front_middle_quantity_value > 0% || <= 10% значения seller_settings_goods_quantity_value
+├────────
+│• color6
+│если seller_goods_list_cover_state2_front_middle_quantity_value > 10% || <= 50% значения seller_settings_goods_quantity_value
+├────────
+│• color3
+│если seller_goods_list_cover_state2_front_middle_quantity_value > 50% || <= 100% значения seller_settings_goods_quantity_value
+└─
+┌─
+│seller_goods_list_cover_state2_front_middle
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color2
+│------ in any situation
+└─
+┌─
+│seller_goods_list_cover_state2_front_lower_img_frame_widget  
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color1
+│------ in any situation
+└─
+┌─
+│seller_goods_list_cover_state2_front_lower_control_edit
+│seller_goods_list_cover_state2_front_lower_control_expo
+│-------------------------------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color5
+│------ in pressing_state
+└─
+┌─
+│seller_goods_list_cover_state2_front_lower_control_book
+│-------------------------------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state (seller_goods_book_function= false)
+├────────
+│• color7
+│------ in pressing_state (seller_goods_book_function= true)
+└─
+┌─
+│seller_goods_list_cover_state2_front_top_number_value
+│seller_goods_list_cover_state2_front_top_name_value
+│seller_goods_list_cover_state2_front_lower_control_edit_label
+│seller_goods_list_cover_state2_front_lower_control_book_label
+│seller_goods_list_cover_state2_front_lower_control_expo_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
 
 
 lot_id
