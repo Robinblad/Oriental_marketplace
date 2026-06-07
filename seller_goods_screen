@@ -1367,6 +1367,67 @@ seller_goods_list_cover_state2_front_lower
 
 
 
+
+■ ■ seller_goods_list_cover_state3 ■ ■
+
+В seller_goods_list_cover_state3 seller_goods_list_cover имеют размер меньше среднего, располагаясь в 2 столбца, занимая по горизонтали ~50% экрана и порядка 10% по вертикали, где они выстраиваются в порядке публикации слева-направо и сверху-вниз. В seller_goods_list_cover_state3 карточка товара не имеет функции переключения между дополнительными экранами (по умолчанию всегда работает в режиме seller_goods_list_cover_state3_front).  
+
+✠ tables
+
+                                         codename:                                    type:                designation:           location:  interaction:
+ ┌───────[seller_goods_list_cover_state3                                      ]  [component_lev1]                                   [ ✜ ✜ ]     [ no  ]
+ └┬─┬────[seller_goods_list_cover_state3_front                                ]  [component_lev2]                                   [ ✜ ✜ ]     [ yes ]
+  │ └┬┬──[seller_goods_list_cover_state3_front_top                            ]  [component_lev3]                                   [ 🡅 ✜ ]     [ no  ]
+  │  │└┬─[seller_goods_list_cover_state3_front_top_number                     ]  [component_lev4]                                   [ ✜ 🡄 ]     [ no  ]
+  │  │ └ [seller_goods_list_cover_state3_front_top_number_value               ]  [variable      ]  [ { number }                ]    [ ✜ ✜ ]     [ no  ]
+  │  └─┬─[seller_goods_list_cover_state3_front_top_name                       ]  [component_lev4]                                   [ ✜ 🡆 ]     [ no  ]
+  │    └ [seller_goods_list_cover_state3_front_top_name_value                 ]  [variable      ]  [ { string }                ]    [ ✜ ✜ ]     [ no  ]
+  └┬─┬───[seller_goods_list_cover_state3_front_body                           ]  [component_lev3]                                   [ 🡇 ✜ ]     [ no  ]
+   │ └┬──[seller_goods_list_cover_state3_front_body_img                       ]  [component_lev4]                                   [ ✜ 🡄 ]     [ no  ]
+   │  └┬─[seller_goods_list_cover_state3_front_body_img_frame                 ]  [picture+button]  [ { img }                   ]    [ ✜ ✜ ]     [ yes ]
+   │   └ [seller_goods_list_cover_state3_front_body_img_frame_widget          ]  [widget        ]                                   [ 🡅 🡆 ]     [ yes ]
+   └┬┬───[seller_goods_list_cover_state3_front_body_info                      ]  [component_lev4]                                   [ ✜ 🡆 ]     [ no  ]
+    │└┬──[seller_goods_list_cover_state3_front_body_info_price                ]  [widget        ]                                   [ 🡅 ✜ ]     [ no  ]
+    │ └┬─[seller_goods_list_cover_state3_front_body_info_price_value          ]  [component_lev6]                                   [ ✜ ✜ ]     [ no  ]	 
+    │  ├ [seller_goods_list_cover_state3_front_body_info_price_value_number   ]  [variable      ]  [ { number }                ]    [ ✜ ✜ ]     [ no  ]	
+    │  └ [seller_goods_list_cover_state3_front_body_info_price_value_string   ]  [variable      ]  [ { string }                ]    [ ✜ ✜ ]     [ no  ]		 
+    └─┬──[seller_goods_list_cover_state3_front_body_info_quantity             ]  [widget        ]                                   [ 🡇 ✜ ]     [ no  ]
+      └┬─[seller_goods_list_cover_state3_front_body_info_quantity_value       ]  [component_lev6]                                   [ ✜ ✜ ]     [ no  ]
+       ├ [seller_goods_list_cover_state3_front_body_info_quantity_value_number]  [variable      ]  [ { number }                ]    [ ✜ 🡄 ]     [ no  ]
+       └ [seller_goods_list_cover_state3_front_body_info_quantity_value_string]  [variable      ]  [ { string }                ]    [ ✜ 🡆 ]     [ no  ]
+
+
+✠ details
+seller_goods_list_cover_state3_front состоит из 2 основных компонентов: 
+- seller_goods_list_cover_state3_front_top;
+- seller_goods_list_cover_state3_front_body.
+
+seller_goods_list_cover_state3_front_top
+--- seller_goods_list_cover_state3_front_top локализован в верхней части родительского компонента в качестве блока занимающего всю ширину seller_goods_list_cover_state3_front, а по высоте порядка 10% seller_goods_list_cover_state3_front. Состоит из 2 компонентов:
+1)----- seller_goods_list_cover_state3_front_top_number - представляет собой контейнер расположенный слева от seller_goods_list_cover_state3_front_top_name, который занимает порядка 5-10% пространства seller_goods_list_cover_state3_front_top и содержит seller_goods_list_cover_state3_front_top_number_value; 
+------- seller_goods_list_cover_state3_front_top_number_value - переменная с числовым значением отображающая порядковый номер товара согласно дате и времени его публикации, где последний опубликованный лот имеет seller_goods_list_cover_state3_front_top_number_value = 1; 
+2)----- seller_goods_list_cover_state3_front_top_name - является заголовком карточки товара содержащим seller_goods_list_cover_state3_front_top_name_value;
+------- seller_goods_list_cover_state3_front_top_name_value - переменная со строковым значением отвечающая за отображение seller_settings_goods_name_value, обладает font-weight:bold и в ситуации нехватки места в seller_goods_list_cover_state3_front_top, seller_goods_list_cover_state3_front_top_name_value сокращается путем отбрасывания последних букв и добавлением трехточия.
+
+seller_goods_list_cover_state3_front_body
+--- seller_goods_list_cover_state3_front_body локализован в нижней части seller_goods_list_cover_state3_front в качестве блока занимающего всю ширину seller_goods_list_cover_state3_front, а по высоте порядка 70% seller_goods_list_cover_state3_front. Состоит из 2 компонентов расположенных по горизонтали слева-направо (flex-direction: row):
+1)----- seller_goods_list_cover_state3_front_body_img - размещается в левой части seller_goods_list_cover_state3_front_body, занимает ~30% ширины seller_goods_list_cover_state3_front_body и включает seller_goods_list_cover_state3_front_body_img_frame;
+------- seller_goods_list_cover_state3_front_body_img_frame - является областью отображения seller_settings_goods_list_image_0, имеет равное соотношение сторон;
+--------- seller_goods_list_cover_state3_front_body_img_frame_widget - представляется в виде геометрического (зеленый треугольник) элемента выполняющего роль виджета отображающего состояние (активность) seller_goods_list_cover_state3_front располагаясь в верхней правой области seller_goods_list_cover_state3_front_body_img_frame;
+2)----- seller_goods_list_cover_state3_front_body_info - расположен в правой части seller_goods_list_cover_state3_front_body, занимает ~70% ширины seller_goods_list_cover_state3_front. Состоит из 2 компонентов расположенных друг над другом (flex-direction: column):
+------- seller_goods_list_cover_state3_front_body_info_price - представляет собой виджет отображающий цену, находится в верхней части seller_goods_list_cover_state3_front_body_info занимая порядка 50% его пространства по вертикали и все доступное пространство по горизонтали; 
+--------- seller_goods_list_cover_state3_front_body_info_price_value - выровненное по центру seller_goods_list_cover_state3_front_body_info_price конкатенированное значение, которое отображается в зависимости от настроек цены товара:
+- если указана seller_settings_goods_price_retail_value (розничная цена) или seller_settings_goods_price_wholesale_data_value (оптовая цена), тогда seller_goods_list_cover_state3_front_body_info_price_value состоит из 2 переменных seller_goods_list_cover_state3_front_body_info_price_value_number и seller_goods_list_cover_state3_front_body_info_price_value_string;
+- если указаны seller_settings_goods_price_retail_value и seller_settings_goods_price_wholesale_data_value (розничная и оптовая цена), тогда 
+seller_goods_list_cover_state3_front_body_info_price_value отображает только seller_goods_list_cover_state3_front_body_info_price_value_number состоящий из 2 значений seller_settings_goods_price_retail_value и seller_settings_goods_price_wholesale_data_value по шаблону: "seller_settings_goods_price_retail_value/seller_settings_goods_price_wholesale_data_value";
+----------- seller_goods_list_cover_state3_front_body_info_price_value_number - переменная с числовым значением отображающая цену товара;
+----------- seller_goods_list_cover_state3_front_body_info_price_value_string - переменная со строковым значением отображающая соответствующий символ выбранной валюты согласно настройке seller_settings_list_currency;
+------- seller_goods_list_cover_state3_front_body_info_quantity - представляет собой виджет количества товара, находится в нижней части seller_goods_list_cover_state3_front_body_info занимая порядка 50% его пространства по вертикали и все доступное пространство по горизонтали;
+--------- seller_goods_list_cover_state3_front_body_info_quantity_value - выровненное по центру seller_goods_list_cover_state3_front_body_info_quantity конкатенированное значение из 2 переменных seller_goods_list_cover_state3_front_body_info_quantity_value_number и seller_goods_list_cover_state3_front_body_info_quantity_value_string;
+----------- seller_goods_list_cover_state3_front_body_info_quantity_value_number - переменная с числовым значением отображающая количество товара;
+----------- seller_goods_list_cover_state3_front_body_info_quantity_value_string - переменная со строковым значением отображающая специфичный seller_settings_goods_measure_value товара в сокращенной форме (например: "шт" вместо "штук").
+
+
 lot_id
 lot_date
 lot_name
