@@ -1428,6 +1428,61 @@ seller_goods_list_cover_state3_front_body_info_price_value отображает 
 ----------- seller_goods_list_cover_state3_front_body_info_quantity_value_string - переменная со строковым значением отображающая специфичный seller_settings_goods_measure_value товара в сокращенной форме (например: "шт" вместо "штук").
 
 
+✠ standards
+Нормативы отображения для seller_goods_list_cover_state3_front_body_info_price_value:
+• Если указана или seller_settings_goods_price_retail_value или seller_settings_goods_price_wholesale_data_value:
+- числа от 1 до 999,999,999 отображаются в обычном режиме;
+- числа > 999,999,999 отображаются с использовании аббревиатур:
+- числа > 1,000,000,000 отображаются как 1B+;
+- числа > 1,000,000,000,000 отображаются как 1T+.
+• Если указана и seller_settings_goods_price_retail_value и seller_settings_goods_price_wholesale_data_value:
+- числа от 1 до 999 отображаются в обычном режиме;
+- числа > 999 отображаются с использовании аббревиатур:
+- числа > 1,000 отображаются как 1K+;
+- числа > 1,000,000 отображаются как 1M+;
+- числа > 1,000,000,000 отображаются как 1B+;
+- числа > 1,000,000,000,000 отображаются как 1T+.
+
+Нормативы отображения для seller_goods_list_cover_state3_front_body_info_quantity_value: 
+- числа от 1 до 999999 отображаются в обычном режиме;
+- числа > 999999 отображаются с использовании аббревиатур:
+- число > 1000000 отображается как 1M+;
+- число > 1000000000 отображается как 1B+;
+- числа > 1000000000000 отображаются как 1T+.
+
+✠ actions
+• seller_goods_list_cover_state3_front:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_goods_list_cover_state3_front;
+║ condition: in any situation;
+║ result: открывается seller_settings_goods_screen целевого лота;
+╠ valid / invalid
+║ • gesture: tap & hold 
+║ occasion:  нажатие и удержание от 1-1.5 и более секунд seller_goods_list_cover_state3_front;
+║ condition: in any situation;
+╙ result: по центру экрана всплывает seller_goods_list_cover_delete_modal.
+• seller_goods_list_cover_state3_front_body_img_frame:
+╠ valid
+║ • gesture: tap
+║ occasion: нажатие в область seller_goods_list_cover_state3_front_body_img_frame;
+║ condition:
+║ - && - если seller_settings_goods_image_value >= 1;
+║ - && - если seller_goods_list_cover_state3_front_body_img_frame находится в режиме zoom=normal;
+║ result: seller_goods_list_cover_state3_front_body_img_frame увеличивается на весь экран выравниваясь по горизонтали;
+║ • gesture: tap
+║ occasion: нажатие seller_goods_list_cover_state1_front_body_img_frame;
+║ condition:
+║ - && - если seller_settings_goods_image_value >= 1;
+║ - && - если seller_goods_list_cover_state3_front_body_img_frame находится в режиме zoom=max (растянуто на весь экран);
+║ result: seller_goods_list_cover_state3_front_body_img_frame уменьшается до обычного размера zoom=normal;
+╠ invalid
+║ • gesture: tap
+║ occasion: нажатие в область seller_goods_list_cover_state3_front_body_img_frame;
+║ condition: если seller_settings_goods_image_value < 1;
+╙ result: seller_goods_list_cover_state3_front_body_img_frame не реагирует на нажатие.
+
+
 lot_id
 lot_date
 lot_name
