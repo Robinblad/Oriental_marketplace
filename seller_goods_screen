@@ -1450,6 +1450,7 @@ seller_goods_list_cover_state3_front_body_info_price_value отображает 
 - число > 1000000000 отображается как 1B+;
 - числа > 1000000000000 отображаются как 1T+.
 
+
 ✠ actions
 • seller_goods_list_cover_state3_front:
 ╠ valid / invalid
@@ -1481,6 +1482,59 @@ seller_goods_list_cover_state3_front_body_info_price_value отображает 
 ║ occasion: нажатие в область seller_goods_list_cover_state3_front_body_img_frame;
 ║ condition: если seller_settings_goods_image_value < 1;
 ╙ result: seller_goods_list_cover_state3_front_body_img_frame не реагирует на нажатие.
+
+
+✠ color_states
+┌─
+│seller_goods_list_cover_state3_front
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color2
+│------ in any situation
+└─
+┌─
+│seller_goods_list_cover_state3_front_top_number
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in any situation
+└─
+┌─
+│seller_goods_list_cover_state3_front_body_info_quantity
+│seller_goods_list_cover_state3_front_body_info_quantity_value
+│---------------------------
+│⟪⟪ border ⟫⟫ 
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color1
+│если seller_goods_list_cover_state3_front_body_info_quantity_value > 0% || <= 10% значения seller_settings_goods_quantity_value
+├────────
+│• color6
+│если seller_goods_list_cover_state3_front_body_info_quantity_value > 10% || <= 50% значения seller_settings_goods_quantity_value
+├────────
+│• color3
+│если seller_goods_list_cover_state3_front_body_info_quantity_value > 50% || <= 100% значения seller_settings_goods_quantity_value
+└─
+┌─
+│seller_goods_list_cover_state3_front_body_img_frame_widget  
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color1
+│------ in any situation
+└─
+┌─
+│seller_goods_list_cover_state3_front_top_number_value
+│seller_goods_list_cover_state3_front_top_name_value
+│seller_goods_list_cover_state3_front_body_info_price_value
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
 
 
 lot_id
