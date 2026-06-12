@@ -1537,6 +1537,38 @@ seller_goods_list_cover_state3_front_body_info_price_value отображает 
 └─
 
 
+
+■ ■ seller_goods_list_cover_state4 ■ ■
+
+В seller_goods_list_cover_state4 seller_goods_list_cover имеют минимальный размер и представляются в виде кнопки, располагаясь в 4-5 столбцов (зависит от размера экрана устройства), занимая по горизонтали ~15% экрана и порядка 7-10% по вертикали, где они выстраиваются в порядке публикации слева-направо и сверху-вниз. В seller_goods_list_cover_state4 карточка товара не имеет функции переключения между дополнительными экранами (по умолчанию всегда работает в режиме seller_goods_list_cover_state4_front).  
+
+✠ tables
+
+                           codename:                            type:                  designation:              location:     interaction:
+ ┌───[seller_goods_list_cover_state4                 ]    [component_lev1]    [ { number }                ]       [ ✜ ✜ ]        [ no  ]
+ └┬──[seller_goods_list_cover_state4_front           ]    [component_lev2]                                        [ ✜ ✜ ]        [ no  ]
+  └┬─[seller_goods_list_cover_state4_front_body      ]    [button        ]                                        [ ✜ ✜ ]        [ yes ]
+   └ [seller_goods_list_cover_state4_front_body_value]    [variable      ]    [ { number }                ]       [ ✜ ✜ ]        [ yes ]
+
+✠ details
+seller_goods_list_cover_state4_front_body
+--- seller_goods_list_cover_state4_front_body - является квадратной кнопкой содержащей seller_goods_list_cover_state4_front_body_value в качестве контента;
+----- seller_goods_list_cover_state4_front_body_value - переменная с числовым значением отображающая порядковый номер товара согласно дате и времени его публикации, где последний опубликованный лот имеет seller_goods_list_cover_state4_front_body_value = 1; 
+
+✠ actions
+• seller_goods_list_cover_state4_front:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_goods_list_cover_state4_front;
+║ condition: in any situation;
+║ result: открывается seller_settings_goods_screen целевого лота;
+╠ valid / invalid
+║ • gesture: tap & hold 
+║ occasion:  нажатие и удержание от 1-1.5 и более секунд seller_goods_list_cover_state4_front;
+║ condition: in any situation;
+╙ result: по центру экрана всплывает seller_goods_list_cover_delete_modal.
+
+
 lot_id
 lot_date
 lot_name
