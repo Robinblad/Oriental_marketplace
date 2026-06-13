@@ -1569,6 +1569,57 @@ seller_goods_list_cover_state4_front_body
 ╙ result: по центру экрана всплывает seller_goods_list_cover_delete_modal.
 
 
+✠ color_states
+┌─
+│seller_goods_list_cover_state4_front
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color2
+│------ in any situation
+└─
+┌─
+│seller_goods_list_cover_state4_front_body
+│-----------------------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color5
+│------ in pressing_state
+└─
+┌─
+│seller_goods_list_cover_state4_front_body
+│---------------------------
+│⟪⟪ border ⟫⟫ 
+├────────
+│• color1
+│------ если seller_goods_list_cover_state4_front_body_info_quantity_value > 0% || <= 10% значения seller_settings_goods_quantity_value
+├────────
+│• color6
+│------ если seller_goods_list_cover_state4_front_body_info_quantity_value > 10% || <= 50% значения seller_settings_goods_quantity_value
+├────────
+│• color3
+│------ если seller_goods_list_cover_state4_front_body_info_quantity_value > 50% || <= 100% значения seller_settings_goods_quantity_value
+└─
+┌─
+│seller_goods_list_cover_state4_front_body_value
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color1
+│------ если seller_goods_list_cover_state4_front_body_info_quantity_value > 0% || <= 10% значения seller_settings_goods_quantity_value
+├────────
+│• color6
+│------ если seller_goods_list_cover_state4_front_body_info_quantity_value > 10% || <= 50% значения seller_settings_goods_quantity_value
+├────────
+│• color3
+│------ если seller_goods_list_cover_state4_front_body_info_quantity_value > 50% || <= 100% значения seller_settings_goods_quantity_value
+└─
+
+
+
 lot_id
 lot_date
 lot_name
