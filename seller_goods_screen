@@ -1619,6 +1619,51 @@ seller_goods_list_cover_state4_front_body
 └─
 
 
+🡆🡆🡆 seller_goods_list_cover_delete_modal
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+При нажатии и удержании от 1-1.5 и более секунд кнопки seller_goods_list_cover_state3_front, всплывает seller_goods_list_cover_delete_modal со следующим содержанием:
+
+✠ tables
+
+                                 codename:                                  type:                  designation:        location:  interaction:
+┌┬─┬─[seller_goods_list_cover_delete_modal                     ]  [section_lev1       ]                               [ ✜ ✜ ]     [ no  ]
+││ └ [seller_goods_list_cover_delete_modal_icon                ]  [icon               ]                               [ ✜ ✜ ]     [ no  ]
+│└┬──[seller_goods_list_cover_delete_modal_btn                 ]  [button             ]                               [ ✜ ✜ ]     [ no  ] 
+│ └┬─[seller_goods_list_cover_delete_modal_btn_close           ]  [button             ]                               [ ✜ ✜ ]     [ yes ]
+│  └ [seller_goods_list_cover_delete_modal_btn_close_label     ]  [label              ]  [ "закрыть"               ]  [ ✜ ✜ ]     [ yes ]
+└──┬─[seller_goods_list_cover_delete_modal_btn_delete          ]  [button             ]                               [ ✜ ✜ ]     [ yes ]
+   └ [seller_goods_list_cover_delete_modal_btn_delete_label    ]  [label              ]  [ "удалить"               ]  [ ✜ ✜ ]     [ yes ]
+
+✠ details
+- seller_goods_list_cover_delete_modal - представляет собой popover, который всплывает по центру экрана и включает 2 компонента:
+--- seller_goods_list_cover_delete_modal_icon - иконка в виде мусорной корзины расположенная в верхней части seller_goods_list_cover_delete_modal с выравниванием по центру;
+--- seller_goods_list_cover_delete_modal_btn - контейнер расположен в нижней части seller_goods_list_cover_delete_modal, содержащий 2 кнопки; 
+----- seller_goods_list_cover_delete_modal_btn_close - кнопка расположенная слева, предназначена для закрытия seller_goods_list_cover_delete_modal без изменений;
+------- seller_goods_list_cover_delete_modal_btn_close_label - наименование кнопки следующего содержания: "закрыть";
+----- seller_goods_list_cover_delete_modal_btn_delete - кнопка расположенная справа, предназначена для инициализации операции удаления целевого seller_goods_list_cover_state3_front_img;
+------- seller_goods_list_cover_delete_modal_btn_delete_label - наименование кнопки следующего содержания: "удалить".
+
+✠ actions
+• seller_goods_list_cover_delete_modal_btn_close:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_goods_list_cover_delete_modal_btn_close;
+║ condition: in any situation;
+╙ result: seller_goods_list_cover_delete_modal исчезает.
+• seller_goods_list_cover_delete_modal_btn_delete:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_goods_list_cover_delete_modal_btn_delete;
+║ condition: in any situation;
+║ result:  
+║ - && - seller_goods_list_cover_delete_modal исчезает;
+║ - && - демонстрируется анимация, как seller_goods_list_cover_state3 уменьшаясь движется вверх и достигая seller_goods_searchlot_archive исчезает;
+║ - && - целевой лот удаляется из seller_goods_list_normal_state;
+║ - && - целевой лот добавляется в seller_goods_list_archive_state;
+╙ - && - seller_goods_list перестраивается, когда место и seller_goods_list_cover_state3_front_top_number_value удаленного лота занимает последующий лот (имеющий значение seller_goods_list_cover_state3_front_top_number_value + 1 относительно seller_goods_list_cover_state3_front_top_number_value удаленного лота).
+
+
 
 lot_id
 lot_date
