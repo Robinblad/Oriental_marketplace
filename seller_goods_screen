@@ -1664,6 +1664,87 @@ seller_goods_list_cover_state4_front_body
 ╙ - && - seller_goods_list перестраивается, когда место и seller_goods_list_cover_state3_front_top_number_value удаленного лота занимает последующий лот (имеющий значение seller_goods_list_cover_state3_front_top_number_value + 1 относительно seller_goods_list_cover_state3_front_top_number_value удаленного лота).
 
 
+✠ color_states
+┌─
+│seller_goods_list_cover_delete_modal_btn_close
+│seller_goods_list_cover_delete_modal_btn_delete
+│-------------------------------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color5
+│------ in pressing_state
+└─
+┌─
+│seller_goods_list_cover_delete_modal_btn_close_label
+│seller_goods_list_cover_delete_modal_btn_delete_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
+
+■ ■ seller_goods_list_archive_state ■ ■
+
+seller_goods_list_archive_state работает в одном единственном состоянии.
+
+seller_goods_list_cover занимают по горизонтали всю доступную область экрана и порядка 20% по вертикали, где они выстраиваются друг за другом сверху-вниз по одному в один столбец. seller_goods_list_cover обладая горизонтальной структурой из 3 панелей:
+- seller_goods_list_cover_archive_front;
+- seller_goods_list_cover_archive_lots;
+- seller_goods_list_cover_archive_stat.
+
+
+■ ■ seller_goods_list_cover_archive_front
+
+seller_goods_list_cover_archive_front - это вид карточки товара в режиме архива, является центральной панелью seller_goods_list_cover, вид на которую открывается по умолчанию каждый раз при отображении seller_goods_screen в seller_goods_list_archive_state.
+
+✠ tables
+
+                                            codename:                                        type:                 designation:         location:  interaction:
+┌───────────[seller_goods_list_cover_archive                                         ]  [component_lev1]                                 [ ✜ ✜ ]     [ yes ]
+└┬─────┬────[seller_goods_list_cover_archive_front                                   ]  [component_lev2]                                 [ ✜ ✜ ]     [ no  ]
+ │     └┬┬──[seller_goods_list_cover_archive_front_top                               ]  [component_lev3]                                 [ 🡅 ✜ ]     [ no  ]
+ │      │└┬─[seller_goods_list_cover_archive_front_top_number                        ]  [component_lev4]                                 [ ✜ 🡄 ]     [ no  ]
+ │      │ └ [seller_goods_list_cover_archive_front_top_number_value                  ]  [variable      ]  [ { number }                ]  [ ✜ ✜ ]     [ no  ]
+ │      └─┬─[seller_goods_list_cover_archive_front_top_name                          ]  [component_lev4]                                 [ ✜ 🡆 ]     [ no  ]
+ │        ├ [seller_goods_list_cover_archive_front_top_name_value                    ]  [variable      ]  [ { string }                ]  [ ✜ 🡄 ]     [ no  ]
+ │        └ [seller_goods_list_cover_archive_front_top_name_description              ]  [variable      ]  [ { string }                ]  [ ✜ 🡆 ]     [ no  ]
+ └┬┬┬───────[seller_goods_list_cover_archive_front_body                              ]  [component_lev3]                                 [ ✜ ✜ ]     [ no  ]
+  ││└┬┬┬────[seller_goods_list_cover_archive_front_body_info                         ]  [component_lev4]                                 [ ✜ 🡄 ]     [ no  ]
+  ││ ││└┬┬──[seller_goods_list_cover_archive_front_body_info_date                    ]  [component_lev5]                                 [ 🡅 ✜ ]     [ no  ]
+  ││ ││ │└┬─[seller_goods_list_cover_archive_front_body_info_date_left               ]  [widget        ]                                 [ ✜ 🡄 ]     [ no  ]
+  ││ ││ │ └ [seller_goods_list_cover_archive_front_body_info_date_left_value         ]  [variable      ]  [ { number }                ]  [ ✜ ✜ ]     [ no  ]
+  ││ ││ └─┬─[seller_goods_list_cover_archive_front_body_info_date_right              ]  [component_lev6]                                 [ ✜ 🡆 ]     [ no  ]
+  ││ ││   └ [seller_goods_list_cover_archive_front_body_info_date_right_label        ]  [label         ]  [ "дата"                    ]  [ ✜ ✜ ]     [ no  ]
+  ││ │└─┬┬──[seller_goods_list_cover_archive_front_body_info_price                   ]  [component_lev5]                                 [ ✜ ✜ ]     [ no  ]
+  ││ │  │└┬─[seller_goods_list_cover_archive_front_body_info_price_left              ]  [widget        ]                                 [ ✜ 🡄 ]     [ no  ]	 
+  ││ │  │ └ [seller_goods_list_cover_archive_front_body_info_price_left_value        ]  [variable      ]  [ { number }                ]  [ ✜ ✜ ]     [ no  ]
+  ││ │  └─┬─[seller_goods_list_cover_archive_front_body_info_price_right             ]  [component_lev6]                                 [ ✜ 🡆 ]     [ no  ]
+  ││ │    └ [seller_goods_list_cover_archive_front_body_info_price_right_label       ]  [label         ]  [ "кг"                      ]  [ ✜ ✜ ]     [ no  ]
+  ││ └─┬┬┬──[seller_goods_list_cover_archive_front_body_info_quantity                ]  [component_lev5]                                 [ 🡇 ✜ ]     [ no  ]
+  ││   ││└┬─[seller_goods_list_cover_archive_front_body_info_quantity_minus          ]  [button        ]                                 [ ✜ 🡄 ]     [ no  ]
+  ││   ││ └ [seller_goods_list_cover_archive_front_body_info_quantity_minus_icon     ]  [icon          ]                                 [ ✜ ✜ ]     [ no  ]
+  ││   │└── [seller_goods_list_cover_archive_front_body_info_quantity_widget         ]  [widget        ]                                 [ ✜ ✜ ]     [ no  ]
+  ││   └──┬─[seller_goods_list_cover_archive_front_body_info_quantity_plus           ]  [button        ]                                 [ ✜ 🡆 ]     [ no  ]
+  ││      └ [seller_goods_list_cover_archive_front_body_info_quantity_plus_icon      ]  [icon          ]                                 [ ✜ ✜ ]     [ no  ]
+  │└───┬────[seller_goods_list_cover_archive_front_body_img                          ]  [component_lev4]                                 [ ✜ ✜ ]     [ no  ]
+  │    └┬───[seller_goods_list_cover_archive_front_body_img_frame                    ]  [picture+button]  [ { img }                   ]  [ ✜ ✜ ]     [ yes ]
+  │     └┬──[seller_goods_list_cover_archive_front_body_img_frame_widget             ]  [widget        ]                                 [ 🡅 ✜ ]     [ yes ]
+  │      └┬─[seller_goods_list_cover_archive_front_body_img_frame_widget_value       ]  [component_lev7]                                 [ ✜ ✜ ]     [ yes ]  
+  │       ├ [seller_goods_list_cover_archive_front_body_img_frame_widget_value_const ]  [label         ]  [ "в архиве с "             ]  [ ✜ 🡄 ]     [ yes ]
+  │       └ [seller_goods_list_cover_archive_front_body_img_frame_widget_value_number]  [variable      ]  [ { number }                ]  [ ✜ 🡆 ]     [ yes ]
+  └────┬┬┬──[seller_goods_list_cover_archive_front_body_control                      ]  [component_lev4]                                 [ ✜ 🡆 ]     [ no  ]
+       ││└┬─[seller_goods_list_cover_archive_front_body_control_edit                 ]  [button        ]                                 [ 🡅 ✜ ]     [ yes ]
+       ││ └ [seller_goods_list_cover_archive_front_body_control_edit_label           ]  [label         ]  [ "редактор"                ]  [ ✜ ✜ ]     [ yes ]
+       │└─┬─[seller_goods_list_cover_archive_front_body_control_book                 ]  [button        ]                                 [ ✜ ✜ ]     [ no  ]
+       │  └ [seller_goods_list_cover_archive_front_body_control_book_label           ]  [label         ]  [ "резерв"                  ]  [ ✜ ✜ ]     [ no  ]
+       └──┬─[seller_goods_list_cover_archive_front_body_control_expo                 ]  [button        ]                                 [ 🡇 ✜ ]     [ yes ]
+          └ [seller_goods_list_cover_archive_front_body_control_expo_label           ]  [label         ]  [ "восстановить"            ]  [ ✜ ✜ ]     [ yes ]
+
 
 lot_id
 lot_date
