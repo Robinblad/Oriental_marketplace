@@ -1934,6 +1934,33 @@ seller_goods_list_cover_archive_front состоит из 2 основных к�
 └─
 
 
+
+■ ■ seller_goods_list_cover_archive_lots
+
+seller_goods_list_cover_archive_lots представляет собой виджет партий товара, является левой панелью seller_goods_list_cover_archive, вид на которую открывается при свайпе вправо.
+
+✠ tables
+
+                                     codename:                               type:                designation:           location:  interaction:
+     ┌─────[seller_goods_list_cover_archive                         ]  [component_lev1]                                   [ ✜ ✜ ]     [ yes ]
+     └┬┬┬──[seller_goods_list_cover_archive_lots                    ]  [component_lev2]                                   [ ✜ ✜ ]     [ no  ]
+      ││└┬─[seller_goods_list_cover_archive_lots_top                ]  [spreadsheet   ]                                   [ 🡅 ✜ ]     [ no  ]
+      ││ ├ [seller_goods_list_cover_archive_lots_top_number         ]  [label         ]  [ "#"                       ]    [ ✜ 🡄 ]     [ no  ]
+      ││ ├ [seller_goods_list_cover_archive_lots_top_entry          ]  [label         ]  [ "поступление"             ]    [ ✜ ✜ ]     [ no  ]
+      ││ ├ [seller_goods_list_cover_archive_lots_top_quantity       ]  [label         ]  [ "количество"              ]    [ ✜ ✜ ]     [ no  ]
+      ││ ├ [seller_goods_list_cover_archive_lots_top_balance        ]  [label         ]  [ "остаток"                 ]    [ ✜ ✜ ]     [ no  ]
+      ││ └ [seller_goods_list_cover_archive_lots_top_expiration     ]  [label         ]  [ "годен до"                ]    [ ✜ 🡆 ]     [ no  ]
+      │└┬──[seller_goods_list_cover_archive_lots_list               ]  [spreadsheet   ]                                   [ ✜ ✜ ]     [ no  ]
+      │ └┬─[seller_goods_list_cover_archive_lots_list_lot           ]  [component_lev4]                                   [ ✜ ✜ ]     [ yes ]
+      │  ├ [seller_goods_list_cover_archive_lots_list_lot_number    ]  [variable      ]  [ { number }                ]    [ ✜ 🡄 ]     [ yes ]
+      │  ├ [seller_goods_list_cover_archive_lots_list_lot_entry     ]  [variable      ]  [ { number }                ]    [ ✜ ✜ ]     [ yes ]
+      │  ├ [seller_goods_list_cover_archive_lots_list_lot_quantity  ]  [variable      ]  [ { string }                ]    [ ✜ ✜ ]     [ yes ]
+      │  ├ [seller_goods_list_cover_archive_lots_list_lot_balance   ]  [variable      ]  [ { string }                ]    [ ✜ ✜ ]     [ yes ]
+      │  └ [seller_goods_list_cover_archive_lots_list_lot_expiration]  [variable      ]  [ { number }                ]    [ ✜ 🡆 ]     [ yes ]
+      └──┬─[seller_goods_list_cover_archive_lots_button             ]  [button        ]                                   [ 🡇 ✜ ]     [ no  ]
+	     └ [seller_goods_list_cover_archive_lots_button_label       ]  [label         ]  [ "добавить партию"         ]    [ ✜ ✜ ]     [ no  ]
+
+
 lot_id
 lot_date
 lot_name
