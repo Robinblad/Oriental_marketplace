@@ -1984,6 +1984,90 @@ seller_goods_list_cover_archive_lots состоит из 3 основных ко
 ----- seller_goods_list_cover_archive_lots_button_label - константный центрированный текстовый элемент следующего содержания: "добавить партию".
 
 
+✠ actions
+• seller_goods_list_cover_archive:
+╠ valid
+║ • gesture: swipe left
+║ occasion: делается свайп влево;
+║ condition: в рамках seller_goods_list_cover_archive_lots;
+║ result: seller_goods_list_cover_archive_lots уходит налево и скрывается, а на его место помещается seller_goods_list_cover_archive_front;
+╠ invalid
+║ • gesture: swipe right
+║ occasion: делается свайп вправо;
+║ condition: в рамках seller_goods_list_cover_archive_lots;
+╙ result: seller_goods_list_cover_archive_lots сохраняет свое положение.
+• seller_goods_list_cover_archive_lots_list_lot:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие в область seller_goods_list_cover_archive_lots_list_lot;
+║ condition: in any situation;
+╙ result: открывается seller_settings_goods_depot_lot_screen целевой партии.
+• seller_goods_list_cover_archive_lots_button:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_goods_list_cover_archive_lots_button;
+║ condition: in any situation;
+╙ result: seller_goods_list_cover_archive_lots_button не реагирует на нажатие.
+
+✠ color_states
+┌─
+│seller_goods_list_cover_archive_lots  
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color0
+│------ in any situation
+└─
+┌─
+│seller_goods_list_cover_archive_lots_top
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color2
+│------ in any situation
+└─
+┌─
+│seller_goods_list_cover_archive_lots_list_lot
+│-------------------------------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color2
+│------ in default_state
+├────────
+│• color5
+│------ in pressing_state
+└─
+┌─
+│seller_goods_list_cover_archive_lots_button
+│-------------------------------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color5
+│------ in pressing_state
+└─
+┌─
+│seller_goods_list_cover_archive_lots_top_number
+│seller_goods_list_cover_archive_lots_top_entry
+│seller_goods_list_cover_archive_lots_top_quantity
+│seller_goods_list_cover_archive_lots_top_balance
+│seller_goods_list_cover_archive_lots_top_expiration
+│seller_goods_list_cover_archive_lots_list_lot_number
+│seller_goods_list_cover_archive_lots_list_lot_entry
+│seller_goods_list_cover_archive_lots_list_lot_quantity
+│seller_goods_list_cover_archive_lots_list_lot_balance
+│seller_goods_list_cover_archive_lots_list_lot_expiration
+│seller_goods_list_cover_archive_lots_button_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
+
 
 lot_id
 lot_date
