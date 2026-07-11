@@ -2312,6 +2312,43 @@ seller_goods_list_search_state_front состоит из 2 основных ко
 ------- seller_goods_list_search_state_front_body_control_expo_label - константный текстовый элемент seller_goods_list_search_state_front_body_control_book: "удалить".
 
 
+✠ standards
+Нормативы отображения для seller_goods_list_search_state_front_body_info_quantity_widget_definite: 
+- целые числа отображаются от 1 до 999;
+- числа > 999 отображаются с использовании аббревиатуры;
+- числа > 999 отображаются с округлением;
+- число 1000 отображается как 1K;
+- число 1000000 отображается как 1M;
+- число 1000000000 отображается как 1B;
+- число 1000000000000 отображается как 1T;
+- число > 1000 отображается как 1K+;
+- число > 1000000 отображается как 1M+;
+- числа > 1000000000 отображаются как 1B+;
+- число > 1000000000000 отображается как 1T+.
+
+Нормативы отображения для seller_goods_list_search_state_front_body_info_price_left_value: 
+• Если указана и seller_settings_goods_price_retail_value и seller_settings_goods_price_wholesale_data_value:
+- числа от 1 до 999 отображаются в обычном режиме;
+- числа > 999 отображаются с использовании аббревиатур:
+- числа > 1,000 отображаются как 1K+;
+- числа > 1,000,000 отображаются как 1M+;
+- числа > 1,000,000,000 отображаются как 1B+;
+- числа > 1,000,000,000,000 отображаются как 1T+.
+• Если указана или seller_settings_goods_price_retail_value или seller_settings_goods_price_wholesale_data_value:
+- числа от 1 до 999,999 отображаются в обычном режиме;
+- числа > 999,999 отображаются с использовании аббревиатур:
+- числа > 1,000,000 отображаются как 1M+;
+- числа > 1,000,000,000 отображаются как 1B+;
+- числа > 1,000,000,000,000 отображаются как 1T+.
+
+Нормативы отображения для seller_goods_list_search_state_front_body_info_quantity_widget_approx:
+seller_goods_list_search_state_front_body_info_quantity_widget_approx может находиться в трех состояниях визуально выражаемых через цветовую дифференциацию:
+seller_goods_list_search_state_front_body_info_quantity_widget_approx = sold;
+seller_goods_list_search_state_front_body_info_quantity_widget_approx = low;
+seller_goods_list_search_state_front_body_info_quantity_widget_approx = norm;
+seller_goods_list_search_state_front_body_info_quantity_widget_approx = high.
+
+
 lot_id
 lot_date
 lot_name
