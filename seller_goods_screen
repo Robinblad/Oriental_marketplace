@@ -2349,6 +2349,126 @@ seller_goods_list_search_state_front_body_info_quantity_widget_approx = norm;
 seller_goods_list_search_state_front_body_info_quantity_widget_approx = high.
 
 
+✠ actions
+• seller_goods_list_search_state:
+╠ valid / invalid
+║ • gesture: swipe right
+║ occasion: делается свайп вправо;
+║ condition: в рамках seller_goods_list_search_state_front;
+║ result: seller_goods_list_search_state_front уходит направо и скрывается, а на его место помещается seller_goods_list_search_state_lots;
+║ • gesture: swipe left  
+║ occasion: делается свайп влево;
+║ condition: в рамках seller_goods_list_search_state_front;
+╙ result: seller_goods_list_search_state_front уходит налево и скрывается, а на его место помещается seller_goods_list_search_state_stat.
+• seller_goods_list_search_state_front_body_control_edit:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_goods_list_search_state_front_body_control_edit;
+║ condition: in any situation;
+╙ result: открывается seller_settings_goods_screen целевого лота.
+• seller_goods_list_search_state_front_body_control_book:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_goods_list_search_state_front_body_control_book;
+║ condition: seller_goods_book_function= false;
+║ result: происходит переключение в режим seller_goods_book_function= true, при котором buyer может зарезервировать товар по целевому лоту.
+║ • gesture: tap
+║ occasion: нажатие seller_goods_list_search_state_front_body_control_book;
+║ condition: seller_goods_book_function= true;
+╙ result: происходит переключение в режим seller_goods_book_function= false, при котором buyer не может зарезервировать товар по целевому лоту.
+• seller_goods_list_search_state_front_body_control_expo:
+╠ valid / invalid
+║ • gesture: tap 
+║ occasion: нажатие seller_goods_list_search_state_front_body_control_expo;
+║ condition: in any situation;
+║ result: 
+║ - && - демонстрируется анимация, как seller_goods_list_search_state уменьшаясь движется вверх и достигая seller_goods_searchlot_archive исчезает;
+║ - && - целевой лот удаляется из seller_goods_list_normal_state;
+║ - && - целевой лот добавляется в seller_goods_list_archive_state;
+╙ - && - seller_goods_list перестраивается, когда место и seller_goods_list_search_state_front_top_number_value удаленного лота занимает последующий лот (имеющий значение seller_goods_list_search_state_front_top_number_value + 1 относительно seller_goods_list_search_state_front_top_number_value удаленного лота);
+• seller_goods_list_search_state_front_body_img_frame:
+╠ valid
+║ • gesture: tap
+║ occasion: нажатие в область seller_goods_list_search_state_front_body_img_frame;
+║ condition:
+║ - && - если seller_settings_goods_image_value >= 1;
+║ - && - если seller_goods_list_search_state_front_body_img_frame находится в режиме zoom=normal;
+║ result: seller_goods_list_search_state_front_body_img_frame увеличивается на весь экран выравниваясь по горизонтали (width: 100%).
+║ • gesture: tap
+║ occasion: нажатие в область seller_goods_list_search_state_front_body_img_frame;
+║ condition:
+║ - && - если seller_settings_goods_image_value >= 1;
+║ - && - если seller_goods_list_search_state_front_body_img_frame находится в режиме zoom=max (растянуто на весь экран);
+║ result: seller_goods_list_search_state_front_body_img_frame уменьшается до обычного размера zoom=normal.
+╠ invalid
+║ • gesture: tap
+║ occasion: нажатие в область seller_goods_list_search_state_front_body_img_frame;
+║ condition: если seller_settings_goods_image_value < 1;
+╙ result: seller_goods_list_search_state_front_body_img_frame не реагирует на нажатие.
+• seller_goods_list_search_state_front_body_info_quantity_plus
+╠ valid
+║ • gesture: tap
+║ : seller_goods_list_search_state_front_body_info_quantity_widget_definite
+║ occasion: нажатие seller_goods_list_search_state_front_body_info_quantity_plus;
+║ condition: если seller_goods_list_search_state_front_body_info_quantity_widget_definite >= 0 || <= 999999999;
+║ result: seller_goods_list_search_state_front_body_info_quantity_widget_definite++.
+║ : seller_goods_list_search_state_front_body_info_quantity_widget_approx
+║ occasion: нажатие seller_goods_list_search_state_front_body_info_quantity_plus;
+║ condition: если seller_goods_list_search_state_front_body_info_quantity_widget_approx = low;
+║ result: seller_goods_list_search_state_front_body_info_quantity_widget_approx = norm.
+║ : seller_goods_list_search_state_front_body_info_quantity_widget_approx = norm
+║ occasion: нажатие seller_goods_list_search_state_front_body_info_quantity_plus;
+║ condition: если seller_goods_list_search_state_front_body_info_quantity_widget_approx = norm;
+║ result: seller_goods_list_search_state_front_body_info_quantity_widget_approx = high.
+╠ invalid
+║ • gesture: tap
+║ : seller_goods_list_search_state_front_body_info_quantity_widget_definite
+║ occasion: нажатие seller_goods_list_search_state_front_body_info_quantity_plus;
+║ condition: если seller_goods_list_search_state_front_body_info_quantity_widget_definite < 0 || > 999999999;
+║ result: seller_goods_list_search_state_front_body_info_quantity_plus не реагирует на нажатие.
+║ : seller_goods_list_search_state_front_body_info_quantity_widget_approx
+║ occasion: нажатие seller_goods_list_search_state_front_body_info_quantity_plus;
+║ condition: если seller_goods_list_search_state_front_body_info_quantity_widget_approx = high;
+╙ result: seller_goods_list_search_state_front_body_info_quantity_plus не реагирует на нажатие.
+• seller_goods_list_search_state_front_body_info_quantity_minus:
+╠ valid
+║ • gesture: tap
+║ : seller_goods_list_search_state_front_body_info_quantity_widget_definite
+║ occasion: нажатие seller_goods_list_search_state_front_body_info_quantity_minus;
+║ condition: если seller_goods_list_search_state_front_body_info_quantity_widget_definite >= 2 || <= 1000000000;
+║ result: seller_goods_list_search_state_front_body_info_quantity_widget_definite-- (-1).
+║ : seller_goods_list_search_state_front_body_info_quantity_widget_definite
+║ occasion: нажатие seller_goods_list_search_state_front_body_info_quantity_minus;
+║ condition: если seller_goods_list_search_state_front_body_info_quantity_widget_definite = 1;
+║ result: 
+║ && - seller_goods_list_search_state_front_body_info_quantity_widget_definite--;
+║ && - по центру экрана всплывает seller_goods_list_search_state_front_body_info_quantity_popover.
+║ : seller_goods_list_search_state_front_body_info_quantity_widget_approx = high
+║ occasion: нажатие seller_goods_list_search_state_front_body_info_quantity_minus;
+║ condition: если seller_goods_list_search_state_front_body_info_quantity_widget_approx = high;
+║ result: seller_goods_list_search_state_front_body_info_quantity_widget_approx = norm.
+║ : seller_goods_list_search_state_front_body_info_quantity_widget_approx = norm
+║ occasion: нажатие seller_goods_list_search_state_front_body_info_quantity_minus;
+║ condition: если seller_goods_list_search_state_front_body_info_quantity_widget_approx = norm;
+║ result: seller_goods_list_search_state_front_body_info_quantity_widget_approx = low.
+║ : seller_goods_list_search_state_front_body_info_quantity_widget_approx = low
+║ occasion: нажатие seller_goods_list_search_state_front_body_info_quantity_minus;
+║ condition: если seller_goods_list_search_state_front_body_info_quantity_widget_approx = low;
+║ result: 
+║ && - seller_goods_list_search_state_front_body_info_quantity_widget_approx = sold;
+║ && - по центру экрана всплывает seller_goods_list_search_state_front_body_info_quantity_popover.
+╠ invalid
+║ • gesture: tap
+║ : seller_goods_list_search_state_front_body_info_quantity_widget_definite
+║ occasion: нажатие seller_goods_list_search_state_front_body_info_quantity_minus;
+║ condition: если seller_goods_list_search_state_front_body_info_quantity_widget_definite <= 0 || > 1000000000;
+║ result: seller_goods_list_search_state_front_body_info_quantity_minus не реагирует на нажатие.
+║ : seller_goods_list_search_state_front_body_info_quantity_widget_approx
+║ occasion: нажатие seller_goods_list_search_state_front_body_info_quantity_minus;
+║ condition: если seller_goods_list_search_state_front_body_info_quantity_widget_approx = sold;
+╙ result: seller_goods_list_search_state_front_body_info_quantity_minus не реагирует на нажатие.
+
+
 lot_id
 lot_date
 lot_name
