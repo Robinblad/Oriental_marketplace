@@ -2576,6 +2576,32 @@ seller_goods_list_search_state_front_body_info_quantity_widget_approx = high.
 └─
 
 
+■ ■ seller_goods_list_search_state_lots
+
+seller_goods_list_search_state_lots представляет собой виджет партий товара, является левой панелью seller_goods_list_search_state, вид на которую открывается при свайпе вправо.
+
+✠ tables
+
+                                    codename:                               type:                designation:           location:  interaction:
+     ┌─────[seller_goods_list_search_state                         ]  [component_lev1]                                   [ ✜ ✜ ]     [ yes ]
+     └┬┬┬──[seller_goods_list_search_state_lots                    ]  [component_lev2]                                   [ ✜ ✜ ]     [ no  ]
+      ││└┬─[seller_goods_list_search_state_lots_top                ]  [spreadsheet   ]                                   [ 🡅 ✜ ]     [ no  ]
+      ││ ├ [seller_goods_list_search_state_lots_top_number         ]  [label         ]  [ "#"                       ]    [ ✜ 🡄 ]     [ no  ]
+      ││ ├ [seller_goods_list_search_state_lots_top_entry          ]  [label         ]  [ "поступление"             ]    [ ✜ ✜ ]     [ no  ]
+      ││ ├ [seller_goods_list_search_state_lots_top_quantity       ]  [label         ]  [ "количество"              ]    [ ✜ ✜ ]     [ no  ]
+      ││ ├ [seller_goods_list_search_state_lots_top_balance        ]  [label         ]  [ "остаток"                 ]    [ ✜ ✜ ]     [ no  ]
+      ││ └ [seller_goods_list_search_state_lots_top_expiration     ]  [label         ]  [ "годен до"                ]    [ ✜ 🡆 ]     [ no  ]
+      │└┬──[seller_goods_list_search_state_lots_list               ]  [spreadsheet   ]                                   [ ✜ ✜ ]     [ no  ]
+      │ └┬─[seller_goods_list_search_state_lots_list_lot           ]  [component_lev4]                                   [ ✜ ✜ ]     [ yes ]
+      │  ├ [seller_goods_list_search_state_lots_list_lot_number    ]  [variable      ]  [ { number }                ]    [ ✜ 🡄 ]     [ yes ]
+      │  ├ [seller_goods_list_search_state_lots_list_lot_entry     ]  [variable      ]  [ { number }                ]    [ ✜ ✜ ]     [ yes ]
+      │  ├ [seller_goods_list_search_state_lots_list_lot_quantity  ]  [variable      ]  [ { string }                ]    [ ✜ ✜ ]     [ yes ]
+      │  ├ [seller_goods_list_search_state_lots_list_lot_balance   ]  [variable      ]  [ { string }                ]    [ ✜ ✜ ]     [ yes ]
+      │  └ [seller_goods_list_search_state_lots_list_lot_expiration]  [variable      ]  [ { number }                ]    [ ✜ 🡆 ]     [ yes ]
+      └──┬─[seller_goods_list_search_state_lots_button             ]  [button        ]                                   [ 🡇 ✜ ]     [ yes ]
+	     └ [seller_goods_list_search_state_lots_button_label       ]  [label         ]  [ "добавить партию"         ]    [ ✜ ✜ ]     [ yes ]
+
+
 lot_id
 lot_date
 lot_name
