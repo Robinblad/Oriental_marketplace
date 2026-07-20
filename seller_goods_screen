@@ -2651,6 +2651,65 @@ seller_goods_list_search_state_lots состоит из 3 основных ко�
 ╙ result: открывается seller_settings_goods_depot_lot_screen с пустыми полями.
 
 
+✠ color_states
+┌─
+│seller_goods_list_search_state_lots  
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color0
+│------ in any situation
+└─
+┌─
+│seller_goods_list_search_state_lots_top
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color2
+│------ in any situation
+└─
+┌─
+│seller_goods_list_search_state_lots_list_lot
+│-------------------------------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color2
+│------ in default_state
+├────────
+│• color5
+│------ in pressing_state
+└─
+┌─
+│seller_goods_list_search_state_lots_button
+│-------------------------------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color5
+│------ in pressing_state
+└─
+┌─
+│seller_goods_list_search_state_lots_top_number
+│seller_goods_list_search_state_lots_top_entry
+│seller_goods_list_search_state_lots_top_quantity
+│seller_goods_list_search_state_lots_top_balance
+│seller_goods_list_search_state_lots_top_expiration
+│seller_goods_list_search_state_lots_list_lot_number
+│seller_goods_list_search_state_lots_list_lot_entry
+│seller_goods_list_search_state_lots_list_lot_quantity
+│seller_goods_list_search_state_lots_list_lot_balance
+│seller_goods_list_search_state_lots_list_lot_expiration
+│seller_goods_list_search_state_lots_button_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
+
 lot_id
 lot_date
 lot_name
