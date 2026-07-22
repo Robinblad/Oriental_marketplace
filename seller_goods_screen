@@ -2710,6 +2710,39 @@ seller_goods_list_search_state_lots состоит из 3 основных ко�
 └─
 
 
+
+■ ■ seller_goods_list_search_state_stat
+
+seller_goods_list_search_state_stat представляет собой виджет индивидуальной статистики товара касательно просмотров и покупок, является правой панелью seller_goods_list_search_state, вид на которую открывается при свайпе налево.
+
+✠ tables
+
+                                      codename:                                 type:                designation:           location:  interaction:
+   ┌───────[seller_goods_list_search_state                             ]  [component_lev1]                                   [ ✜ ✜ ]     [ yes ]
+   └┬┬──┬──[seller_goods_list_search_state_stat                        ]  [component_lev2]                                   [ ✜ ✜ ]     [ no  ]
+    ││  └┬─[seller_goods_list_search_state_stat_top                    ]  [component_lev3]                                   [ 🡅 ✜ ]     [ no  ]
+    ││   └ [seller_goods_list_search_state_stat_top_label              ]  [label         ]  [ "задать временной диа..." ]    [ ✜ ✜ ]     [ no  ]
+    │└┬┬┬──[seller_goods_list_search_state_stat_control                ]  [component_lev3]                                   [ ✜ ✜ ]     [ no  ]
+    │ ││└┬─[seller_goods_list_search_state_stat_control_minus          ]  [button        ]                                   [ ✜ 🡄 ]     [ yes ]
+    │ ││ └ [seller_goods_list_search_state_stat_control_minus_icon     ]  [icon          ]                                   [ ✜ ✜ ]     [ yes ]
+    │ │└─┬─[seller_goods_list_search_state_stat_control_widget         ]  [widget        ]                                   [ ✜ ✜ ]     [ no  ]
+    │ │  └ [seller_goods_list_search_state_stat_control_widget_value   ]  [variable      ]  [ { number }                ]    [ ✜ ✜ ]     [ no  ]
+    │ └──┬─[seller_goods_list_search_state_stat_control_plus           ]  [button        ]                                   [ ✜ 🡆 ]     [ yes ]
+    │    └ [seller_goods_list_search_state_stat_control_plus_icon      ]  [icon          ]                                   [ ✜ 🡆 ]     [ yes ]
+    └┬┬────[seller_goods_list_search_state_stat_table                  ]  [component_lev3]                                   [ 🡇 ✜ ]     [ no  ]
+     │└┬┬──[seller_goods_list_search_state_stat_table_views            ]  [component_lev4]                                   [ 🡅 ✜ ]     [ no  ]
+     │ │└┬─[seller_goods_list_search_state_stat_table_views_left       ]  [component_lev5]                                   [ ✜ 🡄 ]     [ no  ]
+     │ │ └ [seller_goods_list_search_state_stat_table_views_left_label ]  [label         ]  [ "просмотры"               ]    [ ✜ ✜ ]     [ no  ]
+     │ └─┬─[seller_goods_list_search_state_stat_table_views_right      ]  [component_lev5]                                   [ ✜ 🡆 ]     [ no  ]
+     │   └ [seller_goods_list_search_state_stat_table_views_right_value]  [variable      ]  [ { number }                ]    [ ✜ ✜ ]     [ no  ]
+     └─┬┬──[seller_goods_list_search_state_stat_table_buys             ]  [component_lev4]                                   [ 🡇 ✜ ]     [ no  ]
+       │└┬─[seller_goods_list_search_state_stat_table_buys_left        ]  [component_lev5]                                   [ ✜ 🡄 ]     [ no  ]
+       │ └ [seller_goods_list_search_state_stat_table_buys_left_label  ]  [label         ]  [ "покупки"                 ]    [ ✜ ✜ ]     [ no  ]
+       └─┬─[seller_goods_list_search_state_stat_table_buys_right       ]  [component_lev5]                                   [ ✜ 🡆 ]     [ no  ]
+         └ [seller_goods_list_search_state_stat_table_buys_right_value ]  [variable      ]  [ { number }                ]    [ ✜ ✜ ]     [ no  ]
+
+
+
 lot_id
 lot_date
 lot_name
