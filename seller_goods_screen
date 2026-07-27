@@ -2806,6 +2806,54 @@ seller_goods_list_search_state_stat состоит из 3 основных ко�
 ╙ result: seller_goods_list_search_state_stat_control_plus не реагирует на нажатие.
 
 
+✠ color_states
+┌─
+│seller_goods_list_search_state_stat  
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+│--------
+│• color0
+│------ in any situation
+└─
+┌─
+│seller_goods_list_search_state_stat_top
+│seller_goods_list_search_state_stat_table_views_left
+│seller_goods_list_search_state_stat_table_views_right
+│seller_goods_list_search_state_stat_table_buys_left
+│seller_goods_list_search_state_stat_table_buys_right
+│---------------------------
+│⟪⟪ bodybody ⟫⟫ 
+│--------
+│• color2
+│------ in any situation
+└─
+┌─
+│seller_goods_list_search_state_stat_control_minus
+│seller_goods_list_search_state_stat_control_plus
+│-------------------------------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color5
+│------ in pressing_state
+└─
+┌─
+│seller_goods_list_search_state_stat_top_label
+│seller_goods_list_search_state_stat_control_widget_value
+│seller_goods_list_search_state_stat_table_views_left_label
+│seller_goods_list_search_state_stat_table_views_right_value
+│seller_goods_list_search_state_stat_table_buys_left_label
+│seller_goods_list_search_state_stat_table_buys_right_value
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
+
+
 lot_id
 lot_date
 lot_name
