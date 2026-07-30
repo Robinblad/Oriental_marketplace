@@ -2854,6 +2854,28 @@ seller_goods_list_search_state_stat состоит из 3 основных ко�
 └─
 
 
+
+■ seller_nav
+
+✠ details
+Секция seller_nav является навигационной панелью seller_mode и как сквозная часть интерфейса присутствует на всех экранах в нижней области. Секция состоит из 5 компонентов каждый из которых выполняет роль кнопки:
+1) seller_nav_demand - кнопка с наименованием и бейджем, предназначена для перехода к seller_demand_screen;
+-- seller_nav_demand_label - представлен заголовком "МОНИТОР";
+-- seller_nav_demand_badge - размещается в верхнем правом углу, отображает количество hunt_screen_demand_message в seller_demand_screen.
+2) seller_nav_chat - кнопка с наименованием и бейджем, предназначена для перехода к seller_chat_screen;
+-- seller_nav_chat_label - представлен заголовком "ЧАТ";
+-- seller_nav_chat_badge - размещается в верхнем правом углу, отображает количество непросмотренных chat_screen_chat_message_node.
+3) seller_nav_shop - кнопка с наименованием и бейджем, предназначена для перехода к seller_shop_screen;
+-- seller_nav_shop_label - представлен логотипом в seller_shop_screen, либо наименованием "МАГАЗИН" в остальных экранах;
+-- seller_nav_shop_badge - размещается в верхнем правом углу, отображается только в seller_shop_screen, показывает доступные обновления приложения.
+4) seller_nav_goods - кнопка с наименованием и бейджем, предназначена для перехода к seller_goods_screen (в seller_goods_screen активирована по умолчанию);
+-- seller_nav_goods_label - представлен заголовком "ТОВАРЫ";
+-- seller_nav_goods_badge - размещается в верхнем правом углу, отображает число лотов по которым заканчивается товар.
+5) seller_nav_account - кнопка с наименованием и бейджем, предназначена для перехода к seller_account_screen;
+-- seller_nav_account_label - представлен заголовком "КАБИНЕТ";
+-- seller_nav_account_badge - размещается в верхнем правом углу, отображает количество непросмотренных денежных транзакций.
+
+
 lot_id
 lot_date
 lot_name
