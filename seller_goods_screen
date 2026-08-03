@@ -2963,6 +2963,39 @@ seller_goods_list_search_state_stat состоит из 3 основных ко�
 ╙ result: не реагирует на нажатие.
 
 
+✠ color_states
+┌─
+│seller_nav_demand_badge  (activated_state по умолчанию в seller_demand_screen)
+│seller_nav_chat  (activated_state по умолчанию в seller_chat_screen)
+│seller_nav_shop  (activated_state по умолчанию в seller_shop_screen)
+│seller_nav_goods  (activated_state по умолчанию в seller_goods_screen)
+│seller_nav_account  (activated_state по умолчанию в seller_account_screen)
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color7
+│------ в activated_state
+└─
+┌─
+│seller_nav_demand  (activated_state по умолчанию в seller_demand_screen) 
+│seller_nav_chat_badge  (activated_state по умолчанию в seller_chat_screen)   
+│seller_nav_shop_badge  (activated_state по умолчанию в seller_shop_screen)  
+│seller_nav_goods_badge  (activated_state по умолчанию в seller_goods_screen)   
+│seller_nav_account_badge  (activated_state по умолчанию в seller_account_screen)
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color9
+│------ in default_state
+├────────
+│• color2
+│------ в activated_state 
+└─
+
+
 
 lot_id
 lot_date
@@ -2975,14 +3008,6 @@ lot_saletype
 lot_image
 lot_image_link
 lot_description
-
-
-
-location:
-первая координата - по вертикали
-вторая координата - по горизонтали
-[ 🡅 ✜ ] - элемент прижат кверху с выравниванием по центру 
-
 
 
 
