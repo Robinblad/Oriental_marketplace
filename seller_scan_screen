@@ -126,3 +126,89 @@ seller_scan_calc_screen является экраном по умолчанию.
                   └────┬─[seller_nav_scan_button                                      ]  [button        ]                           [ ✜ 🡆 ]      [ yes ]   
                        ├ [seller_nav_scan_header                                      ]  [header        ]  [ "КАБИНЕТ"       ]      [ ✜ ✜ ]      [ no  ] 
                        └ [seller_nav_scan_badge                                       ]  [badge         ]  [ { number }      ]      [ 🡅 🡆 ]      [ no  ] 
+
+
+✠ details
+Основное пространство seller_scan_calc_screen в центральной области экрана занимает seller_scan_calc_body состоящий из 3 секций:
+- seller_scan_calc_body_display  
+- seller_scan_calc_body_keys
+- seller_scan_calc_body_result.
+
+
+■ seller_scan_nav
+
+✠ details
+Секция seller_scan_nav является навигационной панелью seller_scan и как сквозная часть интерфейса присутствует на всех экранах seller_scan в верхней области. Секция состоит из 3 компонентов каждый из которых выполняет роль кнопки расположенные слева-направо в следующем порядке:
+
+1)  seller_scan_nav_check - кнопка предназначенная для перехода к seller_scan_check_screen (в рамках seller_scan_check_screen активирована по умолчанию);
+--- seller_scan_nav_check_label - является константным центрированным в seller_scan_nav_check текстовым элементом следующего содержания: "чек";
+2) seller_scan_nav_calc - кнопка предназначенная для перехода к seller_scan_calc_screen (в рамках seller_scan_calc_screen активирована по умолчанию);
+--- seller_scan_nav_calc_label - является константным центрированным в seller_scan_nav_calc текстовым элементом следующего содержания: "скан";
+3) seller_scan_nav_qr - кнопка предназначенная для перехода к seller_scan_qr_screen (в рамках seller_scan_qr_screen активирована по умолчанию);
+--- seller_scan_nav_qr_label - является константным центрированным в seller_scan_nav_qr текстовым элементом следующего содержания: "QR".
+
+✠ actions
+• seller_scan_nav_check:
+╠ valid
+║ • gesture: tap
+║ occasion: нажатие seller_scan_nav_check;
+║ condition:
+║ || - в ситуации присутствия в seller_scan_calc_screen;
+║ || - в ситуации присутствия в seller_scan_qr_screen;
+║ result: открывается seller_scan_check_screen.
+╠ invalid
+║ • gesture: tap
+║ occasion: нажатие seller_scan_nav_check;
+║ condition: в ситуации присутствия в seller_scan_check_screen;
+╙ result: не реагирует на нажатие.
+• seller_scan_nav_calc:
+╠ valid
+║ • gesture: tap
+║ occasion: нажатие seller_scan_nav_calc;
+║ condition:
+║ || - в ситуации присутствия в seller_scan_check_screen;
+║ || - в ситуации присутствия в seller_scan_qr_screen;
+║ result: открывается seller_scan_calc_screen.
+╠ invalid
+║ • gesture: tap
+║ occasion: нажатие seller_scan_nav_calc;
+║ condition: в ситуации присутствия в seller_scan_calc_screen;
+╙ result: не реагирует на нажатие.
+• seller_scan_nav_qr:
+╠ valid
+║ • gesture: tap
+║ occasion: нажатие seller_scan_nav_qr;
+║ condition:
+║ || - в ситуации присутствия в seller_scan_check_screen;
+║ || - в ситуации присутствия в seller_scan_calc_screen;
+║ result: открывается seller_scan_qr_screen.
+╠ invalid
+║ • gesture: tap
+║ occasion: нажатие seller_scan_nav_qr;
+║ condition: в ситуации присутствия в seller_scan_qr_screen;
+╙ result: не реагирует на нажатие.
+
+✠ color_states
+┌─ 
+│seller_scan_nav_check  (activated_state по умолчанию в seller_scan_check_screen)
+│seller_scan_nav_calc  (activated_state по умолчанию в seller_scan_calc_screen)
+│seller_scan_nav_qr  (activated_state по умолчанию в seller_scan_qr_screen)
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color7
+│------ в activated_state
+└─
+┌─
+│seller_scan_nav_check_label
+│seller_scan_nav_scan_label
+│seller_scan_nav_qr_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
