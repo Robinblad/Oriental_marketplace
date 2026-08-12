@@ -212,3 +212,41 @@ seller_scan_calc_screen является экраном по умолчанию.
 │• color8
 │------ in any situation
 └─
+
+
+■ seller_scan_calc_body_display
+
+✠ details
+seller_scan_calc_body_display состоит из 2 основных компонентов: 
+- seller_scan_calc_body_display_top;
+- seller_scan_calc_body_display_list.
+
+- seller_scan_calc_body_display_top локализован в верхней части родительского компонента в качестве блока занимающего всю ширину seller_scan_calc_body_display, а по высоте порядка 10% seller_scan_calc_body_display и представляет собой шапку таблицы, в которой располагаются заголовки столбцов для seller_scan_calc_body_display_list.
+--- seller_scan_calc_body_display_top_name - является левой ячейкой seller_scan_calc_body_display_top содержащей seller_scan_calc_body_display_top_name_label; 
+----- seller_scan_calc_body_display_top_name_label - константный текстовый элемент следующего содержания: "наименование";
+--- seller_scan_calc_body_display_top_quantity - является центральной ячейкой seller_scan_calc_body_display_top содержащей seller_scan_calc_body_display_top_quantity_label; 
+----- seller_scan_calc_body_display_top_quantity_label - константный текстовый элемент следующего содержания: "количество";
+--- seller_scan_calc_body_display_top_cost - является правой ячейкой seller_scan_calc_body_display_top содержащей seller_scan_calc_body_display_top_cost_label; 
+----- seller_scan_calc_body_display_top_cost_label - константный текстовый элемент следующего содержания: "стоимость";
+
+- seller_scan_calc_body_display_list локализован под seller_scan_calc_body_display_top в качестве списка seller_scan_calc_body_display_list_lot, который занимает всю ширину seller_scan_calc_body_display, а по высоте занимает пространство равное количеству seller_scan_calc_body_display_list_lot находящихся в seller_scan_calc_body_display_list. Если количество seller_scan_calc_body_display_list_lot не вмещается в seller_scan_calc_body_display_list, тогда у seller_scan_calc_body_display_list появляется скроллинг а с правой стороны по краю отображается seller_scan_calc_body_display_list_scrollbar;
+
+✠ color_states
+┌─
+│seller_scan_calc_body_display_top
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color2
+│------ in any situation
+└─
+┌─
+│seller_scan_calc_body_display_top_name_label
+│seller_scan_calc_body_display_top_quantity_label
+│seller_scan_calc_body_display_top_cost_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
