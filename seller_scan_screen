@@ -250,3 +250,33 @@ seller_scan_calc_body_display состоит из 2 основных компо�
 │• color8
 │------ in any situation
 └─
+
+
+
+■■■ seller_scan_calc_body_display_list_lot
+
+seller_scan_calc_body_display_list_lot является товарной расчетной позицией фигурирующей в ордере, которая размещается в seller_scan_calc_body_display_list согласно хронологии добавления снизу-вверх, где seller_scan_calc_body_display_list_lot занимающий нижнюю позицию добавлен последним. Как структурный реплицируемый компонент количество экземпляров seller_scan_calc_body_display_list_lot зависит от количества товарных позиций по конкретному ордеру.
+
+seller_scan_calc_body_display_list_lot обладает 2 состояниями:
+- seller_scan_calc_body_display_list_lot_active_state - когда происходит процессинг расчета по целевому лоту (в моментуме может быть только 1 экземпляр);
+- seller_scan_calc_body_display_list_lot_passive_state - когда процессинг расчета по целевому лоту завершен (может быть сколь угодно экземпляров).
+
+■ ■ seller_scan_calc_body_display_list_lot_active_state ■ ■
+
+✠ tables
+
+                                              codename:                                     type:           designation:         location:   interaction:
+ │ ││    └┬┬┬───[seller_scan_calc_body_display_list_lot_active                      ]  [tbody         ]                           [ ✜ ✜ ]      [ no  ] 
+ │ ││     ││└┬──[seller_scan_calc_body_display_list_lot_active_name                 ]  [td            ]                           [ ✜ 🡄 ]      [ no  ]
+ │ ││     ││ └┬─[seller_scan_calc_body_display_list_lot_active_name_value           ]  [section_lev3  ]                           [ ✜ ✜ ]      [ no  ] 
+ │ ││     ││  ├ [seller_scan_calc_body_display_list_lot_active_name_value_label     ]  [label         ]  [ "лот "          ]      [ ✜ 🡄 ]      [ no  ]
+ │ ││     ││  └ [seller_scan_calc_body_display_list_lot_active_name_value_number    ]  [variable      ]  [ { number }      ]      [ ✜ 🡆 ]      [ no  ]
+ │ ││     │└─┬──[seller_scan_calc_body_display_list_lot_active_quantity             ]  [td            ]                           [ ✜ ✜ ]      [ no  ]
+ │ ││     │  └┬─[seller_scan_calc_body_display_list_lot_active_quantity_value       ]  [section_lev3  ]                           [ ✜ ✜ ]      [ no  ]
+ │ ││     │   ├ [seller_scan_calc_body_display_list_lot_active_quantity_value_number]  [variable      ]  [ { number }      ]      [ ✜ 🡄 ]      [ no  ]
+ │ ││     │   └ [seller_scan_calc_body_display_list_lot_active_quantity_value_string]  [variable      ]  [ { string }      ]      [ ✜ 🡆 ]      [ no  ]
+ │ ││     └──┬──[seller_scan_calc_body_display_list_lot_active_cost                 ]  [td            ]                           [ ✜ 🡆 ]      [ no  ]
+ │ ││        └┬─[seller_scan_calc_body_display_list_lot_active_cost_value           ]  [section_lev3  ]                           [ ✜ ✜ ]      [ no  ]
+ │ ││         ├ [seller_scan_calc_body_display_list_lot_active_cost_value_number    ]  [label+button  ]  [ { number }      ]      [ ✜ 🡄 ]      [ no  ]
+ │ ││         └ [seller_scan_calc_body_display_list_lot_active_cost_value_string    ]  [label+button  ]  [ { string }      ]      [ ✜ 🡆 ]      [ no  ]
+
