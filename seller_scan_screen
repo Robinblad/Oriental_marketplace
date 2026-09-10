@@ -280,3 +280,28 @@ seller_scan_calc_body_display_list_lot обладает 2 состояниями
  │ ││         ├ [seller_scan_calc_body_display_list_lot_active_cost_value_number    ]  [label+button  ]  [ { number }      ]      [ ✜ 🡄 ]      [ no  ]
  │ ││         └ [seller_scan_calc_body_display_list_lot_active_cost_value_string    ]  [label+button  ]  [ { string }      ]      [ ✜ 🡆 ]      [ no  ]
 
+
+✠ details
+--- seller_scan_calc_body_display_list_lot_active - товарная позиция выводится в одну строку и содержит данные в 3 ячейках: seller_scan_calc_body_display_list_lot_active_name, seller_scan_calc_body_display_list_lot_active_quantity, seller_scan_calc_body_display_list_lot_active_cost.
+seller_scan_calc_body_display_list_lot_active обладает следующими стилями:
+│border: 3px;
+│border-radius: 5px.
+
+seller_scan_calc_body_display_list_lot_active_name
+--- seller_scan_calc_body_display_list_lot_active_name - является левой ячейкой seller_scan_calc_body_display_list_lot_active содержащей seller_scan_calc_body_display_list_lot_active_name_value; 
+----- seller_scan_calc_body_display_list_lot_active_name_value - выровненное по центру seller_scan_calc_body_display_list_lot_active_name конкатенированное значение из 2 переменных seller_scan_calc_body_display_list_lot_active_name_value_label и seller_scan_calc_body_display_list_lot_active_name_value_number;
+------- seller_scan_calc_body_display_list_lot_active_name_value_label - константный текстовый элемент следующего содержания: "лот " размещающийся слева от seller_scan_calc_body_display_list_lot_active_name_value_number, имеет font-weight: bold;
+------- seller_scan_calc_body_display_list_lot_active_name_value_number - переменная с числовым значением отображающая seller_goods_list_cover_stateX_front_top_number_value (seller_goods_list_cover_state1_front_top_number_value ...), располагается справа от seller_scan_calc_body_display_list_lot_active_name_value_label, имеет font-weight: bold.
+
+seller_scan_calc_body_display_list_lot_active_quantity
+--- seller_scan_calc_body_display_list_lot_active_quantity - является центральной ячейкой seller_scan_calc_body_display_list_lot_active содержащей seller_scan_calc_body_display_list_lot_active_quantity_value; 
+----- seller_scan_calc_body_display_list_lot_active_quantity_value - выровненное по центру seller_scan_calc_body_display_list_lot_active_quantity конкатенированное значение из 2 переменных seller_scan_calc_body_display_list_lot_active_quantity_value_number и seller_scan_calc_body_display_list_lot_active_quantity_value_string;
+------- seller_scan_calc_body_display_list_lot_active_quantity_value_number - переменная с числовым значением отображающая значение seller_scan_calc_body_result_widget_output, размещается слева от seller_scan_calc_body_display_list_lot_active_quantity_value_string, имеет font-weight: bold;
+------- seller_scan_calc_body_display_list_lot_active_quantity_value_string - переменная со строковым значением отображающая специфичный seller_settings_goods_measure_value для целевого товара, располагается справа от seller_scan_calc_body_display_list_lot_active_quantity_value_number, имеет font-weight: bold.
+
+seller_scan_calc_body_display_list_lot_active_cost
+--- seller_scan_calc_body_display_list_lot_active_cost - является правой ячейкой seller_scan_calc_body_display_list_lot_active содержащей seller_scan_calc_body_display_list_lot_active_cost_value; 
+----- seller_scan_calc_body_display_list_lot_active_cost_value - выровненное по центру seller_scan_calc_body_display_list_lot_active_cost конкатенированное значение из 2 переменных seller_scan_calc_body_display_list_lot_active_cost_value_number и seller_scan_calc_body_display_list_lot_active_cost_value_string;
+------- seller_scan_calc_body_display_list_lot_active_cost_value_number - переменная с числовым значением отображающая значение seller_settings_goods_price_retail_value или seller_settings_goods_price_wholesale_data_value в зависимости от количества товара по целевому лоту (если указана оптовая цена), размещается слева от seller_scan_calc_body_display_list_lot_active_cost_value_string, имеет font-weight: bold;
+------- seller_scan_calc_body_display_list_lot_active_cost_value_string - переменная со строковым значением отображающая специфичный seller_settings_currency_value для seller, располагается справа от seller_scan_calc_body_display_list_lot_active_cost_value_number, имеет font-weight: bold.
+
