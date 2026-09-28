@@ -338,3 +338,38 @@ seller_scan_calc_body_display_list_lot_active_cost
 │• color8
 │------ in any situation
 └─
+
+
+✠ actions
+• seller_scan_calc_body_display_list_lot_active:
+╠ valid / invalid
+║ • gesture: any
+║ occasion:  любые попытки интеракции с seller_scan_calc_body_display_list_lot_active;
+║ condition: in seller_scan_calc_body_display_list_lot_active_state;
+╙ result: seller_scan_calc_body_display_list_lot_active не реагирует.
+
+✠ logics
+Одномоментно в seller_scan_calc_body_display_list может быть только один экземпляр seller_scan_calc_body_display_list_lot_active, который всегда располагается в нижней позиции (нижней строкой) в seller_scan_calc_body_display_list.
+
+✠ color_states
+┌─
+│seller_scan_calc_body_display_list_lot_active
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color7
+│------ in any situation
+└─
+┌─
+│seller_scan_calc_body_display_list_lot_active_name_value_label
+│seller_scan_calc_body_display_list_lot_active_name_value_number
+│seller_scan_calc_body_display_list_lot_active_quantity_value_number
+│seller_scan_calc_body_display_list_lot_active_quantity_value_string
+│seller_scan_calc_body_display_list_lot_active_cost_value_number
+│seller_scan_calc_body_display_list_lot_active_cost_value_string
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
