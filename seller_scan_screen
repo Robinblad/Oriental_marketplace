@@ -373,3 +373,25 @@ seller_scan_calc_body_display_list_lot_active_cost
 │• color8
 │------ in any situation
 └─
+
+
+■ ■ seller_scan_calc_body_display_list_lot_passive_state ■ ■
+
+✠ tables
+
+                                               codename:                                     type:           designation:         location:   interaction:
+ │ ││   └┬──────[seller_scan_calc_body_display_list                                  ]  [section_lev4  ]                           [ ✜ ✜ ]      [ no  ]
+ │ ││    └┬┬┬───[seller_scan_calc_body_display_list_lot_passive                      ]  [tbody         ]                           [ ✜ ✜ ]      [ yes ] 
+ │ ││     ││└┬──[seller_scan_calc_body_display_list_lot_passive_name                 ]  [td            ]                           [ ✜ 🡄 ]      [ yes ]
+ │ ││     ││ └┬─[seller_scan_calc_body_display_list_lot_passive_name_value           ]  [section_lev3  ]                           [ ✜ ✜ ]      [ yes ] 
+ │ ││     ││  ├ [seller_scan_calc_body_display_list_lot_passive_name_value_label     ]  [label         ]  [ "лот "          ]      [ ✜ 🡄 ]      [ yes ]
+ │ ││     ││  └ [seller_scan_calc_body_display_list_lot_passive_name_value_number    ]  [variable      ]  [ { number }      ]      [ ✜ 🡆 ]      [ yes ]
+ │ ││     │└─┬──[seller_scan_calc_body_display_list_lot_passive_quantity             ]  [td            ]                           [ ✜ ✜ ]      [ yes ]
+ │ ││     │  └┬─[seller_scan_calc_body_display_list_lot_passive_quantity_value       ]  [section_lev3  ]                           [ ✜ ✜ ]      [ yes ]
+ │ ││     │   ├ [seller_scan_calc_body_display_list_lot_passive_quantity_value_number]  [variable      ]  [ { number }      ]      [ ✜ 🡄 ]      [ yes ]
+ │ ││     │   └ [seller_scan_calc_body_display_list_lot_passive_quantity_value_string]  [variable      ]  [ { string }      ]      [ ✜ 🡆 ]      [ yes ]
+ │ ││     └──┬──[seller_scan_calc_body_display_list_lot_passive_cost                 ]  [td            ]                           [ ✜ 🡆 ]      [ yes ]
+ │ ││        └┬─[seller_scan_calc_body_display_list_lot_passive_cost_value           ]  [section_lev3  ]                           [ ✜ ✜ ]      [ yes ]
+ │ ││         ├ [seller_scan_calc_body_display_list_lot_passive_cost_value_number    ]  [label+button  ]  [ { number }      ]      [ ✜ 🡄 ]      [ yes ]
+ │ ││         └ [seller_scan_calc_body_display_list_lot_passive_cost_value_string    ]  [label+button  ]  [ { string }      ]      [ ✜ 🡆 ]      [ yes ]
+
