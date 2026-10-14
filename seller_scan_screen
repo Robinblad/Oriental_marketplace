@@ -489,3 +489,32 @@ seller_scan_calc_body_display_list_lot_passive_cost
 seller_scan_calc_body_display_list_lot_passive_state может находиться в 2 операционных состояниях:
 default_state - состояние при котором операции над seller_scan_calc_body_display_list_lot_passive невозможны;
 activated_state - состояние при котором seller_scan_calc_body_display_list_lot_passive визуально выделяется, что делает его доступным для операции над ним. В activated_state может находиться только один seller_scan_calc_body_display_list_lot_passive.
+
+✠ color_states
+┌─
+│seller_scan_calc_body_display_list_lot_passive
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color2
+│------ in default_state
+├────────
+│• color5
+│------ in pressing_state
+├────────
+│• color7
+│------ in activated_state
+└─
+┌─
+│seller_scan_calc_body_display_list_lot_passive_name_value_label
+│seller_scan_calc_body_display_list_lot_passive_name_value_number
+│seller_scan_calc_body_display_list_lot_passive_quantity_value_number
+│seller_scan_calc_body_display_list_lot_passive_quantity_value_string
+│seller_scan_calc_body_display_list_lot_passive_cost_value_number
+│seller_scan_calc_body_display_list_lot_passive_cost_value_string
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
