@@ -518,3 +518,53 @@ activated_state - состояние при котором seller_scan_calc_body
 │• color8
 │------ in any situation
 └─
+
+
+■ seller_scan_calc_body_keys
+
+✠ details
+2)--- seller_scan_calc_body_keys - локализован в центральной части seller_scan_calc_body (между seller_scan_calc_body_display и seller_scan_calc_body_result), занимает ~30% высоты и 100% ширины seller_scan_calc_body и включает массив из 18 кнопок, которые размещаются в 4 ряда, где 1 ряд расположен вверху а 4 внизу.
+
+1 ряд
+----- seller_scan_calc_body_keys_7 - кнопка квадратной формы отвечающая за применение числового значения "7" в арифметических операциях совершаемых в рамках seller_scan_calc_screen, расположена в левой части первого ряда seller_scan_calc_body_keys;
+------- seller_scan_calc_body_keys_7_label - константный текстовый элемент центрированный в seller_scan_calc_body_keys_7 следующего содержания: "7";
+----- seller_scan_calc_body_keys_8 - кнопка квадратной формы отвечающая за применение числового значения "8" в арифметических операциях совершаемых в рамках seller_scan_calc_screen, расположена справа от seller_scan_calc_body_keys_7;
+------- seller_scan_calc_body_keys_8_label - константный текстовый элемент центрированный в seller_scan_calc_body_keys_8 следующего содержания: "8";
+----- seller_scan_calc_body_keys_9 - кнопка квадратной формы отвечающая за применение числового значения "9" в арифметических операциях совершаемых в рамках seller_scan_calc_screen, расположена справа от seller_scan_calc_body_keys_8;
+------- seller_scan_calc_body_keys_9_label - константный текстовый элемент центрированный в seller_scan_calc_body_keys_9 следующего содержания: "9";
+----- seller_scan_calc_body_keys_del - кнопка квадратной формы отвечающая за применение функции удаления последнего знака в текущей арифметической операции, либо удаления seller_scan_calc_body_display_list_lot_passive находящегося в activated_state, расположена справа от seller_scan_calc_body_keys_9;
+------- seller_scan_calc_body_keys_del_label - константный текстовый элемент центрированный в seller_scan_calc_body_keys_del следующего содержания: "del";
+----- seller_scan_calc_body_keys_ac - кнопка квадратной формы отвечающая за применение функции сброса текущей арифметической операции, либо удаления целевого  seller_scan_calc_body_display_list_lot_passive находящегося в activated_state, расположена справа от seller_scan_calc_body_keys_del;
+------- seller_scan_calc_body_keys_ac_label - константный текстовый элемент центрированный в seller_scan_calc_body_keys_del следующего содержания: "ac".
+
+2 ряд
+----- seller_scan_calc_body_keys_4 - кнопка квадратной формы отвечающая за применение числового значения "4" в арифметических операциях совершаемых в рамках seller_scan_calc_screen, расположена в левой части второго ряда seller_scan_calc_body_keys;
+------- seller_scan_calc_body_keys_4_label - константный текстовый элемент центрированный в seller_scan_calc_body_keys_4 следующего содержания: "4";
+----- seller_scan_calc_body_keys_5 - кнопка квадратной формы отвечающая за применение числового значения "5" в арифметических операциях совершаемых в рамках seller_scan_calc_screen, расположена справа от seller_scan_calc_body_keys_4;
+------- seller_scan_calc_body_keys_5_label - константный текстовый элемент центрированный в seller_scan_calc_body_keys_5 следующего содержания: "5";
+----- seller_scan_calc_body_keys_6 - кнопка квадратной формы отвечающая за применение числового значения "6" в арифметических операциях совершаемых в рамках seller_scan_calc_screen, расположена справа от seller_scan_calc_body_keys_5;
+------- seller_scan_calc_body_keys_6_label - константный текстовый элемент центрированный в seller_scan_calc_body_keys_6 следующего содержания: "6";
+----- seller_scan_calc_body_keys_divide - кнопка квадратной формы отвечающая за применение оператора деления "/" в арифметических операциях совершаемых в рамках seller_scan_calc_screen, расположена справа от seller_scan_calc_body_keys_6;
+------- seller_scan_calc_body_keys_divide_label - константный текстовый элемент центрированный в seller_scan_calc_body_keys_divide следующего содержания: ":";
+----- seller_scan_calc_body_keys_multi - кнопка квадратной формы отвечающая за применение оператора умножения "*" в арифметических операциях совершаемых в рамках seller_scan_calc_screen, расположена справа от seller_scan_calc_body_keys_divide;
+------- seller_scan_calc_body_keys_multi_label - константный текстовый элемент центрированный в seller_scan_calc_body_keys_multi следующего содержания: "x".
+
+3 ряд
+----- seller_scan_calc_body_keys_1 - кнопка квадратной формы отвечающая за применение числового значения "1" в арифметических операциях совершаемых в рамках seller_scan_calc_screen, расположена в левой части третьего ряда seller_scan_calc_body_keys;
+------- seller_scan_calc_body_keys_1_label - константный текстовый элемент центрированный в seller_scan_calc_body_keys_1 следующего содержания: "1";
+----- seller_scan_calc_body_keys_2 - кнопка квадратной формы отвечающая за применение числового значения "2" в арифметических операциях совершаемых в рамках seller_scan_calc_screen, расположена справа от seller_scan_calc_body_keys_1;
+------- seller_scan_calc_body_keys_2_label - константный текстовый элемент центрированный в seller_scan_calc_body_keys_2 следующего содержания: "2";
+----- seller_scan_calc_body_keys_3 - кнопка квадратной формы отвечающая за применение числового значения "3" в арифметических операциях совершаемых в рамках seller_scan_calc_screen, расположена справа от seller_scan_calc_body_keys_2;
+------- seller_scan_calc_body_keys_3_label - константный текстовый элемент центрированный в seller_scan_calc_body_keys_3 следующего содержания: "3";
+----- seller_scan_calc_body_keys_minus - кнопка квадратной формы отвечающая за применение оператора вычитания "-" в арифметических операциях совершаемых в рамках seller_scan_calc_screen, расположена справа от seller_scan_calc_body_keys_3;
+------- seller_scan_calc_body_keys_minus_label - константный текстовый элемент центрированный в seller_scan_calc_body_keys_minus следующего содержания: "-";
+----- seller_scan_calc_body_keys_plus - кнопка квадратной формы отвечающая за применение оператора сложения "-" в арифметических операциях совершаемых в рамках seller_scan_calc_screen, расположена справа от seller_scan_calc_body_keys_minus;
+------- seller_scan_calc_body_keys_plus_label - константный текстовый элемент центрированный в seller_scan_calc_body_keys_plus следующего содержания: "+".
+
+4 ряд
+----- seller_scan_calc_body_keys_0 - кнопка квадратной формы отвечающая за применение числового значения "0" в арифметических операциях совершаемых в рамках seller_scan_calc_screen, расположена в левой части четвертого ряда seller_scan_calc_body_keys;
+------- seller_scan_calc_body_keys_0_label - константный текстовый элемент центрированный в seller_scan_calc_body_keys_0 следующего содержания: "0";
+----- seller_scan_calc_body_keys_dot - кнопка квадратной формы отвечающая за применение десятичной точки "." в арифметических операциях совершаемых в рамках seller_scan_calc_screen, расположена справа от seller_scan_calc_body_keys_0;
+------- seller_scan_calc_body_keys_dot_label - константный текстовый элемент центрированный в seller_scan_calc_body_keys_dot следующего содержания: ".";
+----- seller_scan_calc_body_keys_equal - кнопка квадратной формы отвечающая за применение оператора равно "=" в арифметических операциях совершаемых в рамках seller_scan_calc_screen, расположена справа от seller_scan_calc_body_keys_dot;
+------- seller_scan_calc_body_keys_equal_label - константный текстовый элемент центрированный в seller_scan_calc_body_keys_equal следующего содержания: "=".
