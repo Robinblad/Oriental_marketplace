@@ -628,3 +628,78 @@ activated_state - состояние при котором seller_scan_calc_body
 ║ occasion: нажатие seller_scan_calc_body_keys_del;
 ║ condition: в ситуации seller_scan_calc_body_display_list_lot_passive_state;
 ╙ result: происходит удаление seller_scan_calc_body_display_list_lot_passive находящегося в activated_state.
+• seller_scan_calc_body_keys_multi:
+╠ valid / invalid • seller_scan_calc_body_display_list_lot_active_state
+║ • gesture: tap
+║ occasion: нажатие seller_scan_calc_body_keys_multi;
+║ condition: в ситуации seller_scan_calc_body_display_list_lot_active_state;
+║ result: 
+║ && - вводится арифметический оператор "*" в арифметическое выражение seller_scan_calc_lot_function;
+║ && - seller_scan_calc_body_result_widget переходит из default_state в activated_state до момента нажатия любой кнопки seller_scan_calc_body_keys;
+╠ valid / invalid • seller_scan_calc_body_display_list_lot_passive_state
+║ • gesture: tap
+║ occasion: нажатие seller_scan_calc_body_keys_multi;
+║ condition: в ситуации seller_scan_calc_body_display_list_lot_passive_state;
+║ result:
+║ && - вводится арифметический оператор "*" в арифметическое выражение seller_scan_calc_any_function;
+╙ && - seller_scan_calc_body_keys_multi переходит из default_state в activated_state до момента нажатия любой кнопки seller_scan_calc_body_keys.
+• seller_scan_calc_body_keys_1:
+╠ valid / invalid • seller_scan_calc_body_display_list_lot_active_state
+║ • gesture: tap
+║ occasion: нажатие seller_scan_calc_body_keys_1;
+║ condition: в ситуации seller_scan_calc_body_display_list_lot_active_state;
+║ result: 
+║ && - операнд с value = 1 вводится в арифметическое выражение seller_scan_calc_lot_function;
+║ && - seller_scan_calc_body_result_widget посредством seller_scan_calc_body_result_widget_output_active отображает значение seller_scan_calc_quantity как "1";
+╠ valid / invalid • seller_scan_calc_body_display_list_lot_passive_state
+║ • gesture: tap
+║ occasion: нажатие seller_scan_calc_body_keys_1;
+║ condition: в ситуации seller_scan_calc_body_display_list_lot_passive_state;
+║ result: 
+║ && - операнд с value = 1 вводится в арифметическое выражение seller_scan_calc_any_function;
+╙ && - seller_scan_calc_body_result_widget посредством seller_scan_calc_body_result_widget_output_passive отображает значение seller_scan_calc_any как "1".
+• seller_scan_calc_body_keys_2:
+╠ valid / invalid • seller_scan_calc_body_display_list_lot_active_state
+║ • gesture: tap
+║ occasion: нажатие seller_scan_calc_body_keys_2;
+║ condition: в ситуации seller_scan_calc_body_display_list_lot_active_state;
+║ result: 
+║ && - операнд с value = 2 вводится в арифметическое выражение seller_scan_calc_lot_function;
+║ && - seller_scan_calc_body_result_widget посредством seller_scan_calc_body_result_widget_output_active отображает значение seller_scan_calc_quantity как "2";
+╠ valid / invalid • seller_scan_calc_body_display_list_lot_passive_state
+║ • gesture: tap
+║ occasion: нажатие seller_scan_calc_body_keys_2;
+║ condition: в ситуации seller_scan_calc_body_display_list_lot_passive_state;
+║ result: 
+║ && - операнд с value = 2 вводится в арифметическое выражение seller_scan_calc_any_function;
+╙ && - seller_scan_calc_body_result_widget посредством seller_scan_calc_body_result_widget_output_passive отображает значение seller_scan_calc_any как "2".
+• seller_scan_calc_body_keys_3:
+╠ valid / invalid • seller_scan_calc_body_display_list_lot_active_state
+║ • gesture: tap
+║ occasion: нажатие seller_scan_calc_body_keys_3;
+║ condition: в ситуации seller_scan_calc_body_display_list_lot_active_state;
+║ result: 
+║ && - операнд с value = 3 вводится в арифметическое выражение seller_scan_calc_lot_function;
+║ && - seller_scan_calc_body_result_widget посредством seller_scan_calc_body_result_widget_output_active отображает значение seller_scan_calc_quantity как "3";
+╠ valid / invalid • seller_scan_calc_body_display_list_lot_passive_state
+║ • gesture: tap
+║ occasion: нажатие seller_scan_calc_body_keys_3;
+║ condition: в ситуации seller_scan_calc_body_display_list_lot_passive_state;
+║ result: 
+║ && - операнд с value = 3 вводится в арифметическое выражение seller_scan_calc_any_function;
+╙ && - seller_scan_calc_body_result_widget посредством seller_scan_calc_body_result_widget_output_passive отображает значение seller_scan_calc_any как "3".
+• seller_scan_calc_body_keys_minus:
+╠ valid / invalid • seller_scan_calc_body_display_list_lot_active_state
+║ • gesture: tap
+║ occasion: нажатие seller_scan_calc_body_keys_minus;
+║ condition: в ситуации seller_scan_calc_body_display_list_lot_active_state;
+║ result: 
+║ && - вводится арифметический оператор "-" в арифметическое выражение seller_scan_calc_lot_function;
+║ && - seller_scan_calc_body_keys_minus переходит из default_state в activated_state до момента нажатия любой кнопки seller_scan_calc_body_keys;
+╠ valid / invalid • seller_scan_calc_body_display_list_lot_passive_state
+║ • gesture: tap
+║ occasion: нажатие seller_scan_calc_body_keys_minus;
+║ condition: в ситуации seller_scan_calc_body_display_list_lot_passive_state;
+║ result:
+║ && - вводится арифметический оператор "-" в арифметическое выражение seller_scan_calc_any_function;
+╙ && - seller_scan_calc_body_keys_minus переходит из default_state в activated_state до момента нажатия любой кнопки seller_scan_calc_body_keys.
