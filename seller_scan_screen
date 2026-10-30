@@ -703,3 +703,64 @@ activated_state - состояние при котором seller_scan_calc_body
 ║ result:
 ║ && - вводится арифметический оператор "-" в арифметическое выражение seller_scan_calc_any_function;
 ╙ && - seller_scan_calc_body_keys_minus переходит из default_state в activated_state до момента нажатия любой кнопки seller_scan_calc_body_keys.
+• seller_scan_calc_body_keys_plus:
+╠ valid / invalid • seller_scan_calc_body_display_list_lot_active_state
+║ • gesture: tap
+║ occasion: нажатие seller_scan_calc_body_keys_plus;
+║ condition: в ситуации seller_scan_calc_body_display_list_lot_active_state;
+║ result: 
+║ && - вводится арифметический оператор "+" в арифметическое выражение seller_scan_calc_lot_function;
+║ && - seller_scan_calc_body_keys_plus переходит из default_state в activated_state до момента нажатия любой кнопки seller_scan_calc_body_keys;
+╠ valid / invalid • seller_scan_calc_body_display_list_lot_passive_state
+║ • gesture: tap
+║ occasion: нажатие seller_scan_calc_body_keys_plus;
+║ condition: в ситуации seller_scan_calc_body_display_list_lot_passive_state;
+║ result:
+║ && - вводится арифметический оператор "+" в арифметическое выражение seller_scan_calc_any_function;
+╙ && - seller_scan_calc_body_keys_plus переходит из default_state в activated_state до момента нажатия любой кнопки seller_scan_calc_body_keys.
+• seller_scan_calc_body_keys_0:
+╠ valid / invalid • seller_scan_calc_body_display_list_lot_active_state
+║ • gesture: tap
+║ occasion: нажатие seller_scan_calc_body_keys_0;
+║ condition: в ситуации seller_scan_calc_body_display_list_lot_active_state;
+║ result: 
+║ && - операнд с value = 0 вводится в арифметическое выражение seller_scan_calc_lot_function;
+║ && - seller_scan_calc_body_result_widget посредством seller_scan_calc_body_result_widget_output_active отображает значение seller_scan_calc_quantity как "0";
+╠ valid / invalid • seller_scan_calc_body_display_list_lot_passive_state
+║ • gesture: tap
+║ occasion: нажатие seller_scan_calc_body_keys_0;
+║ condition: в ситуации seller_scan_calc_body_display_list_lot_passive_state;
+║ result: 
+║ && - операнд с value = 0 вводится в арифметическое выражение seller_scan_calc_any_function;
+╙ && - seller_scan_calc_body_result_widget посредством seller_scan_calc_body_result_widget_output_passive отображает значение seller_scan_calc_any как "0".
+• seller_scan_calc_body_keys_dot:
+╠ valid / invalid • seller_scan_calc_body_display_list_lot_active_state
+║ • gesture: tap
+║ occasion: нажатие seller_scan_calc_body_keys_dot;
+║ condition: в ситуации seller_scan_calc_body_display_list_lot_active_state;
+║ result: 
+║ && - десятичная точка вводится в арифметическое выражение seller_scan_calc_lot_function;
+║ && - seller_scan_calc_body_result_widget посредством seller_scan_calc_body_result_widget_output_active выводит символ ".";
+╠ valid / invalid • seller_scan_calc_body_display_list_lot_passive_state
+║ • gesture: tap
+║ occasion: нажатие seller_scan_calc_body_keys_dot;
+║ condition: в ситуации seller_scan_calc_body_display_list_lot_passive_state;
+║ result: 
+║ && - десятичная точка вводится в арифметическое выражение seller_scan_calc_any_function;
+╙ && - seller_scan_calc_body_result_widget посредством seller_scan_calc_body_result_widget_output_passive выводит символ ".".
+• seller_scan_calc_body_keys_equal:
+╠ valid / invalid • seller_scan_calc_body_display_list_lot_active_state
+║ • gesture: tap
+║ occasion: нажатие seller_scan_calc_body_keys_equal;
+║ condition: в ситуации seller_scan_calc_body_display_list_lot_active_state;
+║ result: 
+║ && - выводится результирующее в рамках текущего seller_scan_calc_lot_function;
+║ && - делается переход из seller_scan_calc_body_display_list_lot_active_state в seller_scan_calc_body_display_list_lot_passive_state;
+║ && - seller_scan_calc_body_result_widget посредством seller_scan_calc_body_result_widget_output_passive выводит seller_scan_calc_quantity_sum;
+╠ valid / invalid • seller_scan_calc_body_display_list_lot_passive_state
+║ • gesture: tap
+║ occasion: нажатие seller_scan_calc_body_keys_equal;
+║ condition: в ситуации seller_scan_calc_body_display_list_lot_passive_state;
+║ result: 
+║ && - выводится результирующее в рамках текущего seller_scan_calc_any_function;
+╙ && - seller_scan_calc_body_result_widget посредством seller_scan_calc_body_result_widget_output_passive выводит seller_scan_calc_any_sum.
