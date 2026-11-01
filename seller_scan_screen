@@ -764,3 +764,72 @@ activated_state - состояние при котором seller_scan_calc_body
 ║ result: 
 ║ && - выводится результирующее в рамках текущего seller_scan_calc_any_function;
 ╙ && - seller_scan_calc_body_result_widget посредством seller_scan_calc_body_result_widget_output_passive выводит seller_scan_calc_any_sum.
+
+
+✠ color_states
+┌─
+│seller_scan_calc_body_keys_7
+│seller_scan_calc_body_keys_8
+│seller_scan_calc_body_keys_9
+│seller_scan_calc_body_keys_del
+│seller_scan_calc_body_keys_ac
+│seller_scan_calc_body_keys_4
+│seller_scan_calc_body_keys_5
+│seller_scan_calc_body_keys_6
+│seller_scan_calc_body_keys_1
+│seller_scan_calc_body_keys_2
+│seller_scan_calc_body_keys_3
+│seller_scan_calc_body_keys_0
+│seller_scan_calc_body_keys_dot
+│seller_scan_calc_body_keys_equal
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color5
+│------ in pressing_state
+└─
+┌─
+│seller_scan_calc_body_keys_divide
+│seller_scan_calc_body_keys_multi
+│seller_scan_calc_body_keys_minus
+│seller_scan_calc_body_keys_plus
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color5
+│------ in pressing_state
+├────────
+│• color7
+│------ in activated_state
+└─
+┌─
+│seller_scan_calc_body_keys_7_label
+│seller_scan_calc_body_keys_8_label
+│seller_scan_calc_body_keys_9_label
+│seller_scan_calc_body_keys_del_label
+│seller_scan_calc_body_keys_ac_label
+│seller_scan_calc_body_keys_4_label
+│seller_scan_calc_body_keys_5_label
+│seller_scan_calc_body_keys_6_label
+│seller_scan_calc_body_keys_divide_label
+│seller_scan_calc_body_keys_multi_label
+│seller_scan_calc_body_keys_1_label
+│seller_scan_calc_body_keys_2_label
+│seller_scan_calc_body_keys_3_label
+│seller_scan_calc_body_keys_minus_label
+│seller_scan_calc_body_keys_plus_label
+│seller_scan_calc_body_keys_0_label
+│seller_scan_calc_body_keys_dot_label
+│seller_scan_calc_body_keys_equal_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
