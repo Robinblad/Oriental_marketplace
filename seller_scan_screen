@@ -833,3 +833,28 @@ activated_state - состояние при котором seller_scan_calc_body
 │• color8
 │------ in any situation
 └─
+
+
+■ seller_scan_calc_body_result
+
+seller_scan_calc_body_result представляет собой панель выполняющей частично информативную роль отображая результирующее калькуляции, а также служит целью добавления товарных позиций к калькулируемому ордеру (корзине).
+
+✠ tables
+
+                                                codename:                               type:           designation:         location:   interaction:
+ │ └───────────┬┬──[seller_scan_calc_body_result                                ]  [section_lev3  ]                           [ 🡇 ✜ ]      [ no  ]
+ │             │└┬─[seller_scan_calc_body_result_widget                         ]  [widget        ]                           [ ✜ 🡄 ]      [ no  ]
+ │             │ ├ [seller_scan_calc_body_result_widget_signifier__________state]  [variable      ]  [ { string }      ]      [ ✜ 🡄 ]      [ no  ]
+ │             │ └ [seller_scan_calc_body_result_widget_output_____________state]  [variable      ]  [ { number }      ]      [ ✜ 🡆 ]      [ no  ]
+ │             └─┬─[seller_scan_calc_body_result_add                            ]  [button        ]                           [ ✜ 🡆 ]      [ yes ]
+ │               └ [seller_scan_calc_body_result_add_label                      ]  [label         ]  [ "+ товар"       ]      [ ✜ ✜ ]      [ yes ]
+
+
+✠ details
+seller_scan_calc_body_result находится в нижней части seller_scan_calc_body и состоит из 2 структурных компонентов:
+- seller_scan_calc_body_result_widget - выполняет функцию виджета отображающего ввод и вывод процесса калькуляции;
+- seller_scan_calc_body_result_add - выполняет функцию добавления лота к рассчитываемому ордеру (корзине).
+
+- seller_scan_calc_body_result_widget - локализован слева и занимает порядка 70% ширины seller_scan_calc_body_result, представляет собой прямоугольный блок в рамках которого располагаются seller_scan_calc_body_result_widget_signifier и seller_scan_calc_body_result_widget_output;
+--- seller_scan_calc_body_result_add - представляет собой кнопку добавления лота для расчета ордера, которая расположена справа от seller_scan_calc_body_result_widget_signifier и содержит seller_scan_calc_body_result_add_label; 
+----- seller_scan_calc_body_result_add_label - константный центрированный текстовый элемент следующего содержания: "+ товар".
