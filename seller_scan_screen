@@ -858,3 +858,45 @@ seller_scan_calc_body_result находится в нижней части selle
 - seller_scan_calc_body_result_widget - локализован слева и занимает порядка 70% ширины seller_scan_calc_body_result, представляет собой прямоугольный блок в рамках которого располагаются seller_scan_calc_body_result_widget_signifier и seller_scan_calc_body_result_widget_output;
 --- seller_scan_calc_body_result_add - представляет собой кнопку добавления лота для расчета ордера, которая расположена справа от seller_scan_calc_body_result_widget_signifier и содержит seller_scan_calc_body_result_add_label; 
 ----- seller_scan_calc_body_result_add_label - константный центрированный текстовый элемент следующего содержания: "+ товар".
+
+✠ actions
+• seller_scan_calc_body_result_add:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion:  нажатие seller_scan_calc_body_result_add;
+║ condition: in any situation;
+╙ result: делается переход к seller_goods_screen.
+
+✠ logics
+Расчет в seller_scan_calc производится с использованием двух типов вычислений:
+seller_scan_calc_lot_function - калькуляция по лотам в рамках текущего ордера;
+seller_scan_calc_any_function - калькуляция за рамками текущего ордера.
+
+✠ color_states
+┌─
+│seller_scan_calc_body_result
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color2
+│------ in any situation
+└─
+┌─
+│seller_scan_calc_body_result_add
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color5
+│------ in pressing_state
+└─
+┌─
+│seller_scan_calc_body_result_add_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
