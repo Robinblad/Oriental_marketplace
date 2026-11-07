@@ -936,3 +936,32 @@ seller_scan_calc_body_result_widget_signifier обладает 2 состоян�
 │• color8
 │------ in any situation
 └─
+
+
+■ ■ seller_scan_calc_body_result_widget_signifier_passive_state ■ ■
+
+✠ tables
+
+                                               codename:                          type:           designation:         location:   interaction:
+ │              │ ├ [seller_scan_calc_body_result_widget_signifier_passive]  [variable      ]  [ "итог: "        ]      [ ✜ 🡄 ]      [ no  ]
+
+✠ details
+--- seller_scan_calc_body_result_widget_signifier_passive - подстановочный информер указывающий результирующий тип seller_scan_calc_body_result_widget_output в виде переменной со строковым значением, находится слева от seller_scan_calc_body_result_widget_output. В seller_scan_calc_body_result_widget_signifier_passive отображает текст следующего содержания: "итог: ".
+
+✠ standards
+Нормативы отображения для seller_scan_calc_body_result_widget_signifier_passive: 
+- целые числа отображаются от 1 до 999999999;
+- числа > 999999999 отображаются с использовании аббревиатуры;
+- число 1000000000 отображается как 1B;
+- число 1000000000000 отображается как 1T;
+- дробные числа отображаются с точностью 0.00000.
+
+✠ color_states
+┌─
+│seller_scan_calc_body_result_widget_signifier_passive
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
