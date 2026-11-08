@@ -965,3 +965,44 @@ seller_scan_calc_body_result_widget_signifier обладает 2 состоян�
 │• color8
 │------ in any situation
 └─
+
+
+■■■ seller_scan_calc_body_result_widget_output
+
+seller_scan_calc_body_result_widget_output обладает 2 состояниями:
+- seller_scan_calc_body_result_widget_output_active_state - когда происходит процессинг расчета по целевому лоту;
+- seller_scan_calc_body_result_widget_output_passive_state - когда процессинг расчета по текущему лоту завершен.
+
+seller_scan_calc_body_result_widget_output выводит 3 типа переменной являющихся операндами в seller_scan_calc_lot_function:
+seller_scan_calc_quantity - количественное значение товара;
+seller_scan_calc_any - операнд арифметического выражения;
+seller_scan_calc_quantity_sum - сумма в рамках расчетного ордера;
+seller_scan_calc_any_sum - сумма по арифметическому выражению за рамками расчетного ордера.
+
+■ ■ seller_scan_calc_body_result_widget_output_active_state ■ ■
+
+✠ tables
+
+                                               codename:                           type:           designation:         location:   interaction:
+ │             │ └ [seller_scan_calc_body_result_widget_output_active_state]  [variable      ]  [ { number }      ]      [ ✜ 🡆 ]      [ no  ]
+
+✠ details
+----- seller_scan_calc_body_result_widget_output - переменная с числовым значением расположенная справа от seller_scan_calc_body_result_widget_signifier, которая в seller_scan_calc_body_result_widget_output_active_state выводит seller_scan_calc_quantity - количественное значение товара (лота).
+
+✠ standards
+Нормативы отображения для seller_scan_calc_body_result_widget_output_active: 
+- целые числа отображаются от 1 до 999999999;
+- числа > 999999999 отображаются с использовании аббревиатуры;
+- число 1000000000 отображается как 1B;
+- число 1000000000000 отображается как 1T;
+- дробные числа отображаются с точностью 0.00000.
+
+✠ color_states
+┌─
+│seller_scan_calc_body_result_widget_output_active
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
