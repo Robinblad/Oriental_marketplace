@@ -1006,3 +1006,32 @@ seller_scan_calc_any_sum - сумма по арифметическому выр
 │• color8
 │------ in any situation
 └─
+
+
+■ ■ seller_scan_calc_body_result_widget_output_passive_state ■ ■
+
+✠ tables
+
+                                               codename:                            type:           designation:         location:   interaction:
+ │             │ └ [seller_scan_calc_body_result_widget_output_passive_state]  [variable      ]  [ { number }      ]      [ ✜ 🡆 ]      [ no  ]
+
+✠ details
+----- seller_scan_calc_body_result_widget_output - переменная с числовым значением расположенная справа от seller_scan_calc_body_result_widget_signifier, которая в seller_scan_calc_body_result_widget_output_passive_state выводит seller_scan_calc_quantity_sum - сумму по ордеру (корзине).
+
+✠ standards
+Нормативы отображения для seller_scan_calc_body_result_widget_output_passive: 
+- целые числа отображаются от 1 до 999999999;
+- числа > 999999999 отображаются с использовании аббревиатуры;
+- число 1000000000 отображается как 1B;
+- число 1000000000000 отображается как 1T;
+- дробные числа отображаются с точностью 0.00000.
+
+✠ color_states
+┌─
+│seller_scan_calc_body_result_widget_output_passive
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
