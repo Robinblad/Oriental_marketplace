@@ -1035,3 +1035,38 @@ seller_scan_calc_any_sum - сумма по арифметическому выр
 │• color8
 │------ in any situation
 └─
+
+
+■ seller_scan_calc_btn
+
+✠ details
+- seller_scan_calc_btn - блок из 2 кнопок расположенных в самом низу seller_scan_calc;
+--- seller_scan_calc_btn_ok - кнопка расположенная слева, призвана закрывать seller_scan_calc_screen;
+----- seller_scan_calc_btn_ok_label - константный центрированный текстовый элемент следующего содержания: "ОК";
+--- seller_scan_calc_btn_pay - кнопка расположенная справа, отвечает за инициализацию перехода к seller_scan_qr_screen, содержит seller_scan_calc_btn_pay_label;
+----- seller_scan_calc_btn_pay_label - константный центрированный текстовый элемент следующего содержания: "платеж".
+
+✠ actions
+• seller_scan_calc_btn_ok:
+╠ valid / invalid
+║ • gesture: tap
+║ occasion: нажатие seller_scan_calc_btn_ok;
+║ condition: in any situation;
+║ result:
+║ - && - seller_scan_calc_screen закрывается;
+╙ - && - делается переход к seller_shop_screen.
+• seller_scan_calc_btn_pay:
+╠ valid
+║ • gesture: tap
+║ occasion: нажатие seller_scan_calc_btn_pay;
+║ condition: если seller_scan_calc_body_display_list не пустой;
+║ result:
+║ - && - производится создание user_id_data_seller_level_orders_opened_id базирующегося на лотах из текущего seller_scan_calc_body_display_list;
+║ - && - производится генерация seller_scan_qr_code на базе user_id_data_seller_level_orders_opened_id;
+║ - && - seller_scan_calc_screen закрывается;
+║ - && - seller_scan_qr_screen открывается.
+╠ invalid
+║ • gesture: tap
+║ occasion: нажатие seller_scan_calc_btn_pay;
+║ condition: если seller_scan_calc_body_display_list пустой;
+╙ result: seller_scan_calc_btn_pay не реагирует на нажатие.
