@@ -1070,3 +1070,40 @@ seller_scan_calc_any_sum - сумма по арифметическому выр
 ║ occasion: нажатие seller_scan_calc_btn_pay;
 ║ condition: если seller_scan_calc_body_display_list пустой;
 ╙ result: seller_scan_calc_btn_pay не реагирует на нажатие.
+
+
+✠ color_states
+┌─
+│seller_scan_calc_btn_ok
+│-------------------------------- 
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state
+├────────
+│• color5
+│------ in pressing_state
+└─
+┌─
+│seller_scan_calc_btn_pay
+│------------------------- 
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color4
+│------ in default_state  (когда seller_scan_calc_body_display_list не пустой)
+├────────
+│• color5
+│------ in pressing_state
+├────────
+│• color0
+│------ in any situation  (когда seller_scan_calc_body_display_list пустой)
+└─
+┌─
+│seller_scan_calc_btn_ok_label
+│seller_scan_calc_btn_pay_label
+│---------------------------
+│⟪⟪ body ⟫⟫ 
+├────────
+│• color8
+│------ in any situation
+└─
