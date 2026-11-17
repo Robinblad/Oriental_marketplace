@@ -1128,3 +1128,35 @@ seller_scan_calc_any_sum - сумма по арифметическому выр
 5) seller_nav_account - кнопка с наименованием и бейджем, предназначена для перехода к seller_account_screen;
 -- seller_nav_account_label - представлен заголовком "КАБИНЕТ";
 -- seller_nav_account_badge - размещается в верхнем правом углу, отображает количество непросмотренных денежных транзакций.
+
+✠ actions
+• seller_nav_demand:
+╠ valid
+║ • gesture: tap
+║ occasion: нажатие seller_nav_demand;
+║ condition:
+║ || - в ситуации присутствия в seller_chat_screen;
+║ || - в ситуации присутствия в seller_shop_screen;
+║ || - в ситуации присутствия в seller_goods_screen;
+║ || - в ситуации присутствия в seller_account_screen;
+║ result: открывается seller_demand_screen.
+╠ invalid
+║ • gesture: tap
+║ occasion: нажатие seller_nav_demand;
+║ condition: в ситуации присутствия в seller_demand_screen;
+╙ result: не реагирует на нажатие.
+• seller_nav_chat:
+╠ valid
+║ • gesture: tap
+║ occasion: нажатие seller_nav_chat;
+║ condition:
+║ || - в ситуации присутствия в seller_demand_screen;
+║ || - в ситуации присутствия в seller_shop_screen;
+║ || - в ситуации присутствия в seller_goods_screen;
+║ || - в ситуации присутствия в seller_account_screen;
+║ result: открывается seller_chat_screen.
+╠ invalid
+║ • gesture: tap
+║ occasion: нажатие seller_nav_chat;
+║ condition: в ситуации присутствия в seller_chat_screen;
+╙ result: не реагирует на нажатие.
