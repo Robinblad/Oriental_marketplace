@@ -1247,3 +1247,59 @@ seller_scan_calc_any_sum - сумма по арифметическому выр
 │• color2
 │------ в activated_state 
 └─
+
+
+🡆🡆🡆 seller_scan_qr_screen
+■■■■■■■■■■■■■■■■■■■■■■■■■
+
+Подраздел в котором отображается QR-код, а также данные по ордеру и платильщику. 
+
+✠ tables
+
+                                   codename:                                      type:           designation:        location:   interaction:
+          ┌┬┬──[seller_scan_nav                                          ]  [section       ]                           [ 🡅 ✜ ]      [ no  ]
+          ││└┬─[seller_scan_nav_check                                    ]  [button        ]                           [ ✜ 🡄 ]      [ yes ]
+          ││ └ [seller_scan_nav_check_label                              ]  [label         ]  [ "чек"           ]      [ ✜ ✜ ]      [ yes ]
+          │└─┬─[seller_scan_nav_scan                                     ]  [button        ]                           [ ✜ ✜ ]      [ yes ]
+          │  └ [seller_scan_nav_scan_label                               ]  [label         ]  [ "скан"          ]      [ ✜ ✜ ]      [ yes ]
+          └──┬─[seller_scan_nav_qr                                       ]  [button        ]                           [ ✜ 🡆 ]      [ yes ]
+             └ [seller_scan_nav_qr_label                                 ]  [label         ]  [ "QR"            ]      [ ✜ ✜ ]      [ yes ]
+    ┌┬─────────[seller_scan_qr                                           ]  [section_lev1  ]                           [ ✜ ✜ ]      [ no  ]
+    │└┬┬────┬──[seller_scan_qr_body                                      ]  [section_lev2  ]                           [ ✜ ✜ ]      [ no  ]
+    │ ││    └┬─[seller_scan_qr_body_top                                  ]  [section_lev3  ]                           [ 🡅 ✜ ]      [ no  ] 
+    │ ││     └ [seller_scan_qr_body_top_label                            ]  [label         ]                           [ ✜ ✜ ]      [ no  ]
+    │ │└┬┬┬─┬──[seller_scan_qr_body_main                                 ]  [section_lev3  ]                           [ ✜ ✜ ]      [ no  ]			 
+    │ │ │││ └┬─[seller_scan_qr_body_main_title                           ]  [section_lev4  ]                           [ 🡅 ✜ ]      [ no  ]
+    │ │ │││  └ [seller_scan_qr_body_main_title_label                     ]  [label         ]  [ "сканирование"  ]      [ ✜ ✜ ]      [ no  ]
+	
+    │ │ ││└┬┬──[seller_scan_qr_body_main_data_______________________state]  [section_lev4  ]                           [ ✜ ✜ ]      [ no  ]
+	
+    │ │ │└─────[seller_scan_qr_body_main_code                            ]  [img           ]                           [ ✜ ✜ ]      [ no  ]
+    │ │ └──────[seller_scan_qr_body_main_text                            ]  [text          ]  [ "Чтобы опла..." ]      [ 🡇 ✜ ]      [ no  ]
+    │ └────┬┬──[seller_scan_qr_body_result                               ]  [section_lev3  ]                           [ 🡇 ✜ ]      [ no  ]
+    │      │└┬─[seller_scan_qr_body_result_widget                        ]  [widget        ]                           [ ✜ 🡄 ]      [ no  ]
+    │      │ ├ [seller_scan_qr_body_result_widget_signifier_passive_state]  [variable      ]  [ { string }      ]      [ ✜ 🡄 ]      [ no  ]
+    │      │ └ [seller_scan_qr_body_result_widget_output_passive_state   ]  [variable      ]  [ { number }      ]      [ ✜ 🡆 ]      [ no  ]
+    │      └─┬─[seller_scan_qr_body_result_add                           ]  [button        ]                           [ ✜ 🡆 ]      [ yes ]
+    │        └ [seller_scan_qr_body_result_add_label                     ]  [label         ]  [ "+ товар"       ]      [ ✜ ✜ ]      [ yes ]
+    └──────┬┬──[seller_scan_qr_btn                                       ]  [section_lev2  ]                           [ 🡇 ✜ ]      [ no  ]
+           │└┬─[seller_scan_qr_btn_ok                                    ]  [button        ]                           [ ✜ 🡄 ]      [ yes ]
+           │ └ [seller_scan_qr_btn_ok_label                              ]  [label         ]  [ "ОК"            ]      [ ✜ ✜ ]      [ yes ]
+           └─┬─[seller_scan_qr_btn_pay                                   ]  [button        ]                           [ ✜ 🡆 ]      [ yes ]
+             └ [seller_scan_qr_btn_pay_label                             ]  [label         ]  [ "платеж"        ]      [ ✜ ✜ ]      [ yes ]
+        ┌┬┬┬┬──[seller_nav                                               ]  [section       ]                           [ ✜ ✜ ]      [ no  ]
+        ││││└┬─[seller_nav_demand_button                                 ]  [button        ]                           [ ✜ 🡄 ]      [ yes ]
+        ││││ ├ [seller_nav_demand_header                                 ]  [header        ]  [ "МОНИТОР"       ]      [ ✜ ✜ ]      [ no  ]  
+        ││││ └ [seller_nav_demand_badge                                  ]  [badge         ]  [ { number }      ]      [ 🡅 🡆 ]      [ no  ] 	
+        │││└─┬─[seller_nav_chat_button                                   ]  [button        ]                           [ ✜ 🡄 ]      [ yes ]   
+        │││  ├ [seller_nav_chat_header                                   ]  [header        ]  [ "ЧАТ"           ]      [ ✜ ✜ ]      [ no  ] 
+        │││  └ [seller_nav_chat_badge                                    ]  [badge         ]  [ { number }      ]      [ 🡅 🡆 ]      [ no  ] 
+        ││└──┬─[seller_nav_shop_button                                   ]  [button        ]                           [ ✜ ✜ ]      [ yes ]   
+        ││   ├ [seller_nav_shop_header                                   ]  [header        ]  [ "МАГАЗИН"       ]      [ ✜ ✜ ]      [ no  ] 
+        ││   └ [seller_nav_shop_badge                                    ]  [badge         ]  [ { number }      ]      [ 🡅 🡆 ]      [ no  ]   
+        │└───┬─[seller_nav_goods_button                                  ]  [button        ]                           [ ✜ 🡆 ]      [ yes ]   
+        │    ├ [seller_nav_goods_header                                  ]  [header        ]  [ "ТОВАРЫ"        ]      [ ✜ ✜ ]      [ no  ] 
+        │    └ [seller_nav_goods_badge                                   ]  [badge         ]  [ { number }      ]      [ 🡅 🡆 ]      [ no  ]     
+        └────┬─[seller_nav_scan_button                                   ]  [button        ]                           [ ✜ 🡆 ]      [ yes ]   
+             ├ [seller_nav_scan_header                                   ]  [header        ]  [ "КАБИНЕТ"       ]      [ ✜ ✜ ]      [ no  ] 
+             └ [seller_nav_scan_badge                                    ]  [badge         ]  [ { number }      ]      [ 🡅 🡆 ]      [ no  ] 
