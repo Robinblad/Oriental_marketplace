@@ -1303,3 +1303,21 @@ seller_scan_calc_any_sum - сумма по арифметическому выр
         └────┬─[seller_nav_scan_button                                   ]  [button        ]                           [ ✜ 🡆 ]      [ yes ]   
              ├ [seller_nav_scan_header                                   ]  [header        ]  [ "КАБИНЕТ"       ]      [ ✜ ✜ ]      [ no  ] 
              └ [seller_nav_scan_badge                                    ]  [badge         ]  [ { number }      ]      [ 🡅 🡆 ]      [ no  ] 
+
+✠ details
+Основное пространство seller_scan_qr_screen в центральной области экрана занимает seller_scan_qr_body состоящий из 3 секций расположенных сверху-вниз в следующем порядке:
+- seller_scan_qr_body_top  
+- seller_scan_qr_body_main
+- seller_scan_qr_body_result.
+
+■ seller_scan_nav
+
+✠ details
+Секция seller_scan_nav является навигационной панелью seller_scan и как сквозная часть интерфейса присутствует на всех экранах seller_scan в верхней области. Секция состоит из 3 компонентов каждый из которых выполняет роль кнопки расположенные слева-направо в следующем порядке:
+
+1)  seller_scan_nav_check - кнопка предназначенная для перехода к seller_scan_check_screen (в рамках seller_scan_check_screen активирована по умолчанию);
+--- seller_scan_nav_check_label - является константным центрированным в seller_scan_nav_check текстовым элементом следующего содержания: "чек";
+2) seller_scan_nav_calc - кнопка предназначенная для перехода к seller_scan_calc_screen (в рамках seller_scan_calc_screen активирована по умолчанию);
+--- seller_scan_nav_calc_label - является константным центрированным в seller_scan_nav_calc текстовым элементом следующего содержания: "скан";
+3) seller_scan_nav_qr - кнопка предназначенная для перехода к seller_scan_qr_screen (в рамках seller_scan_qr_screen активирована по умолчанию);
+--- seller_scan_nav_qr_label - является константным центрированным в seller_scan_nav_qr текстовым элементом следующего содержания: "QR".
