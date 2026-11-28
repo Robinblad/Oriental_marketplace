@@ -1321,3 +1321,45 @@ seller_scan_calc_any_sum - сумма по арифметическому выр
 --- seller_scan_nav_calc_label - является константным центрированным в seller_scan_nav_calc текстовым элементом следующего содержания: "скан";
 3) seller_scan_nav_qr - кнопка предназначенная для перехода к seller_scan_qr_screen (в рамках seller_scan_qr_screen активирована по умолчанию);
 --- seller_scan_nav_qr_label - является константным центрированным в seller_scan_nav_qr текстовым элементом следующего содержания: "QR".
+
+
+✠ actions
+• seller_scan_nav_check:
+╠ valid
+║ • gesture: tap
+║ occasion: нажатие seller_scan_nav_check;
+║ condition:
+║ || - в ситуации присутствия в seller_scan_calc_screen;
+║ || - в ситуации присутствия в seller_scan_qr_screen;
+║ result: открывается seller_scan_check_screen.
+╠ invalid
+║ • gesture: tap
+║ occasion: нажатие seller_scan_nav_check;
+║ condition: в ситуации присутствия в seller_scan_check_screen;
+╙ result: не реагирует на нажатие.
+• seller_scan_nav_calc:
+╠ valid
+║ • gesture: tap
+║ occasion: нажатие seller_scan_nav_calc;
+║ condition:
+║ || - в ситуации присутствия в seller_scan_check_screen;
+║ || - в ситуации присутствия в seller_scan_qr_screen;
+║ result: открывается seller_scan_calc_screen.
+╠ invalid
+║ • gesture: tap
+║ occasion: нажатие seller_scan_nav_calc;
+║ condition: в ситуации присутствия в seller_scan_calc_screen;
+╙ result: не реагирует на нажатие.
+• seller_scan_nav_qr:
+╠ valid
+║ • gesture: tap
+║ occasion: нажатие seller_scan_nav_qr;
+║ condition:
+║ || - в ситуации присутствия в seller_scan_check_screen;
+║ || - в ситуации присутствия в seller_scan_calc_screen;
+║ result: открывается seller_scan_qr_screen.
+╠ invalid
+║ • gesture: tap
+║ occasion: нажатие seller_scan_nav_qr;
+║ condition: в ситуации присутствия в seller_scan_qr_screen;
+╙ result: не реагирует на нажатие.
